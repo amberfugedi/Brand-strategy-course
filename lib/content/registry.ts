@@ -1,5 +1,6 @@
 import { ModuleDef } from "./types";
 import { introSlides } from "./intro";
+import { module1Slides } from "./module1";
 
 /**
  * The course structure. All eight modules exist here from day one;
@@ -20,8 +21,8 @@ export const courseModules: ModuleDef[] = [
     label: "Module 1 · Your positioning",
     title: "Your positioning.",
     minutes: "25 min",
-    released: false, // built next, with the interaction plan approved
-    slides: [],
+    released: true,
+    slides: module1Slides,
   },
   {
     id: "m2",

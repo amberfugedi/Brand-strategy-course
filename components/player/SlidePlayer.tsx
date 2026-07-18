@@ -10,12 +10,25 @@ import { SystemSlide } from "@/components/slides/SystemSlide";
 import { CardListSlide } from "@/components/slides/CardListSlide";
 import { RowsSlide } from "@/components/slides/RowsSlide";
 import { ProseSlide } from "@/components/slides/ProseSlide";
+import { QuestionSlide } from "@/components/slides/QuestionSlide";
+import { FrameworkSlide } from "@/components/slides/FrameworkSlide";
+import { PatternsSlide } from "@/components/slides/PatternsSlide";
+import { ColumnsSlide } from "@/components/slides/ColumnsSlide";
+import { ExamplesSlide } from "@/components/slides/ExamplesSlide";
+import { PrincipleSlide } from "@/components/slides/PrincipleSlide";
+import { StructureSlide } from "@/components/slides/StructureSlide";
+import { ExerciseSlide } from "@/components/slides/ExerciseSlide";
+import { SynthesisSlide } from "@/components/slides/SynthesisSlide";
+import { StatementsSlide } from "@/components/slides/StatementsSlide";
+import { SummarySlide } from "@/components/slides/SummarySlide";
 import { AudioSlot } from "./AudioSlot";
 import { useCourseStore } from "@/lib/store/provider";
 
 function surfaceOf(slide: Slide): Surface {
   if (slide.kind === "hero") return slide.surface;
   if (slide.kind === "prose" && slide.surface) return slide.surface;
+  if (slide.kind === "question" || slide.kind === "structure") return "plum";
+  if (slide.kind === "principle") return "ink";
   return "cream";
 }
 
@@ -31,6 +44,28 @@ function SlideBody({ slide }: { slide: Slide }) {
       return <RowsSlide slide={slide} />;
     case "prose":
       return <ProseSlide slide={slide} />;
+    case "question":
+      return <QuestionSlide slide={slide} />;
+    case "framework":
+      return <FrameworkSlide slide={slide} />;
+    case "patterns":
+      return <PatternsSlide slide={slide} />;
+    case "columns":
+      return <ColumnsSlide slide={slide} />;
+    case "examples":
+      return <ExamplesSlide slide={slide} />;
+    case "principle":
+      return <PrincipleSlide slide={slide} />;
+    case "structure":
+      return <StructureSlide slide={slide} />;
+    case "exercise":
+      return <ExerciseSlide slide={slide} />;
+    case "synthesis":
+      return <SynthesisSlide slide={slide} />;
+    case "statements":
+      return <StatementsSlide slide={slide} />;
+    case "summary":
+      return <SummarySlide slide={slide} />;
   }
 }
 

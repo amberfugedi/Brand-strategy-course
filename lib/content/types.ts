@@ -93,12 +93,123 @@ export interface ProseSlide extends SlideBase {
   paragraphs: string[];
 }
 
+/** Dark plum section-question slide: small line, large lines, small line. */
+export interface QuestionSlide extends SlideBase {
+  kind: "question";
+  pre?: string;
+  lines: string[];
+  post?: string;
+}
+
+/** Teaching slide: eyebrow, heading, optional subline, paragraphs,
+ *  optional teal-bordered callout card. */
+export interface FrameworkSlide extends SlideBase {
+  kind: "framework";
+  eyebrow: string;
+  heading: string;
+  sub?: string;
+  paragraphs: string[];
+  callout?: string;
+}
+
+/** Weak-pattern calibration: label + quote visible, diagnosis revealed
+ *  on interaction. */
+export interface PatternsSlide extends SlideBase {
+  kind: "patterns";
+  eyebrow: string;
+  heading: string;
+  patterns: { label: string; quote: string; diagnosis: string }[];
+}
+
+/** Numbered concept columns (three across, or four in a 2x2 grid). */
+export interface ColumnsSlide extends SlideBase {
+  kind: "columns";
+  eyebrow: string;
+  heading: string;
+  columns: { num: string; title: string; text: string }[];
+}
+
+/** Five persona cards in the deck's 3-2 grid; the annotation line
+ *  reveals on interaction. */
+export interface ExamplesSlide extends SlideBase {
+  kind: "examples";
+  eyebrow: string;
+  heading: string;
+  personas: {
+    name: string;
+    role: string;
+    meta?: string;
+    quote: string;
+    note: string;
+  }[];
+}
+
+/** Near-black centered serif principle slide with hairline rules. */
+export interface PrincipleSlide extends SlideBase {
+  kind: "principle";
+  eyebrow: string;
+  headline: string;
+  sub: string;
+}
+
+/** Dark plum module-structure table. */
+export interface StructureSlide extends SlideBase {
+  kind: "structure";
+  eyebrow: string;
+  heading: string;
+  rows: { label: string; title: string; minutes: string }[];
+}
+
+/** The framework builder moments. Fields save to the course document. */
+export interface ExerciseSlide extends SlideBase {
+  kind: "exercise";
+  heading: string;
+  promptLines: string[];
+  exercise: "serve" | "work" | "different";
+}
+
+/** Section 5: template card plus the buyer's editable statement. */
+export interface SynthesisSlide extends SlideBase {
+  kind: "synthesis";
+  eyebrow: string;
+  heading: string;
+  template: string;
+  note: string;
+}
+
+/** Assembled persona positioning statements (one or two cards). */
+export interface StatementsSlide extends SlideBase {
+  kind: "statements";
+  eyebrow: string;
+  heading: string;
+  statements: { name: string; role: string; text: string }[];
+}
+
+/** End of module: the buyer's completed framework, rendered and saved. */
+export interface SummarySlide extends SlideBase {
+  kind: "summary";
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
+}
+
 export type Slide =
   | HeroSlide
   | SystemSlide
   | CardListSlide
   | RowsSlide
-  | ProseSlide;
+  | ProseSlide
+  | QuestionSlide
+  | FrameworkSlide
+  | PatternsSlide
+  | ColumnsSlide
+  | ExamplesSlide
+  | PrincipleSlide
+  | StructureSlide
+  | ExerciseSlide
+  | SynthesisSlide
+  | StatementsSlide
+  | SummarySlide;
 
 export interface ModuleDef {
   id: string;
