@@ -22,25 +22,25 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
   const different = { text: "", sources: [], ...positioning.different };
 
   return (
-    <div className="flex flex-1 items-center justify-center py-4">
-      <div className="w-full max-w-2xl border border-gold bg-cream-light px-8 py-9 md:px-12">
+    <div className="flex flex-1 items-center justify-center py-2">
+      <div className="w-full max-w-2xl border border-gold bg-cream-light px-7 py-5 md:px-10">
         <div className="text-center">
-          <div className="mb-4 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+          <div className="mb-2.5 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
             Your turn
           </div>
-          <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+          <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
             <Rich text={slide.heading} />
           </h1>
-          <div className="mx-auto mt-4 max-w-lg space-y-1.5">
+          <div className="mx-auto mt-2.5 max-w-lg space-y-1">
             {slide.promptLines.map((line, i) => (
-              <p key={i} className="text-[14px] leading-relaxed text-body-secondary">
+              <p key={i} className="text-[13.5px] leading-snug text-body-secondary">
                 <Rich text={line} />
               </p>
             ))}
           </div>
         </div>
 
-        <div className="mt-7 space-y-4 text-left">
+        <div className="mt-4 space-y-2.5 text-left">
           {slide.exercise === "serve" ? (
             <>
               <GuidedField

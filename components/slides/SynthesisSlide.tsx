@@ -25,25 +25,25 @@ export function SynthesisSlide({ slide }: { slide: SynthesisSlideDef }) {
   const different = positioning.different;
 
   return (
-    <div className="mt-2 flex flex-1 flex-col">
-      <div className="mb-3 text-[11px] font-bold uppercase tracking-eyebrow text-teal">
+    <div className="flex flex-1 flex-col justify-center">
+      <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-teal">
         {slide.eyebrow}
       </div>
-      <h1 className="text-3xl font-bold tracking-tight md:text-5xl">
+      <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="mt-7 max-w-4xl border-l-[3px] border-teal bg-cream-light px-8 py-6">
-        <p className="text-[16px] leading-relaxed">
+      <div className="mt-4 max-w-4xl border-l-[3px] border-teal bg-cream-light px-7 py-4">
+        <p className="text-[15px] leading-relaxed">
           <Rich text={slide.template} />
         </p>
       </div>
 
-      <p className="mt-4 max-w-3xl text-[15px] leading-relaxed text-body-secondary">
+      <p className="mt-3 max-w-3xl text-[13.5px] leading-snug text-body-secondary">
         <Rich text={slide.note} />
       </p>
 
-      <div className="mt-6 grid max-w-4xl gap-3 md:grid-cols-3">
+      <div className="mt-4 grid max-w-4xl gap-3 md:grid-cols-3">
         <AnswerRef
           label="Who you serve"
           parts={[serve?.situation ?? "", serve?.context ?? "", serve?.problem ?? ""]}
@@ -55,15 +55,15 @@ export function SynthesisSlide({ slide }: { slide: SynthesisSlideDef }) {
         <AnswerRef label="What makes you different" parts={[different?.text ?? ""]} />
       </div>
 
-      <label className="mt-6 block max-w-4xl">
-        <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-eyebrow text-body-secondary">
+      <label className="mt-4 block max-w-4xl">
+        <span className="mb-1 block text-[10px] font-bold uppercase tracking-eyebrow text-body-secondary">
           Your working statement
         </span>
         <textarea
           value={positioning.statement ?? ""}
           onChange={(e) => setPositioning({ statement: e.target.value })}
           placeholder="Write it as one sentence, or three short ones."
-          rows={4}
+          rows={3}
           className="w-full resize-y border border-ink/20 bg-cream-light px-4 py-3 text-[15px] leading-relaxed outline-none transition-colors placeholder:text-body-tertiary focus:border-gold"
         />
       </label>
