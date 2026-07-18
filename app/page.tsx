@@ -31,35 +31,54 @@ export default function LibraryPage() {
         </p>
 
         <div className="mt-12 space-y-4">
-          {courses.map((course) => (
-            <Link
-              key={course.id}
-              href={`/${course.id}`}
-              className="block border-l-[3px] border-aubergine bg-cream-light px-8 py-7 transition-opacity hover:opacity-80"
-            >
-              <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
-                {course.ordinal}
+          {courses.map((course) =>
+            course.released ? (
+              <Link
+                key={course.id}
+                href={`/${course.id}`}
+                className="block border-l-[3px] border-aubergine bg-cream-light px-8 py-7 transition-opacity hover:opacity-80"
+              >
+                <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+                  {course.ordinal}
+                </div>
+                <div className="mt-2 text-2xl font-bold tracking-tight">
+                  {course.title}
+                </div>
+                <p className="mt-2 text-[15px] text-body-secondary">
+                  <Rich text={course.summary} />
+                </p>
+                <div className="mt-4 text-[11px] font-bold uppercase tracking-chrome text-aubergine">
+                  Open the course
+                </div>
+              </Link>
+            ) : (
+              <div
+                key={course.id}
+                className="border-l-[3px] border-ink/10 bg-cream-light/50 px-8 py-6"
+              >
+                <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+                  {course.ordinal}
+                </div>
+                <div className="mt-2 text-xl font-bold tracking-tight text-body-tertiary">
+                  {course.title}
+                </div>
+                <p className="mt-1.5 font-serif text-[15px] italic text-body-tertiary">
+                  Not yet available.
+                </p>
               </div>
-              <div className="mt-2 text-2xl font-bold tracking-tight">
-                {course.title}
-              </div>
-              <p className="mt-2 text-[15px] text-body-secondary">
-                <Rich text={course.summary} />
-              </p>
-              <div className="mt-4 text-[11px] font-bold uppercase tracking-chrome text-aubergine">
-                Open the course
-              </div>
-            </Link>
-          ))}
+            ),
+          )}
 
-          <div className="border-l-[3px] border-ink/10 bg-cream-light/50 px-8 py-6">
-            <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
-              Course 02
+          {courses.every((c) => c.released) ? (
+            <div className="border-l-[3px] border-ink/10 bg-cream-light/50 px-8 py-6">
+              <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+                Course 02
+              </div>
+              <p className="mt-2 font-serif text-[15px] italic text-body-tertiary">
+                The next course arrives after this one. One thing at a time.
+              </p>
             </div>
-            <p className="mt-2 font-serif text-[15px] italic text-body-tertiary">
-              The next course arrives after this one. One thing at a time.
-            </p>
-          </div>
+          ) : null}
         </div>
       </div>
     </div>
