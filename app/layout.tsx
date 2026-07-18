@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Instrument_Serif } from "next/font/google";
-import { CourseStoreProvider } from "@/lib/store/provider";
+import { AuthProvider } from "@/lib/auth/provider";
 import "./globals.css";
 
 const geist = Geist({
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} ${instrument.variable}`}>
       <body className="font-sans antialiased">
-        <CourseStoreProvider>{children}</CourseStoreProvider>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

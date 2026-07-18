@@ -23,6 +23,8 @@ import { StatementsSlide } from "@/components/slides/StatementsSlide";
 import { SummarySlide } from "@/components/slides/SummarySlide";
 import { AudioSlot } from "./AudioSlot";
 import { useCourseStore } from "@/lib/store/provider";
+import { useAuth } from "@/lib/auth/provider";
+import { SignInGate } from "@/components/auth/SignInGate";
 
 function surfaceOf(slide: Slide): Surface {
   if (slide.kind === "hero") return slide.surface;
@@ -70,13 +72,18 @@ function SlideBody({ slide }: { slide: Slide }) {
 }
 
 interface SlidePlayerProps {
+  courseId: string;
   module: ModuleDef;
   slideIndex: number; // 1-based, matches the URL
 }
 
-export function SlidePlayer({ module, slideIndex }: SlidePlayerProps) {
+export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) {
   const router = useRouter();
   const { update, ready } = useCourseStore();
+  const auth = useAuth();
+  // The intro is open to everyone; modules need an account when
+  // sign-in is configured. In local mode nothing is gated.
+  const gated = module.id !== "intro" && auth.enabled && !auth.loading && !auth.user;
   const slide = module.slides[slideIndex - 1];
   const isFirst = slideIndex <= 1;
   const isLast = slideIndex >= module.slides.length;
@@ -109,9 +116,9 @@ export function SlidePlayer({ module, slideIndex }: SlidePlayerProps) {
   const goTo = useCallback(
     (index: number) => {
       if (index < 1 || index > module.slides.length) return;
-      router.push(`/${module.id}/${index}`);
+      router.push(`/${courseId}/${module.id}/${index}`);
     },
-    [module.id, module.slides.length, router],
+    [courseId, module.id, module.slides.length, router],
   );
 
   useEffect(() => {
@@ -126,6 +133,10 @@ export function SlidePlayer({ module, slideIndex }: SlidePlayerProps) {
   }, [goTo, slideIndex]);
 
   if (!slide) return null;
+
+  if (gated) {
+    return <SignInGate nextPath={`/${courseId}/${module.id}/${slideIndex}`} />;
+  }
 
   const navButton = `px-4 py-2 text-[12px] font-bold uppercase tracking-chrome transition-colors ${
     dark
@@ -161,7 +172,10 @@ export function SlidePlayer({ module, slideIndex }: SlidePlayerProps) {
             Next
           </button>
         ) : (
-          <Link href="/" className={`${navButton} ${dark ? "text-gold" : "text-aubergine"}`}>
+          <Link
+            href={`/${courseId}`}
+            className={`${navButton} ${dark ? "text-gold" : "text-aubergine"}`}
+          >
             Back to the course
           </Link>
         )}

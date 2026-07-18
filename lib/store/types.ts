@@ -60,11 +60,13 @@ export const emptyDocument = (): CourseDocument => ({
 });
 
 /**
- * Persistence boundary. localStorage today; a hosted database later.
- * Slides never touch this directly, they go through the store context,
- * so swapping the adapter does not touch slide code.
+ * Persistence boundary, keyed by course so the library scales to more
+ * courses. localStorage always writes (it doubles as the offline
+ * cache); the Supabase adapter joins in when the buyer is signed in.
+ * Slides never touch adapters directly, they go through the store
+ * context, so persistence changes never touch slide code.
  */
 export interface CourseStoreAdapter {
-  load(): Promise<CourseDocument | null>;
-  save(doc: CourseDocument): Promise<void>;
+  load(courseId: string): Promise<CourseDocument | null>;
+  save(courseId: string, doc: CourseDocument): Promise<void>;
 }
