@@ -84,8 +84,10 @@ export function SlidePlayer({ module, slideIndex }: SlidePlayerProps) {
   const dark = surface !== "cream";
 
   // Record where the buyer is so the home page can offer to continue.
+  // Reaching a module's final slide marks the module completed.
   useEffect(() => {
     if (!ready) return;
+    const reachedEnd = slideIndex >= module.slides.length;
     update((d) => ({
       ...d,
       progress: {
@@ -95,6 +97,10 @@ export function SlidePlayer({ module, slideIndex }: SlidePlayerProps) {
           ...d.progress.seenSlides,
           [`${module.id}/${slideIndex}`]: true,
         },
+        completedModules:
+          reachedEnd && !d.progress.completedModules.includes(module.id)
+            ? [...d.progress.completedModules, module.id]
+            : d.progress.completedModules,
       },
     }));
     // eslint-disable-next-line react-hooks/exhaustive-deps

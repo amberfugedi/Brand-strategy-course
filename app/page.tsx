@@ -44,12 +44,28 @@ export default function HomePage() {
 
         <div className="mt-14 space-y-2">
           {courseModules.map((mod) => {
+            const completed = doc.progress.completedModules.includes(mod.id);
+            const seenCount = Object.keys(doc.progress.seenSlides).filter(
+              (key) => key.startsWith(`${mod.id}/`),
+            ).length;
+            const started = seenCount > 0;
+
+            const status = !mod.released
+              ? "Not yet available."
+              : completed
+                ? "Completed."
+                : started
+                  ? `In progress, slide ${Math.min(seenCount, mod.slides.length)} of ${mod.slides.length}.`
+                  : "Not started.";
+
             const row = (
               <div
                 className={`flex items-baseline justify-between gap-6 border-l-[3px] px-5 py-4 ${
-                  mod.released
-                    ? "border-aubergine bg-cream-light"
-                    : "border-ink/10 bg-cream-light/50"
+                  !mod.released
+                    ? "border-ink/10 bg-cream-light/50"
+                    : completed
+                      ? "border-gold bg-cream-light"
+                      : "border-aubergine bg-cream-light"
                 }`}
               >
                 <div>
@@ -60,11 +76,13 @@ export default function HomePage() {
                   >
                     {mod.label}
                   </div>
-                  {!mod.released ? (
-                    <div className="mt-0.5 font-serif text-[13px] italic text-body-tertiary">
-                      Not yet available.
-                    </div>
-                  ) : null}
+                  <div
+                    className={`mt-0.5 font-serif text-[13px] italic ${
+                      completed ? "text-gold" : "text-body-tertiary"
+                    }`}
+                  >
+                    {status}
+                  </div>
                 </div>
                 <div className="shrink-0 text-[11px] font-bold uppercase tracking-chrome text-body-tertiary">
                   {mod.minutes}
