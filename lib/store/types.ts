@@ -46,7 +46,12 @@ export interface CourseDocument {
   progress: CourseProgress;
   modules: {
     m1?: { positioning?: Partial<PositioningInput> };
-    // m2: diagnostic answers, audit picks, gap list (built with Module 2)
+    m2?: {
+      /** Answers to the six diagnostic questions, by question id. */
+      diagnostic?: Record<string, string>;
+      /** Audit picks: foundation id -> dimension id -> state. */
+      audit?: Record<string, Record<string, string>>;
+    };
     // m3..m7: mini-strategy inputs
     // m8: plan
   };

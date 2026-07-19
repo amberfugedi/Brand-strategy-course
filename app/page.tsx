@@ -96,7 +96,7 @@ export default function LibraryPage() {
                   {course.ordinal}
                 </div>
                 <h2 className="mt-4 max-w-2xl text-balance text-4xl font-bold leading-[1.05] tracking-tight text-cream md:text-5xl">
-                  <Rich text={course.tagline} />
+                  {course.title}
                 </h2>
                 <p className="mt-4 max-w-xl text-[16px] text-on-dark/85">
                   <Rich text={course.summary} />

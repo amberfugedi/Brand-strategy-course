@@ -147,7 +147,7 @@ export interface ExamplesSlide extends SlideBase {
 /** Near-black centered serif principle slide with hairline rules. */
 export interface PrincipleSlide extends SlideBase {
   kind: "principle";
-  eyebrow: string;
+  eyebrow?: string;
   headline: string;
   sub: string;
 }
@@ -193,6 +193,54 @@ export interface SummarySlide extends SlideBase {
   paragraphs: string[];
 }
 
+/** Module 2: the six diagnostic questions, answered in place. */
+export interface DiagnosticSlide extends SlideBase {
+  kind: "diagnostic";
+  eyebrow: string;
+  heading: string;
+  intro: string;
+}
+
+/** Module 2: tier meanings plus the buyer's computed priority order. */
+export interface PrioritiesSlide extends SlideBase {
+  kind: "priorities";
+  eyebrow: string;
+  heading: string;
+  tiers: { label: string; text: string }[];
+}
+
+/** Module 2: the tailored audit, depth varying by priority. */
+export interface AuditSlide extends SlideBase {
+  kind: "audit";
+  eyebrow: string;
+  heading: string;
+  intro: string;
+}
+
+/** Module 2: gap tier meanings plus the buyer's computed Gap List. */
+export interface GapListSlide extends SlideBase {
+  kind: "gaplist";
+  eyebrow: string;
+  heading: string;
+  tiers: { label: string; text: string }[];
+}
+
+/** Module 2: plum output slide revealing the computed starting point. */
+export interface StartingPointSlide extends SlideBase {
+  kind: "startingPoint";
+  pre?: string;
+  lines: string[];
+  post?: string;
+}
+
+/** Module 2: everything the module produced, compiled in one place. */
+export interface PlanSlide extends SlideBase {
+  kind: "plan";
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
+}
+
 export type Slide =
   | HeroSlide
   | SystemSlide
@@ -209,7 +257,13 @@ export type Slide =
   | ExerciseSlide
   | SynthesisSlide
   | StatementsSlide
-  | SummarySlide;
+  | SummarySlide
+  | DiagnosticSlide
+  | PrioritiesSlide
+  | AuditSlide
+  | GapListSlide
+  | StartingPointSlide
+  | PlanSlide;
 
 export interface ModuleDef {
   id: string;
@@ -219,5 +273,7 @@ export interface ModuleDef {
   title: string;
   minutes: string;
   released: boolean;
+  /** Module id that must be completed before this one opens. */
+  requires?: string;
   slides: Slide[];
 }

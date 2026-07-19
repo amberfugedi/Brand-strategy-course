@@ -1,6 +1,7 @@
 import { ModuleDef } from "./types";
 import { introSlides } from "./intro";
 import { module1Slides } from "./module1";
+import { module2Slides } from "./module2";
 
 /**
  * The course structure. All eight modules exist here from day one;
@@ -29,8 +30,9 @@ export const courseModules: ModuleDef[] = [
     label: "Module 2 · The foundation audit",
     title: "The foundation audit.",
     minutes: "28 min",
-    released: false,
-    slides: [],
+    released: true,
+    requires: "m1",
+    slides: module2Slides,
   },
   {
     id: "m3",

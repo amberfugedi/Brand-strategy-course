@@ -21,6 +21,12 @@ import { ExerciseSlide } from "@/components/slides/ExerciseSlide";
 import { SynthesisSlide } from "@/components/slides/SynthesisSlide";
 import { StatementsSlide } from "@/components/slides/StatementsSlide";
 import { SummarySlide } from "@/components/slides/SummarySlide";
+import { DiagnosticSlide } from "@/components/slides/DiagnosticSlide";
+import { PrioritiesSlide } from "@/components/slides/PrioritiesSlide";
+import { AuditSlide } from "@/components/slides/AuditSlide";
+import { GapListSlide } from "@/components/slides/GapListSlide";
+import { StartingPointSlide } from "@/components/slides/StartingPointSlide";
+import { PlanSlide } from "@/components/slides/PlanSlide";
 import { AudioSlot } from "./AudioSlot";
 import { useCourseStore } from "@/lib/store/provider";
 import { useAuth } from "@/lib/auth/provider";
@@ -29,7 +35,12 @@ import { SignInGate } from "@/components/auth/SignInGate";
 function surfaceOf(slide: Slide): Surface {
   if (slide.kind === "hero") return slide.surface;
   if (slide.kind === "prose" && slide.surface) return slide.surface;
-  if (slide.kind === "question" || slide.kind === "structure") return "plum";
+  if (
+    slide.kind === "question" ||
+    slide.kind === "structure" ||
+    slide.kind === "startingPoint"
+  )
+    return "plum";
   if (slide.kind === "principle") return "ink";
   return "cream";
 }
@@ -68,6 +79,18 @@ function SlideBody({ slide }: { slide: Slide }) {
       return <StatementsSlide slide={slide} />;
     case "summary":
       return <SummarySlide slide={slide} />;
+    case "diagnostic":
+      return <DiagnosticSlide slide={slide} />;
+    case "priorities":
+      return <PrioritiesSlide slide={slide} />;
+    case "audit":
+      return <AuditSlide slide={slide} />;
+    case "gaplist":
+      return <GapListSlide slide={slide} />;
+    case "startingPoint":
+      return <StartingPointSlide slide={slide} />;
+    case "plan":
+      return <PlanSlide slide={slide} />;
   }
 }
 
@@ -79,8 +102,15 @@ interface SlidePlayerProps {
 
 export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) {
   const router = useRouter();
-  const { update, ready } = useCourseStore();
+  const { doc, update, ready } = useCourseStore();
   const auth = useAuth();
+  // Modules unlock in sequence: a module with a prerequisite stays
+  // locked until that module is completed.
+  const lockedByPrereq = Boolean(
+    module.requires &&
+      ready &&
+      !doc.progress.completedModules.includes(module.requires),
+  );
   // The intro is open to everyone; modules need an account when
   // sign-in is configured. In local mode nothing is gated.
   const gated = module.id !== "intro" && auth.enabled && !auth.loading && !auth.user;
@@ -93,7 +123,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // Record where the buyer is so the home page can offer to continue.
   // Reaching a module's final slide marks the module completed.
   useEffect(() => {
-    if (!ready) return;
+    if (!ready || lockedByPrereq) return;
     const reachedEnd = slideIndex >= module.slides.length;
     update((d) => ({
       ...d,
@@ -136,6 +166,31 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
 
   if (gated) {
     return <SignInGate nextPath={`/${courseId}/${module.id}/${slideIndex}`} />;
+  }
+
+  if (lockedByPrereq) {
+    return (
+      <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6 text-body surface-cream">
+        <div className="w-full max-w-md border border-gold bg-cream-light px-9 py-10 text-center">
+          <div className="mb-4 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+            One step at a time
+          </div>
+          <h1 className="text-2xl font-bold tracking-tight">
+            This module opens after the one before it.
+          </h1>
+          <p className="mt-3 text-[14px] leading-relaxed text-body-secondary">
+            Everything here builds on work you haven't finished yet. Complete
+            the previous module and this one unlocks.
+          </p>
+          <Link
+            href={`/${courseId}`}
+            className="mt-6 inline-block border border-aubergine bg-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
+          >
+            Back to the course
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   const navButton = `px-4 py-2 text-[12px] font-bold uppercase tracking-chrome transition-colors ${

@@ -94,6 +94,57 @@ export function useCourseStore(): CourseStoreValue {
   return ctx;
 }
 
+/** Convenience accessor for Module 2 diagnostic and audit input. */
+export function useModule2() {
+  const { doc, update } = useCourseStore();
+  const m2 = doc.modules.m2 ?? {};
+
+  const setDiagnostic = useCallback(
+    (questionId: string, value: string) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m2: {
+            ...d.modules.m2,
+            diagnostic: { ...d.modules.m2?.diagnostic, [questionId]: value },
+          },
+        },
+      }));
+    },
+    [update],
+  );
+
+  const setAudit = useCallback(
+    (foundationId: string, dimensionId: string, value: string) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m2: {
+            ...d.modules.m2,
+            audit: {
+              ...d.modules.m2?.audit,
+              [foundationId]: {
+                ...d.modules.m2?.audit?.[foundationId],
+                [dimensionId]: value,
+              },
+            },
+          },
+        },
+      }));
+    },
+    [update],
+  );
+
+  return {
+    diagnostic: m2.diagnostic ?? {},
+    audit: m2.audit ?? {},
+    setDiagnostic,
+    setAudit,
+  };
+}
+
 /** Convenience accessor for Module 1 positioning input. */
 export function usePositioning() {
   const { doc, update } = useCourseStore();

@@ -57,6 +57,14 @@ export function CourseHome({ courseId }: { courseId: string }) {
         <div className="mt-14 space-y-2">
           {course.modules.map((mod) => {
             const completed = doc.progress.completedModules.includes(mod.id);
+            const locked = Boolean(
+              mod.requires &&
+                !doc.progress.completedModules.includes(mod.requires),
+            );
+            const requiredLabel = mod.requires
+              ? course.modules.find((m) => m.id === mod.requires)?.label ??
+                "the previous module"
+              : "";
             const seenCount = Object.keys(doc.progress.seenSlides).filter(
               (key) => key.startsWith(`${mod.id}/`),
             ).length;
@@ -64,16 +72,18 @@ export function CourseHome({ courseId }: { courseId: string }) {
 
             const status = !mod.released
               ? "Not yet available."
-              : completed
-                ? "Completed."
-                : started
-                  ? `In progress, slide ${Math.min(seenCount, mod.slides.length)} of ${mod.slides.length}.`
-                  : "Not started.";
+              : locked
+                ? `Opens when ${requiredLabel.replace(/ ·.*$/, "")} is complete.`
+                : completed
+                  ? "Completed."
+                  : started
+                    ? `In progress, slide ${Math.min(seenCount, mod.slides.length)} of ${mod.slides.length}.`
+                    : "Not started.";
 
             const row = (
               <div
                 className={`flex items-baseline justify-between gap-6 border-l-[3px] px-5 py-4 ${
-                  !mod.released
+                  !mod.released || locked
                     ? "border-ink/10 bg-cream-light/50"
                     : completed
                       ? "border-gold bg-cream-light"
@@ -83,7 +93,7 @@ export function CourseHome({ courseId }: { courseId: string }) {
                 <div>
                   <div
                     className={`text-[15px] font-semibold ${
-                      mod.released ? "text-body" : "text-body-tertiary"
+                      mod.released && !locked ? "text-body" : "text-body-tertiary"
                     }`}
                   >
                     {mod.label}
@@ -101,7 +111,7 @@ export function CourseHome({ courseId }: { courseId: string }) {
                 </div>
               </div>
             );
-            return mod.released ? (
+            return mod.released && !locked ? (
               <Link
                 key={mod.id}
                 href={`/${courseId}/${mod.id}/1`}
