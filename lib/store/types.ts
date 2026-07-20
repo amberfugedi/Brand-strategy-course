@@ -64,6 +64,30 @@ export interface CourseDocument {
         buildFirst?: string;
       };
     };
+    m5?: {
+      referral?: {
+        /** The one referral source being mapped. */
+        source?: string;
+        /** Stage id (earn | ask | tend) -> solid | leaking. */
+        stages?: Record<string, string>;
+        /** The single weak stage to repair. */
+        weakStage?: string;
+        /** The one concrete change to make to it. */
+        change?: string;
+      };
+    };
+    m6?: {
+      presence?: {
+        /** minor | moderate | significant | primary */
+        weight?: string;
+        /** The one place to build presence in. */
+        place?: string;
+        /** Condition id (place | consistent | you) -> holds. */
+        conditions?: Record<string, boolean>;
+        /** The deliberately under-committed cadence. */
+        cadence?: string;
+      };
+    };
     m7?: {
       ownedAudience?: {
         /** Who the channel starts with. */
@@ -80,7 +104,6 @@ export interface CourseDocument {
       /** Foundation id -> first | next | later. */
       plan?: { buckets?: Record<string, string> };
     };
-    // m5, m6: mini-strategy inputs (built when their decks arrive)
   };
 }
 

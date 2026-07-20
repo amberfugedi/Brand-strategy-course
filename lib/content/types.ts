@@ -225,6 +225,22 @@ export interface ProofInventorySlide extends SlideBase {
   paragraphs: string[];
 }
 
+/** Module 5 tool: one source walked through Earn, Ask, Tend. */
+export interface ReferralMapSlide extends SlideBase {
+  kind: "referralMap";
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
+}
+
+/** Module 6 tool: weight, one place, condition checks, cadence. */
+export interface PresencePlanSlide extends SlideBase {
+  kind: "presencePlan";
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
+}
+
 /** Module 7 tool: people, channel, cadence. */
 export interface OwnedAudienceSlide extends SlideBase {
   kind: "ownedAudience";
@@ -370,6 +386,8 @@ export type Slide =
   | MapSlide
   | TouchpointsSlide
   | ProofInventorySlide
+  | ReferralMapSlide
+  | PresencePlanSlide
   | OwnedAudienceSlide
   | AuthorityKindSlide
   | FoundationPlanSlide;

@@ -34,9 +34,9 @@ export const courses: CourseDef[] = [
     released: true,
     audience: "For service business owners",
     coverWord: "Foundation.",
-    chips: ["Interactive", "8 modules", "About 4 hours"],
+    chips: ["Interactive", "8 modules", "About 3 hours"],
     meta: [
-      { label: "Length", value: "About 4 hours, self-paced" },
+      { label: "Length", value: "About 3 hours, self-paced" },
       { label: "Output", value: "Your Marketing Foundation Map" },
       { label: "Format", value: "Guided, interactive, saved as you go" },
     ],

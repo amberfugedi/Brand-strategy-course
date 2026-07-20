@@ -209,6 +209,95 @@ export function useModule4() {
   return { proof, setStatus, setBuildFirst };
 }
 
+/** Convenience accessor for Module 5 referral map. */
+export function useModule5() {
+  const { doc, update } = useCourseStore();
+  const referral = doc.modules.m5?.referral ?? {};
+
+  const setReferral = useCallback(
+    (patch: { source?: string; weakStage?: string; change?: string }) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m5: {
+            ...d.modules.m5,
+            referral: { ...d.modules.m5?.referral, ...patch },
+          },
+        },
+      }));
+    },
+    [update],
+  );
+
+  const setStage = useCallback(
+    (stageId: string, value: string) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m5: {
+            ...d.modules.m5,
+            referral: {
+              ...d.modules.m5?.referral,
+              stages: { ...d.modules.m5?.referral?.stages, [stageId]: value },
+            },
+          },
+        },
+      }));
+    },
+    [update],
+  );
+
+  return { referral, setReferral, setStage };
+}
+
+/** Convenience accessor for Module 6 presence plan. */
+export function useModule6() {
+  const { doc, update } = useCourseStore();
+  const presence = doc.modules.m6?.presence ?? {};
+
+  const setPresence = useCallback(
+    (patch: { weight?: string; place?: string; cadence?: string }) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m6: {
+            ...d.modules.m6,
+            presence: { ...d.modules.m6?.presence, ...patch },
+          },
+        },
+      }));
+    },
+    [update],
+  );
+
+  const toggleCondition = useCallback(
+    (conditionId: string) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m6: {
+            ...d.modules.m6,
+            presence: {
+              ...d.modules.m6?.presence,
+              conditions: {
+                ...d.modules.m6?.presence?.conditions,
+                [conditionId]: !d.modules.m6?.presence?.conditions?.[conditionId],
+              },
+            },
+          },
+        },
+      }));
+    },
+    [update],
+  );
+
+  return { presence, setPresence, toggleCondition };
+}
+
 /** Convenience accessor for Module 7 owned audience plan. */
 export function useModule7() {
   const { doc, update } = useCourseStore();

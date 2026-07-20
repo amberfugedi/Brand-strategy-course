@@ -4,13 +4,15 @@ import { module1Slides } from "./module1";
 import { module2Slides } from "./module2";
 import { module3Slides } from "./module3";
 import { module4Slides } from "./module4";
+import { module5Slides } from "./module5";
+import { module6Slides } from "./module6";
 import { module7Slides } from "./module7";
 import { module8Slides } from "./module8";
 
 /**
- * The course structure. All eight modules exist here from day one;
- * unbuilt modules are registered but not released. Navigation, progress,
- * and the save schema all key off this registry.
+ * The course structure. All eight modules are built and released;
+ * they unlock in sequence via `requires`. Navigation, progress, and
+ * the save schema all key off this registry.
  */
 export const courseModules: ModuleDef[] = [
   {
@@ -60,17 +62,19 @@ export const courseModules: ModuleDef[] = [
     id: "m5",
     label: "Module 5 · Referral system",
     title: "Referral system.",
-    minutes: "35 min",
-    released: false,
-    slides: [],
+    minutes: "20 min",
+    released: true,
+    requires: "m4",
+    slides: module5Slides,
   },
   {
     id: "m6",
     label: "Module 6 · Brand awareness",
     title: "Brand awareness.",
-    minutes: "",
-    released: false,
-    slides: [],
+    minutes: "20 min",
+    released: true,
+    requires: "m5",
+    slides: module6Slides,
   },
   {
     id: "m7",
@@ -78,8 +82,7 @@ export const courseModules: ModuleDef[] = [
     title: "Owned audience.",
     minutes: "20 min",
     released: true,
-    // TEMP: requires m4 until Modules 5 and 6 are built; switch to "m6".
-    requires: "m4",
+    requires: "m6",
     slides: module7Slides,
   },
   {

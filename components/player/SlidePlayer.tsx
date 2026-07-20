@@ -35,6 +35,8 @@ import { TableSlide } from "@/components/slides/TableSlide";
 import { MapSlide } from "@/components/slides/MapSlide";
 import { TouchpointsSlide } from "@/components/slides/TouchpointsSlide";
 import { ProofInventorySlide } from "@/components/slides/ProofInventorySlide";
+import { ReferralMapSlide } from "@/components/slides/ReferralMapSlide";
+import { PresencePlanSlide } from "@/components/slides/PresencePlanSlide";
 import { OwnedAudienceSlide } from "@/components/slides/OwnedAudienceSlide";
 import { AuthorityKindSlide } from "@/components/slides/AuthorityKindSlide";
 import { FoundationPlanSlide } from "@/components/slides/FoundationPlanSlide";
@@ -54,6 +56,8 @@ function surfaceOf(slide: Slide): Surface {
     slide.kind === "frame" ||
     slide.kind === "touchpoints" ||
     slide.kind === "proofInventory" ||
+    slide.kind === "referralMap" ||
+    slide.kind === "presencePlan" ||
     slide.kind === "ownedAudience" ||
     slide.kind === "foundationPlan"
   )
@@ -124,6 +128,10 @@ function SlideBody({ slide, revealed }: { slide: Slide; revealed: number }) {
       return <TouchpointsSlide slide={slide} />;
     case "proofInventory":
       return <ProofInventorySlide slide={slide} />;
+    case "referralMap":
+      return <ReferralMapSlide slide={slide} />;
+    case "presencePlan":
+      return <PresencePlanSlide slide={slide} />;
     case "ownedAudience":
       return <OwnedAudienceSlide slide={slide} />;
     case "authorityKind":

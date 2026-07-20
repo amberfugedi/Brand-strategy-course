@@ -14,6 +14,7 @@ import {
   diagnosticComplete,
 } from "@/lib/content/m2Logic";
 import { TOUCHPOINTS } from "@/components/slides/TouchpointsSlide";
+import { REFERRAL_STAGES } from "@/components/slides/ReferralMapSlide";
 
 /** The revised seven foundations, one per module. */
 const PLAN_FOUNDATIONS = [
@@ -65,6 +66,11 @@ export function FoundationPlanSlide({
     (t) => t.id === touchpointOrder[0],
   )?.label;
   const proofFirst = doc.modules.m4?.proof?.buildFirst;
+  const referral = doc.modules.m5?.referral;
+  const weakStage = REFERRAL_STAGES.find(
+    (s) => s.id === referral?.weakStage,
+  )?.label;
+  const presence = doc.modules.m6?.presence;
   const owned = doc.modules.m7?.ownedAudience;
 
   const gathered: Record<string, string> = {
@@ -77,8 +83,16 @@ export function FoundationPlanSlide({
     earnedProof: proofFirst
       ? `${PROOF_LABELS[proofFirst] ?? proofFirst}.`
       : "No source named yet.",
-    referrals: "Module 5 is not yet available.",
-    brandAwareness: "Module 6 is not yet available.",
+    referrals: weakStage
+      ? `Weak stage to repair: ${weakStage}.${
+          referral?.change ? ` One change named.` : ""
+        }`
+      : "No weak stage named yet.",
+    brandAwareness: presence?.place
+      ? `${presence.place}${
+          presence.cadence ? `, ${presence.cadence.toLowerCase()}` : ""
+        }.`
+      : "No place named yet.",
     ownedAudience: owned?.channel
       ? `${owned.channel}${owned.cadence ? `, ${owned.cadence.toLowerCase()}` : ""}.`
       : "No channel planned yet.",
