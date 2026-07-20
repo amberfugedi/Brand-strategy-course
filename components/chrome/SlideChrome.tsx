@@ -44,7 +44,7 @@ export function SlideChrome({
   }`;
   return (
     <div
-      className={`relative flex min-h-screen flex-col overflow-hidden ${surfaceClasses[surface]}`}
+      className={`slide-viewport relative flex flex-col overflow-hidden ${surfaceClasses[surface]}`}
     >
       <header
         className={`flex items-center justify-between gap-6 px-[4.5vw] pt-10 text-[10px] font-bold uppercase tracking-chrome ${chromeText[surface]}`}

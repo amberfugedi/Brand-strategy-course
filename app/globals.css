@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Slides fill the visible viewport. Dynamic viewport units keep the
+   footer and Next/Back above mobile browser toolbars; plain vh is the
+   fallback for older browsers. */
+.slide-viewport {
+  min-height: 100vh;
+}
+@supports (min-height: 100dvh) {
+  .slide-viewport {
+    min-height: 100dvh;
+  }
+}
+
 /* The one italic accent word per sentence. Color follows the surface. */
 .accent-serif {
   font-family: var(--font-instrument), Georgia, serif;

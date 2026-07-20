@@ -304,7 +304,9 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
     );
   }
 
-  const navButton = `px-4 py-2 text-[12px] font-bold uppercase tracking-chrome transition-colors ${
+  // Generous padding: these are the most-tapped controls in the
+  // course, so the hit area runs well past the label.
+  const navButton = `px-5 py-3.5 text-[12px] font-bold uppercase tracking-chrome transition-colors ${
     dark
       ? "text-on-dark-muted hover:text-gold"
       : "text-body-tertiary hover:text-aubergine"
@@ -333,7 +335,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
 
       <AudioSlot audio={slide.audio} dark={dark} />
 
-      <nav className="absolute bottom-[70px] right-[4.5vw] z-20 flex items-center gap-1">
+      <nav className="absolute bottom-[62px] right-[4.5vw] z-20 flex items-center gap-2">
         {nudged && !inputComplete ? (
           <span
             className={`mr-2 font-serif text-[13px] italic ${

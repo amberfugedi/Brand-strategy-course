@@ -114,15 +114,6 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
     window.addEventListener("pointercancel", end);
   };
 
-  const move = (id: string, dir: -1 | 1) => {
-    const i = order.indexOf(id);
-    const j = i + dir;
-    if (i < 0 || j < 0 || j >= order.length) return;
-    const next = [...order];
-    [next[i], next[j]] = [next[j], next[i]];
-    setOrder(next);
-  };
-
   const insertLine = (
     <div aria-hidden="true" className="h-[2px] rounded bg-gold" />
   );
@@ -177,24 +168,6 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
                   Primary
                 </span>
               ) : null}
-              <button
-                type="button"
-                onClick={() => move(id, -1)}
-                disabled={i === 0}
-                aria-label="Move up"
-                className="px-1 text-[13px] text-on-dark-muted hover:text-gold disabled:opacity-30"
-              >
-                ↑
-              </button>
-              <button
-                type="button"
-                onClick={() => move(id, 1)}
-                disabled={i === order.length - 1}
-                aria-label="Move down"
-                className="px-1 text-[13px] text-on-dark-muted hover:text-gold disabled:opacity-30"
-              >
-                ↓
-              </button>
               <button
                 type="button"
                 onClick={() => setOrder(order.filter((x) => x !== id))}
