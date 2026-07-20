@@ -121,8 +121,9 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   const surface = surfaceOf(slide);
   const dark = surface !== "cream";
 
-  // Slides build beat by beat, matching the pacing the voiceover will
-  // carry. A slide the buyer has already seen renders fully revealed.
+  // Slides build beat by beat on a timer, matching the pacing the
+  // voiceover will carry. A slide the buyer has already seen renders
+  // fully revealed, and reduced-motion preferences skip the build.
   const totalSteps = stepsOf(slide);
   const [step, setStep] = useState(0);
   const seenRef = useRef(doc.progress.seenSlides);
@@ -130,8 +131,22 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   useEffect(() => {
     const current = module.slides[slideIndex - 1];
     const wasSeen = Boolean(seenRef.current[`${module.id}/${slideIndex}`]);
-    setStep(wasSeen && current ? stepsOf(current) : 0);
+    const reducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setStep(current && (wasSeen || reducedMotion) ? stepsOf(current) : 0);
   }, [ready, module, slideIndex]);
+
+  // The timer that reveals the next beat. Chained timeouts: a short
+  // settle before the first beat, a reading pace between the rest.
+  useEffect(() => {
+    if (step >= totalSteps) return;
+    const t = setTimeout(
+      () => setStep((s) => Math.min(totalSteps, s + 1)),
+      step === 0 ? 700 : 1900,
+    );
+    return () => clearTimeout(t);
+  }, [step, totalSteps, module.id, slideIndex]);
 
   // Record where the buyer is so the home page can offer to continue.
   // Reaching a module's final slide marks the module completed.
@@ -167,14 +182,15 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   const stepRef = useRef(step);
   stepRef.current = step;
 
+  // Next skips the remaining beats if any are still arriving;
+  // otherwise it moves to the next slide.
   const advance = useCallback(() => {
-    if (stepRef.current < totalSteps) setStep(stepRef.current + 1);
+    if (stepRef.current < totalSteps) setStep(totalSteps);
     else goTo(slideIndex + 1);
   }, [totalSteps, goTo, slideIndex]);
 
   const goBack = useCallback(() => {
-    if (stepRef.current > 0) setStep(stepRef.current - 1);
-    else goTo(slideIndex - 1);
+    goTo(slideIndex - 1);
   }, [goTo, slideIndex]);
 
   useEffect(() => {
@@ -252,7 +268,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       <AudioSlot audio={slide.audio} dark={dark} />
 
       <nav className="absolute bottom-[70px] right-[4.5vw] z-20 flex items-center gap-1">
-        {!isFirst || step > 0 ? (
+        {!isFirst ? (
           <button type="button" onClick={goBack} className={navButton}>
             Back
           </button>
