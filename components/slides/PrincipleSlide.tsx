@@ -10,7 +10,13 @@ export function PrincipleSlide({ slide }: { slide: PrincipleSlideDef }) {
             {slide.eyebrow}
           </div>
         ) : null}
-        <h1 className="mx-auto max-w-4xl font-serif text-4xl leading-snug md:text-5xl">
+        <h1
+          className={`mx-auto max-w-4xl ${
+            slide.sans
+              ? "text-4xl font-bold leading-tight tracking-tight md:text-5xl"
+              : "font-serif text-4xl leading-snug md:text-5xl"
+          }`}
+        >
           <Rich text={slide.headline} />
         </h1>
         <p className="mx-auto mt-8 max-w-3xl text-[16px] leading-relaxed text-on-dark-muted">

@@ -2,6 +2,8 @@ import { ModuleDef } from "./types";
 import { introSlides } from "./intro";
 import { module1Slides } from "./module1";
 import { module2Slides } from "./module2";
+import { module3Slides } from "./module3";
+import { module4Slides } from "./module4";
 
 /**
  * The course structure. All eight modules exist here from day one;
@@ -36,24 +38,26 @@ export const courseModules: ModuleDef[] = [
   },
   {
     id: "m3",
-    label: "Module 3 · Your website",
-    title: "Your website (or what to do until you have one).",
-    minutes: "40 min",
-    released: false,
-    slides: [],
+    label: "Module 3 · Get found",
+    title: "Get found.",
+    minutes: "25 min",
+    released: true,
+    requires: "m2",
+    slides: module3Slides,
   },
   {
     id: "m4",
-    label: "Module 4 · Getting found locally",
-    title: "Getting found locally.",
-    minutes: "35 min",
-    released: false,
-    slides: [],
+    label: "Module 4 · Earned proof",
+    title: "Earned proof.",
+    minutes: "20 min",
+    released: true,
+    requires: "m3",
+    slides: module4Slides,
   },
   {
     id: "m5",
-    label: "Module 5 · Trust and referrals",
-    title: "Trust and referrals.",
+    label: "Module 5 · Referral system",
+    title: "Referral system.",
     minutes: "35 min",
     released: false,
     slides: [],

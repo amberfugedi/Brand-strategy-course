@@ -144,12 +144,85 @@ export interface ExamplesSlide extends SlideBase {
   }[];
 }
 
-/** Near-black centered serif principle slide with hairline rules. */
+/** Near-black centered principle slide with hairline rules. The
+ *  Module 1 and 2 decks set the headline in serif; Module 3 onward
+ *  sets it in bold sans (sans: true). */
 export interface PrincipleSlide extends SlideBase {
   kind: "principle";
   eyebrow?: string;
   headline: string;
   sub: string;
+  sans?: boolean;
+}
+
+/** Plum section divider with a serif display heading (Module 3+). */
+export interface FrameSlide extends SlideBase {
+  kind: "frame";
+  eyebrow?: string;
+  heading: string;
+  sub?: string;
+}
+
+/** Grid of small cards: label, title, text. Lays out 3-2 for five,
+ *  2x2 for four, single row otherwise. */
+export interface CardsSlide extends SlideBase {
+  kind: "cards";
+  eyebrow: string;
+  heading: string;
+  intro?: string;
+  cards: { label: string; title: string; text: string }[];
+  footnote?: string;
+}
+
+/** Touchpoint or source detail: three labeled columns. */
+export interface DetailSlide extends SlideBase {
+  kind: "detail";
+  eyebrow: string;
+  heading: string;
+  cols: { label: string; text: string }[];
+}
+
+/** Weak versus strong comparison, two cards side by side. */
+export interface CompareSlide extends SlideBase {
+  kind: "compare";
+  eyebrow: string;
+  heading: string;
+  weak: { quote: string; text: string };
+  strong: { quote: string; text: string };
+}
+
+/** The five-businesses calibration table. */
+export interface TableSlide extends SlideBase {
+  kind: "table";
+  eyebrow: string;
+  heading: string;
+  leftLabel: string;
+  rightLabel: string;
+  rows: { name: string; meta: string; lead: string; text: string }[];
+}
+
+/** Module 3: the landscape map of the five touchpoint zones. */
+export interface MapSlide extends SlideBase {
+  kind: "map";
+  eyebrow: string;
+  heading: string;
+  intro: string;
+}
+
+/** Module 3 tool: mark and order the touchpoints that apply. */
+export interface TouchpointsSlide extends SlideBase {
+  kind: "touchpoints";
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
+}
+
+/** Module 4 tool: the proof inventory across the three sources. */
+export interface ProofInventorySlide extends SlideBase {
+  kind: "proofInventory";
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
 }
 
 /** Dark plum module-structure table. */
@@ -263,7 +336,15 @@ export type Slide =
   | AuditSlide
   | GapListSlide
   | StartingPointSlide
-  | PlanSlide;
+  | PlanSlide
+  | FrameSlide
+  | CardsSlide
+  | DetailSlide
+  | CompareSlide
+  | TableSlide
+  | MapSlide
+  | TouchpointsSlide
+  | ProofInventorySlide;
 
 export interface ModuleDef {
   id: string;

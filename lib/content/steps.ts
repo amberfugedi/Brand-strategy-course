@@ -30,6 +30,14 @@ export function stepsOf(slide: Slide): number {
       return (slide.quote ? 1 : 0) + slide.paragraphs.length;
     case "cardList":
       return 1;
+    case "cards":
+      return slide.cards.length + (slide.footnote ? 1 : 0);
+    case "detail":
+      return slide.cols.length;
+    case "compare":
+      return 2;
+    case "table":
+      return slide.rows.length;
     default:
       return 0;
   }

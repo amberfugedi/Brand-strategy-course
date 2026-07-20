@@ -52,7 +52,19 @@ export interface CourseDocument {
       /** Audit picks: foundation id -> dimension id -> state. */
       audit?: Record<string, Record<string, string>>;
     };
-    // m3..m7: mini-strategy inputs
+    m3?: {
+      /** Touchpoint ids that apply, in priority order; first is primary. */
+      touchpoints?: { order: string[] };
+    };
+    m4?: {
+      proof?: {
+        /** Source id -> current | stale | missing */
+        statuses?: Record<string, string>;
+        /** The one source to build first. */
+        buildFirst?: string;
+      };
+    };
+    // m5..m7: mini-strategy inputs
     // m8: plan
   };
 }

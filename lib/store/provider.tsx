@@ -145,6 +145,70 @@ export function useModule2() {
   };
 }
 
+/** Convenience accessor for Module 3 touchpoint priority. */
+export function useModule3() {
+  const { doc, update } = useCourseStore();
+  const order = doc.modules.m3?.touchpoints?.order ?? [];
+
+  const setOrder = useCallback(
+    (next: string[]) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m3: { ...d.modules.m3, touchpoints: { order: next } },
+        },
+      }));
+    },
+    [update],
+  );
+
+  return { order, setOrder };
+}
+
+/** Convenience accessor for Module 4 proof inventory. */
+export function useModule4() {
+  const { doc, update } = useCourseStore();
+  const proof = doc.modules.m4?.proof ?? {};
+
+  const setStatus = useCallback(
+    (sourceId: string, value: string) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m4: {
+            ...d.modules.m4,
+            proof: {
+              ...d.modules.m4?.proof,
+              statuses: { ...d.modules.m4?.proof?.statuses, [sourceId]: value },
+            },
+          },
+        },
+      }));
+    },
+    [update],
+  );
+
+  const setBuildFirst = useCallback(
+    (sourceId: string) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m4: {
+            ...d.modules.m4,
+            proof: { ...d.modules.m4?.proof, buildFirst: sourceId },
+          },
+        },
+      }));
+    },
+    [update],
+  );
+
+  return { proof, setStatus, setBuildFirst };
+}
+
 /** Convenience accessor for Module 1 positioning input. */
 export function usePositioning() {
   const { doc, update } = useCourseStore();

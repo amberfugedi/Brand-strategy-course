@@ -27,6 +27,14 @@ import { AuditSlide } from "@/components/slides/AuditSlide";
 import { GapListSlide } from "@/components/slides/GapListSlide";
 import { StartingPointSlide } from "@/components/slides/StartingPointSlide";
 import { PlanSlide } from "@/components/slides/PlanSlide";
+import { FrameSlide } from "@/components/slides/FrameSlide";
+import { CardsSlide } from "@/components/slides/CardsSlide";
+import { DetailSlide } from "@/components/slides/DetailSlide";
+import { CompareSlide } from "@/components/slides/CompareSlide";
+import { TableSlide } from "@/components/slides/TableSlide";
+import { MapSlide } from "@/components/slides/MapSlide";
+import { TouchpointsSlide } from "@/components/slides/TouchpointsSlide";
+import { ProofInventorySlide } from "@/components/slides/ProofInventorySlide";
 import { AudioSlot } from "./AudioSlot";
 import { useCourseStore } from "@/lib/store/provider";
 import { useAuth } from "@/lib/auth/provider";
@@ -39,7 +47,10 @@ function surfaceOf(slide: Slide): Surface {
   if (
     slide.kind === "question" ||
     slide.kind === "structure" ||
-    slide.kind === "startingPoint"
+    slide.kind === "startingPoint" ||
+    slide.kind === "frame" ||
+    slide.kind === "touchpoints" ||
+    slide.kind === "proofInventory"
   )
     return "plum";
   if (slide.kind === "principle") return "ink";
@@ -92,6 +103,22 @@ function SlideBody({ slide, revealed }: { slide: Slide; revealed: number }) {
       return <StartingPointSlide slide={slide} />;
     case "plan":
       return <PlanSlide slide={slide} />;
+    case "frame":
+      return <FrameSlide slide={slide} />;
+    case "cards":
+      return <CardsSlide slide={slide} revealed={revealed} />;
+    case "detail":
+      return <DetailSlide slide={slide} revealed={revealed} />;
+    case "compare":
+      return <CompareSlide slide={slide} revealed={revealed} />;
+    case "table":
+      return <TableSlide slide={slide} revealed={revealed} />;
+    case "map":
+      return <MapSlide slide={slide} />;
+    case "touchpoints":
+      return <TouchpointsSlide slide={slide} />;
+    case "proofInventory":
+      return <ProofInventorySlide slide={slide} />;
   }
 }
 
