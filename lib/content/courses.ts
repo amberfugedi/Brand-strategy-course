@@ -13,6 +13,12 @@ export interface CourseDef {
   tagline: string;
   summary: string;
   released: boolean;
+  /** Library section this course lists under. */
+  audience: string;
+  /** The single serif word on the generated cover art. */
+  coverWord: string;
+  /** Short chips shown on the library card. */
+  chips: string[];
   meta: { label: string; value: string }[];
   modules: ModuleDef[];
 }
@@ -26,12 +32,28 @@ export const courses: CourseDef[] = [
     summary:
       "Three layers. Seven foundations. One strategic plan that's *actually yours*.",
     released: true,
+    audience: "For service business owners",
+    coverWord: "Foundation.",
+    chips: ["Interactive", "8 modules", "About 4 hours"],
     meta: [
       { label: "Length", value: "About 4 hours, self-paced" },
       { label: "Output", value: "Your Marketing Foundation Map" },
       { label: "Format", value: "Guided, interactive, saved as you go" },
     ],
     modules: courseModules,
+  },
+];
+
+/** Library sections, in display order. Courses group by audience;
+ *  sections listed here appear even before their courses exist. */
+export const librarySections: { audience: string; note: string }[] = [
+  {
+    audience: "For service business owners",
+    note: "Established businesses with paying clients and no marketing foundation yet.",
+  },
+  {
+    audience: "For people getting into marketing",
+    note: "Marketing majors and career changers building entry-level fundamentals.",
   },
 ];
 
