@@ -60,6 +60,9 @@ export interface SystemSlide extends SlideBase {
     sub: string;
     items: { num: string; text: string }[];
   }[];
+  /** The foundation beneath the layers: positioning, rendered as a
+   *  full-width base row under the three columns. */
+  base?: { label: string; text: string };
 }
 
 /** Heading + prose + a single bordered card with a list (intro slide iii). */

@@ -43,6 +43,7 @@ import { FoundationPlanSlide } from "@/components/slides/FoundationPlanSlide";
 import { AudioSlot } from "./AudioSlot";
 import { useCourseStore } from "@/lib/store/provider";
 import { useAuth } from "@/lib/auth/provider";
+import { useNarration } from "@/components/player/NarrationProvider";
 import { SignInGate } from "@/components/auth/SignInGate";
 import { stepsOf } from "@/lib/content/steps";
 import { slideComplete } from "@/lib/content/completion";
@@ -152,6 +153,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   const router = useRouter();
   const { doc, update, ready } = useCourseStore();
   const auth = useAuth();
+  const narration = useNarration();
   // Modules unlock in sequence: a module with a prerequisite stays
   // locked until that module is completed.
   const lockedByPrereq = Boolean(
@@ -354,16 +356,32 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
     </>
   );
 
-  const note =
-    nudged && !inputComplete ? (
-      <span
-        className={`min-w-0 truncate font-serif text-[12.5px] italic ${
-          dark ? "text-on-dark-muted" : "text-body-secondary"
-        }`}
-      >
-        Finish this step to continue.
-      </span>
-    ) : null;
+  const note = (
+    <>
+      {narration.available ? (
+        <button
+          type="button"
+          onClick={narration.toggle}
+          className={`-my-3 shrink-0 whitespace-nowrap px-2 py-3 text-[11px] font-bold uppercase tracking-chrome transition-colors ${
+            dark
+              ? "text-gold hover:text-cream"
+              : "text-aubergine hover:text-gold"
+          }`}
+        >
+          {narration.playing ? "❚❚ Pause" : "▶ Listen"}
+        </button>
+      ) : null}
+      {nudged && !inputComplete ? (
+        <span
+          className={`min-w-0 truncate font-serif text-[12.5px] italic ${
+            dark ? "text-on-dark-muted" : "text-body-secondary"
+          }`}
+        >
+          Finish this step to continue.
+        </span>
+      ) : null}
+    </>
+  );
 
   return (
     <div className="relative">

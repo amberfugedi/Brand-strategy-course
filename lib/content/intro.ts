@@ -1,9 +1,10 @@
 import { Slide } from "./types";
 
 /**
- * Course intro, five slides. Copy is taken verbatim from the produced
- * deck (PDF pages i to v). The scripts' voiceover lands here in the
- * audio pass; each slide's audio.src is the insertion point.
+ * Course intro, five slides. Copy matches the final course structure
+ * and the recorded intro narration (public/audio/course-intro.mp3),
+ * which plays across the module via the narration player. Per-slide
+ * audio.src slots remain for a later per-slide pass.
  */
 export const introSlides: Slide[] = [
   {
@@ -16,11 +17,11 @@ export const introSlides: Slide[] = [
     surface: "cream",
     eyebrow: "Build your marketing foundation",
     heading: "A working marketing foundation, in one *place*.",
-    sub: "Three layers. Seven foundations. One strategic plan that's *actually yours*.",
+    sub: "Three layers. Seven foundations. Eight modules. One plan that's *actually yours*.",
     meta: [
-      { label: "Length", value: "About 4 hours, self-paced" },
+      { label: "Length", value: "About 3 hours, self-paced" },
       { label: "Output", value: "Your Marketing Foundation *Map*" },
-      { label: "Modules", value: "7 modules + course intro" },
+      { label: "Modules", value: "8 modules + course intro" },
     ],
   },
   {
@@ -37,17 +38,14 @@ export const introSlides: Slide[] = [
         label: "Layer 01 · Get found",
         accent: "teal",
         sub: "So people who need you can *discover* you.",
-        items: [
-          { num: "01", text: "Local *Presence*" },
-          { num: "02", text: "Online *Presence*" },
-        ],
+        items: [{ num: "02", text: "Get *Found*" }],
       },
       {
         label: "Layer 02 · Get chosen",
         accent: "rust",
         sub: "So they pick *you* over alternatives.",
         items: [
-          { num: "03", text: "Reviews and Social *Proof*" },
+          { num: "03", text: "Earned *Proof*" },
           { num: "04", text: "Referral *System*" },
         ],
       },
@@ -62,6 +60,10 @@ export const introSlides: Slide[] = [
         ],
       },
     ],
+    base: {
+      label: "Foundation 01 · Positioning",
+      text: "Where the course starts. The working statement all three layers are *built around*.",
+    },
   },
   {
     kind: "cardList",
@@ -73,15 +75,15 @@ export const introSlides: Slide[] = [
     eyebrow: "Your working document",
     heading: "The Marketing Foundation *Map*.",
     intro:
-      "A browser-based tool that holds your work across every module of this course. You'll start using it at the end of Module 1, when you have a positioning statement to save.",
+      "Your working document, built into the course itself. When it's time to do the work, the tool is right there on the slide. Nothing to open, nothing to manage.",
     card: {
       title: "Marketing Foundation *Map*",
-      subtitle: "Used throughout the course. Saves your work as you go.",
+      subtitle: "Saves automatically as you go.",
       items: [
-        "*Module 1*: save your positioning statement",
-        "*Module 2*: run your diagnostic and audit",
-        "*Modules 3 to 7*: build your foundation strategies",
-        "*The Plan tab*: compiles everything into one document you can save and reference",
+        "*Module 1*: your positioning statement",
+        "*Module 2*: your diagnostic and audit results",
+        "*Modules 3 to 8*: the strategy you mark in each foundation module",
+        "*Module 8*: the Foundation Plan gathers everything. First, next, later.",
       ],
     },
   },
@@ -92,24 +94,24 @@ export const introSlides: Slide[] = [
     tag: "04 OF 05",
     number: "iv",
     audio: { src: null },
-    eyebrow: "What you'll do across the course",
+    eyebrow: "What you'll do across the eight modules",
     heading: "The *arc*.",
     rows: [
       {
         label: "Module 01",
-        text: "*Positioning*. Three questions, one working statement.",
+        text: "*Positioning*. Three questions, one working statement. Twenty-five minutes.",
       },
       {
         label: "Module 02",
-        text: "*Diagnostic and audit*. Six questions, then an audit. Output: a priority order and a starting point for your build.",
+        text: "*The foundation audit*. Six questions, then the audit itself. Output: a priority order, a gap list, and a starting point for your build.",
       },
       {
-        label: "Modules 03 to 07",
-        text: "*The foundations*. The seven foundations every service business needs. Concepts to understand. You take all five.",
+        label: "Modules 03 to 08",
+        text: "*The foundations*. Each module goes deep on one: getting found, earned proof, referrals, awareness, owned audience, authority. You take all six.",
       },
       {
         label: "Module 08",
-        text: "*Your foundation plan*. Returns to your audit with full understanding. What to build first, second, third.",
+        text: "*The close*. Module 8 also assembles your Foundation Plan: the seven foundations, sequenced to the hours you actually have.",
       },
     ],
   },
@@ -126,7 +128,7 @@ export const introSlides: Slide[] = [
       "Everything that follows in this course depends on having a clear positioning statement.",
     paragraphs: [
       "The diagnostic uses it. The audit references it. The foundation modules are *built around* it.",
-      "Don't skip ahead. Don't skim Module 1. Take the hour, do the work, and meet me there.",
+      "Don't skip ahead. Don't skim Module 1. Take the twenty-five minutes, do the work, and meet me there.",
     ],
   },
 ];

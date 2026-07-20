@@ -58,6 +58,20 @@ export function SystemSlide({
           </div>
         ))}
       </div>
+
+      {slide.base && revealed > slide.layers.length ? (
+        <div className="beat mt-6">
+          <div className="h-[3px] w-full bg-gold" />
+          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 bg-cream-light px-6 py-4">
+            <span className="text-[11px] font-bold uppercase tracking-eyebrow text-gold">
+              {slide.base.label}
+            </span>
+            <span className="text-[15px] text-body">
+              <Rich text={slide.base.text} />
+            </span>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
