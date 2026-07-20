@@ -17,11 +17,11 @@ export function RowsSlide({
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="mt-10 space-y-3">
+      <div className="mt-8 space-y-2.5">
         {slide.rows.slice(0, revealed).map((row) => (
           <div
             key={row.label}
-            className="beat grid grid-cols-1 gap-2 border-l-[3px] border-ink/60 bg-cream-light px-7 py-5 md:grid-cols-[180px_1fr] md:gap-8"
+            className="beat grid grid-cols-1 gap-2 border-l-[3px] border-ink/60 bg-cream-light px-7 py-4 md:grid-cols-[180px_1fr] md:gap-8"
           >
             <div className="pt-0.5 text-[11px] font-bold uppercase tracking-eyebrow text-body-secondary">
               {row.label}

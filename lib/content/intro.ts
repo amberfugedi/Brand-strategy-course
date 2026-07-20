@@ -111,7 +111,7 @@ export const introSlides: Slide[] = [
       },
       {
         label: "Module 08",
-        text: "*The close*. Module 8 also assembles your Foundation Plan: the seven foundations, sequenced to the hours you actually have.",
+        text: "*Double work*. After teaching the last foundation, Module 8 closes the course: your Foundation Plan, the seven foundations sequenced to the hours you actually have.",
       },
     ],
   },
