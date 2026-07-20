@@ -283,6 +283,7 @@ export const module3Slides: Slide[] = [
     eyebrow: "For local businesses · skip if this isn't you",
     heading: "If your buyers are *local*.",
     sub: "The next three slides are for businesses whose clients are nearby: a service area, a city, a neighborhood. If you work remotely or sell nationally, skip ahead to the calibration section.",
+    skip: { label: "My buyers aren't local. Skip ahead", to: 17 },
   },
 
   // 14 · The four local jobs

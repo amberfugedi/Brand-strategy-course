@@ -161,6 +161,9 @@ export interface FrameSlide extends SlideBase {
   eyebrow?: string;
   heading: string;
   sub?: string;
+  /** An optional branch for buyers the coming section doesn't apply
+   *  to: a quiet button that jumps to the given slide number. */
+  skip?: { label: string; to: number };
 }
 
 /** Grid of small cards: label, title, text. Lays out 3-2 for five,
