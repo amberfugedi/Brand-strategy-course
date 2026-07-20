@@ -359,17 +359,31 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   const note = (
     <>
       {narration.available ? (
-        <button
-          type="button"
-          onClick={narration.toggle}
-          className={`-my-3 shrink-0 whitespace-nowrap px-2 py-3 text-[11px] font-bold uppercase tracking-chrome transition-colors ${
-            dark
-              ? "text-gold hover:text-cream"
-              : "text-aubergine hover:text-gold"
-          }`}
-        >
-          {narration.playing ? "❚❚ Pause" : "▶ Listen"}
-        </button>
+        <>
+          <button
+            type="button"
+            onClick={narration.toggle}
+            className={`-my-3 shrink-0 whitespace-nowrap px-2 py-3 text-[11px] font-bold uppercase tracking-chrome transition-colors ${
+              dark
+                ? "text-gold hover:text-cream"
+                : "text-aubergine hover:text-gold"
+            }`}
+          >
+            {narration.playing ? "❚❚ Pause" : "▶ Listen"}
+          </button>
+          <button
+            type="button"
+            onClick={narration.cycleRate}
+            aria-label="Narration speed"
+            className={`-my-3 shrink-0 whitespace-nowrap px-2 py-3 text-[11px] font-bold tracking-chrome transition-colors ${
+              dark
+                ? "text-on-dark-muted hover:text-gold"
+                : "text-body-tertiary hover:text-aubergine"
+            }`}
+          >
+            {narration.rate}×
+          </button>
+        </>
       ) : null}
       {nudged && !inputComplete ? (
         <span
