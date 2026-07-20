@@ -45,9 +45,16 @@ function PersonaCard({
   );
 }
 
-export function ExamplesSlide({ slide }: { slide: ExamplesSlideDef }) {
-  const top = slide.personas.slice(0, 3);
-  const bottom = slide.personas.slice(3);
+export function ExamplesSlide({
+  slide,
+  revealed = Infinity,
+}: {
+  slide: ExamplesSlideDef;
+  revealed?: number;
+}) {
+  const shown = slide.personas.slice(0, revealed);
+  const top = shown.slice(0, 3);
+  const bottom = shown.slice(3);
   return (
     <div className="mt-2 flex flex-1 flex-col">
       <div className="mb-3 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">
@@ -59,12 +66,16 @@ export function ExamplesSlide({ slide }: { slide: ExamplesSlideDef }) {
 
       <div className="mt-7 grid gap-5 md:grid-cols-3">
         {top.map((p) => (
-          <PersonaCard key={p.name} persona={p} />
+          <div key={p.name} className="beat">
+            <PersonaCard persona={p} />
+          </div>
         ))}
       </div>
       <div className="mt-5 grid gap-5 md:mx-auto md:w-2/3 md:grid-cols-2">
         {bottom.map((p) => (
-          <PersonaCard key={p.name} persona={p} />
+          <div key={p.name} className="beat">
+            <PersonaCard persona={p} />
+          </div>
         ))}
       </div>
     </div>

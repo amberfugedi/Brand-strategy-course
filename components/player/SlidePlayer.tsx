@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ModuleDef, Slide, Surface } from "@/lib/content/types";
@@ -31,6 +31,7 @@ import { AudioSlot } from "./AudioSlot";
 import { useCourseStore } from "@/lib/store/provider";
 import { useAuth } from "@/lib/auth/provider";
 import { SignInGate } from "@/components/auth/SignInGate";
+import { stepsOf } from "@/lib/content/steps";
 
 function surfaceOf(slide: Slide): Surface {
   if (slide.kind === "hero") return slide.surface;
@@ -45,38 +46,38 @@ function surfaceOf(slide: Slide): Surface {
   return "cream";
 }
 
-function SlideBody({ slide }: { slide: Slide }) {
+function SlideBody({ slide, revealed }: { slide: Slide; revealed: number }) {
   switch (slide.kind) {
     case "hero":
       return <HeroSlide slide={slide} />;
     case "system":
-      return <SystemSlide slide={slide} />;
+      return <SystemSlide slide={slide} revealed={revealed} />;
     case "cardList":
-      return <CardListSlide slide={slide} />;
+      return <CardListSlide slide={slide} revealed={revealed} />;
     case "rows":
-      return <RowsSlide slide={slide} />;
+      return <RowsSlide slide={slide} revealed={revealed} />;
     case "prose":
-      return <ProseSlide slide={slide} />;
+      return <ProseSlide slide={slide} revealed={revealed} />;
     case "question":
-      return <QuestionSlide slide={slide} />;
+      return <QuestionSlide slide={slide} revealed={revealed} />;
     case "framework":
-      return <FrameworkSlide slide={slide} />;
+      return <FrameworkSlide slide={slide} revealed={revealed} />;
     case "patterns":
-      return <PatternsSlide slide={slide} />;
+      return <PatternsSlide slide={slide} revealed={revealed} />;
     case "columns":
-      return <ColumnsSlide slide={slide} />;
+      return <ColumnsSlide slide={slide} revealed={revealed} />;
     case "examples":
-      return <ExamplesSlide slide={slide} />;
+      return <ExamplesSlide slide={slide} revealed={revealed} />;
     case "principle":
       return <PrincipleSlide slide={slide} />;
     case "structure":
-      return <StructureSlide slide={slide} />;
+      return <StructureSlide slide={slide} revealed={revealed} />;
     case "exercise":
       return <ExerciseSlide slide={slide} />;
     case "synthesis":
       return <SynthesisSlide slide={slide} />;
     case "statements":
-      return <StatementsSlide slide={slide} />;
+      return <StatementsSlide slide={slide} revealed={revealed} />;
     case "summary":
       return <SummarySlide slide={slide} />;
     case "diagnostic":
@@ -120,6 +121,18 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   const surface = surfaceOf(slide);
   const dark = surface !== "cream";
 
+  // Slides build beat by beat, matching the pacing the voiceover will
+  // carry. A slide the buyer has already seen renders fully revealed.
+  const totalSteps = stepsOf(slide);
+  const [step, setStep] = useState(0);
+  const seenRef = useRef(doc.progress.seenSlides);
+  seenRef.current = doc.progress.seenSlides;
+  useEffect(() => {
+    const current = module.slides[slideIndex - 1];
+    const wasSeen = Boolean(seenRef.current[`${module.id}/${slideIndex}`]);
+    setStep(wasSeen && current ? stepsOf(current) : 0);
+  }, [ready, module, slideIndex]);
+
   // Record where the buyer is so the home page can offer to continue.
   // Reaching a module's final slide marks the module completed.
   useEffect(() => {
@@ -151,16 +164,33 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
     [courseId, module.id, module.slides.length, router],
   );
 
+  const stepRef = useRef(step);
+  stepRef.current = step;
+
+  const advance = useCallback(() => {
+    if (stepRef.current < totalSteps) setStep(stepRef.current + 1);
+    else goTo(slideIndex + 1);
+  }, [totalSteps, goTo, slideIndex]);
+
+  const goBack = useCallback(() => {
+    if (stepRef.current > 0) setStep(stepRef.current - 1);
+    else goTo(slideIndex - 1);
+  }, [goTo, slideIndex]);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
-      if (target && ["TEXTAREA", "INPUT"].includes(target.tagName)) return;
-      if (e.key === "ArrowRight") goTo(slideIndex + 1);
-      if (e.key === "ArrowLeft") goTo(slideIndex - 1);
+      if (target && ["TEXTAREA", "INPUT", "BUTTON", "SELECT"].includes(target.tagName))
+        return;
+      if (e.key === "ArrowRight" || e.key === " ") {
+        e.preventDefault();
+        advance();
+      }
+      if (e.key === "ArrowLeft") goBack();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [goTo, slideIndex]);
+  }, [advance, goBack]);
 
   if (!slide) return null;
 
@@ -199,29 +229,38 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       : "text-body-tertiary hover:text-aubergine"
   }`;
 
+  const progress =
+    ((slideIndex - 1 + (totalSteps > 0 ? step / totalSteps : 1)) /
+      module.slides.length) *
+    100;
+
   return (
     <div className="relative">
+      <div
+        className="fixed left-0 top-0 z-30 h-[2px] bg-gold/70 transition-[width] duration-300"
+        style={{ width: `${progress}%` }}
+      />
       <SlideChrome
         surface={surface}
         crumb={slide.crumb}
         tag={slide.tag}
         number={slide.number}
       >
-        <SlideBody slide={slide} />
+        <SlideBody slide={slide} revealed={step} />
       </SlideChrome>
 
       <AudioSlot audio={slide.audio} dark={dark} />
 
       <nav className="absolute bottom-[70px] right-[4.5vw] z-20 flex items-center gap-1">
-        {!isFirst ? (
-          <button type="button" onClick={() => goTo(slideIndex - 1)} className={navButton}>
+        {!isFirst || step > 0 ? (
+          <button type="button" onClick={goBack} className={navButton}>
             Back
           </button>
         ) : null}
-        {!isLast ? (
+        {!isLast || step < totalSteps ? (
           <button
             type="button"
-            onClick={() => goTo(slideIndex + 1)}
+            onClick={advance}
             className={`${navButton} ${dark ? "text-gold" : "text-aubergine"}`}
           >
             Next

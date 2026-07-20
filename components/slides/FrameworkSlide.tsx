@@ -1,7 +1,13 @@
 import { FrameworkSlide as FrameworkSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
 
-export function FrameworkSlide({ slide }: { slide: FrameworkSlideDef }) {
+export function FrameworkSlide({
+  slide,
+  revealed = Infinity,
+}: {
+  slide: FrameworkSlideDef;
+  revealed?: number;
+}) {
   return (
     <div className="mt-4 flex flex-1 flex-col">
       <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-teal">
@@ -18,15 +24,15 @@ export function FrameworkSlide({ slide }: { slide: FrameworkSlideDef }) {
       ) : null}
 
       <div className="mt-8 max-w-4xl space-y-4">
-        {slide.paragraphs.map((p, i) => (
-          <p key={i} className="text-[17px] leading-relaxed">
+        {slide.paragraphs.slice(0, revealed).map((p, i) => (
+          <p key={i} className="beat text-[17px] leading-relaxed">
             <Rich text={p} />
           </p>
         ))}
       </div>
 
-      {slide.callout ? (
-        <div className="mt-9 max-w-4xl border-l-[3px] border-teal bg-cream-light px-8 py-6">
+      {slide.callout && revealed > slide.paragraphs.length ? (
+        <div className="beat mt-9 max-w-4xl border-l-[3px] border-teal bg-cream-light px-8 py-6">
           <p className="text-[16px] leading-relaxed">
             <Rich text={slide.callout} />
           </p>

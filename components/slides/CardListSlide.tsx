@@ -1,7 +1,13 @@
 import { CardListSlide as CardListSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
 
-export function CardListSlide({ slide }: { slide: CardListSlideDef }) {
+export function CardListSlide({
+  slide,
+  revealed = Infinity,
+}: {
+  slide: CardListSlideDef;
+  revealed?: number;
+}) {
   return (
     <div className="mt-4 flex flex-1 flex-col">
       <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-gold">
@@ -17,7 +23,8 @@ export function CardListSlide({ slide }: { slide: CardListSlideDef }) {
         </p>
       ) : null}
 
-      <div className="mt-9 max-w-2xl border-l-[3px] border-gold bg-cream-light px-9 py-8">
+      {revealed < 1 ? null : (
+      <div className="beat mt-9 max-w-2xl border-l-[3px] border-gold bg-cream-light px-9 py-8">
         <h2 className="text-2xl font-bold tracking-tight">
           <Rich text={slide.card.title} />
         </h2>
@@ -35,6 +42,7 @@ export function CardListSlide({ slide }: { slide: CardListSlideDef }) {
           ))}
         </ul>
       </div>
+      )}
     </div>
   );
 }

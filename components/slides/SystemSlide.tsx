@@ -13,7 +13,13 @@ const accentLabel = {
   olive: "text-olive",
 } as const;
 
-export function SystemSlide({ slide }: { slide: SystemSlideDef }) {
+export function SystemSlide({
+  slide,
+  revealed = Infinity,
+}: {
+  slide: SystemSlideDef;
+  revealed?: number;
+}) {
   return (
     <div className="mt-4 flex flex-1 flex-col">
       <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-gold">
@@ -24,8 +30,8 @@ export function SystemSlide({ slide }: { slide: SystemSlideDef }) {
       </h1>
 
       <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {slide.layers.map((layer) => (
-          <div key={layer.label}>
+        {slide.layers.slice(0, revealed).map((layer) => (
+          <div key={layer.label} className="beat">
             <div className={`h-[3px] w-full ${accentBar[layer.accent]}`} />
             <div className="bg-cream-light px-6 py-6">
               <div

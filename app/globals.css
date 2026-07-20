@@ -18,6 +18,22 @@
   color: theme("colors.gold.DEFAULT");
 }
 
+/* Slide beats rise in as they reveal. */
+.beat {
+  animation: beatIn 0.4s ease-out both;
+}
+
+@keyframes beatIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* The soft radial glow on plum module-title slides, upper right. */
 .plum-glow::before {
   content: "";
