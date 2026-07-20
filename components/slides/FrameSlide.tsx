@@ -9,7 +9,7 @@ export function FrameSlide({ slide }: { slide: FrameSlideDef }) {
           {slide.eyebrow}
         </div>
       ) : null}
-      <h1 className="max-w-4xl font-serif text-5xl leading-tight md:text-6xl">
+      <h1 className="max-w-4xl text-balance font-serif text-5xl leading-tight md:text-6xl">
         <Rich text={slide.heading} />
       </h1>
       {slide.sub ? (

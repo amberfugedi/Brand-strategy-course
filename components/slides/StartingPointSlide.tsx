@@ -32,7 +32,7 @@ export function StartingPointSlide({
       {slide.lines.map((line, i) => (
         <h1
           key={i}
-          className="text-4xl font-normal leading-snug tracking-tight md:text-5xl"
+          className="max-w-3xl text-balance text-4xl font-normal leading-snug tracking-tight md:text-5xl"
         >
           <Rich text={line} />
         </h1>

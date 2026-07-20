@@ -11,7 +11,7 @@ export function PrincipleSlide({ slide }: { slide: PrincipleSlideDef }) {
           </div>
         ) : null}
         <h1
-          className={`mx-auto max-w-4xl ${
+          className={`mx-auto max-w-4xl text-balance ${
             slide.sans
               ? "text-4xl font-bold leading-tight tracking-tight md:text-5xl"
               : "font-serif text-4xl leading-snug md:text-5xl"

@@ -52,7 +52,7 @@ export function SlideChrome({
         <span className="flex items-center gap-3">
           {homeHref ? (
             <>
-              <Link href={homeHref} className={homeLink}>
+              <Link href={homeHref} className={`whitespace-nowrap ${homeLink}`}>
                 ← All modules
               </Link>
               {crumb ? (
@@ -62,9 +62,9 @@ export function SlideChrome({
               ) : null}
             </>
           ) : null}
-          <span>{crumb}</span>
+          <span className="whitespace-nowrap">{crumb}</span>
         </span>
-        <span>{tag}</span>
+        <span className="hidden whitespace-nowrap sm:inline">{tag}</span>
       </header>
 
       <main className="relative z-10 flex flex-1 flex-col px-[7.5vw] py-8">

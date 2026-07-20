@@ -17,7 +17,7 @@ export function QuestionSlide({
         {slide.lines.slice(0, revealed).map((line, i) => (
           <h1
             key={i}
-            className="beat text-4xl font-normal leading-snug tracking-tight md:text-5xl"
+            className="beat max-w-3xl text-balance text-4xl font-normal leading-snug tracking-tight md:text-5xl"
           >
             <Rich text={line} />
           </h1>

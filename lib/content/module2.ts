@@ -79,8 +79,7 @@ export const module2Slides: Slide[] = [
     tag: "DIAGNOSTIC",
     number: "04",
     audio: { src: null },
-    pre: "Six questions about",
-    lines: ["your *business*."],
+    lines: ["Six questions about your *business*."],
     post: "What's structurally true.",
   },
 
@@ -189,8 +188,7 @@ export const module2Slides: Slide[] = [
     tag: "READING",
     number: "11",
     audio: { src: null },
-    pre: "Read your priority",
-    lines: ["*order*."],
+    lines: ["Read your priority *order*."],
     post: "Before the audit.",
   },
 
@@ -278,8 +276,7 @@ export const module2Slides: Slide[] = [
     tag: "AUDIT",
     number: "17",
     audio: { src: null },
-    pre: "Run your",
-    lines: ["*audit*."],
+    lines: ["Run your *audit*."],
     post: "The central work of the module.",
   },
 
@@ -370,8 +367,7 @@ export const module2Slides: Slide[] = [
     tag: "READING",
     number: "23",
     audio: { src: null },
-    pre: "Read your",
-    lines: ["Gap *List*."],
+    lines: ["Read your Gap *List*."],
     post: "Three tiers, sorted by priority.",
   },
 
@@ -442,8 +438,7 @@ export const module2Slides: Slide[] = [
     tag: "OUTPUT",
     number: "28",
     audio: { src: null },
-    pre: "Your starting",
-    lines: ["*point*."],
+    lines: ["Your starting *point*."],
     post: "The actionable output of Module 2.",
   },
 
