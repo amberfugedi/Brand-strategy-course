@@ -45,6 +45,7 @@ import { useCourseStore } from "@/lib/store/provider";
 import { useAuth } from "@/lib/auth/provider";
 import { SignInGate } from "@/components/auth/SignInGate";
 import { stepsOf } from "@/lib/content/steps";
+import { slideComplete } from "@/lib/content/completion";
 
 function surfaceOf(slide: Slide): Surface {
   if (slide.kind === "hero") return slide.surface;
@@ -172,6 +173,11 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // fully revealed, and reduced-motion preferences skip the build.
   const totalSteps = stepsOf(slide);
   const [step, setStep] = useState(0);
+  // Interactive slides hold Next until their inputs are filled in, so
+  // a buyer cannot finish a module with an empty plan. The note only
+  // appears once they try to move on.
+  const inputComplete = slideComplete(slide, doc);
+  const [nudged, setNudged] = useState(false);
   const seenRef = useRef(doc.progress.seenSlides);
   seenRef.current = doc.progress.seenSlides;
   useEffect(() => {
@@ -181,6 +187,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     setStep(current && (wasSeen || reducedMotion) ? stepsOf(current) : 0);
+    setNudged(false);
   }, [ready, module, slideIndex]);
 
   // The timer that reveals the next beat. Chained timeouts: a short
@@ -195,25 +202,32 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   }, [step, totalSteps, module.id, slideIndex]);
 
   // Record where the buyer is so the home page can offer to continue.
-  // Reaching a module's final slide marks the module completed.
+  // Reaching a module's final slide marks the module completed, but
+  // only once every interactive slide in it is filled in, so jumping
+  // ahead by URL earns no credit.
   useEffect(() => {
     if (!ready || lockedByPrereq) return;
     const reachedEnd = slideIndex >= module.slides.length;
-    update((d) => ({
-      ...d,
-      progress: {
-        ...d.progress,
-        lastLocation: { moduleId: module.id, slideIndex },
-        seenSlides: {
-          ...d.progress.seenSlides,
-          [`${module.id}/${slideIndex}`]: true,
+    update((d) => {
+      const toolsDone = module.slides.every((s) => slideComplete(s, d));
+      return {
+        ...d,
+        progress: {
+          ...d.progress,
+          lastLocation: { moduleId: module.id, slideIndex },
+          seenSlides: {
+            ...d.progress.seenSlides,
+            [`${module.id}/${slideIndex}`]: true,
+          },
+          completedModules:
+            reachedEnd &&
+            toolsDone &&
+            !d.progress.completedModules.includes(module.id)
+              ? [...d.progress.completedModules, module.id]
+              : d.progress.completedModules,
         },
-        completedModules:
-          reachedEnd && !d.progress.completedModules.includes(module.id)
-            ? [...d.progress.completedModules, module.id]
-            : d.progress.completedModules,
-      },
-    }));
+      };
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ready, module.id, slideIndex]);
 
@@ -229,9 +243,13 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   stepRef.current = step;
 
   // Next skips the remaining beats if any are still arriving;
-  // otherwise it moves to the next slide.
+  // otherwise it moves to the next slide, once the slide's inputs
+  // (if it has any) are filled in.
+  const inputCompleteRef = useRef(inputComplete);
+  inputCompleteRef.current = inputComplete;
   const advance = useCallback(() => {
     if (stepRef.current < totalSteps) setStep(totalSteps);
+    else if (!inputCompleteRef.current) setNudged(true);
     else goTo(slideIndex + 1);
   }, [totalSteps, goTo, slideIndex]);
 
@@ -314,6 +332,15 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       <AudioSlot audio={slide.audio} dark={dark} />
 
       <nav className="absolute bottom-[70px] right-[4.5vw] z-20 flex items-center gap-1">
+        {nudged && !inputComplete ? (
+          <span
+            className={`mr-2 font-serif text-[13px] italic ${
+              dark ? "text-on-dark-muted" : "text-body-secondary"
+            }`}
+          >
+            Finish this step to continue.
+          </span>
+        ) : null}
         {!isFirst ? (
           <button type="button" onClick={goBack} className={navButton}>
             Back
@@ -323,7 +350,15 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
           <button
             type="button"
             onClick={advance}
-            className={`${navButton} ${dark ? "text-gold" : "text-aubergine"}`}
+            className={`${navButton} ${
+              !inputComplete && step >= totalSteps
+                ? dark
+                  ? "text-on-dark-muted"
+                  : "text-body-tertiary"
+                : dark
+                  ? "text-gold"
+                  : "text-aubergine"
+            }`}
           >
             Next
           </button>
