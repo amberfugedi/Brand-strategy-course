@@ -267,10 +267,11 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
         advance();
       }
       if (e.key === "ArrowLeft") goBack();
+      if (e.key === "Escape") router.push(`/${courseId}`);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [advance, goBack]);
+  }, [advance, goBack, router, courseId]);
 
   if (!slide) return null;
 
@@ -325,6 +326,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
         crumb={slide.crumb}
         tag={slide.tag}
         number={slide.number}
+        homeHref={`/${courseId}`}
       >
         <SlideBody slide={slide} revealed={step} />
       </SlideChrome>
