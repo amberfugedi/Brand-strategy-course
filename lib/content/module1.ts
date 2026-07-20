@@ -224,7 +224,7 @@ export const module1Slides: Slide[] = [
         role: "therapist",
         meta: "Solo private practice",
         quote:
-          "\"High-functioning professionals — typically 30s to 50s, in demanding careers — who are managing chronic anxiety and want a therapist who treats them as competent adults rather than fragile.\"",
+          "\"High-functioning professionals, typically 30s to 50s in demanding careers, who are managing chronic anxiety and want a therapist who treats them as competent adults rather than fragile.\"",
         note: "Situation, context, and the *problem under the problem*: they want to be treated as capable.",
       },
       {
@@ -241,7 +241,7 @@ export const module1Slides: Slide[] = [
         meta: "18-25 weddings/year",
         quote:
           "\"Couples planning weddings in the four-to-eight-thousand-dollar photography range, who want a documentary style and have already decided their wedding doesn't need to be picture-perfect to be worth photographing.\"",
-        note: "Specific budget tier. Style preference. *A values position* — they self-select.",
+        note: "Specific budget tier. Style preference. *A values position*: they self-select.",
       },
       {
         name: "James,",
@@ -405,28 +405,28 @@ export const module1Slides: Slide[] = [
         name: "Marcus",
         role: "pressure washer",
         quote:
-          "\"Cleaning exterior surfaces — siding, driveways, decks, fences — using commercial-grade equipment in a single visit, four to six hours on-site. The client walks out the next morning to a property that looks five years younger.\"",
+          "\"Cleaning exterior surfaces (siding, driveways, decks, fences) using commercial-grade equipment in a single visit, four to six hours on-site. The client walks out the next morning to a property that looks five years younger.\"",
         note: "Action specific. Output same-day. Change *visible and immediate*.",
       },
       {
         name: "Lena",
         role: "photographer",
         quote:
-          "\"Documenting wedding days from morning preparation through reception, in candid documentary style with minimal posing. Clients receive a complete edited gallery within six weeks — typically four to six hundred images.\"",
+          "\"Documenting wedding days from morning preparation through reception, in candid documentary style with minimal posing. Clients receive a complete edited gallery within six weeks, typically four to six hundred images.\"",
         note: "The change: *the wedding's actual story, preserved*.",
       },
       {
         name: "James",
         role: "chiropractor",
         quote:
-          "\"Assessing the source of the injury or pain in the first visit, then designing a treatment plan with a defined endpoint — usually six to twelve sessions. Patients leave with reduced pain and the strength to keep it from coming back.\"",
+          "\"Assessing the source of the injury or pain in the first visit, then designing a treatment plan with a defined endpoint, usually six to twelve sessions. Patients leave with reduced pain and the strength to keep it from coming back.\"",
         note: "Output is *finite*, not subscription. Change is durable.",
       },
       {
         name: "Sasha",
         role: "vivids stylist",
         quote:
-          "\"Color transformations using fashion colors — vivid reds, blues, pinks, neons — across single 6-to-10-hour sessions, with hair-health protocols that protect integrity through repeated processing. Clients walk out with the color they followed me on Instagram for, and the structural strength to maintain it.\"",
+          "\"Color transformations using fashion colors (vivid reds, blues, pinks, neons) across single 6-to-10-hour sessions, with hair-health protocols that protect integrity through repeated processing. Clients walk out with the color they followed me on Instagram for, and the structural strength to maintain it.\"",
         note: "The change: *vivid color without compromising the hair underneath*.",
       },
     ],
@@ -487,7 +487,7 @@ export const module1Slides: Slide[] = [
     heading: "Different. *Not better*.",
     paragraphs: [
       "Most owners hear *what makes you different* and answer the question of *what makes you better*. Those are not the same question.",
-      "Better is comparative and unverifiable. Different is descriptive and falsifiable. Different doesn't have to mean better — it often means narrower, slower, more honest, more selective, more specific.",
+      "Better is comparative and unverifiable. Different is descriptive and falsifiable. Different doesn't have to mean better. It often means narrower, slower, more honest, more selective, more specific.",
     ],
     callout:
       "The buyer's job isn't to decide which business is best. *It's to decide which business is for them.*",
@@ -541,7 +541,7 @@ export const module1Slides: Slide[] = [
       {
         num: "01",
         title: "Approach",
-        text: "A specific, named method or philosophy. *Not \"I'm thorough\" — but a named way of working.*",
+        text: "A specific, named method or philosophy. *Not \"I'm thorough\" but a named way of working.*",
       },
       {
         num: "02",
@@ -604,7 +604,7 @@ export const module1Slides: Slide[] = [
         name: "Sasha",
         role: "vivids stylist",
         quote:
-          "\"Vivids only. No balayage, no foils, no special-occasion blowouts. Hair-health-first protocol — including the willingness to refuse a transformation if I think the hair can't sustain it without damage.\"",
+          "\"Vivids only. No balayage, no foils, no special-occasion blowouts. Hair-health-first protocol, including the willingness to refuse a transformation if I think the hair can't sustain it without damage.\"",
         note: "*Constraint* + *position*. The \"I'll refuse if it'll damage your hair\" is the strongest move.",
       },
     ],
@@ -707,7 +707,7 @@ export const module1Slides: Slide[] = [
       {
         name: "Maya",
         role: "Therapist",
-        text: "\"I work with high-functioning professionals managing chronic anxiety while running demanding careers. I deliver therapy on a defined timeline using cognitive behavioral methods, with the explicit goal of giving clients tools they take with them — not extending the relationship indefinitely. What makes me different is that I treat my clients as competent adults rather than fragile patients.\"",
+        text: "\"I work with high-functioning professionals managing chronic anxiety while running demanding careers. I deliver therapy on a defined timeline using cognitive behavioral methods, with the explicit goal of giving clients tools they take with them, not extending the relationship indefinitely. What makes me different is that I treat my clients as competent adults rather than fragile patients.\"",
       },
       {
         name: "Marcus",
@@ -731,12 +731,12 @@ export const module1Slides: Slide[] = [
       {
         name: "Lena",
         role: "Photographer",
-        text: "\"I serve couples planning weddings in the four-to-eight-thousand-dollar photography range who want a documentary style. I document wedding days in a candid style with minimal posing and deliver a complete edited gallery within six weeks. What makes me different is that I shoot documentary, not staged — if you want thirty posed photographs of the bridal party, I'm not the right photographer for you.\"",
+        text: "\"I serve couples planning weddings in the four-to-eight-thousand-dollar photography range who want a documentary style. I document wedding days in a candid style with minimal posing and deliver a complete edited gallery within six weeks. What makes me different is that I shoot documentary, not staged. If you want thirty posed photographs of the bridal party, I'm not the right photographer for you.\"",
       },
       {
         name: "James",
         role: "Chiropractor",
-        text: "\"I work with adults who've had a recent injury or pain event and want to address it without being sold a long-term care plan they didn't ask for. I assess the source in the first visit and design a treatment plan with a defined endpoint — usually six to twelve sessions. What makes me different is that I don't sell ongoing care plans or maintenance subscriptions. When the work is done, you stop coming.\"",
+        text: "\"I work with adults who've had a recent injury or pain event and want to address it without being sold a long-term care plan they didn't ask for. I assess the source in the first visit and design a treatment plan with a defined endpoint, usually six to twelve sessions. What makes me different is that I don't sell ongoing care plans or maintenance subscriptions. When the work is done, you stop coming.\"",
       },
     ],
   },
@@ -755,7 +755,7 @@ export const module1Slides: Slide[] = [
       {
         name: "Sasha",
         role: "Vivids stylist",
-        text: "\"I serve women in their 20s and 30s who've been growing out their hair for a vivid transformation, who care about color theory and hair health. I do vivid color only — fashion colors across single 6-to-10-hour sessions, with hair-health protocols built in. What makes me different is that I'll refuse a transformation if I don't think the hair can sustain it. The color you see on my Instagram is the color you get, and the hair will still be hair when I'm done.\"",
+        text: "\"I serve women in their 20s and 30s who've been growing out their hair for a vivid transformation, who care about color theory and hair health. I do vivid color only: fashion colors across single 6-to-10-hour sessions, with hair-health protocols built in. What makes me different is that I'll refuse a transformation if I don't think the hair can sustain it. The color you see on my Instagram is the color you get, and the hair will still be hair when I'm done.\"",
       },
     ],
   },
@@ -784,7 +784,7 @@ export const module1Slides: Slide[] = [
     eyebrow: "Your framework, saved",
     heading: "Your positioning *framework*.",
     paragraphs: [
-      "This is where the rest of the course will reference it. Module 2's diagnostic uses it as context. Modules 3 through 7 reference it when you build mini-strategies for individual foundations.",
+      "This is where the rest of the course will reference it. Module 2's diagnostic uses it as context. Modules 3 through 8 reference it when you build mini-strategies for individual foundations.",
       "It saves automatically. Take a minute to read it back, then meet me in Module 2.",
     ],
   },

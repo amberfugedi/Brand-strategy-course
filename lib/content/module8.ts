@@ -354,7 +354,7 @@ export const module8Slides: Slide[] = [
     eyebrow: "Now: assemble your Foundation Plan",
     heading: "*Sequence* the seven.",
     paragraphs: [
-      "The plan below has already gathered what you marked in all seven modules: positioning, the audit, get found, earned proof, referrals, awareness, owned audience, and the authority you just named.",
+      "The plan below has already gathered what you marked across the course: positioning, the audit, get found, earned proof, referrals, awareness, owned audience, and the authority you just named.",
       "You will not act on all seven at once. With five to ten hours a week, that would stall. Instead, sequence them: first, next, later. First is the one or two that most need work and most repay it now.",
     ],
   },

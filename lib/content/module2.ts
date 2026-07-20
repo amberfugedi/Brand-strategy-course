@@ -236,7 +236,7 @@ export const module2Slides: Slide[] = [
     paragraphs: [
       "It explains *why* that foundation landed where it did. It pulls from the specific answers you gave.",
       "Reading the reasoning is how you understand whether the diagnostic *got you right*.",
-      "If a reasoning line lands wrong — if you read it and think \"that's not how my business works\" — that's a signal worth tracing.",
+      "If a reasoning line lands wrong (you read it and think \"that's not how my business works\"), that's a signal worth tracing.",
     ],
   },
 
@@ -339,7 +339,7 @@ export const module2Slides: Slide[] = [
     eyebrow: "If a foundation does not yet exist",
     heading: "Some questions will be *locked*.",
     paragraphs: [
-      "For your website, your Google Business Profile, your email list — if you pick the scenario that says *this does not exist*, the audit locks the next two dimensions.",
+      "For your website, your Google Business Profile, your email list: if you pick the scenario that says *this does not exist*, the audit locks the next two dimensions.",
       "You cannot rate the quality of a website you do not have.",
       "The audit handles this gracefully. Mark it absent, and it auto-resolves as a critical gap. Move on.",
     ],
@@ -398,7 +398,7 @@ export const module2Slides: Slide[] = [
     audio: { src: null },
     eyebrow: "On reading critical gaps",
     headline: "Critical doesn't mean *panic*. It means *prioritize*.",
-    sub: "Most service businesses have multiple critical gaps when they first run this audit. That's normal. You're not failing — you're seeing what was always going to surface. *You'll fix them in order.*",
+    sub: "Most service businesses have multiple critical gaps when they first run this audit. That's normal. You're not failing. You're seeing what was always going to surface. *You'll fix them in order.*",
   },
 
   // 26 · Solid doesn't mean ignore
@@ -425,7 +425,7 @@ export const module2Slides: Slide[] = [
     eyebrow: "This is your reference",
     heading: "You'll use the Gap List *throughout* the course.",
     paragraphs: [
-      "Modules 3 through 7 go deeper on individual foundations — what each one is, how to think about it strategically.",
+      "Modules 3 through 8 go deeper on individual foundations: what each one is, how to think about it strategically.",
       "The Gap List tells you which of those modules apply to you most urgently when you reach the build phase.",
     ],
   },
@@ -483,7 +483,7 @@ export const module2Slides: Slide[] = [
     eyebrow: "How long is \"first\"",
     heading: "Thirty to ninety *days*.",
     paragraphs: [
-      "Most foundations take 30 to 90 days of focused work to move from critical to solid. Not constant work — focused work in your five to ten weekly marketing hours.",
+      "Most foundations take 30 to 90 days of focused work to move from critical to solid. Not constant work, focused work in your five to ten weekly marketing hours.",
       "A website rebuild: six to eight weeks. A claimed and built-out Google Business Profile: two to four weeks. An email list with a real opt-in and first sequence: six to twelve weeks.",
       "Not a sprint. The first chunk of meaningful work.",
     ],
@@ -498,11 +498,11 @@ export const module2Slides: Slide[] = [
     number: "32",
     audio: { src: null },
     eyebrow: "What comes next",
-    heading: "Modules 3 through 7 teach the *foundations*.",
+    heading: "Modules 3 through 8 teach the *foundations*.",
     paragraphs: [
-      "Each module goes deep on a specific foundation — what it is, what good looks like, how to think strategically about it.",
-      "If your starting point is online presence, Module 3 is your next stop. If it's authority building, Module 6.",
-      "The course doesn't require linear progress through the modules. It expects you to follow your Gap List.",
+      "Each module goes deep on a specific foundation: what it is, what good looks like, how to think strategically about it.",
+      "If your starting point is getting found, the work starts immediately in Module 3. If it's authority building, you'll meet it in Module 8.",
+      "The modules run in order, each building on the last. The Gap List tells you where the building starts once you've seen all seven foundations.",
     ],
   },
 
@@ -516,7 +516,7 @@ export const module2Slides: Slide[] = [
     audio: { src: null },
     eyebrow: "What this audit is for",
     headline: "A starting point for your *build*. Not a license to skip foundations.",
-    sub: "Priority order tells you where to build first. It does not tell you what's worth understanding. *Every foundation in this course is a concept you need to think about. Even the ones you won't build yet.* Take all five foundation modules. Then come back to your priority order.",
+    sub: "Priority order tells you where to build first. It does not tell you what's worth understanding. *Every foundation in this course is a concept you need to think about. Even the ones you won't build yet.* Take all six foundation modules. Then come back to your priority order.",
   },
 
   // 34 · The plan, compiled
@@ -577,8 +577,8 @@ export const module2Slides: Slide[] = [
     eyebrow: "End of Module 2",
     heading: "Now: *learn the foundations*.",
     paragraphs: [
-      "You have a starting point. The next five modules teach what you'll be building. Take a break.",
-      "Module 3 starts with online presence. *I'll see you there.*",
+      "You have a starting point. The next six modules teach what you'll be building. Take a break.",
+      "Module 3 starts with getting found. *I'll see you there.*",
     ],
   },
 ];

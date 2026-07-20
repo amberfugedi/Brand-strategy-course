@@ -45,6 +45,18 @@ const KIND_LABELS: Record<string, string> = {
   judgment: "Judgment",
 };
 
+/** The Module 2 audit still runs on the older foundation model; its
+ *  starting point is shown here in the revised vocabulary. */
+const REVISED_NAMES: Record<string, string> = {
+  localPresence: "Get found",
+  onlinePresence: "Get found",
+  reviews: "Earned proof",
+  referrals: "Referral system",
+  brandAwareness: "Brand awareness",
+  ownedAudience: "Owned audience",
+  authority: "Authority building",
+};
+
 export function FoundationPlanSlide({
   slide,
 }: {
@@ -101,7 +113,10 @@ export function FoundationPlanSlide({
       : "No kind named yet.",
   };
   if (startingPoint) {
-    gathered.positioning += ` Audit starting point: ${startingPoint.foundation.name}.`;
+    const name =
+      REVISED_NAMES[startingPoint.foundation.id] ??
+      startingPoint.foundation.name;
+    gathered.positioning += ` Audit starting point: ${name}.`;
   }
 
   const sorted = PLAN_FOUNDATIONS.filter((f) => buckets[f.id]).length;
