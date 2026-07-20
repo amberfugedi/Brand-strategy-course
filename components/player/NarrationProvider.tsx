@@ -10,16 +10,19 @@ import {
 } from "react";
 import { useParams, usePathname } from "next/navigation";
 import { moduleNarration } from "@/lib/content/narration";
+import { getModule } from "@/lib/content/registry";
 
 const RATES = [1, 1.25, 1.5, 0.75];
 const RATE_KEY = "bymf.narrationRate";
 
 interface NarrationValue {
-  /** Whether the current module has a narration track. */
+  /** Whether the current slide (or module) has a narration track. */
   available: boolean;
   playing: boolean;
   rate: number;
   toggle: () => void;
+  /** Replay the current slide's narration from the top. */
+  restart: () => void;
   cycleRate: () => void;
 }
 
@@ -28,25 +31,34 @@ const NarrationContext = createContext<NarrationValue>({
   playing: false,
   rate: 1,
   toggle: () => {},
+  restart: () => {},
   cycleRate: () => {},
 });
 
 /**
- * Holds the module narration audio element. Lives in the course
- * layout, which persists across slide navigation, so playback carries
- * from slide to slide within a module and stops on leaving it.
+ * Holds the narration audio element. Lives in the course layout,
+ * which persists across slide navigation. Each slide with an
+ * audio.src plays its own segment on arrival, so the voice tracks
+ * what's on screen; a module listed in moduleNarration instead plays
+ * one continuous track across its slides.
  *
- * Narration starts by itself on entering a module with a track and
- * keeps going as slides change. Browsers may block that first
- * unprompted start (phones especially); the footer Listen control is
- * the fallback, and once tapped, later starts are automatic. A buyer
- * who pauses stays paused until they choose to listen again.
+ * Browsers may block the first unprompted start (phones especially);
+ * the footer Listen control is the fallback, and once tapped, later
+ * slides start on their own. A buyer who pauses stays paused until
+ * they choose to listen again.
  */
 export function NarrationProvider({ children }: { children: ReactNode }) {
-  const params = useParams<{ module?: string }>();
+  const params = useParams<{ module?: string; slide?: string }>();
   const pathname = usePathname();
   const moduleId = params?.module;
-  const src = (moduleId && moduleNarration[moduleId]) || null;
+  const slideIndex = Number(params?.slide);
+  const slideSrc =
+    (moduleId &&
+      Number.isFinite(slideIndex) &&
+      getModule(moduleId)?.slides[slideIndex - 1]?.audio.src) ||
+    null;
+  const src = slideSrc ?? (moduleId && moduleNarration[moduleId]) ?? null;
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const userPausedRef = useRef(false);
   const [playing, setPlaying] = useState(false);
@@ -63,27 +75,28 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
     if (el) el.playbackRate = rate;
   }, [rate, src]);
 
-  // Entering a module resets the paused choice and tries to start its
-  // track; a blocked attempt just leaves the Listen control waiting.
+  // A new track (a new slide's segment, or a new module) starts by
+  // itself; a blocked attempt just leaves the Listen control waiting.
+  // Leaving narrated content clears the paused choice.
   useEffect(() => {
     const el = audioRef.current;
-    userPausedRef.current = false;
-    setPlaying(false);
     if (!el) return;
     if (!src) {
       el.pause();
+      userPausedRef.current = false;
+      setPlaying(false);
       return;
     }
     el.playbackRate = rate;
     const t = setTimeout(() => {
-      void el.play().catch(() => {});
+      if (!userPausedRef.current) void el.play().catch(() => {});
     }, 80);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [src]);
 
-  // Slide changes within the module resume a track the browser
-  // blocked earlier, unless the buyer paused it or it has finished.
+  // For a module-level track the src doesn't change between slides;
+  // navigation retries a start the browser blocked earlier.
   useEffect(() => {
     const el = audioRef.current;
     if (!el || !src) return;
@@ -98,11 +111,20 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
     if (!el || !src) return;
     if (el.paused) {
       userPausedRef.current = false;
+      if (el.ended) el.currentTime = 0;
       void el.play().catch(() => {});
     } else {
       userPausedRef.current = true;
       el.pause();
     }
+  };
+
+  const restart = () => {
+    const el = audioRef.current;
+    if (!el || !src) return;
+    userPausedRef.current = false;
+    el.currentTime = 0;
+    void el.play().catch(() => {});
   };
 
   const cycleRate = () => {
@@ -113,7 +135,14 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
 
   return (
     <NarrationContext.Provider
-      value={{ available: Boolean(src), playing, rate, toggle, cycleRate }}
+      value={{
+        available: Boolean(src),
+        playing,
+        rate,
+        toggle,
+        restart,
+        cycleRate,
+      }}
     >
       {children}
       <audio

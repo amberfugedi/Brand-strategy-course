@@ -2,9 +2,9 @@ import { Slide } from "./types";
 
 /**
  * Course intro, five slides. Copy matches the final course structure
- * and the recorded intro narration (public/audio/course-intro.mp3),
- * which plays across the module via the narration player. Per-slide
- * audio.src slots remain for a later per-slide pass.
+ * and the recorded intro narration, split per slide under
+ * public/audio/intro/. Each slide's segment plays on arrival through
+ * the narration player, so the voice tracks what's on screen.
  */
 export const introSlides: Slide[] = [
   {
@@ -13,7 +13,7 @@ export const introSlides: Slide[] = [
     crumb: "COURSE INTRO",
     tag: "01 OF 05",
     number: "i",
-    audio: { src: null },
+    audio: { src: "/audio/intro/intro-1.mp3" },
     surface: "cream",
     eyebrow: "Build your marketing foundation",
     heading: "A working marketing foundation, in one *place*.",
@@ -30,7 +30,7 @@ export const introSlides: Slide[] = [
     crumb: "COURSE INTRO",
     tag: "02 OF 05",
     number: "ii",
-    audio: { src: null },
+    audio: { src: "/audio/intro/intro-2.mp3" },
     eyebrow: "The system this course teaches",
     heading: "Three layers. Seven *foundations*.",
     layers: [
@@ -71,7 +71,7 @@ export const introSlides: Slide[] = [
     crumb: "COURSE INTRO",
     tag: "03 OF 05",
     number: "iii",
-    audio: { src: null },
+    audio: { src: "/audio/intro/intro-3.mp3" },
     eyebrow: "Your working document",
     heading: "The Marketing Foundation *Map*.",
     intro:
@@ -93,7 +93,7 @@ export const introSlides: Slide[] = [
     crumb: "COURSE INTRO",
     tag: "04 OF 05",
     number: "iv",
-    audio: { src: null },
+    audio: { src: "/audio/intro/intro-4.mp3" },
     eyebrow: "What you'll do across the eight modules",
     heading: "The *arc*.",
     rows: [
@@ -121,7 +121,7 @@ export const introSlides: Slide[] = [
     crumb: "COURSE INTRO",
     tag: "05 OF 05",
     number: "v",
-    audio: { src: null },
+    audio: { src: "/audio/intro/intro-5.mp3" },
     eyebrow: "Your first step",
     heading: "*Positioning*, first.",
     quote:

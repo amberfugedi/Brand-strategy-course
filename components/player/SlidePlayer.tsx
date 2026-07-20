@@ -40,7 +40,6 @@ import { PresencePlanSlide } from "@/components/slides/PresencePlanSlide";
 import { OwnedAudienceSlide } from "@/components/slides/OwnedAudienceSlide";
 import { AuthorityKindSlide } from "@/components/slides/AuthorityKindSlide";
 import { FoundationPlanSlide } from "@/components/slides/FoundationPlanSlide";
-import { AudioSlot } from "./AudioSlot";
 import { useCourseStore } from "@/lib/store/provider";
 import { useAuth } from "@/lib/auth/provider";
 import { useNarration } from "@/components/player/NarrationProvider";
@@ -373,6 +372,18 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
           </button>
           <button
             type="button"
+            onClick={narration.restart}
+            aria-label="Restart slide narration"
+            className={`-my-3 shrink-0 px-1.5 py-3 text-[13px] leading-none transition-colors ${
+              dark
+                ? "text-on-dark-muted hover:text-gold"
+                : "text-body-tertiary hover:text-aubergine"
+            }`}
+          >
+            ↺
+          </button>
+          <button
+            type="button"
             onClick={narration.cycleRate}
             aria-label="Narration speed"
             className={`-my-3 shrink-0 whitespace-nowrap px-2 py-3 text-[11px] font-bold tracking-chrome transition-colors ${
@@ -414,8 +425,6 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       >
         <SlideBody slide={slide} revealed={step} />
       </SlideChrome>
-
-      <AudioSlot audio={slide.audio} dark={dark} />
     </div>
   );
 }

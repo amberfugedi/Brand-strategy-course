@@ -1,9 +1,8 @@
 /**
- * Module-level narration files. A module listed here gets a Listen
- * control in the slide footer, and playback continues as the buyer
- * moves between that module's slides. Per-slide audio (audio.src on
- * each slide) remains the insertion point for the finer-grained pass.
+ * Module-level narration tracks, for a module whose recording is one
+ * continuous take. Per-slide narration is preferred and lives on each
+ * slide's audio.src (see intro.ts); a module listed here instead
+ * plays one track continuously across its slides. Currently empty:
+ * the intro narration is split per slide.
  */
-export const moduleNarration: Record<string, string> = {
-  intro: "/audio/course-intro.mp3",
-};
+export const moduleNarration: Record<string, string> = {};
