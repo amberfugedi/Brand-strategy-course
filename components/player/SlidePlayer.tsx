@@ -304,9 +304,10 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
     );
   }
 
-  // Generous padding: these are the most-tapped controls in the
-  // course, so the hit area runs well past the label.
-  const navButton = `px-5 py-3.5 text-[12px] font-bold uppercase tracking-chrome transition-colors ${
+  // Generous padding for the most-tapped controls in the course; the
+  // negative vertical margin keeps the footer row's height unchanged
+  // while the hit area runs well past the label.
+  const navButton = `-my-3 px-5 py-3 text-[12px] font-bold uppercase tracking-chrome transition-colors ${
     dark
       ? "text-on-dark-muted hover:text-gold"
       : "text-body-tertiary hover:text-aubergine"
@@ -316,6 +317,53 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
     ((slideIndex - 1 + (totalSteps > 0 ? step / totalSteps : 1)) /
       module.slides.length) *
     100;
+
+  const controls = (
+    <>
+      {!isFirst ? (
+        <button type="button" onClick={goBack} className={navButton}>
+          Back
+        </button>
+      ) : null}
+      {!isLast || step < totalSteps ? (
+        <button
+          type="button"
+          onClick={advance}
+          className={`${navButton} ${
+            !inputComplete && step >= totalSteps
+              ? dark
+                ? "text-on-dark-muted"
+                : "text-body-tertiary"
+              : dark
+                ? "text-gold"
+                : "text-aubergine"
+          }`}
+        >
+          Next
+        </button>
+      ) : (
+        <Link
+          href={`/${courseId}`}
+          className={`${navButton} whitespace-nowrap ${
+            dark ? "text-gold" : "text-aubergine"
+          }`}
+        >
+          Back to the course
+        </Link>
+      )}
+    </>
+  );
+
+  const note =
+    nudged && !inputComplete ? (
+      <span
+        className={`min-w-0 truncate font-serif text-[12.5px] italic ${
+          dark ? "text-on-dark-muted" : "text-body-secondary"
+        }`}
+      >
+        Finish this step to continue.
+      </span>
+    ) : null;
 
   return (
     <div className="relative">
@@ -329,52 +377,13 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
         tag={slide.tag}
         number={slide.number}
         homeHref={`/${courseId}`}
+        controls={controls}
+        note={note}
       >
         <SlideBody slide={slide} revealed={step} />
       </SlideChrome>
 
       <AudioSlot audio={slide.audio} dark={dark} />
-
-      <nav className="absolute bottom-[62px] right-[4.5vw] z-20 flex items-center gap-2">
-        {nudged && !inputComplete ? (
-          <span
-            className={`mr-2 font-serif text-[13px] italic ${
-              dark ? "text-on-dark-muted" : "text-body-secondary"
-            }`}
-          >
-            Finish this step to continue.
-          </span>
-        ) : null}
-        {!isFirst ? (
-          <button type="button" onClick={goBack} className={navButton}>
-            Back
-          </button>
-        ) : null}
-        {!isLast || step < totalSteps ? (
-          <button
-            type="button"
-            onClick={advance}
-            className={`${navButton} ${
-              !inputComplete && step >= totalSteps
-                ? dark
-                  ? "text-on-dark-muted"
-                  : "text-body-tertiary"
-                : dark
-                  ? "text-gold"
-                  : "text-aubergine"
-            }`}
-          >
-            Next
-          </button>
-        ) : (
-          <Link
-            href={`/${courseId}`}
-            className={`${navButton} ${dark ? "text-gold" : "text-aubergine"}`}
-          >
-            Back to the course
-          </Link>
-        )}
-      </nav>
     </div>
   );
 }

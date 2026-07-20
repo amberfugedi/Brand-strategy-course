@@ -21,6 +21,12 @@ interface SlideChromeProps {
   number: string;
   /** Course home; when set, the chrome carries a way out mid-module. */
   homeHref?: string;
+  /** Back/Next, rendered in the footer row beside the page number so
+   *  they share its baseline and right margin on every slide. */
+  controls?: ReactNode;
+  /** A short transient note (e.g. the finish-this-step hold), shown
+   *  in the footer's left cluster. */
+  note?: ReactNode;
   children: ReactNode;
 }
 
@@ -29,7 +35,9 @@ interface SlideChromeProps {
  * slide-type tag, footer monogram + course name + page number. Matches
  * the produced deck exactly. When homeHref is set, an "All modules"
  * link sits ahead of the breadcrumb and the footer wordmark links
- * home, so a buyer can leave a module from any slide.
+ * home, so a buyer can leave a module from any slide. Player controls
+ * live inside the footer row: in flow, so they never overlap slide
+ * content, and aligned with the chrome on every slide.
  */
 export function SlideChrome({
   surface,
@@ -37,6 +45,8 @@ export function SlideChrome({
   tag,
   number,
   homeHref,
+  controls,
+  note,
   children,
 }: SlideChromeProps) {
   const homeLink = `transition-colors ${
@@ -77,32 +87,51 @@ export function SlideChrome({
       </main>
 
       <footer
-        className={`relative z-10 flex items-center justify-between px-[4.5vw] pb-8 text-xs ${chromeText[surface]}`}
+        className={`relative z-10 flex items-center justify-between gap-4 px-[4.5vw] pb-8 text-xs ${chromeText[surface]}`}
       >
-        {homeHref ? (
-          <Link href={homeHref} className={`flex items-center gap-2.5 ${homeLink}`}>
-            <span className="flex h-6 w-6 items-center justify-center rounded-full border border-gold/70">
-              <span className="font-serif italic text-[13px] leading-none text-gold">
-                A
+        <span className="flex min-w-0 items-center gap-2.5">
+          {homeHref ? (
+            <Link
+              href={homeHref}
+              className={`flex shrink-0 items-center gap-2.5 ${homeLink}`}
+            >
+              <span className="flex h-6 w-6 items-center justify-center rounded-full border border-gold/70">
+                <span className="font-serif italic text-[13px] leading-none text-gold">
+                  A
+                </span>
+              </span>
+              <span
+                className={`text-[11px] normal-case tracking-normal ${
+                  controls ? "hidden md:inline" : ""
+                }`}
+              >
+                Build Your Marketing Foundation
+              </span>
+            </Link>
+          ) : (
+            <span className="flex shrink-0 items-center gap-2.5">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full border border-gold/70">
+                <span className="font-serif italic text-[13px] leading-none text-gold">
+                  A
+                </span>
+              </span>
+              <span
+                className={`text-[11px] normal-case tracking-normal ${
+                  controls ? "hidden md:inline" : ""
+                }`}
+              >
+                Build Your Marketing Foundation
               </span>
             </span>
-            <span className="text-[11px] normal-case tracking-normal">
-              Build Your Marketing Foundation
-            </span>
-          </Link>
-        ) : (
-          <span className="flex items-center gap-2.5">
-            <span className="flex h-6 w-6 items-center justify-center rounded-full border border-gold/70">
-              <span className="font-serif italic text-[13px] leading-none text-gold">
-                A
-              </span>
-            </span>
-            <span className="text-[11px] normal-case tracking-normal">
-              Build Your Marketing Foundation
-            </span>
+          )}
+          {note}
+        </span>
+        <span className="flex shrink-0 items-center gap-4">
+          {controls}
+          <span className="text-[10px] font-bold tracking-chrome">
+            {number}
           </span>
-        )}
-        <span className="text-[10px] font-bold tracking-chrome">{number}</span>
+        </span>
       </footer>
     </div>
   );
