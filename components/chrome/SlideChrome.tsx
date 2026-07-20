@@ -47,24 +47,29 @@ export function SlideChrome({
       className={`relative flex min-h-screen flex-col overflow-hidden ${surfaceClasses[surface]}`}
     >
       <header
-        className={`flex items-center justify-between px-[4.5vw] pt-10 text-[10px] font-bold uppercase tracking-chrome ${chromeText[surface]}`}
+        className={`flex items-center justify-between gap-6 px-[4.5vw] pt-10 text-[10px] font-bold uppercase tracking-chrome ${chromeText[surface]}`}
       >
-        <span className="flex items-center gap-3">
+        <span className="flex min-w-0 items-center gap-3">
           {homeHref ? (
             <>
-              <Link href={homeHref} className={`whitespace-nowrap ${homeLink}`}>
+              <Link
+                href={homeHref}
+                className={`shrink-0 whitespace-nowrap ${homeLink}`}
+              >
                 ← All modules
               </Link>
               {crumb ? (
-                <span aria-hidden="true" className="opacity-50">
+                <span aria-hidden="true" className="shrink-0 opacity-50">
                   ·
                 </span>
               ) : null}
             </>
           ) : null}
-          <span className="whitespace-nowrap">{crumb}</span>
+          <span className="min-w-0 truncate">{crumb}</span>
         </span>
-        <span className="hidden whitespace-nowrap sm:inline">{tag}</span>
+        <span className="hidden shrink-0 whitespace-nowrap sm:inline">
+          {tag}
+        </span>
       </header>
 
       <main className="relative z-10 flex flex-1 flex-col px-[7.5vw] py-8">
