@@ -225,6 +225,31 @@ export interface ProofInventorySlide extends SlideBase {
   paragraphs: string[];
 }
 
+/** Module 7 tool: people, channel, cadence. */
+export interface OwnedAudienceSlide extends SlideBase {
+  kind: "ownedAudience";
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
+}
+
+/** Module 8: identify which kind of authority is already yours. */
+export interface AuthorityKindSlide extends SlideBase {
+  kind: "authorityKind";
+  eyebrow: string;
+  heading: string;
+  intro: string;
+}
+
+/** Module 8 capstone: sort the seven foundations into First, Next,
+ *  Later, with everything gathered across the course in view. */
+export interface FoundationPlanSlide extends SlideBase {
+  kind: "foundationPlan";
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
+}
+
 /** Dark plum module-structure table. */
 export interface StructureSlide extends SlideBase {
   kind: "structure";
@@ -344,7 +369,10 @@ export type Slide =
   | TableSlide
   | MapSlide
   | TouchpointsSlide
-  | ProofInventorySlide;
+  | ProofInventorySlide
+  | OwnedAudienceSlide
+  | AuthorityKindSlide
+  | FoundationPlanSlide;
 
 export interface ModuleDef {
   id: string;

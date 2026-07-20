@@ -4,6 +4,8 @@ import { module1Slides } from "./module1";
 import { module2Slides } from "./module2";
 import { module3Slides } from "./module3";
 import { module4Slides } from "./module4";
+import { module7Slides } from "./module7";
+import { module8Slides } from "./module8";
 
 /**
  * The course structure. All eight modules exist here from day one;
@@ -64,27 +66,30 @@ export const courseModules: ModuleDef[] = [
   },
   {
     id: "m6",
-    label: "Module 6 · Authority building",
-    title: "Authority building.",
-    minutes: "40 min",
+    label: "Module 6 · Brand awareness",
+    title: "Brand awareness.",
+    minutes: "",
     released: false,
     slides: [],
   },
   {
     id: "m7",
-    label: "Module 7 · Owned audience and smart visibility",
-    title: "Owned audience and smart visibility.",
-    minutes: "40 min",
-    released: false,
-    slides: [],
+    label: "Module 7 · Owned audience",
+    title: "Owned audience.",
+    minutes: "20 min",
+    released: true,
+    // TEMP: requires m4 until Modules 5 and 6 are built; switch to "m6".
+    requires: "m4",
+    slides: module7Slides,
   },
   {
     id: "m8",
-    label: "Module 8 · Your marketing foundation plan",
-    title: "Your marketing foundation plan.",
-    minutes: "25 min",
-    released: false,
-    slides: [],
+    label: "Module 8 · Authority building",
+    title: "Authority building.",
+    minutes: "22 min",
+    released: true,
+    requires: "m7",
+    slides: module8Slides,
   },
 ];
 

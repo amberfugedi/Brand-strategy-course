@@ -35,6 +35,9 @@ import { TableSlide } from "@/components/slides/TableSlide";
 import { MapSlide } from "@/components/slides/MapSlide";
 import { TouchpointsSlide } from "@/components/slides/TouchpointsSlide";
 import { ProofInventorySlide } from "@/components/slides/ProofInventorySlide";
+import { OwnedAudienceSlide } from "@/components/slides/OwnedAudienceSlide";
+import { AuthorityKindSlide } from "@/components/slides/AuthorityKindSlide";
+import { FoundationPlanSlide } from "@/components/slides/FoundationPlanSlide";
 import { AudioSlot } from "./AudioSlot";
 import { useCourseStore } from "@/lib/store/provider";
 import { useAuth } from "@/lib/auth/provider";
@@ -50,7 +53,9 @@ function surfaceOf(slide: Slide): Surface {
     slide.kind === "startingPoint" ||
     slide.kind === "frame" ||
     slide.kind === "touchpoints" ||
-    slide.kind === "proofInventory"
+    slide.kind === "proofInventory" ||
+    slide.kind === "ownedAudience" ||
+    slide.kind === "foundationPlan"
   )
     return "plum";
   if (slide.kind === "principle") return "ink";
@@ -119,6 +124,12 @@ function SlideBody({ slide, revealed }: { slide: Slide; revealed: number }) {
       return <TouchpointsSlide slide={slide} />;
     case "proofInventory":
       return <ProofInventorySlide slide={slide} />;
+    case "ownedAudience":
+      return <OwnedAudienceSlide slide={slide} />;
+    case "authorityKind":
+      return <AuthorityKindSlide slide={slide} />;
+    case "foundationPlan":
+      return <FoundationPlanSlide slide={slide} />;
   }
 }
 

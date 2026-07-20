@@ -64,8 +64,23 @@ export interface CourseDocument {
         buildFirst?: string;
       };
     };
-    // m5..m7: mini-strategy inputs
-    // m8: plan
+    m7?: {
+      ownedAudience?: {
+        /** Who the channel starts with. */
+        people?: string;
+        /** The single channel they will own. */
+        channel?: string;
+        /** A cadence they can hold on a busy month. */
+        cadence?: string;
+      };
+    };
+    m8?: {
+      /** The kind of authority they named: craft, expertise, judgment. */
+      authority?: { kind?: string };
+      /** Foundation id -> first | next | later. */
+      plan?: { buckets?: Record<string, string> };
+    };
+    // m5, m6: mini-strategy inputs (built when their decks arrive)
   };
 }
 

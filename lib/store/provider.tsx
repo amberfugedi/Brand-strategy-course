@@ -209,6 +209,77 @@ export function useModule4() {
   return { proof, setStatus, setBuildFirst };
 }
 
+/** Convenience accessor for Module 7 owned audience plan. */
+export function useModule7() {
+  const { doc, update } = useCourseStore();
+  const ownedAudience = doc.modules.m7?.ownedAudience ?? {};
+
+  const setOwnedAudience = useCallback(
+    (patch: { people?: string; channel?: string; cadence?: string }) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m7: {
+            ...d.modules.m7,
+            ownedAudience: { ...d.modules.m7?.ownedAudience, ...patch },
+          },
+        },
+      }));
+    },
+    [update],
+  );
+
+  return { ownedAudience, setOwnedAudience };
+}
+
+/** Convenience accessor for Module 8 authority kind and plan buckets. */
+export function useModule8() {
+  const { doc, update } = useCourseStore();
+  const m8 = doc.modules.m8 ?? {};
+
+  const setAuthorityKind = useCallback(
+    (kind: string) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m8: { ...d.modules.m8, authority: { kind } },
+        },
+      }));
+    },
+    [update],
+  );
+
+  const setBucket = useCallback(
+    (foundationId: string, bucket: string) => {
+      update((d) => ({
+        ...d,
+        modules: {
+          ...d.modules,
+          m8: {
+            ...d.modules.m8,
+            plan: {
+              buckets: {
+                ...d.modules.m8?.plan?.buckets,
+                [foundationId]: bucket,
+              },
+            },
+          },
+        },
+      }));
+    },
+    [update],
+  );
+
+  return {
+    authorityKind: m8.authority?.kind,
+    buckets: m8.plan?.buckets ?? {},
+    setAuthorityKind,
+    setBucket,
+  };
+}
+
 /** Convenience accessor for Module 1 positioning input. */
 export function usePositioning() {
   const { doc, update } = useCourseStore();
