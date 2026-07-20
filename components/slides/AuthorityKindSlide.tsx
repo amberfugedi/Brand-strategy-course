@@ -7,21 +7,21 @@ import { useModule8 } from "@/lib/store/provider";
 const KINDS = [
   {
     id: "craft",
-    signal: "“Look at the work.”",
+    signal: "“Look at the work”",
     name: "Craft authority",
-    note: "They're responding to the visible quality of the output.",
+    note: "They point you to what was made. That is *craft* authority, and the work being seen is how it grows.",
   },
   {
     id: "expertise",
-    signal: "“She really knows this.”",
+    signal: "“She really knows this”",
     name: "Expertise authority",
-    note: "They're responding to your depth.",
+    note: "They point to depth of knowledge. That is *expertise* authority, made visible in how you work.",
   },
   {
     id: "judgment",
-    signal: "“She was right.”",
+    signal: "“She was right”",
     name: "Judgment authority",
-    note: "They're responding to your track record.",
+    note: "They point to a call that held up. That is *judgment* authority, built by a visible track record.",
   },
 ];
 
@@ -62,7 +62,7 @@ export function AuthorityKindSlide({ slide }: { slide: AuthorityKindSlideDef }) 
                 {kind.name}
               </div>
               <p className="mt-1.5 text-[13px] leading-relaxed text-body-secondary">
-                {kind.note}
+                <Rich text={kind.note} />
               </p>
               <div
                 className={`mt-3 text-[10px] font-bold uppercase tracking-chrome ${

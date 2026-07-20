@@ -2,10 +2,11 @@ import { Slide } from "./types";
 
 /**
  * Module 8: Authority building, and the close of the course. 20
- * slides built from the teaching script's slide specification (the
- * script is also the deck spec; on-slide copy is verbatim from its
- * ON SLIDE blocks). Interactions: naming your kind of authority
- * (slide 11) and the Foundation Plan capstone (slide 18).
+ * slides, copy verbatim from module8slides.html (the deck is the
+ * canonical source). Interactions: naming your kind of authority
+ * (slide 11) and the Foundation Plan capstone (slide 18); tool
+ * copy is adapted where the deck points at the external Map, since
+ * the tool is embedded in the slide here.
  */
 
 const S1 = "MODULE 8 · SECTION 1";
@@ -59,7 +60,7 @@ export const module8Slides: Slide[] = [
     heading: "Authority is trusted *judgment*.",
     paragraphs: [
       "It is not a title you award yourself, and not a level you reach. Authority is the weight your word carries in your field: whether, when you say something, people move on it or weigh it like anyone else's.",
-      "Which means it was never something to qualify for. It is something other people grant you, based on whether your judgment has been sound. Your clients have been doing exactly that, quietly, for as long as you have had clients.",
+      "Which means it was never something to qualify for. It is something other people grant you, based on whether your judgment has been sound. Your clients have been doing exactly that, quietly, for as long as you have had clients. This module is about seeing that clearly, and building on it.",
     ],
   },
 
@@ -90,7 +91,7 @@ export const module8Slides: Slide[] = [
       {
         label: "Kind 01",
         title: "Craft",
-        text: "Trust earned by the visible quality of the work itself. The work is good enough, and distinct enough, that it speaks *before* you do.",
+        text: "Trust earned by the visible quality of the work itself. The work is good enough, and distinct enough, that it *speaks* before you do.",
       },
       {
         label: "Kind 02",
@@ -104,7 +105,7 @@ export const module8Slides: Slide[] = [
       },
     ],
     footnote:
-      "Most businesses lead with one. It is not a ranking, and you do not need all three.",
+      "Most businesses lead with one of the three. It is not a ranking, and you do not need all three. The next slides take craft and expertise in turn, then judgment.",
   },
 
   // 06 · Craft
@@ -112,11 +113,11 @@ export const module8Slides: Slide[] = [
     kind: "detail",
     id: "m8-craft",
     crumb: S2,
-    tag: "DETAIL",
+    tag: "KIND 01",
     number: "06",
     audio: { src: null },
     eyebrow: "Craft",
-    heading: "When the work speaks *first*.",
+    heading: "When the work *speaks* first.",
     cols: [
       {
         label: "What it is",
@@ -124,7 +125,7 @@ export const module8Slides: Slide[] = [
       },
       {
         label: "How it is earned",
-        text: "By making the quality legible. Doing excellent work is the start; letting it be seen, clearly and often, is what turns it into authority.",
+        text: "By making the quality legible. Doing excellent work is the start; letting it be *seen*, clearly and often, is what turns it into authority.",
       },
       {
         label: "Where it leads",
@@ -138,11 +139,11 @@ export const module8Slides: Slide[] = [
     kind: "detail",
     id: "m8-expertise",
     crumb: S2,
-    tag: "DETAIL",
+    tag: "KIND 02",
     number: "07",
     audio: { src: null },
     eyebrow: "Expertise",
-    heading: "When what you know is the *proof*.",
+    heading: "When what you *know* is the proof.",
     cols: [
       {
         label: "What it is",
@@ -150,7 +151,7 @@ export const module8Slides: Slide[] = [
       },
       {
         label: "How it is earned",
-        text: "By making the knowledge visible in how you work and explain: the question you think to ask, the distinction you draw that no one else did.",
+        text: "By making the knowledge *visible* in how you work and explain: the question you think to ask, the distinction you draw that no one else did.",
       },
       {
         label: "Where it leads",
@@ -182,7 +183,7 @@ export const module8Slides: Slide[] = [
     number: "09",
     audio: { src: null },
     eyebrow: "The third kind, and your own",
-    heading: "Then: which kind is *yours?*",
+    heading: "Then: which kind is *yours*?",
     sub: "One kind of authority is left to look at, the deepest one. Then the real question: which of the three is the one you already have, and should build.",
   },
 
@@ -191,11 +192,11 @@ export const module8Slides: Slide[] = [
     kind: "detail",
     id: "m8-judgment",
     crumb: S3,
-    tag: "DETAIL",
+    tag: "KIND 03",
     number: "10",
     audio: { src: null },
     eyebrow: "Judgment",
-    heading: "When your read is what they *trust*.",
+    heading: "When your *read* is what they trust.",
     cols: [
       {
         label: "What it is",
@@ -203,7 +204,7 @@ export const module8Slides: Slide[] = [
       },
       {
         label: "How it is earned",
-        text: "Slowly, and only by being right in view of others, over time. It is the hardest kind to build and the hardest to fake, because it needs history.",
+        text: "Slowly, and only by being right in view of others, over time. It is the hardest kind to build and the hardest to fake, because it needs *history.*",
       },
       {
         label: "Where it leads",
@@ -264,37 +265,37 @@ export const module8Slides: Slide[] = [
     eyebrow: "Five businesses, five honest answers",
     heading: "Which kind, and how much it *weighs*.",
     leftLabel: "The business",
-    rightLabel: "Which kind of authority, and its weight",
+    rightLabel: "The kind of authority it leads with",
     rows: [
       {
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Expertise.",
-        text: "Trust rests on clinical depth and the regard of peers. Shown in the precision of how she works. Weighs heavily.",
+        text: "Trust rests on clinical depth and the regard of peers. Shown not by self-promotion but in the precision of how she works. Weighs *heavily.*",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Minor. Say so.",
-        text: "His honest ceiling is thin craft authority: reliably trusted to do the job well.",
+        text: "A pressure washer is not building thought leadership. His honest ceiling is thin craft authority: reliably trusted to do the job well. That is enough.",
       },
       {
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "Craft.",
-        text: "Her documentary style is distinct and visible. The work itself is the argument.",
+        text: "Her documentary style is distinct and visible. The work itself is the argument; her authority grows every time it is *seen.*",
       },
       {
         name: "James",
         meta: "chiropractor · local",
         lead: "Expertise.",
-        text: "Clinical trust in a defined area. Patients and GPs rely on what he demonstrably knows.",
+        text: "Clinical trust in a defined area. Patients and referring GPs rely on what he demonstrably knows about a specific kind of case.",
       },
       {
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Craft, into specialism.",
-        text: "Her vivid work is unmistakable. Seen often enough, craft becomes a named *specialism*.",
+        text: "Her vivid work is unmistakable and recognized. Seen often enough, craft authority becomes a named specialism. Weighs *heavily.*",
       },
     ],
   },
@@ -311,7 +312,7 @@ export const module8Slides: Slide[] = [
     heading: "Authority is the foundation the others *feed*.",
     paragraphs: [
       "Authority is its own foundation, the seventh. It is also the one the previous six quietly build. A clear position makes your judgment legible. Earned proof is others confirming it. Referrals carry it. Awareness gives it room to be seen. An owned audience lets it be shown again and again.",
-      "You do not build authority by adding a separate activity on top. You build it by doing the other six well, in view, over time. That is why it is last: it is what the foundation *becomes*.",
+      "You do not build authority by adding a separate activity on top. You build it by doing the other six well, in view, over time. That is why it is last: it is what the foundation *becomes.*",
     ],
   },
 
@@ -347,14 +348,14 @@ export const module8Slides: Slide[] = [
     kind: "foundationPlan",
     id: "m8-tool",
     crumb: S5,
-    tag: "TOOL",
+    tag: "TOOL · CAPSTONE",
     number: "18",
     audio: { src: null },
     eyebrow: "Now: assemble your Foundation Plan",
-    heading: "Sequence the *seven*.",
+    heading: "*Sequence* the seven.",
     paragraphs: [
-      "Everything you marked across the course is gathered here, in one place, for the first time. Take a moment to actually look at it. That is your foundation, whole.",
-      "You will not act on all seven at once. With five to ten hours a week, that would stall. Instead, sequence them: sort each into First, Next, or Later.",
+      "The plan below has already gathered what you marked in all seven modules: positioning, the audit, get found, earned proof, referrals, awareness, owned audience, and the authority you just named.",
+      "You will not act on all seven at once. With five to ten hours a week, that would stall. Instead, sequence them: first, next, later. First is the one or two that most need work and most repay it now.",
     ],
   },
 
@@ -369,8 +370,8 @@ export const module8Slides: Slide[] = [
     eyebrow: "Reading your plan",
     heading: "One thing at a time, in the right *order*.",
     paragraphs: [
-      "A good plan is not the longest one. It is the one you will actually follow. Put first the foundation that is both weakest and most load-bearing, the one whose absence is quietly costing you the most.",
-      "The seven foundations do not expire. A plan sequenced to five hours a week, and kept, will outbuild an ambitious plan that stalls in a month. You are not behind. You have a foundation and an order to build it in.",
+      "A good plan is not the longest one. It is the one you will actually follow. Put first the foundation that is both weakest and most load-bearing, the one whose absence is quietly costing you the most. Let the rest wait without guilt.",
+      "The seven foundations do not expire. A plan sequenced to five hours a week, and kept, will outbuild an ambitious plan that stalls in a month. You are not behind. You have a foundation and an *order* to build it in.",
     ],
   },
 
@@ -379,15 +380,14 @@ export const module8Slides: Slide[] = [
     kind: "prose",
     id: "m8-close",
     crumb: "MODULE 8 · END",
-    tag: "END OF COURSE",
+    tag: "END OF THE COURSE",
     number: "20",
     audio: { src: null },
     surface: "plum",
     eyebrow: "End of Build Your Marketing Foundation",
     heading: "A foundation, and a *plan*.",
     paragraphs: [
-      "Seven foundations: get found, get chosen, be remembered. You did not need more marketing. You needed it to be clear, considered, and yours. It is.",
-      "Now build it, in the order you set, at the pace your work allows.",
+      "Seven foundations: get found, get chosen, be remembered. You did not need more marketing. You needed it to be clear, considered, and yours. It is. Now build it, in the order you set, at the pace your work allows.",
     ],
   },
 ];

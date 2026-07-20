@@ -29,7 +29,7 @@ export function TableSlide({
         {slide.rows.slice(0, revealed).map((row) => (
           <div
             key={row.name}
-            className="beat grid grid-cols-[140px_1fr] gap-6 border-b border-subtle py-4 md:grid-cols-[200px_1fr]"
+            className="beat grid grid-cols-[140px_1fr] gap-6 border-b border-subtle py-3 md:grid-cols-[200px_1fr]"
           >
             <div>
               <div className="text-[15px] font-bold text-aubergine">
