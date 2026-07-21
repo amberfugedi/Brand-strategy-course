@@ -286,8 +286,8 @@ export const module1Slides: Slide[] = [
     audio: { src: null },
     heading: "Write your *answer*.",
     promptLines: [
-      "Take 30 seconds. Use the three-layer framework: situation, context, problem.",
-      "Don't perfect it. *Get a working answer.*",
+      "A rough first pass, using the three-layer framework: situation, context, problem.",
+      "Give it the couple of real minutes it needs. *The course waits.*",
     ],
     exercise: "serve",
   },
@@ -456,8 +456,8 @@ export const module1Slides: Slide[] = [
     audio: { src: null },
     heading: "Write your *answer*.",
     promptLines: [
-      "Take 30 seconds. Use the three-layer framework: action, output, change.",
-      "Don't perfect it. *Get a working answer.*",
+      "A rough first pass, using the three-layer framework: action, output, change.",
+      "Give it the couple of real minutes it needs. *The course waits.*",
     ],
     exercise: "work",
   },
@@ -659,7 +659,7 @@ export const module1Slides: Slide[] = [
     audio: { src: null },
     heading: "Write your *differentiator*.",
     promptLines: [
-      "Take 45 seconds. Use one or more of the four sources: approach, constraint, combination, position.",
+      "The hardest of the three. A rough first pass, using one or more of the four sources: approach, constraint, combination, position. Give it a few real minutes.",
       "If you're stuck, ask the contrarian question: *what does my category do that I refuse to do?*",
     ],
     exercise: "different",
