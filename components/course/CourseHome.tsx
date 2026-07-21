@@ -4,10 +4,12 @@ import Link from "next/link";
 import { getCourse } from "@/lib/content/courses";
 import { Rich } from "@/components/Rich";
 import { AuthCorner } from "@/components/auth/AuthCorner";
+import { useAuth } from "@/lib/auth/provider";
 import { useCourseStore } from "@/lib/store/provider";
 
 export function CourseHome({ courseId }: { courseId: string }) {
   const course = getCourse(courseId)!;
+  const auth = useAuth();
   const { doc, ready } = useCourseStore();
   const last = doc.progress.lastLocation;
   const continueHref = last
@@ -44,6 +46,22 @@ export function CourseHome({ courseId }: { courseId: string }) {
         <p className="mt-4 max-w-xl text-[16px] text-body-secondary">
           <Rich text={course.summary} />
         </p>
+
+        {!auth.enabled ? (
+          // Setup flag: renders only while Supabase isn't connected and
+          // removes itself once the keys are configured and deployed.
+          <div className="mt-8 border-l-[3px] border-rust bg-cream-light px-5 py-4">
+            <div className="text-[10px] font-bold uppercase tracking-eyebrow text-rust">
+              Setup pending
+            </div>
+            <p className="mt-1.5 max-w-xl text-[13.5px] leading-relaxed text-body-secondary">
+              Accounts aren't connected yet, so sign-in is off and progress
+              saves to this browser only. Create the Supabase project, then
+              add the two keys in Netlify and redeploy (steps in the README).
+              This notice disappears once that's done.
+            </p>
+          </div>
+        ) : null}
 
         <div className="mt-8">
           <Link
