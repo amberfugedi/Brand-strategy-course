@@ -101,7 +101,7 @@ export const module8Slides: Slide[] = [
       {
         label: "Kind 03",
         title: "Track record",
-        text: "Trust earned by a track record of calls that proved right. People trust not just your skill but your *read* of a situation.",
+        text: "Trust earned by a history of calls that proved right. People trust not just your skill but your *read* of a situation.",
       },
     ],
     footnote:

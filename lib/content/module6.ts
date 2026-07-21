@@ -210,7 +210,7 @@ export const module6Slides: Slide[] = [
     sans: true,
     eyebrow: "On patience",
     headline: "Awareness is the foundation whose progress is hardest to *see*.",
-    sub: "The work accumulates out of sight. You will do it and see nothing for a while, because recognition forms quietly, below the surface, before it ever produces an enquiry. That is normal, and it is not failure. The work is invisible right up until it is not. *The silence is not the absence of progress.*",
+    sub: "Of every foundation in this course, this one is the hardest to watch working. You will do the work and see nothing for a long while, because recognition forms quietly, below the surface, before it ever produces an enquiry. That is normal, and it is not failure. The work is invisible right up until it is not. *The silence is not the absence of progress.*",
   },
 
   // 11 · How much should it weigh

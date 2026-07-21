@@ -30,7 +30,7 @@ export const module1Slides: Slide[] = [
     heading: "Your *positioning*.",
     sub: "Three questions every other foundation depends on. Twenty-five minutes. One working answer.",
     meta: [
-      { label: "Length", value: "25 minutes" },
+      { label: "Length", value: "25 minutes of teaching, plus writing time" },
       { label: "Output", value: "Working positioning statement" },
       { label: "Module", value: "1 of 8" },
     ],
