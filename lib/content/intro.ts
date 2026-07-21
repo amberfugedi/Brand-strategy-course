@@ -128,7 +128,7 @@ export const introSlides: Slide[] = [
       "Everything that follows in this course depends on having a clear positioning statement.",
     paragraphs: [
       "The diagnostic uses it. The audit references it. The foundation modules are *built around* it.",
-      "Don't skip ahead. Don't skim Module 1. Take the twenty-five minutes, do the work, and meet me there.",
+      "Don't skip ahead. Don't skim Module 1. Take the time, do the work, and meet me there.",
     ],
   },
 ];
