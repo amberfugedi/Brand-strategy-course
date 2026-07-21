@@ -18,7 +18,7 @@ export const REFERRAL_STAGES = [
   },
   {
     id: "tend",
-    label: "Tend",
+    label: "Keep",
     hint: "After a referral, does anything keep the relationship alive?",
   },
 ];

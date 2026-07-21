@@ -97,12 +97,12 @@ export const module5Slides: Slide[] = [
       },
       {
         label: "Stage 03",
-        title: "Tend",
-        text: "The referral gets acknowledged, so the relationship stays alive. A tended channel produces again. A silent one *closes*.",
+        title: "Keep",
+        text: "The referral gets acknowledged, so the relationship stays alive. A kept channel produces again. A silent one *closes*.",
       },
     ],
     footnote:
-      "Tend feeds Earn: a referral handled well makes the next one likelier. That is why it is a loop and not a list. The next three slides take each stage in turn.",
+      "Keep feeds Earn: a referral handled well makes the next one likelier. That is why it is a loop and not a list. The next three slides take each stage in turn.",
   },
 
   // 06 · Earn
@@ -157,7 +157,7 @@ export const module5Slides: Slide[] = [
     ],
   },
 
-  // 08 · Tend
+  // 08 · Keep
   {
     kind: "detail",
     id: "m5-tend",
@@ -165,7 +165,7 @@ export const module5Slides: Slide[] = [
     tag: "STAGE 03",
     number: "08",
     audio: { src: null },
-    eyebrow: "Tend",
+    eyebrow: "Keep",
     heading: "Keep the channel *alive.*",
     cols: [
       {
@@ -178,7 +178,7 @@ export const module5Slides: Slide[] = [
       },
       {
         label: "For a peer",
-        text: "Real reciprocity and staying in honest professional contact. A peer relationship is tended, not transacted: it stays warm because both people keep showing up.",
+        text: "Real reciprocity and staying in honest professional contact. A peer relationship is kept, not transacted: it stays warm because both people keep showing up.",
       },
     ],
   },
@@ -188,7 +188,7 @@ export const module5Slides: Slide[] = [
     kind: "principle",
     id: "m5-clean-judgment",
     crumb: S3,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "09",
     audio: { src: null },
     sans: true,
@@ -202,13 +202,13 @@ export const module5Slides: Slide[] = [
     kind: "principle",
     id: "m5-compounds",
     crumb: S3,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "10",
     audio: { src: null },
     sans: true,
     eyebrow: "On compounding",
     headline: "A referral system pays you back *slowly*, then steadily.",
-    sub: "One referral, tended well, does not just bring one client. It tells the referrer that referring you works, which makes the next one likelier. That is the loop closing. The reason referrals feel like luck is that the loop runs too slowly to watch. Build it on purpose and the same slowness becomes *reliability.*",
+    sub: "One referral, kept well, does not just bring one client. It tells the referrer that referring you works, which makes the next one likelier. That is the loop closing. The reason referrals feel like luck is that the loop runs too slowly to watch. Build it on purpose and the same slowness becomes *reliability.*",
   },
 
   // 11 · Which stage is yours
@@ -219,7 +219,7 @@ export const module5Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "11",
     audio: { src: null },
-    eyebrow: "Not the same for everyone",
+    eyebrow: "Every loop leaks somewhere",
     heading: "Which stage is *yours* to fix?",
     sub: "The loop has three stages. Most businesses are strong at one and leak at another. Your weak stage is the one to work.",
   },
@@ -241,13 +241,13 @@ export const module5Slides: Slide[] = [
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Peer engine.",
-        text: "Doctors and other therapists route clients to her. Earn is strong. *Tend* is the weak stage: those peer relationships go quiet between referrals, and a quiet one cools.",
+        text: "Doctors and other therapists route clients to her. Earn is strong. *Keep* is the weak stage: those peer relationships go quiet between referrals, and a quiet one cools.",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Client engine, plus partners.",
-        text: "Happy homeowners and realtor contacts. Earn and Tend are fine. *Ask* is the weak stage: he never actually mentions referrals, and assumes good work travels alone.",
+        text: "Happy homeowners and realtor contacts. Earn and Keep are fine. *Ask* is the weak stage: he never actually mentions referrals, and assumes good work travels alone.",
       },
       {
         name: "Lena",
@@ -265,7 +265,7 @@ export const module5Slides: Slide[] = [
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Client engine, plus stylist overflow.",
-        text: "Other stylists send vivids clients to her. Earn is vivid. *Tend* is the weak stage: she never circles back to the stylists who sent work, so the overflow is sporadic.",
+        text: "Other stylists send vivids clients to her. Earn is vivid. *Keep* is the weak stage: she never circles back to the stylists who sent work, so the overflow is sporadic.",
       },
     ],
   },
@@ -275,7 +275,7 @@ export const module5Slides: Slide[] = [
     kind: "principle",
     id: "m5-earn-first",
     crumb: S4,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "13",
     audio: { src: null },
     sans: true,
@@ -289,7 +289,7 @@ export const module5Slides: Slide[] = [
     kind: "principle",
     id: "m5-fit",
     crumb: S4,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "14",
     audio: { src: null },
     sans: true,
@@ -324,7 +324,7 @@ export const module5Slides: Slide[] = [
     kind: "principle",
     id: "m5-relationships",
     crumb: S4,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "16",
     audio: { src: null },
     sans: true,
@@ -345,7 +345,7 @@ export const module5Slides: Slide[] = [
     heading: "Fix the *weak* stage, not all three.",
     paragraphs: [
       "You do not rebuild the whole loop at once. The five businesses each had one weak stage, not three. If referrals already reach you, even occasionally, your loop is running and leaking at one point.",
-      "Pick one referral source you already have, a kind of client or a particular peer. Walk it through Earn, Ask, and Tend, and find the stage where it leaks. One stage, repaired properly, restores the whole loop. The next slide is for the buyer with no loop yet.",
+      "Pick one referral source you already have, a kind of client or a particular peer. Walk it through Earn, Ask, and Keep, and find the stage where it leaks. One stage, repaired properly, restores the whole loop. The next slide is for the buyer with no loop yet.",
     ],
   },
 
@@ -361,7 +361,7 @@ export const module5Slides: Slide[] = [
     heading: "No loop yet? *Start* at Earn.",
     paragraphs: [
       "If referrals do not really reach you yet, you do not have a weak stage to repair. You have a loop to begin, and it begins in one specific place. Not with asking. With Earn.",
-      "A referral has nothing to travel on until your work is nameable. So the first move is not a better ask, it is making one piece of your work specific enough that a client or peer could describe it in a plain sentence. Ask and Tend are real, and they come next. Earn is where a loop that does not exist yet is built. This is the honest starting point, not a lesser one.",
+      "A referral has nothing to travel on until your work is nameable. So the first move is not a better ask, it is making one piece of your work specific enough that a client or peer could describe it in a plain sentence. Ask and Keep are real, and they come next. Earn is where a loop that does not exist yet is built. This is the honest starting point, not a lesser one.",
     ],
   },
 
@@ -370,7 +370,7 @@ export const module5Slides: Slide[] = [
     kind: "principle",
     id: "m5-clarity",
     crumb: S4,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "19",
     audio: { src: null },
     sans: true,
@@ -391,7 +391,7 @@ export const module5Slides: Slide[] = [
     heading: "Map your *loop.*",
     paragraphs: [
       "Pick one referral source you already have: a kind of client, or a particular peer. If referrals do not reach you yet, name the source you are building toward, and start at Earn.",
-      "Walk that one source through all three stages. Mark Earn, Ask, and Tend as solid or leaking, then name the single weak stage and one concrete change you will make to it.",
+      "Walk that one source through all three stages. Mark Earn, Ask, and Keep as solid or leaking, then name the single weak stage and one concrete change you will make to it.",
     ],
   },
 

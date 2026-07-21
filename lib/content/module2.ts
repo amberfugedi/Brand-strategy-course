@@ -158,7 +158,7 @@ export const module2Slides: Slide[] = [
     kind: "principle",
     id: "m2-honesty",
     crumb: S2,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "09",
     audio: { src: null },
     eyebrow: "On honesty",
@@ -215,7 +215,7 @@ export const module2Slides: Slide[] = [
     kind: "principle",
     id: "m2-context",
     crumb: S3,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "13",
     audio: { src: null },
     eyebrow: "On context",
@@ -261,7 +261,7 @@ export const module2Slides: Slide[] = [
     kind: "principle",
     id: "m2-carry-forward",
     crumb: S3,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "16",
     audio: { src: null },
     headline: "Carry this *forward*.",
@@ -320,7 +320,7 @@ export const module2Slides: Slide[] = [
     kind: "principle",
     id: "m2-true-today",
     crumb: S4,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "20",
     audio: { src: null },
     eyebrow: "The honesty rule",
@@ -393,7 +393,7 @@ export const module2Slides: Slide[] = [
     kind: "principle",
     id: "m2-critical",
     crumb: S5,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "25",
     audio: { src: null },
     eyebrow: "On reading critical gaps",
@@ -406,7 +406,7 @@ export const module2Slides: Slide[] = [
     kind: "principle",
     id: "m2-solid",
     crumb: S5,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "26",
     audio: { src: null },
     eyebrow: "On reading solid foundations",
@@ -447,7 +447,7 @@ export const module2Slides: Slide[] = [
     kind: "principle",
     id: "m2-sequence",
     crumb: S6,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "29",
     audio: { src: null },
     eyebrow: "On sequence",
@@ -489,7 +489,7 @@ export const module2Slides: Slide[] = [
     ],
   },
 
-  // 32 · Modules 3 through 7
+  // 32 · Modules 3 through 8
   {
     kind: "framework",
     id: "m2-next-modules",
@@ -511,7 +511,7 @@ export const module2Slides: Slide[] = [
     kind: "principle",
     id: "m2-not-skip",
     crumb: S6,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "33",
     audio: { src: null },
     eyebrow: "What this audit is for",
@@ -552,17 +552,17 @@ export const module2Slides: Slide[] = [
     ],
   },
 
-  // 36 · You take all five
+  // 36 · You take all six
   {
     kind: "principle",
     id: "m2-all-five",
     crumb: S7,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "36",
     audio: { src: null },
     eyebrow: "On the foundation modules",
-    headline: "You take *all five*. The teaching is the point.",
-    sub: "Modules 3 through 7 are concept modules, not tactics modules. *Your audit doesn't tell you what to learn. It tells you what to build first when you're done learning.*",
+    headline: "You take *all six*. The teaching is the point.",
+    sub: "Modules 3 through 8 are concept modules, not tactics modules. *Your audit doesn't tell you what to learn. It tells you what to build first when you're done learning.*",
   },
 
   // 37 · Bridge to Module 3

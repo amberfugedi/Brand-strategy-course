@@ -42,7 +42,7 @@ const PROOF_LABELS: Record<string, string> = {
 const KIND_LABELS: Record<string, string> = {
   craft: "Craft",
   expertise: "Expertise",
-  judgment: "Judgment",
+  judgment: "Track record",
 };
 
 /** The Module 2 audit still runs on the older foundation model; its

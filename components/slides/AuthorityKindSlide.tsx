@@ -20,8 +20,8 @@ const KINDS = [
   {
     id: "judgment",
     signal: "“She was right”",
-    name: "Judgment authority",
-    note: "They point to a call that held up. That is *judgment* authority, built by a visible track record.",
+    name: "Track record authority",
+    note: "They point to a call that held up. That is *track record* authority, built by being right in view of others.",
   },
 ];
 

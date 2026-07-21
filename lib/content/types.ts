@@ -231,7 +231,7 @@ export interface ProofInventorySlide extends SlideBase {
   paragraphs: string[];
 }
 
-/** Module 5 tool: one source walked through Earn, Ask, Tend. */
+/** Module 5 tool: one source walked through Earn, Ask, Keep. */
 export interface ReferralMapSlide extends SlideBase {
   kind: "referralMap";
   eyebrow: string;

@@ -57,7 +57,7 @@ export const module8Slides: Slide[] = [
     number: "03",
     audio: { src: null },
     eyebrow: "The concept",
-    heading: "Authority is trusted *judgment*.",
+    heading: "Authority is earned *trust*.",
     paragraphs: [
       "It is not a title you award yourself, and not a level you reach. Authority is the weight your word carries in your field: whether, when you say something, people move on it or weigh it like anyone else's.",
       "Which means it was never something to qualify for. It is something other people grant you, based on whether your judgment has been sound. Your clients have been doing exactly that, quietly, for as long as you have had clients. This module is about seeing that clearly, and building on it.",
@@ -74,7 +74,7 @@ export const module8Slides: Slide[] = [
     audio: { src: null },
     eyebrow: "Not one thing",
     heading: "Authority comes in *kinds*.",
-    sub: "Trusted judgment is not earned the same way for everyone. There are three kinds of authority, and knowing which is yours tells you what to build.",
+    sub: "Earned trust is not built the same way for everyone. There are three kinds of authority, and knowing which is yours tells you what to build.",
   },
 
   // 05 · The three kinds
@@ -86,7 +86,7 @@ export const module8Slides: Slide[] = [
     number: "05",
     audio: { src: null },
     eyebrow: "The three kinds of authority",
-    heading: "Craft, expertise, *judgment*.",
+    heading: "Craft, expertise, *track record*.",
     cards: [
       {
         label: "Kind 01",
@@ -100,12 +100,12 @@ export const module8Slides: Slide[] = [
       },
       {
         label: "Kind 03",
-        title: "Judgment",
+        title: "Track record",
         text: "Trust earned by a track record of calls that proved right. People trust not just your skill but your *read* of a situation.",
       },
     ],
     footnote:
-      "Most businesses lead with one of the three. It is not a ranking, and you do not need all three. The next slides take craft and expertise in turn, then judgment.",
+      "Most businesses lead with one of the three. It is not a ranking, and you do not need all three. The next slides take craft and expertise in turn, then track record.",
   },
 
   // 06 · Craft
@@ -165,7 +165,7 @@ export const module8Slides: Slide[] = [
     kind: "principle",
     id: "m8-granted",
     crumb: S2,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "08",
     audio: { src: null },
     sans: true,
@@ -187,7 +187,7 @@ export const module8Slides: Slide[] = [
     sub: "One kind of authority is left to look at, the deepest one. Then the real question: which of the three is the one you already have, and should build.",
   },
 
-  // 10 · Judgment
+  // 10 · Track record
   {
     kind: "detail",
     id: "m8-judgment",
@@ -195,7 +195,7 @@ export const module8Slides: Slide[] = [
     tag: "KIND 03",
     number: "10",
     audio: { src: null },
-    eyebrow: "Judgment",
+    eyebrow: "Track record",
     heading: "When your *read* is what they trust.",
     cols: [
       {
@@ -232,13 +232,13 @@ export const module8Slides: Slide[] = [
     kind: "principle",
     id: "m8-shown",
     crumb: S3,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "12",
     audio: { src: null },
     sans: true,
     eyebrow: "On showing",
     headline: "Whichever kind is yours, it is shown by *doing*.",
-    sub: "Craft is shown by letting the work be seen. Expertise is shown in the question you ask that no one else did. Judgment is shown by making a call where others can watch it land. None of the three is shown by describing yourself. Authority is demonstrated, in the ordinary course of the work, or it is not built at all. *The work is the argument. Your job is to make it visible.*",
+    sub: "Craft is shown by letting the work be seen. Expertise is shown in the question you ask that no one else did. A track record is shown by making a call where others can watch it land. None of the three is shown by describing yourself. Authority is demonstrated, in the ordinary course of the work, or it is not built at all. *The work is the argument. Your job is to make it visible.*",
   },
 
   // 13 · Calibration opener
@@ -249,7 +249,7 @@ export const module8Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "13",
     audio: { src: null },
-    eyebrow: "Not the same for everyone",
+    eyebrow: "Each leads with a different kind",
     heading: "Five businesses, five *kinds*.",
     sub: "Each of the five leads with a different kind of authority, and for one of them it weighs very little. The honest answer is the calibration.",
   },
@@ -321,7 +321,7 @@ export const module8Slides: Slide[] = [
     kind: "principle",
     id: "m8-slow",
     crumb: S4,
-    tag: "PRINCIPLE",
+    tag: "THE TAKEAWAY",
     number: "16",
     audio: { src: null },
     sans: true,
@@ -352,7 +352,7 @@ export const module8Slides: Slide[] = [
     number: "18",
     audio: { src: null },
     eyebrow: "Now: assemble your Foundation Plan",
-    heading: "*Sequence* the seven.",
+    heading: "Assemble your plan. *Sequence* the seven foundations.",
     paragraphs: [
       "The plan below has already gathered what you marked across the course: positioning, the audit, get found, earned proof, referrals, awareness, owned audience, and the authority you just named.",
       "You will not act on all seven at once. With five to ten hours a week, that would stall. Instead, sequence them: first, next, later. First is the one or two that most need work and most repay it now.",
@@ -387,7 +387,7 @@ export const module8Slides: Slide[] = [
     eyebrow: "End of Build Your Marketing Foundation",
     heading: "A foundation, and a *plan*.",
     paragraphs: [
-      "Seven foundations: get found, get chosen, be remembered. You did not need more marketing. You needed it to be clear, considered, and yours. It is. Now build it, in the order you set, at the pace your work allows.",
+      "Seven foundations, across three layers: get found, get chosen, be remembered. You did not need more marketing. You needed it to be clear, considered, and yours. It is. Now build it, in the order you set, at the pace your work allows.",
     ],
   },
 ];
