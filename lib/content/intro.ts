@@ -16,7 +16,7 @@ export const introSlides: Slide[] = [
     audio: {
       src: "/audio/intro/intro-1.mp3",
       // "If you're here" · "Three layers" · "Let's get into it"
-      cues: [2.9, 17.1, 21.5],
+      cues: [2.0, 18.0, 22.8],
     },
     surface: "cream",
     eyebrow: "Build your marketing foundation",
@@ -40,7 +40,7 @@ export const introSlides: Slide[] = [
     audio: {
       src: "/audio/intro/intro-2.mp3",
       // Layer 1 · Layer 2 · Layer 3 · positioning · "all seven"
-      cues: [4.4, 10.2, 15.5, 21.7, 41.2],
+      cues: [7.9, 14.2, 19.4, 24.3, 44.4],
     },
     eyebrow: "The system this course teaches",
     heading: "Three layers. Seven *foundations*.",
@@ -108,7 +108,7 @@ export const introSlides: Slide[] = [
     audio: {
       src: "/audio/intro/intro-4.mp3",
       // Module 1 · Module 2 · Modules 3-8 · Module 8's double work
-      cues: [2.3, 6.6, 16.0, 32.1],
+      cues: [4.6, 11.0, 20.6, 38.0],
     },
     eyebrow: "What you'll do across the eight modules",
     heading: "The *arc*.",
@@ -140,7 +140,7 @@ export const introSlides: Slide[] = [
     audio: {
       src: "/audio/intro/intro-5.mp3",
       // The quote · "The diagnostic uses it" · "Don't skip ahead"
-      cues: [0.3, 5.8, 11.2],
+      cues: [0.3, 7.8, 13.2],
     },
     eyebrow: "Your first step",
     heading: "*Positioning*, first.",
