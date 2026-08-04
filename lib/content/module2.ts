@@ -566,20 +566,4 @@ export const module2Slides: Slide[] = [
     sub: "Modules 3 through 8 are concept modules, not tactics modules. *Your audit doesn't tell you what to learn. It tells you what to build first when you're done learning.*",
   },
 
-  // 37 · Bridge to Module 3
-  {
-    kind: "prose",
-    id: "m2-bridge",
-    crumb: CLOSING,
-    tag: "BRIDGE",
-    number: "37",
-    audio: { src: null },
-    surface: "plum",
-    eyebrow: "End of Module 2",
-    heading: "Now: *learn the foundations*.",
-    paragraphs: [
-      "You have a starting point. The next six modules teach what you'll be building. Take a break.",
-      "Module 3 starts with getting found. *I'll see you there.*",
-    ],
-  },
 ];
