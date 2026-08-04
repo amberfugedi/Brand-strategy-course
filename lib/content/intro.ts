@@ -30,7 +30,11 @@ export const introSlides: Slide[] = [
     crumb: "COURSE INTRO",
     tag: "02 OF 05",
     number: "ii",
-    audio: { src: "/audio/intro/intro-2.mp3" },
+    audio: {
+      src: "/audio/intro/intro-2.mp3",
+      // Layer 1 · Layer 2 · Layer 3 · positioning · "all seven"
+      cues: [5.0, 10.7, 15.4, 20.1, 38.9],
+    },
     eyebrow: "The system this course teaches",
     heading: "Three layers. Seven *foundations*.",
     layers: [
@@ -94,7 +98,11 @@ export const introSlides: Slide[] = [
     crumb: "COURSE INTRO",
     tag: "04 OF 05",
     number: "iv",
-    audio: { src: "/audio/intro/intro-4.mp3" },
+    audio: {
+      src: "/audio/intro/intro-4.mp3",
+      // Module 1 · Module 2 · Modules 3-8 · Module 8's double work
+      cues: [2.2, 6.6, 15.8, 32.1],
+    },
     eyebrow: "What you'll do across the eight modules",
     heading: "The *arc*.",
     rows: [
@@ -122,7 +130,11 @@ export const introSlides: Slide[] = [
     crumb: "COURSE INTRO",
     tag: "05 OF 05",
     number: "v",
-    audio: { src: "/audio/intro/intro-5.mp3" },
+    audio: {
+      src: "/audio/intro/intro-5.mp3",
+      // The quote · "The diagnostic uses it" · "Don't skip ahead"
+      cues: [0.3, 5.4, 10.9],
+    },
     eyebrow: "Your first step",
     heading: "*Positioning*, first.",
     quote:

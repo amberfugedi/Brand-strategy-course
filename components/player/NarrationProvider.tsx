@@ -2,6 +2,7 @@
 
 import {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useRef,
@@ -14,25 +15,36 @@ import { getModule } from "@/lib/content/registry";
 
 const RATES = [1, 1.25, 1.5, 0.75];
 const RATE_KEY = "bymf.narrationRate";
+const CAPTIONS_KEY = "bymf.captions";
 
 interface NarrationValue {
   /** Whether the current slide (or module) has a narration track. */
   available: boolean;
+  /** The current track's URL; word timings live beside it. */
+  src: string | null;
   playing: boolean;
   rate: number;
+  captions: boolean;
   toggle: () => void;
   /** Replay the current slide's narration from the top. */
   restart: () => void;
   cycleRate: () => void;
+  toggleCaptions: () => void;
+  /** Current playback position, for the caption highlight. */
+  getTime: () => number;
 }
 
 const NarrationContext = createContext<NarrationValue>({
   available: false,
+  src: null,
   playing: false,
   rate: 1,
+  captions: false,
   toggle: () => {},
   restart: () => {},
   cycleRate: () => {},
+  toggleCaptions: () => {},
+  getTime: () => 0,
 });
 
 /**
@@ -63,11 +75,14 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
   const userPausedRef = useRef(false);
   const [playing, setPlaying] = useState(false);
   const [rate, setRate] = useState(1);
+  const [captions, setCaptions] = useState(false);
 
-  // The saved speed preference, applied before anything plays.
+  // The saved speed and caption preferences, applied before anything
+  // plays.
   useEffect(() => {
     const saved = Number(window.localStorage.getItem(RATE_KEY));
     if (RATES.includes(saved)) setRate(saved);
+    setCaptions(window.localStorage.getItem(CAPTIONS_KEY) === "1");
   }, []);
 
   useEffect(() => {
@@ -133,15 +148,28 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
     window.localStorage.setItem(RATE_KEY, String(next));
   };
 
+  const toggleCaptions = () => {
+    setCaptions((on) => {
+      window.localStorage.setItem(CAPTIONS_KEY, on ? "0" : "1");
+      return !on;
+    });
+  };
+
+  const getTime = useCallback(() => audioRef.current?.currentTime ?? 0, []);
+
   return (
     <NarrationContext.Provider
       value={{
         available: Boolean(src),
+        src,
         playing,
         rate,
+        captions,
         toggle,
         restart,
         cycleRate,
+        toggleCaptions,
+        getTime,
       }}
     >
       {children}

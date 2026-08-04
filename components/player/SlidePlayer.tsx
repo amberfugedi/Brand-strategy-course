@@ -43,6 +43,7 @@ import { FoundationPlanSlide } from "@/components/slides/FoundationPlanSlide";
 import { useCourseStore } from "@/lib/store/provider";
 import { useAuth } from "@/lib/auth/provider";
 import { useNarration } from "@/components/player/NarrationProvider";
+import { CaptionBar } from "@/components/player/CaptionBar";
 import { SignInGate } from "@/components/auth/SignInGate";
 import { stepsOf } from "@/lib/content/steps";
 import { slideComplete } from "@/lib/content/completion";
@@ -193,14 +194,17 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
 
   // The timer that reveals the next beat. Chained timeouts: a short
   // settle before the first beat, a reading pace between the rest.
+  // On slides with narration cues the playing voice drives the beats
+  // instead; the timer only covers a blocked or paused track.
+  const cueDriven = Boolean(slide.audio.cues?.length) && narration.playing;
   useEffect(() => {
-    if (step >= totalSteps) return;
+    if (step >= totalSteps || cueDriven) return;
     const t = setTimeout(
       () => setStep((s) => Math.min(totalSteps, s + 1)),
       step === 0 ? 700 : 1900,
     );
     return () => clearTimeout(t);
-  }, [step, totalSteps, module.id, slideIndex]);
+  }, [step, totalSteps, cueDriven, module.id, slideIndex]);
 
   // Record where the buyer is so the home page can offer to continue.
   // Reaching a module's final slide marks the module completed, but
@@ -242,6 +246,24 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
 
   const stepRef = useRef(step);
   stepRef.current = step;
+
+  // Narration-synced reveals: each beat lands when the voice reaches
+  // its cue. Monotonic, so a Next-press skip is never undone and a
+  // restarted track doesn't hide what's on screen.
+  useEffect(() => {
+    const cues = slide.audio.cues;
+    if (!cues?.length || !narration.playing) return;
+    let raf = 0;
+    const tick = () => {
+      const t = narration.getTime();
+      let due = 0;
+      for (const c of cues) if (c <= t) due++;
+      if (due > stepRef.current) setStep(Math.min(totalSteps, due));
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [slide, narration.playing, narration.getTime, totalSteps]);
 
   // Next skips the remaining beats if any are still arriving;
   // otherwise it moves to the next slide, once the slide's inputs
@@ -394,6 +416,23 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
           >
             {narration.rate}×
           </button>
+          <button
+            type="button"
+            onClick={narration.toggleCaptions}
+            aria-label="Captions"
+            aria-pressed={narration.captions}
+            className={`-my-3 shrink-0 whitespace-nowrap px-2 py-3 text-[11px] font-bold tracking-chrome transition-colors ${
+              narration.captions
+                ? dark
+                  ? "text-gold hover:text-cream"
+                  : "text-aubergine hover:text-gold"
+                : dark
+                  ? "text-on-dark-muted hover:text-gold"
+                  : "text-body-tertiary hover:text-aubergine"
+            }`}
+          >
+            CC
+          </button>
         </>
       ) : null}
       {nudged && !inputComplete ? (
@@ -422,6 +461,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
         homeHref={`/${courseId}`}
         controls={controls}
         note={note}
+        caption={<CaptionBar dark={dark} />}
       >
         <SlideBody slide={slide} revealed={step} />
       </SlideChrome>

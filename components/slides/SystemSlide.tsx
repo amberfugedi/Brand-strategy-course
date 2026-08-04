@@ -70,12 +70,13 @@ export function SystemSlide({
               <Rich text={slide.base.text} />
             </span>
           </div>
-          {slide.note ? (
-            <p className="mt-6 max-w-2xl text-[15px] text-body-secondary">
-              <Rich text={slide.note} />
-            </p>
-          ) : null}
         </div>
+      ) : null}
+
+      {slide.note && revealed > slide.layers.length + 1 ? (
+        <p className="beat mt-6 max-w-2xl text-[15px] text-body-secondary">
+          <Rich text={slide.note} />
+        </p>
       ) : null}
     </div>
   );

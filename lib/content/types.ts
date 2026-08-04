@@ -26,6 +26,10 @@ export type SlideTag =
 export interface SlideAudio {
   /** Insertion point for the later audio pass. Null until recorded. */
   src: string | null;
+  /** Narration-synced reveals: cues[k] is the playback second at which
+   *  beat k + 1 appears, so cards land as the voice reaches them. The
+   *  reveal timer takes over whenever the narration isn't playing. */
+  cues?: number[];
 }
 
 interface SlideBase {

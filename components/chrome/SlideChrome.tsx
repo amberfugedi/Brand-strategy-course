@@ -27,6 +27,8 @@ interface SlideChromeProps {
   /** A short transient note (e.g. the finish-this-step hold), shown
    *  in the footer's left cluster. */
   note?: ReactNode;
+  /** The caption bar, rendered on the footer above the controls row. */
+  caption?: ReactNode;
   children: ReactNode;
 }
 
@@ -47,6 +49,7 @@ export function SlideChrome({
   homeHref,
   controls,
   note,
+  caption,
   children,
 }: SlideChromeProps) {
   const homeLink = `transition-colors ${
@@ -85,6 +88,8 @@ export function SlideChrome({
       <main className="relative z-10 flex flex-1 flex-col px-[7.5vw] py-8">
         {children}
       </main>
+
+      {caption}
 
       <footer
         className={`relative z-10 flex items-center justify-between gap-4 px-[4.5vw] pb-8 text-xs ${chromeText[surface]}`}
