@@ -63,6 +63,8 @@ export interface SystemSlide extends SlideBase {
   /** The foundation beneath the layers: positioning, rendered as a
    *  full-width base row under the three columns. */
   base?: { label: string; text: string };
+  /** Closing line under the base row. */
+  note?: string;
 }
 
 /** Heading + prose + a single bordered card with a list (intro slide iii). */
