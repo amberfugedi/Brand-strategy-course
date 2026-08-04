@@ -48,13 +48,13 @@ export const introSlides: Slide[] = [
       {
         label: "Layer 01 · Get found",
         accent: "teal",
-        sub: "The infrastructure that makes you *discoverable* to the people who need what you do.",
+        sub: "So people who need you can *discover* you.",
         items: [{ num: "02", text: "Get *Found*" }],
       },
       {
         label: "Layer 02 · Get chosen",
         accent: "rust",
-        sub: "The signals that make someone pick *you* over the alternatives.",
+        sub: "So they pick *you* over alternatives.",
         items: [
           { num: "03", text: "Earned *Proof*" },
           { num: "04", text: "Referral *System*" },
@@ -63,7 +63,7 @@ export const introSlides: Slide[] = [
       {
         label: "Layer 03 · Be remembered",
         accent: "olive",
-        sub: "The work that keeps you *present* with people who aren't ready to buy yet.",
+        sub: "So you stay *present* until they're ready.",
         items: [
           { num: "05", text: "Brand *Awareness*" },
           { num: "06", text: "Owned *Audience*" },
@@ -73,9 +73,9 @@ export const introSlides: Slide[] = [
     ],
     base: {
       label: "Foundation 01 · Positioning",
-      text: "Where the course starts. Not because it outranks the rest, but because it's the *upstream answer* the rest depend on.",
+      text: "Where the course starts. The working statement all three layers are *built around*.",
     },
-    note: "Every service business needs all *seven*. Not every service business needs to build them in the same order. That's what the audit is for.",
+    note: "Every business needs all *seven*. The order they get built is what the audit decides.",
   },
   {
     kind: "cardList",
