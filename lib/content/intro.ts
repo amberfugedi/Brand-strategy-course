@@ -22,7 +22,7 @@ export const introSlides: Slide[] = [
     eyebrow: "Build your marketing foundation",
     heading: "A working marketing foundation, in one *place*.",
     whoFor:
-      "If you're here, you have a service business with paying clients. You've been at it long enough to know that marketing advice comes at you constantly, and most of it *doesn't fit*. That's what this course is for.",
+      "For service businesses with paying clients, tired of marketing advice that doesn't *fit*.",
     host: true,
     sub: "Three layers. Seven foundations. Eight modules. One plan that's *actually yours*.",
     meta: [
@@ -87,7 +87,7 @@ export const introSlides: Slide[] = [
     eyebrow: "Your working document",
     heading: "The Marketing Foundation *Map*.",
     intro:
-      "Your working document, built into the course itself. When it's time to do the work, the tool is right there on the slide. Nothing to open, nothing to manage.",
+      "Your working document, built into the *course* itself.",
     card: {
       title: "Marketing Foundation *Map*",
       subtitle: "Saves automatically as you go.",
@@ -147,8 +147,8 @@ export const introSlides: Slide[] = [
     quote:
       "Everything that follows in this course depends on having a clear positioning statement.",
     paragraphs: [
-      "The diagnostic uses it. The audit references it. The foundation modules are *built around* it.",
-      "Don't skip ahead. Don't skim Module 1. Take the time, do the work, and meet me there.",
+      "The diagnostic, the audit, and every foundation module are *built around* it.",
+      "Don't skim Module 1. Do the work, and *meet me there*.",
     ],
   },
 ];
