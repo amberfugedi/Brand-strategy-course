@@ -21,7 +21,7 @@ export function SystemSlide({
   revealed?: number;
 }) {
   return (
-    <div className="mt-4 flex flex-1 flex-col">
+    <div className="flex flex-1 flex-col justify-center py-4">
       <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-gold">
         {slide.eyebrow}
       </div>
@@ -29,11 +29,11 @@ export function SystemSlide({
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <div className="mt-10 grid items-stretch gap-6 md:grid-cols-3">
         {slide.layers.slice(0, revealed).map((layer) => (
-          <div key={layer.label} className="beat">
+          <div key={layer.label} className="beat flex flex-col">
             <div className={`h-[3px] w-full ${accentBar[layer.accent]}`} />
-            <div className="bg-cream-light px-6 py-6">
+            <div className="flex-1 bg-cream-light px-6 py-6">
               <div
                 className={`mb-2 text-[11px] font-bold uppercase tracking-eyebrow ${accentLabel[layer.accent]}`}
               >
