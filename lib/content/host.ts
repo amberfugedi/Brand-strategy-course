@@ -9,5 +9,8 @@ export const host = {
   name: "Amber Fugedi",
   cta: "Meet Amber",
   photo: "/images/amber.jpg",
-  bio: [] as string[],
+  bio: [
+    "Amber is a marketing strategist with over ten years of experience helping businesses build marketing systems that support *sustainable* growth.",
+    "She has led marketing for SaaS companies, financial institutions, and service businesses, combining strategic thinking with practical execution to help businesses grow with *confidence*.",
+  ] as string[],
 };
