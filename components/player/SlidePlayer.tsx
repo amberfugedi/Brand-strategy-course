@@ -188,9 +188,25 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
     const reducedMotion =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    setStep(current && (wasSeen || reducedMotion) ? stepsOf(current) : 0);
+    // A slide with narration cues rebuilds with the voice on every
+    // visit (its track replays on arrival); other seen slides render
+    // fully, and reduced motion always does.
+    const cued = Boolean(current?.audio.cues?.length);
+    setStep(
+      current && (reducedMotion || (wasSeen && !cued)) ? stepsOf(current) : 0,
+    );
     setNudged(false);
   }, [ready, module, slideIndex]);
+
+  // The restart control replays the track from the top; a cued slide
+  // rebuilds along with it.
+  const restartSeenRef = useRef(narration.restartCount);
+  useEffect(() => {
+    if (narration.restartCount === restartSeenRef.current) return;
+    restartSeenRef.current = narration.restartCount;
+    if (slide.audio.cues?.length) setStep(0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [narration.restartCount]);
 
   // The timer that reveals the next beat. Chained timeouts: a short
   // settle before the first beat, a reading pace between the rest.

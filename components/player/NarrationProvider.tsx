@@ -30,6 +30,8 @@ interface NarrationValue {
   captions: boolean;
   /** Caption text size in px. */
   captionSize: number;
+  /** Increments each time the listener restarts the track. */
+  restartCount: number;
   toggle: () => void;
   /** Replay the current slide's narration from the top. */
   restart: () => void;
@@ -47,6 +49,7 @@ const NarrationContext = createContext<NarrationValue>({
   rate: 1,
   captions: false,
   captionSize: CAPTION_SIZES[0],
+  restartCount: 0,
   toggle: () => {},
   restart: () => {},
   cycleRate: () => {},
@@ -85,6 +88,8 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
   const [rate, setRate] = useState(1);
   const [captions, setCaptions] = useState(false);
   const [captionSize, setCaptionSize] = useState(CAPTION_SIZES[0]);
+  // Bumped on restart so cue-driven slides can rebuild with the voice.
+  const [restartCount, setRestartCount] = useState(0);
 
   // The saved speed and caption preferences, applied before anything
   // plays.
@@ -150,6 +155,7 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
     if (!el || !src) return;
     userPausedRef.current = false;
     el.currentTime = 0;
+    setRestartCount((n) => n + 1);
     void el.play().catch(() => {});
   };
 
@@ -186,6 +192,7 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
         rate,
         captions,
         captionSize,
+        restartCount,
         toggle,
         restart,
         cycleRate,
