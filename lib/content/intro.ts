@@ -111,7 +111,7 @@ export const introSlides: Slide[] = [
       cues: [4.6, 11.0, 20.6, 38.0],
     },
     eyebrow: "What you'll do across the eight modules",
-    heading: "The *arc*.",
+    heading: "How the course *runs*.",
     rows: [
       {
         label: "Module 01",
