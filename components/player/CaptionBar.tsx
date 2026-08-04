@@ -72,7 +72,7 @@ export function CaptionBar({ dark }: { dark: boolean }) {
   return (
     <div className="relative z-10 px-[4.5vw] pb-3">
       <p
-        className={`min-h-[3.2em] max-w-3xl font-serif text-[15px] italic leading-relaxed ${
+        className={`min-h-[3.2em] max-w-3xl text-[14.5px] leading-relaxed ${
           dark ? "text-cream" : "text-body"
         }`}
       >
