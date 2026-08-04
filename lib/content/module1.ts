@@ -26,6 +26,7 @@ export const module1Slides: Slide[] = [
     number: "01",
     audio: { src: "/audio/m1/m1-1.mp3" },
     surface: "plum",
+    strata: 1,
     eyebrow: "Module 1",
     heading: "Your *positioning*.",
     sub: "Three questions every other foundation depends on. Twenty-five minutes. One working answer.",

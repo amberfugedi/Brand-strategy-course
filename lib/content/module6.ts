@@ -24,6 +24,7 @@ export const module6Slides: Slide[] = [
     number: "01",
     audio: { src: null },
     surface: "plum",
+    strata: 5,
     eyebrow: "Module 6",
     heading: "Brand *awareness*.",
     sub: "The first foundation in Be Remembered: becoming known by the people you want as clients, before they are looking for you.",

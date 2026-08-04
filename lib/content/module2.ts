@@ -27,6 +27,7 @@ export const module2Slides: Slide[] = [
     number: "01",
     audio: { src: null },
     surface: "plum",
+    strata: "all",
     eyebrow: "Module 2",
     heading: "The foundation *audit*.",
     sub: "A diagnostic, then a tailored audit. Twenty-eight minutes. One starting point with reasoning.",

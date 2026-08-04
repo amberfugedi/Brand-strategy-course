@@ -53,6 +53,9 @@ export interface HeroSlide extends SlideBase {
   whoFor?: string;
   /** Show the Meet-the-host chip beside the metadata strip. */
   host?: boolean;
+  /** Which foundation (1-7) this module builds, shown as the strata
+   *  wayfinding mark beside the metadata strip; "all" for the audit. */
+  strata?: number | "all";
   eyebrow: string;
   heading: string;
   sub: string;

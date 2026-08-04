@@ -22,6 +22,7 @@ export const module7Slides: Slide[] = [
     number: "01",
     audio: { src: null },
     surface: "plum",
+    strata: 6,
     eyebrow: "Module 7",
     heading: "Owned *audience*.",
     sub: "The work of building a direct line to the people who came to know you, so reaching them never depends on a platform you do not control.",

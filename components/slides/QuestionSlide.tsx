@@ -10,6 +10,13 @@ export function QuestionSlide({
 }) {
   return (
     <div className="flex flex-1 flex-col justify-center">
+      <div aria-hidden className="mb-10 w-44 border-t border-gold/40">
+        <div className="flex justify-between">
+          {Array.from({ length: 7 }).map((_, i) => (
+            <span key={i} className="h-[7px] w-px bg-gold/40" />
+          ))}
+        </div>
+      </div>
       {slide.pre ? (
         <p className="mb-8 text-[17px] text-gold/80">{slide.pre}</p>
       ) : null}

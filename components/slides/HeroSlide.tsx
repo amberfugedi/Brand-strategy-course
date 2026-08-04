@@ -1,6 +1,7 @@
 import { HeroSlide as HeroSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
 import { MeetHost } from "@/components/slides/MeetHost";
+import { StrataMark } from "@/components/slides/StrataMark";
 
 export function HeroSlide({
   slide,
@@ -61,7 +62,11 @@ export function HeroSlide({
               </div>
             ))}
           </div>
-          {slide.host ? <MeetHost dark={dark} /> : null}
+          {slide.host ? (
+            <MeetHost dark={dark} />
+          ) : slide.strata ? (
+            <StrataMark active={slide.strata} />
+          ) : null}
         </div>
       ) : (
         <div className="mt-12" />

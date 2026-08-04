@@ -22,6 +22,7 @@ export const module5Slides: Slide[] = [
     number: "01",
     audio: { src: null },
     surface: "plum",
+    strata: 4,
     eyebrow: "Module 5",
     heading: "Referral *system*.",
     sub: "The work of turning referrals from something that happens to you into something your business produces on purpose.",

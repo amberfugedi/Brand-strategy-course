@@ -25,6 +25,7 @@ export const module8Slides: Slide[] = [
     number: "01",
     audio: { src: null },
     surface: "plum",
+    strata: 7,
     eyebrow: "Module 8 · The final module",
     heading: "Authority *building*.",
     sub: "The work of being trusted as the genuine expert in your field. And the close of the course: assembling everything into one plan.",

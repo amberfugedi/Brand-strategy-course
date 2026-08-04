@@ -21,6 +21,7 @@ export const module4Slides: Slide[] = [
     number: "01",
     audio: { src: null },
     surface: "plum",
+    strata: 3,
     eyebrow: "Module 4",
     heading: "Earned *proof*.",
     sub: "The evidence of your work that comes from outside you. What it is, where it comes from, and which kind your business actually needs.",

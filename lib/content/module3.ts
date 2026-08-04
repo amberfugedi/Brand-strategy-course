@@ -23,6 +23,7 @@ export const module3Slides: Slide[] = [
     number: "01",
     audio: { src: null },
     surface: "plum",
+    strata: 2,
     eyebrow: "Module 3",
     heading: "Get *found*.",
     sub: "How prospects find you, and what they meet when they do. The places you exist online, and the local layer that matters when the search is geographic.",
