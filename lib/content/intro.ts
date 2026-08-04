@@ -13,10 +13,17 @@ export const introSlides: Slide[] = [
     crumb: "COURSE INTRO",
     tag: "01 OF 05",
     number: "i",
-    audio: { src: "/audio/intro/intro-1.mp3" },
+    audio: {
+      src: "/audio/intro/intro-1.mp3",
+      // "If you're here" · "Three layers" · "Let's get into it"
+      cues: [2.9, 17.3, 21.3],
+    },
     surface: "cream",
     eyebrow: "Build your marketing foundation",
     heading: "A working marketing foundation, in one *place*.",
+    whoFor:
+      "If you're here, you have a service business with paying clients. You've been at it long enough to know that marketing advice comes at you constantly, and most of it *doesn't fit*. That's what this course is for.",
+    host: true,
     sub: "Three layers. Seven foundations. Eight modules. One plan that's *actually yours*.",
     meta: [
       { label: "Length", value: "About 3 hours, self-paced" },

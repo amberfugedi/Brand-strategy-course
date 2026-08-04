@@ -8,6 +8,8 @@ import { Slide } from "./types";
  */
 export function stepsOf(slide: Slide): number {
   switch (slide.kind) {
+    case "hero":
+      return slide.whoFor ? 3 : 0;
     case "question":
       return slide.lines.length + (slide.post ? 1 : 0);
     case "framework":

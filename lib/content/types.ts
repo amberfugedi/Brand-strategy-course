@@ -47,6 +47,12 @@ interface SlideBase {
 export interface HeroSlide extends SlideBase {
   kind: "hero";
   surface: Surface;
+  /** A quiet who-this-is-for line between heading and sub. When set,
+   *  the hero builds in beats (line, sub, meta) instead of rendering
+   *  at once. */
+  whoFor?: string;
+  /** Show the Meet-the-host chip beside the metadata strip. */
+  host?: boolean;
   eyebrow: string;
   heading: string;
   sub: string;

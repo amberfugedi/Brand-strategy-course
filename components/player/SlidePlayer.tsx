@@ -71,7 +71,7 @@ function surfaceOf(slide: Slide): Surface {
 function SlideBody({ slide, revealed }: { slide: Slide; revealed: number }) {
   switch (slide.kind) {
     case "hero":
-      return <HeroSlide slide={slide} />;
+      return <HeroSlide slide={slide} revealed={revealed} />;
     case "system":
       return <SystemSlide slide={slide} revealed={revealed} />;
     case "cardList":
