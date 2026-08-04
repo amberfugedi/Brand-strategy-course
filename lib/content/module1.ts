@@ -62,7 +62,7 @@ export const module1Slides: Slide[] = [
     heading: "Foundation-level *positioning*.",
     sub: "Not deep brand strategy.",
     paragraphs: [
-      "A working answer to who you are, what you do, and what makes you you. Specific enough to write a website tagline, fill out a Google Business Profile, ask for the right kind of reviews.",
+      "A *working* answer: specific enough to write a tagline, fill out a profile, ask for the right kind of reviews.",
       "Not a polished brand. Not a final positioning statement you'd put on a billboard. *Enough to keep moving.*",
     ],
   },
@@ -142,7 +142,7 @@ export const module1Slides: Slide[] = [
     eyebrow: "The reframe",
     heading: "Not demographic. *Operational*.",
     paragraphs: [
-      "The question isn't \"what age range and gender are my customers.\" That answer rarely changes a marketing decision.",
+      "\"What age range and gender\" rarely changes a *marketing* decision.",
       "The real question: *when I imagine the person I most want walking through my door, what's specifically true about them?*",
     ],
     callout:
@@ -487,8 +487,8 @@ export const module1Slides: Slide[] = [
     eyebrow: "The reframe",
     heading: "Different. *Not better*.",
     paragraphs: [
-      "Most owners hear *what makes you different* and answer the question of *what makes you better*. Those are not the same question.",
-      "Better is comparative and unverifiable. Different is descriptive and falsifiable. Different doesn't have to mean better. It often means narrower, slower, more honest, more selective, more specific.",
+      "*Different* and better are not the same question.",
+      "Better is comparative and unverifiable. Different is descriptive and *falsifiable*.",
     ],
     callout:
       "The buyer's job isn't to decide which business is best. *It's to decide which business is for them.*",
