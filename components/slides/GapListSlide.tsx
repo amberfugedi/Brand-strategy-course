@@ -16,7 +16,13 @@ const GAP_META: Record<GapTier, { label: string; color: string }> = {
   solid: { label: "Solid", color: "border-olive text-olive" },
 };
 
-export function GapListSlide({ slide }: { slide: GapListSlideDef }) {
+export function GapListSlide({
+  slide,
+  revealed = Infinity,
+}: {
+  slide: GapListSlideDef;
+  revealed?: number;
+}) {
   const { diagnostic, audit } = useModule2();
   const complete = diagnosticComplete(diagnostic);
   const gaps = complete
@@ -35,8 +41,8 @@ export function GapListSlide({ slide }: { slide: GapListSlideDef }) {
       </h1>
 
       <div className="mt-4 max-w-4xl space-y-1.5">
-        {slide.tiers.map((t) => (
-          <p key={t.label} className="text-[13.5px] leading-snug">
+        {slide.tiers.slice(0, revealed).map((t) => (
+          <p key={t.label} className="beat text-[13.5px] leading-snug">
             <em className="accent-serif">{t.label}</em>
             <span className="text-body-secondary">. {t.text}</span>
           </p>

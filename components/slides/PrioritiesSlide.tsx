@@ -23,7 +23,13 @@ const TIER_COLOR: Record<PriorityTier, string> = {
   na: "text-body-tertiary border-ink/20",
 };
 
-export function PrioritiesSlide({ slide }: { slide: PrioritiesSlideDef }) {
+export function PrioritiesSlide({
+  slide,
+  revealed = Infinity,
+}: {
+  slide: PrioritiesSlideDef;
+  revealed?: number;
+}) {
   const { diagnostic } = useModule2();
   const complete = diagnosticComplete(diagnostic);
   const priorities = complete ? computePriorities(diagnostic) : [];
@@ -38,8 +44,8 @@ export function PrioritiesSlide({ slide }: { slide: PrioritiesSlideDef }) {
       </h1>
 
       <div className="mt-4 grid max-w-5xl gap-x-10 gap-y-2 md:grid-cols-2">
-        {slide.tiers.map((t) => (
-          <p key={t.label} className="text-[13.5px] leading-snug">
+        {slide.tiers.slice(0, revealed).map((t) => (
+          <p key={t.label} className="beat text-[13.5px] leading-snug">
             <em className="accent-serif">{t.label}</em>
             <span className="text-body-secondary">. {t.text}</span>
           </p>

@@ -42,6 +42,10 @@ export function stepsOf(slide: Slide): number {
       return 2;
     case "table":
       return slide.rows.length;
+    case "priorities":
+      return slide.tiers.length;
+    case "gaplist":
+      return slide.tiers.length;
     default:
       return 0;
   }

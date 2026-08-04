@@ -105,11 +105,11 @@ function SlideBody({ slide, revealed }: { slide: Slide; revealed: number }) {
     case "diagnostic":
       return <DiagnosticSlide slide={slide} />;
     case "priorities":
-      return <PrioritiesSlide slide={slide} />;
+      return <PrioritiesSlide slide={slide} revealed={revealed} />;
     case "audit":
       return <AuditSlide slide={slide} />;
     case "gaplist":
-      return <GapListSlide slide={slide} />;
+      return <GapListSlide slide={slide} revealed={revealed} />;
     case "startingPoint":
       return <StartingPointSlide slide={slide} />;
     case "plan":
