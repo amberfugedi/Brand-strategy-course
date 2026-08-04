@@ -16,6 +16,9 @@ import { getModule } from "@/lib/content/registry";
 const RATES = [1, 1.25, 1.5, 0.75];
 const RATE_KEY = "bymf.narrationRate";
 const CAPTIONS_KEY = "bymf.captions";
+// Caption text size in px: default, larger, largest, smaller.
+const CAPTION_SIZES = [14.5, 17, 20, 12.5];
+const CAPTION_SIZE_KEY = "bymf.captionSize";
 
 interface NarrationValue {
   /** Whether the current slide (or module) has a narration track. */
@@ -25,11 +28,14 @@ interface NarrationValue {
   playing: boolean;
   rate: number;
   captions: boolean;
+  /** Caption text size in px. */
+  captionSize: number;
   toggle: () => void;
   /** Replay the current slide's narration from the top. */
   restart: () => void;
   cycleRate: () => void;
   toggleCaptions: () => void;
+  cycleCaptionSize: () => void;
   /** Current playback position, for the caption highlight. */
   getTime: () => number;
 }
@@ -40,10 +46,12 @@ const NarrationContext = createContext<NarrationValue>({
   playing: false,
   rate: 1,
   captions: false,
+  captionSize: CAPTION_SIZES[0],
   toggle: () => {},
   restart: () => {},
   cycleRate: () => {},
   toggleCaptions: () => {},
+  cycleCaptionSize: () => {},
   getTime: () => 0,
 });
 
@@ -76,6 +84,7 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
   const [playing, setPlaying] = useState(false);
   const [rate, setRate] = useState(1);
   const [captions, setCaptions] = useState(false);
+  const [captionSize, setCaptionSize] = useState(CAPTION_SIZES[0]);
 
   // The saved speed and caption preferences, applied before anything
   // plays.
@@ -83,6 +92,8 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
     const saved = Number(window.localStorage.getItem(RATE_KEY));
     if (RATES.includes(saved)) setRate(saved);
     setCaptions(window.localStorage.getItem(CAPTIONS_KEY) === "1");
+    const savedSize = Number(window.localStorage.getItem(CAPTION_SIZE_KEY));
+    if (CAPTION_SIZES.includes(savedSize)) setCaptionSize(savedSize);
   }, []);
 
   useEffect(() => {
@@ -155,6 +166,15 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
     });
   };
 
+  const cycleCaptionSize = () => {
+    const next =
+      CAPTION_SIZES[
+        (CAPTION_SIZES.indexOf(captionSize) + 1) % CAPTION_SIZES.length
+      ];
+    setCaptionSize(next);
+    window.localStorage.setItem(CAPTION_SIZE_KEY, String(next));
+  };
+
   const getTime = useCallback(() => audioRef.current?.currentTime ?? 0, []);
 
   return (
@@ -165,10 +185,12 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
         playing,
         rate,
         captions,
+        captionSize,
         toggle,
         restart,
         cycleRate,
         toggleCaptions,
+        cycleCaptionSize,
         getTime,
       }}
     >

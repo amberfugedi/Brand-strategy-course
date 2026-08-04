@@ -433,6 +433,20 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
           >
             CC
           </button>
+          {narration.captions ? (
+            <button
+              type="button"
+              onClick={narration.cycleCaptionSize}
+              aria-label="Caption text size"
+              className={`-my-3 shrink-0 whitespace-nowrap px-2 py-3 text-[12px] font-bold tracking-chrome transition-colors ${
+                dark
+                  ? "text-on-dark-muted hover:text-gold"
+                  : "text-body-tertiary hover:text-aubergine"
+              }`}
+            >
+              Aa
+            </button>
+          ) : null}
         </>
       ) : null}
       {nudged && !inputComplete ? (

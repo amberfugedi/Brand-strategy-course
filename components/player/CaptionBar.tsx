@@ -14,7 +14,7 @@ const SENTENCE_END = /[.!?]["']?$/;
  * nothing when captions are off or the track has no timing file.
  */
 export function CaptionBar({ dark }: { dark: boolean }) {
-  const { src, captions, available, getTime } = useNarration();
+  const { src, captions, available, getTime, captionSize } = useNarration();
   const [words, setWords] = useState<Word[] | null>(null);
   const [idx, setIdx] = useState(-1);
 
@@ -72,9 +72,10 @@ export function CaptionBar({ dark }: { dark: boolean }) {
   return (
     <div className="relative z-10 px-[4.5vw] pb-3">
       <p
-        className={`min-h-[3.2em] max-w-3xl text-[14.5px] leading-relaxed ${
+        className={`min-h-[3.2em] max-w-3xl leading-relaxed ${
           dark ? "text-cream" : "text-body"
         }`}
+        style={{ fontSize: `${captionSize}px` }}
       >
         {words.slice(from, to + 1).map((w, k) => {
           const j = from + k;
