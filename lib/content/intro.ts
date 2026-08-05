@@ -12,7 +12,7 @@ export const introSlides: Slide[] = [
     id: "welcome",
     crumb: "COURSE INTRO",
     tag: "01 OF 04",
-    number: "i",
+    number: "01",
     audio: {
       src: "/audio/intro/intro-1.mp3",
       // "If you're here" · "Three layers" · "Let's get into it"
@@ -36,7 +36,7 @@ export const introSlides: Slide[] = [
     id: "system",
     crumb: "COURSE INTRO",
     tag: "02 OF 04",
-    number: "ii",
+    number: "02",
     audio: {
       src: "/audio/intro/intro-2.mp3",
       // Layer 1 · Layer 2 · Layer 3 · positioning · "all seven"
@@ -82,7 +82,7 @@ export const introSlides: Slide[] = [
     id: "tool",
     crumb: "COURSE INTRO",
     tag: "03 OF 04",
-    number: "iii",
+    number: "03",
     audio: {
       src: "/audio/intro/intro-3.mp3", cues: [4.0],
       callouts: [
@@ -110,7 +110,7 @@ export const introSlides: Slide[] = [
     id: "arc",
     crumb: "COURSE INTRO",
     tag: "04 OF 04",
-    number: "iv",
+    number: "04",
     audio: {
       src: "/audio/intro/intro-4.mp3",
       // Module 1 · Module 2 · Modules 3-8 · Module 8's double work
