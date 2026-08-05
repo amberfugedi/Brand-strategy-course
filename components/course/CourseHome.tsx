@@ -95,9 +95,15 @@ export function CourseHome({ courseId }: { courseId: string }) {
                     ? `In progress, slide ${Math.min(seenCount, mod.slides.length)} of ${mod.slides.length}.`
                     : "Not started.";
 
+            const pct = completed
+              ? 100
+              : Math.round(
+                  (100 * Math.min(seenCount, mod.slides.length)) /
+                    mod.slides.length,
+                );
             const row = (
               <div
-                className={`flex items-baseline justify-between gap-6 border-l-[3px] px-5 py-4 ${
+                className={`border-l-[3px] px-5 py-4 ${
                   !mod.released || locked
                     ? "border-ink/10 bg-cream-light/50"
                     : completed
@@ -105,25 +111,35 @@ export function CourseHome({ courseId }: { courseId: string }) {
                       : "border-aubergine bg-cream-light"
                 }`}
               >
-                <div>
-                  <div
-                    className={`text-[16px] font-semibold ${
-                      mod.released && !locked ? "text-body" : "text-body-tertiary"
-                    }`}
-                  >
-                    {mod.label}
+                <div className="flex items-baseline justify-between gap-6">
+                  <div>
+                    <div
+                      className={`text-[16px] font-semibold ${
+                        mod.released && !locked ? "text-body" : "text-body-tertiary"
+                      }`}
+                    >
+                      {mod.label}
+                    </div>
+                    <div
+                      className={`mt-0.5 text-[13px] ${
+                        completed ? "text-gold" : "text-body-tertiary"
+                      }`}
+                    >
+                      {status}
+                    </div>
                   </div>
-                  <div
-                    className={`mt-0.5 text-[13px] ${
-                      completed ? "text-gold" : "text-body-tertiary"
-                    }`}
-                  >
-                    {status}
+                  <div className="shrink-0 text-[11px] font-bold uppercase tracking-chrome text-body-tertiary">
+                    {mod.minutes}
                   </div>
                 </div>
-                <div className="shrink-0 text-[11px] font-bold uppercase tracking-chrome text-body-tertiary">
-                  {mod.minutes}
-                </div>
+                {mod.released && !locked ? (
+                  <div className="mt-3 h-1 w-full rounded-[2px] bg-gold/20">
+                    <div
+                      className="h-full rounded-[2px] bg-gold transition-[width] duration-300"
+                      style={{ width: `${pct}%` }}
+                    />
+                  </div>
+                ) : null}
               </div>
             );
             return mod.released && !locked ? (
