@@ -40,6 +40,8 @@ interface NarrationValue {
   cycleCaptionSize: () => void;
   /** Current playback position, for the caption highlight. */
   getTime: () => number;
+  /** Current track length in seconds (0 until metadata loads). */
+  getDuration: () => number;
 }
 
 const NarrationContext = createContext<NarrationValue>({
@@ -56,6 +58,7 @@ const NarrationContext = createContext<NarrationValue>({
   toggleCaptions: () => {},
   cycleCaptionSize: () => {},
   getTime: () => 0,
+  getDuration: () => 0,
 });
 
 /**
@@ -182,6 +185,10 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
   };
 
   const getTime = useCallback(() => audioRef.current?.currentTime ?? 0, []);
+  const getDuration = useCallback(() => {
+    const d = audioRef.current?.duration;
+    return Number.isFinite(d) ? (d as number) : 0;
+  }, []);
 
   return (
     <NarrationContext.Provider
@@ -199,6 +206,7 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
         toggleCaptions,
         cycleCaptionSize,
         getTime,
+        getDuration,
       }}
     >
       {children}

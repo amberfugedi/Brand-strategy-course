@@ -44,6 +44,7 @@ import { useCourseStore } from "@/lib/store/provider";
 import { useAuth } from "@/lib/auth/provider";
 import { useNarration } from "@/components/player/NarrationProvider";
 import { CaptionBar } from "@/components/player/CaptionBar";
+import { NarrationClock } from "@/components/player/NarrationClock";
 import { SignInGate } from "@/components/auth/SignInGate";
 import { stepsOf } from "@/lib/content/steps";
 import { slideComplete } from "@/lib/content/completion";
@@ -180,6 +181,9 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // appears once they try to move on.
   const inputComplete = slideComplete(slide, doc);
   const [nudged, setNudged] = useState(false);
+  // First Next during narration holds with a note; the second one
+  // skips ahead. Resets on a new slide or when the track ends.
+  const [skipArmed, setSkipArmed] = useState(false);
   const seenRef = useRef(doc.progress.seenSlides);
   seenRef.current = doc.progress.seenSlides;
   useEffect(() => {
@@ -196,6 +200,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       current && (reducedMotion || (wasSeen && !cued)) ? stepsOf(current) : 0,
     );
     setNudged(false);
+    setSkipArmed(false);
   }, [ready, module, slideIndex]);
 
   // The restart control replays the track from the top; a cued slide
@@ -286,11 +291,20 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // (if it has any) are filled in.
   const inputCompleteRef = useRef(inputComplete);
   inputCompleteRef.current = inputComplete;
+  const playingRef = useRef(narration.playing);
+  playingRef.current = narration.playing;
+  const skipArmedRef = useRef(skipArmed);
+  skipArmedRef.current = skipArmed;
   const advance = useCallback(() => {
     if (stepRef.current < totalSteps) setStep(totalSteps);
     else if (!inputCompleteRef.current) setNudged(true);
+    else if (playingRef.current && !skipArmedRef.current) setSkipArmed(true);
     else goTo(slideIndex + 1);
   }, [totalSteps, goTo, slideIndex]);
+
+  useEffect(() => {
+    if (!narration.playing) setSkipArmed(false);
+  }, [narration.playing]);
 
   const goBack = useCallback(() => {
     goTo(slideIndex - 1);
@@ -408,6 +422,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
           >
             {narration.playing ? "❚❚ Pause" : "▶ Listen"}
           </button>
+          <NarrationClock dark={dark} />
           <button
             type="button"
             onClick={narration.restart}
@@ -472,6 +487,14 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
           }`}
         >
           Finish this step to continue.
+        </span>
+      ) : skipArmed && narration.playing ? (
+        <span
+          className={`min-w-0 truncate font-serif text-[12.5px] italic ${
+            dark ? "text-on-dark-muted" : "text-body-secondary"
+          }`}
+        >
+          Still narrating. Next again to skip ahead.
         </span>
       ) : null}
     </>
