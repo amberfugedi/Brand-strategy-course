@@ -10,10 +10,12 @@ import {
 import { Rich } from "@/components/Rich";
 import { useModule2 } from "@/lib/store/provider";
 
+// Single-hue intensity ramp on the courses accent. No layer color
+// and no traffic-light greens or reds on cream.
 const GAP_META: Record<GapTier, { label: string; color: string }> = {
-  critical: { label: "Critical", color: "border-rust text-rust" },
-  maintenance: { label: "Maintenance", color: "border-gold text-gold" },
-  solid: { label: "Solid", color: "border-olive text-olive" },
+  critical: { label: "Critical", color: "border-gold text-gold" },
+  maintenance: { label: "Maintenance", color: "border-gold/60 text-gold/70" },
+  solid: { label: "Solid", color: "border-gold/25 text-gold/60" },
 };
 
 export function GapListSlide({
@@ -33,7 +35,7 @@ export function GapListSlide({
 
   return (
     <div className="mt-2 flex flex-1 flex-col">
-      <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-teal">
+      <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">
         {slide.eyebrow}
       </div>
       <h1 className="text-3xl font-bold tracking-tight md:text-4xl">

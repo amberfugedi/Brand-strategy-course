@@ -5,7 +5,7 @@
  * foundation stands taller; "all" lights the full set (the audit).
  */
 const SEGMENTS = [
-  { n: 1, cls: "bg-gold" },
+  { n: 1, cls: "bg-peach" },
   { n: 2, cls: "bg-teal" },
   { n: 3, cls: "bg-rust" },
   { n: 4, cls: "bg-rust" },

@@ -26,7 +26,7 @@ export function StatementsSlide({
         {slide.statements.slice(0, revealed).map((s) => (
           <div
             key={s.name}
-            className="beat border-l-[3px] border-olive bg-cream-light px-8 py-7"
+            className="rounded-3xl beat border-l-[3px] border-olive bg-cream-light px-8 py-7"
           >
             <div className="text-xl font-bold tracking-tight">{s.name}</div>
             <div className="mt-0.5 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">

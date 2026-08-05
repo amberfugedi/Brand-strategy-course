@@ -4,8 +4,8 @@ import { Surface } from "@/lib/content/types";
 
 const surfaceClasses: Record<Surface, string> = {
   cream: "bg-cream text-body surface-cream",
-  plum: "bg-aubergine text-on-dark surface-dark plum-glow",
-  ink: "bg-ink-black text-on-dark surface-dark",
+  plum: "text-on-dark surface-dark plum-grad",
+  ink: "text-on-dark surface-dark plum-grad",
 };
 
 const chromeText: Record<Surface, string> = {

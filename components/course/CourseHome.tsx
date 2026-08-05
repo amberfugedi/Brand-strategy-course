@@ -50,7 +50,7 @@ export function CourseHome({ courseId }: { courseId: string }) {
         {!auth.enabled ? (
           // Setup flag: renders only while Supabase isn't connected and
           // removes itself once the keys are configured and deployed.
-          <div className="mt-8 border-l-[3px] border-rust bg-cream-light px-5 py-4">
+          <div className="rounded-3xl mt-8 border-l-[3px] border-rust bg-cream-light px-5 py-4">
             <div className="text-[10px] font-bold uppercase tracking-eyebrow text-rust">
               Setup pending
             </div>

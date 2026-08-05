@@ -16,10 +16,12 @@ const TIER_LABEL: Record<PriorityTier, string> = {
   na: "Not applicable",
 };
 
+// Single-hue intensity ramp on the courses accent: full, 60%, 25%,
+// and an empty ring for not applicable. No layer color on cream.
 const TIER_COLOR: Record<PriorityTier, string> = {
-  high: "text-rust border-rust",
-  medium: "text-teal border-teal",
-  low: "text-olive border-olive",
+  high: "text-gold border-gold",
+  medium: "text-gold/70 border-gold/60",
+  low: "text-gold/60 border-gold/25",
   na: "text-body-tertiary border-ink/20",
 };
 
@@ -36,7 +38,7 @@ export function PrioritiesSlide({
 
   return (
     <div className="mt-2 flex flex-1 flex-col">
-      <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-teal">
+      <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">
         {slide.eyebrow}
       </div>
       <h1 className="text-3xl font-bold tracking-tight md:text-4xl">

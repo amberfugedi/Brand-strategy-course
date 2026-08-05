@@ -19,7 +19,7 @@ export function CompareSlide({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {revealed >= 1 ? (
-          <div className="beat border-l-[3px] border-mauve bg-cream-light px-7 py-6">
+          <div className="rounded-3xl beat border-l-[3px] border-mauve bg-cream-light px-7 py-6">
             <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
               Weak
             </div>

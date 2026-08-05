@@ -7,7 +7,7 @@ import { usePositioning } from "@/lib/store/provider";
 function AnswerRef({ label, parts }: { label: string; parts: string[] }) {
   const text = parts.filter(Boolean).join(" · ");
   return (
-    <div className="border-l-2 border-olive/60 bg-cream-light px-4 py-3">
+    <div className="rounded-3xl border-l-2 border-olive/60 bg-cream-light px-4 py-3">
       <div className="text-[9px] font-bold uppercase tracking-eyebrow text-body-tertiary">
         {label}
       </div>
@@ -33,7 +33,7 @@ export function SynthesisSlide({ slide }: { slide: SynthesisSlideDef }) {
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="mt-4 max-w-4xl border-l-[3px] border-teal bg-cream-light px-7 py-4">
+      <div className="rounded-3xl mt-4 max-w-4xl border-l-[3px] border-teal bg-cream-light px-7 py-4">
         <p className="text-[15px] leading-relaxed">
           <Rich text={slide.template} />
         </p>
@@ -64,7 +64,7 @@ export function SynthesisSlide({ slide }: { slide: SynthesisSlideDef }) {
           onChange={(e) => setPositioning({ statement: e.target.value })}
           placeholder="Write it as one sentence, or three short ones."
           rows={3}
-          className="w-full resize-y border border-ink/20 bg-cream-light px-4 py-3 text-[15px] leading-relaxed outline-none transition-colors placeholder:text-body-tertiary focus:border-gold"
+          className="rounded-3xl w-full resize-y border border-ink/20 bg-cream-light px-4 py-3 text-[15px] leading-relaxed outline-none transition-colors placeholder:text-body-tertiary focus:border-gold"
         />
       </label>
     </div>

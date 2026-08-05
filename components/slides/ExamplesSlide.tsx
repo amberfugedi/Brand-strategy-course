@@ -11,7 +11,7 @@ function PersonaCard({
 }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="flex h-full flex-col border-l-[3px] border-olive bg-cream-light px-6 py-5">
+    <div className="rounded-3xl flex h-full flex-col border-l-[3px] border-olive bg-cream-light px-6 py-5">
       <div className="text-[17px] font-bold tracking-tight">
         {persona.name}{" "}
         <span className="font-serif text-[16px] font-normal italic text-body-secondary">

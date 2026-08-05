@@ -53,7 +53,7 @@ export function SummarySlide({ slide }: { slide: SummarySlideDef }) {
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="mt-8 max-w-3xl border-l-[3px] border-gold bg-cream-light px-9 py-8">
+      <div className="rounded-3xl mt-8 max-w-3xl border-l-[3px] border-gold bg-cream-light px-9 py-8">
         {statement ? (
           <p className="font-serif text-[19px] italic leading-relaxed text-body">
             {statement}

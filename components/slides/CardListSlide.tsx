@@ -24,7 +24,7 @@ export function CardListSlide({
       ) : null}
 
       {revealed < 1 ? null : (
-      <div className="beat mt-9 max-w-2xl border-l-[3px] border-gold bg-cream-light px-9 py-8">
+      <div className="rounded-3xl beat mt-9 max-w-2xl border-l-[3px] border-gold bg-cream-light px-9 py-8">
         <h2 className="text-2xl font-bold tracking-tight">
           <Rich text={slide.card.title} />
         </h2>

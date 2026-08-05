@@ -22,7 +22,7 @@ export function RevealCard({
 }: RevealCardProps) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-l-[3px] border-olive bg-cream-light px-6 py-5">
+    <div className="rounded-3xl border-l-[3px] border-olive bg-cream-light px-6 py-5">
       <div className="mb-1.5 text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
         {eyebrow}
       </div>

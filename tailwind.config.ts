@@ -14,46 +14,59 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Brand system per the course slide spec (amberfugedi.com).
         cream: {
-          DEFAULT: "#F5F1E8",
-          light: "#FAF6EE",
-          dark: "#EAE4D5",
+          DEFAULT: "#FDF9F5",
+          light: "#FFFFFF", // cards and boxes sitting on cream
+          dark: "#F3ECE3",
         },
+        // Plum family: dark slides follow the course card, not the band.
         aubergine: {
-          DEFAULT: "#4A1F38",
-          glow: "#5B313D",
+          DEFAULT: "#2E2633",
+          glow: "#312836",
         },
         ink: {
-          DEFAULT: "#2A2530",
-          black: "#1F2024",
+          DEFAULT: "#2E2A27",
+          black: "#2E2633",
         },
-        gold: { DEFAULT: "#B89358" },
-        teal: { DEFAULT: "#4F6B70" },
-        mauve: { DEFAULT: "#8E6E78" },
-        olive: { DEFAULT: "#7A8275" },
-        rust: { DEFAULT: "#A8624A" },
+        // Courses accent pair. gold resolves per surface: courses-deep
+        // #8A5A14 on cream, butter #DDB774 on plum (see globals.css).
+        gold: { DEFAULT: "rgb(var(--gold) / <alpha-value>)" },
+        peach: { DEFAULT: "#FCE4C4" },
+        butter: { DEFAULT: "#FBEDBF" },
+        // Layer tones, dark surfaces only. On cream they collapse to
+        // the neutral courses accent (the layer rule); on plum they
+        // resolve to found/chosen/remembered mid-tones.
+        teal: { DEFAULT: "rgb(var(--tone-found) / <alpha-value>)" },
+        rust: { DEFAULT: "rgb(var(--tone-chosen) / <alpha-value>)" },
+        olive: { DEFAULT: "rgb(var(--tone-remembered) / <alpha-value>)" },
+        mauve: { DEFAULT: "rgb(var(--tone-muted) / <alpha-value>)" },
         // text roles on cream surfaces
         body: {
-          DEFAULT: "#2A2530",
-          secondary: "#5E5566",
-          tertiary: "#8B8590",
+          DEFAULT: "#3E3833",
+          secondary: "#5C544B",
+          tertiary: "#5C544B",
         },
         // text roles on dark surfaces
         "on-dark": {
-          DEFAULT: "#F5F1E8",
-          muted: "#B9B6B1",
+          DEFAULT: "#D9D2C9",
+          muted: "#9A9098",
         },
       },
       fontFamily: {
-        sans: ["var(--font-geist)", "system-ui", "sans-serif"],
-        serif: ["var(--font-instrument)", "Georgia", "serif"],
+        sans: ["Manrope", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        serif: ["Newsreader", "Georgia", "Times New Roman", "serif"],
       },
       letterSpacing: {
-        eyebrow: "0.22em",
-        chrome: "0.18em",
+        eyebrow: "0.08em",
+        chrome: "0.08em",
       },
       borderColor: {
-        subtle: "rgba(42, 37, 48, 0.08)",
+        subtle: "rgba(46, 42, 39, 0.12)",
+        "subtle-dark": "rgba(253, 249, 245, 0.14)",
+      },
+      boxShadow: {
+        lift: "0 14px 40px -18px rgba(46, 42, 39, 0.18)",
       },
     },
   },

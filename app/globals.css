@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Surface-resolved brand variables. gold is the courses accent:
+   deep #8A5A14 for text and stroke on cream, butter #DDB774 on plum
+   (the deep tone is illegible there). Layer tones exist only on dark
+   surfaces; on cream they collapse to the neutral accent, which is
+   the layer rule enforced structurally. */
+:root,
+.surface-cream {
+  --gold: 138 90 20;
+  --tone-found: 138 90 20;
+  --tone-chosen: 138 90 20;
+  --tone-remembered: 138 90 20;
+  --tone-muted: 92 84 75;
+  --accent-layer: 138 90 20;
+}
+.surface-dark {
+  --gold: 221 183 116;
+  --tone-found: 218 137 112;
+  --tone-chosen: 166 155 219;
+  --tone-remembered: 221 183 116;
+  --tone-muted: 154 144 152;
+  --accent-layer: 221 183 116;
+}
+/* Which layer a module belongs to; set on the slide root. */
+.layer-found {
+  --accent-layer: 218 137 112;
+}
+.layer-chosen {
+  --accent-layer: 166 155 219;
+}
+.layer-remembered {
+  --accent-layer: 221 183 116;
+}
+
 /* Slides fill the visible viewport. Dynamic viewport units keep the
    footer and Next/Back above mobile browser toolbars; plain vh is the
    fallback for older browsers. */
@@ -14,20 +47,77 @@
   }
 }
 
-/* The one italic accent word per sentence. Color follows the surface. */
+/* Dark slides follow the course card: plum, with a slight gradient.
+   A flat fill reads as a near-miss. */
+.plum-grad {
+  background: linear-gradient(160deg, #312836 0%, #2e2633 55%, #29222e 100%);
+}
+
+/* The emphasis mark. On cream: the paper tab, butter variant, under
+   Newsreader italic. On dark the tab fails (cream on butter is about
+   1.3:1), so emphasis is the italic alone, in the layer tone. */
 .accent-serif {
-  font-family: var(--font-instrument), Georgia, serif;
+  font-family: "Newsreader", Georgia, serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.01em;
 }
-
 .surface-cream .accent-serif {
-  color: theme("colors.aubergine.DEFAULT");
+  --trb: 0.9deg;
+  --trf: -0.45deg;
+  position: relative;
+  display: inline-block;
+  padding: 0 0.14em 0.02em;
+  margin: 0 -0.02em;
+  z-index: 0;
+  color: theme("colors.ink.DEFAULT");
+}
+.surface-cream .accent-serif::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0.18em -0.08em -0.06em 0.12em;
+  background: rgba(242, 220, 156, 0.68);
+  border-radius: 0.08em 0.13em 0.07em 0.11em / 0.1em 0.15em 0.09em 0.13em;
+  transform: rotate(var(--trb));
+}
+.surface-cream .accent-serif::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0.1em 0 0.04em 0;
+  background: #fbedbf;
+  border-radius: 0.11em 0.08em 0.13em 0.09em / 0.14em 0.1em 0.13em 0.11em;
+  transform: rotate(var(--trf));
+}
+.surface-dark .accent-serif {
+  color: rgb(var(--accent-layer));
 }
 
-.surface-dark .accent-serif {
-  color: theme("colors.gold.DEFAULT");
+/* The ring bullet: peach center, courses-deep ring. Never a disc,
+   never recolored per layer. */
+.ring-list li {
+  position: relative;
+  padding-left: 34px;
+}
+.ring-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.36em;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fce4c4;
+  border: 2.5px solid #8a5a14;
+}
+
+/* Input boxes sit at the compact radius. */
+.surface-cream textarea,
+.surface-cream input[type="text"],
+.surface-dark textarea,
+.surface-dark input[type="text"] {
+  border-radius: 14px;
 }
 
 /* Slide beats rise in as they reveal. */
@@ -46,15 +136,16 @@
   }
 }
 
-/* The soft radial glow on plum module-title slides, upper right. */
-.plum-glow::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse 55% 60% at 78% 28%,
-    rgba(91, 49, 61, 0.9) 0%,
-    transparent 70%
-  );
-  pointer-events: none;
+/* Display type is Newsreader 500 with tight tracking; the ladder is
+   label, headline, body, and stops. Manrope never exceeds 500, so
+   bold utilities resolve to medium instead of a synthesized 700. */
+h1,
+h2 {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em !important;
+}
+.font-bold,
+.font-semibold {
+  font-weight: 500;
 }

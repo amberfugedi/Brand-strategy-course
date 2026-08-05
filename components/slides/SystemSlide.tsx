@@ -33,19 +33,19 @@ export function SystemSlide({
         {slide.layers.slice(0, revealed).map((layer) => (
           <div key={layer.label} className="beat flex flex-col">
             <div className={`h-[3px] w-full ${accentBar[layer.accent]}`} />
-            <div className="flex-1 bg-cream-light px-6 py-6">
+            <div className="flex-1 rounded-b-3xl bg-white/5 px-6 py-6">
               <div
                 className={`mb-2 text-[11px] font-bold uppercase tracking-eyebrow ${accentLabel[layer.accent]}`}
               >
                 {layer.label}
               </div>
-              <p className="mb-5 text-[15px] text-body">
+              <p className="mb-5 text-[15px] text-on-dark">
                 <Rich text={layer.sub} />
               </p>
               <ul className="space-y-2.5">
                 {layer.items.map((item) => (
                   <li key={item.num} className="flex items-baseline gap-3">
-                    <span className="text-[10px] font-bold tracking-chrome text-body-tertiary">
+                    <span className="text-[10px] font-bold tracking-chrome text-on-dark-muted">
                       {item.num}
                     </span>
                     <span className="text-[15px]">
@@ -62,11 +62,11 @@ export function SystemSlide({
       {slide.base && revealed > slide.layers.length ? (
         <div className="beat mt-6">
           <div className="h-[3px] w-full bg-gold" />
-          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 bg-cream-light px-6 py-4">
+          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 rounded-b-3xl bg-white/5 px-6 py-4">
             <span className="text-[11px] font-bold uppercase tracking-eyebrow text-gold">
               {slide.base.label}
             </span>
-            <span className="text-[15px] text-body">
+            <span className="text-[15px] text-on-dark">
               <Rich text={slide.base.text} />
             </span>
           </div>
@@ -74,7 +74,7 @@ export function SystemSlide({
       ) : null}
 
       {slide.note && revealed > slide.layers.length + 1 ? (
-        <p className="beat mt-6 max-w-2xl text-[15px] text-body-secondary">
+        <p className="beat mt-6 max-w-2xl text-[15px] text-on-dark-muted">
           <Rich text={slide.note} />
         </p>
       ) : null}

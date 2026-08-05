@@ -1,19 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Instrument_Serif } from "next/font/google";
+import "@fontsource/manrope/400.css";
+import "@fontsource/manrope/500.css";
+import "@fontsource/newsreader/500.css";
+import "@fontsource/newsreader/600.css";
+import "@fontsource/newsreader/500-italic.css";
 import { AuthProvider } from "@/lib/auth/provider";
 import "./globals.css";
-
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
-});
-
-const instrument = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-instrument",
-});
 
 export const metadata: Metadata = {
   title: "Build Your Marketing Foundation",
@@ -27,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geist.variable} ${instrument.variable}`}>
+    <html lang="en">
       <body className="font-sans antialiased">
         <AuthProvider>{children}</AuthProvider>
       </body>

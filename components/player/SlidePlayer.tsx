@@ -53,6 +53,7 @@ function surfaceOf(slide: Slide): Surface {
   if (slide.kind === "hero") return slide.surface;
   if (slide.kind === "prose" && slide.surface) return slide.surface;
   if (
+    slide.kind === "system" ||
     slide.kind === "question" ||
     slide.kind === "structure" ||
     slide.kind === "startingPoint" ||
@@ -149,6 +150,15 @@ interface SlidePlayerProps {
   module: ModuleDef;
   slideIndex: number; // 1-based, matches the URL
 }
+
+const LAYER_OF: Record<string, string> = {
+  m3: "layer-found",
+  m4: "layer-chosen",
+  m5: "layer-chosen",
+  m6: "layer-remembered",
+  m7: "layer-remembered",
+  m8: "layer-remembered",
+};
 
 export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) {
   const router = useRouter();
@@ -335,7 +345,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   if (lockedByPrereq) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6 text-body surface-cream">
-        <div className="w-full max-w-md border border-gold bg-cream-light px-9 py-10 text-center">
+        <div className="rounded-3xl w-full max-w-md border border-gold bg-cream-light px-9 py-10 text-center">
           <div className="mb-4 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
             One step at a time
           </div>
@@ -501,7 +511,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   );
 
   return (
-    <div className="relative">
+    <div className={`relative ${LAYER_OF[module.id] ?? ""}`}>
       <div
         className="fixed left-0 top-0 z-30 h-[2px] bg-gold/70 transition-[width] duration-300"
         style={{ width: `${progress}%` }}
