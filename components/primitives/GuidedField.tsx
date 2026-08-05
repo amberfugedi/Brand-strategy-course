@@ -52,7 +52,7 @@ export function GuidedField({
         className={`w-full resize-y rounded-none border bg-transparent px-3.5 py-2 text-[14px] leading-relaxed outline-none transition-colors ${
           dark
             ? "border-gold/40 text-on-dark placeholder:text-on-dark-muted/60 focus:border-gold"
-            : "border-ink/20 bg-cream-light text-body placeholder:text-body-tertiary focus:border-gold"
+            : "border-ink/20 bg-cream-light text-body placeholder:text-body-tertiary focus:border-aubergine"
         }`}
       />
     </label>

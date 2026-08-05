@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { ExerciseSlide as ExerciseSlideDef } from "@/lib/content/types";
 import { DifferentiatorSource } from "@/lib/store/types";
 import { Rich } from "@/components/Rich";
@@ -16,15 +17,24 @@ const SOURCE_OPTIONS: { value: DifferentiatorSource; label: string }[] = [
 
 export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
   const { positioning, setPositioning } = usePositioning();
+  const [examplesOpen, setExamplesOpen] = useState(false);
 
   const serve = { situation: "", context: "", problem: "", ...positioning.serve };
   const work = { action: "", output: "", change: "", ...positioning.work };
   const different = { text: "", sources: [], ...positioning.different };
 
+  const hasAside = Boolean(slide.remember || slide.compare || slide.examples);
+
   return (
-    <div className="flex flex-1 items-center justify-center py-2">
+    <div className="relative flex flex-1 items-center justify-center py-2">
+      <div aria-hidden className="aura -right-[24vmin] -top-[18vmin]" />
       <div
-        className="enter w-full max-w-2xl border border-gold bg-cream-light px-7 py-5 md:px-10"
+        className={`grid w-full items-start gap-5 ${
+          hasAside ? "max-w-5xl lg:grid-cols-[minmax(0,1fr),300px]" : "max-w-2xl"
+        }`}
+      >
+      <div
+        className="enter w-full rounded-3xl border border-subtle bg-cream-light px-7 py-5 shadow-lift md:px-10"
         style={{ "--n": 0 } as React.CSSProperties}
       >
         <div className="text-center">
@@ -120,6 +130,72 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
             </>
           ) : null}
         </div>
+      </div>
+
+      {hasAside ? (
+        <aside
+          className="enter space-y-4"
+          style={{ "--n": 1 } as React.CSSProperties}
+        >
+          {slide.remember ? (
+            <div className="rounded-3xl border-l-[3px] border-gold bg-cream-light px-5 py-4">
+              <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+                Remember
+              </div>
+              <p className="mt-1.5 font-serif text-[15px] italic leading-relaxed text-body">
+                <Rich text={slide.remember} />
+              </p>
+            </div>
+          ) : null}
+
+          {slide.compare ? (
+            <div className="rounded-3xl border border-subtle bg-cream-light px-5 py-4">
+              <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+                Do this
+              </div>
+              <p className="mt-1 font-serif text-[13.5px] italic leading-relaxed text-body">
+                {slide.compare.do}
+              </p>
+              <div className="mt-3.5 border-t border-subtle pt-3 text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+                Not that
+              </div>
+              <p className="mt-1 font-serif text-[13.5px] italic leading-relaxed text-body-tertiary">
+                {slide.compare.not}
+              </p>
+            </div>
+          ) : null}
+
+          {slide.examples?.length ? (
+            <div className="rounded-3xl border border-subtle bg-cream-light px-5 py-4">
+              <button
+                type="button"
+                onClick={() => setExamplesOpen((o) => !o)}
+                aria-expanded={examplesOpen}
+                className="text-[11px] font-bold uppercase tracking-chrome text-gold transition-colors hover:text-aubergine"
+              >
+                {examplesOpen ? "Hide module examples" : "See module examples"}
+              </button>
+              {examplesOpen ? (
+                <div className="mt-3 max-h-[42vh] space-y-3.5 overflow-y-auto pr-1">
+                  {slide.examples.map((ex) => (
+                    <div key={ex.name}>
+                      <div className="text-[12.5px] font-bold">
+                        {ex.name}{" "}
+                        <span className="font-normal text-body-tertiary">
+                          {ex.role}
+                        </span>
+                      </div>
+                      <p className="mt-0.5 font-serif text-[13px] italic leading-relaxed text-body-secondary">
+                        {ex.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          ) : null}
+        </aside>
+      ) : null}
       </div>
     </div>
   );

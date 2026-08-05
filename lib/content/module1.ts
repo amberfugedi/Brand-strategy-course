@@ -322,6 +322,21 @@ export const module1Slides: Slide[] = [
       "Give it the couple of real minutes it needs. *The course waits.*",
     ],
     exercise: "serve",
+    remember:
+      "Situation, context, problem. Specific enough that *two competitors couldn't answer it identically*.",
+    compare: {
+      do: "Homeowners who've owned their property at least three years and are starting to notice the buildup.",
+      not: "Anyone who needs my service.",
+    },
+    // Reference copies of the module's persona answers (the
+    // calibration slide is the source of truth for the wording).
+    examples: [
+      { name: "Maya", role: "therapist", text: "High-functioning professionals, typically 30s to 50s in demanding careers, who are managing chronic anxiety and want a therapist who treats them as competent adults rather than fragile." },
+      { name: "Marcus", role: "pressure washer", text: "Homeowners who've owned their property at least three years and are starting to notice the buildup, but don't want to spend a Saturday on a ladder." },
+      { name: "Lena", role: "photographer", text: "Couples planning weddings in the four-to-eight-thousand-dollar photography range, who want a documentary style and have already decided their wedding doesn't need to be picture-perfect to be worth photographing." },
+      { name: "James", role: "chiropractor", text: "Adults who've had a recent injury or pain event and want to address it without a long-term care plan they didn't ask for." },
+      { name: "Sasha", role: "vivids stylist", text: "Women in their 20s and 30s who've been growing out their hair for a vivid transformation, who care about color theory and hair health, and who'll travel an hour or more to find a stylist they trust with fashion color." },
+    ],
   },
 
   // 11 · Question 2
@@ -492,6 +507,21 @@ export const module1Slides: Slide[] = [
       "Give it the couple of real minutes it needs. *The course waits.*",
     ],
     exercise: "work",
+    remember:
+      "The action, the output, the change. What you *do*, not what you *are*.",
+    compare: {
+      do: "I clean exterior surfaces in a single visit. The client walks out to a property that looks five years younger.",
+      not: "I'm a pressure washer.",
+    },
+    // Reference copies of the module's persona answers (the
+    // calibration slide is the source of truth for the wording).
+    examples: [
+      { name: "Maya", role: "therapist", text: "Weekly fifty-minute sessions over three to twelve months, using cognitive behavioral methods adapted for high-performing professionals. Clients leave with tools and self-knowledge that doesn't require staying in therapy forever." },
+      { name: "Marcus", role: "pressure washer", text: "Cleaning exterior surfaces (siding, driveways, decks, fences) using commercial-grade equipment in a single visit, four to six hours on-site. The client walks out the next morning to a property that looks five years younger." },
+      { name: "Lena", role: "photographer", text: "Documenting wedding days from morning preparation through reception, in candid documentary style with minimal posing. Clients receive a complete edited gallery within six weeks, typically four to six hundred images." },
+      { name: "James", role: "chiropractor", text: "Assessing the source of the injury or pain in the first visit, then designing a treatment plan with a defined endpoint, usually six to twelve sessions. Patients leave with reduced pain and the strength to keep it from coming back." },
+      { name: "Sasha", role: "vivids stylist", text: "Color transformations using fashion colors (vivid reds, blues, pinks, neons) across single 6-to-10-hour sessions, with hair-health protocols that protect integrity through repeated processing. Clients walk out with the color they followed me on Instagram for, and the structural strength to maintain it." },
+    ],
   },
 
   // 17 · Question 3
@@ -684,6 +714,21 @@ export const module1Slides: Slide[] = [
       "If you're stuck, ask the contrarian question: *what does my category do that I refuse to do?*",
     ],
     exercise: "different",
+    remember:
+      "Different is descriptive and *falsifiable*. The buyer isn't choosing the best business, they're choosing the one that's *for them*.",
+    compare: {
+      do: "Documentary style only. If you want thirty staged photographs of the bridal party, I'm the wrong photographer.",
+      not: "We care about quality.",
+    },
+    // Reference copies of the module's persona answers (the
+    // calibration slide is the source of truth for the wording).
+    examples: [
+      { name: "Maya", role: "therapist", text: "Defined timeline with the explicit goal of ending therapy. Treats clients as competent adults who can handle directness, not fragile patients." },
+      { name: "Marcus", role: "pressure washer", text: "Shows up when he says he will. Completes the job in the window quoted. Doesn't upsell. The price you got is the price you pay." },
+      { name: "Lena", role: "photographer", text: "Documentary style only. Doesn't do extensive posing. 'If you want thirty staged photographs of the bridal party, I'm not the right photographer for you.'" },
+      { name: "James", role: "chiropractor", text: "Defined treatment plan with a stated endpoint. Doesn't sell ongoing care plans, monthly memberships, or maintenance subscriptions. When the work is done, you stop coming." },
+      { name: "Sasha", role: "vivids stylist", text: "Vivids only. No balayage, no foils, no special-occasion blowouts. Hair-health-first protocol, including the willingness to refuse a transformation if I think the hair can't sustain it without damage." },
+    ],
   },
 
   // 25 · Section 5 opener

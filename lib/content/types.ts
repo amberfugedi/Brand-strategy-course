@@ -318,12 +318,18 @@ export interface StructureSlide extends SlideBase {
   rows: { label: string; title: string; minutes: string }[];
 }
 
-/** The framework builder moments. Fields save to the course document. */
+/** The framework builder moments. Fields save to the course document.
+ *  The optional aids render beside the fields: a takeaway to hold
+ *  onto while writing, a do-this-not-that pair, and the module's
+ *  persona examples behind a disclosure for reference. */
 export interface ExerciseSlide extends SlideBase {
   kind: "exercise";
   heading: string;
   promptLines: string[];
   exercise: "serve" | "work" | "different";
+  remember?: string;
+  compare?: { do: string; not: string };
+  examples?: { name: string; role: string; text: string }[];
 }
 
 /** Section 5: template card plus the buyer's editable statement. */
