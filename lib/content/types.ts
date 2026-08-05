@@ -144,12 +144,14 @@ export interface PatternsSlide extends SlideBase {
   patterns: { label: string; quote: string; diagnosis: string }[];
 }
 
-/** Numbered concept columns (three across, or four in a 2x2 grid). */
+/** Numbered concept columns (three across, or four in a 2x2 grid).
+ *  Columns with `bullets` render as white cards with ring bullets
+ *  instead of the quiet left-border prose treatment. */
 export interface ColumnsSlide extends SlideBase {
   kind: "columns";
   eyebrow?: string;
   heading: string;
-  columns: { num: string; title: string; text: string }[];
+  columns: { num: string; title: string; text?: string; bullets?: string[] }[];
 }
 
 /** Five persona cards in the deck's 3-2 grid; the annotation line

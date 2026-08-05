@@ -56,7 +56,7 @@ export const module1Slides: Slide[] = [
     crumb: S1,
     tag: "FRAMEWORK",
     number: "03",
-    audio: { src: "/audio/m1/m1-3.mp3", cues: [29.0, 40.2] },
+    audio: { src: "/audio/m1/m1-3.mp3", cues: [20.8, 38.2] },
     eyebrow: "Why these three",
     heading: "Foundation-level *positioning*.",
     sub: "Not deep brand strategy.",
@@ -73,7 +73,7 @@ export const module1Slides: Slide[] = [
     crumb: S1,
     tag: "CALIBRATION",
     number: "04",
-    audio: { src: "/audio/m1/m1-4.mp3", cues: [8.3, 32.4, 51.5] },
+    audio: { src: "/audio/m1/m1-4.mp3", cues: [5.8, 30.0, 49.1] },
     heading: "The patterns of *confusion*.",
     patterns: [
       {
@@ -104,7 +104,7 @@ export const module1Slides: Slide[] = [
     crumb: S1,
     tag: "STRUCTURE",
     number: "05",
-    audio: { src: "/audio/m1/m1-5.mp3" },
+    audio: { src: "/audio/m1/m1-5.mp3", cues: [0.3, 7.6, 8.1, 8.6, 9.1] },
     eyebrow: "How this module works",
     heading: "Five sections. *Twenty-five minutes*.",
     rows: [
@@ -123,7 +123,7 @@ export const module1Slides: Slide[] = [
     crumb: S2,
     tag: "QUESTION 01",
     number: "06",
-    audio: { src: "/audio/m1/m1-6.mp3", cues: [6.5] },
+    audio: { src: "/audio/m1/m1-6.mp3", cues: [4.4] },
     pre: "The strategic audience.",
     lines: ["Who do you *serve?*"],
     post: "Not demographic. Operational.",
@@ -136,7 +136,7 @@ export const module1Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "07",
-    audio: { src: "/audio/m1/m1-7.mp3", cues: [6.1, 12.7, 25.4] },
+    audio: { src: "/audio/m1/m1-7.mp3", cues: [5.1, 11.7, 24.4] },
     heading: "Not demographic. *Operational*.",
     paragraphs: [
       "\"What age range and gender\" rarely changes a *marketing* decision.",
@@ -153,7 +153,7 @@ export const module1Slides: Slide[] = [
     crumb: S2,
     tag: "CALIBRATION",
     number: "08",
-    audio: { src: "/audio/m1/m1-8.mp3", cues: [4.7, 19.2, 36.2] },
+    audio: { src: "/audio/m1/m1-8.mp3", cues: [3.4, 18.0, 35.0] },
     heading: "Three answers that *don't work*.",
     patterns: [
       {
@@ -183,23 +183,32 @@ export const module1Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "09",
-    audio: { src: "/audio/m1/m1-9.mp3", cues: [5.2, 17.8, 38.2] },
+    audio: { src: "/audio/m1/m1-9.mp3", cues: [4.6, 17.0, 37.3] },
     heading: "Situation. Context. *Problem*.",
     columns: [
       {
         num: "01",
         title: "The situation",
-        text: "Where they are in their life or business. *A solo professional. A growing team. A homeowner of five years.*",
+        bullets: [
+          "Where they are in their life or business",
+          "A solo professional, a growing team, a homeowner of five years",
+        ],
       },
       {
         num: "02",
         title: "The context",
-        text: "Not the demographic, the active context. *What they're doing day-to-day that brings them to need your service.*",
+        bullets: [
+          "Not the demographic, the active context",
+          "What they're doing day-to-day that brings them to need your service",
+        ],
       },
       {
         num: "03",
         title: "The problem",
-        text: "What pulled them to look for someone like you. *The problem under the problem.*",
+        bullets: [
+          "What pulled them to look for someone like you",
+          "The problem under the problem",
+        ],
       },
     ],
   },
@@ -211,7 +220,7 @@ export const module1Slides: Slide[] = [
     crumb: S2,
     tag: "CALIBRATION",
     number: "10",
-    audio: { src: "/audio/m1/m1-10.mp3", cues: [5.2, 24.2, 42.2, 60.8, 73.7] },
+    audio: { src: "/audio/m1/m1-10.mp3", cues: [3.8, 23.1, 41.0, 59.4, 72.4] },
     heading: "Who do you *serve*.",
     personas: [
       {
@@ -323,7 +332,7 @@ export const module1Slides: Slide[] = [
     crumb: S3,
     tag: "CALIBRATION",
     number: "15",
-    audio: { src: "/audio/m1/m1-15.mp3", cues: [3.7, 14.5, 28.5] },
+    audio: { src: "/audio/m1/m1-15.mp3", cues: [2.8, 13.7, 27.6] },
     heading: "Three patterns that *fall short*.",
     patterns: [
       {
@@ -353,7 +362,7 @@ export const module1Slides: Slide[] = [
     crumb: S3,
     tag: "FRAMEWORK",
     number: "16",
-    audio: { src: "/audio/m1/m1-16.mp3", cues: [5.2, 15.8, 27.7] },
+    audio: { src: "/audio/m1/m1-16.mp3", cues: [4.5, 15.4, 27.2] },
     heading: "Action. Output. *Change*.",
     columns: [
       {
@@ -381,7 +390,7 @@ export const module1Slides: Slide[] = [
     crumb: S3,
     tag: "CALIBRATION",
     number: "17",
-    audio: { src: "/audio/m1/m1-17.mp3", cues: [5.6, 19.7, 34.1, 48.4, 65.5] },
+    audio: { src: "/audio/m1/m1-17.mp3", cues: [3.1, 17.0, 31.0, 45.4, 62.6] },
     heading: "What do you *do*.",
     personas: [
       {
@@ -471,7 +480,7 @@ export const module1Slides: Slide[] = [
     crumb: S4,
     tag: "FRAMEWORK",
     number: "21",
-    audio: { src: "/audio/m1/m1-21.mp3", cues: [0.3, 13.8, 39.4] },
+    audio: { src: "/audio/m1/m1-21.mp3", cues: [0.3, 12.8, 39.4] },
     heading: "Different. *Not better*.",
     paragraphs: [
       "*Different* and better are not the same question.",
@@ -488,7 +497,7 @@ export const module1Slides: Slide[] = [
     crumb: S4,
     tag: "CALIBRATION",
     number: "22",
-    audio: { src: "/audio/m1/m1-22.mp3", cues: [3.7, 12.5, 23.8] },
+    audio: { src: "/audio/m1/m1-22.mp3", cues: [2.6, 11.5, 22.1] },
     heading: "Three patterns that *flatten*.",
     patterns: [
       {
@@ -521,7 +530,7 @@ export const module1Slides: Slide[] = [
     crumb: S4,
     tag: "FRAMEWORK",
     number: "23",
-    audio: { src: "/audio/m1/m1-23.mp3", cues: [5.2, 10.0, 17.0, 24.9] },
+    audio: { src: "/audio/m1/m1-23.mp3", cues: [4.3, 9.3, 16.4, 24.1] },
     eyebrow: "Four sources of real differentiation",
     heading: "Approach. Constraint. Combination. *Position*.",
     columns: [
@@ -555,7 +564,7 @@ export const module1Slides: Slide[] = [
     crumb: S4,
     tag: "CALIBRATION",
     number: "24",
-    audio: { src: "/audio/m1/m1-24.mp3", cues: [0.0, 19.8, 33.7, 53.1, 69.4] },
+    audio: { src: "/audio/m1/m1-24.mp3", cues: [0.0, 18.5, 32.6, 51.7, 68.2] },
     heading: "What makes you *different*.",
     personas: [
       {
@@ -657,7 +666,7 @@ export const module1Slides: Slide[] = [
     crumb: S5,
     tag: "THE SYNTHESIS",
     number: "29",
-    audio: { src: "/audio/m1/m1-29.mp3", cues: [3.5] },
+    audio: { src: "/audio/m1/m1-29.mp3", cues: [2.4] },
     pre: "What you take with you.",
     lines: ["A positioning statement *that does real work.*"],
     post: "Three answers, one sentence, four minutes.",
@@ -685,7 +694,7 @@ export const module1Slides: Slide[] = [
     crumb: S5,
     tag: "CALIBRATION",
     number: "31",
-    audio: { src: "/audio/m1/m1-31.mp3", cues: [0.0, 26.6] },
+    audio: { src: "/audio/m1/m1-31.mp3", cues: [0.0, 25.8] },
     heading: "Two ways the framework *assembles*.",
     statements: [
       {
@@ -708,7 +717,7 @@ export const module1Slides: Slide[] = [
     crumb: S5,
     tag: "CALIBRATION",
     number: "32",
-    audio: { src: "/audio/m1/m1-32.mp3", cues: [0.0, 25.8] },
+    audio: { src: "/audio/m1/m1-32.mp3", cues: [0.0, 24.7] },
     heading: "Two more *assemblies*.",
     statements: [
       {

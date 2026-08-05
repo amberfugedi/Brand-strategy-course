@@ -19,23 +19,53 @@ export function ColumnsSlide({
       </h1>
 
       <div
-        className={`mt-10 grid gap-x-10 gap-y-8 ${
+        className={`grid gap-y-8 ${
           four ? "md:grid-cols-2" : "md:grid-cols-3"
+        } ${
+          slide.columns.some((c) => c.bullets)
+            ? "my-auto gap-x-6 py-10 lg:gap-x-8"
+            : "mt-10 gap-x-10"
         }`}
       >
-        {slide.columns.slice(0, revealed).map((col) => (
-          <div key={col.num} className="beat border-l-[3px] border-teal pl-5">
-            <div className="text-[11px] font-bold tracking-chrome text-body-tertiary">
-              {col.num}
+        {slide.columns.slice(0, revealed).map((col) =>
+          col.bullets ? (
+            <div
+              key={col.num}
+              className="beat flex flex-col rounded-3xl border border-subtle bg-cream-light px-7 py-7 shadow-lift"
+            >
+              <div className="flex items-baseline gap-3 border-b border-subtle pb-4">
+                <span className="text-[11px] font-bold tracking-chrome text-gold">
+                  {col.num}
+                </span>
+                <span className="text-[15px] font-bold uppercase tracking-[0.12em]">
+                  {col.title}
+                </span>
+              </div>
+              <ul className="ring-list mt-5 space-y-4">
+                {col.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className="text-[16px] leading-relaxed text-body"
+                  >
+                    <Rich text={b} />
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em]">
-              {col.title}
+          ) : (
+            <div key={col.num} className="beat border-l-[3px] border-teal pl-5">
+              <div className="text-[11px] font-bold tracking-chrome text-body-tertiary">
+                {col.num}
+              </div>
+              <div className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em]">
+                {col.title}
+              </div>
+              <p className="mt-2.5 text-[16px] leading-relaxed text-body">
+                <Rich text={col.text ?? ""} />
+              </p>
             </div>
-            <p className="mt-2.5 text-[16px] leading-relaxed text-body">
-              <Rich text={col.text} />
-            </p>
-          </div>
-        ))}
+          ),
+        )}
       </div>
     </div>
   );
