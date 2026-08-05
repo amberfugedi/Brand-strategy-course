@@ -83,7 +83,12 @@ export const introSlides: Slide[] = [
     crumb: "COURSE INTRO",
     tag: "03 OF 04",
     number: "iii",
-    audio: { src: "/audio/intro/intro-3.mp3" },
+    audio: {
+      src: "/audio/intro/intro-3.mp3", cues: [4.0],
+      callouts: [
+        { text: "Nothing to open and nothing to manage.", at: 21.6, until: 28.9 },
+      ],
+    },
     eyebrow: "Your working document",
     heading: "The Marketing Foundation *Map*.",
     art: true,

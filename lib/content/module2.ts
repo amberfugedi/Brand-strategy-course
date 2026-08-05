@@ -44,7 +44,14 @@ export const module2Slides: Slide[] = [
     crumb: S1,
     tag: "SETUP",
     number: "02",
-    audio: { src: "/audio/m2/m2-2.mp3", cues: [19.9, 34.4] },
+    audio: {
+      src: "/audio/m2/m2-2.mp3", cues: [19.9, 34.4],
+      callouts: [
+        { text: "What kind of business are you running?", at: 38.0, until: 44.4 },
+        { text: "A therapist's strong marketing does not look like a pressure washer's.", at: 44.6, until: 51.5 },
+        { text: "Module 2 figures that out first.", at: 52.8, until: 58.5 },
+      ],
+    },
     eyebrow: "Why an audit before any tactic",
     heading: "Most marketing advice tells you *what to do*.",
     paragraphs: [
@@ -78,7 +85,14 @@ export const module2Slides: Slide[] = [
     crumb: S2,
     tag: "DIAGNOSTIC",
     number: "04",
-    audio: { src: "/audio/m2/m2-4.mp3" },
+    audio: {
+      src: "/audio/m2/m2-4.mp3",
+      callouts: [
+        { text: "Not preference questions.", at: 4.6, until: 10.5 },
+        { text: "What is true today.", at: 11.4, until: 17.0 },
+        { text: "With them, the audit knows what kind of business it is looking at.", at: 26.4, until: 31.8 },
+      ],
+    },
     lines: ["Six questions about your *business*."],
     post: "What's structurally true.",
   },
@@ -90,7 +104,13 @@ export const module2Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "05",
-    audio: { src: "/audio/m2/m2-5.mp3", cues: [20.3, 21.2] },
+    audio: {
+      src: "/audio/m2/m2-5.mp3", cues: [20.3, 21.2],
+      callouts: [
+        { text: "Not because they want different things. Because their businesses work differently.", at: 27.5, until: 35.0 },
+        { text: "Here is what is true about your business, and here is what that implies.", at: 40.2, until: 46.9 },
+      ],
+    },
     eyebrow: "What this is not",
     heading: "Not what kind of marketing you *want* to do.",
     paragraphs: [
@@ -106,7 +126,13 @@ export const module2Slides: Slide[] = [
     crumb: S2,
     tag: "DIAGNOSTIC",
     number: "06",
-    audio: { src: "/audio/m2/m2-6.mp3", cues: [1.9, 5.8, 8.6, 11.6, 14.3, 17.3] },
+    audio: {
+      src: "/audio/m2/m2-6.mp3", cues: [1.9, 5.8, 8.6, 11.6, 14.3, 17.3],
+      callouts: [
+        { text: "These take about three to four minutes to answer.", at: 30.2, until: 36.8 },
+        { text: "The recommendations are only as accurate as your answers.", at: 37.7, until: 44.2 },
+      ],
+    },
     heading: "The six *questions*.",
     rows: [
       { label: "Q01", text: "Where do clients find you?" },
@@ -125,7 +151,13 @@ export const module2Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "07",
-    audio: { src: "/audio/m2/m2-7.mp3", cues: [2.4, 12.9, 38.0] },
+    audio: {
+      src: "/audio/m2/m2-7.mp3", cues: [2.4, 12.9, 38.0],
+      callouts: [
+        { text: "Some businesses sell visible work. Their portfolio matters more than their writing.", at: 15.6, until: 23.0 },
+        { text: "Others sell expertise and judgment. Their published thinking matters more.", at: 23.2, until: 31.5 },
+      ],
+    },
     eyebrow: "Questions 01 to 03",
     heading: "What's true about your *business*.",
     paragraphs: [
@@ -142,7 +174,14 @@ export const module2Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "08",
-    audio: { src: "/audio/m2/m2-8.mp3", cues: [4.2, 22.1, 39.0] },
+    audio: {
+      src: "/audio/m2/m2-8.mp3", cues: [4.2, 22.1, 39.0],
+      callouts: [
+        { text: "Engagement is anything before contact.", at: 44.7, until: 51.0 },
+        { text: "Some prospects contact you immediately. Some follow your work for months.", at: 51.4, until: 58.9 },
+        { text: "Long engagement signals that sustained credibility matters more.", at: 59.1, until: 66.0 },
+      ],
+    },
     eyebrow: "Questions 04 to 06",
     heading: "What's true about your *audience* and how they decide.",
     paragraphs: [
@@ -159,7 +198,14 @@ export const module2Slides: Slide[] = [
     crumb: S2,
     tag: "THE TAKEAWAY",
     number: "09",
-    audio: { src: "/audio/m2/m2-9.mp3" },
+    audio: {
+      src: "/audio/m2/m2-9.mp3",
+      callouts: [
+        { text: "Answer based on what is actually true, not what you wish was true.", at: 1.6, until: 9.0 },
+        { text: "If you genuinely do not know, pick the option that says so.", at: 20.9, until: 27.5 },
+        { text: "Do not guess.", at: 33.5, until: 38.5 },
+      ],
+    },
     headline: "Answer based on what is, not what you wish was *true*.",
     sub: "If you genuinely don't know, pick the option that says so. *Do not guess.* A wrong answer produces wrong recommendations.",
   },
@@ -185,7 +231,13 @@ export const module2Slides: Slide[] = [
     crumb: S3,
     tag: "READING",
     number: "11",
-    audio: { src: "/audio/m2/m2-11.mp3" },
+    audio: {
+      src: "/audio/m2/m2-11.mp3",
+      callouts: [
+        { text: "Take a few minutes to actually read what the diagnostic produced.", at: 12.7, until: 19.5 },
+        { text: "If you skim past it, the audit will not make sense.", at: 19.7, until: 25.2 },
+      ],
+    },
     lines: ["Read your priority *order*."],
     post: "Before the audit.",
   },
@@ -215,7 +267,14 @@ export const module2Slides: Slide[] = [
     crumb: S3,
     tag: "THE TAKEAWAY",
     number: "13",
-    audio: { src: "/audio/m2/m2-13.mp3" },
+    audio: {
+      src: "/audio/m2/m2-13.mp3",
+      callouts: [
+        { text: "Specific to your business in a way most marketing advice is not.", at: 2.3, until: 9.2 },
+        { text: "The same gap means different things in different contexts.", at: 28.2, until: 34.2 },
+        { text: "Identifying which gaps matter most.", at: 35.4, until: 42.5 },
+      ],
+    },
     headline: "Two businesses can have the same critical gap and *different* starting points.",
     sub: "A wedding photographer's website is high priority because that's where prospects evaluate her work. A pressure washer's website is medium priority because most clients found him through search results, not by visiting the site. *The same gap means different things in different contexts.*",
   },
@@ -227,7 +286,13 @@ export const module2Slides: Slide[] = [
     crumb: S3,
     tag: "FRAMEWORK",
     number: "14",
-    audio: { src: "/audio/m2/m2-14.mp3", cues: [5.2, 29.6, 35.1] },
+    audio: {
+      src: "/audio/m2/m2-14.mp3", cues: [5.2, 29.6, 35.1],
+      callouts: [
+        { text: "Read those. They matter.", at: 8.2, until: 13.9 },
+        { text: "The reasoning is not generic. It pulls from the specific answers you gave.", at: 14.1, until: 21.0 },
+      ],
+    },
     eyebrow: "Read the reasoning",
     heading: "Each foundation includes a short *reasoning* line.",
     paragraphs: [
@@ -244,7 +309,14 @@ export const module2Slides: Slide[] = [
     crumb: S3,
     tag: "CALIBRATION",
     number: "15",
-    audio: { src: "/audio/m2/m2-15.mp3", cues: [3.6, 26.8] },
+    audio: {
+      src: "/audio/m2/m2-15.mp3", cues: [3.6, 26.8],
+      callouts: [
+        { text: "An off-feeling priority usually traces to one answer that did not quite reflect reality.", at: 8.0, until: 15.2 },
+        { text: "Adjust the answer if needed. The priority order will update.", at: 27.3, until: 34.0 },
+        { text: "Calibrated for service businesses with one to ten employees.", at: 38.3, until: 45.5 },
+      ],
+    },
     eyebrow: "If a priority feels off",
     heading: "Check your six answers *first*.",
     paragraphs: [
@@ -284,7 +356,15 @@ export const module2Slides: Slide[] = [
     crumb: S4,
     tag: "FRAMEWORK",
     number: "18",
-    audio: { src: "/audio/m2/m2-18.mp3", cues: [7.8, 17.2, 51.0] },
+    audio: {
+      src: "/audio/m2/m2-18.mp3", cues: [7.8, 17.2, 51.0],
+      callouts: [
+        { text: "You will see three to five descriptive scenarios.", at: 20.7, until: 27.5 },
+        { text: "You are not rating. You are recognizing.", at: 36.3, until: 42.0 },
+        { text: "That looks like my business. That is the question.", at: 42.2, until: 48.5 },
+        { text: "People are generous with themselves on abstract ratings.", at: 48.7, until: 54.0 },
+      ],
+    },
     eyebrow: "How the audit works",
     heading: "Not rate yourself. *Recognize* yourself.",
     paragraphs: [
@@ -318,7 +398,16 @@ export const module2Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "20",
-    audio: { src: "/audio/m2/m2-20.mp3" },
+    audio: {
+      src: "/audio/m2/m2-20.mp3",
+      callouts: [
+        { text: "The natural impulse is to be a little generous.", at: 9.9, until: 16.6 },
+        { text: "Generous ratings produce the wrong starting point.", at: 28.9, until: 35.3 },
+        { text: "The audit is only as useful as it is honest.", at: 39.6, until: 43.1 },
+        { text: "\"I have a website, but it's on a free subdomain and hasn't been updated in three years.\"", at: 60.5, until: 68.5, card: true },
+        { text: "That second one is the truth. Pick it.", at: 68.8, until: 74.3 },
+      ],
+    },
     headline: "Pick the scenario that matches what is *true today*.",
     sub: "Not what you intended. Not what you'll have done by next quarter. *What exists right now, working today.* Generous ratings produce the wrong starting point. The audit is only as useful as it is honest.",
   },
@@ -330,7 +419,15 @@ export const module2Slides: Slide[] = [
     crumb: S4,
     tag: "FRAMEWORK",
     number: "21",
-    audio: { src: "/audio/m2/m2-21.mp3", cues: [1.0, 8.3, 9.6] },
+    audio: {
+      src: "/audio/m2/m2-21.mp3", cues: [1.0, 8.3, 9.6],
+      callouts: [
+        { text: "The audit will lock the next two dimensions.", at: 9.7, until: 16.0 },
+        { text: "Those questions do not make sense for something that does not exist yet.", at: 16.2, until: 22.6 },
+        { text: "Just answer the presence question honestly.", at: 24.3, until: 30.2 },
+        { text: "The rest of the questions resolve themselves.", at: 30.4, until: 36.5 },
+      ],
+    },
     eyebrow: "If a foundation does not yet exist",
     heading: "Some questions will be *locked*.",
     paragraphs: [
@@ -361,7 +458,14 @@ export const module2Slides: Slide[] = [
     crumb: S5,
     tag: "READING",
     number: "23",
-    audio: { src: "/audio/m2/m2-23.mp3" },
+    audio: {
+      src: "/audio/m2/m2-23.mp3",
+      callouts: [
+        { text: "Critical, maintenance, and solid.", at: 2.6, until: 9.0 },
+        { text: "Sorted by the worst rating you gave it.", at: 9.2, until: 15.0 },
+        { text: "A clear-eyed picture of where your six foundations actually stand.", at: 15.4, until: 22.5 },
+      ],
+    },
     lines: ["Read your Gap *List*."],
     post: "Three tiers, sorted by priority.",
   },
@@ -390,7 +494,14 @@ export const module2Slides: Slide[] = [
     crumb: S5,
     tag: "THE TAKEAWAY",
     number: "25",
-    audio: { src: "/audio/m2/m2-25.mp3" },
+    audio: {
+      src: "/audio/m2/m2-25.mp3",
+      callouts: [
+        { text: "Critical does not mean panic. Critical means prioritize.", at: 6.3, until: 13.2 },
+        { text: "You are not failing.", at: 14.6, until: 18.8 },
+        { text: "Fix them in order, the one that matters most first.", at: 25.9, until: 32.0 },
+      ],
+    },
     headline: "Critical doesn't mean panic. It means *prioritize*.",
     sub: "Most service businesses have multiple critical gaps when they first run this audit. That's normal. You're not failing. You're seeing what was always going to surface. *You'll fix them in order.*",
   },
@@ -402,7 +513,15 @@ export const module2Slides: Slide[] = [
     crumb: S5,
     tag: "THE TAKEAWAY",
     number: "26",
-    audio: { src: "/audio/m2/m2-26.mp3" },
+    audio: {
+      src: "/audio/m2/m2-26.mp3",
+      callouts: [
+        { text: "Solid does not mean ignore.", at: 1.8, until: 7.3 },
+        { text: "Solid foundations drift without continued attention.", at: 14.9, until: 20.0 },
+        { text: "Not your bottleneck right now.", at: 21.7, until: 26.6 },
+        { text: "Maintenance, not rebuilding.", at: 29.3, until: 32.8 },
+      ],
+    },
     headline: "Solid doesn't mean ignore. It means *protect*.",
     sub: "The foundations rated solid got there because of work you did before. That work is not permanent. Solid foundations drift without continued attention. *As you work through critical gaps, keep doing what's already working.*",
   },
@@ -414,7 +533,14 @@ export const module2Slides: Slide[] = [
     crumb: S5,
     tag: "FRAMEWORK",
     number: "27",
-    audio: { src: "/audio/m2/m2-27.mp3", cues: [7.5, 16.0] },
+    audio: {
+      src: "/audio/m2/m2-27.mp3", cues: [7.5, 16.0],
+      callouts: [
+        { text: "The Gap List tells you which modules apply to you most urgently.", at: 16.2, until: 23.5 },
+        { text: "Together they tell you what to focus on and what to leave alone.", at: 29.8, until: 36.4 },
+        { text: "One foundation to focus on first.", at: 39.3, until: 43.5 },
+      ],
+    },
     eyebrow: "This is your reference",
     heading: "You'll use the Gap List *throughout* the course.",
     paragraphs: [
@@ -442,7 +568,15 @@ export const module2Slides: Slide[] = [
     crumb: S6,
     tag: "THE TAKEAWAY",
     number: "29",
-    audio: { src: "/audio/m2/m2-29.mp3" },
+    audio: {
+      src: "/audio/m2/m2-29.mp3",
+      callouts: [
+        { text: "You cannot build five foundations in parallel.", at: 9.3, until: 15.2 },
+        { text: "Five half-built foundations is worse than one fully built one.", at: 21.4, until: 26.4 },
+        { text: "Sequence is the strategy.", at: 26.6, until: 32.2 },
+        { text: "Spreading thin produces nothing.", at: 34.5, until: 39.3 },
+      ],
+    },
     headline: "You can't build five foundations in *parallel*.",
     sub: "Your capacity is five to ten hours a week. That doesn't multiply when spread across five workstreams. It divides. *Five half-built foundations is worse than one fully built one.* Sequence is the strategy.",
   },
@@ -454,7 +588,14 @@ export const module2Slides: Slide[] = [
     crumb: S6,
     tag: "CALIBRATION",
     number: "30",
-    audio: { src: "/audio/m2/m2-30.mp3", cues: [4.8, 14.3, 25.8] },
+    audio: {
+      src: "/audio/m2/m2-30.mp3", cues: [4.8, 14.3, 25.8],
+      callouts: [
+        { text: "The solid foundations you have stay solid.", at: 26.6, until: 33.4 },
+        { text: "Not splitting attention across three projects.", at: 36.6, until: 42.8 },
+        { text: "One foundation, focused work, until it is actually solid.", at: 43.0, until: 49.5 },
+      ],
+    },
     eyebrow: "What this does not mean",
     heading: "A starting point isn't a *license* to abandon.",
     paragraphs: [
@@ -505,7 +646,17 @@ export const module2Slides: Slide[] = [
     crumb: S6,
     tag: "THE TAKEAWAY",
     number: "33",
-    audio: { src: "/audio/m2/m2-33.mp3" },
+    audio: {
+      src: "/audio/m2/m2-33.mp3",
+      callouts: [
+        { text: "Not a license to skip the rest of the course.", at: 11.4, until: 16.2 },
+        { text: "Your five to ten weekly marketing hours.", at: 18.8, until: 24.5 },
+        { text: "What is low priority today may be next year's focus.", at: 38.4, until: 44.4 },
+        { text: "Modules 3 through 8 teach the six foundations as concepts.", at: 44.7, until: 50.8 },
+        { text: "Take all six foundation modules.", at: 57.4, until: 62.6 },
+        { text: "Your starting point for the build phase, not your shortcut past the learning phase.", at: 63.3, until: 70.8 },
+      ],
+    },
     eyebrow: "What this audit is for",
     headline: "A starting point for your *build*. Not a license to skip foundations.",
     sub: "Priority order tells you where to build first. It does not tell you what's worth understanding. *Every foundation in this course is a concept you need to think about. Even the ones you won't build yet.* Take all six foundation modules. Then come back to your priority order.",
@@ -551,7 +702,15 @@ export const module2Slides: Slide[] = [
     crumb: S7,
     tag: "THE TAKEAWAY",
     number: "36",
-    audio: { src: "/audio/m2/m2-36.mp3" },
+    audio: {
+      src: "/audio/m2/m2-36.mp3",
+      callouts: [
+        { text: "Not tactics modules. Concept modules.", at: 6.8, until: 13.5 },
+        { text: "Your audit tells you what to build first when you are done learning.", at: 14.0, until: 18.9 },
+        { text: "Save your Plan, and take a break.", at: 19.2, until: 25.2 },
+        { text: "Module 3 starts the foundation teaching with getting found.", at: 29.7, until: 34.4 },
+      ],
+    },
     headline: "You take *all six*. The teaching is the point.",
     sub: "Modules 3 through 8 are concept modules, not tactics modules. *Your audit doesn't tell you what to learn. It tells you what to build first when you're done learning.*",
   },

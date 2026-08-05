@@ -51,6 +51,8 @@ export const module1Slides: Slide[] = [
       // while the questions hold the screen.
       cues: [14.9, 16.0, 17.4, 43.2, 47.5, 68.2, 85.6],
       callouts: [
+        { text: "If you don't have working answers, every decision downstream gets harder.", at: 22.5, until: 29.5 },
+        { text: "First in order, not first in importance.", at: 33.9, until: 40.5 },
         { text: "Not what you need first.", at: 61.6, until: 67.9 },
         { text: "A real instinct, worth following.", at: 100.2, until: 107.2 },
       ],
@@ -120,7 +122,13 @@ export const module1Slides: Slide[] = [
     crumb: S1,
     tag: "STRUCTURE",
     number: "04",
-    audio: { src: "/audio/m1/m1-4.mp3", cues: [0.3, 7.6, 8.1, 8.6, 9.1] },
+    audio: {
+      src: "/audio/m1/m1-4.mp3", cues: [0.3, 7.6, 8.1, 8.6, 9.1],
+      callouts: [
+        { text: "The framework, then a weak answer, then a strong answer.", at: 17.0, until: 26.0 },
+        { text: "The framework is the same. The answers are different.", at: 31.6, until: 37.9 },
+      ],
+    },
     eyebrow: "How this module works",
     heading: "Five sections. *Twenty-five minutes*.",
     rows: [
@@ -351,6 +359,11 @@ export const module1Slides: Slide[] = [
       // Dark question first, then the work-not-category teaching
       // arrives beneath it with the voice.
       cues: [0.3, 3.2, 3.3, 13.2, 15.2],
+      callouts: [
+        { text: "The chiropractor doesn't sell chiropractic. She relieves a specific kind of pain.", at: 21.2, until: 28.9, card: true },
+        { text: "The photographer doesn't sell photos. She captures a wedding day in a particular style.", at: 29.1, until: 35.8, card: true },
+        { text: "The category is what you offer. The service is what happens when someone hires you.", at: 36.0, until: 41.3 },
+      ],
     },
     pre: "The work itself.",
     lines: ["What do you *do?*"],
@@ -536,6 +549,11 @@ export const module1Slides: Slide[] = [
       // The question holds the screen; the different-not-better
       // teaching arrives beneath it with the voice.
       cues: [0.3, 3.4, 3.6, 16.1, 42.7],
+      callouts: [
+        { text: "\"I care more. I'm more thorough. I have higher standards.\"", at: 18.3, until: 25.8, card: true },
+        { text: "If your competitor could write your differentiator without changing a word, it's not a differentiator.", at: 26.0, until: 33.2 },
+        { text: "An approach, constraint, or method a competitor genuinely does not operate with.", at: 33.6, until: 41.5 },
+      ],
     },
     pre: "The hardest of the three.",
     lines: ["What makes you *different?*"],
@@ -682,7 +700,17 @@ export const module1Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "22",
-    audio: { src: "/audio/m1/m1-22.mp3" },
+    audio: {
+      src: "/audio/m1/m1-22.mp3",
+      callouts: [
+        { text: "Maya rejected open-ended therapy.", at: 8.9, until: 11.3, card: true },
+        { text: "Marcus rejected upselling.", at: 11.3, until: 13.1, card: true },
+        { text: "Lena rejected staged posing.", at: 13.1, until: 15.0, card: true },
+        { text: "James rejected subscription care.", at: 15.0, until: 17.3, card: true },
+        { text: "Sasha rejected anything but vivids.", at: 17.3, until: 21.5, card: true },
+        { text: "What's the thing competitors in my category do that I refuse to do?", at: 33.2, until: 38.1 },
+      ],
+    },
     eyebrow: "The contrarian move",
     headline: "What's the thing competitors in your category do *that you refuse to do?*",
     sub: "The strongest differentiators come from rejecting what's common. Maya rejected open-ended therapy. Marcus rejected upselling. Lena rejected staged posing. James rejected subscription care. Sasha rejected anything but vivids.",
@@ -831,7 +859,15 @@ export const module1Slides: Slide[] = [
     crumb: S5,
     tag: "THE TAKEAWAY",
     number: "30",
-    audio: { src: "/audio/m1/m1-30.mp3" },
+    audio: {
+      src: "/audio/m1/m1-30.mp3",
+      callouts: [
+        { text: "Two competitors couldn't write the same sentence.", at: 4.4, until: 7.3 },
+        { text: "A friend could read it and know what you do.", at: 7.5, until: 12.7 },
+        { text: "Something to write your tagline against.", at: 13.1, until: 18.5 },
+        { text: "Enough to keep moving.", at: 25.0, until: 27.9 },
+      ],
+    },
     eyebrow: "The threshold for good enough",
     headline: "Specific enough that two competitors couldn't write the same sentence.",
     sub: "Foundation-level positioning. Not brand strategy. *The work this module does is enough to keep moving.*",
