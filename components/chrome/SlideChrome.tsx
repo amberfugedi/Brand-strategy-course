@@ -24,6 +24,9 @@ interface SlideChromeProps {
   /** Back/Next, rendered in the footer row beside the page number so
    *  they share its baseline and right margin on every slide. */
   controls?: ReactNode;
+  /** Phone-size Back/Next, rendered top-right where the slide tag
+   *  sits on larger screens. */
+  topControls?: ReactNode;
   /** A short transient note (e.g. the finish-this-step hold), shown
    *  in the footer's left cluster. */
   note?: ReactNode;
@@ -48,6 +51,7 @@ export function SlideChrome({
   number,
   homeHref,
   controls,
+  topControls,
   note,
   caption,
   children,
@@ -83,6 +87,11 @@ export function SlideChrome({
         <span className="hidden shrink-0 whitespace-nowrap sm:inline">
           {tag}
         </span>
+        {topControls ? (
+          <span className="flex shrink-0 items-center gap-2 sm:hidden">
+            {topControls}
+          </span>
+        ) : null}
       </header>
 
       <main className="relative z-10 flex flex-1 flex-col px-[7.5vw] py-8">

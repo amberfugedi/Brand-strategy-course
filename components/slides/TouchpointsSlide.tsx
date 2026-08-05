@@ -24,6 +24,8 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
   const excluded = TOUCHPOINTS.filter((t) => !order.includes(t.id));
   const labelOf = (id: string) => TOUCHPOINTS.find((t) => t.id === id)?.label ?? id;
 
+  // data-noswipe on the tool containers keeps the slide-level swipe
+  // navigation from firing while rows are being dragged.
   const listRef = useRef<HTMLDivElement | null>(null);
   const rowRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const orderRef = useRef(order);
@@ -134,7 +136,7 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
         ))}
       </div>
 
-      <div ref={listRef} className="mt-6 max-w-2xl space-y-2">
+      <div ref={listRef} data-noswipe className="mt-6 max-w-2xl space-y-2">
         {order.map((id, i) => (
           <div key={id}>
             {chipInsert === i ? insertLine : null}

@@ -341,6 +341,37 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
     goTo(slideIndex - 1);
   }, [goTo, slideIndex]);
 
+  // Swipe navigation on touch screens: a mostly-horizontal swipe of
+  // 70px or more advances or goes back, ignoring gestures that start
+  // on interactive elements or inside drag tools.
+  const touchRef = useRef<{ x: number; y: number } | null>(null);
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    const target = e.target as HTMLElement | null;
+    if (
+      target &&
+      target.closest("button, a, input, textarea, select, [data-noswipe]")
+    ) {
+      touchRef.current = null;
+      return;
+    }
+    const t = e.touches[0];
+    touchRef.current = { x: t.clientX, y: t.clientY };
+  }, []);
+  const onTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      const start = touchRef.current;
+      touchRef.current = null;
+      if (!start) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - start.x;
+      const dy = t.clientY - start.y;
+      if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 2) return;
+      if (dx < 0) advance();
+      else goBack();
+    },
+    [advance, goBack],
+  );
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
@@ -402,8 +433,38 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       module.slides.length) *
     100;
 
-  const controls = (
+  // Phone navigation lives at the top of the slide (the footer is
+  // crowded by the player controls and the browser's own bottom bar)
+  // as generous pill targets; larger screens keep the footer pair.
+  const pill = `rounded-full border px-4 py-2.5 text-[11px] font-bold uppercase tracking-chrome transition-colors ${
+    dark
+      ? "border-subtle-dark text-on-dark-muted"
+      : "border-subtle text-body-secondary"
+  }`;
+  const pillStrong = `rounded-full border px-4 py-2.5 text-[11px] font-bold uppercase tracking-chrome transition-colors ${
+    dark ? "border-gold/60 text-gold" : "border-aubergine text-aubergine"
+  }`;
+  const topControls = (
     <>
+      {!isFirst ? (
+        <button type="button" onClick={goBack} className={pill}>
+          Back
+        </button>
+      ) : null}
+      {!isLast || step < totalSteps ? (
+        <button type="button" onClick={advance} className={pillStrong}>
+          Next
+        </button>
+      ) : (
+        <Link href={`/${courseId}`} className={pillStrong}>
+          Done
+        </Link>
+      )}
+    </>
+  );
+
+  const controls = (
+    <div className="hidden items-center gap-4 sm:flex">
       {!isFirst ? (
         <button type="button" onClick={goBack} className={navButton}>
           Back
@@ -435,7 +496,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
           Back to the course
         </Link>
       )}
-    </>
+    </div>
   );
 
   const note = (
@@ -534,6 +595,8 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   return (
     <div
       className={`relative ${LAYER_OF[module.id] ?? ""} ${dark ? "progress-dark" : ""}`}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
     >
       <div
         className="fixed left-0 top-0 z-30 h-[2px] transition-[width] duration-300"
@@ -549,6 +612,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
         number={slide.number}
         homeHref={`/${courseId}`}
         controls={controls}
+        topControls={topControls}
         note={note}
         caption={<CaptionBar dark={dark} />}
       >
