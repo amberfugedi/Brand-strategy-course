@@ -44,6 +44,7 @@ import { useCourseStore } from "@/lib/store/provider";
 import { useAuth } from "@/lib/auth/provider";
 import { useNarration } from "@/components/player/NarrationProvider";
 import { CaptionBar } from "@/components/player/CaptionBar";
+import { CalloutNote } from "@/components/player/CalloutNote";
 import { NarrationClock } from "@/components/player/NarrationClock";
 import { SignInGate } from "@/components/auth/SignInGate";
 import { stepsOf } from "@/lib/content/steps";
@@ -533,6 +534,9 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       >
         <SlideBody slide={slide} revealed={step} />
       </SlideChrome>
+      {slide.audio.callouts?.length ? (
+        <CalloutNote callouts={slide.audio.callouts} dark={dark} />
+      ) : null}
     </div>
   );
 }

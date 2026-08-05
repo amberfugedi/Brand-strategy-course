@@ -56,7 +56,14 @@ export const module1Slides: Slide[] = [
     crumb: S1,
     tag: "FRAMEWORK",
     number: "03",
-    audio: { src: "/audio/m1/m1-3.mp3", cues: [20.8, 38.2] },
+    audio: {
+      src: "/audio/m1/m1-3.mp3",
+      cues: [20.8, 38.2],
+      callouts: [
+        { text: "Not what you need first.", at: 14.2, until: 20.5 },
+        { text: "A real instinct, worth following.", at: 53.0, until: 60.0 },
+      ],
+    },
     eyebrow: "Why these three",
     heading: "Foundation-level *positioning*.",
     sub: "Not deep brand strategy.",
@@ -220,7 +227,14 @@ export const module1Slides: Slide[] = [
     crumb: S2,
     tag: "CALIBRATION",
     number: "10",
-    audio: { src: "/audio/m1/m1-10.mp3", cues: [3.8, 23.1, 41.0, 59.4, 72.4] },
+    audio: {
+      src: "/audio/m1/m1-10.mp3",
+      cues: [3.8, 23.1, 41.0, 59.4, 72.4],
+      callouts: [
+        { text: "Time, not money.", at: 39.2, until: 45.0 },
+        { text: "They don't want to be sold ongoing care.", at: 69.8, until: 76.0 },
+      ],
+    },
     heading: "Who do you *serve*.",
     personas: [
       {

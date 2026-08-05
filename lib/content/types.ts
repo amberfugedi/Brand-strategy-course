@@ -30,6 +30,10 @@ export interface SlideAudio {
    *  beat k + 1 appears, so cards land as the voice reaches them. The
    *  reveal timer takes over whenever the narration isn't playing. */
   cues?: number[];
+  /** Spoken phrases surfaced as a floating margin note while the
+   *  voice says them: each fades in at `at` seconds and out at
+   *  `until`. For lines worth seeing that aren't in the slide copy. */
+  callouts?: { text: string; at: number; until: number }[];
 }
 
 interface SlideBase {
