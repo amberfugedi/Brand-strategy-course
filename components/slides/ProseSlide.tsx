@@ -1,5 +1,6 @@
 import { ProseSlide as ProseSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
+import { MapArt } from "@/components/slides/MapArt";
 
 export function ProseSlide({
   slide,
@@ -8,8 +9,19 @@ export function ProseSlide({
   slide: ProseSlideDef;
   revealed?: number;
 }) {
+  const withMap = typeof slide.mapFilled === "number";
   return (
-    <div className="mt-4 flex flex-1 flex-col justify-center">
+    <div
+      className={`mt-4 flex flex-1 flex-col justify-center ${
+        withMap ? "gap-10 lg:grid lg:grid-cols-[minmax(0,7fr),minmax(0,5fr)] lg:items-center" : ""
+      }`}
+    >
+      {withMap ? (
+        <div className="order-last lg:order-none lg:col-start-2 lg:row-span-2">
+          <MapArt filled={slide.mapFilled} aura={slide.surface !== "plum" && slide.surface !== "ink"} />
+        </div>
+      ) : null}
+      <div className={withMap ? "lg:col-start-1 lg:row-start-1" : "contents"}>
       {slide.eyebrow ? (
         <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-gold">{slide.eyebrow}</div>
       ) : null}
@@ -31,6 +43,7 @@ export function ProseSlide({
               <Rich text={p} />
             </p>
           ))}
+      </div>
       </div>
     </div>
   );

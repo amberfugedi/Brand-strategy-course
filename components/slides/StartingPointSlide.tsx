@@ -9,11 +9,14 @@ import {
 } from "@/lib/content/m2Logic";
 import { Rich } from "@/components/Rich";
 import { useModule2 } from "@/lib/store/provider";
+import { StrataEtch } from "@/components/slides/StrataEtch";
 
 export function StartingPointSlide({
   slide,
+  strata,
 }: {
   slide: StartingPointSlideDef;
+  strata?: number | "all";
 }) {
   const { diagnostic, audit } = useModule2();
   const complete = diagnosticComplete(diagnostic);
@@ -25,7 +28,8 @@ export function StartingPointSlide({
     : null;
 
   return (
-    <div className="flex flex-1 flex-col justify-center">
+    <div className="relative flex flex-1 flex-col justify-center">
+      <StrataEtch active={strata} />
       {slide.pre ? (
         <p
           className="enter mb-8 text-[17px] text-gold/80"

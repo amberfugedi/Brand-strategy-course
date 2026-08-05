@@ -1,10 +1,18 @@
 import { FrameSlide as FrameSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
 import { SkipAhead } from "@/components/slides/SkipAhead";
+import { StrataEtch } from "@/components/slides/StrataEtch";
 
-export function FrameSlide({ slide }: { slide: FrameSlideDef }) {
+export function FrameSlide({
+  slide,
+  strata,
+}: {
+  slide: FrameSlideDef;
+  strata?: number | "all";
+}) {
   return (
-    <div className="flex flex-1 flex-col justify-center">
+    <div className="relative flex flex-1 flex-col justify-center">
+      <StrataEtch active={strata} />
       {slide.eyebrow ? (
           <div
             className="enter mb-5 text-[11px] font-bold uppercase tracking-eyebrow text-gold/80"

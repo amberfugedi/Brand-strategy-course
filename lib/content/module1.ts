@@ -862,6 +862,7 @@ export const module1Slides: Slide[] = [
     number: "32",
     audio: { src: "/audio/m1/m1-32.mp3" },
     surface: "plum",
+    mapFilled: 1,
     eyebrow: "You have your working positioning statement",
     heading: "Next: *the audit*.",
     paragraphs: [

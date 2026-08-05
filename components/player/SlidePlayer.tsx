@@ -71,7 +71,15 @@ function surfaceOf(slide: Slide): Surface {
   return "cream";
 }
 
-function SlideBody({ slide, revealed }: { slide: Slide; revealed: number }) {
+function SlideBody({
+  slide,
+  revealed,
+  strata,
+}: {
+  slide: Slide;
+  revealed: number;
+  strata?: number | "all";
+}) {
   switch (slide.kind) {
     case "hero":
       return <HeroSlide slide={slide} revealed={revealed} />;
@@ -84,7 +92,7 @@ function SlideBody({ slide, revealed }: { slide: Slide; revealed: number }) {
     case "prose":
       return <ProseSlide slide={slide} revealed={revealed} />;
     case "question":
-      return <QuestionSlide slide={slide} revealed={revealed} />;
+      return <QuestionSlide slide={slide} revealed={revealed} strata={strata} />;
     case "framework":
       return <FrameworkSlide slide={slide} revealed={revealed} />;
     case "patterns":
@@ -114,11 +122,11 @@ function SlideBody({ slide, revealed }: { slide: Slide; revealed: number }) {
     case "gaplist":
       return <GapListSlide slide={slide} revealed={revealed} />;
     case "startingPoint":
-      return <StartingPointSlide slide={slide} />;
+      return <StartingPointSlide slide={slide} strata={strata} />;
     case "plan":
       return <PlanSlide slide={slide} />;
     case "frame":
-      return <FrameSlide slide={slide} />;
+      return <FrameSlide slide={slide} strata={strata} />;
     case "cards":
       return <CardsSlide slide={slide} revealed={revealed} />;
     case "detail":
@@ -151,6 +159,18 @@ interface SlidePlayerProps {
   module: ModuleDef;
   slideIndex: number; // 1-based, matches the URL
 }
+
+// Which foundation (1-7) each module builds; "all" for the audit.
+const STRATA_OF: Record<string, number | "all"> = {
+  m1: 1,
+  m2: "all",
+  m3: 2,
+  m4: 3,
+  m5: 4,
+  m6: 5,
+  m7: 6,
+  m8: 7,
+};
 
 const LAYER_OF: Record<string, string> = {
   m3: "layer-found",
@@ -532,7 +552,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
         note={note}
         caption={<CaptionBar dark={dark} />}
       >
-        <SlideBody slide={slide} revealed={step} />
+        <SlideBody slide={slide} revealed={step} strata={STRATA_OF[module.id]} />
       </SlideChrome>
       {slide.audio.callouts?.length ? (
         <CalloutNote callouts={slide.audio.callouts} dark={dark} />

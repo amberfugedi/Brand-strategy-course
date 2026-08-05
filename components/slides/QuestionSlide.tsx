@@ -1,17 +1,23 @@
 import { QuestionSlide as QuestionSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
+import { StrataEtch } from "@/components/slides/StrataEtch";
 
 export function QuestionSlide({
   slide,
   revealed = Infinity,
+  strata,
 }: {
   slide: QuestionSlideDef;
   revealed?: number;
+  strata?: number | "all";
 }) {
   // Beats: lines, post, panel container, panel paragraphs, callout.
   const panelAt = slide.lines.length + (slide.post ? 1 : 0);
   return (
-    <div className="flex flex-1 flex-col justify-center">
+    <div className="relative flex flex-1 flex-col justify-center">
+      {/* The etch fills empty dividers; spines with a teaching panel
+          have no room for it. */}
+      {!slide.panel ? <StrataEtch active={strata} /> : null}
       <div aria-hidden className="mb-10 w-44 border-t border-gold/40">
         <div className="flex justify-between">
           {Array.from({ length: 7 }).map((_, i) => (

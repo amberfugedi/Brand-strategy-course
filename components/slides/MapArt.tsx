@@ -4,20 +4,28 @@
  * written in (peach strokes), the rest waiting. Cream surfaces only;
  * uses the courses accent pair, never layer tones.
  */
-const ROWS: { label: string; fill: string | null }[] = [
-  { label: "Positioning", fill: "w-4/5" },
-  { label: "Get found", fill: "w-3/5" },
-  { label: "Earned proof", fill: "w-2/3" },
-  { label: "Referral system", fill: null },
-  { label: "Brand awareness", fill: null },
-  { label: "Owned audience", fill: null },
-  { label: "Authority building", fill: null },
+const ROWS: { label: string; width: string }[] = [
+  { label: "Positioning", width: "w-4/5" },
+  { label: "Get found", width: "w-3/5" },
+  { label: "Earned proof", width: "w-2/3" },
+  { label: "Referral system", width: "w-3/4" },
+  { label: "Brand awareness", width: "w-1/2" },
+  { label: "Owned audience", width: "w-2/3" },
+  { label: "Authority building", width: "w-3/5" },
 ];
 
-export function MapArt() {
+/** filled = how many lines are written in so far (the intro shows
+ *  three as a preview; module closers show true progress). */
+export function MapArt({
+  filled = 3,
+  aura = true,
+}: {
+  filled?: number;
+  aura?: boolean;
+}) {
   return (
     <div aria-hidden className="relative mx-auto w-[300px] shrink-0 sm:w-[330px]">
-      <div className="aura -right-[26vmin] -top-[20vmin]" />
+      {aura ? <div className="aura -right-[26vmin] -top-[20vmin]" /> : null}
       {/* the sheet behind, for stack depth */}
       <div className="absolute inset-0 translate-x-3 translate-y-2 rotate-[1.4deg] rounded-3xl border border-subtle bg-cream-light/70" />
       {/* the working sheet */}
@@ -26,12 +34,12 @@ export function MapArt() {
           Marketing Foundation Map
         </div>
         <div className="mt-4 space-y-3.5">
-          {ROWS.map((r) => (
+          {ROWS.map((r, i) => (
             <div key={r.label}>
               <div className="flex items-center gap-2.5">
                 <span
                   className={`h-[14px] w-[14px] shrink-0 rounded-full border-2 border-gold ${
-                    r.fill ? "bg-peach" : "bg-transparent"
+                    i < filled ? "bg-peach" : "bg-transparent"
                   }`}
                 />
                 <span className="text-[10.5px] font-bold uppercase tracking-eyebrow text-body-tertiary">
@@ -39,8 +47,8 @@ export function MapArt() {
                 </span>
               </div>
               <div className="ml-[26px] mt-1.5">
-                {r.fill ? (
-                  <div className={`h-[7px] rounded-[3px] bg-peach ${r.fill}`} />
+                {i < filled ? (
+                  <div className={`h-[7px] rounded-[3px] bg-peach ${r.width}`} />
                 ) : (
                   <div className="h-px w-full bg-ink/10" />
                 )}

@@ -120,6 +120,9 @@ export interface ProseSlide extends SlideBase {
   heading: string;
   quote?: string;
   paragraphs: string[];
+  /** Show the Map document beside the text with this many lines
+   *  written in: the module-closer progress beat. */
+  mapFilled?: number;
 }
 
 /** Dark plum section-question slide: small line, large lines, small
