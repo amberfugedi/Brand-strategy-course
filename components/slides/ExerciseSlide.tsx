@@ -23,7 +23,10 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
 
   return (
     <div className="flex flex-1 items-center justify-center py-2">
-      <div className="w-full max-w-2xl border border-gold bg-cream-light px-7 py-5 md:px-10">
+      <div
+        className="enter w-full max-w-2xl border border-gold bg-cream-light px-7 py-5 md:px-10"
+        style={{ "--n": 0 } as React.CSSProperties}
+      >
         <div className="text-center">
           <div className="mb-2.5 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
             Your turn

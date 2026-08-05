@@ -27,21 +27,35 @@ export function StartingPointSlide({
   return (
     <div className="flex flex-1 flex-col justify-center">
       {slide.pre ? (
-        <p className="mb-8 text-[17px] text-gold/80">{slide.pre}</p>
+        <p
+          className="enter mb-8 text-[17px] text-gold/80"
+          style={{ "--n": 0 } as React.CSSProperties}
+        >
+          {slide.pre}
+        </p>
       ) : null}
       {slide.lines.map((line, i) => (
         <h1
           key={i}
-          className="max-w-3xl text-balance text-4xl font-normal leading-snug tracking-tight md:text-5xl"
+          className="enter max-w-3xl text-balance text-4xl font-normal leading-snug tracking-tight md:text-5xl"
+          style={{ "--n": 1 + i } as React.CSSProperties}
         >
           <Rich text={line} />
         </h1>
       ))}
       {slide.post ? (
-        <p className="mt-8 text-[17px] text-gold/80">{slide.post}</p>
+        <p
+          className="enter mt-8 text-[17px] text-gold/80"
+          style={{ "--n": 1 + slide.lines.length } as React.CSSProperties}
+        >
+          {slide.post}
+        </p>
       ) : null}
 
-      <div className="mt-10 max-w-2xl border-l-[3px] border-gold bg-cream/5 px-7 py-6">
+      <div
+        className="enter mt-10 max-w-2xl border-l-[3px] border-gold bg-cream/5 px-7 py-6"
+        style={{ "--n": 3 + slide.lines.length } as React.CSSProperties}
+      >
         {startingPoint ? (
           <>
             <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">

@@ -49,11 +49,17 @@ export function SummarySlide({ slide }: { slide: SummarySlideDef }) {
       {slide.eyebrow ? (
         <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-rust">{slide.eyebrow}</div>
       ) : null}
-      <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
+      <h1
+        className="enter text-4xl font-bold tracking-tight md:text-6xl"
+        style={{ "--n": 0 } as React.CSSProperties}
+      >
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="rounded-3xl mt-8 max-w-3xl border-l-[3px] border-gold bg-cream-light px-9 py-8">
+      <div
+        className="enter rounded-3xl mt-8 max-w-3xl border-l-[3px] border-gold bg-cream-light px-9 py-8"
+        style={{ "--n": 1 } as React.CSSProperties}
+      >
         {statement ? (
           <p className="font-serif text-[19px] italic leading-relaxed text-body">
             {statement}
@@ -73,7 +79,10 @@ export function SummarySlide({ slide }: { slide: SummarySlideDef }) {
         )}
       </div>
 
-      <div className="mt-7 max-w-3xl space-y-3">
+      <div
+        className="enter mt-7 max-w-3xl space-y-3"
+        style={{ "--n": 3 } as React.CSSProperties}
+      >
         {slide.paragraphs.map((p, i) => (
           <p key={i} className="text-[16px] leading-relaxed">
             <Rich text={p} />

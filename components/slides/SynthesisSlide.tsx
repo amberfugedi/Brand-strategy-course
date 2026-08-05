@@ -29,21 +29,33 @@ export function SynthesisSlide({ slide }: { slide: SynthesisSlideDef }) {
       {slide.eyebrow ? (
         <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-teal">{slide.eyebrow}</div>
       ) : null}
-      <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+      <h1
+        className="enter text-3xl font-bold tracking-tight md:text-4xl"
+        style={{ "--n": 0 } as React.CSSProperties}
+      >
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="rounded-3xl mt-4 max-w-4xl border-l-[3px] border-teal bg-cream-light px-7 py-4">
+      <div
+        className="enter rounded-3xl mt-4 max-w-4xl border-l-[3px] border-teal bg-cream-light px-7 py-4"
+        style={{ "--n": 1 } as React.CSSProperties}
+      >
         <p className="text-[16px] leading-relaxed">
           <Rich text={slide.template} />
         </p>
       </div>
 
-      <p className="mt-3 max-w-3xl text-[14.5px] leading-snug text-body-secondary">
+      <p
+        className="enter mt-3 max-w-3xl text-[14.5px] leading-snug text-body-secondary"
+        style={{ "--n": 2 } as React.CSSProperties}
+      >
         <Rich text={slide.note} />
       </p>
 
-      <div className="mt-4 grid max-w-4xl gap-3 md:grid-cols-3">
+      <div
+        className="enter mt-4 grid max-w-4xl gap-3 md:grid-cols-3"
+        style={{ "--n": 3 } as React.CSSProperties}
+      >
         <AnswerRef
           label="Who you serve"
           parts={[serve?.situation ?? "", serve?.context ?? "", serve?.problem ?? ""]}
@@ -55,7 +67,10 @@ export function SynthesisSlide({ slide }: { slide: SynthesisSlideDef }) {
         <AnswerRef label="What makes you different" parts={[different?.text ?? ""]} />
       </div>
 
-      <label className="mt-4 block max-w-4xl">
+      <label
+        className="enter mt-4 block max-w-4xl"
+        style={{ "--n": 4 } as React.CSSProperties}
+      >
         <span className="mb-1 block text-[10px] font-bold uppercase tracking-eyebrow text-body-secondary">
           Your working statement
         </span>

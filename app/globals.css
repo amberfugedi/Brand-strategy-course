@@ -169,6 +169,39 @@ h2 .accent-serif {
   }
 }
 
+/* Staged entrance for slides that render in one piece (principles,
+   dividers, outputs): each .enter element rises on arrival, paced by
+   its --n index, so even a slide without beats tells its story in
+   order rather than appearing all at once. */
+.enter {
+  opacity: 0;
+  animation: beatIn 0.5s ease-out forwards;
+  animation-delay: calc(0.15s + var(--n, 0) * 0.3s);
+}
+
+/* Hairline rules that draw outward, for the moments that deserve a
+   little ceremony. */
+.rule-draw {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: ruleDraw 0.8s ease-out 0.15s forwards;
+}
+@keyframes ruleDraw {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beat,
+  .enter,
+  .rule-draw {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Display type is Newsreader 500 with tight tracking; the ladder is
    label, headline, body, and stops. Manrope never exceeds 500, so
    bold utilities resolve to medium instead of a synthesized 700. */

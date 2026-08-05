@@ -30,10 +30,11 @@ export function MapSlide({ slide }: { slide: MapSlideDef }) {
 
       <div className="relative mt-6 pb-2">
         <div className="grid gap-3 md:grid-cols-5">
-          {ZONES.map((zone) => (
+          {ZONES.map((zone, zi) => (
             <div
               key={zone.title}
-              className={`border-t-[3px] bg-cream-dark/60 px-4 py-4 ${zone.accent}`}
+              className={`enter border-t-[3px] bg-cream-dark/60 px-4 py-4 ${zone.accent}`}
+              style={{ "--n": zi } as React.CSSProperties}
             >
               <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-aubergine">
                 {zone.title}
@@ -52,7 +53,10 @@ export function MapSlide({ slide }: { slide: MapSlideDef }) {
           ))}
         </div>
 
-        <div className="mt-3 flex items-center gap-3 border border-dashed border-gold/60 px-4 py-2.5">
+        <div
+          className="enter mt-3 flex items-center gap-3 border border-dashed border-gold/60 px-4 py-2.5"
+          style={{ "--n": 5 } as React.CSSProperties}
+        >
           <span className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
             Ads
           </span>
@@ -62,7 +66,10 @@ export function MapSlide({ slide }: { slide: MapSlideDef }) {
           </span>
         </div>
 
-        <div className="mt-3 flex items-center gap-3">
+        <div
+          className="enter mt-3 flex items-center gap-3"
+          style={{ "--n": 6 } as React.CSSProperties}
+        >
           <span className="flex h-8 w-8 items-center justify-center rounded-full border border-aubergine bg-aubergine">
             <span className="font-serif text-[13px] italic leading-none text-cream">
               B
