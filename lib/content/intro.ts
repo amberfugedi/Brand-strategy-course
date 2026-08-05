@@ -86,6 +86,7 @@ export const introSlides: Slide[] = [
     audio: { src: "/audio/intro/intro-3.mp3" },
     eyebrow: "Your working document",
     heading: "The Marketing Foundation *Map*.",
+    art: true,
     intro:
       "Your working document, built into the *course* itself.",
     card: {

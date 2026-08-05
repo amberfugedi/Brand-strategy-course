@@ -86,6 +86,8 @@ export interface CardListSlide extends SlideBase {
   eyebrow?: string;
   heading: string;
   intro?: string;
+  /** Show the Map document illustration beside the card. */
+  art?: boolean;
   card: {
     title: string;
     subtitle: string;

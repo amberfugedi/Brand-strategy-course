@@ -1,5 +1,6 @@
 import { CardListSlide as CardListSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
+import { MapArt } from "@/components/slides/MapArt";
 
 export function CardListSlide({
   slide,
@@ -24,11 +25,12 @@ export function CardListSlide({
       ) : null}
 
       {revealed < 1 ? null : (
-      <div className="rounded-3xl beat mt-9 max-w-2xl border-l-[3px] border-gold bg-cream-light px-9 py-8">
+      <div className="mt-9 flex flex-col items-start gap-10 md:flex-row md:items-center md:gap-16">
+      <div className="rounded-3xl beat w-full max-w-2xl border-l-[3px] border-gold bg-cream-light px-9 py-8">
         <h2 className="text-2xl font-bold tracking-tight">
           <Rich text={slide.card.title} />
         </h2>
-        <p className="mt-2 font-serif text-[16px] italic text-body-secondary">
+        <p className="mt-2 text-[15px] text-body-secondary">
           {slide.card.subtitle}
         </p>
         <ul className="ring-list mt-5 space-y-2.5 text-[16px]">
@@ -38,6 +40,8 @@ export function CardListSlide({
             </li>
           ))}
         </ul>
+      </div>
+      {slide.art ? <MapArt /> : null}
       </div>
       )}
     </div>
