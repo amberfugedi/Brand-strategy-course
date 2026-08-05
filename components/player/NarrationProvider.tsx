@@ -110,8 +110,12 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
   }, [rate, src]);
 
   // A new track (a new slide's segment, or a new module) starts by
-  // itself; a blocked attempt just leaves the Listen control waiting.
-  // Leaving narrated content clears the paused choice.
+  // itself, immediately, so the attempt lands inside the activation
+  // window of the tap that navigated here (phones reject a delayed
+  // start). If the browser still blocks it, the very next tap or
+  // keypress anywhere resumes it from inside that gesture, with the
+  // footer Listen control as the visible fallback. Leaving narrated
+  // content clears the paused choice.
   useEffect(() => {
     const el = audioRef.current;
     if (!el) return;
@@ -122,10 +126,28 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
       return;
     }
     el.playbackRate = rate;
-    const t = setTimeout(() => {
-      if (!userPausedRef.current) void el.play().catch(() => {});
-    }, 80);
-    return () => clearTimeout(t);
+    let disposed = false;
+    const resume = () => {
+      if (!disposed && !userPausedRef.current) void el.play().catch(() => {});
+    };
+    const unarm = () => {
+      window.removeEventListener("pointerdown", resume);
+      window.removeEventListener("keydown", resume);
+    };
+    if (!userPausedRef.current) {
+      void el.play().catch(() => {
+        if (disposed || userPausedRef.current) return;
+        window.addEventListener("pointerdown", resume);
+        window.addEventListener("keydown", resume);
+      });
+    }
+    const offPlay = () => unarm();
+    el.addEventListener("play", offPlay);
+    return () => {
+      disposed = true;
+      unarm();
+      el.removeEventListener("play", offPlay);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [src]);
 
