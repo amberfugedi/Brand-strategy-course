@@ -8,10 +8,10 @@ function AnswerRef({ label, parts }: { label: string; parts: string[] }) {
   const text = parts.filter(Boolean).join(" · ");
   return (
     <div className="rounded-3xl border-l-2 border-olive/60 bg-cream-light px-4 py-3">
-      <div className="text-[9px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+      <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
         {label}
       </div>
-      <p className="mt-1 text-[13px] leading-relaxed text-body-secondary">
+      <p className="mt-1 text-[13.5px] leading-relaxed text-body-secondary">
         {text || <em className="font-serif italic">Not written yet.</em>}
       </p>
     </div>

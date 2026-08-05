@@ -30,7 +30,7 @@ export function MapArt({
       <div className="absolute inset-0 translate-x-3 translate-y-2 rotate-[1.4deg] rounded-3xl border border-subtle bg-cream-light/70" />
       {/* the working sheet */}
       <div className="relative -rotate-[1.2deg] rounded-3xl border border-subtle bg-cream-light px-7 py-6 shadow-lift">
-        <div className="text-[9px] font-bold uppercase tracking-eyebrow text-gold">
+        <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
           Marketing Foundation Map
         </div>
         <div className="mt-4 space-y-3.5">
@@ -57,7 +57,7 @@ export function MapArt({
           ))}
         </div>
         <div className="mt-5 flex items-center justify-between border-t border-subtle pt-3">
-          <span className="text-[8.5px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+          <span className="text-[9.5px] font-bold uppercase tracking-eyebrow text-body-tertiary">
             Saves as you go
           </span>
           <span className="h-1 w-16 rounded-[2px] bg-gold/20">

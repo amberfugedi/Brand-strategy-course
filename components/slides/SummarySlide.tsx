@@ -9,7 +9,7 @@ function Part({ label, value }: { label: string; value: string }) {
   if (!value) return null;
   return (
     <div>
-      <div className="text-[9px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+      <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
         {label}
       </div>
       <p className="mt-0.5 text-[14.5px] leading-relaxed text-body-secondary">{value}</p>

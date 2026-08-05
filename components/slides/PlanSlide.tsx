@@ -54,7 +54,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
 
       <div className="mt-6 grid max-w-5xl gap-4 pb-4 md:grid-cols-2">
         <div className="rounded-3xl border-l-[3px] border-gold bg-cream-light px-6 py-5">
-          <div className="text-[9px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+          <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
             Positioning
           </div>
           {statement ? (
@@ -69,7 +69,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
         </div>
 
         <div className="rounded-3xl border-l-[3px] border-teal bg-cream-light px-6 py-5">
-          <div className="text-[9px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+          <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
             Priority order
           </div>
           {complete ? (
@@ -91,7 +91,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
         </div>
 
         <div className="rounded-3xl border-l-[3px] border-olive bg-cream-light px-6 py-5">
-          <div className="text-[9px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+          <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
             Gap List
           </div>
           {gaps.some((g) => g.gap !== null) ? (
@@ -115,7 +115,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
         </div>
 
         <div className="rounded-3xl border-l-[3px] border-rust bg-cream-light px-6 py-5">
-          <div className="text-[9px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+          <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
             Starting point
           </div>
           {startingPoint ? (

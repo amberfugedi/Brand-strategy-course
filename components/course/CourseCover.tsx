@@ -24,7 +24,7 @@ export function CourseCover({
             A
           </span>
         </span>
-        <span className="text-[9px] font-bold uppercase tracking-eyebrow text-gold/80">
+        <span className="text-[10px] font-bold uppercase tracking-eyebrow text-gold/80">
           {ordinal}
         </span>
       </div>

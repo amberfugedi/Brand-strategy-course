@@ -193,7 +193,7 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
                           </span>
                         </span>
                       </div>
-                      <p className="mt-0.5 font-serif text-[13px] italic leading-relaxed text-body-secondary">
+                      <p className="mt-0.5 font-serif text-[13.5px] italic leading-relaxed text-body-secondary">
                         {ex.text}
                       </p>
                     </div>

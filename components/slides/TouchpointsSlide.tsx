@@ -166,7 +166,7 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
                 {labelOf(id)}
               </span>
               {i === 0 ? (
-                <span className="border border-gold px-2 py-0.5 text-[9px] font-bold uppercase tracking-chrome text-gold">
+                <span className="border border-gold px-2 py-0.5 text-[10px] font-bold uppercase tracking-chrome text-gold">
                   Primary
                 </span>
               ) : null}

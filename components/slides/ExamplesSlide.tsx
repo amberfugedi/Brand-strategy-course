@@ -34,7 +34,7 @@ function PersonaCard({
       </p>
       <div className="mt-auto border-t border-subtle pt-3">
         {open ? (
-          <p className="text-[13px] leading-relaxed text-body-secondary">
+          <p className="text-[13.5px] leading-relaxed text-body-secondary">
             <Rich text={persona.note} />
           </p>
         ) : (

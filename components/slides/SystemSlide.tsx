@@ -91,7 +91,7 @@ export function SystemSlide({
                       <Rich text={item.text} />
                     </span>
                     {item.mod ? (
-                      <span className="text-[9px] font-bold uppercase tracking-chrome text-on-dark-muted">
+                      <span className="text-[10px] font-bold uppercase tracking-chrome text-on-dark-muted">
                         {item.mod}
                       </span>
                     ) : null}

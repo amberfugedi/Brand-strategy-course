@@ -63,7 +63,7 @@ export function PrioritiesSlide({
             {priorities.map((p) => (
               <div key={p.foundation.id} className="flex items-baseline gap-3">
                 <span
-                  className={`shrink-0 border px-2 py-0.5 text-[9px] font-bold uppercase tracking-chrome ${TIER_COLOR[p.tier]}`}
+                  className={`shrink-0 border px-2 py-0.5 text-[10px] font-bold uppercase tracking-chrome ${TIER_COLOR[p.tier]}`}
                 >
                   {TIER_LABEL[p.tier]}
                 </span>

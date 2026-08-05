@@ -66,7 +66,7 @@ export function GapListSlide({
               {answered.map((g) => (
                 <div key={g.foundation.id} className="flex items-baseline gap-3">
                   <span
-                    className={`shrink-0 border px-2 py-0.5 text-[9px] font-bold uppercase tracking-chrome ${GAP_META[g.gap!].color}`}
+                    className={`shrink-0 border px-2 py-0.5 text-[10px] font-bold uppercase tracking-chrome ${GAP_META[g.gap!].color}`}
                   >
                     {GAP_META[g.gap!].label}
                   </span>
