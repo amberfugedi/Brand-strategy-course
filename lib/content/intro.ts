@@ -49,15 +49,15 @@ export const introSlides: Slide[] = [
         label: "Layer 01",
         accent: "teal",
         sub: "So people who need you can *discover* you.",
-        items: [{ num: "02", text: "Get *Found*" }],
+        items: [{ num: "02", text: "Get *Found*", mod: "Module 3" }],
       },
       {
         label: "Layer 02 · Get chosen",
         accent: "rust",
         sub: "So they pick *you* over alternatives.",
         items: [
-          { num: "03", text: "Earned *Proof*" },
-          { num: "04", text: "Referral *System*" },
+          { num: "03", text: "Earned *Proof*", mod: "Module 4" },
+          { num: "04", text: "Referral *System*", mod: "Module 5" },
         ],
       },
       {
@@ -65,14 +65,15 @@ export const introSlides: Slide[] = [
         accent: "olive",
         sub: "So you stay *present* until they're ready.",
         items: [
-          { num: "05", text: "Brand *Awareness*" },
-          { num: "06", text: "Owned *Audience*" },
-          { num: "07", text: "Authority *Building*" },
+          { num: "05", text: "Brand *Awareness*", mod: "Module 6" },
+          { num: "06", text: "Owned *Audience*", mod: "Module 7" },
+          { num: "07", text: "Authority *Building*", mod: "Module 8" },
         ],
       },
     ],
     base: {
       label: "*Positioning*",
+      mod: "Module 1",
       text: "Where the course starts. The working statement all three layers are *built around*.",
     },
     note: "Every business needs all *seven*. The order they get built is what the audit decides.",

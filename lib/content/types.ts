@@ -71,11 +71,11 @@ export interface SystemSlide extends SlideBase {
     label: string;
     accent: "teal" | "rust" | "olive";
     sub: string;
-    items: { num: string; text: string }[];
+    items: { num: string; text: string; mod?: string }[];
   }[];
   /** The foundation beneath the layers: positioning, rendered as a
    *  full-width base row under the three columns. */
-  base?: { label: string; text: string };
+  base?: { label: string; text: string; mod?: string };
   /** Closing line under the base row. */
   note?: string;
 }

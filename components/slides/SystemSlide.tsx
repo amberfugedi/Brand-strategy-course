@@ -51,6 +51,11 @@ export function SystemSlide({
                     <span className="text-[16px]">
                       <Rich text={item.text} />
                     </span>
+                    {item.mod ? (
+                      <span className="text-[9px] font-bold uppercase tracking-chrome text-on-dark-muted">
+                        {item.mod}
+                      </span>
+                    ) : null}
                   </li>
                 ))}
               </ul>
@@ -69,6 +74,11 @@ export function SystemSlide({
             <span className="text-[16px] text-on-dark">
               <Rich text={slide.base.label} />
             </span>
+            {slide.base.mod ? (
+              <span className="text-[9px] font-bold uppercase tracking-chrome text-on-dark-muted">
+                {slide.base.mod}
+              </span>
+            ) : null}
             <span className="ml-3 text-[15px] text-on-dark-muted">
               <Rich text={slide.base.text} />
             </span>
