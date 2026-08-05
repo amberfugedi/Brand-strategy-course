@@ -46,7 +46,7 @@ export const introSlides: Slide[] = [
     heading: "Three layers. Seven *foundations*.",
     layers: [
       {
-        label: "Layer 01 · Get found",
+        label: "Layer 01",
         accent: "teal",
         sub: "So people who need you can *discover* you.",
         items: [{ num: "02", text: "Get *Found*" }],
