@@ -163,8 +163,10 @@ future body-level treatment is a CSS decision, not a content pass.
 
 - **Paper tab**: two counter-rotated pseudo-elements, butter fills,
   geometry in `em` (see `app/globals.css`). Cream headlines only.
-- **Ring bullet**: 20px, peach center, 2.5px `#8A5A14` ring. Never a
-  disc, never recolored per layer. Applied to the Map card list.
+- **Ring bullet**: peach center, `#8A5A14` ring; 20px with a 2.5px
+  ring on md and up, 15px with a 2px ring on phones. Never a disc,
+  never recolored per layer. Applied to the Map card list and the
+  concept-column cards.
 - **Aura**: one static blob per cream slide at most, warm core (amber
   `rgba(248,190,116,…)` or rose `rgba(246,158,199,…)`), fading by 60%,
   corner-bled. Never on dark, never animated. Currently placed on cream
