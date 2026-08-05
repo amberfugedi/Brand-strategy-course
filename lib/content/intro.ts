@@ -72,7 +72,7 @@ export const introSlides: Slide[] = [
       },
     ],
     base: {
-      label: "Foundation 01 · Positioning",
+      label: "*Positioning*",
       text: "Where the course starts. The working statement all three layers are *built around*.",
     },
     note: "Every business needs all *seven*. The order they get built is what the audit decides.",

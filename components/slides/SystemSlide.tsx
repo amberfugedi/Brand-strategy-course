@@ -62,11 +62,14 @@ export function SystemSlide({
       {slide.base && revealed > slide.layers.length ? (
         <div className="beat mt-6">
           <div className="h-[3px] w-full bg-gold" />
-          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 rounded-b-3xl bg-white/5 px-6 py-4">
-            <span className="text-[11px] font-bold uppercase tracking-eyebrow text-gold">
-              {slide.base.label}
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-b-3xl bg-white/5 px-6 py-4">
+            <span className="text-[10px] font-bold tracking-chrome text-on-dark-muted">
+              01
             </span>
             <span className="text-[16px] text-on-dark">
+              <Rich text={slide.base.label} />
+            </span>
+            <span className="ml-3 text-[15px] text-on-dark-muted">
               <Rich text={slide.base.text} />
             </span>
           </div>
