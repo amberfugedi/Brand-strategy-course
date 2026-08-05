@@ -346,7 +346,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // Generous padding for the most-tapped controls in the course; the
   // negative vertical margin keeps the footer row's height unchanged
   // while the hit area runs well past the label.
-  const navButton = `-my-3 px-5 py-3 text-[12px] font-bold uppercase tracking-chrome transition-colors ${
+  const navButton = `px-4 py-2 sm:-my-3 sm:px-5 sm:py-3 text-[12px] font-bold uppercase tracking-chrome transition-colors ${
     dark
       ? "text-on-dark-muted hover:text-gold"
       : "text-body-tertiary hover:text-aubergine"
@@ -400,7 +400,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
           <button
             type="button"
             onClick={narration.toggle}
-            className={`-my-3 shrink-0 whitespace-nowrap px-2 py-3 text-[11px] font-bold uppercase tracking-chrome transition-colors ${
+            className={`shrink-0 whitespace-nowrap px-2 py-2 sm:-my-3 sm:py-3 text-[11px] font-bold uppercase tracking-chrome transition-colors ${
               dark
                 ? "text-gold hover:text-cream"
                 : "text-aubergine hover:text-gold"
@@ -412,7 +412,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
             type="button"
             onClick={narration.restart}
             aria-label="Restart slide narration"
-            className={`-my-3 shrink-0 px-1.5 py-3 text-[13px] leading-none transition-colors ${
+            className={`shrink-0 px-1.5 py-2 sm:-my-3 sm:py-3 text-[13px] leading-none transition-colors ${
               dark
                 ? "text-on-dark-muted hover:text-gold"
                 : "text-body-tertiary hover:text-aubergine"
@@ -424,7 +424,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
             type="button"
             onClick={narration.cycleRate}
             aria-label="Narration speed"
-            className={`-my-3 shrink-0 whitespace-nowrap px-2 py-3 text-[11px] font-bold tracking-chrome transition-colors ${
+            className={`shrink-0 whitespace-nowrap px-2 py-2 sm:-my-3 sm:py-3 text-[11px] font-bold tracking-chrome transition-colors ${
               dark
                 ? "text-on-dark-muted hover:text-gold"
                 : "text-body-tertiary hover:text-aubergine"
@@ -437,7 +437,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
             onClick={narration.toggleCaptions}
             aria-label="Captions"
             aria-pressed={narration.captions}
-            className={`-my-3 shrink-0 whitespace-nowrap px-2 py-3 text-[11px] font-bold tracking-chrome transition-colors ${
+            className={`shrink-0 whitespace-nowrap px-2 py-2 sm:-my-3 sm:py-3 text-[11px] font-bold tracking-chrome transition-colors ${
               narration.captions
                 ? dark
                   ? "text-gold hover:text-cream"
@@ -454,7 +454,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
               type="button"
               onClick={narration.cycleCaptionSize}
               aria-label="Caption text size"
-              className={`-my-3 shrink-0 whitespace-nowrap px-2 py-3 text-[12px] font-bold tracking-chrome transition-colors ${
+              className={`shrink-0 whitespace-nowrap px-2 py-2 sm:-my-3 sm:py-3 text-[12px] font-bold tracking-chrome transition-colors ${
                 dark
                   ? "text-on-dark-muted hover:text-gold"
                   : "text-body-tertiary hover:text-aubergine"

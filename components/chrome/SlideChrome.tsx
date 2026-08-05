@@ -92,7 +92,7 @@ export function SlideChrome({
       {caption}
 
       <footer
-        className={`relative z-10 flex items-center justify-between gap-4 px-[4.5vw] pb-8 text-xs ${chromeText[surface]}`}
+        className={`relative z-10 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-[4.5vw] pb-6 text-xs sm:pb-8 ${chromeText[surface]}`}
       >
         <span className="flex min-w-0 items-center gap-2.5">
           {homeHref ? (
@@ -131,7 +131,7 @@ export function SlideChrome({
           )}
           {note}
         </span>
-        <span className="flex shrink-0 items-center gap-4">
+        <span className="ml-auto flex shrink-0 items-center gap-4">
           {controls}
           <span className="text-[10px] font-bold tracking-chrome">
             {number}
