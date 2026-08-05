@@ -17,9 +17,9 @@ export function CompareSlide({
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="mt-8 grid gap-6 md:grid-cols-2">
+      <div className="my-auto grid gap-6 py-9 md:grid-cols-2">
         {revealed >= 1 ? (
-          <div className="rounded-3xl beat border-l-[3px] border-mauve bg-cream-light px-7 py-6">
+          <div className="rounded-3xl beat border border-l-[3px] border-subtle border-l-coral bg-cream-light px-7 py-6 shadow-lift">
             <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
               Weak
             </div>
@@ -32,7 +32,7 @@ export function CompareSlide({
           </div>
         ) : null}
         {revealed >= 2 ? (
-          <div className="beat border-l-[3px] border-olive bg-cream-dark/60 px-7 py-6">
+          <div className="rounded-3xl beat border border-l-[3px] border-subtle border-l-stone bg-cream-light px-7 py-6 shadow-lift">
             <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
               Strong
             </div>

@@ -7,7 +7,7 @@ function Card({
   card: CardsSlideDef["cards"][number];
 }) {
   return (
-    <div className="beat h-full bg-cream-dark/60 px-6 py-5">
+    <div className="beat h-full rounded-3xl border border-subtle bg-cream-light px-6 py-5 shadow-lift">
       <div className="text-[10px] font-bold uppercase tracking-eyebrow text-rust">
         {card.label}
       </div>
@@ -48,7 +48,7 @@ export function CardsSlide({
       ) : null}
 
       <div
-        className={`mt-7 grid gap-4 ${
+        className={`mt-auto grid gap-4 pt-7 ${
           fiveUp
             ? "md:grid-cols-3"
             : slide.cards.length === 4
@@ -73,6 +73,7 @@ export function CardsSlide({
           <Rich text={slide.footnote} />
         </p>
       ) : null}
+      <div className="mb-auto" />
     </div>
   );
 }

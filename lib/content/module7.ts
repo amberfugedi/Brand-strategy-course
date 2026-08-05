@@ -381,6 +381,7 @@ export const module7Slides: Slide[] = [
     number: "20",
     audio: { src: null },
     surface: "plum",
+    mapFilled: 6,
     eyebrow: "End of Module 7",
     heading: "You can *reach* them now.",
     paragraphs: [

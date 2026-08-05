@@ -61,7 +61,10 @@ export function MapArt({
             Saves as you go
           </span>
           <span className="h-1 w-16 rounded-[2px] bg-gold/20">
-            <span className="block h-full w-2/5 rounded-[2px] bg-gold" />
+            <span
+              className="block h-full rounded-[2px] bg-gold"
+              style={{ width: `${Math.round((filled / ROWS.length) * 100)}%` }}
+            />
           </span>
         </div>
       </div>

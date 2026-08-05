@@ -377,6 +377,7 @@ export const module8Slides: Slide[] = [
     number: "20",
     audio: { src: null },
     surface: "plum",
+    mapFilled: 7,
     eyebrow: "End of Build Your Marketing Foundation",
     heading: "A foundation, and a *plan*.",
     paragraphs: [
