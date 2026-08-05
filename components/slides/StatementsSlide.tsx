@@ -1,5 +1,6 @@
 import { StatementsSlide as StatementsSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
+import { PersonaAvatar } from "@/components/slides/PersonaAvatar";
 
 export function StatementsSlide({
   slide,
@@ -28,9 +29,14 @@ export function StatementsSlide({
             key={s.name}
             className="rounded-3xl beat border-l-[3px] border-olive bg-cream-light px-8 py-7"
           >
-            <div className="text-xl font-bold tracking-tight">{s.name}</div>
-            <div className="mt-0.5 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">
-              {s.role}
+            <div className="flex items-center gap-3.5">
+              <PersonaAvatar name={s.name} size={44} />
+              <div>
+                <div className="text-xl font-bold tracking-tight">{s.name}</div>
+                <div className="mt-0.5 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+                  {s.role}
+                </div>
+              </div>
             </div>
             <p className="mt-4 font-serif text-[16px] italic leading-relaxed text-body">
               {s.text}

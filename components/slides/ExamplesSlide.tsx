@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ExamplesSlide as ExamplesSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
+import { PersonaAvatar } from "@/components/slides/PersonaAvatar";
 
 function PersonaCard({
   persona,
@@ -12,17 +13,22 @@ function PersonaCard({
   const [open, setOpen] = useState(false);
   return (
     <div className="rounded-3xl flex h-full flex-col border-l-[3px] border-lilac bg-cream-light px-6 py-5">
-      <div className="text-[17px] font-bold tracking-tight">
-        {persona.name}{" "}
-        <span className="text-[13.5px] font-normal text-body-secondary">
-          {persona.role}
-        </span>
-      </div>
-      {persona.meta ? (
-        <div className="mt-0.5 text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
-          {persona.meta}
+      <div className="flex items-center gap-3">
+        <PersonaAvatar name={persona.name} size={40} />
+        <div className="min-w-0">
+          <div className="text-[17px] font-bold tracking-tight">
+            {persona.name}{" "}
+            <span className="text-[13.5px] font-normal text-body-secondary">
+              {persona.role}
+            </span>
+          </div>
+          {persona.meta ? (
+            <div className="mt-0.5 text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+              {persona.meta}
+            </div>
+          ) : null}
         </div>
-      ) : null}
+      </div>
       <p className="mt-3 font-serif text-[14px] italic leading-relaxed text-body">
         {persona.quote}
       </p>

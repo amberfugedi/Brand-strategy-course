@@ -5,6 +5,7 @@ import { ExerciseSlide as ExerciseSlideDef } from "@/lib/content/types";
 import { DifferentiatorSource } from "@/lib/store/types";
 import { Rich } from "@/components/Rich";
 import { GuidedField } from "@/components/primitives/GuidedField";
+import { PersonaAvatar } from "@/components/slides/PersonaAvatar";
 import { ChipSelect } from "@/components/primitives/ChipSelect";
 import { usePositioning } from "@/lib/store/provider";
 
@@ -183,10 +184,13 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
                 <div className="mt-3 max-h-[42vh] space-y-3.5 overflow-y-auto pr-1">
                   {slide.examples.map((ex) => (
                     <div key={ex.name}>
-                      <div className="text-[12.5px] font-bold">
-                        {ex.name}{" "}
-                        <span className="font-normal text-body-tertiary">
-                          {ex.role}
+                      <div className="flex items-center gap-2 text-[12.5px] font-bold">
+                        <PersonaAvatar name={ex.name} size={24} />
+                        <span>
+                          {ex.name}{" "}
+                          <span className="font-normal text-body-tertiary">
+                            {ex.role}
+                          </span>
                         </span>
                       </div>
                       <p className="mt-0.5 font-serif text-[13px] italic leading-relaxed text-body-secondary">
