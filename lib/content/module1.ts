@@ -210,8 +210,8 @@ export const module1Slides: Slide[] = [
       // gives it, then clears for the next.
       callouts: [
         { text: "A solo professional, a growing team, a homeowner with a property they've owned five years, a couple planning their wedding.", at: 8.1, until: 16.6, card: true },
-        { text: "High-functioning professionals managing chronic anxiety while running demanding careers.", at: 28.2, until: 35.3, card: true },
-        { text: "Their property is showing wear after years they didn't budget time to maintain it, and they don't want to spend a Saturday doing it themselves.", at: 44.9, until: 52.8, card: true },
+        { text: "High-functioning professionals managing chronic anxiety while running demanding careers.", at: 28.2, until: 35.3, card: true, who: "Maya" },
+        { text: "Their property is showing wear after years they didn't budget time to maintain it, and they don't want to spend a Saturday doing it themselves.", at: 44.9, until: 52.8, card: true, who: "Marcus" },
       ],
     },
     heading: "Situation. Context. *Problem*.",
@@ -361,7 +361,7 @@ export const module1Slides: Slide[] = [
       cues: [0.3, 3.2, 3.3, 13.2, 15.2],
       callouts: [
         { text: "The chiropractor doesn't sell chiropractic. She relieves a specific kind of pain.", at: 21.2, until: 28.9, card: true },
-        { text: "The photographer doesn't sell photos. She captures a wedding day in a particular style.", at: 29.1, until: 35.8, card: true },
+        { text: "The photographer doesn't sell photos. She captures a wedding day in a particular style.", at: 29.1, until: 35.8, card: true, who: "Lena" },
         { text: "The category is what you offer. The service is what happens when someone hires you.", at: 36.0, until: 41.3 },
       ],
     },
