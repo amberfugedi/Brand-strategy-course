@@ -1,9 +1,9 @@
 /**
- * The persona mark: a tinted circle carrying the persona's initial
- * in the brand serif. Each persona keeps one tint for the whole
- * course, so Maya reads as Maya from the calibration slides to the
- * exercise references. Tints come from the decorative palette; the
- * course stays illustrated and editorial, no photography.
+ * The persona mark: an illustrated portrait in a circle, ringed in
+ * the persona's identity tint. Each persona keeps one tint for the
+ * whole course, so Maya reads as Maya from the calibration slides to
+ * the exercise references. Personas without a portrait yet fall back
+ * to the tinted monogram.
  */
 const TINTS: Record<string, { bg: string; ring: string }> = {
   maya: { bg: "rgba(166, 155, 219, 0.26)", ring: "#A69BDB" },
@@ -14,6 +14,9 @@ const TINTS: Record<string, { bg: string; ring: string }> = {
 };
 const FALLBACK = { bg: "rgba(252, 228, 196, 0.55)", ring: "#8A5A14" };
 
+/** Personas with a commissioned portrait in public/images/personas. */
+const PORTRAITS = ["maya", "marcus"];
+
 export function PersonaAvatar({
   name,
   size = 44,
@@ -23,6 +26,22 @@ export function PersonaAvatar({
 }) {
   const key = name.toLowerCase().replace(/[^a-z]/g, "");
   const tint = TINTS[key] ?? FALLBACK;
+  if (PORTRAITS.includes(key)) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={`/images/personas/${key}.jpg`}
+        alt=""
+        aria-hidden
+        className="shrink-0 rounded-full object-cover"
+        style={{
+          width: size,
+          height: size,
+          border: `2px solid ${tint.ring}`,
+        }}
+      />
+    );
+  }
   return (
     <span
       aria-hidden
