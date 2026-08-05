@@ -64,19 +64,21 @@ export function ExamplesSlide({
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="mt-7 grid gap-5 md:grid-cols-3">
-        {top.map((p) => (
-          <div key={p.name} className="beat">
-            <PersonaCard persona={p} />
-          </div>
-        ))}
-      </div>
-      <div className="mt-5 grid gap-5 md:mx-auto md:w-2/3 md:grid-cols-2">
-        {bottom.map((p) => (
-          <div key={p.name} className="beat">
-            <PersonaCard persona={p} />
-          </div>
-        ))}
+      <div className="my-auto py-7">
+        <div className="grid gap-5 md:grid-cols-3">
+          {top.map((p) => (
+            <div key={p.name} className="beat">
+              <PersonaCard persona={p} />
+            </div>
+          ))}
+        </div>
+        <div className="mt-5 grid gap-5 md:mx-auto md:w-2/3 md:grid-cols-2">
+          {bottom.map((p) => (
+            <div key={p.name} className="beat">
+              <PersonaCard persona={p} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

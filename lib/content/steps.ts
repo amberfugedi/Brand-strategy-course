@@ -11,7 +11,13 @@ export function stepsOf(slide: Slide): number {
     case "hero":
       return slide.whoFor ? 3 : 0;
     case "question":
-      return slide.lines.length + (slide.post ? 1 : 0);
+      return (
+        slide.lines.length +
+        (slide.post ? 1 : 0) +
+        (slide.panel
+          ? 1 + slide.panel.paragraphs.length + (slide.panel.callout ? 1 : 0)
+          : 0)
+      );
     case "framework":
       return slide.paragraphs.length + (slide.callout ? 1 : 0);
     case "patterns":

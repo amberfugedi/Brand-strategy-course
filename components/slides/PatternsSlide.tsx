@@ -18,12 +18,24 @@ export function PatternsSlide({
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="mt-9 max-w-5xl space-y-4">
+      <div className="my-auto max-w-5xl space-y-4 py-8">
         {slide.patterns.slice(0, revealed).map((p) => (
           <div key={p.label} className="beat">
             <RevealCard
               eyebrow={p.label}
-              visible={p.quote}
+              visible={
+                Array.isArray(p.quote) ? (
+                  <div className="space-y-1">
+                    {p.quote.map((q) => (
+                      <div key={q}>
+                        <Rich text={q} />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <Rich text={p.quote} />
+                )
+              }
               revealed={<Rich text={p.diagnosis} />}
               revealLabel="Show the diagnosis"
             />

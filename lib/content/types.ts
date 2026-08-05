@@ -30,10 +30,12 @@ export interface SlideAudio {
    *  beat k + 1 appears, so cards land as the voice reaches them. The
    *  reveal timer takes over whenever the narration isn't playing. */
   cues?: number[];
-  /** Spoken phrases surfaced as a floating margin note while the
-   *  voice says them: each fades in at `at` seconds and out at
-   *  `until`. For lines worth seeing that aren't in the slide copy. */
-  callouts?: { text: string; at: number; until: number }[];
+  /** Spoken phrases surfaced while the voice says them: each fades
+   *  in at `at` seconds and out at `until`. For lines worth seeing
+   *  that aren't in the slide copy. `card` renders the phrase in a
+   *  bordered container (spoken examples) instead of the bare
+   *  margin-note serif (editorial asides). */
+  callouts?: { text: string; at: number; until: number; card?: boolean }[];
 }
 
 interface SlideBase {
@@ -120,12 +122,22 @@ export interface ProseSlide extends SlideBase {
   paragraphs: string[];
 }
 
-/** Dark plum section-question slide: small line, large lines, small line. */
+/** Dark plum section-question slide: small line, large lines, small
+ *  line. With `panel`, the question holds the screen while the
+ *  teaching that used to follow on its own slide builds in beneath:
+ *  the panel opens with its label, then paragraphs and the optional
+ *  callout arrive on their own beats. */
 export interface QuestionSlide extends SlideBase {
   kind: "question";
   pre?: string;
   lines: string[];
   post?: string;
+  panel?: {
+    eyebrow: string;
+    sub?: string;
+    paragraphs: string[];
+    callout?: string;
+  };
 }
 
 /** Teaching slide: eyebrow, heading, optional subline, paragraphs,
@@ -140,12 +152,12 @@ export interface FrameworkSlide extends SlideBase {
 }
 
 /** Weak-pattern calibration: label + quote visible, diagnosis revealed
- *  on interaction. */
+ *  on interaction. A quote given as a list renders as stacked lines. */
 export interface PatternsSlide extends SlideBase {
   kind: "patterns";
   eyebrow?: string;
   heading: string;
-  patterns: { label: string; quote: string; diagnosis: string }[];
+  patterns: { label: string; quote: string | string[]; diagnosis: string }[];
 }
 
 /** Numbered concept columns (three across, or four in a 2x2 grid).
