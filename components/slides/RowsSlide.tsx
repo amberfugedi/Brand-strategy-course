@@ -33,25 +33,27 @@ export function RowsSlide({
         ))}
       </div>
 
-      {slide.outro && revealed > slide.rows.length ? (
-        <div className="beat mt-8 max-w-3xl border-l-[3px] border-gold pl-6">
-          <p className="text-[17px] leading-relaxed">
-            <Rich text={slide.outro.quote} />
-          </p>
+      {slide.next && revealed > slide.rows.length ? (
+        <div className="beat mt-8 flex max-w-3xl flex-wrap items-center justify-between gap-x-10 gap-y-4 rounded-3xl border border-subtle bg-cream-light px-7 py-5 shadow-lift">
+          <div>
+            <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+              {slide.next.eyebrow}
+            </div>
+            <h2 className="mt-1 text-2xl">
+              <Rich text={slide.next.title} />
+            </h2>
+            <p className="mt-1 text-[14px] text-body-secondary">
+              <Rich text={slide.next.note} />
+            </p>
+          </div>
+          <div aria-hidden className="flex items-end gap-1">
+            <span className="h-4 w-6 rounded-[2px] bg-peach ring-1 ring-gold/60" />
+            {Array.from({ length: 6 }).map((_, i) => (
+              <span key={i} className="h-2 w-6 rounded-[2px] bg-gold/25" />
+            ))}
+          </div>
         </div>
       ) : null}
-      {slide.outro
-        ? slide.outro.paragraphs.map((para, i) =>
-            revealed > slide.rows.length + 1 + i ? (
-              <p
-                key={i}
-                className="beat mt-4 max-w-3xl text-[16px] leading-relaxed text-body-secondary"
-              >
-                <Rich text={para} />
-              </p>
-            ) : null,
-          )
-        : null}
     </div>
   );
 }

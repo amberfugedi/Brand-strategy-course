@@ -101,9 +101,9 @@ export interface RowsSlide extends SlideBase {
   eyebrow?: string;
   heading: string;
   rows: { label: string; text: string }[];
-  /** Closing charge under the rows: a quote bar and short lines,
-   *  revealed as their own beats. */
-  outro?: { quote: string; paragraphs: string[] };
+  /** Compact visual handoff under the rows: where the course goes
+   *  next, with the mini strata mark. One beat. */
+  next?: { eyebrow: string; title: string; note: string };
 }
 
 /** Eyebrow + heading + optional quote bar + paragraphs (intro slide v). */

@@ -109,7 +109,7 @@ export const introSlides: Slide[] = [
     audio: {
       src: "/audio/intro/intro-4.mp3",
       // Module 1 · Module 2 · Modules 3-8 · Module 8's double work
-      cues: [4.6, 11.0, 20.6, 38.0, 54.2, 61.8, 67.2],
+      cues: [4.6, 11.0, 20.6, 38.0, 54.2],
     },
     eyebrow: "What you'll do across the eight modules",
     heading: "How the course *runs*.",
@@ -131,13 +131,10 @@ export const introSlides: Slide[] = [
         text: "*Double work*. After teaching the last foundation, Module 8 closes the course: your Foundation Plan, the seven foundations sequenced to the hours you actually have.",
       },
     ],
-    outro: {
-      quote:
-        "Everything that follows in this course depends on having a clear positioning statement.",
-      paragraphs: [
-        "The diagnostic, the audit, and every foundation module are *built around* it.",
-        "Don't skim Module 1. Do the work, and *meet me there*.",
-      ],
+    next: {
+      eyebrow: "Next · Module 1",
+      title: "Your *positioning*.",
+      note: "Everything else is built around it. Meet me there.",
     },
   },
 ];
