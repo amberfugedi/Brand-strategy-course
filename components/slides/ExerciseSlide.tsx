@@ -138,7 +138,7 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
           style={{ "--n": 1 } as React.CSSProperties}
         >
           {slide.remember ? (
-            <div className="rounded-3xl border-l-[3px] border-gold bg-cream-light px-5 py-4">
+            <div className="rounded-3xl border-l-[3px] border-gold bg-butter/50 px-5 py-4">
               <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
                 Remember
               </div>

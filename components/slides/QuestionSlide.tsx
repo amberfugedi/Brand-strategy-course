@@ -40,7 +40,7 @@ export function QuestionSlide({
         <p className="beat mt-8 text-[17px] text-gold/80">{slide.post}</p>
       ) : null}
       {slide.panel && revealed > panelAt ? (
-        <div className="beat mt-9 max-w-2xl border-l-[3px] border-gold bg-cream/5 px-7 py-6">
+        <div className="beat mt-9 max-w-3xl border-l-[3px] border-gold bg-cream/5 px-7 py-6">
           <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
             {slide.panel.eyebrow}
           </div>

@@ -101,6 +101,10 @@ export function CourseHome({ courseId }: { courseId: string }) {
                   (100 * Math.min(seenCount, mod.slides.length)) /
                     mod.slides.length,
                 );
+            const layerBorder =
+              { m3: "border-coral", m4: "border-lilac", m5: "border-lilac", m6: "border-stone", m7: "border-stone", m8: "border-stone" }[
+                mod.id
+              ] ?? "border-aubergine";
             const row = (
               <div
                 className={`border-l-[3px] px-5 py-4 ${
@@ -108,7 +112,7 @@ export function CourseHome({ courseId }: { courseId: string }) {
                     ? "border-ink/10 bg-cream-light/50"
                     : completed
                       ? "border-gold bg-cream-light"
-                      : "border-aubergine bg-cream-light"
+                      : `${layerBorder} bg-cream-light`
                 }`}
               >
                 <div className="flex items-baseline justify-between gap-6">

@@ -19,9 +19,10 @@ export function PatternsSlide({
       </h1>
 
       <div className="my-auto max-w-5xl space-y-4 py-8">
-        {slide.patterns.slice(0, revealed).map((p) => (
+        {slide.patterns.slice(0, revealed).map((p, i) => (
           <div key={p.label} className="beat">
             <RevealCard
+              accent={(["coral", "lilac", "stone"] as const)[i % 3]}
               eyebrow={p.label}
               visible={
                 Array.isArray(p.quote) ? (

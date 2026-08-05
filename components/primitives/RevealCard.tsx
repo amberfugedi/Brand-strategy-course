@@ -12,17 +12,28 @@ interface RevealCardProps {
   visible: ReactNode;
   revealed: ReactNode;
   revealLabel?: string;
+  /** Decorative left-border tone (cream rule: fills and borders may
+   *  carry the layer tones; text never does). */
+  accent?: "coral" | "lilac" | "stone" | "gold";
 }
+
+const ACCENTS = {
+  coral: "border-coral",
+  lilac: "border-lilac",
+  stone: "border-stone",
+  gold: "border-gold",
+};
 
 export function RevealCard({
   eyebrow,
   visible,
   revealed,
   revealLabel = "Show the diagnosis",
+  accent = "gold",
 }: RevealCardProps) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="rounded-3xl border-l-[3px] border-olive bg-cream-light px-6 py-5">
+    <div className={`rounded-3xl border-l-[3px] bg-cream-light px-6 py-5 ${ACCENTS[accent]}`}>
       <div className="mb-1.5 text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
         {eyebrow}
       </div>

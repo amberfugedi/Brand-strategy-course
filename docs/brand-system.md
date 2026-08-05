@@ -92,11 +92,21 @@ something. (ruled; closes the former gap)
 
 ## 3. The layer rule
 
-Layer color appears only on dark surfaces and in the progress fill:
-layer-opener labels and numerals, takeaway accents, dark progress.
-Never on cream as text, fill, wash, border, or rule. Teaching slides are
-layer-neutral. In the app, cream surfaces resolve all layer variables to
-`#8A5A14`, so the rule holds by construction.
+Layer color appears on dark surfaces and in the progress fill as the
+carrier of meaning: layer-opener labels and numerals, takeaway accents,
+dark progress. On cream, layer color never appears as **text** or as a
+meaning-bearing control; cream surfaces resolve all layer text variables
+to `#8A5A14`, so that half of the rule holds by construction.
+
+**Amendment (2026-08, ruled by the cream-and-gold audit):** the three
+tones may appear on cream as **decorative fills and borders only**:
+card left-borders and top-bars (rotating coral, lilac, stone), the map
+zone bars, auras (a lilac variant joined amber and rose), and the course
+home's per-layer module borders. Decorative means: removing the color
+changes nothing about what the interface says. Text on cream stays on
+the collapsed courses accent for contrast; the literals live in
+`tailwind.config.ts` as `coral`, `lilac`, `stone` with this restriction
+documented at the definition.
 
 **Progress (ruled):** the single fill shipped. Cream: `#8A5A14` at 70%.
 Dark, layered module: the module's layer tone at full. Dark, pre-layer

@@ -8,11 +8,11 @@ import { Rich } from "@/components/Rich";
  * buyer at the center.
  */
 const ZONES: { title: string; accent: string; terms: string[] }[] = [
-  { title: "Your website", accent: "border-t-teal", terms: ["SEO", "AEO", "Content marketing", "Email list"] },
-  { title: "Search & map", accent: "border-t-rust", terms: ["Google Business Profile", "Apple Maps"] },
-  { title: "Social platforms", accent: "border-t-olive", terms: ["Instagram", "TikTok", "LinkedIn"] },
-  { title: "Third-party listings", accent: "border-t-gold", terms: ["Yelp", "Google Reviews", "Psychology Today", "OpenTable", "The Knot", "Houzz"] },
-  { title: "Online communities", accent: "border-t-aubergine", terms: ["Facebook groups", "Reddit", "Discord", "Niche forums"] },
+  { title: "Your website", accent: "border-t-coral", terms: ["SEO", "AEO", "Content marketing", "Email list"] },
+  { title: "Search & map", accent: "border-t-lilac", terms: ["Google Business Profile", "Apple Maps"] },
+  { title: "Social platforms", accent: "border-t-stone", terms: ["Instagram", "TikTok", "LinkedIn"] },
+  { title: "Third-party listings", accent: "border-t-coral", terms: ["Yelp", "Google Reviews", "Psychology Today", "OpenTable", "The Knot", "Houzz"] },
+  { title: "Online communities", accent: "border-t-lilac", terms: ["Facebook groups", "Reddit", "Discord", "Niche forums"] },
 ];
 
 export function MapSlide({ slide }: { slide: MapSlideDef }) {

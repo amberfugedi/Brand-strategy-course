@@ -4,14 +4,24 @@ import { useState } from "react";
 import { ExamplesSlide as ExamplesSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
 
+const PERSONA_ACCENTS = [
+  "border-coral",
+  "border-lilac",
+  "border-stone",
+  "border-coral",
+  "border-lilac",
+];
+
 function PersonaCard({
   persona,
+  accent,
 }: {
   persona: ExamplesSlideDef["personas"][number];
+  accent: string;
 }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="rounded-3xl flex h-full flex-col border-l-[3px] border-olive bg-cream-light px-6 py-5">
+    <div className={`rounded-3xl flex h-full flex-col border-l-[3px] bg-cream-light px-6 py-5 ${accent}`}>
       <div className="text-[17px] font-bold tracking-tight">
         {persona.name}{" "}
         <span className="text-[13.5px] font-normal text-body-secondary">
@@ -66,16 +76,16 @@ export function ExamplesSlide({
 
       <div className="my-auto py-7">
         <div className="grid gap-5 md:grid-cols-3">
-          {top.map((p) => (
+          {top.map((p, i) => (
             <div key={p.name} className="beat">
-              <PersonaCard persona={p} />
+              <PersonaCard persona={p} accent={PERSONA_ACCENTS[i % 5]} />
             </div>
           ))}
         </div>
         <div className="mt-5 grid gap-5 md:mx-auto md:w-2/3 md:grid-cols-2">
-          {bottom.map((p) => (
+          {bottom.map((p, i) => (
             <div key={p.name} className="beat">
-              <PersonaCard persona={p} />
+              <PersonaCard persona={p} accent={PERSONA_ACCENTS[(i + 3) % 5]} />
             </div>
           ))}
         </div>

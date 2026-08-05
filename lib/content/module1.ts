@@ -49,10 +49,10 @@ export const module1Slides: Slide[] = [
       // talking to, what you're offering, what makes you the right
       // choice"); the positioning panel builds through the back half
       // while the questions hold the screen.
-      cues: [14.6, 15.6, 17.0, 42.5, 46.5, 67.2, 84.6],
+      cues: [14.9, 16.0, 17.4, 43.2, 47.5, 68.2, 85.6],
       callouts: [
-        { text: "Not what you need first.", at: 60.6, until: 66.9 },
-        { text: "A real instinct, worth following.", at: 99.2, until: 106.2 },
+        { text: "Not what you need first.", at: 61.6, until: 67.9 },
+        { text: "A real instinct, worth following.", at: 100.2, until: 107.2 },
       ],
     },
     pre: "The three questions.",

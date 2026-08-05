@@ -41,6 +41,13 @@ const config: Config = {
         rust: { DEFAULT: "rgb(var(--tone-chosen) / <alpha-value>)" },
         olive: { DEFAULT: "rgb(var(--tone-remembered) / <alpha-value>)" },
         mauve: { DEFAULT: "rgb(var(--tone-muted) / <alpha-value>)" },
+        // The same tones as literals, for DECORATIVE use on cream:
+        // card borders, zone bars, auras, marks. Never text, never a
+        // meaning-bearing control; text on cream stays on the
+        // collapsed courses accent for contrast.
+        coral: { DEFAULT: "#DA8970" },
+        lilac: { DEFAULT: "#A69BDB" },
+        stone: { DEFAULT: "#DDB774" },
         // text roles on cream surfaces
         body: {
           DEFAULT: "#3E3833",

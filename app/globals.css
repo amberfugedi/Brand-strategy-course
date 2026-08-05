@@ -229,3 +229,6 @@ h2 {
 .aura-rose {
   background: radial-gradient(circle, rgba(246, 158, 199, 0.22), transparent 60%);
 }
+.aura-lilac {
+  background: radial-gradient(circle, rgba(166, 155, 219, 0.2), transparent 60%);
+}

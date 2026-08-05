@@ -9,7 +9,7 @@ export function ProseSlide({
   revealed?: number;
 }) {
   return (
-    <div className="mt-4 flex flex-1 flex-col">
+    <div className="mt-4 flex flex-1 flex-col justify-center">
       {slide.eyebrow ? (
         <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-gold">{slide.eyebrow}</div>
       ) : null}
@@ -23,7 +23,7 @@ export function ProseSlide({
         </p>
       ) : null}
 
-      <div className="mt-6 max-w-3xl space-y-4">
+      <div className="mt-6 max-w-4xl space-y-4">
         {slide.paragraphs
           .slice(0, Math.max(0, revealed - (slide.quote ? 1 : 0)))
           .map((p, i) => (
