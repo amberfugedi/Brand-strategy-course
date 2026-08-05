@@ -82,7 +82,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={sending}
-                className="mt-4 w-full border border-aubergine bg-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine disabled:opacity-60"
+                className="mt-4 w-full rounded-[14px] border border-aubergine bg-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine disabled:opacity-60"
               >
                 {sending ? "Sending" : "Send the sign-in link"}
               </button>

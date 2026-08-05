@@ -286,7 +286,7 @@ export const module2Slides: Slide[] = [
     number: "18",
     audio: { src: "/audio/m2/m2-18.mp3", cues: [7.8, 17.2, 51.0] },
     eyebrow: "How the audit works",
-    heading: "Not *rate* yourself. *Recognize* yourself.",
+    heading: "Not rate yourself. *Recognize* yourself.",
     paragraphs: [
       "Most audits ask you to rate yourself on a scale. *How would you rate your website on a scale of one to ten.* Almost impossible to answer accurately.",
       "This audit shows you scenarios. Each one describes a specific state. You read them and pick the one that matches your reality.",
@@ -391,7 +391,7 @@ export const module2Slides: Slide[] = [
     tag: "THE TAKEAWAY",
     number: "25",
     audio: { src: "/audio/m2/m2-25.mp3" },
-    headline: "Critical doesn't mean *panic*. It means *prioritize*.",
+    headline: "Critical doesn't mean panic. It means *prioritize*.",
     sub: "Most service businesses have multiple critical gaps when they first run this audit. That's normal. You're not failing. You're seeing what was always going to surface. *You'll fix them in order.*",
   },
 
@@ -403,7 +403,7 @@ export const module2Slides: Slide[] = [
     tag: "THE TAKEAWAY",
     number: "26",
     audio: { src: "/audio/m2/m2-26.mp3" },
-    headline: "Solid doesn't mean *ignore*. It means *protect*.",
+    headline: "Solid doesn't mean ignore. It means *protect*.",
     sub: "The foundations rated solid got there because of work you did before. That work is not permanent. Solid foundations drift without continued attention. *As you work through critical gaps, keep doing what's already working.*",
   },
 

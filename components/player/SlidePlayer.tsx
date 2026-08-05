@@ -358,7 +358,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
           </p>
           <Link
             href={`/${courseId}`}
-            className="mt-6 inline-block border border-aubergine bg-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
+            className="mt-6 inline-block rounded-[14px] border border-aubergine bg-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
           >
             Back to the course
           </Link>

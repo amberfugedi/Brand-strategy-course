@@ -63,7 +63,7 @@ export function CourseHome({ courseId }: { courseId: string }) {
         <div className="mt-8">
           <Link
             href={continueHref}
-            className="inline-block border border-aubergine bg-aubergine px-6 py-3 text-[13px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
+            className="inline-block rounded-[14px] border border-aubergine bg-aubergine px-6 py-3 text-[13px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
           >
             {hasProgress ? "Continue where you left off" : "Begin the course"}
           </Link>
@@ -114,7 +114,7 @@ export function CourseHome({ courseId }: { courseId: string }) {
                     {mod.label}
                   </div>
                   <div
-                    className={`mt-0.5 font-serif text-[13px] italic ${
+                    className={`mt-0.5 text-[13px] ${
                       completed ? "text-gold" : "text-body-tertiary"
                     }`}
                   >

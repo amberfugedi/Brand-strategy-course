@@ -115,7 +115,7 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
   };
 
   const insertLine = (
-    <div aria-hidden="true" className="h-[2px] rounded bg-gold" />
+    <div aria-hidden="true" className="h-[2px] bg-gold" />
   );
 
   return (
@@ -142,7 +142,7 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
               ref={(el) => {
                 rowRefs.current[id] = el;
               }}
-              className={`flex select-none items-center gap-2.5 border bg-cream/5 px-3 py-2.5 transition-colors sm:gap-3 sm:px-4 ${
+              className={`flex select-none items-center gap-2.5 rounded-[14px] border bg-cream/5 px-3 py-2.5 transition-colors sm:gap-3 sm:px-4 ${
                 dragId === id ? "border-gold bg-cream/10" : "border-gold/40"
               }`}
             >
@@ -181,7 +181,7 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
         ))}
         {chipInsert === order.length ? insertLine : null}
         {order.length > 0 ? (
-          <p className="pt-0.5 font-serif text-[12.5px] italic text-on-dark-muted">
+          <p className="pt-0.5 text-[12.5px] text-on-dark-muted">
             Drag to reorder. The top spot is your primary.
           </p>
         ) : null}
@@ -208,13 +208,13 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
                   setOrder([...order, t.id]);
                 }}
                 style={{ touchAction: "none" }}
-                className="cursor-grab select-none border border-gold/40 px-3 py-1.5 text-[13px] text-on-dark/85 transition-colors hover:border-gold hover:text-gold"
+                className="cursor-grab select-none rounded-[14px] border border-gold/40 px-3 py-1.5 text-[13px] text-on-dark/85 transition-colors hover:border-gold hover:text-gold"
               >
                 + {t.label}
               </button>
             ))}
           </div>
-          <p className="mt-1.5 font-serif text-[12.5px] italic text-on-dark-muted">
+          <p className="mt-1.5 text-[12.5px] text-on-dark-muted">
             Tap to add, or drag one into the list where it belongs.
           </p>
         </div>
