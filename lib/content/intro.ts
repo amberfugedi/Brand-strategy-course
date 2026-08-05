@@ -46,34 +46,33 @@ export const introSlides: Slide[] = [
     heading: "Three layers. Seven *foundations*.",
     layers: [
       {
-        label: "Layer 01 · Get found",
+        label: "Layer one · Get found",
         accent: "teal",
         sub: "So people who need you can *discover* you.",
-        items: [{ num: "02", text: "Get *Found*", mod: "Module 3" }],
+        items: [{ num: "02", text: "Get *Found*" }],
       },
       {
-        label: "Layer 02 · Get chosen",
+        label: "Layer two · Get chosen",
         accent: "rust",
         sub: "So they pick *you* over alternatives.",
         items: [
-          { num: "03", text: "Earned *Proof*", mod: "Module 4" },
-          { num: "04", text: "Referral *System*", mod: "Module 5" },
+          { num: "03", text: "Earned *Proof*" },
+          { num: "04", text: "Referral *System*" },
         ],
       },
       {
-        label: "Layer 03 · Be remembered",
+        label: "Layer three · Be remembered",
         accent: "olive",
         sub: "So you stay *present* until they're ready.",
         items: [
-          { num: "05", text: "Brand *Awareness*", mod: "Module 6" },
-          { num: "06", text: "Owned *Audience*", mod: "Module 7" },
-          { num: "07", text: "Authority *Building*", mod: "Module 8" },
+          { num: "05", text: "Brand *Awareness*" },
+          { num: "06", text: "Owned *Audience*" },
+          { num: "07", text: "Authority *Building*" },
         ],
       },
     ],
     base: {
       label: "*Positioning*",
-      mod: "Module 1",
       text: "Where the course starts. The working statement all three layers are *built around*.",
     },
     note: "Every business needs all *seven*. The order they get built is what the audit decides.",
