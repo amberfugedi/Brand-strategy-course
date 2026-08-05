@@ -15,7 +15,7 @@ const TINTS: Record<string, { bg: string; ring: string }> = {
 const FALLBACK = { bg: "rgba(252, 228, 196, 0.55)", ring: "#8A5A14" };
 
 /** Personas with a commissioned portrait in public/images/personas. */
-const PORTRAITS = ["maya", "marcus"];
+const PORTRAITS = ["maya", "marcus", "lena", "james", "sasha"];
 
 export function PersonaAvatar({
   name,
