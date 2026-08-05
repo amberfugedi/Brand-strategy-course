@@ -14,7 +14,7 @@ export function ColumnsSlide({
       {slide.eyebrow ? (
         <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-teal">{slide.eyebrow}</div>
       ) : null}
-      <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+      <h1 className="text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
         <Rich text={slide.heading} />
       </h1>
 
@@ -37,7 +37,7 @@ export function ColumnsSlide({
                 <span className="text-[11px] font-bold tracking-chrome text-gold">
                   {col.num}
                 </span>
-                <span className="text-[15px] font-bold uppercase tracking-[0.12em]">
+                <span className="text-[13.5px] font-bold uppercase tracking-[0.12em] md:text-[15px]">
                   {col.title}
                 </span>
               </div>
@@ -45,7 +45,7 @@ export function ColumnsSlide({
                 {col.bullets.map((b) => (
                   <li
                     key={b}
-                    className="text-[15px] leading-relaxed text-body md:text-[16px]"
+                    className="text-[14px] leading-relaxed text-body md:text-[16px]"
                   >
                     <Rich text={b} />
                   </li>

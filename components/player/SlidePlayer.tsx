@@ -438,11 +438,16 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // as generous pill targets; larger screens keep the footer pair.
   const pill = `rounded-full border px-4 py-2.5 text-[11px] font-bold uppercase tracking-chrome transition-colors ${
     dark
-      ? "border-subtle-dark text-on-dark-muted"
-      : "border-subtle text-body-secondary"
+      ? "border-subtle-dark text-on-dark-muted hover:border-gold/60 hover:text-gold"
+      : "border-subtle text-body-secondary hover:border-aubergine hover:text-aubergine"
   }`;
   const pillStrong = `rounded-full border px-4 py-2.5 text-[11px] font-bold uppercase tracking-chrome transition-colors ${
-    dark ? "border-gold/60 text-gold" : "border-aubergine text-aubergine"
+    dark
+      ? "border-gold/60 text-gold hover:bg-gold/10"
+      : "border-aubergine text-aubergine hover:bg-aubergine hover:text-cream"
+  }`;
+  const pillMuted = `rounded-full border px-4 py-2.5 text-[11px] font-bold uppercase tracking-chrome transition-colors ${
+    dark ? "border-subtle-dark text-on-dark-muted" : "border-subtle text-body-tertiary"
   }`;
   const topControls = (
     <>
@@ -464,9 +469,9 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   );
 
   const controls = (
-    <div className="hidden items-center gap-4 sm:flex">
+    <div className="hidden items-center gap-3 sm:flex">
       {!isFirst ? (
-        <button type="button" onClick={goBack} className={navButton}>
+        <button type="button" onClick={goBack} className={pill}>
           Back
         </button>
       ) : null}
@@ -474,25 +479,12 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
         <button
           type="button"
           onClick={advance}
-          className={`${navButton} ${
-            !inputComplete && step >= totalSteps
-              ? dark
-                ? "text-on-dark-muted"
-                : "text-body-tertiary"
-              : dark
-                ? "text-gold"
-                : "text-aubergine"
-          }`}
+          className={!inputComplete && step >= totalSteps ? pillMuted : pillStrong}
         >
           Next
         </button>
       ) : (
-        <Link
-          href={`/${courseId}`}
-          className={`${navButton} whitespace-nowrap ${
-            dark ? "text-gold" : "text-aubergine"
-          }`}
-        >
+        <Link href={`/${courseId}`} className={`${pillStrong} whitespace-nowrap`}>
           Back to the course
         </Link>
       )}

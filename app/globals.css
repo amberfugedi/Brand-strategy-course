@@ -131,18 +131,29 @@ h2 .accent-serif {
    never recolored per layer. */
 .ring-list li {
   position: relative;
-  padding-left: 34px;
+  padding-left: 28px;
 }
 .ring-list li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.36em;
-  width: 20px;
-  height: 20px;
+  top: 0.4em;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: #fce4c4;
-  border: 2.5px solid #8a5a14;
+  border: 2px solid #8a5a14;
+}
+@media (min-width: 768px) {
+  .ring-list li {
+    padding-left: 34px;
+  }
+  .ring-list li::before {
+    top: 0.36em;
+    width: 20px;
+    height: 20px;
+    border-width: 2.5px;
+  }
 }
 
 /* Keyboard focus is part of the brand: the courses accent as a
