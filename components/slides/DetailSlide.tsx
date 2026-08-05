@@ -23,7 +23,7 @@ export function DetailSlide({
             <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
               {col.label}
             </div>
-            <p className="mt-2.5 text-[14.5px] leading-relaxed text-body">
+            <p className="mt-2.5 text-[15.5px] leading-relaxed text-body">
               <Rich text={col.text} />
             </p>
           </div>

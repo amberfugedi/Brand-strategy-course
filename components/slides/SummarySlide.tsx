@@ -12,7 +12,7 @@ function Part({ label, value }: { label: string; value: string }) {
       <div className="text-[9px] font-bold uppercase tracking-eyebrow text-body-tertiary">
         {label}
       </div>
-      <p className="mt-0.5 text-[13.5px] leading-relaxed text-body-secondary">{value}</p>
+      <p className="mt-0.5 text-[14.5px] leading-relaxed text-body-secondary">{value}</p>
     </div>
   );
 }
@@ -59,7 +59,7 @@ export function SummarySlide({ slide }: { slide: SummarySlideDef }) {
             {statement}
           </p>
         ) : (
-          <p className="text-[15px] text-body-secondary">
+          <p className="text-[16px] text-body-secondary">
             No statement saved yet. The assembly slide in section 5 is where
             you write it. Your exercise answers appear here as you work.
           </p>

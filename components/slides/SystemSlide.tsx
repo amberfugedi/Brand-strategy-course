@@ -39,7 +39,7 @@ export function SystemSlide({
               >
                 {layer.label}
               </div>
-              <p className="mb-5 text-[15px] text-on-dark">
+              <p className="mb-5 text-[16px] text-on-dark">
                 <Rich text={layer.sub} />
               </p>
               <ul className="space-y-2.5">
@@ -48,7 +48,7 @@ export function SystemSlide({
                     <span className="text-[10px] font-bold tracking-chrome text-on-dark-muted">
                       {item.num}
                     </span>
-                    <span className="text-[15px]">
+                    <span className="text-[16px]">
                       <Rich text={item.text} />
                     </span>
                   </li>
@@ -66,7 +66,7 @@ export function SystemSlide({
             <span className="text-[11px] font-bold uppercase tracking-eyebrow text-gold">
               {slide.base.label}
             </span>
-            <span className="text-[15px] text-on-dark">
+            <span className="text-[16px] text-on-dark">
               <Rich text={slide.base.text} />
             </span>
           </div>
@@ -74,7 +74,7 @@ export function SystemSlide({
       ) : null}
 
       {slide.note && revealed > slide.layers.length + 1 ? (
-        <p className="beat mt-6 max-w-2xl text-[15px] text-on-dark-muted">
+        <p className="beat mt-6 max-w-2xl text-[16px] text-on-dark-muted">
           <Rich text={slide.note} />
         </p>
       ) : null}

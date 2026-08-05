@@ -34,12 +34,12 @@ export function SynthesisSlide({ slide }: { slide: SynthesisSlideDef }) {
       </h1>
 
       <div className="rounded-3xl mt-4 max-w-4xl border-l-[3px] border-teal bg-cream-light px-7 py-4">
-        <p className="text-[15px] leading-relaxed">
+        <p className="text-[16px] leading-relaxed">
           <Rich text={slide.template} />
         </p>
       </div>
 
-      <p className="mt-3 max-w-3xl text-[13.5px] leading-snug text-body-secondary">
+      <p className="mt-3 max-w-3xl text-[14.5px] leading-snug text-body-secondary">
         <Rich text={slide.note} />
       </p>
 
@@ -64,7 +64,7 @@ export function SynthesisSlide({ slide }: { slide: SynthesisSlideDef }) {
           onChange={(e) => setPositioning({ statement: e.target.value })}
           placeholder="Write it as one sentence, or three short ones."
           rows={3}
-          className="rounded-3xl w-full resize-y border border-ink/20 bg-cream-light px-4 py-3 text-[15px] leading-relaxed outline-none transition-colors placeholder:text-body-tertiary focus:border-gold"
+          className="rounded-3xl w-full resize-y border border-ink/20 bg-cream-light px-4 py-3 text-[16px] leading-relaxed outline-none transition-colors placeholder:text-body-tertiary focus:border-gold"
         />
       </label>
     </div>

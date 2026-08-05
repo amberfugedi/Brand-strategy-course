@@ -20,8 +20,8 @@ const TIER_LABEL: Record<PriorityTier, string> = {
 // and an empty ring for not applicable. No layer color on cream.
 const TIER_COLOR: Record<PriorityTier, string> = {
   high: "text-gold border-gold",
-  medium: "text-gold/70 border-gold/60",
-  low: "text-gold/60 border-gold/25",
+  medium: "text-gold border-gold/60",
+  low: "text-gold border-gold/25",
   na: "text-body-tertiary border-ink/20",
 };
 
@@ -47,7 +47,7 @@ export function PrioritiesSlide({
 
       <div className="mt-4 grid max-w-5xl gap-x-10 gap-y-2 md:grid-cols-2">
         {slide.tiers.slice(0, revealed).map((t) => (
-          <p key={t.label} className="beat text-[13.5px] leading-snug">
+          <p key={t.label} className="beat text-[14.5px] leading-snug">
             <em className="accent-serif">{t.label}</em>
             <span className="text-body-secondary">. {t.text}</span>
           </p>
@@ -68,7 +68,7 @@ export function PrioritiesSlide({
                   {TIER_LABEL[p.tier]}
                 </span>
                 <div>
-                  <span className="text-[14px] font-semibold">
+                  <span className="text-[15px] font-semibold">
                     {p.foundation.name}
                   </span>
                   <p className="font-serif text-[12.5px] italic leading-snug text-body-tertiary">
@@ -79,7 +79,7 @@ export function PrioritiesSlide({
             ))}
           </div>
         ) : (
-          <p className="font-serif text-[14px] italic text-body-tertiary">
+          <p className="font-serif text-[15px] italic text-body-tertiary">
             Answer the six questions on the diagnostic slide first.
           </p>
         )}

@@ -17,6 +17,9 @@ export function HeroSlide({
   const show = (beat: number) => !builds || revealed >= beat;
   return (
     <div className="flex flex-1 flex-col justify-between">
+      {!dark ? (
+        <div aria-hidden className="aura -right-[18vmin] -top-[22vmin]" />
+      ) : null}
       <div className={dark ? "my-auto" : "mt-6"}>
         <div className="mb-5 text-[11px] font-bold uppercase tracking-eyebrow text-gold">
           {slide.eyebrow}
@@ -56,7 +59,7 @@ export function HeroSlide({
                 <div className="mb-1.5 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
                   {m.label}
                 </div>
-                <div className="text-[15px]">
+                <div className="text-[16px]">
                   <Rich text={m.value} />
                 </div>
               </div>

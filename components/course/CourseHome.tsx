@@ -18,7 +18,8 @@ export function CourseHome({ courseId }: { courseId: string }) {
   const hasProgress = ready && last !== null;
 
   return (
-    <div className="min-h-screen bg-cream text-body surface-cream">
+    <div className="relative min-h-screen overflow-hidden bg-cream text-body surface-cream">
+      <div aria-hidden className="aura aura-rose -bottom-[24vmin] -left-[20vmin]" />
       <div className="mx-auto max-w-3xl px-6 py-16">
         <div className="flex items-center justify-between">
           <Link
@@ -26,7 +27,7 @@ export function CourseHome({ courseId }: { courseId: string }) {
             className="flex items-center gap-2.5 transition-opacity hover:opacity-70"
           >
             <span className="flex h-7 w-7 items-center justify-center rounded-full border border-gold/70">
-              <span className="font-serif italic text-[15px] leading-none text-gold">
+              <span className="font-serif italic text-[16px] leading-none text-gold">
                 A
               </span>
             </span>
@@ -54,7 +55,7 @@ export function CourseHome({ courseId }: { courseId: string }) {
             <div className="text-[10px] font-bold uppercase tracking-eyebrow text-rust">
               Setup pending
             </div>
-            <p className="mt-1.5 max-w-xl text-[13.5px] leading-relaxed text-body-secondary">
+            <p className="mt-1.5 max-w-xl text-[14.5px] leading-relaxed text-body-secondary">
               Accounts aren't connected yet, so sign-in is off and progress
               saves to this browser only. Create the Supabase project, then
               add the two keys in Netlify and redeploy (steps in the README).
@@ -110,7 +111,7 @@ export function CourseHome({ courseId }: { courseId: string }) {
               >
                 <div>
                   <div
-                    className={`text-[15px] font-semibold ${
+                    className={`text-[16px] font-semibold ${
                       mod.released && !locked ? "text-body" : "text-body-tertiary"
                     }`}
                   >

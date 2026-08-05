@@ -14,7 +14,7 @@ function PersonaCard({
     <div className="rounded-3xl flex h-full flex-col border-l-[3px] border-olive bg-cream-light px-6 py-5">
       <div className="text-[17px] font-bold tracking-tight">
         {persona.name}{" "}
-        <span className="font-serif text-[16px] font-normal italic text-body-secondary">
+        <span className="font-serif text-[14.5px] font-normal italic text-body-secondary">
           {persona.role}
         </span>
       </div>
@@ -23,7 +23,7 @@ function PersonaCard({
           {persona.meta}
         </div>
       ) : null}
-      <p className="mt-3 font-serif text-[14.5px] italic leading-relaxed text-body">
+      <p className="mt-3 font-serif text-[14px] italic leading-relaxed text-body">
         {persona.quote}
       </p>
       <div className="mt-auto border-t border-subtle pt-3">

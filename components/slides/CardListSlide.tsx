@@ -28,16 +28,13 @@ export function CardListSlide({
         <h2 className="text-2xl font-bold tracking-tight">
           <Rich text={slide.card.title} />
         </h2>
-        <p className="mt-2 font-serif text-[15px] italic text-body-secondary">
+        <p className="mt-2 font-serif text-[16px] italic text-body-secondary">
           {slide.card.subtitle}
         </p>
-        <ul className="mt-5 space-y-2 text-[15px]">
+        <ul className="ring-list mt-5 space-y-2.5 text-[16px]">
           {slide.card.items.map((item, i) => (
-            <li key={i} className="flex gap-2">
-              <span className="text-gold">·</span>
-              <span>
-                <Rich text={item} />
-              </span>
+            <li key={i}>
+              <Rich text={item} />
             </li>
           ))}
         </ul>

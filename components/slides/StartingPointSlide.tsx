@@ -50,12 +50,12 @@ export function StartingPointSlide({
             <div className="mt-2 text-2xl font-bold tracking-tight text-cream">
               {startingPoint.foundation.name}
             </div>
-            <p className="mt-3 font-serif text-[15px] italic leading-relaxed text-on-dark-muted">
+            <p className="mt-3 font-serif text-[16px] italic leading-relaxed text-on-dark-muted">
               {startingPoint.reasoning}
             </p>
           </>
         ) : (
-          <p className="font-serif text-[15px] italic text-on-dark-muted">
+          <p className="font-serif text-[16px] italic text-on-dark-muted">
             Your starting point compiles from the diagnostic and the audit.
             Finish both to see it here.
           </p>

@@ -33,7 +33,7 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
           </h1>
           <div className="mx-auto mt-2.5 max-w-lg space-y-1">
             {slide.promptLines.map((line, i) => (
-              <p key={i} className="text-[13.5px] leading-snug text-body-secondary">
+              <p key={i} className="text-[14.5px] leading-snug text-body-secondary">
                 <Rich text={line} />
               </p>
             ))}

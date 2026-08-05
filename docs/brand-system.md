@@ -1,0 +1,174 @@
+# Course slide system
+
+Specification for the slide surfaces of "Build your marketing foundation."
+Derived from the deployed amberfugedi.com system, with course-specific
+extensions. This revision folds in the implementation rulings; where it and
+an existing slide disagree, this document wins. Where it is silent, do not
+invent a rule: flag it.
+
+Status marks: **verified** (deployed source), **sampled** (read off a
+screenshot; confirm against source before treating as final), **new**
+(minted for this system), **ruled** (decided during implementation).
+
+The app enforces the color system structurally: layer tones and the course
+accent are CSS variables that resolve per surface (`app/globals.css`).
+Components cannot put a layer color on cream even by mistake.
+
+---
+
+## 1. Canvas
+
+The reference deck canvas is 1456 x 819. The app is responsive and keeps
+its own verified sizes; families, weights, and tracking follow this
+document verbatim, px sizes are deck-only. Reading measures cap in `ch`.
+
+## 2. Color
+
+### Grounds
+
+| Token | Hex | Use | Status |
+|---|---|---|---|
+| Cream | `#FDF9F5` | default slide ground | verified |
+| White | `#FFFFFF` | cards and boxes on cream | verified |
+| Plum | `#2E2633` | dark slides, matches the course card | sampled |
+| Plum low | `#29222E` | gradient end | sampled |
+
+Dark slides use the gradient 160deg `#312836` → `#2E2633` → `#29222E`.
+A flat fill reads as a near-miss. Slides follow the card, not the site's
+warm-neutral band.
+
+### Text
+
+| Token | Hex | Use | Status |
+|---|---|---|---|
+| Ink | `#2E2A27` | headlines on cream | verified |
+| Body | `#3E3833` | body copy on cream | verified |
+| Muted | `#5C544B` | labels, footer, secondary | verified |
+| On-dark body | `#D9D2C9` | body copy on plum | verified |
+| On-dark muted | `#9A9098` | labels and footer on plum | sampled |
+| Cream | `#FDF9F5` | headlines on plum | verified |
+
+### Course accent
+
+| Token | Hex | Use | Status |
+|---|---|---|---|
+| Peach | `#FCE4C4` | fill only: bullet centers, washes | verified |
+| Courses deep | `#8A5A14` | text and stroke on cream | verified |
+| Butter | `#FBEDBF` | the course accent on dark (12.47:1) | ruled |
+
+`#8A5A14` fails on plum (2.47:1) and mostly never needs to appear there:
+its jobs (exercise label, ring bullet, cream progress fill) are cream
+jobs. Any other course-accent need on dark uses butter, never a layer
+tone. Butter is also the paper-tab fill; the double duty is accepted.
+
+### Layer tones (dark surfaces and progress only)
+
+| Layer | Hex | Contrast on plum | Status |
+|---|---|---|---|
+| Get found | `#DA8970` | 5.41:1 | sampled |
+| Get chosen | `#A69BDB` | 5.78:1 | sampled |
+| Be remembered | `#DDB774` | 7.70:1 | sampled |
+
+**Pre-layer modules (intro, positioning, the audit) carry no layer color
+at all.** Their dark accents invert value instead: body `#D9D2C9`, accent
+phrase cream `#FDF9F5` italic. Their dark progress fill is cream at 60%.
+This makes the first appearance of `#DA8970` at module three mean
+something. (ruled; closes the former gap)
+
+### Hairlines, lift, radius
+
+- Hairline: `1px solid rgba(46,42,39,0.12)` on cream,
+  `rgba(253,249,245,0.14)` on plum.
+- One shadow: `0 14px 40px -18px rgba(46,42,39,0.18)`. No elevation scale.
+- Radius: 24px cards and bands, 14px compact elements and inputs.
+
+### Forbidden on slides
+
+- Coral in any tone on any cream surface (`#FF6F61` family). The one
+  permitted coral-family appearance is `#DA8970` on plum.
+- Blush `#FBD5E4` and lavender `#DAD4F5` as content color.
+- Any blue, teal, or cool green.
+- Any color not listed above.
+
+## 3. The layer rule
+
+Layer color appears only on dark surfaces and in the progress fill:
+layer-opener labels and numerals, takeaway accents, dark progress.
+Never on cream as text, fill, wash, border, or rule. Teaching slides are
+layer-neutral. In the app, cream surfaces resolve all layer variables to
+`#8A5A14`, so the rule holds by construction.
+
+**Progress (ruled):** the single fill shipped. Cream: `#8A5A14` at 70%.
+Dark, layered module: the module's layer tone at full. Dark, pre-layer
+module: cream at 60%. The three-segment bar is deferred; revisit after
+recording, if at all.
+
+## 4. Typography
+
+**Newsreader** (display: 500, 600, italic 500) and **Manrope** (body:
+400, 500 — never 700 or 800; the app caps bold utilities at 500).
+Display is Newsreader 500 with -0.02em. Uppercase labels track at
+**0.08em**, Manrope 500. Sentence case everywhere. A headline that is a
+sentence takes a period. The ladder is label, headline, body, and stops.
+
+## 5. Emphasis (ruled)
+
+**The mark is headline-only, one per slide.** On cream headlines the
+emphasis phrase takes the paper tab (butter variant) in Newsreader
+italic. On dark headlines it is Newsreader italic in the module's layer
+tone, cream on pre-layer modules. **Body-copy emphasis carries unmarked**:
+no tab, no serif italic inside Manrope body copy. Content keeps its
+emphasis annotations; they simply render plain in body positions, so a
+future body-level treatment is a CSS decision, not a content pass.
+
+## 6. Devices
+
+- **Paper tab**: two counter-rotated pseudo-elements, butter fills,
+  geometry in `em` (see `app/globals.css`). Cream headlines only.
+- **Ring bullet**: 20px, peach center, 2.5px `#8A5A14` ring. Never a
+  disc, never recolored per layer. Applied to the Map card list.
+- **Aura**: one static blob per cream slide at most, warm core (amber
+  `rgba(248,190,116,…)` or rose `rgba(246,158,199,…)`), fading by 60%,
+  corner-bled. Never on dark, never animated. Currently placed on cream
+  heroes (amber) and the course home (rose).
+- **Strata mark** (course device, ruled in): the seven-foundation
+  wayfinding bar on module openers. Dark surfaces only. Positioning
+  segment is peach; foundation segments use the layer tones; the active
+  module's foundation stands taller.
+- **Survey ground-line** (course device, ruled in): the ticked hairline
+  on question dividers, in the surface's muted tone.
+
+## 7. Diagnostic output (ruled, was a gap)
+
+Tier and gap displays use a single-hue intensity ramp on `#8A5A14`.
+For accessibility, **text stays at full opacity; only the border ramps**
+(full, 60%, 25%, and a near-empty ring for not applicable). No
+traffic-light greens or reds.
+
+## 8. App chrome
+
+Course home, sign-in, gates, the host panel, captions, and narration
+controls follow the token system by inheritance: cream grounds, white
+24px cards with the hairline border and lift shadow, muted chrome text,
+courses-deep accents on cream and butter on dark.
+
+## 9. Voice on slides
+
+Median sentence length 11 words. No em dashes; a period and a new
+sentence instead. Paired sentences: claim, then qualification. Fragments
+allowed in sequences of three. No exclamation marks. Lead with the
+diagnosis. One emphasis phrase per headline.
+
+## 10. Open questions
+
+- **Dark-slide frequency.** The reference deck rule is ~4% dark with one
+  takeaway per module. The app runs far above that (heroes, dividers,
+  tools, and multiple takeaways are dark). Undecided whether the rule is
+  deck-only or app surfaces should be demoted (dividers to cream is the
+  spec-consistent first step).
+- **Module header surface.** Still uncovered; heroes are plum today.
+- **Sampled values.** The layer tones and plum family are in production
+  as sampled; confirm against the deployed stylesheet (one-line edits in
+  `app/globals.css` / `tailwind.config.ts`).
+- Completion states, callout boxes, captions/tables/video frames, print
+  surfaces: still no rule; ask before inventing.

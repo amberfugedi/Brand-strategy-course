@@ -345,7 +345,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   if (lockedByPrereq) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6 text-body surface-cream">
-        <div className="rounded-3xl w-full max-w-md border border-gold bg-cream-light px-9 py-10 text-center">
+        <div className="rounded-3xl w-full max-w-md border border-subtle bg-cream-light shadow-lift px-9 py-10 text-center">
           <div className="mb-4 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
             One step at a time
           </div>

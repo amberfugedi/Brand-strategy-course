@@ -6,7 +6,7 @@ import Link from "next/link";
 export function SignInGate({ nextPath }: { nextPath: string }) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6 text-body surface-cream">
-      <div className="w-full max-w-md border border-gold bg-cream-light px-9 py-10 text-center">
+      <div className="w-full max-w-md rounded-3xl border border-subtle bg-cream-light shadow-lift px-9 py-10 text-center">
         <div className="mb-4 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
           Build Your Marketing Foundation
         </div>

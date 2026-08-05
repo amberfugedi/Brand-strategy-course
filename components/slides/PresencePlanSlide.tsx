@@ -32,7 +32,7 @@ export function PresencePlanSlide({ slide }: { slide: PresencePlanSlideDef }) {
       </h1>
       <div className="mt-3 max-w-2xl space-y-1.5">
         {slide.paragraphs.map((p, i) => (
-          <p key={i} className="text-[14px] leading-relaxed text-on-dark/85">
+          <p key={i} className="text-[15px] leading-relaxed text-on-dark/85">
             <Rich text={p} />
           </p>
         ))}

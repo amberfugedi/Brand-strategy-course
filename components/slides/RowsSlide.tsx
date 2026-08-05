@@ -26,7 +26,7 @@ export function RowsSlide({
             <div className="pt-0.5 text-[11px] font-bold uppercase tracking-eyebrow text-body-secondary">
               {row.label}
             </div>
-            <div className="text-[15px] leading-relaxed">
+            <div className="text-[16px] leading-relaxed">
               <Rich text={row.text} />
             </div>
           </div>

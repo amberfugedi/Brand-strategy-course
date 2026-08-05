@@ -33,12 +33,12 @@ export function AuditSlide({ slide }: { slide: AuditSlideDef }) {
       <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
         <Rich text={slide.heading} />
       </h1>
-      <p className="mt-2 max-w-3xl text-[14px] text-body-secondary">
+      <p className="mt-2 max-w-3xl text-[15px] text-body-secondary">
         <Rich text={slide.intro} />
       </p>
 
       {!complete ? (
-        <p className="mt-8 font-serif text-[14px] italic text-body-tertiary">
+        <p className="mt-8 font-serif text-[15px] italic text-body-tertiary">
           The audit is tailored by your diagnostic. Answer the six questions
           first.
         </p>

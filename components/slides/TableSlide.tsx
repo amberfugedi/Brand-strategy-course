@@ -32,12 +32,12 @@ export function TableSlide({
             className="beat grid grid-cols-[140px_1fr] gap-6 border-b border-subtle py-3 md:grid-cols-[200px_1fr]"
           >
             <div>
-              <div className="text-[15px] font-bold text-aubergine">
+              <div className="text-[16px] font-bold text-aubergine">
                 {row.name}
               </div>
               <div className="text-[11.5px] text-body-tertiary">{row.meta}</div>
             </div>
-            <p className="text-[13.5px] leading-relaxed text-body">
+            <p className="text-[14.5px] leading-relaxed text-body">
               <span className="font-bold text-aubergine">{row.lead}</span>{" "}
               <Rich text={row.text} />
             </p>

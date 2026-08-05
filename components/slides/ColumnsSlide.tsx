@@ -28,10 +28,10 @@ export function ColumnsSlide({
             <div className="text-[11px] font-bold tracking-chrome text-body-tertiary">
               {col.num}
             </div>
-            <div className="mt-1 text-[14px] font-bold uppercase tracking-[0.12em]">
+            <div className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em]">
               {col.title}
             </div>
-            <p className="mt-2.5 text-[15px] leading-relaxed text-body">
+            <p className="mt-2.5 text-[16px] leading-relaxed text-body">
               <Rich text={col.text} />
             </p>
           </div>

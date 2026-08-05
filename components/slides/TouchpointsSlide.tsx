@@ -128,7 +128,7 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
       </h1>
       <div className="mt-3 max-w-2xl space-y-1.5">
         {slide.paragraphs.map((p, i) => (
-          <p key={i} className="text-[14px] leading-relaxed text-on-dark/85">
+          <p key={i} className="text-[15px] leading-relaxed text-on-dark/85">
             <Rich text={p} />
           </p>
         ))}
@@ -151,7 +151,7 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
                 onPointerDown={beginRowDrag(id)}
                 aria-label={`Drag to reorder ${labelOf(id)}`}
                 style={{ touchAction: "none" }}
-                className={`-ml-1 px-1 text-[15px] leading-none text-on-dark-muted hover:text-gold ${
+                className={`-ml-1 px-1 text-[16px] leading-none text-on-dark-muted hover:text-gold ${
                   dragId === id ? "cursor-grabbing text-gold" : "cursor-grab"
                 }`}
               >
@@ -160,7 +160,7 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
               <span className="w-6 text-[11px] font-bold tracking-chrome text-gold">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="flex-1 text-[14.5px] text-cream">
+              <span className="flex-1 text-[15.5px] text-cream">
                 {labelOf(id)}
               </span>
               {i === 0 ? (
@@ -172,7 +172,7 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
                 type="button"
                 onClick={() => setOrder(order.filter((x) => x !== id))}
                 aria-label={`Remove ${labelOf(id)}`}
-                className="px-1 text-[15px] leading-none text-on-dark-muted hover:text-rust"
+                className="px-1 text-[16px] leading-none text-on-dark-muted hover:text-rust"
               >
                 ×
               </button>

@@ -24,7 +24,7 @@ export function MapSlide({ slide }: { slide: MapSlideDef }) {
       <h1 className="text-3xl font-bold tracking-tight text-aubergine md:text-4xl">
         <Rich text={slide.heading} />
       </h1>
-      <p className="mt-3 max-w-4xl text-[14px] leading-relaxed text-body-secondary">
+      <p className="mt-3 max-w-4xl text-[15px] leading-relaxed text-body-secondary">
         <Rich text={slide.intro} />
       </p>
 

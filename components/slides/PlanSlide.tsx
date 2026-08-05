@@ -46,7 +46,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
       </h1>
       <div className="mt-3 max-w-3xl space-y-2">
         {slide.paragraphs.map((p, i) => (
-          <p key={i} className="text-[14px] leading-relaxed text-body-secondary">
+          <p key={i} className="text-[15px] leading-relaxed text-body-secondary">
             <Rich text={p} />
           </p>
         ))}
@@ -58,7 +58,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
             Positioning
           </div>
           {statement ? (
-            <p className="mt-2 font-serif text-[14px] italic leading-relaxed">
+            <p className="mt-2 font-serif text-[15px] italic leading-relaxed">
               {statement}
             </p>
           ) : (
@@ -120,7 +120,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
           </div>
           {startingPoint ? (
             <>
-              <div className="mt-2 text-[15px] font-bold">
+              <div className="mt-2 text-[16px] font-bold">
                 {startingPoint.foundation.name}
               </div>
               <p className="mt-1 font-serif text-[13px] italic leading-relaxed text-body-secondary">

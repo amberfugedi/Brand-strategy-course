@@ -42,7 +42,7 @@ export function ReferralMapSlide({ slide }: { slide: ReferralMapSlideDef }) {
       </h1>
       <div className="mt-3 max-w-2xl space-y-1.5">
         {slide.paragraphs.map((p, i) => (
-          <p key={i} className="text-[14px] leading-relaxed text-on-dark/85">
+          <p key={i} className="text-[15px] leading-relaxed text-on-dark/85">
             <Rich text={p} />
           </p>
         ))}
@@ -65,7 +65,7 @@ export function ReferralMapSlide({ slide }: { slide: ReferralMapSlideDef }) {
           >
             <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
               <div className="min-w-0">
-                <div className="text-[15px] font-bold text-cream">
+                <div className="text-[16px] font-bold text-cream">
                   {stage.label}
                 </div>
                 <p className="mt-0.5 font-serif text-[12.5px] italic leading-snug text-on-dark-muted">

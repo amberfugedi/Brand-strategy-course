@@ -17,7 +17,7 @@ export function DiagnosticSlide({ slide }: { slide: DiagnosticSlideDef }) {
       <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
         <Rich text={slide.heading} />
       </h1>
-      <p className="mt-2 max-w-3xl text-[14px] text-body-secondary">
+      <p className="mt-2 max-w-3xl text-[15px] text-body-secondary">
         <Rich text={slide.intro} />
       </p>
 
@@ -28,7 +28,7 @@ export function DiagnosticSlide({ slide }: { slide: DiagnosticSlideDef }) {
               <span className="text-[10px] font-bold tracking-chrome text-gold">
                 {q.num}
               </span>
-              <span className="text-[14px] font-semibold">{q.prompt}</span>
+              <span className="text-[15px] font-semibold">{q.prompt}</span>
             </div>
             <div className="mt-2 flex flex-wrap gap-1.5">
               {q.options.map((opt) => {
@@ -54,7 +54,7 @@ export function DiagnosticSlide({ slide }: { slide: DiagnosticSlideDef }) {
         ))}
       </div>
 
-      <p className="mt-6 font-serif text-[14px] italic text-body-tertiary">
+      <p className="mt-6 font-serif text-[15px] italic text-body-tertiary">
         {complete
           ? "All six answered. Your priority order is ready on the next slides."
           : "Answer all six. If you genuinely don't know, pick the option that says so."}

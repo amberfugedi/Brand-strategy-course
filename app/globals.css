@@ -182,3 +182,17 @@ h2 {
 .font-semibold {
   font-weight: 500;
 }
+
+/* The aura: one static blob per cream slide, corner-bled, warm core
+   only. Never on dark, never animated, never more than one. */
+.aura {
+  position: absolute;
+  width: 64vmin;
+  height: 64vmin;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(248, 190, 116, 0.26), transparent 60%);
+}
+.aura-rose {
+  background: radial-gradient(circle, rgba(246, 158, 199, 0.22), transparent 60%);
+}

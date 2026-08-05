@@ -34,7 +34,7 @@ export function ProofInventorySlide({
       </h1>
       <div className="mt-3 max-w-2xl space-y-1.5">
         {slide.paragraphs.map((p, i) => (
-          <p key={i} className="text-[14px] leading-relaxed text-on-dark/85">
+          <p key={i} className="text-[15px] leading-relaxed text-on-dark/85">
             <Rich text={p} />
           </p>
         ))}
@@ -44,7 +44,7 @@ export function ProofInventorySlide({
         {SOURCES.map((source) => (
           <div key={source.id} className="border border-gold/40 bg-cream/5 px-5 py-4">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
-              <span className="text-[15px] font-bold text-cream">
+              <span className="text-[16px] font-bold text-cream">
                 {source.label}
               </span>
               <span className="font-serif text-[12.5px] italic text-on-dark-muted">

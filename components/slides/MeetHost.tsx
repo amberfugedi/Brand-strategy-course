@@ -53,7 +53,7 @@ export function MeetHost({ dark }: { dark: boolean }) {
             Your host
           </span>
           <span
-            className={`block text-[15px] underline-offset-4 group-hover:underline ${
+            className={`block text-[16px] underline-offset-4 group-hover:underline ${
               dark ? "text-on-dark" : "text-body"
             }`}
           >
@@ -80,7 +80,7 @@ export function MeetHost({ dark }: { dark: boolean }) {
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close"
-              className="absolute right-3 top-3 px-2 py-1 text-[15px] text-body-tertiary transition-colors hover:text-aubergine"
+              className="absolute right-3 top-3 px-2 py-1 text-[16px] text-body-tertiary transition-colors hover:text-aubergine"
             >
               ×
             </button>
@@ -91,7 +91,7 @@ export function MeetHost({ dark }: { dark: boolean }) {
             <h2 className="mt-1.5 text-2xl font-bold tracking-tight">
               {host.name}
             </h2>
-            <div className="mt-4 space-y-3 text-[14.5px] leading-relaxed text-body-secondary">
+            <div className="mt-4 space-y-3 text-[15.5px] leading-relaxed text-body-secondary">
               {host.bio.length > 0 ? (
                 host.bio.map((p) => (
                   <p key={p}>

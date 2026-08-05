@@ -14,7 +14,7 @@ function Card({
       <div className="mt-1.5 text-[18px] font-bold tracking-tight text-aubergine">
         {card.title}
       </div>
-      <p className="mt-2 text-[13.5px] leading-relaxed text-body-secondary">
+      <p className="mt-2 text-[14.5px] leading-relaxed text-body-secondary">
         <Rich text={card.text} />
       </p>
     </div>
@@ -42,7 +42,7 @@ export function CardsSlide({
         <Rich text={slide.heading} />
       </h1>
       {slide.intro ? (
-        <p className="mt-4 max-w-4xl text-[15px] leading-relaxed">
+        <p className="mt-4 max-w-4xl text-[16px] leading-relaxed">
           <Rich text={slide.intro} />
         </p>
       ) : null}
@@ -69,7 +69,7 @@ export function CardsSlide({
       ) : null}
 
       {slide.footnote && revealed >= slide.cards.length ? (
-        <p className="beat mt-6 max-w-4xl text-[15px] leading-relaxed">
+        <p className="beat mt-6 max-w-4xl text-[16px] leading-relaxed">
           <Rich text={slide.footnote} />
         </p>
       ) : null}

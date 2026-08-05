@@ -14,8 +14,8 @@ import { useModule2 } from "@/lib/store/provider";
 // and no traffic-light greens or reds on cream.
 const GAP_META: Record<GapTier, { label: string; color: string }> = {
   critical: { label: "Critical", color: "border-gold text-gold" },
-  maintenance: { label: "Maintenance", color: "border-gold/60 text-gold/70" },
-  solid: { label: "Solid", color: "border-gold/25 text-gold/60" },
+  maintenance: { label: "Maintenance", color: "border-gold/60 text-gold" },
+  solid: { label: "Solid", color: "border-gold/25 text-gold" },
 };
 
 export function GapListSlide({
@@ -44,7 +44,7 @@ export function GapListSlide({
 
       <div className="mt-4 max-w-4xl space-y-1.5">
         {slide.tiers.slice(0, revealed).map((t) => (
-          <p key={t.label} className="beat text-[13.5px] leading-snug">
+          <p key={t.label} className="beat text-[14.5px] leading-snug">
             <em className="accent-serif">{t.label}</em>
             <span className="text-body-secondary">. {t.text}</span>
           </p>
@@ -56,7 +56,7 @@ export function GapListSlide({
           Your Gap List
         </div>
         {!complete ? (
-          <p className="font-serif text-[14px] italic text-body-tertiary">
+          <p className="font-serif text-[15px] italic text-body-tertiary">
             The Gap List compiles from your diagnostic and audit. Do those
             first.
           </p>
@@ -70,7 +70,7 @@ export function GapListSlide({
                   >
                     {GAP_META[g.gap!].label}
                   </span>
-                  <span className="text-[14px] font-semibold">
+                  <span className="text-[15px] font-semibold">
                     {g.foundation.name}
                   </span>
                   <span className="text-[11px] uppercase tracking-chrome text-body-tertiary">

@@ -23,10 +23,10 @@ export function CompareSlide({
             <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
               Weak
             </div>
-            <p className="mt-3 text-[15px] font-bold">
+            <p className="mt-3 text-[16px] font-bold">
               &ldquo;<Rich text={slide.weak.quote} />&rdquo;
             </p>
-            <p className="mt-3 text-[13.5px] leading-relaxed text-body-secondary">
+            <p className="mt-3 text-[14.5px] leading-relaxed text-body-secondary">
               <Rich text={slide.weak.text} />
             </p>
           </div>
@@ -36,10 +36,10 @@ export function CompareSlide({
             <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
               Strong
             </div>
-            <p className="mt-3 text-[15px] font-bold">
+            <p className="mt-3 text-[16px] font-bold">
               &ldquo;<Rich text={slide.strong.quote} />&rdquo;
             </p>
-            <p className="mt-3 text-[13.5px] leading-relaxed text-body-secondary">
+            <p className="mt-3 text-[14.5px] leading-relaxed text-body-secondary">
               <Rich text={slide.strong.text} />
             </p>
           </div>
