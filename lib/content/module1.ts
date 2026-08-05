@@ -896,7 +896,7 @@ export const module1Slides: Slide[] = [
     crumb: CLOSING,
     tag: "BRIDGE",
     number: "32",
-    audio: { src: "/audio/m1/m1-32.mp3" },
+    audio: { src: "/audio/m1/m1-32.mp3", cues: [10.6, 16.3] },
     surface: "plum",
     mapFilled: 1,
     eyebrow: "You have your working positioning statement",

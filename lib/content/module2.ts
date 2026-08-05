@@ -87,6 +87,7 @@ export const module2Slides: Slide[] = [
     number: "04",
     audio: {
       src: "/audio/m2/m2-4.mp3",
+      cues: [2.5, 4.2],
       callouts: [
         { text: "Not preference questions.", at: 4.6, until: 10.5 },
         { text: "What is true today.", at: 11.4, until: 17.0 },
@@ -233,6 +234,7 @@ export const module2Slides: Slide[] = [
     number: "11",
     audio: {
       src: "/audio/m2/m2-11.mp3",
+      cues: [1.8, 11.5],
       callouts: [
         { text: "Take a few minutes to actually read what the diagnostic produced.", at: 12.7, until: 19.5 },
         { text: "If you skim past it, the audit will not make sense.", at: 19.7, until: 25.2 },
@@ -344,7 +346,7 @@ export const module2Slides: Slide[] = [
     crumb: S4,
     tag: "AUDIT",
     number: "17",
-    audio: { src: "/audio/m2/m2-17.mp3" },
+    audio: { src: "/audio/m2/m2-17.mp3", cues: [0.8, 4.5] },
     lines: ["Run your *audit*."],
     post: "The central work of the module.",
   },
@@ -460,6 +462,7 @@ export const module2Slides: Slide[] = [
     number: "23",
     audio: {
       src: "/audio/m2/m2-23.mp3",
+      cues: [2.0, 3.8],
       callouts: [
         { text: "Critical, maintenance, and solid.", at: 2.6, until: 9.0 },
         { text: "Sorted by the worst rating you gave it.", at: 9.2, until: 15.0 },
