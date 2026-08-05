@@ -35,7 +35,14 @@ export interface SlideAudio {
    *  that aren't in the slide copy. `card` renders the phrase in a
    *  bordered container (spoken examples) instead of the bare
    *  margin-note serif (editorial asides). */
-  callouts?: { text: string; at: number; until: number; card?: boolean }[];
+  callouts?: {
+    text: string;
+    at: number;
+    until: number;
+    card?: boolean;
+    /** Persona the phrase is about; shows their portrait beside it. */
+    who?: string;
+  }[];
 }
 
 interface SlideBase {

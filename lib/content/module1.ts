@@ -703,11 +703,11 @@ export const module1Slides: Slide[] = [
     audio: {
       src: "/audio/m1/m1-22.mp3",
       callouts: [
-        { text: "Maya rejected open-ended therapy.", at: 8.9, until: 11.3, card: true },
-        { text: "Marcus rejected upselling.", at: 11.3, until: 13.1, card: true },
-        { text: "Lena rejected staged posing.", at: 13.1, until: 15.0, card: true },
-        { text: "James rejected subscription care.", at: 15.0, until: 17.3, card: true },
-        { text: "Sasha rejected anything but vivids.", at: 17.3, until: 21.5, card: true },
+        { text: "Maya rejected open-ended therapy.", at: 8.9, until: 11.3, card: true, who: "Maya" },
+        { text: "Marcus rejected upselling.", at: 11.3, until: 13.1, card: true, who: "Marcus" },
+        { text: "Lena rejected staged posing.", at: 13.1, until: 15.0, card: true, who: "Lena" },
+        { text: "James rejected subscription care.", at: 15.0, until: 17.3, card: true, who: "James" },
+        { text: "Sasha rejected anything but vivids.", at: 17.3, until: 21.5, card: true, who: "Sasha" },
         { text: "What's the thing competitors in my category do that I refuse to do?", at: 33.2, until: 38.1 },
       ],
     },

@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { useNarration } from "@/components/player/NarrationProvider";
+import { PersonaAvatar } from "@/components/slides/PersonaAvatar";
 
 interface Callout {
   text: string;
   at: number;
   until: number;
   card?: boolean;
+  who?: string;
 }
 
 /**
@@ -55,12 +57,13 @@ export function CalloutNote({
     >
       {card ? (
         <div
-          className={`rounded-[14px] border-l-[3px] border-lilac px-5 py-4 ${
+          className={`flex items-center gap-3.5 rounded-[14px] border-l-[3px] border-lilac px-5 py-4 ${
             dark
               ? "bg-cream/5"
               : "border border-l-[3px] border-subtle border-l-lilac bg-cream-light shadow-lift"
           }`}
         >
+          {entry?.who ? <PersonaAvatar name={entry.who} size={36} /> : null}
           <p
             className={`font-serif text-[16px] italic leading-relaxed sm:text-[17px] ${
               dark ? "text-cream" : "text-body"
