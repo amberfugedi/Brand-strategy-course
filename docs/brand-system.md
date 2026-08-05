@@ -130,6 +130,25 @@ Display is Newsreader 500 with -0.02em. Uppercase labels track at
 **0.08em**, Manrope 500. Sentence case everywhere. A headline that is a
 sentence takes a period. The ladder is label, headline, body, and stops.
 
+### Size standards (ruled by the 2026-08 type audit)
+
+The floors below hold on every surface, phone and desktop. New
+components follow them; violations are bugs.
+
+| Role | Phone | Desktop | Floor |
+|---|---|---|---|
+| Display headline | 30–36px | 48–60px | scales down via responsive classes, never fixed |
+| Primary reading (paragraphs, bullets, panels) | 15–17px | 16–18px | **14px** |
+| Secondary reading (reveal notes, references, annotations) | 13.5–14.5px | 13.5–15px | **13.5px** |
+| Labels, eyebrows, chrome (Manrope 500, uppercase, 0.08em) | 10–11px | 10–11px | **10px** |
+| Anything typed into (inputs, textareas) | **16px** | 16px | 16px — under 16px triggers iOS focus zoom |
+| Navigation pills | 11px uppercase | 11px uppercase | tap target ≥ 40px tall |
+| Captions | listener-controlled: 12.5 / 14.5 / 17 / 20px | same | user choice, default 14.5px |
+
+One documented exception: the Map document illustration carries its
+smallest caption at 9.5px — it is artwork, not interface, and its
+labels repeat information available elsewhere.
+
 ## 5. Emphasis (ruled)
 
 **The mark is headline-only, one per slide.** On cream headlines the
