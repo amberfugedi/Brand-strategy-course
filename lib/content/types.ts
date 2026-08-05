@@ -56,7 +56,7 @@ export interface HeroSlide extends SlideBase {
   /** Which foundation (1-7) this module builds, shown as the strata
    *  wayfinding mark beside the metadata strip; "all" for the audit. */
   strata?: number | "all";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   sub: string;
   meta: { label: string; value: string }[];
@@ -65,7 +65,7 @@ export interface HeroSlide extends SlideBase {
 /** The three-layer, seven-foundation system diagram (intro slide ii). */
 export interface SystemSlide extends SlideBase {
   kind: "system";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   layers: {
     label: string;
@@ -83,7 +83,7 @@ export interface SystemSlide extends SlideBase {
 /** Heading + prose + a single bordered card with a list (intro slide iii). */
 export interface CardListSlide extends SlideBase {
   kind: "cardList";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   intro?: string;
   card: {
@@ -96,7 +96,7 @@ export interface CardListSlide extends SlideBase {
 /** Stacked rows with a left border and label column (intro slide iv). */
 export interface RowsSlide extends SlideBase {
   kind: "rows";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   rows: { label: string; text: string }[];
 }
@@ -105,7 +105,7 @@ export interface RowsSlide extends SlideBase {
 export interface ProseSlide extends SlideBase {
   kind: "prose";
   surface?: Surface;
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   quote?: string;
   paragraphs: string[];
@@ -123,7 +123,7 @@ export interface QuestionSlide extends SlideBase {
  *  optional teal-bordered callout card. */
 export interface FrameworkSlide extends SlideBase {
   kind: "framework";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   sub?: string;
   paragraphs: string[];
@@ -134,7 +134,7 @@ export interface FrameworkSlide extends SlideBase {
  *  on interaction. */
 export interface PatternsSlide extends SlideBase {
   kind: "patterns";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   patterns: { label: string; quote: string; diagnosis: string }[];
 }
@@ -142,7 +142,7 @@ export interface PatternsSlide extends SlideBase {
 /** Numbered concept columns (three across, or four in a 2x2 grid). */
 export interface ColumnsSlide extends SlideBase {
   kind: "columns";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   columns: { num: string; title: string; text: string }[];
 }
@@ -151,7 +151,7 @@ export interface ColumnsSlide extends SlideBase {
  *  reveals on interaction. */
 export interface ExamplesSlide extends SlideBase {
   kind: "examples";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   personas: {
     name: string;
@@ -188,7 +188,7 @@ export interface FrameSlide extends SlideBase {
  *  2x2 for four, single row otherwise. */
 export interface CardsSlide extends SlideBase {
   kind: "cards";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   intro?: string;
   cards: { label: string; title: string; text: string }[];
@@ -198,7 +198,7 @@ export interface CardsSlide extends SlideBase {
 /** Touchpoint or source detail: three labeled columns. */
 export interface DetailSlide extends SlideBase {
   kind: "detail";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   cols: { label: string; text: string }[];
 }
@@ -206,7 +206,7 @@ export interface DetailSlide extends SlideBase {
 /** Weak versus strong comparison, two cards side by side. */
 export interface CompareSlide extends SlideBase {
   kind: "compare";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   weak: { quote: string; text: string };
   strong: { quote: string; text: string };
@@ -215,7 +215,7 @@ export interface CompareSlide extends SlideBase {
 /** The five-businesses calibration table. */
 export interface TableSlide extends SlideBase {
   kind: "table";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   leftLabel: string;
   rightLabel: string;
@@ -225,7 +225,7 @@ export interface TableSlide extends SlideBase {
 /** Module 3: the landscape map of the five touchpoint zones. */
 export interface MapSlide extends SlideBase {
   kind: "map";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   intro: string;
 }
@@ -233,7 +233,7 @@ export interface MapSlide extends SlideBase {
 /** Module 3 tool: mark and order the touchpoints that apply. */
 export interface TouchpointsSlide extends SlideBase {
   kind: "touchpoints";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   paragraphs: string[];
 }
@@ -241,7 +241,7 @@ export interface TouchpointsSlide extends SlideBase {
 /** Module 4 tool: the proof inventory across the three sources. */
 export interface ProofInventorySlide extends SlideBase {
   kind: "proofInventory";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   paragraphs: string[];
 }
@@ -249,7 +249,7 @@ export interface ProofInventorySlide extends SlideBase {
 /** Module 5 tool: one source walked through Earn, Ask, Keep. */
 export interface ReferralMapSlide extends SlideBase {
   kind: "referralMap";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   paragraphs: string[];
 }
@@ -257,7 +257,7 @@ export interface ReferralMapSlide extends SlideBase {
 /** Module 6 tool: weight, one place, condition checks, cadence. */
 export interface PresencePlanSlide extends SlideBase {
   kind: "presencePlan";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   paragraphs: string[];
 }
@@ -265,7 +265,7 @@ export interface PresencePlanSlide extends SlideBase {
 /** Module 7 tool: people, channel, cadence. */
 export interface OwnedAudienceSlide extends SlideBase {
   kind: "ownedAudience";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   paragraphs: string[];
 }
@@ -273,7 +273,7 @@ export interface OwnedAudienceSlide extends SlideBase {
 /** Module 8: identify which kind of authority is already yours. */
 export interface AuthorityKindSlide extends SlideBase {
   kind: "authorityKind";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   intro: string;
 }
@@ -282,7 +282,7 @@ export interface AuthorityKindSlide extends SlideBase {
  *  Later, with everything gathered across the course in view. */
 export interface FoundationPlanSlide extends SlideBase {
   kind: "foundationPlan";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   paragraphs: string[];
 }
@@ -290,7 +290,7 @@ export interface FoundationPlanSlide extends SlideBase {
 /** Dark plum module-structure table. */
 export interface StructureSlide extends SlideBase {
   kind: "structure";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   rows: { label: string; title: string; minutes: string }[];
 }
@@ -306,7 +306,7 @@ export interface ExerciseSlide extends SlideBase {
 /** Section 5: template card plus the buyer's editable statement. */
 export interface SynthesisSlide extends SlideBase {
   kind: "synthesis";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   template: string;
   note: string;
@@ -315,7 +315,7 @@ export interface SynthesisSlide extends SlideBase {
 /** Assembled persona positioning statements (one or two cards). */
 export interface StatementsSlide extends SlideBase {
   kind: "statements";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   statements: { name: string; role: string; text: string }[];
 }
@@ -323,7 +323,7 @@ export interface StatementsSlide extends SlideBase {
 /** End of module: the buyer's completed framework, rendered and saved. */
 export interface SummarySlide extends SlideBase {
   kind: "summary";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   paragraphs: string[];
 }
@@ -331,7 +331,7 @@ export interface SummarySlide extends SlideBase {
 /** Module 2: the six diagnostic questions, answered in place. */
 export interface DiagnosticSlide extends SlideBase {
   kind: "diagnostic";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   intro: string;
 }
@@ -339,7 +339,7 @@ export interface DiagnosticSlide extends SlideBase {
 /** Module 2: tier meanings plus the buyer's computed priority order. */
 export interface PrioritiesSlide extends SlideBase {
   kind: "priorities";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   tiers: { label: string; text: string }[];
 }
@@ -347,7 +347,7 @@ export interface PrioritiesSlide extends SlideBase {
 /** Module 2: the tailored audit, depth varying by priority. */
 export interface AuditSlide extends SlideBase {
   kind: "audit";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   intro: string;
 }
@@ -355,7 +355,7 @@ export interface AuditSlide extends SlideBase {
 /** Module 2: gap tier meanings plus the buyer's computed Gap List. */
 export interface GapListSlide extends SlideBase {
   kind: "gaplist";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   tiers: { label: string; text: string }[];
 }
@@ -371,7 +371,7 @@ export interface StartingPointSlide extends SlideBase {
 /** Module 2: everything the module produced, compiled in one place. */
 export interface PlanSlide extends SlideBase {
   kind: "plan";
-  eyebrow: string;
+  eyebrow?: string;
   heading: string;
   paragraphs: string[];
 }

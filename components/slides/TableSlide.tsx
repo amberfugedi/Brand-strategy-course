@@ -10,9 +10,9 @@ export function TableSlide({
 }) {
   return (
     <div className="mt-2 flex flex-1 flex-col">
-      <div className="mb-3 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">
-        {slide.eyebrow}
-      </div>
+      {slide.eyebrow ? (
+        <div className="mb-3 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">{slide.eyebrow}</div>
+      ) : null}
       <h1 className="text-3xl font-bold tracking-tight text-aubergine md:text-5xl">
         <Rich text={slide.heading} />
       </h1>

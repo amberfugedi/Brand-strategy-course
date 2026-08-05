@@ -27,7 +27,6 @@ export const module1Slides: Slide[] = [
     audio: { src: "/audio/m1/m1-1.mp3" },
     surface: "plum",
     strata: 1,
-    eyebrow: "Module 1",
     heading: "Your *positioning*.",
     sub: "Three questions every other foundation depends on. Twenty-five minutes. One working answer.",
     meta: [
@@ -75,7 +74,6 @@ export const module1Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "04",
     audio: { src: "/audio/m1/m1-4.mp3", cues: [8.3, 32.4, 51.5] },
-    eyebrow: "Three patterns to watch for",
     heading: "The patterns of *confusion*.",
     patterns: [
       {
@@ -139,7 +137,6 @@ export const module1Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "07",
     audio: { src: "/audio/m1/m1-7.mp3", cues: [6.1, 12.7, 25.4] },
-    eyebrow: "The reframe",
     heading: "Not demographic. *Operational*.",
     paragraphs: [
       "\"What age range and gender\" rarely changes a *marketing* decision.",
@@ -157,7 +154,6 @@ export const module1Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "08",
     audio: { src: "/audio/m1/m1-8.mp3", cues: [4.7, 19.2, 36.2] },
-    eyebrow: "Weak patterns",
     heading: "Three answers that *don't work*.",
     patterns: [
       {
@@ -188,7 +184,6 @@ export const module1Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "09",
     audio: { src: "/audio/m1/m1-9.mp3", cues: [5.2, 17.8, 38.2] },
-    eyebrow: "Three layers",
     heading: "Situation. Context. *Problem*.",
     columns: [
       {
@@ -217,7 +212,6 @@ export const module1Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "10",
     audio: { src: "/audio/m1/m1-10.mp3", cues: [5.2, 24.2, 42.2, 60.8, 73.7] },
-    eyebrow: "Strong answers across five service businesses",
     heading: "Who do you *serve*.",
     personas: [
       {
@@ -271,7 +265,6 @@ export const module1Slides: Slide[] = [
     tag: "THE TAKEAWAY",
     number: "11",
     audio: { src: "/audio/m1/m1-11.mp3" },
-    eyebrow: "On the fear of narrowing",
     headline:
       "Naming a strategic audience doesn't mean turning away customers who walk through your door.",
     sub: "Specificity in marketing doesn't restrict your business. It only restricts your *marketing*.",
@@ -314,7 +307,6 @@ export const module1Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "14",
     audio: { src: "/audio/m1/m1-14.mp3", cues: [0.3, 10.2, 12.2] },
-    eyebrow: "The distinction",
     heading: "The work, *not the category*.",
     paragraphs: [
       "Most service business owners answer with their category. *I'm a chiropractor. I'm a wedding photographer. I'm a marketing consultant.*",
@@ -332,7 +324,6 @@ export const module1Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "15",
     audio: { src: "/audio/m1/m1-15.mp3", cues: [3.7, 14.5, 28.5] },
-    eyebrow: "Weak patterns",
     heading: "Three patterns that *fall short*.",
     patterns: [
       {
@@ -363,7 +354,6 @@ export const module1Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "16",
     audio: { src: "/audio/m1/m1-16.mp3", cues: [5.2, 15.8, 27.7] },
-    eyebrow: "Three layers",
     heading: "Action. Output. *Change*.",
     columns: [
       {
@@ -392,7 +382,6 @@ export const module1Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "17",
     audio: { src: "/audio/m1/m1-17.mp3", cues: [5.6, 19.7, 34.1, 48.4, 65.5] },
-    eyebrow: "Strong answers across five service businesses",
     heading: "What do you *do*.",
     personas: [
       {
@@ -441,7 +430,6 @@ export const module1Slides: Slide[] = [
     tag: "THE TAKEAWAY",
     number: "18",
     audio: { src: "/audio/m1/m1-18.mp3" },
-    eyebrow: "On describing your service",
     headline:
       "Describing your service specifically doesn't mean refusing services you also offer.",
     sub: "A vague description doesn't expand your business. It only makes your marketing *harder to remember*.",
@@ -484,7 +472,6 @@ export const module1Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "21",
     audio: { src: "/audio/m1/m1-21.mp3", cues: [0.3, 13.8, 39.4] },
-    eyebrow: "The reframe",
     heading: "Different. *Not better*.",
     paragraphs: [
       "*Different* and better are not the same question.",
@@ -502,7 +489,6 @@ export const module1Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "22",
     audio: { src: "/audio/m1/m1-22.mp3", cues: [3.7, 12.5, 23.8] },
-    eyebrow: "Weak patterns",
     heading: "Three patterns that *flatten*.",
     patterns: [
       {
@@ -570,7 +556,6 @@ export const module1Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "24",
     audio: { src: "/audio/m1/m1-24.mp3", cues: [0.0, 19.8, 33.7, 53.1, 69.4] },
-    eyebrow: "Strong differentiators across five service businesses",
     heading: "What makes you *different*.",
     personas: [
       {
@@ -645,7 +630,6 @@ export const module1Slides: Slide[] = [
     tag: "THE TAKEAWAY",
     number: "27",
     audio: { src: "/audio/m1/m1-27.mp3" },
-    eyebrow: "On being too direct",
     headline: "A sharp differentiator will turn off some prospects. *That's the point.*",
     sub: "If your differentiator doesn't repel anyone, it's probably not specific enough to attract anyone. A vague positioning attracts vague interest. *A sharp positioning attracts qualified interest.*",
   },
@@ -702,7 +686,6 @@ export const module1Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "31",
     audio: { src: "/audio/m1/m1-31.mp3", cues: [0.0, 26.6] },
-    eyebrow: "Working positioning statements",
     heading: "Two ways the framework *assembles*.",
     statements: [
       {
@@ -726,7 +709,6 @@ export const module1Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "32",
     audio: { src: "/audio/m1/m1-32.mp3", cues: [0.0, 25.8] },
-    eyebrow: "Working positioning statements",
     heading: "Two more *assemblies*.",
     statements: [
       {

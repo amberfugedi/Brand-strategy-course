@@ -6,9 +6,7 @@ export function PrincipleSlide({ slide }: { slide: PrincipleSlideDef }) {
     <div className="flex flex-1 flex-col justify-center">
       <div className="mx-auto w-full max-w-5xl border-y border-gold/25 py-20 text-center md:py-24">
         {slide.eyebrow ? (
-          <div className="mb-8 text-[11px] font-bold uppercase tracking-eyebrow text-gold">
-            {slide.eyebrow}
-          </div>
+          <div className="mb-8 text-[11px] font-bold uppercase tracking-eyebrow text-gold">{slide.eyebrow}</div>
         ) : null}
         <h1
           className={`mx-auto max-w-4xl text-balance ${

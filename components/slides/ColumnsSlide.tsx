@@ -11,9 +11,9 @@ export function ColumnsSlide({
   const four = slide.columns.length === 4;
   return (
     <div className="mt-4 flex flex-1 flex-col">
-      <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-teal">
-        {slide.eyebrow}
-      </div>
+      {slide.eyebrow ? (
+        <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-teal">{slide.eyebrow}</div>
+      ) : null}
       <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
         <Rich text={slide.heading} />
       </h1>

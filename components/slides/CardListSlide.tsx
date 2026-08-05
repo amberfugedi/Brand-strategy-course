@@ -10,9 +10,9 @@ export function CardListSlide({
 }) {
   return (
     <div className="mt-4 flex flex-1 flex-col">
-      <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-gold">
-        {slide.eyebrow}
-      </div>
+      {slide.eyebrow ? (
+        <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-gold">{slide.eyebrow}</div>
+      ) : null}
       <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
         <Rich text={slide.heading} />
       </h1>

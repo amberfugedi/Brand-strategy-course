@@ -26,9 +26,9 @@ export function SynthesisSlide({ slide }: { slide: SynthesisSlideDef }) {
 
   return (
     <div className="flex flex-1 flex-col justify-center">
-      <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-teal">
-        {slide.eyebrow}
-      </div>
+      {slide.eyebrow ? (
+        <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-teal">{slide.eyebrow}</div>
+      ) : null}
       <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
         <Rich text={slide.heading} />
       </h1>

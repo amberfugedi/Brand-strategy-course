@@ -11,9 +11,9 @@ export function StatementsSlide({
   const solo = slide.statements.length === 1;
   return (
     <div className="mt-4 flex flex-1 flex-col">
-      <div className="mb-3 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">
-        {slide.eyebrow}
-      </div>
+      {slide.eyebrow ? (
+        <div className="mb-3 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">{slide.eyebrow}</div>
+      ) : null}
       <h1 className="text-3xl font-bold tracking-tight md:text-5xl">
         <Rich text={slide.heading} />
       </h1>

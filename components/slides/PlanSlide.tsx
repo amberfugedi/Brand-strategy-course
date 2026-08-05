@@ -38,9 +38,9 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
 
   return (
     <div className="mt-2 flex flex-1 flex-col">
-      <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-rust">
-        {slide.eyebrow}
-      </div>
+      {slide.eyebrow ? (
+        <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-rust">{slide.eyebrow}</div>
+      ) : null}
       <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
         <Rich text={slide.heading} />
       </h1>

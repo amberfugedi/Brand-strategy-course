@@ -21,9 +21,9 @@ export function HeroSlide({
         <div aria-hidden className="aura -right-[18vmin] -top-[22vmin]" />
       ) : null}
       <div className={dark ? "my-auto" : "mt-6"}>
-        <div className="mb-5 text-[11px] font-bold uppercase tracking-eyebrow text-gold">
-          {slide.eyebrow}
-        </div>
+        {slide.eyebrow ? (
+          <div className="mb-5 text-[11px] font-bold uppercase tracking-eyebrow text-gold">{slide.eyebrow}</div>
+        ) : null}
         <h1 className="max-w-4xl text-balance text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl">
           <Rich text={slide.heading} />
         </h1>
