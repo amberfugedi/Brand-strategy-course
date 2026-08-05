@@ -150,18 +150,22 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
 
           {slide.compare ? (
             <div className="rounded-3xl border border-subtle bg-cream-light px-5 py-4">
-              <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
-                Do this
+              <div className="border-l-[3px] border-stone pl-3">
+                <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+                  Do this
+                </div>
+                <p className="mt-1 font-serif text-[13.5px] italic leading-relaxed text-body">
+                  {slide.compare.do}
+                </p>
               </div>
-              <p className="mt-1 font-serif text-[13.5px] italic leading-relaxed text-body">
-                {slide.compare.do}
-              </p>
-              <div className="mt-3.5 border-t border-subtle pt-3 text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
-                Not that
+              <div className="mt-3.5 border-l-[3px] border-coral pl-3">
+                <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+                  Not that
+                </div>
+                <p className="mt-1 font-serif text-[13.5px] italic leading-relaxed text-body-tertiary">
+                  {slide.compare.not}
+                </p>
               </div>
-              <p className="mt-1 font-serif text-[13.5px] italic leading-relaxed text-body-tertiary">
-                {slide.compare.not}
-              </p>
             </div>
           ) : null}
 

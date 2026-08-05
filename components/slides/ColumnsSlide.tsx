@@ -27,13 +27,11 @@ export function ColumnsSlide({
             : "mt-10 gap-x-10"
         }`}
       >
-        {slide.columns.slice(0, revealed).map((col, ci) =>
+        {slide.columns.slice(0, revealed).map((col) =>
           col.bullets ? (
             <div
               key={col.num}
-              className={`beat flex flex-col rounded-3xl border border-t-[3px] border-subtle bg-cream-light px-7 py-7 shadow-lift ${
-                ["border-t-coral", "border-t-lilac", "border-t-stone"][ci % 3]
-              }`}
+              className="beat flex flex-col rounded-3xl border border-t-[3px] border-subtle border-t-stone bg-cream-light px-7 py-7 shadow-lift"
             >
               <div className="flex items-baseline gap-3 border-b border-subtle pb-4">
                 <span className="text-[11px] font-bold tracking-chrome text-gold">

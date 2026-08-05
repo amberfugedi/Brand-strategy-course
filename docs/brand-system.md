@@ -84,8 +84,9 @@ something. (ruled; closes the former gap)
 
 ### Forbidden on slides
 
-- Coral in any tone on any cream surface (`#FF6F61` family). The one
-  permitted coral-family appearance is `#DA8970` on plum.
+- Bright coral (`#FF6F61` family) anywhere. The permitted coral-family
+  appearances are `#DA8970` on plum, and on cream only as the
+  decorative borders the layer-rule amendment in section 3 allows.
 - Blush `#FBD5E4` and lavender `#DAD4F5` as content color.
 - Any blue, teal, or cool green.
 - Any color not listed above.
@@ -99,14 +100,22 @@ meaning-bearing control; cream surfaces resolve all layer text variables
 to `#8A5A14`, so that half of the rule holds by construction.
 
 **Amendment (2026-08, ruled by the cream-and-gold audit):** the three
-tones may appear on cream as **decorative fills and borders only**:
-card left-borders and top-bars (rotating coral, lilac, stone), the map
-zone bars, auras (a lilac variant joined amber and rose), and the course
-home's per-layer module borders. Decorative means: removing the color
-changes nothing about what the interface says. Text on cream stays on
-the collapsed courses accent for contrast; the literals live in
-`tailwind.config.ts` as `coral`, `lilac`, `stone` with this restriction
-documented at the definition.
+tones may appear on cream as **decorative fills and borders only**, and
+they carry role meaning rather than rotating for variety:
+
+- **Coral**: cautionary material. Weak-pattern cards, the "not that"
+  half of an exercise compare.
+- **Lilac**: examples. Persona cards, spoken-example callout cards.
+- **Stone**: framework structure. Concept-column top bars, the
+  "do this" half of an exercise compare.
+- **Map zones** keep one color per zone (zone identity, per the deck).
+- **Course home** borders each module in its layer tone.
+- **Auras**: amber, rose, and lilac variants, cream only.
+
+Decorative means: removing the color changes nothing about what the
+interface says. Text on cream stays on the collapsed courses accent for
+contrast; the literals live in `tailwind.config.ts` as `coral`,
+`lilac`, `stone` with this restriction documented at the definition.
 
 **Progress (ruled):** the single fill shipped. Cream: `#8A5A14` at 70%.
 Dark, layered module: the module's layer tone at full. Dark, pre-layer

@@ -55,10 +55,10 @@ export function CalloutNote({
     >
       {card ? (
         <div
-          className={`rounded-[14px] border-l-[3px] border-gold px-5 py-4 ${
+          className={`rounded-[14px] border-l-[3px] border-lilac px-5 py-4 ${
             dark
               ? "bg-cream/5"
-              : "border border-l-[3px] border-subtle border-l-gold bg-cream-light shadow-lift"
+              : "border border-l-[3px] border-subtle border-l-lilac bg-cream-light shadow-lift"
           }`}
         >
           <p
