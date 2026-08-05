@@ -19,11 +19,11 @@ export function ColumnsSlide({
       </h1>
 
       <div
-        className={`grid gap-y-8 ${
+        className={`grid gap-y-4 md:gap-y-8 ${
           four ? "md:grid-cols-2" : "md:grid-cols-3"
         } ${
           slide.columns.some((c) => c.bullets)
-            ? "my-auto gap-x-6 py-10 lg:gap-x-8"
+            ? "my-auto gap-x-6 py-5 md:py-10 lg:gap-x-8"
             : "mt-10 gap-x-10"
         }`}
       >
@@ -31,9 +31,9 @@ export function ColumnsSlide({
           col.bullets ? (
             <div
               key={col.num}
-              className="beat flex flex-col rounded-3xl border border-t-[3px] border-subtle border-t-stone bg-cream-light px-7 py-7 shadow-lift"
+              className="beat flex flex-col rounded-3xl border border-t-[3px] border-subtle border-t-stone bg-cream-light px-5 py-5 shadow-lift md:px-7 md:py-7"
             >
-              <div className="flex items-baseline gap-3 border-b border-subtle pb-4">
+              <div className="flex items-baseline gap-3 border-b border-subtle pb-3 md:pb-4">
                 <span className="text-[11px] font-bold tracking-chrome text-gold">
                   {col.num}
                 </span>
@@ -41,11 +41,11 @@ export function ColumnsSlide({
                   {col.title}
                 </span>
               </div>
-              <ul className="ring-list mt-5 space-y-4">
+              <ul className="ring-list mt-4 space-y-3 md:mt-5 md:space-y-4">
                 {col.bullets.map((b) => (
                   <li
                     key={b}
-                    className="text-[16px] leading-relaxed text-body"
+                    className="text-[15px] leading-relaxed text-body md:text-[16px]"
                   >
                     <Rich text={b} />
                   </li>

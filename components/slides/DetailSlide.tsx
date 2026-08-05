@@ -17,11 +17,11 @@ export function DetailSlide({
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="my-auto grid gap-x-6 gap-y-7 py-9 md:grid-cols-3 lg:gap-x-8">
+      <div className="my-auto grid gap-x-6 gap-y-4 py-5 md:grid-cols-3 md:gap-y-7 md:py-9 lg:gap-x-8">
         {slide.cols.slice(0, revealed).map((col) => (
           <div
             key={col.label}
-            className="beat rounded-3xl border border-t-[3px] border-subtle border-t-stone bg-cream-light px-6 py-6 shadow-lift"
+            className="beat rounded-3xl border border-t-[3px] border-subtle border-t-stone bg-cream-light px-5 py-5 shadow-lift md:px-6 md:py-6"
           >
             <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
               {col.label}

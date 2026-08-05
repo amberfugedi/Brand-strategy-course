@@ -51,39 +51,64 @@ export function CalloutNote({
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute bottom-28 right-[4.5vw] z-20 transition-all duration-500 ${
-        card ? "max-w-[300px] sm:max-w-[380px]" : "max-w-[240px] text-right sm:max-w-[280px]"
+      className={`pointer-events-none absolute z-20 transition-all duration-500 ${
+        // Phones: a solid full-width strip above the footer, so the
+        // phrase never tangles with slide content. Larger screens:
+        // the floating margin note or example card, bottom-right.
+        "inset-x-4 bottom-[5.25rem] sm:inset-x-auto sm:bottom-28 sm:right-[4.5vw]"
+      } ${
+        card ? "sm:max-w-[380px]" : "sm:max-w-[280px] sm:text-right"
       } ${shown ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}
     >
-      {card ? (
-        <div
-          className={`flex items-center gap-3.5 rounded-[14px] border-l-[3px] border-lilac px-5 py-4 ${
-            dark
-              ? "bg-cream/5"
-              : "border border-l-[3px] border-subtle border-l-lilac bg-cream-light shadow-lift"
+      {/* phone rendering: always a solid card */}
+      <div
+        className={`flex items-center gap-3 rounded-[14px] border-l-[3px] border-lilac px-4 py-3 sm:hidden ${
+          dark
+            ? "bg-[#312836] shadow-lift"
+            : "border border-l-[3px] border-subtle border-l-lilac bg-cream-light shadow-lift"
+        }`}
+      >
+        {entry?.who ? <PersonaAvatar name={entry.who} size={30} /> : null}
+        <p
+          className={`font-serif text-[14px] italic leading-snug ${
+            dark ? "text-cream" : "text-body"
           }`}
         >
-          {entry?.who ? <PersonaAvatar name={entry.who} size={36} /> : null}
-          <p
-            className={`font-serif text-[16px] italic leading-relaxed sm:text-[17px] ${
-              dark ? "text-cream" : "text-body"
+          {entry?.text}
+        </p>
+      </div>
+      {/* larger screens */}
+      <div className="hidden sm:block">
+        {card ? (
+          <div
+            className={`flex items-center gap-3.5 rounded-[14px] border-l-[3px] border-lilac px-5 py-4 ${
+              dark
+                ? "bg-cream/5"
+                : "border border-l-[3px] border-subtle border-l-lilac bg-cream-light shadow-lift"
             }`}
           >
-            {entry?.text}
-          </p>
-        </div>
-      ) : (
-        <>
-          <div className="ml-auto h-px w-9 bg-gold" />
-          <p
-            className={`mt-3 font-serif text-[20px] italic leading-snug sm:text-[22px] ${
-              dark ? "text-cream" : "text-body"
-            }`}
-          >
-            {entry?.text}
-          </p>
-        </>
-      )}
+            {entry?.who ? <PersonaAvatar name={entry.who} size={36} /> : null}
+            <p
+              className={`font-serif text-[17px] italic leading-relaxed ${
+                dark ? "text-cream" : "text-body"
+              }`}
+            >
+              {entry?.text}
+            </p>
+          </div>
+        ) : (
+          <>
+            <div className="ml-auto h-px w-9 bg-gold" />
+            <p
+              className={`mt-3 font-serif text-[22px] italic leading-snug ${
+                dark ? "text-cream" : "text-body"
+              }`}
+            >
+              {entry?.text}
+            </p>
+          </>
+        )}
+      </div>
     </div>
   );
 }
