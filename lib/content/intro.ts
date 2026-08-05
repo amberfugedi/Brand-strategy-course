@@ -11,7 +11,7 @@ export const introSlides: Slide[] = [
     kind: "hero",
     id: "welcome",
     crumb: "COURSE INTRO",
-    tag: "01 OF 05",
+    tag: "01 OF 04",
     number: "i",
     audio: {
       src: "/audio/intro/intro-1.mp3",
@@ -35,7 +35,7 @@ export const introSlides: Slide[] = [
     kind: "system",
     id: "system",
     crumb: "COURSE INTRO",
-    tag: "02 OF 05",
+    tag: "02 OF 04",
     number: "ii",
     audio: {
       src: "/audio/intro/intro-2.mp3",
@@ -81,7 +81,7 @@ export const introSlides: Slide[] = [
     kind: "cardList",
     id: "tool",
     crumb: "COURSE INTRO",
-    tag: "03 OF 05",
+    tag: "03 OF 04",
     number: "iii",
     audio: { src: "/audio/intro/intro-3.mp3" },
     eyebrow: "Your working document",
@@ -104,12 +104,12 @@ export const introSlides: Slide[] = [
     kind: "rows",
     id: "arc",
     crumb: "COURSE INTRO",
-    tag: "04 OF 05",
+    tag: "04 OF 04",
     number: "iv",
     audio: {
       src: "/audio/intro/intro-4.mp3",
       // Module 1 · Module 2 · Modules 3-8 · Module 8's double work
-      cues: [4.6, 11.0, 20.6, 38.0],
+      cues: [4.6, 11.0, 20.6, 38.0, 54.2, 61.8, 67.2],
     },
     eyebrow: "What you'll do across the eight modules",
     heading: "How the course *runs*.",
@@ -131,25 +131,13 @@ export const introSlides: Slide[] = [
         text: "*Double work*. After teaching the last foundation, Module 8 closes the course: your Foundation Plan, the seven foundations sequenced to the hours you actually have.",
       },
     ],
-  },
-  {
-    kind: "prose",
-    id: "first-step",
-    crumb: "COURSE INTRO",
-    tag: "05 OF 05",
-    number: "v",
-    audio: {
-      src: "/audio/intro/intro-5.mp3",
-      // The quote · "The diagnostic uses it" · "Don't skip ahead"
-      cues: [0.3, 7.8, 13.2],
+    outro: {
+      quote:
+        "Everything that follows in this course depends on having a clear positioning statement.",
+      paragraphs: [
+        "The diagnostic, the audit, and every foundation module are *built around* it.",
+        "Don't skim Module 1. Do the work, and *meet me there*.",
+      ],
     },
-    eyebrow: "Your first step",
-    heading: "*Positioning*, first.",
-    quote:
-      "Everything that follows in this course depends on having a clear positioning statement.",
-    paragraphs: [
-      "The diagnostic, the audit, and every foundation module are *built around* it.",
-      "Don't skim Module 1. Do the work, and *meet me there*.",
-    ],
   },
 ];

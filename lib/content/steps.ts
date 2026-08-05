@@ -21,7 +21,10 @@ export function stepsOf(slide: Slide): number {
     case "examples":
       return slide.personas.length;
     case "rows":
-      return slide.rows.length;
+      return (
+        slide.rows.length +
+        (slide.outro ? 1 + slide.outro.paragraphs.length : 0)
+      );
     case "structure":
       return slide.rows.length;
     case "statements":

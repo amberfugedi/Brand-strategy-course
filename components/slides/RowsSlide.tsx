@@ -32,6 +32,26 @@ export function RowsSlide({
           </div>
         ))}
       </div>
+
+      {slide.outro && revealed > slide.rows.length ? (
+        <div className="beat mt-8 max-w-3xl border-l-[3px] border-gold pl-6">
+          <p className="text-[17px] leading-relaxed">
+            <Rich text={slide.outro.quote} />
+          </p>
+        </div>
+      ) : null}
+      {slide.outro
+        ? slide.outro.paragraphs.map((para, i) =>
+            revealed > slide.rows.length + 1 + i ? (
+              <p
+                key={i}
+                className="beat mt-4 max-w-3xl text-[16px] leading-relaxed text-body-secondary"
+              >
+                <Rich text={para} />
+              </p>
+            ) : null,
+          )
+        : null}
     </div>
   );
 }
