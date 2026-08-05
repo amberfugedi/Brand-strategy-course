@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getCourse } from "@/lib/content/courses";
 import { Rich } from "@/components/Rich";
 import { AuthCorner } from "@/components/auth/AuthCorner";
+import { MapArt } from "@/components/slides/MapArt";
 import { useAuth } from "@/lib/auth/provider";
 import { useCourseStore } from "@/lib/store/provider";
 
@@ -16,11 +17,17 @@ export function CourseHome({ courseId }: { courseId: string }) {
     ? `/${courseId}/${last.moduleId}/${last.slideIndex}`
     : `/${courseId}/intro/1`;
   const hasProgress = ready && last !== null;
+  // The buyer's Map, drawn with the lines their completed foundation
+  // modules have written (the modules unlock in order, so the count
+  // is sequential by construction).
+  const mapFilled = ["m1", "m3", "m4", "m5", "m6", "m7", "m8"].filter((id) =>
+    doc.progress.completedModules.includes(id),
+  ).length;
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-cream text-body surface-cream">
       <div aria-hidden className="aura aura-rose -bottom-[24vmin] -left-[20vmin]" />
-      <div className="mx-auto max-w-3xl px-6 py-16">
+      <div className="mx-auto max-w-3xl px-6 py-16 lg:max-w-5xl">
         <div className="flex items-center justify-between">
           <Link
             href="/"
@@ -34,6 +41,8 @@ export function CourseHome({ courseId }: { courseId: string }) {
           <AuthCorner />
         </div>
 
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr),340px] lg:items-center lg:gap-10">
+        <div>
         <div className="mt-10 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
           {course.ordinal}
         </div>
@@ -69,7 +78,13 @@ export function CourseHome({ courseId }: { courseId: string }) {
           </Link>
         </div>
 
-        <div className="mt-14 space-y-2">
+        </div>
+        <div aria-hidden className="hidden lg:block">
+          <MapArt filled={mapFilled} aura={false} />
+        </div>
+        </div>
+
+        <div className="mt-14 max-w-3xl space-y-2">
           {course.modules.map((mod) => {
             const completed = doc.progress.completedModules.includes(mod.id);
             const locked = Boolean(

@@ -145,6 +145,20 @@ h2 .accent-serif {
   border: 2.5px solid #8a5a14;
 }
 
+/* Keyboard focus is part of the brand: the courses accent as a
+   ring, resolving deep gold on cream and butter on dark. Only for
+   focus-visible, so pointer clicks stay quiet. Fields keep their own
+   focus border instead. */
+:focus-visible {
+  outline: 2px solid rgb(var(--gold));
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+textarea:focus-visible,
+input:focus-visible {
+  outline: none;
+}
+
 /* Input boxes sit at the compact radius. */
 .surface-cream textarea,
 .surface-cream input[type="text"],
