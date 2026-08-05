@@ -511,10 +511,15 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   );
 
   return (
-    <div className={`relative ${LAYER_OF[module.id] ?? ""}`}>
+    <div
+      className={`relative ${LAYER_OF[module.id] ?? ""} ${dark ? "progress-dark" : ""}`}
+    >
       <div
-        className="fixed left-0 top-0 z-30 h-[2px] bg-gold/70 transition-[width] duration-300"
-        style={{ width: `${progress}%` }}
+        className="fixed left-0 top-0 z-30 h-[2px] transition-[width] duration-300"
+        style={{
+          width: `${progress}%`,
+          background: "rgb(var(--progress) / var(--progress-alpha))",
+        }}
       />
       <SlideChrome
         surface={surface}

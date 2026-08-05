@@ -14,16 +14,39 @@
   --tone-chosen: 138 90 20;
   --tone-remembered: 138 90 20;
   --tone-muted: 92 84 75;
-  --accent-layer: 138 90 20;
 }
 .surface-dark {
-  --gold: 221 183 116;
+  --gold: 251 237 191;
   --tone-found: 218 137 112;
   --tone-chosen: 166 155 219;
   --tone-remembered: 221 183 116;
   --tone-muted: 154 144 152;
-  --accent-layer: 221 183 116;
 }
+/* Pre-layer modules (intro, positioning, the audit) carry no layer
+   color: their dark accent inverts value to cream, and their dark
+   progress fill is cream at 60%. Layer modules set the tone. */
+:root {
+  --accent-layer: 253 249 245;
+  --progress: 138 90 20;
+  --progress-alpha: 0.7;
+}
+.progress-dark {
+  --progress: 253 249 245;
+  --progress-alpha: 0.6;
+}
+.layer-found.progress-dark {
+  --progress: 218 137 112;
+  --progress-alpha: 1;
+}
+.layer-chosen.progress-dark {
+  --progress: 166 155 219;
+  --progress-alpha: 1;
+}
+.layer-remembered.progress-dark {
+  --progress: 221 183 116;
+  --progress-alpha: 1;
+}
+
 /* Which layer a module belongs to; set on the slide root. */
 .layer-found {
   --accent-layer: 218 137 112;
@@ -53,16 +76,26 @@
   background: linear-gradient(160deg, #312836 0%, #2e2633 55%, #29222e 100%);
 }
 
-/* The emphasis mark. On cream: the paper tab, butter variant, under
-   Newsreader italic. On dark the tab fails (cream on butter is about
-   1.3:1), so emphasis is the italic alone, in the layer tone. */
+/* The emphasis mark, headline-only. Body-copy emphasis carries
+   unmarked: no tab, no serif italic inside Manrope body copy. On
+   cream headlines: the paper tab, butter variant. On dark headlines
+   the tab fails (cream on butter is about 1.3:1), so emphasis is the
+   italic alone, in the layer tone, or cream on pre-layer modules. */
 .accent-serif {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+h1 .accent-serif,
+h2 .accent-serif {
   font-family: "Newsreader", Georgia, serif;
   font-style: italic;
   font-weight: 500;
   letter-spacing: -0.01em;
 }
-.surface-cream .accent-serif {
+.surface-cream :is(h1, h2) .accent-serif {
   --trb: 0.9deg;
   --trf: -0.45deg;
   position: relative;
@@ -72,7 +105,7 @@
   z-index: 0;
   color: theme("colors.ink.DEFAULT");
 }
-.surface-cream .accent-serif::before {
+.surface-cream :is(h1, h2) .accent-serif::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -81,7 +114,7 @@
   border-radius: 0.08em 0.13em 0.07em 0.11em / 0.1em 0.15em 0.09em 0.13em;
   transform: rotate(var(--trb));
 }
-.surface-cream .accent-serif::after {
+.surface-cream :is(h1, h2) .accent-serif::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -90,7 +123,7 @@
   border-radius: 0.11em 0.08em 0.13em 0.09em / 0.14em 0.1em 0.13em 0.11em;
   transform: rotate(var(--trf));
 }
-.surface-dark .accent-serif {
+.surface-dark :is(h1, h2) .accent-serif {
   color: rgb(var(--accent-layer));
 }
 
