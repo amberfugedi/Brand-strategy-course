@@ -26,11 +26,7 @@ export function CourseHome({ courseId }: { courseId: string }) {
             href="/"
             className="flex items-center gap-2.5 transition-opacity hover:opacity-70"
           >
-            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-gold/70">
-              <span className="font-serif italic text-[16px] leading-none text-gold">
-                A
-              </span>
-            </span>
+            <img src="/images/af-mark.png" alt="" className="h-7 w-7" />
             <span className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
               The course library
             </span>

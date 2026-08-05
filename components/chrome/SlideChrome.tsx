@@ -100,11 +100,8 @@ export function SlideChrome({
               href={homeHref}
               className={`flex shrink-0 items-center gap-2.5 ${homeLink}`}
             >
-              <span className="flex h-6 w-6 items-center justify-center rounded-full border border-gold/70">
-                <span className="font-serif italic text-[13px] leading-none text-gold">
-                  A
-                </span>
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/af-mark.png" alt="" className="h-6 w-6" />
               <span
                 className={`text-[11px] normal-case tracking-normal ${
                   controls ? "hidden md:inline" : ""
@@ -115,11 +112,8 @@ export function SlideChrome({
             </Link>
           ) : (
             <span className="flex shrink-0 items-center gap-2.5">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full border border-gold/70">
-                <span className="font-serif italic text-[13px] leading-none text-gold">
-                  A
-                </span>
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/af-mark.png" alt="" className="h-6 w-6" />
               <span
                 className={`text-[11px] normal-case tracking-normal ${
                   controls ? "hidden md:inline" : ""

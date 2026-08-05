@@ -24,11 +24,7 @@ export default function LibraryPage() {
       <header className="sticky top-0 z-20 border-b border-subtle bg-cream-light/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-5 py-3">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-gold/70">
-              <span className="font-serif italic text-[15px] leading-none text-gold">
-                A
-              </span>
-            </span>
+            <img src="/images/af-mark.png" alt="" className="h-7 w-7" />
             <span className="text-[12px] font-semibold tracking-tight">
               The course library
             </span>
@@ -153,11 +149,7 @@ export default function LibraryPage() {
       <footer className="border-t border-subtle">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-5 py-6">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-6 w-6 items-center justify-center rounded-full border border-gold/70">
-              <span className="font-serif italic text-[13px] leading-none text-gold">
-                A
-              </span>
-            </span>
+            <img src="/images/af-mark.png" alt="" className="h-6 w-6" />
             <span className="text-[11px] text-body-tertiary">
               Build Your Marketing Foundation
             </span>
