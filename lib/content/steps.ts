@@ -27,9 +27,7 @@ export function stepsOf(slide: Slide): number {
     case "statements":
       return slide.statements.length;
     case "system":
-      return (
-        slide.layers.length + (slide.base ? 1 : 0) + (slide.note ? 1 : 0)
-      );
+      return slide.layers.length + (slide.note ? 1 : 0);
     case "prose":
       return (slide.quote ? 1 : 0) + slide.paragraphs.length;
     case "cardList":

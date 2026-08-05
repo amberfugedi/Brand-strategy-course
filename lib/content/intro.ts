@@ -40,7 +40,7 @@ export const introSlides: Slide[] = [
     audio: {
       src: "/audio/intro/intro-2.mp3",
       // Layer 1 · Layer 2 · Layer 3 · positioning · "all seven"
-      cues: [7.9, 14.2, 19.4, 24.3, 44.4],
+      cues: [7.9, 14.2, 19.4, 44.4],
     },
     eyebrow: "The system this course teaches",
     heading: "Three layers. Seven *foundations*.",
