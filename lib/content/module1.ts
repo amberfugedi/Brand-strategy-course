@@ -54,7 +54,7 @@ export const module1Slides: Slide[] = [
       src: "/audio/m1/m1-2.mp3",
       // The questions land as the voice reads them; the positioning
       // panel builds through the back half while they hold the screen.
-      cues: [1.5, 2.7, 3.3, 4.9, 9.2, 29.9, 47.3],
+      cues: [1.5, 2.6, 3.7, 5.1, 9.2, 29.9, 47.3],
       callouts: [
         { text: "Not what you need first.", at: 23.3, until: 29.6 },
         { text: "A real instinct, worth following.", at: 61.9, until: 68.9 },
@@ -132,7 +132,8 @@ export const module1Slides: Slide[] = [
         { text: "The framework is the same. The answers are different.", at: 31.6, until: 37.9 },
       ],
     },
-    eyebrow: "How this module works · about 25 minutes",
+    eyebrow: "About 25 minutes",
+    heading: "How this module *works*.",
     rows: [
       { label: "Section 1", title: "The three questions", minutes: "5 min" },
       { label: "Section 2", title: "Who do you serve", minutes: "5 min" },
