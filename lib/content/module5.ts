@@ -178,6 +178,7 @@ export const module5Slides: Slide[] = [
         text: "Real reciprocity and staying in honest professional contact. A peer relationship is kept, not transacted: it stays warm because both people keep showing up.",
       },
     ],
+    footnote: "Staying in contact → an owned channel (Module 7).",
   },
 
   // 09 · Incentive vs acknowledgement

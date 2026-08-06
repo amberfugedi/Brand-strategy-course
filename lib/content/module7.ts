@@ -327,26 +327,73 @@ export const module7Slides: Slide[] = [
     ],
   },
 
-  // 17 · On size
+  // 17 · Borrowed, the other half
+  {
+    kind: "table",
+    id: "m7-borrowed-half",
+    crumb: S4,
+    tag: "CALIBRATION",
+    number: "17",
+    audio: { src: null },
+    heading: "Borrowed, the *other half*.",
+    leftLabel: "The business",
+    rightLabel: "Their borrowed presence, and why it still helps",
+    rows: [
+      {
+        name: "Maya",
+        meta: "therapist · ethics-regulated",
+        lead: "Professional profile + peers.",
+        text: "The directory profile and the peers who refer her. Ethics-limited: a credible place to be re-encountered, *not* a social feed.",
+      },
+      {
+        name: "Marcus",
+        meta: "pressure washer · local",
+        lead: "Local groups + the listing.",
+        text: "Local Facebook groups and his Google listing. His name resurfaces the moment a neighbor asks, without him posting a thing.",
+      },
+      {
+        name: "Lena",
+        meta: "wedding photographer · visual",
+        lead: "Instagram.",
+        text: "A past couple's friend scrolls, sees the work, and remembers her. The portfolio keeps circulating while she isn't reaching out.",
+      },
+      {
+        name: "James",
+        meta: "chiropractor · local",
+        lead: "Local community pages.",
+        text: "A former patient sees his name in a neighborhood thread and rebooks when something flares. Ambient presence does the reminding.",
+      },
+      {
+        name: "Sasha",
+        meta: "vivids stylist · audience-driven",
+        lead: "Instagram, where everything happens.",
+        text: "Prospects and past clients follow for months, then book. Her borrowed channel is strong enough to feed the owned one.",
+      },
+    ],
+    footnote:
+      "Owned is *intentional reach*: you choose when to show up. Borrowed is *ambient re-encounter*: it catches people when they aren't looking.",
+  },
+
+  // 18 · On size
   {
     kind: "principle",
     id: "m7-size",
     crumb: S4,
     tag: "THE TAKEAWAY",
-    number: "17",
+    number: "18",
     audio: { src: null },
     sans: true,
     headline: "Build the audience you can *answer*, not the one you can capture.",
     sub: "It is easy to collect more people than you can stay in honest contact with. That is not a head start, it is a debt: a room of people you promised something and went quiet on. The right size for an owned audience is set by the contact you can sustain, not the addresses you can gather. *A smaller audience you actually keep is the larger asset.*",
   },
 
-  // 18 · The smallest real version
+  // 19 · The smallest real version
   {
     kind: "framework",
     id: "m7-smallest",
     crumb: S5,
     tag: "FRAMEWORK",
-    number: "18",
+    number: "19",
     audio: { src: null },
     eyebrow: "If this feels like a lot",
     heading: "Start with the people you *already* have.",
@@ -356,13 +403,13 @@ export const module7Slides: Slide[] = [
     ],
   },
 
-  // 19 · The owned-audience plan
+  // 20 · The owned-audience plan
   {
     kind: "ownedAudience",
     id: "m7-tool",
     crumb: "MODULE 7 · CLOSING",
     tag: "TOOL",
-    number: "19",
+    number: "20",
     audio: { src: null },
     eyebrow: "Your turn",
     heading: "Plan your *channel.*",
@@ -372,13 +419,13 @@ export const module7Slides: Slide[] = [
     ],
   },
 
-  // 20 · Closing bridge
+  // 21 · Closing bridge
   {
     kind: "prose",
     id: "m7-bridge",
     crumb: "MODULE 7 · END",
     tag: "NEXT: AUTHORITY BUILDING",
-    number: "20",
+    number: "21",
     audio: { src: null },
     surface: "plum",
     mapFilled: 6,

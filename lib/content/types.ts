@@ -234,6 +234,8 @@ export interface DetailSlide extends SlideBase {
   eyebrow?: string;
   heading: string;
   cols: { label: string; text: string }[];
+  /** Small closing line under the columns, e.g. a cross-module pointer. */
+  footnote?: string;
 }
 
 /** Weak versus strong comparison, two cards side by side. */
@@ -253,6 +255,8 @@ export interface TableSlide extends SlideBase {
   leftLabel: string;
   rightLabel: string;
   rows: { name: string; meta: string; lead: string; text: string }[];
+  /** Small closing line under the rows, e.g. a definitional pair. */
+  footnote?: string;
 }
 
 /** Module 3: the landscape map of the five touchpoint zones. */

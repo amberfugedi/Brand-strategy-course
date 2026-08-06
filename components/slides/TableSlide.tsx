@@ -47,6 +47,12 @@ export function TableSlide({
             </p>
           </div>
         ))}
+
+        {slide.footnote && revealed >= slide.rows.length ? (
+          <p className="beat mt-5 max-w-4xl text-[14.5px] leading-relaxed text-body-secondary">
+            <Rich text={slide.footnote} />
+          </p>
+        ) : null}
       </div>
     </div>
   );

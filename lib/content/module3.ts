@@ -21,7 +21,13 @@ export const module3Slides: Slide[] = [
     crumb: "BUILD YOUR MARKETING FOUNDATION",
     tag: "MODULE 3 · GET FOUND",
     number: "01",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m3/m3-1.mp3",
+      callouts: [
+        { text: "A concept module, not a tactics module.", at: 4.4, until: 10.9 },
+        { text: "By the end: your primary touchpoints, marked on your foundation map.", at: 20.2, until: 28.5 },
+      ],
+    },
     surface: "plum",
     strata: 2,
     heading: "Get *found*.",
@@ -40,7 +46,7 @@ export const module3Slides: Slide[] = [
     crumb: S1,
     tag: "FRAME",
     number: "02",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-2.mp3" },
     eyebrow: "What it is, what it isn't",
     heading: "Not a website. *A system.*",
     sub: "Getting found isn't one thing you build. It's the set of places a prospect meets you when they go looking, online and, for many businesses, locally.",
@@ -53,7 +59,7 @@ export const module3Slides: Slide[] = [
     crumb: S1,
     tag: "FRAMEWORK",
     number: "03",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-3.mp3", cues: [0.5, 27.3] },
     heading: "Getting found is the sum of where you *show up* when someone looks.",
     paragraphs: [
       "A prospect has a need and goes looking. Your website is one place they might land. So is your Google listing. So is the Instagram post a friend sent them, the directory entry on a marketplace, the map result when they search nearby.",
@@ -68,7 +74,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "TOUCHPOINTS",
     number: "04",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-4.mp3" },
     heading: "Five touchpoints. *Five jobs.*",
     sub: "Each touchpoint answers a different question for the prospect. Knowing the questions is how you decide what each one needs to do.",
   },
@@ -80,7 +86,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "05",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-5.mp3", cues: [0.5, 6.5, 15.2, 21.5, 43.8] },
     eyebrow: "The five touchpoints",
     heading: "Five places, five *questions* answered.",
     cards: [
@@ -119,7 +125,13 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "MAP",
     number: "06",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m3/m3-6.mp3",
+      callouts: [
+        { text: "SEO lives inside your website. Your Google Business Profile is search & map.", at: 17.8, until: 26.5 },
+        { text: "Ads amplify a touchpoint. They don't create a new one.", at: 33.0, until: 41.0 },
+      ],
+    },
     eyebrow: "Where the words you've heard live",
     heading: "A map of *where you can get found*.",
     intro:
@@ -133,7 +145,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "TOUCHPOINT 01",
     number: "07",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-7.mp3", cues: [0.5, 30.4, 40.4] },
     eyebrow: "Your website",
     heading: "The *full* picture.",
     cols: [
@@ -159,7 +171,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "TOUCHPOINT 02",
     number: "08",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-8.mp3", cues: [0.5, 19.5, 30.2] },
     eyebrow: "Search & map listings",
     heading: "The *findable* you.",
     cols: [
@@ -185,7 +197,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "TOUCHPOINT 03",
     number: "09",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-9.mp3", cues: [0.5, 25.9, 35.2] },
     eyebrow: "Social platforms",
     heading: "The *ambient* you.",
     cols: [
@@ -211,7 +223,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "TOUCHPOINT 04",
     number: "10",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-10.mp3", cues: [0.5, 19.3, 33.8] },
     eyebrow: "Third-party listings",
     heading: "The *vouched-for* you.",
     cols: [
@@ -237,7 +249,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "TOUCHPOINT 05",
     number: "11",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-11.mp3", cues: [0.5, 39.4, 49.2] },
     eyebrow: "Online communities",
     heading: "The *in-the-room* you.",
     cols: [
@@ -263,7 +275,13 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "THE TAKEAWAY",
     number: "12",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m3/m3-12.mp3",
+      callouts: [
+        { text: "Not a sixth touchpoint. They read the same five.", at: 21.6, until: 28.2 },
+        { text: "Same name, same specialty, same location, wherever you show up.", at: 48.0, until: 54.8 },
+      ],
+    },
     sans: true,
     eyebrow: "Who else is reading",
     headline: "Your touchpoints aren't just being read by *people*.",
@@ -277,7 +295,7 @@ export const module3Slides: Slide[] = [
     crumb: S3,
     tag: "LOCAL",
     number: "13",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-13.mp3" },
     eyebrow: "For local businesses · skip if this isn't you",
     heading: "If your buyers are *local*.",
     sub: "The next three slides are for businesses whose clients are nearby: a service area, a city, a neighborhood. If you work remotely or sell nationally, skip ahead to the calibration section.",
@@ -291,7 +309,7 @@ export const module3Slides: Slide[] = [
     crumb: S3,
     tag: "FRAMEWORK",
     number: "14",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-14.mp3", cues: [0.5, 28.8, 47.6, 56.8] },
     eyebrow: "The local layer",
     heading: "Local presence is a *job*, not a touchpoint.",
     intro:
@@ -327,7 +345,7 @@ export const module3Slides: Slide[] = [
     crumb: S3,
     tag: "CALIBRATION",
     number: "15",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-15.mp3", cues: [0.5, 26.4] },
     eyebrow: "Weak vs. strong, on a Google Business Profile",
     heading: "What does *strong* local presence look like?",
     weak: {
@@ -347,7 +365,13 @@ export const module3Slides: Slide[] = [
     crumb: S3,
     tag: "THE TAKEAWAY",
     number: "16",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m3/m3-16.mp3",
+      callouts: [
+        { text: "Two businesses, the same distance from the person searching.", at: 12.4, until: 19.0 },
+        { text: "They pick the one they can verify at a glance. Every time.", at: 22.8, until: 29.5 },
+      ],
+    },
     sans: true,
     eyebrow: "The local pattern",
     headline: "Being nearby gets you *listed*. Being verifiable gets you chosen.",
@@ -361,7 +385,7 @@ export const module3Slides: Slide[] = [
     crumb: S3,
     tag: "CALIBRATION",
     number: "17",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-17.mp3" },
     eyebrow: "Not the same for everyone",
     heading: "What does *yours* need?",
     sub: "The audit already told you. This section makes the connection explicit.",
@@ -374,7 +398,7 @@ export const module3Slides: Slide[] = [
     crumb: S3,
     tag: "FRAMEWORK",
     number: "18",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-18.mp3", cues: [0.5, 21.9, 31.3, 37.9] },
     eyebrow: "Audit signals",
     heading: "Your audit answers *already* told you which touchpoints matter.",
     cards: [
@@ -410,7 +434,7 @@ export const module3Slides: Slide[] = [
     crumb: S3,
     tag: "WORKED EXAMPLE",
     number: "19",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-19.mp3", cues: [0.5, 7.7, 10.2, 12.2] },
     eyebrow: "Reading it together",
     heading: "Reading it together: *Maya*.",
     cards: [
@@ -446,7 +470,14 @@ export const module3Slides: Slide[] = [
     crumb: S4,
     tag: "CALIBRATION",
     number: "20",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m3/m3-20.mp3",
+      cues: [0.5, 37.1, 51.5, 65.8, 96.7],
+      callouts: [
+        { text: "Takes insurance? The carrier's directory. Private pay? Psychology Today.", at: 14.5, until: 22.5, card: true, who: "maya" },
+        { text: "“Anyone know a good chiropractor?” His name comes up before they go to Google.", at: 86.5, until: 95.0, card: true, who: "james" },
+      ],
+    },
     heading: "Same framework. *Different* answers.",
     leftLabel: "The business",
     rightLabel: "Primary touchpoint, why",
@@ -491,7 +522,7 @@ export const module3Slides: Slide[] = [
     crumb: S4,
     tag: "CALIBRATION",
     number: "21",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-21.mp3", cues: [0.5, 14.5, 30.5] },
     eyebrow: "One more case",
     heading: "The referral *exception*.",
     paragraphs: [
@@ -509,7 +540,14 @@ export const module3Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "22",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m3/m3-22.mp3",
+      callouts: [
+        { text: "Maya: directory. Marcus and James: search & map. Lena: website. Sasha: Instagram.", at: 6.8, until: 15.5 },
+        { text: "Lena's Instagram carries discovery. Her website carries decision.", at: 30.3, until: 37.5, card: true, who: "lena" },
+        { text: "Don't have most of these yet? That's fine. Build your primary first.", at: 57.2, until: 65.5 },
+      ],
+    },
     sans: true,
     headline: "Your primary touchpoint is *load-bearing*.",
     sub: "Whichever one it is, that's the touchpoint that carries the heaviest weight across the prospect's journey, even when secondaries assist. The other four can each do narrower jobs. Build the primary so it holds *everything* it has to. Let the others do less.",
@@ -522,7 +560,12 @@ export const module3Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "23",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m3/m3-23.mp3",
+      callouts: [
+        { text: "An Instagram with three posts from 2022 says something you didn't intend.", at: 11.7, until: 20.0 },
+      ],
+    },
     sans: true,
     headline: "More presence is not *better* presence.",
     sub: "Two touchpoints maintained well do more for your business than five touchpoints maintained badly. A neglected touchpoint signals worse than no touchpoint at all. *Match presence to capacity.*",
@@ -535,7 +578,7 @@ export const module3Slides: Slide[] = [
     crumb: S4,
     tag: "CALIBRATION",
     number: "24",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-24.mp3", cues: [0.5, 21.0] },
     eyebrow: "Weak vs. strong, on your primary touchpoint",
     heading: "What does *strong* look like?",
     weak: {
@@ -555,7 +598,13 @@ export const module3Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "25",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m3/m3-25.mp3",
+      callouts: [
+        { text: "Every client arrives through Google. Search matters more, no matter what you prefer.", at: 15.9, until: 23.5 },
+        { text: "Keep the channel you love as a secondary. The primary is buyer behavior.", at: 30.0, until: 37.5 },
+      ],
+    },
     sans: true,
     headline: "The buyer decides which touchpoint matters by *behavior*.",
     sub: "Not by your wish. Not by what you're best at producing. The audit's discovery channel question caught this. If clients find you through search, search matters more than the social channel you'd prefer to invest in. *Build where they are.*",
@@ -568,7 +617,7 @@ export const module3Slides: Slide[] = [
     crumb: "MODULE 3 · CLOSING",
     tag: "TOOL",
     number: "26",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-26.mp3" },
     eyebrow: "Your turn",
     heading: "Name your *primary*.",
     paragraphs: [
@@ -584,7 +633,7 @@ export const module3Slides: Slide[] = [
     crumb: "MODULE 3 · END",
     tag: "NEXT: EARNED PROOF",
     number: "27",
-    audio: { src: null },
+    audio: { src: "/audio/m3/m3-27.mp3", cues: [16.9] },
     surface: "plum",
     mapFilled: 2,
     eyebrow: "End of Module 3",

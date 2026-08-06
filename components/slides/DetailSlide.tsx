@@ -32,6 +32,12 @@ export function DetailSlide({
           </div>
         ))}
       </div>
+
+      {slide.footnote && revealed >= slide.cols.length ? (
+        <p className="beat mb-2 max-w-4xl text-[14.5px] leading-relaxed text-body-secondary">
+          <Rich text={slide.footnote} />
+        </p>
+      ) : null}
     </div>
   );
 }
