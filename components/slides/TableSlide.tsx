@@ -14,7 +14,7 @@ export function TableSlide({
       {slide.eyebrow ? (
         <div className="mb-3 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">{slide.eyebrow}</div>
       ) : null}
-      <h1 className="text-3xl font-bold tracking-tight text-aubergine md:text-5xl">
+      <h1 className="text-3xl font-bold tracking-tight text-aubergine md:text-5xl lg:text-6xl">
         <Rich text={slide.heading} />
       </h1>
 

@@ -33,7 +33,7 @@ export function AuthorityKindSlide({ slide }: { slide: AuthorityKindSlideDef }) 
       {slide.eyebrow ? (
         <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-teal">{slide.eyebrow}</div>
       ) : null}
-      <h1 className="text-4xl font-bold tracking-tight text-aubergine md:text-5xl">
+      <h1 className="text-3xl font-bold tracking-tight text-aubergine md:text-4xl">
         <Rich text={slide.heading} />
       </h1>
       <p className="mt-5 max-w-4xl text-[16px] leading-relaxed">

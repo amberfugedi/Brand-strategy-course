@@ -137,7 +137,9 @@ components follow them; violations are bugs.
 
 | Role | Phone | Desktop | Floor |
 |---|---|---|---|
-| Display headline | 30–36px | 48–60px | scales down via responsive classes, never fixed |
+| Teaching-slide headline (one ladder for every cream content slide) | 30px | 48px, 60px wide | scales via responsive classes, never fixed |
+| Display headline (heroes, questions, principles, dividers) | 36px | 48–60px | intentionally a step above teaching slides |
+| Tool-slide headline (diagnostic, audit, plan, foundation tools) | 30px | 36px | compact above interactive content |
 | Primary reading (paragraphs, bullets, panels) | 15–17px | 16–18px | **14px** |
 | Secondary reading (reveal notes, references, annotations) | 13.5–14.5px | 13.5–15px | **13.5px** |
 | Labels, eyebrows, chrome (Manrope 500, uppercase, 0.08em) | 10–11px | 10–11px | **10px** |

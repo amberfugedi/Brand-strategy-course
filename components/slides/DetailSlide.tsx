@@ -13,7 +13,7 @@ export function DetailSlide({
       {slide.eyebrow ? (
         <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-aubergine">{slide.eyebrow}</div>
       ) : null}
-      <h1 className="text-4xl font-bold tracking-tight text-aubergine md:text-6xl">
+      <h1 className="text-3xl font-bold tracking-tight text-aubergine md:text-5xl lg:text-6xl">
         <Rich text={slide.heading} />
       </h1>
 

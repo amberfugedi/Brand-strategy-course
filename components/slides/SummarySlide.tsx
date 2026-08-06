@@ -50,7 +50,7 @@ export function SummarySlide({ slide }: { slide: SummarySlideDef }) {
         <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-rust">{slide.eyebrow}</div>
       ) : null}
       <h1
-        className="enter text-4xl font-bold tracking-tight md:text-6xl"
+        className="enter text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl"
         style={{ "--n": 0 } as React.CSSProperties}
       >
         <Rich text={slide.heading} />
