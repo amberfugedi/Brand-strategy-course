@@ -513,7 +513,7 @@ export const module3Slides: Slide[] = [
     tag: "TOOL",
     number: "24",
     audio: { src: null },
-    eyebrow: "Now: name your touchpoints",
+    eyebrow: "Your turn",
     heading: "Name your *primary*.",
     paragraphs: [
       "Mark which of the five touchpoints applies to your business, then set the priority order. The first one is your primary.",

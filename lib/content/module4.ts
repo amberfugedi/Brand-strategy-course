@@ -359,7 +359,7 @@ export const module4Slides: Slide[] = [
     tag: "TOOL",
     number: "19",
     audio: { src: null },
-    eyebrow: "Now: take your inventory",
+    eyebrow: "Your turn",
     heading: "Map your *proof*.",
     paragraphs: [
       "Across the three sources, mark what you already have, what's gone stale, and what's missing. Then name the one source to build first.",

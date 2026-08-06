@@ -344,7 +344,7 @@ export const module8Slides: Slide[] = [
     tag: "TOOL · CAPSTONE",
     number: "18",
     audio: { src: null },
-    eyebrow: "Now: assemble your Foundation Plan",
+    eyebrow: "Your turn",
     heading: "Assemble your plan. *Sequence* the seven foundations.",
     paragraphs: [
       "The plan below has already gathered what you marked across the course: positioning, the audit, get found, earned proof, referrals, awareness, owned audience, and the authority you just named.",

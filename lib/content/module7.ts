@@ -252,7 +252,7 @@ export const module7Slides: Slide[] = [
     number: "14",
     audio: { src: null },
     eyebrow: "Keeping the channel",
-    heading: "The fear is \"what would I *send*?\"",
+    heading: "The fear is “what would I *send*?”",
     intro:
       "The moment you decide an owned audience is worth building, the next thought arrives: I do not know what I would send them. It is the realest objection in the module, and it has a plain answer.",
     cards: [
@@ -364,7 +364,7 @@ export const module7Slides: Slide[] = [
     tag: "TOOL",
     number: "19",
     audio: { src: null },
-    eyebrow: "Now: plan your channel",
+    eyebrow: "Your turn",
     heading: "Plan your *channel.*",
     paragraphs: [
       "You are making three decisions, and all three are sized to the capacity you actually have.",

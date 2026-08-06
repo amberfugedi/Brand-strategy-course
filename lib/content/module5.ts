@@ -377,7 +377,7 @@ export const module5Slides: Slide[] = [
     tag: "TOOL",
     number: "20",
     audio: { src: null },
-    eyebrow: "Now: map your loop",
+    eyebrow: "Your turn",
     heading: "Map your *loop.*",
     paragraphs: [
       "Pick one referral source you already have: a kind of client, or a particular peer. If referrals do not reach you yet, name the source you are building toward, and start at Earn.",

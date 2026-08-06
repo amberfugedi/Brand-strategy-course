@@ -365,7 +365,7 @@ export const module6Slides: Slide[] = [
     tag: "TOOL",
     number: "19",
     audio: { src: null },
-    eyebrow: "Now: plan your presence",
+    eyebrow: "Your turn",
     heading: "Name your *place.*",
     paragraphs: [
       "First, note how much weight awareness should carry for you, using the calibration as your guide. Then name the one place you will build presence in: the place your future clients already are, and check it against the three conditions.",
