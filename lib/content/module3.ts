@@ -399,15 +399,53 @@ export const module3Slides: Slide[] = [
         text: "Long pre-contact engagement means the website has time to do real work. Short engagement means the website needs to be quick.",
       },
     ],
+    footnote:
+      "Q03 (ethics) and Q04 (audience age) work differently: they *constrain* which touchpoints are available, they don't prioritize among them.",
   },
 
-  // 19 · Five businesses
+  // 19 · Reading it together: Maya
+  {
+    kind: "cards",
+    id: "m3-audit-signals-maya",
+    crumb: S3,
+    tag: "WORKED EXAMPLE",
+    number: "19",
+    audio: { src: null },
+    eyebrow: "Reading it together",
+    heading: "Reading it together: *Maya*.",
+    cards: [
+      {
+        label: "Discovery channel · Q01",
+        title: "Insurance referral + Psychology Today",
+        text: "Her clients arrive through a directory, either the insurer's or a private-pay listing. That names her primary.",
+      },
+      {
+        label: "Visual proof · Q02",
+        title: "No",
+        text: "Therapy isn't visible work. Website and social carry less weight for discovery.",
+      },
+      {
+        label: "Geographic scope · Q05",
+        title: "Local hybrid",
+        text: "In-person and telehealth. Search & map matters, but it isn't the lead.",
+      },
+      {
+        label: "Engagement length · Q06",
+        title: "Weeks of research",
+        text: "Prospects read and compare before reaching out. Whatever confirms her needs depth.",
+      },
+    ],
+    footnote:
+      "Four answers, one read: *third-party directory primary, website confirming*.",
+  },
+
+  // 20 · Five businesses
   {
     kind: "table",
     id: "m3-five-businesses",
     crumb: S4,
     tag: "CALIBRATION",
-    number: "19",
+    number: "20",
     audio: { src: null },
     heading: "Same framework. *Different* answers.",
     leftLabel: "The business",
@@ -446,39 +484,57 @@ export const module3Slides: Slide[] = [
     ],
   },
 
-  // 20 · Load-bearing principle
+  // 21 · The referral exception
+  {
+    kind: "framework",
+    id: "m3-referral-exception",
+    crumb: S4,
+    tag: "CALIBRATION",
+    number: "21",
+    audio: { src: null },
+    eyebrow: "One more case",
+    heading: "The referral *exception*.",
+    paragraphs: [
+      "For some businesses, discovery doesn't happen at a touchpoint at all. The name arrives by word of mouth, and the prospect goes looking to verify it.",
+      "The touchpoints still matter, but their job changes: *verification, not discovery*. The website and the reviews confirm a decision that's already forming.",
+    ],
+    callout:
+      "Same framework. Five different answers. *Yours will be a sixth.*",
+  },
+
+  // 22 · Load-bearing principle
   {
     kind: "principle",
     id: "m3-load-bearing",
     crumb: S4,
     tag: "THE TAKEAWAY",
-    number: "20",
+    number: "22",
     audio: { src: null },
     sans: true,
     headline: "Your primary touchpoint is *load-bearing*.",
     sub: "Whichever one it is, that's the touchpoint that carries the heaviest weight across the prospect's journey, even when secondaries assist. The other four can each do narrower jobs. Build the primary so it holds *everything* it has to. Let the others do less.",
   },
 
-  // 21 · On restraint
+  // 23 · On restraint
   {
     kind: "principle",
     id: "m3-restraint",
     crumb: S4,
     tag: "THE TAKEAWAY",
-    number: "21",
+    number: "23",
     audio: { src: null },
     sans: true,
     headline: "More presence is not *better* presence.",
     sub: "Two touchpoints maintained well do more for your business than five touchpoints maintained badly. A neglected touchpoint signals worse than no touchpoint at all. *Match presence to capacity.*",
   },
 
-  // 22 · Weak vs strong primary
+  // 24 · Weak vs strong primary
   {
     kind: "compare",
     id: "m3-strong-compare",
     crumb: S4,
     tag: "CALIBRATION",
-    number: "22",
+    number: "24",
     audio: { src: null },
     eyebrow: "Weak vs. strong, on your primary touchpoint",
     heading: "What does *strong* look like?",
@@ -492,26 +548,26 @@ export const module3Slides: Slide[] = [
     },
   },
 
-  // 23 · Buyer behavior principle
+  // 25 · Buyer behavior principle
   {
     kind: "principle",
     id: "m3-behavior",
     crumb: S4,
     tag: "THE TAKEAWAY",
-    number: "23",
+    number: "25",
     audio: { src: null },
     sans: true,
     headline: "The buyer decides which touchpoint matters by *behavior*.",
     sub: "Not by your wish. Not by what you're best at producing. The audit's discovery channel question caught this. If clients find you through search, search matters more than the social channel you'd prefer to invest in. *Build where they are.*",
   },
 
-  // 24 · The touchpoint priority builder
+  // 26 · The touchpoint priority builder
   {
     kind: "touchpoints",
     id: "m3-tool",
     crumb: "MODULE 3 · CLOSING",
     tag: "TOOL",
-    number: "24",
+    number: "26",
     audio: { src: null },
     eyebrow: "Your turn",
     heading: "Name your *primary*.",
@@ -521,13 +577,13 @@ export const module3Slides: Slide[] = [
     ],
   },
 
-  // 25 · Closing bridge
+  // 27 · Closing bridge
   {
     kind: "prose",
     id: "m3-bridge",
     crumb: "MODULE 3 · END",
     tag: "NEXT: EARNED PROOF",
-    number: "25",
+    number: "27",
     audio: { src: null },
     surface: "plum",
     mapFilled: 2,
