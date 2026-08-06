@@ -26,17 +26,17 @@ export function GuidedField({
   const dark = surface === "dark";
   return (
     <label className="block">
-      <span className="mb-1 flex items-baseline gap-2.5">
+      <span className="mb-1.5 block">
         <span
-          className={`text-[10px] font-bold uppercase tracking-eyebrow ${
-            dark ? "text-gold" : "text-body-secondary"
+          className={`block text-[11px] font-bold uppercase tracking-eyebrow ${
+            dark ? "text-gold" : "text-ink"
           }`}
         >
           {label}
         </span>
         {hint ? (
           <span
-            className={`text-[12.5px] ${
+            className={`mt-0.5 block text-[12.5px] leading-snug ${
               dark ? "text-on-dark-muted" : "text-body-tertiary"
             }`}
           >

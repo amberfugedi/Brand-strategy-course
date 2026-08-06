@@ -320,11 +320,12 @@ export interface FoundationPlanSlide extends SlideBase {
   paragraphs: string[];
 }
 
-/** Dark plum module-structure table. */
+/** Dark plum module-structure table. The heading is optional: when
+ *  the table says it all, the eyebrow alone carries the slide. */
 export interface StructureSlide extends SlideBase {
   kind: "structure";
   eyebrow?: string;
-  heading: string;
+  heading?: string;
   rows: { label: string; title: string; minutes: string }[];
 }
 

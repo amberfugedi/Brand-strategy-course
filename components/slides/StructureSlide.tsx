@@ -9,15 +9,16 @@ export function StructureSlide({
   revealed?: number;
 }) {
   return (
-    <div className="mt-4 flex flex-1 flex-col">
+    <div className="mt-4 flex flex-1 flex-col justify-center">
       {slide.eyebrow ? (
         <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-gold">{slide.eyebrow}</div>
       ) : null}
-      <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-        <Rich text={slide.heading} />
-      </h1>
-
-      <div className="mt-10 max-w-5xl">
+      {slide.heading ? (
+        <h1 className="text-3xl font-bold tracking-tight md:text-5xl">
+          <Rich text={slide.heading} />
+        </h1>
+      ) : null}
+      <div className={`${slide.heading ? "mt-10" : "mt-2"} max-w-5xl`}>
         {slide.rows.slice(0, revealed).map((row) => (
           <div
             key={row.label}

@@ -132,8 +132,7 @@ export const module1Slides: Slide[] = [
         { text: "The framework is the same. The answers are different.", at: 31.6, until: 37.9 },
       ],
     },
-    eyebrow: "How this module works",
-    heading: "Five sections. *Twenty-five minutes*.",
+    eyebrow: "How this module works · about 25 minutes",
     rows: [
       { label: "Section 1", title: "The three questions", minutes: "5 min" },
       { label: "Section 2", title: "Who do you serve", minutes: "5 min" },
@@ -329,8 +328,7 @@ export const module1Slides: Slide[] = [
     audio: { src: "/audio/m1/m1-10.mp3" },
     heading: "Write your *answer*.",
     promptLines: [
-      "A rough first pass, using the three-layer framework: situation, context, problem.",
-      "Give it the couple of real minutes it needs. *The course waits.*",
+      "A rough first pass. Give it a couple of real minutes. *The course waits.*",
     ],
     exercise: "serve",
     remember:
@@ -519,8 +517,7 @@ export const module1Slides: Slide[] = [
     audio: { src: "/audio/m1/m1-16.mp3" },
     heading: "Write your *answer*.",
     promptLines: [
-      "A rough first pass, using the three-layer framework: action, output, change.",
-      "Give it the couple of real minutes it needs. *The course waits.*",
+      "A rough first pass. Give it a couple of real minutes. *The course waits.*",
     ],
     exercise: "work",
     remember:
@@ -741,8 +738,8 @@ export const module1Slides: Slide[] = [
     audio: { src: "/audio/m1/m1-24.mp3" },
     heading: "Write your *differentiator*.",
     promptLines: [
-      "The hardest of the three. A rough first pass, using one or more of the four sources: approach, constraint, combination, position. Give it a few real minutes.",
-      "If you're stuck, ask the contrarian question: *what does my category do that I refuse to do?*",
+      "The hardest of the three. Pick a source below, then write.",
+      "Stuck? *What does my category do that I refuse to do?*",
     ],
     exercise: "different",
     remember:
