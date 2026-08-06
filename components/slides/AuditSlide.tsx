@@ -38,7 +38,7 @@ export function AuditSlide({ slide }: { slide: AuditSlideDef }) {
       </p>
 
       {!complete ? (
-        <p className="mt-8 font-serif text-[15px] italic text-body-tertiary">
+        <p className="mt-8 text-[15px] text-body-tertiary">
           The audit is tailored by your diagnostic. Answer the six questions
           first.
         </p>
@@ -71,7 +71,7 @@ export function AuditSlide({ slide }: { slide: AuditSlideDef }) {
                           <span className="text-[10px] font-bold uppercase tracking-eyebrow text-body-secondary">
                             {dim.title}
                           </span>
-                          <span className="font-serif text-[12.5px] italic text-body-tertiary">
+                          <span className="text-[12.5px] text-body-tertiary">
                             {dim.question}
                           </span>
                         </div>

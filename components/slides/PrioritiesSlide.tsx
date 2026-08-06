@@ -71,7 +71,7 @@ export function PrioritiesSlide({
                   <span className="text-[15px] font-semibold">
                     {p.foundation.name}
                   </span>
-                  <p className="font-serif text-[12.5px] italic leading-snug text-body-tertiary">
+                  <p className="text-[12.5px] leading-snug text-body-tertiary">
                     {p.reasons[0]}
                   </p>
                 </div>
@@ -79,7 +79,7 @@ export function PrioritiesSlide({
             ))}
           </div>
         ) : (
-          <p className="font-serif text-[15px] italic text-body-tertiary">
+          <p className="text-[15px] text-body-tertiary">
             Answer the six questions on the diagnostic slide first.
           </p>
         )}

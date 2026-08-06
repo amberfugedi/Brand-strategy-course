@@ -57,7 +57,7 @@ export const module3Slides: Slide[] = [
     heading: "Getting found is the sum of where you *show up* when someone looks.",
     paragraphs: [
       "A prospect has a need and goes looking. Your website is one place they might land. So is your Google listing. So is the Instagram post a friend sent them, the directory entry on a marketplace, the map result when they search nearby.",
-      "The strategic question isn't \"do I have a website.\" It's: which of these places does your business actually need to do well, and which can stay minimal? That's what this module works out.",
+      "The strategic question isn't “do I have a website.” It's: which of these places does your business actually need to do well, and which can stay minimal? That's what this module works out.",
     ],
   },
 
@@ -423,7 +423,7 @@ export const module3Slides: Slide[] = [
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Search & map.",
-        text: "Prospects find him by Googling \"pressure washing near me.\" He needs a strong Google Business Profile with reviews. The website is the second touchpoint, not the first.",
+        text: "Prospects find him by Googling “pressure washing near me.” He needs a strong Google Business Profile with reviews. The website is the second touchpoint, not the first.",
       },
       {
         name: "Lena",
@@ -435,7 +435,7 @@ export const module3Slides: Slide[] = [
         name: "James",
         meta: "chiropractor · local",
         lead: "Search & map.",
-        text: "Prospects search before they know his name. But local Facebook groups and NextDoor matter too. \"Anyone know a good chiropractor in [city]\" gets asked and answered there constantly. Community presence as a strong *second*.",
+        text: "Prospects search before they know his name. But local Facebook groups and NextDoor matter too. “Anyone know a good chiropractor in [city]” gets asked and answered there constantly. Community presence as a strong *second*.",
       },
       {
         name: "Sasha",

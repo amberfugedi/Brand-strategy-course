@@ -56,7 +56,7 @@ export function GapListSlide({
           Your Gap List
         </div>
         {!complete ? (
-          <p className="font-serif text-[15px] italic text-body-tertiary">
+          <p className="text-[15px] text-body-tertiary">
             The Gap List compiles from your diagnostic and audit. Do those
             first.
           </p>
@@ -80,7 +80,7 @@ export function GapListSlide({
               ))}
             </div>
             {unanswered > 0 ? (
-              <p className="mt-4 font-serif text-[13px] italic text-body-tertiary">
+              <p className="mt-4 text-[13px] text-body-tertiary">
                 {unanswered === 1
                   ? "One foundation is still unanswered in the audit."
                   : `${unanswered} foundations are still unanswered in the audit.`}

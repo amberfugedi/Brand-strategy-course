@@ -300,7 +300,7 @@ export const module2Slides: Slide[] = [
     paragraphs: [
       "It explains *why* that foundation landed where it did. It pulls from the specific answers you gave.",
       "Reading the reasoning is how you understand whether the diagnostic *got you right*.",
-      "If a reasoning line lands wrong (you read it and think \"that's not how my business works\"), that's a signal worth tracing.",
+      "If a reasoning line lands wrong (you read it and think “that's not how my business works”), that's a signal worth tracing.",
     ],
   },
 
@@ -406,7 +406,7 @@ export const module2Slides: Slide[] = [
         { text: "The natural impulse is to be a little generous.", at: 9.9, until: 16.6 },
         { text: "Generous ratings produce the wrong starting point.", at: 28.9, until: 35.3 },
         { text: "The audit is only as useful as it is honest.", at: 39.6, until: 43.1 },
-        { text: "\"I have a website, but it's on a free subdomain and hasn't been updated in three years.\"", at: 60.5, until: 68.5, card: true },
+        { text: "“I have a website, but it's on a free subdomain and hasn't been updated in three years.”", at: 60.5, until: 68.5, card: true },
         { text: "That second one is the truth. Pick it.", at: 68.8, until: 74.3 },
       ],
     },
@@ -616,7 +616,7 @@ export const module2Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "31",
     audio: { src: "/audio/m2/m2-31.mp3", cues: [4.7, 13.4, 27.1] },
-    eyebrow: "How long is \"first\"",
+    eyebrow: "How long is “first”",
     heading: "Thirty to ninety *days*.",
     paragraphs: [
       "Most foundations take 30 to 90 days of focused work to move from critical to solid. Not constant work, focused work in your five to ten weekly marketing hours.",

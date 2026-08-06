@@ -99,7 +99,7 @@ export function PresencePlanSlide({ slide }: { slide: PresencePlanSlideDef }) {
               );
             })}
           </div>
-          <p className="mt-2 font-serif text-[12.5px] italic leading-snug text-on-dark-muted">
+          <p className="mt-2 text-[12.5px] leading-snug text-on-dark-muted">
             If a condition does not hold, the place is wrong. Better to find
             that out here than after six months of effort.
           </p>

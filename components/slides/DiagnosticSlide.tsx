@@ -54,7 +54,7 @@ export function DiagnosticSlide({ slide }: { slide: DiagnosticSlideDef }) {
         ))}
       </div>
 
-      <p className="mt-6 font-serif text-[15px] italic text-body-tertiary">
+      <p className="mt-6 text-[15px] text-body-tertiary">
         {complete
           ? "All six answered. Your priority order is ready on the next slides."
           : "Answer all six. If you genuinely don't know, pick the option that says so."}

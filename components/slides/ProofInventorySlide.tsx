@@ -47,7 +47,7 @@ export function ProofInventorySlide({
               <span className="text-[16px] font-bold text-cream">
                 {source.label}
               </span>
-              <span className="font-serif text-[12.5px] italic text-on-dark-muted">
+              <span className="text-[12.5px] text-on-dark-muted">
                 {source.hint}
               </span>
             </div>

@@ -82,35 +82,35 @@ export const module1Slides: Slide[] = [
       cues: [5.8, 30.0, 49.1],
       // The example answers, flashing up as the voice quotes them.
       callouts: [
-        { text: "\"I serve small businesses.\"", at: 8.4, until: 9.7, card: true },
-        { text: "\"I help busy professionals.\"", at: 9.7, until: 11.8, card: true },
-        { text: "\"I work with anyone who needs my service.\"", at: 11.8, until: 16.0, card: true },
-        { text: "\"I care about quality.\"", at: 31.9, until: 33.5, card: true },
-        { text: "\"I take a personal approach.\"", at: 33.5, until: 35.2, card: true },
-        { text: "\"I have years of experience.\"", at: 35.2, until: 39.5, card: true },
-        { text: "\"I'm a marketing consultant.\"", at: 52.3, until: 54.0, card: true },
-        { text: "\"I'm a chiropractor.\"", at: 54.0, until: 57.5, card: true },
+        { text: "“I serve small businesses.”", at: 8.4, until: 9.7, card: true },
+        { text: "“I help busy professionals.”", at: 9.7, until: 11.8, card: true },
+        { text: "“I work with anyone who needs my service.”", at: 11.8, until: 16.0, card: true },
+        { text: "“I care about quality.”", at: 31.9, until: 33.5, card: true },
+        { text: "“I take a personal approach.”", at: 33.5, until: 35.2, card: true },
+        { text: "“I have years of experience.”", at: 35.2, until: 39.5, card: true },
+        { text: "“I'm a marketing consultant.”", at: 52.3, until: 54.0, card: true },
+        { text: "“I'm a chiropractor.”", at: 54.0, until: 57.5, card: true },
       ],
     },
     heading: "The patterns of *confusion*.",
     patterns: [
       {
         label: "Pattern 1",
-        quote: "\"Vagueness in the name of inclusivity.\"",
+        quote: "Vagueness in the name of inclusivity.",
         diagnosis:
           "A vague answer feels safe but does no work. The cost of being too vague is being chosen by no one.",
       },
       {
         label: "Pattern 2",
-        quote: "\"Generic differentiation.\"",
+        quote: "Generic differentiation.",
         diagnosis:
-          "\"I care about quality.\" If your competitor could put it on their website word-for-word, it's not a differentiator.",
+          "“I care about quality.” If your competitor could put it on their website word-for-word, it's not a differentiator.",
       },
       {
         label: "Pattern 3",
-        quote: "\"Describing yourself instead of your service.\"",
+        quote: "Describing yourself instead of your service.",
         diagnosis:
-          "\"I'm a chiropractor.\" That's a category. The service is what you actually do for a person.",
+          "“I'm a chiropractor.” That's a category. The service is what you actually do for a person.",
       },
     ],
   },
@@ -158,7 +158,7 @@ export const module1Slides: Slide[] = [
     panel: {
       eyebrow: "Not demographic. Operational.",
       paragraphs: [
-        "\"What age range and gender\" rarely changes a *marketing* decision.",
+        "“What age range and gender” rarely changes a *marketing* decision.",
         "The real question: *when I imagine the person I most want walking through my door, what's specifically true about them?*",
       ],
       callout:
@@ -178,13 +178,13 @@ export const module1Slides: Slide[] = [
     patterns: [
       {
         label: "Demographic-only",
-        quote: ["\"Women 35 to 55.\"", "\"Small business owners.\"", "\"Local homeowners.\""],
+        quote: ["“Women 35 to 55.”", "“Small business owners.”", "“Local homeowners.”"],
         diagnosis:
           "Describes a population, not a person. Every business in your category serves the same one.",
       },
       {
         label: "Needs-based without specificity",
-        quote: ["\"People who want quality work.\"", "\"People who care about results.\""],
+        quote: ["“People who want quality work.”", "“People who care about results.”"],
         diagnosis:
           "Universal. No customer says they want bad work. Naming the obvious isn't naming your audience.",
       },
@@ -265,7 +265,7 @@ export const module1Slides: Slide[] = [
         role: "therapist",
         meta: "Solo private practice",
         quote:
-          "\"High-functioning professionals, typically 30s to 50s in demanding careers, who are managing chronic anxiety and want a therapist who treats them as competent adults rather than fragile.\"",
+          "“High-functioning professionals, typically 30s to 50s in demanding careers, who are managing chronic anxiety and want a therapist who treats them as competent adults rather than fragile.”",
         note: "Situation, context, and the *problem under the problem*: they want to be treated as capable.",
       },
       {
@@ -273,7 +273,7 @@ export const module1Slides: Slide[] = [
         role: "pressure washer",
         meta: "Side hustle, 1 year in",
         quote:
-          "\"Homeowners who've owned their property at least three years and are starting to notice the buildup, but don't want to spend a Saturday on a ladder.\"",
+          "“Homeowners who've owned their property at least three years and are starting to notice the buildup, but don't want to spend a Saturday on a ladder.”",
         note: "The problem is *time, not money*. That framing differentiates from price-based competitors.",
       },
       {
@@ -281,7 +281,7 @@ export const module1Slides: Slide[] = [
         role: "photographer",
         meta: "18-25 weddings/year",
         quote:
-          "\"Couples planning weddings in the four-to-eight-thousand-dollar photography range, who want a documentary style and have already decided their wedding doesn't need to be picture-perfect to be worth photographing.\"",
+          "“Couples planning weddings in the four-to-eight-thousand-dollar photography range, who want a documentary style and have already decided their wedding doesn't need to be picture-perfect to be worth photographing.”",
         note: "Specific budget tier. Style preference. *A values position*: they self-select.",
       },
       {
@@ -289,7 +289,7 @@ export const module1Slides: Slide[] = [
         role: "chiropractor",
         meta: "18 months independent",
         quote:
-          "\"Adults who've had a recent injury or pain event and want to address it without a long-term care plan they didn't ask for.\"",
+          "“Adults who've had a recent injury or pain event and want to address it without a long-term care plan they didn't ask for.”",
         note: "The problem under the problem: *they don't want to be sold ongoing care*.",
       },
       {
@@ -297,7 +297,7 @@ export const module1Slides: Slide[] = [
         role: "vivids stylist",
         meta: "Solo studio, 4 years independent",
         quote:
-          "\"Women in their 20s and 30s who've been growing out their hair for a vivid transformation, who care about color theory and hair health, and who'll travel an hour or more to find a stylist they trust with fashion color.\"",
+          "“Women in their 20s and 30s who've been growing out their hair for a vivid transformation, who care about color theory and hair health, and who'll travel an hour or more to find a stylist they trust with fashion color.”",
         note: "Visual proof matters. Audience is specific. *They self-select on willingness to travel.*",
       },
     ],
@@ -390,19 +390,19 @@ export const module1Slides: Slide[] = [
     patterns: [
       {
         label: "Category-only",
-        quote: ["\"I'm a chiropractor.\"", "\"I do branding.\"", "\"I clean houses.\""],
+        quote: ["“I'm a chiropractor.”", "“I do branding.”", "“I clean houses.”"],
         diagnosis:
           "Accurate but inert. Tells the buyer what aisle of the marketplace you're in. Doesn't tell them what they're getting.",
       },
       {
         label: "Generic help statements",
-        quote: ["\"I help businesses grow.\"", "\"I help homeowners protect their investment.\""],
+        quote: ["“I help businesses grow.”", "“I help homeowners protect their investment.”"],
         diagnosis:
           "Substantive-sounding but empty. Every business in your category helps with the same general thing.",
       },
       {
         label: "Full-service language",
-        quote: "\"I do everything from X to Y to Z.\"",
+        quote: "“I do everything from X to Y to Z.”",
         diagnosis: "A price-sheet move, not a positioning move. The buyer doesn't need a menu.",
       },
     ],
@@ -459,35 +459,35 @@ export const module1Slides: Slide[] = [
         name: "Maya",
         role: "therapist",
         quote:
-          "\"Weekly fifty-minute sessions over three to twelve months, using cognitive behavioral methods adapted for high-performing professionals. Clients leave with tools and self-knowledge that doesn't require staying in therapy forever.\"",
+          "“Weekly fifty-minute sessions over three to twelve months, using cognitive behavioral methods adapted for high-performing professionals. Clients leave with tools and self-knowledge that doesn't require staying in therapy forever.”",
         note: "The change is positioned *against open-ended therapy*.",
       },
       {
         name: "Marcus",
         role: "pressure washer",
         quote:
-          "\"Cleaning exterior surfaces (siding, driveways, decks, fences) using commercial-grade equipment in a single visit, four to six hours on-site. The client walks out the next morning to a property that looks five years younger.\"",
+          "“Cleaning exterior surfaces (siding, driveways, decks, fences) using commercial-grade equipment in a single visit, four to six hours on-site. The client walks out the next morning to a property that looks five years younger.”",
         note: "Action specific. Output same-day. Change *visible and immediate*.",
       },
       {
         name: "Lena",
         role: "photographer",
         quote:
-          "\"Documenting wedding days from morning preparation through reception, in candid documentary style with minimal posing. Clients receive a complete edited gallery within six weeks, typically four to six hundred images.\"",
+          "“Documenting wedding days from morning preparation through reception, in candid documentary style with minimal posing. Clients receive a complete edited gallery within six weeks, typically four to six hundred images.”",
         note: "The change: *the wedding's actual story, preserved*.",
       },
       {
         name: "James",
         role: "chiropractor",
         quote:
-          "\"Assessing the source of the injury or pain in the first visit, then designing a treatment plan with a defined endpoint, usually six to twelve sessions. Patients leave with reduced pain and the strength to keep it from coming back.\"",
+          "“Assessing the source of the injury or pain in the first visit, then designing a treatment plan with a defined endpoint, usually six to twelve sessions. Patients leave with reduced pain and the strength to keep it from coming back.”",
         note: "Output is *finite*, not subscription. Change is durable.",
       },
       {
         name: "Sasha",
         role: "vivids stylist",
         quote:
-          "\"Color transformations using fashion colors (vivid reds, blues, pinks, neons) across single 6-to-10-hour sessions, with hair-health protocols that protect integrity through repeated processing. Clients walk out with the color they followed me on Instagram for, and the structural strength to maintain it.\"",
+          "“Color transformations using fashion colors (vivid reds, blues, pinks, neons) across single 6-to-10-hour sessions, with hair-health protocols that protect integrity through repeated processing. Clients walk out with the color they followed me on Instagram for, and the structural strength to maintain it.”",
         note: "The change: *vivid color without compromising the hair underneath*.",
       },
     ],
@@ -550,7 +550,7 @@ export const module1Slides: Slide[] = [
       // teaching arrives beneath it with the voice.
       cues: [0.3, 3.4, 3.6, 16.1, 42.7],
       callouts: [
-        { text: "\"I care more. I'm more thorough. I have higher standards.\"", at: 18.3, until: 25.8, card: true },
+        { text: "“I care more. I'm more thorough. I have higher standards.”", at: 18.3, until: 25.8, card: true },
         { text: "If your competitor could write your differentiator without changing a word, it's not a differentiator.", at: 26.0, until: 33.2 },
         { text: "An approach, constraint, or method a competitor genuinely does not operate with.", at: 33.6, until: 41.5 },
       ],
@@ -580,18 +580,18 @@ export const module1Slides: Slide[] = [
     patterns: [
       {
         label: "Quality claims",
-        quote: ["\"I care about quality.\"", "\"I take a personal approach.\"", "\"I have high standards.\""],
+        quote: ["“I care about quality.”", "“I take a personal approach.”", "“I have high standards.”"],
         diagnosis: "Baseline expectations, not differentiators. The customer assumes these.",
       },
       {
         label: "Credentials as differentiation",
-        quote: ["\"15 years of experience.\"", "\"Certified in X.\"", "\"Worked with hundreds of clients.\""],
+        quote: ["“15 years of experience.”", "“Certified in X.”", "“Worked with hundreds of clients.”"],
         diagnosis:
           "Credentials answer *should I trust you*, not *why should I choose you over someone else*.",
       },
       {
         label: "False uniqueness",
-        quote: ["\"I'm the only one who really understands my clients.\"", "\"Nobody does it like I do.\""],
+        quote: ["“I'm the only one who really understands my clients.”", "“Nobody does it like I do.”"],
         diagnosis:
           "Confidence with no evidence. The buyer can't verify it and shouldn't be expected to take it on faith.",
       },
@@ -612,7 +612,7 @@ export const module1Slides: Slide[] = [
       {
         num: "01",
         title: "Approach",
-        text: "A specific, named method or philosophy. *Not \"I'm thorough\" but a named way of working.*",
+        text: "A specific, named method or philosophy. *Not “I'm thorough” but a named way of working.*",
       },
       {
         num: "02",
@@ -646,36 +646,36 @@ export const module1Slides: Slide[] = [
         name: "Maya",
         role: "therapist",
         quote:
-          "\"Defined timeline with the explicit goal of ending therapy. Treats clients as competent adults who can handle directness, not fragile patients.\"",
+          "“Defined timeline with the explicit goal of ending therapy. Treats clients as competent adults who can handle directness, not fragile patients.”",
         note: "*Constraint* + *approach*. Both push against category defaults.",
       },
       {
         name: "Marcus",
         role: "pressure washer",
         quote:
-          "\"Shows up when he says he will. Completes the job in the window quoted. Doesn't upsell. The price you got is the price you pay.\"",
+          "“Shows up when he says he will. Completes the job in the window quoted. Doesn't upsell. The price you got is the price you pay.”",
         note: "A *position* against the most common complaints customers have about contractors.",
       },
       {
         name: "Lena",
         role: "photographer",
         quote:
-          "\"Documentary style only. Doesn't do extensive posing. 'If you want thirty staged photographs of the bridal party, I'm not the right photographer for you.'\"",
-        note: "*Constraint* + *position*. The \"I'm not the right one\" line is the strongest move.",
+          "“Documentary style only. Doesn't do extensive posing. 'If you want thirty staged photographs of the bridal party, I'm not the right photographer for you.'”",
+        note: "*Constraint* + *position*. The “I'm not the right one” line is the strongest move.",
       },
       {
         name: "James",
         role: "chiropractor",
         quote:
-          "\"Defined treatment plan with a stated endpoint. Doesn't sell ongoing care plans, monthly memberships, or maintenance subscriptions. When the work is done, you stop coming.\"",
+          "“Defined treatment plan with a stated endpoint. Doesn't sell ongoing care plans, monthly memberships, or maintenance subscriptions. When the work is done, you stop coming.”",
         note: "*Constraint* against the dominant business model in chiropractic care.",
       },
       {
         name: "Sasha",
         role: "vivids stylist",
         quote:
-          "\"Vivids only. No balayage, no foils, no special-occasion blowouts. Hair-health-first protocol, including the willingness to refuse a transformation if I think the hair can't sustain it without damage.\"",
-        note: "*Constraint* + *position*. The \"I'll refuse if it'll damage your hair\" is the strongest move.",
+          "“Vivids only. No balayage, no foils, no special-occasion blowouts. Hair-health-first protocol, including the willingness to refuse a transformation if I think the hair can't sustain it without damage.”",
+        note: "*Constraint* + *position*. The “I'll refuse if it'll damage your hair” is the strongest move.",
       },
     ],
   },
@@ -690,7 +690,7 @@ export const module1Slides: Slide[] = [
     audio: { src: "/audio/m1/m1-21.mp3" },
     eyebrow: "A common objection",
     headline: "If you're better, the work is to find what you're *specifically* better at.",
-    sub: "\"Better\" on its own is invisible. \"Better at producing X for Y kind of client\" is visible. *Most of the time, what you find is closer to different than to more of the same.*",
+    sub: "“Better” on its own is invisible. “Better at producing X for Y kind of client” is visible. *Most of the time, what you find is closer to different than to more of the same.*",
   },
 
   // 22 · The contrarian move
@@ -783,7 +783,7 @@ export const module1Slides: Slide[] = [
     eyebrow: "Pulling it together",
     heading: "Three answers. *One sentence*.",
     template:
-      "\"I serve *[who you serve]* who *[situation, context, problem]*. I *[the action, output, change]*. What makes me different is *[approach, constraint, combination, position]*.\"",
+      "“I serve *[who you serve]* who *[situation, context, problem]*. I *[the action, output, change]*. What makes me different is *[approach, constraint, combination, position]*.”",
     note: "The shape isn't sacred. You can rearrange the order, change the verbs, make it sound like you. *The substance is what matters.*",
   },
 
@@ -800,12 +800,12 @@ export const module1Slides: Slide[] = [
       {
         name: "Maya",
         role: "Therapist",
-        text: "\"I work with high-functioning professionals managing chronic anxiety while running demanding careers. I deliver therapy on a defined timeline using cognitive behavioral methods, with the explicit goal of giving clients tools they take with them, not extending the relationship indefinitely. What makes me different is that I treat my clients as competent adults rather than fragile patients.\"",
+        text: "“I work with high-functioning professionals managing chronic anxiety while running demanding careers. I deliver therapy on a defined timeline using cognitive behavioral methods, with the explicit goal of giving clients tools they take with them, not extending the relationship indefinitely. What makes me different is that I treat my clients as competent adults rather than fragile patients.”",
       },
       {
         name: "Marcus",
         role: "Pressure washer",
-        text: "\"I serve homeowners who've owned their property at least three years and are starting to notice the buildup but don't want to spend a Saturday on a ladder. I clean exterior surfaces with commercial-grade equipment in a single visit, and the price you got is the price you pay. What makes me different is that I show up when I say I will, complete the job in the window I quoted, and don't upsell during the visit.\"",
+        text: "“I serve homeowners who've owned their property at least three years and are starting to notice the buildup but don't want to spend a Saturday on a ladder. I clean exterior surfaces with commercial-grade equipment in a single visit, and the price you got is the price you pay. What makes me different is that I show up when I say I will, complete the job in the window I quoted, and don't upsell during the visit.”",
       },
     ],
   },
@@ -823,12 +823,12 @@ export const module1Slides: Slide[] = [
       {
         name: "Lena",
         role: "Photographer",
-        text: "\"I serve couples planning weddings in the four-to-eight-thousand-dollar photography range who want a documentary style. I document wedding days in a candid style with minimal posing and deliver a complete edited gallery within six weeks. What makes me different is that I shoot documentary, not staged. If you want thirty posed photographs of the bridal party, I'm not the right photographer for you.\"",
+        text: "“I serve couples planning weddings in the four-to-eight-thousand-dollar photography range who want a documentary style. I document wedding days in a candid style with minimal posing and deliver a complete edited gallery within six weeks. What makes me different is that I shoot documentary, not staged. If you want thirty posed photographs of the bridal party, I'm not the right photographer for you.”",
       },
       {
         name: "James",
         role: "Chiropractor",
-        text: "\"I work with adults who've had a recent injury or pain event and want to address it without being sold a long-term care plan they didn't ask for. I assess the source in the first visit and design a treatment plan with a defined endpoint, usually six to twelve sessions. What makes me different is that I don't sell ongoing care plans or maintenance subscriptions. When the work is done, you stop coming.\"",
+        text: "“I work with adults who've had a recent injury or pain event and want to address it without being sold a long-term care plan they didn't ask for. I assess the source in the first visit and design a treatment plan with a defined endpoint, usually six to twelve sessions. What makes me different is that I don't sell ongoing care plans or maintenance subscriptions. When the work is done, you stop coming.”",
       },
     ],
   },
@@ -847,7 +847,7 @@ export const module1Slides: Slide[] = [
       {
         name: "Sasha",
         role: "Vivids stylist",
-        text: "\"I serve women in their 20s and 30s who've been growing out their hair for a vivid transformation, who care about color theory and hair health. I do vivid color only: fashion colors across single 6-to-10-hour sessions, with hair-health protocols built in. What makes me different is that I'll refuse a transformation if I don't think the hair can sustain it. The color you see on my Instagram is the color you get, and the hair will still be hair when I'm done.\"",
+        text: "“I serve women in their 20s and 30s who've been growing out their hair for a vivid transformation, who care about color theory and hair health. I do vivid color only: fashion colors across single 6-to-10-hour sessions, with hair-health protocols built in. What makes me different is that I'll refuse a transformation if I don't think the hair can sustain it. The color you see on my Instagram is the color you get, and the hair will still be hair when I'm done.”",
       },
     ],
   },

@@ -12,7 +12,7 @@ function AnswerRef({ label, parts }: { label: string; parts: string[] }) {
         {label}
       </div>
       <p className="mt-1 text-[13.5px] leading-relaxed text-body-secondary">
-        {text || <em className="font-serif italic">Not written yet.</em>}
+        {text || <em className="italic">Not written yet.</em>}
       </p>
     </div>
   );

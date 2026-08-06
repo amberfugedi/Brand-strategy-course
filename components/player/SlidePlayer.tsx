@@ -566,7 +566,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       ) : null}
       {nudged && !inputComplete ? (
         <span
-          className={`min-w-0 truncate font-serif text-[12.5px] italic ${
+          className={`min-w-0 truncate text-[12.5px] ${
             dark ? "text-on-dark-muted" : "text-body-secondary"
           }`}
         >
@@ -574,7 +574,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
         </span>
       ) : skipArmed && narration.playing ? (
         <span
-          className={`min-w-0 truncate font-serif text-[12.5px] italic ${
+          className={`min-w-0 truncate text-[12.5px] ${
             dark ? "text-on-dark-muted" : "text-body-secondary"
           }`}
         >

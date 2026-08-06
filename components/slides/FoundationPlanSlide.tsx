@@ -146,7 +146,7 @@ export function FoundationPlanSlide({
             <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
               <div className="min-w-0">
                 <div className="text-[16px] font-bold text-cream">{f.name}</div>
-                <p className="mt-0.5 font-serif text-[12.5px] italic leading-snug text-on-dark-muted">
+                <p className="mt-0.5 text-[12.5px] leading-snug text-on-dark-muted">
                   {gathered[f.id]}
                 </p>
               </div>
@@ -173,7 +173,7 @@ export function FoundationPlanSlide({
             </div>
           </div>
         ))}
-        <p className="pt-1 font-serif text-[13px] italic text-on-dark-muted">
+        <p className="pt-1 text-[13px] text-on-dark-muted">
           {sorted === PLAN_FOUNDATIONS.length
             ? "All seven sorted. This is your Foundation Plan."
             : `${sorted} of ${PLAN_FOUNDATIONS.length} sorted. Later is allowed to be a long list.`}

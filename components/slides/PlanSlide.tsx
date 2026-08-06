@@ -123,7 +123,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
               <div className="mt-2 text-[16px] font-bold">
                 {startingPoint.foundation.name}
               </div>
-              <p className="mt-1 font-serif text-[13px] italic leading-relaxed text-body-secondary">
+              <p className="mt-1 text-[13px] leading-relaxed text-body-secondary">
                 {startingPoint.reasoning}
               </p>
             </>

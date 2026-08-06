@@ -68,7 +68,7 @@ export function ReferralMapSlide({ slide }: { slide: ReferralMapSlideDef }) {
                 <div className="text-[16px] font-bold text-cream">
                   {stage.label}
                 </div>
-                <p className="mt-0.5 font-serif text-[12.5px] italic leading-snug text-on-dark-muted">
+                <p className="mt-0.5 text-[12.5px] leading-snug text-on-dark-muted">
                   {stage.hint}
                 </p>
               </div>
