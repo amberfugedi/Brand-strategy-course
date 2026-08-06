@@ -54,10 +54,10 @@ export const module1Slides: Slide[] = [
       src: "/audio/m1/m1-2.mp3",
       // The questions land as the voice reads them; the positioning
       // panel builds through the back half while they hold the screen.
-      cues: [1.5, 2.6, 3.7, 5.1, 9.2, 29.9, 47.3],
+      cues: [1.3, 2.4, 2.9, 4.0, 6.2, 25.2, 40.8],
       callouts: [
-        { text: "Not what you need first.", at: 23.3, until: 29.6 },
-        { text: "A real instinct, worth following.", at: 61.9, until: 68.9 },
+        { text: "Not what you need first.", at: 19.1, until: 25.0 },
+        { text: "A real instinct, worth following.", at: 53.8, until: 60.5 },
       ],
     },
     pre: "The three questions.",
