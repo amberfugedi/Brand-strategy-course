@@ -10,6 +10,10 @@
 const WIDTHS = ["68%", "88%", "74%", "92%", "70%", "84%", "76%"];
 
 export function StrataEtch({ active }: { active?: number | "all" }) {
+  // The motif earns its place when one foundation glows against the
+  // rest. With every bar lit (the audit module) it reads as stripes,
+  // so those dividers stay clean.
+  if (active === "all") return null;
   return (
     <div
       aria-hidden
@@ -20,7 +24,7 @@ export function StrataEtch({ active }: { active?: number | "all" }) {
           // Bar 0 is positioning (foundation 1, the base); bars 1-6
           // are foundations 2-7. active names a foundation number.
           const isBase = i === 0;
-          const isActive = active === "all" || active === i + 1;
+          const isActive = active === i + 1;
           return (
             <div
               key={i}
