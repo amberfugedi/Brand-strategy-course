@@ -242,6 +242,7 @@ export const module2Slides: Slide[] = [
     },
     lines: ["Read your priority *order*."],
     post: "Before the audit.",
+    live: "priorities",
   },
 
   // 12 · Four tiers + the buyer's order
@@ -471,6 +472,7 @@ export const module2Slides: Slide[] = [
     },
     lines: ["Read your Gap *List*."],
     post: "Three tiers, sorted by priority.",
+    live: "gaps",
   },
 
   // 24 · Critical. Maintenance. Solid. + the buyer's list

@@ -142,6 +142,9 @@ export interface QuestionSlide extends SlideBase {
   pre?: string;
   lines: string[];
   post?: string;
+  /** Renders the buyer's own Module 2 output on a slide that asks them
+   *  to read it, so the instruction and the thing are on one screen. */
+  live?: "priorities" | "gaps";
   panel?: {
     eyebrow: string;
     sub?: string;

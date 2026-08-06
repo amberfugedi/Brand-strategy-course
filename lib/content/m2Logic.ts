@@ -219,7 +219,7 @@ export function computePriorities(
       tier: tierOf(score),
       reasons: rs.length
         ? rs
-        : ["No answer pushed this up or down. Acceptable is enough here."],
+        : ["Nothing in your answers pushed this up or down."],
     };
   });
 

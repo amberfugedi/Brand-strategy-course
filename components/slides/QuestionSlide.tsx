@@ -1,6 +1,7 @@
 import { QuestionSlide as QuestionSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
 import { StrataEtch } from "@/components/slides/StrataEtch";
+import { GapListView, PriorityOrderList } from "@/components/course/LivePlan";
 
 export function QuestionSlide({
   slide,
@@ -33,7 +34,7 @@ export function QuestionSlide({
           <h1
             key={i}
             className={`beat max-w-3xl text-balance font-normal leading-snug tracking-tight ${
-              slide.panel
+              slide.panel || slide.live
                 ? "text-3xl md:text-4xl"
                 : "text-4xl md:text-5xl"
             }`}
@@ -43,7 +44,23 @@ export function QuestionSlide({
         ))}
       </div>
       {slide.post && revealed > slide.lines.length ? (
-        <p className="beat mt-8 text-[17px] text-gold/80">{slide.post}</p>
+        <p
+          className={`beat text-[17px] text-gold/80 ${slide.live ? "mt-5" : "mt-8"}`}
+        >
+          {slide.post}
+        </p>
+      ) : null}
+      {/* The buyer's own answer, on the slide that tells them to read
+          it. Scrolls within the slide on short screens rather than
+          pushing the question off the top. */}
+      {slide.live && revealed > slide.lines.length ? (
+        <div className="beat -mr-2 mt-7 max-h-[46vh] max-w-4xl overflow-y-auto pr-2">
+          {slide.live === "priorities" ? (
+            <PriorityOrderList dark />
+          ) : (
+            <GapListView dark />
+          )}
+        </div>
       ) : null}
       {slide.panel && revealed > panelAt ? (
         <div className="beat mt-9 max-w-3xl border-l-[3px] border-gold bg-cream/5 px-7 py-6">

@@ -45,6 +45,7 @@ import { useAuth } from "@/lib/auth/provider";
 import { useNarration } from "@/components/player/NarrationProvider";
 import { CaptionBar } from "@/components/player/CaptionBar";
 import { CalloutNote } from "@/components/player/CalloutNote";
+import { ReferenceTray } from "@/components/player/ReferenceTray";
 import { NarrationClock } from "@/components/player/NarrationClock";
 import { SignInGate } from "@/components/auth/SignInGate";
 import { stepsOf } from "@/lib/content/steps";
@@ -433,6 +434,15 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       module.slides.length) *
     100;
 
+  // Module 2 hands over a priority order and a Gap List, then keeps
+  // referring to both; the foundation modules refer to them too. From
+  // the reading slide that first asks for the order onward, they are
+  // reachable from the chrome rather than only on the slide that
+  // rendered them.
+  const carriesPlan =
+    (module.id === "m2" && slideIndex >= 11) ||
+    ["m3", "m4", "m5", "m6", "m7", "m8"].includes(module.id);
+
   // Phone navigation lives at the top of the slide (the footer is
   // crowded by the player controls and the browser's own bottom bar)
   // as generous pill targets; larger screens keep the footer pair.
@@ -613,6 +623,10 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       {slide.audio.callouts?.length ? (
         <CalloutNote callouts={slide.audio.callouts} dark={dark} />
       ) : null}
+      {/* The priority order and Gap List stay one tab away from every
+          slide that refers to them, from the moment Module 2 produces
+          them through the foundation modules that use them. */}
+      {carriesPlan ? <ReferenceTray courseId={courseId} dark={dark} /> : null}
     </div>
   );
 }

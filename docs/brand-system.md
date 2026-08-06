@@ -187,6 +187,21 @@ For accessibility, **text stays at full opacity; only the border ramps**
 (full, 60%, 25%, and a near-empty ring for not applicable). No
 traffic-light greens or reds.
 
+**One renderer, four places.** The priority order and the Gap List are
+rendered by `components/course/LivePlan.tsx` wherever they appear: the
+reading slide that asks for them, the framework slide that explains the
+tiers, and the reference drawer. Rows are hairline cards with a rounded
+tier pill, two columns on a slide and one in the drawer. Reasoning lines
+show on the reading slide, where they are the teaching point, and are
+suppressed everywhere else so the list does not repeat itself.
+
+**A slide that names an output must show it.** If narration tells the
+buyer to read something they produced, that thing belongs on the same
+screen. The reference drawer (a paper tab on the right edge, opening a
+cream panel) carries both outputs to every later slide that refers to
+them, and links back to the diagnostic and the audit so an answer that
+did not land can be changed at the source.
+
 ## 8. App chrome
 
 Course home, sign-in, gates, the host panel, captions, and narration
