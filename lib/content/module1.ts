@@ -24,7 +24,14 @@ export const module1Slides: Slide[] = [
     crumb: "",
     tag: "",
     number: "01",
-    audio: { src: "/audio/m1/m1-1.mp3" },
+    audio: {
+      src: "/audio/m1/m1-1.mp3",
+      // The divider, then the module intro plays over the title.
+      callouts: [
+        { text: "If you don't have working answers, every decision downstream gets harder.", at: 26.3, until: 33.3 },
+        { text: "First in order, not first in importance.", at: 37.3, until: 41.7 },
+      ],
+    },
     surface: "plum",
     strata: 1,
     heading: "Your *positioning*.",
@@ -45,16 +52,12 @@ export const module1Slides: Slide[] = [
     number: "02",
     audio: {
       src: "/audio/m1/m1-2.mp3",
-      // The questions land as the intro names them ("who you're
-      // talking to, what you're offering, what makes you the right
-      // choice"); the positioning panel builds through the back half
-      // while the questions hold the screen.
-      cues: [14.9, 16.0, 17.4, 43.2, 47.5, 68.2, 85.6],
+      // The questions land as the voice reads them; the positioning
+      // panel builds through the back half while they hold the screen.
+      cues: [1.5, 2.7, 3.3, 4.9, 9.2, 29.9, 47.3],
       callouts: [
-        { text: "If you don't have working answers, every decision downstream gets harder.", at: 22.5, until: 29.5 },
-        { text: "First in order, not first in importance.", at: 33.9, until: 40.5 },
-        { text: "Not what you need first.", at: 61.6, until: 67.9 },
-        { text: "A real instinct, worth following.", at: 100.2, until: 107.2 },
+        { text: "Not what you need first.", at: 23.3, until: 29.6 },
+        { text: "A real instinct, worth following.", at: 61.9, until: 68.9 },
       ],
     },
     pre: "The three questions.",
