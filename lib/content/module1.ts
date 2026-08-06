@@ -881,7 +881,6 @@ export const module1Slides: Slide[] = [
     tag: "TOOL",
     number: "31",
     audio: { src: "/audio/m1/m1-31.mp3" },
-    eyebrow: "Your framework, saved",
     heading: "Your positioning *framework*.",
     paragraphs: [
       "This is where the rest of the course will reference it. Module 2's diagnostic uses it as context. Modules 3 through 8 reference it when you build your foundation strategies.",
