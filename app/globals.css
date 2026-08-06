@@ -217,6 +217,27 @@ input:focus-visible {
   }
 }
 
+/* The advice cloud drifts around the head: small, slow, and out of
+   sync, so the words read as noise rather than as a diagram. The
+   centring translate lives in the keyframe because the animation
+   owns the transform. */
+@keyframes buzz {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translate(0, 0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(var(--dx, 0), var(--dy, 0));
+  }
+}
+
+.buzz {
+  transform: translate(-50%, -50%);
+  animation-name: buzz;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .beat,
   .enter,
@@ -224,6 +245,13 @@ input:focus-visible {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+
+  /* The cloud keeps its arrangement and its lighting; only the drift
+     stops, so the graphic still tells the story without moving. */
+  .buzz {
+    animation: none;
+    transform: translate(-50%, -50%);
   }
 }
 

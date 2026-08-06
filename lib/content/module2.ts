@@ -58,6 +58,22 @@ export const module2Slides: Slide[] = [
       "It does not tell you whether it applies to *your* business.",
       "This module tailors the question to your business *first*.",
     ],
+    // The tactics the voice reels off, lighting as each is named and
+    // quieting when the first paragraph lands at 19.9s.
+    art: {
+      kind: "adviceCloud",
+      words: [
+        { text: "Email list", at: 11.5 },
+        { text: "Instagram", at: 13.8 },
+        { text: "Reviews", at: 15.0 },
+        { text: "Podcast", at: 16.4 },
+        { text: "Ads", at: 17.2 },
+        { text: "LinkedIn posts", at: 8.7 },
+        { text: "YouTube videos", at: 7.4 },
+        { text: "Courses", at: 6.5 },
+      ],
+      settle: 19.9,
+    },
   },
 
   // 03 · The shape of the work

@@ -162,6 +162,16 @@ export interface FrameworkSlide extends SlideBase {
   sub?: string;
   paragraphs: string[];
   callout?: string;
+  /** An illustration beside the prose. The advice cloud lights each
+   *  word as the narration says it, so its words carry timings. */
+  art?: {
+    kind: "adviceCloud";
+    words: { text: string; at: number }[];
+    /** Time at which the noise quiets and the prose takes the slide. */
+    settle?: number;
+    /** An illustrated head. Falls back to the drawn one when absent. */
+    image?: string;
+  };
 }
 
 /** Weak-pattern calibration: label + quote visible, diagnosis revealed
