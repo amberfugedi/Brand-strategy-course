@@ -19,7 +19,13 @@ export const module4Slides: Slide[] = [
     crumb: "BUILD YOUR MARKETING FOUNDATION",
     tag: "MODULE 4 · EARNED PROOF",
     number: "01",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-1.mp3",
+      callouts: [
+        { text: "Not what you say there. What other people say there.", at: 13.0, until: 19.0 },
+        { text: "By the end: your proof inventory, and where the gaps are.", at: 19.9, until: 27.5 },
+      ],
+    },
     surface: "plum",
     strata: 3,
     heading: "Earned *proof*.",
@@ -38,7 +44,13 @@ export const module4Slides: Slide[] = [
     crumb: S1,
     tag: "FRAME",
     number: "02",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-2.mp3",
+      callouts: [
+        { text: "So you don't ask. The work was good, the client was happy, and the proof never gets created.", at: 18.5, until: 26.5 },
+        { text: "That feeling is normal. It's based on a misunderstanding we're about to clear up.", at: 32.0, until: 36.9 },
+      ],
+    },
     heading: "Asking for proof feels like *begging*.",
     sub: "It doesn't have to. But the discomfort is real, and it's worth naming before we go anywhere else.",
   },
@@ -50,7 +62,7 @@ export const module4Slides: Slide[] = [
     crumb: S1,
     tag: "FRAMEWORK",
     number: "03",
-    audio: { src: null },
+    audio: { src: "/audio/m4/m4-3.mp3", cues: [0.5, 16.0] },
     heading: "You can't *author* your own credibility.",
     paragraphs: [
       "A prospect hears your claims about yourself and quietly discounts them. Everyone does. You would too. It isn't distrust of you specifically. It's how people read anyone selling anything.",
@@ -65,7 +77,7 @@ export const module4Slides: Slide[] = [
     crumb: S2,
     tag: "SOURCES",
     number: "04",
-    audio: { src: null },
+    audio: { src: "/audio/m4/m4-4.mp3" },
     heading: "Proof comes from *three places*.",
     sub: "Each one is a different voice vouching for you. Each one answers a different question in the prospect's head.",
   },
@@ -77,7 +89,7 @@ export const module4Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "05",
-    audio: { src: null },
+    audio: { src: "/audio/m4/m4-5.mp3", cues: [0.5, 17.4, 29.9] },
     eyebrow: "The three sources of earned proof",
     heading: "Three voices, three *questions* answered.",
     cards: [
@@ -108,7 +120,14 @@ export const module4Slides: Slide[] = [
     crumb: S2,
     tag: "SOURCE 01",
     number: "06",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-6.mp3",
+      cues: [0.5, 16.9, 52.3],
+      callouts: [
+        { text: "Recency matters here more than anywhere. A recent review says you're still good now.", at: 28.0, until: 35.3 },
+        { text: "Handling a hard review well, publicly, builds more trust than the praise does.", at: 43.4, until: 51.0 },
+      ],
+    },
     eyebrow: "Client proof",
     heading: "Your clients *vouch.*",
     cols: [
@@ -134,7 +153,15 @@ export const module4Slides: Slide[] = [
     crumb: S2,
     tag: "SOURCE 02",
     number: "07",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-7.mp3",
+      cues: [0.5, 43.0, 59.8],
+      callouts: [
+        { text: "A doctor referring patients. A wedding planner recommending the photographer.", at: 18.8, until: 25.8 },
+        { text: "They're staking their own credibility on you being good.", at: 28.8, until: 36.5 },
+        { text: "Referrals as proof here. The system that produces them is Module 5.", at: 70.0, until: 78.0 },
+      ],
+    },
     eyebrow: "Peer proof",
     heading: "Other professionals *vouch.*",
     cols: [
@@ -160,7 +187,7 @@ export const module4Slides: Slide[] = [
     crumb: S2,
     tag: "SOURCE 03",
     number: "08",
-    audio: { src: null },
+    audio: { src: "/audio/m4/m4-8.mp3", cues: [0.5, 17.5, 34.1] },
     eyebrow: "Institutional proof",
     heading: "An outside body *vouches.*",
     cols: [
@@ -186,7 +213,14 @@ export const module4Slides: Slide[] = [
     crumb: S3,
     tag: "THE TAKEAWAY",
     number: "09",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-9.mp3",
+      callouts: [
+        { text: "Fake reviews. Traded testimonials. Referral rings. Paid awards.", at: 9.9, until: 17.5 },
+        { text: "A prospect can usually tell. Eventually.", at: 34.5, until: 39.5 },
+        { text: "A loan against your reputation, at a terrible rate.", at: 40.5, until: 44.9 },
+      ],
+    },
     sans: true,
     headline: "Earned proof reflects something real. Manufactured proof *simulates* it.",
     sub: "Fake reviews. Testimonials traded for discounts. Referral rings with no real judgment behind them. Awards you paid to receive. They all borrow the look of proof without the thing it is supposed to evidence. A prospect can usually tell, eventually. And the cost of being caught is *the credibility you were trying to build.*",
@@ -199,7 +233,14 @@ export const module4Slides: Slide[] = [
     crumb: S3,
     tag: "THE TAKEAWAY",
     number: "10",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-10.mp3",
+      callouts: [
+        { text: "They're glad, and life moved on. Nobody writes an unprompted review three weeks later.", at: 13.0, until: 21.0 },
+        { text: "If the work was good, asking is a small, ordinary thing.", at: 28.5, until: 35.0 },
+        { text: "With peers it's ordinary reciprocity. A connection that helps their clients.", at: 43.0, until: 51.5 },
+      ],
+    },
     sans: true,
     headline: "Asking isn't taking. It's *offering* a way to say something.",
     sub: "A client who is genuinely glad they hired you often wants to say so and has no natural occasion to. Asking gives them the occasion. You're not extracting a favor. You're handing someone *a door they were already standing near.* And with peers, asking is plain professional reciprocity, the ordinary traffic of people who respect each other's work.",
@@ -212,7 +253,7 @@ export const module4Slides: Slide[] = [
     crumb: S3,
     tag: "CALIBRATION",
     number: "11",
-    audio: { src: null },
+    audio: { src: "/audio/m4/m4-11.mp3" },
     eyebrow: "Not the same for everyone",
     heading: "Which proof is *yours?*",
     sub: "Three sources. Most businesses lean on one. Your audit answers point to which.",
@@ -225,7 +266,14 @@ export const module4Slides: Slide[] = [
     crumb: S3,
     tag: "CALIBRATION",
     number: "12",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-12.mp3",
+      cues: [0.5, 36.6, 57.7, 73.7, 87.2],
+      callouts: [
+        { text: "Ethics closes client reviews. Her proof comes from the other two sources.", at: 13.5, until: 21.5, card: true, who: "maya" },
+        { text: "The source most people build first is the one she mostly can't use.", at: 29.5, until: 36.0, card: true, who: "maya" },
+      ],
+    },
     heading: "Same framework. *Different* answers.",
     leftLabel: "The business",
     rightLabel: "Primary proof, why",
@@ -270,7 +318,13 @@ export const module4Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "13",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-13.mp3",
+      callouts: [
+        { text: "A review from last month is worth more than the same review from 2020.", at: 21.0, until: 28.0 },
+        { text: "In the inventory: look for stale proof, not just missing proof.", at: 38.5, until: 46.2 },
+      ],
+    },
     sans: true,
     headline: "Proof *ages.*",
     sub: "A testimonial from four years ago raises a question it doesn't answer: what about since? Client proof ages fastest, because recency is itself a signal. Peer proof ages more slowly, though a referral relationship gone quiet is a weakening one. Institutional proof ages slowest. Earned proof is not a thing you build once. *It's a thing you keep current.*",
@@ -283,7 +337,13 @@ export const module4Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "14",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-14.mp3",
+      callouts: [
+        { text: "Forty generic reviews do less than six specific ones.", at: 9.5, until: 16.0 },
+        { text: "Does it answer the doubt actually in their head?", at: 22.5, until: 29.5 },
+      ],
+    },
     sans: true,
     headline: "More proof is not *better* proof.",
     sub: "Forty thin reviews do less than six specific ones. A wall of logos does less than one case study a prospect can see themselves in. The question is never how much proof you can pile up. It's whether the proof you show answers the doubt a prospect actually has. *Match the proof to the question.*",
@@ -296,7 +356,14 @@ export const module4Slides: Slide[] = [
     crumb: S4,
     tag: "CALIBRATION",
     number: "15",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-15.mp3",
+      cues: [0.5, 24.6],
+      callouts: [
+        { text: "The prospect in the same situation sees themselves. That's what proof is for.", at: 41.0, until: 47.5 },
+        { text: "The strong one didn't cost more. It came from asking better.", at: 49.0, until: 56.5 },
+      ],
+    },
     eyebrow: "Weak vs. strong, on a single testimonial",
     heading: "What does *strong* proof look like?",
     weak: {
@@ -316,7 +383,13 @@ export const module4Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "16",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-16.mp3",
+      callouts: [
+        { text: "A testimonial in a document on your desktop is a note to yourself.", at: 11.0, until: 18.0 },
+        { text: "Module 3 told you where. This module tells you what goes there.", at: 29.0, until: 34.5 },
+      ],
+    },
     sans: true,
     headline: "Proof in a folder does *nothing.*",
     sub: "Earned proof only works where a prospect meets it. It belongs on your primary touchpoint, the one you named in Module 3, at the moment a prospect is deciding. A testimonial saved but never shown is not proof. It's a note to yourself. *Build the proof, then put it where the doubt is.*",
@@ -329,7 +402,13 @@ export const module4Slides: Slide[] = [
     crumb: S4,
     tag: "FRAMEWORK",
     number: "17",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-17.mp3",
+      cues: [0.5, 23.5],
+      callouts: [
+        { text: "No full apparatus by Friday. One good piece, then the next.", at: 38.8, until: 43.2 },
+      ],
+    },
     eyebrow: "If you're starting with little",
     heading: "Thin proof is a *starting point*, not a failure.",
     paragraphs: [
@@ -345,7 +424,13 @@ export const module4Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "18",
-    audio: { src: null },
+    audio: {
+      src: "/audio/m4/m4-18.mp3",
+      callouts: [
+        { text: "A review read at midnight. A referral over coffee. A credential checked in a ten-second search.", at: 15.5, until: 23.5 },
+        { text: "It survives your absence. It works in rooms you'll never be in.", at: 26.5, until: 33.5 },
+      ],
+    },
     sans: true,
     headline: "A prospect believes what they can *verify* without you in the room.",
     sub: "Everything you say about yourself is heard with you present, and discounted accordingly. Earned proof is checked when you're not there: a review read at midnight, a referral given over coffee, a credential confirmed in a search. *That's exactly why it works. It survives your absence.*",
@@ -358,7 +443,7 @@ export const module4Slides: Slide[] = [
     crumb: "MODULE 4 · CLOSING",
     tag: "TOOL",
     number: "19",
-    audio: { src: null },
+    audio: { src: "/audio/m4/m4-19.mp3" },
     eyebrow: "Your turn",
     heading: "Map your *proof*.",
     paragraphs: [
@@ -374,7 +459,7 @@ export const module4Slides: Slide[] = [
     crumb: "MODULE 4 · END",
     tag: "NEXT: REFERRAL SYSTEM",
     number: "20",
-    audio: { src: null },
+    audio: { src: "/audio/m4/m4-20.mp3", cues: [24.9] },
     surface: "plum",
     mapFilled: 3,
     eyebrow: "End of Module 4",
