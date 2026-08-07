@@ -78,7 +78,7 @@ function Card({
 }) {
   return (
     <div
-      className={`rounded-[14px] border px-4 py-3 ${
+      className={`rounded-[14px] border px-3.5 py-2 sm:px-4 sm:py-3 ${
         dark
           ? "border-cream/15 bg-cream/5"
           : "border-subtle bg-cream-light shadow-lift"
@@ -119,7 +119,7 @@ export function PriorityOrderList({
   }
   const priorities = computePriorities(diagnostic);
   return (
-    <div className={`grid gap-3 ${cols === 2 ? "sm:grid-cols-2" : ""}`}>
+    <div className={`grid gap-2 sm:gap-3 ${cols === 2 ? "sm:grid-cols-2" : ""}`}>
       {priorities.map((p) => (
         <Card key={p.foundation.id} dark={dark}>
           <div className="flex items-center gap-2.5">
@@ -128,7 +128,7 @@ export function PriorityOrderList({
               ink={dark ? TIER_INK_DARK[p.tier] : TIER_INK[p.tier]}
             />
             <span
-              className={`text-[15px] font-semibold ${dark ? "text-on-dark" : ""}`}
+              className={`text-[14.5px] font-semibold sm:text-[15px] ${dark ? "text-on-dark" : ""}`}
             >
               {p.foundation.name}
             </span>
@@ -196,7 +196,7 @@ export function GapListView({
 
   return (
     <>
-      <div className={`grid gap-3 ${cols === 2 ? "sm:grid-cols-3" : ""}`}>
+      <div className={`grid gap-2 sm:gap-3 ${cols === 2 ? "sm:grid-cols-3" : ""}`}>
         {GAP_ORDER_UI.map((tier) => {
           const rows = answered
             .filter((g) => g.gap === tier)

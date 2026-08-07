@@ -136,7 +136,7 @@ export const module2Slides: Slide[] = [
     heading: "Not what kind of marketing you *want* to do.",
     paragraphs: [
       "But what kind of marketing your business *requires*.",
-      "A therapist serving older clients in a regulated profession requires different marketing than a wedding photographer serving twenty-somethings. Not because they want different things. Because their businesses *work* differently.",
+      "A therapist in a regulated profession needs different marketing than a wedding photographer. Not because they want different things. Because their businesses *work* differently.",
     ],
   },
 
@@ -319,7 +319,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     headline: "Two businesses can have the same critical gap and *different* starting points.",
-    sub: "A wedding photographer's website is high priority because that's where prospects evaluate her work. A pressure washer's website is medium priority because most clients found him through search results, not by visiting the site. *The same gap means different things in different contexts.*",
+    sub: "A photographer's website is where prospects judge the work. A pressure washer's is not: his clients came from search. *The same gap means different things in different contexts.*",
   },
 
   // 14 · The reasoning line
@@ -340,9 +340,9 @@ export const module2Slides: Slide[] = [
     heading: "Each foundation includes a short *reasoning* line.",
     bullets: true,
     paragraphs: [
-      "It explains *why* that foundation landed where it did. It pulls from the specific answers you gave.",
-      "Reading the reasoning is how you understand whether the diagnostic *got you right*.",
-      "If a reasoning line lands wrong (you read it and think “that's not how my business works”), that's a signal worth tracing.",
+      "*Why* that foundation landed where it did, pulled from your answers.",
+      "Reading it is how you tell whether the diagnostic *got you right*.",
+      "A line that lands wrong is a signal worth tracing.",
     ],
   },
 
@@ -366,8 +366,9 @@ export const module2Slides: Slide[] = [
     eyebrow: "If a priority feels off",
     heading: "Check your six answers *first*.",
     headingTo: 10,
+    bullets: true,
     paragraphs: [
-      "Most off-feeling priorities trace to one inaccurate answer. You answered question one with referrals because that felt right. If you actually thought about it, most clients have come through Google.",
+      "Most off-feeling priorities trace to one inaccurate answer. You said referrals because it felt right. Most clients actually came through Google.",
       "Adjust the answer if needed. The priority order will update. Re-read it.",
     ],
   },
@@ -381,7 +382,7 @@ export const module2Slides: Slide[] = [
     number: "16",
     audio: { src: "/audio/m2/m2-16.mp3" },
     headline: "Carry this *forward*.",
-    sub: "The priority order is not just a recommendation. The audit literally uses it to decide what to ask about and at what depth. *Your high-priority foundations are where the audit will spend the most time.*",
+    sub: "Not just a recommendation. The audit uses it to decide what to ask and how deeply. *Your high-priority foundations are where it spends the most time.*",
   },
 
   // 17 · Section 4 opener
@@ -417,9 +418,9 @@ export const module2Slides: Slide[] = [
     heading: "Not rate yourself. *Recognize* yourself.",
     bullets: true,
     paragraphs: [
-      "Most audits ask you to rate yourself on a scale. *How would you rate your website on a scale of one to ten.* Almost impossible to answer accurately.",
-      "This audit shows you scenarios. Each one describes a specific state. You read them and pick the one that matches your reality.",
-      "People are generous on abstract ratings. They're not as generous when picking between concrete scenarios. *Scenarios force more honest answers.*",
+      "Most audits ask you to rate yourself out of ten. *Almost impossible to answer honestly.*",
+      "This one shows you scenarios and asks which matches your reality.",
+      "People are generous on abstract ratings. Less so picking between concrete ones. *Scenarios force honest answers.*",
     ],
   },
 
@@ -434,10 +435,10 @@ export const module2Slides: Slide[] = [
     heading: "The audit varies *by priority*.",
     bullets: true,
     paragraphs: [
-      "*High priority*. Three dimensions: presence, quality, consistency. Does it exist. Does it work well. Are you sustaining it.",
+      "*High priority*. Three dimensions: does it exist, does it work, are you sustaining it.",
       "*Medium priority*. Two dimensions: presence and quality. No consistency question.",
       "*Low priority*. One acceptability question. Three scenarios, and you move on.",
-      "You spend depth where depth matters and skim through what does not.",
+      "Depth where depth matters. Skim the rest.",
     ],
   },
 
@@ -461,7 +462,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     headline: "Pick the scenario that matches what is *true today*.",
-    sub: "Not what you intended. Not what you'll have done by next quarter. *What exists right now, working today.* Generous ratings produce the wrong starting point. The audit is only as useful as it is honest.",
+    sub: "Not what you intended. Not what you'll have by next quarter. *What exists right now.* Generous ratings produce the wrong starting point. The audit is only as useful as it is honest.",
   },
 
   // 21 · Some questions will be locked
@@ -486,9 +487,9 @@ export const module2Slides: Slide[] = [
     heading: "Some questions will be *locked*.",
     bullets: true,
     paragraphs: [
-      "For your website, your Google Business Profile, your email list: if you pick the scenario that says *this does not exist*, the audit locks the next two dimensions.",
+      "Pick *this does not exist* and the audit locks the next two dimensions.",
       "You cannot rate the quality of a website you do not have.",
-      "The audit handles this gracefully. Mark it absent, and it auto-resolves as a critical gap. Move on.",
+      "Mark it absent. It resolves as a critical gap and you move on.",
     ],
   },
 
@@ -554,7 +555,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     headline: "Critical doesn't mean panic. It means *prioritize*.",
-    sub: "Most service businesses have multiple critical gaps when they first run this audit. That's normal. You're not failing. You're seeing what was always going to surface. *You'll fix them in order.*",
+    sub: "Most service businesses have several critical gaps the first time. That's normal. You're not failing. You're seeing what was always there. *You'll fix them in order.*",
   },
 
   // 26 · Solid doesn't mean ignore
@@ -575,7 +576,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     headline: "Solid doesn't mean ignore. It means *protect*.",
-    sub: "The foundations rated solid got there because of work you did before. That work is not permanent. Solid foundations drift without continued attention. *As you work through critical gaps, keep doing what's already working.*",
+    sub: "Solid took work you already did, and that work is not permanent. Solid foundations drift without continued attention. *Keep doing what's already working.*",
   },
 
   // 27 · You'll use the Gap List throughout
@@ -597,8 +598,9 @@ export const module2Slides: Slide[] = [
     },
     eyebrow: "This is your reference",
     heading: "You'll use the Gap List *throughout* the course.",
+    bullets: true,
     paragraphs: [
-      "Modules 3 through 8 go deeper on individual foundations: what each one is, how to think about it strategically.",
+      "Modules 3 to 8 go deep on one foundation each.",
       "The Gap List tells you which of those modules apply to you most urgently when you reach the build phase.",
     ],
   },
@@ -633,7 +635,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     headline: "You can't build five foundations in *parallel*.",
-    sub: "For most owners doing this, marketing gets five to ten hours a week. Whatever yours is, it doesn't multiply when spread across five workstreams. It divides. *Five half-built foundations is worse than one fully built one.* Sequence is the strategy.",
+    sub: "Whatever your weekly marketing hours are, they don't multiply across five workstreams. They divide. *Five half-built foundations is worse than one fully built one.* Sequence is the strategy.",
   },
 
   // 30 · Not a license to abandon
@@ -657,9 +659,9 @@ export const module2Slides: Slide[] = [
     heading: "A starting point isn't a *license* to abandon.",
     bullets: true,
     paragraphs: [
-      "It does not mean other gaps are unimportant. They are. They're just not the place to start.",
-      "It does not mean you stop serving existing clients. Your client work continues.",
-      "It does not mean abandoning what's already working. Solid foundations stay solid. *You're directing build energy at the place that needs it.*",
+      "Other gaps still matter. They're just not where you start.",
+      "Your client work continues as it is.",
+      "Solid foundations stay solid. *You're directing build energy where it's needed.*",
     ],
   },
 
@@ -675,8 +677,8 @@ export const module2Slides: Slide[] = [
     heading: "Thirty to ninety *days*.",
     bullets: true,
     paragraphs: [
-      "Most foundations take 30 to 90 days of focused work to move from critical to solid. Not constant work. Focused work, in the hours marketing actually gets.",
-      "A website rebuild: six to eight weeks. A claimed and built-out Google Business Profile: two to four weeks. An email list with a real opt-in and first sequence: six to twelve weeks.",
+      "Critical to solid takes 30 to 90 days of focused work, in the hours marketing actually gets.",
+      "A website rebuild, six to eight weeks. A Google Business Profile, two to four. An email list with a real opt-in, six to twelve.",
       "Not a sprint. The first chunk of meaningful work.",
     ],
   },
@@ -693,9 +695,9 @@ export const module2Slides: Slide[] = [
     heading: "Modules 3 through 8 teach the *foundations*.",
     bullets: true,
     paragraphs: [
-      "Each module goes deep on a specific foundation: what it is, what good looks like, how to think strategically about it.",
-      "If your starting point is getting found, the work starts immediately in Module 3. If it's authority building, you'll meet it in Module 8.",
-      "The modules run in order, each building on the last. The Gap List tells you where the building starts once you've seen all seven foundations.",
+      "Each module: what the foundation is, and what good looks like.",
+      "Getting found starts in Module 3. Authority building waits until Module 8.",
+      "They run in order. The Gap List tells you where building starts.",
     ],
   },
 
@@ -719,7 +721,7 @@ export const module2Slides: Slide[] = [
     },
     eyebrow: "What this audit is for",
     headline: "A starting point for your *build*. Not a license to skip foundations.",
-    sub: "Priority order tells you where to build first. It does not tell you what's worth understanding. *Every foundation in this course is a concept you need to think about. Even the ones you won't build yet.* Take all six foundation modules. Then come back to your priority order.",
+    sub: "Priority order tells you where to build first, not what's worth understanding. *Every foundation here is a concept you need, even the ones you won't build yet.* Take all six foundation modules.",
   },
 
   // 34 · The plan, compiled
@@ -734,7 +736,7 @@ export const module2Slides: Slide[] = [
     heading: "The *plan*.",
     paragraphs: [
       "Everything Module 2 produced, in one place: positioning, priority order, Gap List, starting point.",
-      "This is your reference document. The plan is what Module 2 actually *produced*. It saves automatically.",
+      "Your reference document. It saves *automatically*.",
     ],
   },
 
@@ -750,7 +752,7 @@ export const module2Slides: Slide[] = [
     heading: "A different *position*.",
     paragraphs: [
       "You started Module 2 with a positioning statement and an open question: *what do I focus on first.*",
-      "You're ending it with an answer: a priority order tailored to your business, a clear-eyed picture of where you stand, and a starting point with reasoning.",
+      "You're ending it with an answer: a priority order, a clear picture of where you stand, and a starting point with reasoning.",
       "Worth pausing to acknowledge.",
     ],
   },

@@ -20,7 +20,7 @@ export function GapListSlide({
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="my-auto py-6">
+      <div className="my-auto py-4 sm:py-6">
         <div className="max-w-4xl space-y-1.5">
           {slide.tiers.slice(0, revealed).map((t) => (
             <p key={t.label} className="beat text-[14.5px] leading-snug">
@@ -30,7 +30,7 @@ export function GapListSlide({
           ))}
         </div>
 
-        <div className="mt-7 border-t border-subtle pt-6">
+        <div className="mt-5 border-t border-subtle pt-4 sm:mt-7 sm:pt-6">
           <div className="mb-3 text-[10px] font-bold uppercase tracking-eyebrow text-body-secondary">
             Your Gap List
           </div>

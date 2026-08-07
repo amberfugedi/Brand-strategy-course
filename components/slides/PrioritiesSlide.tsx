@@ -20,8 +20,8 @@ export function PrioritiesSlide({
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="my-auto py-6">
-        <div className="grid max-w-5xl gap-x-10 gap-y-2 md:grid-cols-2">
+      <div className="my-auto py-4 sm:py-6">
+        <div className="grid max-w-5xl gap-x-10 gap-y-1.5 sm:gap-y-2 md:grid-cols-2">
           {slide.tiers.slice(0, revealed).map((t) => (
             <p key={t.label} className="beat text-[14.5px] leading-snug">
               <em className="accent-serif">{t.label}</em>
@@ -30,8 +30,8 @@ export function PrioritiesSlide({
           ))}
         </div>
 
-        <div className="mt-7 border-t border-subtle pt-6">
-          <div className="mb-3 text-[10px] font-bold uppercase tracking-eyebrow text-body-secondary">
+        <div className="mt-5 border-t border-subtle pt-4 sm:mt-7 sm:pt-6">
+          <div className="mb-2 text-[10px] sm:mb-3 font-bold uppercase tracking-eyebrow text-body-secondary">
             Your priority order
           </div>
           <div className="max-w-5xl">
