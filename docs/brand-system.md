@@ -202,6 +202,20 @@ cream panel) carries both outputs to every later slide that refers to
 them, and links back to the diagnostic and the audit so an answer that
 did not land can be changed at the source.
 
+### Spoken marks versus callouts (ruled)
+
+When the voice says a sentence **the slide already carries**, underline
+it: a gold rule draws under the words in place and retracts when the
+voice moves on (`audio.marks`). A floating callout is only for what the
+voice adds that the slide does **not** say (`audio.callouts`). A callout
+that repeats slide copy prints the same sentence twice and makes the
+reader read it again, which is the noise it was meant to avoid.
+
+Mark text must appear in that slide's copy. `scripts/verify-marks.py`
+asserts this and fails on a mark that matches nothing, so a typo cannot
+silently become a no-op. Marks may span an accent boundary and
+underline in one piece.
+
 ## 8. App chrome
 
 Course home, sign-in, gates, the host panel, captions, and narration

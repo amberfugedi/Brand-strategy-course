@@ -30,6 +30,12 @@ export interface SlideAudio {
    *  beat k + 1 appears, so cards land as the voice reaches them. The
    *  reveal timer takes over whenever the narration isn't playing. */
   cues?: number[];
+  /** Phrases the slide already carries, underlined while the voice
+   *  says them. Use a mark when the sentence is on the slide and a
+   *  callout only when the voice adds something the slide does not
+   *  say; a callout that repeats slide copy prints it twice. `text`
+   *  must appear in that slide's copy, accents included. */
+  marks?: { text: string; at: number; until: number }[];
   /** Spoken phrases surfaced while the voice says them: each fades
    *  in at `at` seconds and out at `until`. For lines worth seeing
    *  that aren't in the slide copy. `card` renders the phrase in a

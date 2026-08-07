@@ -46,6 +46,7 @@ import { useNarration } from "@/components/player/NarrationProvider";
 import { CaptionBar } from "@/components/player/CaptionBar";
 import { CalloutNote } from "@/components/player/CalloutNote";
 import { ReferenceTray } from "@/components/player/ReferenceTray";
+import { SpokenMarkProvider } from "@/components/player/SpokenMark";
 import { NarrationClock } from "@/components/player/NarrationClock";
 import { SignInGate } from "@/components/auth/SignInGate";
 import { stepsOf } from "@/lib/content/steps";
@@ -439,9 +440,18 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // the reading slide that first asks for the order onward, they are
   // reachable from the chrome rather than only on the slide that
   // rendered them.
+  // A slide that already prints the priority order or the Gap List
+  // does not also need the tab that opens them.
+  const showsPlanItself =
+    slide.kind === "priorities" ||
+    slide.kind === "gaplist" ||
+    slide.kind === "startingPoint" ||
+    slide.kind === "plan" ||
+    (slide.kind === "question" && Boolean(slide.live));
   const carriesPlan =
-    (module.id === "m2" && slideIndex >= 11) ||
-    ["m3", "m4", "m5", "m6", "m7", "m8"].includes(module.id);
+    !showsPlanItself &&
+    ((module.id === "m2" && slideIndex >= 11) ||
+      ["m3", "m4", "m5", "m6", "m7", "m8"].includes(module.id));
 
   // Phone navigation lives at the top of the slide (the footer is
   // crowded by the player controls and the browser's own bottom bar)
@@ -618,7 +628,9 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
         note={note}
         caption={<CaptionBar dark={dark} />}
       >
-        <SlideBody slide={slide} revealed={step} strata={STRATA_OF[module.id]} />
+        <SpokenMarkProvider marks={slide.audio.marks}>
+          <SlideBody slide={slide} revealed={step} strata={STRATA_OF[module.id]} />
+        </SpokenMarkProvider>
       </SlideChrome>
       {slide.audio.callouts?.length ? (
         <CalloutNote callouts={slide.audio.callouts} dark={dark} />

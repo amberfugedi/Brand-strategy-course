@@ -215,9 +215,11 @@ export const module4Slides: Slide[] = [
     number: "09",
     audio: {
       src: "/audio/m4/m4-9.mp3",
+      marks: [
+        { text: "A prospect can usually tell, eventually.", at: 34.5, until: 39.5 },
+      ],
       callouts: [
         { text: "Fake reviews. Traded testimonials. Referral rings. Paid awards.", at: 9.9, until: 17.5 },
-        { text: "A prospect can usually tell. Eventually.", at: 34.5, until: 39.5 },
         { text: "A loan against your reputation, at a terrible rate.", at: 40.5, until: 44.9 },
       ],
     },

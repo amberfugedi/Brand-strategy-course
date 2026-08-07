@@ -238,6 +238,23 @@ input:focus-visible {
   animation-iteration-count: infinite;
 }
 
+/* The spoken mark: a gold rule that draws under words the slide
+   already carries while the voice says them, then retracts. Cloned
+   decoration so a phrase that wraps underlines on every line. */
+.spoken {
+  background-image: linear-gradient(rgb(var(--gold)), rgb(var(--gold)));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  padding-bottom: 0.08em;
+  transition: background-size 0.45s ease-out;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.spoken-on {
+  background-size: 100% 2px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .beat,
   .enter,
@@ -252,6 +269,11 @@ input:focus-visible {
   .buzz {
     animation: none;
     transform: translate(-50%, -50%);
+  }
+
+  /* The mark still appears, it just does not draw. */
+  .spoken {
+    transition: none;
   }
 }
 
