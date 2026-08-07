@@ -73,9 +73,7 @@ export const module2Slides: Slide[] = [
         { text: "Courses", at: 6.5 },
       ],
       settle: 19.9,
-      scatter: 24.2,
-      focus: { text: "Instagram", at: 29.2 },
-      clear: 34.7,
+      clear: 25,
       image: "/images/advice-head.webp",
     },
   },
@@ -158,12 +156,12 @@ export const module2Slides: Slide[] = [
     },
     heading: "The six *questions*.",
     rows: [
-      { label: "Q01", text: "Where do clients find you?" },
-      { label: "Q02", text: "Does your work depend on visual proof?" },
-      { label: "Q03", text: "Are you in an ethics-restricted profession?" },
-      { label: "Q04", text: "How old is your audience?" },
-      { label: "Q05", text: "Local-only, hybrid, or remote?" },
-      { label: "Q06", text: "How long does a prospect engage with your work before reaching out?" },
+      { label: "Question 01", text: "Where do clients find you?" },
+      { label: "Question 02", text: "Does your work depend on visual proof?" },
+      { label: "Question 03", text: "Are you in an ethics-restricted profession?" },
+      { label: "Question 04", text: "How old is your audience?" },
+      { label: "Question 05", text: "Local-only, hybrid, or remote?" },
+      { label: "Question 06", text: "How long does a prospect engage with your work before reaching out?" },
     ],
   },
 
@@ -184,17 +182,17 @@ export const module2Slides: Slide[] = [
     heading: "What's true about your *business*.",
     cards: [
       {
-        label: "Q01",
+        label: "Question 01",
         title: "Discovery channel",
         text: "Where current clients first hear about you. The diagnostic anchors on what's already producing results. Not what you wish was working.",
       },
       {
-        label: "Q02",
+        label: "Question 02",
         title: "Visual proof",
         text: "Some businesses sell visible work. Others sell expertise and judgment. The diagnostic uses this to weight visual presence vs. credibility signals.",
       },
       {
-        label: "Q03",
+        label: "Question 03",
         title: "Ethics restrictions",
         text: "Therapists, attorneys, healthcare, financial advisors face professional rules that change the audit's weighting.",
       },
@@ -222,17 +220,17 @@ export const module2Slides: Slide[] = [
     heading: "What's true about your *audience* and how they decide.",
     cards: [
       {
-        label: "Q04",
+        label: "Question 04",
         title: "Audience age",
         text: "A 55+ audience lives less on social, more in email and search. A 25-year-old audience lives in opposite places.",
       },
       {
-        label: "Q05",
+        label: "Question 05",
         title: "Geographic scope",
         text: "Local-only, hybrid, or fully remote shifts which foundations apply at all.",
       },
       {
-        label: "Q06",
+        label: "Question 06",
         title: "Pre-contact engagement",
         text: "Days, weeks, or months. Long engagement signals that sustained credibility matters more than quick-trust signals.",
       },

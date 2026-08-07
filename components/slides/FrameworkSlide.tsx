@@ -55,8 +55,6 @@ export function FrameworkSlide({
             <AdviceCloud
               words={slide.art.words}
               settle={slide.art.settle}
-              scatter={slide.art.scatter}
-              focus={slide.art.focus}
               clear={slide.art.clear}
               image={slide.art.image}
             />

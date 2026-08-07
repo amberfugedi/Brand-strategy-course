@@ -175,11 +175,7 @@ export interface FrameworkSlide extends SlideBase {
     words: { text: string; at: number }[];
     /** Time at which the noise quiets and the prose takes the slide. */
     settle?: number;
-    /** "You try a little of everything": all of it, evenly, at once. */
-    scatter?: number;
-    /** "You pick whatever feels most familiar and ignore the rest." */
-    focus?: { text: string; at: number };
-    /** The module answers the question, so the noise clears. */
+    /** The whole graphic leaves at this point: words, head, aura. */
     clear?: number;
     /** An illustrated head. Falls back to the drawn one when absent. */
     image?: string;

@@ -48,40 +48,28 @@ function drift(i: number) {
 }
 
 /**
- * The cloud follows the whole narration, not just the list at the top
- * of it. After the tactics pile on, the voice describes what people do
- * about the noise, and the cloud does it: everything at once, then the
- * one familiar thing with the rest ignored, then nothing, because the
- * module answers the question instead.
+ * The cloud has a life and then it ends. The words light as the voice
+ * names them, quiet when the first paragraph lands, and at `clear` the
+ * whole graphic leaves, head and all, so the back half of the slide
+ * belongs to the prose. The column it occupied stays reserved, so the
+ * text does not jump when it goes.
  */
-type Phase = "build" | "quiet" | "scatter" | "focus" | "cleared";
-
-const LOOK: Record<Exclude<Phase, "build" | "focus">, string> = {
-  quiet: "font-semibold text-body-secondary opacity-70",
-  scatter: "font-medium text-gold opacity-75",
-  cleared: "opacity-0",
-};
+type Phase = "build" | "quiet" | "cleared";
 
 const HOT = "font-bold text-gold opacity-100";
 const COLD = "text-body-tertiary opacity-40";
-const IGNORED = "text-body-tertiary opacity-[0.14]";
+const QUIET = "font-semibold text-body-secondary opacity-70";
 
 export function AdviceCloud({
   words,
   settle,
-  scatter,
-  focus,
   clear,
   image,
 }: {
   words: CloudWord[];
   /** When the voice moves on, the noise quiets instead of staying lit. */
   settle?: number;
-  /** "You try a little of everything": all of it, evenly, at once. */
-  scatter?: number;
-  /** "You pick whatever feels most familiar and ignore the rest." */
-  focus?: { text: string; at: number };
-  /** The module answers the question, and the noise is gone. */
+  /** The whole graphic leaves: words, head, aura. */
   clear?: number;
   /** An illustrated head, drawn in the persona-portrait style. */
   image?: string;
@@ -102,18 +90,16 @@ export function AdviceCloud({
   const phase: Phase =
     clear !== undefined && t >= clear
       ? "cleared"
-      : focus && t >= focus.at
-        ? "focus"
-        : scatter !== undefined && t >= scatter
-          ? "scatter"
-          : settle !== undefined && t >= settle
-            ? "quiet"
-            : "build";
+      : settle !== undefined && t >= settle
+        ? "quiet"
+        : "build";
 
   return (
     <div
       aria-hidden
-      className="relative mx-auto aspect-square w-full max-w-[320px] lg:max-w-[390px]"
+      className={`relative mx-auto aspect-square w-full max-w-[320px] transition-opacity duration-1000 lg:max-w-[390px] ${
+        phase === "cleared" ? "opacity-0" : "opacity-100"
+      }`}
     >
       {/* The head the noise is aimed at. An illustration when one is
           supplied, otherwise a hairline drawing that sits with the
@@ -146,15 +132,7 @@ export function AdviceCloud({
 
       {words.slice(0, SPOTS.length).map((w, i) => {
         const look =
-          phase === "build"
-            ? t >= w.at
-              ? HOT
-              : COLD
-            : phase === "focus"
-              ? w.text === focus!.text
-                ? HOT
-                : IGNORED
-              : LOOK[phase];
+          phase === "build" ? (t >= w.at ? HOT : COLD) : QUIET;
         return (
           <span
             key={w.text}

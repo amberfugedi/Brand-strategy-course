@@ -403,28 +403,28 @@ export const module3Slides: Slide[] = [
     heading: "Your audit answers *already* told you which touchpoints matter.",
     cards: [
       {
-        label: "Discovery channel · Q01",
+        label: "Discovery channel · Question 01",
         title: "Names the primary touchpoint",
         text: "Where current clients first hear about you is the touchpoint your business actually *uses*. Build there first.",
       },
       {
-        label: "Visual proof · Q02",
+        label: "Visual proof · Question 02",
         title: "Weights website + social",
         text: "If the work is visible, the website and social touchpoints carry more weight. If it isn't, they carry less.",
       },
       {
-        label: "Geographic scope · Q05",
+        label: "Geographic scope · Question 05",
         title: "Weights search & map",
         text: "Local-only sharpens search & map's role. Remote diminishes it. Hybrid sits in between.",
       },
       {
-        label: "Engagement length · Q06",
+        label: "Engagement length · Question 06",
         title: "Weights website depth",
         text: "Long pre-contact engagement means the website has time to do real work. Short engagement means the website needs to be quick.",
       },
     ],
     footnote:
-      "Q03 (ethics) and Q04 (audience age) work differently: they *constrain* which touchpoints are available, they don't prioritize among them.",
+      "Question 03 (ethics) and Question 04 (audience age) work differently: they *constrain* which touchpoints are available, they don't prioritize among them.",
   },
 
   // 19 · Reading it together: Maya
@@ -439,22 +439,22 @@ export const module3Slides: Slide[] = [
     heading: "Reading it together: *Maya*.",
     cards: [
       {
-        label: "Discovery channel · Q01",
+        label: "Discovery channel · Question 01",
         title: "Insurance referral + Psychology Today",
         text: "Her clients arrive through a directory, either the insurer's or a private-pay listing. That names her primary.",
       },
       {
-        label: "Visual proof · Q02",
+        label: "Visual proof · Question 02",
         title: "No",
         text: "Therapy isn't visible work. Website and social carry less weight for discovery.",
       },
       {
-        label: "Geographic scope · Q05",
+        label: "Geographic scope · Question 05",
         title: "Local hybrid",
         text: "In-person and telehealth. Search & map matters, but it isn't the lead.",
       },
       {
-        label: "Engagement length · Q06",
+        label: "Engagement length · Question 06",
         title: "Weeks of research",
         text: "Prospects read and compare before reaching out. Whatever confirms her needs depth.",
       },
