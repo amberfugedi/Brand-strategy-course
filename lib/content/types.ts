@@ -171,6 +171,9 @@ export interface FrameworkSlide extends SlideBase {
   /** Links the heading to another slide in this module, for a heading
    *  that tells the buyer to go and do something. */
   headingTo?: number;
+  /** Renders the paragraphs as a ring-bulleted list. For slides whose
+   *  paragraphs are a list wearing prose. */
+  bullets?: boolean;
   /** An illustration beside the prose. The advice cloud lights each
    *  word as the narration says it, so its words carry timings. */
   art?: {

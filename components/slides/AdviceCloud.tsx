@@ -60,6 +60,28 @@ const HOT = "font-bold text-gold opacity-100";
 const COLD = "text-body-tertiary opacity-40";
 const QUIET = "font-semibold text-body-secondary opacity-70";
 
+/** Whether the narration has passed a given second. Shared so a slide
+ *  can rearrange itself on the same beat its art leaves. */
+export function useNarrationPast(at?: number) {
+  const { getTime } = useNarration();
+  const [past, setPast] = useState(false);
+  useEffect(() => {
+    if (at === undefined) {
+      setPast(false);
+      return;
+    }
+    let raf = 0;
+    const tick = () => {
+      const now = getTime() >= at;
+      setPast((prev) => (prev === now ? prev : now));
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [at, getTime]);
+  return past;
+}
+
 export function AdviceCloud({
   words,
   settle,

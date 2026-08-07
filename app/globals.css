@@ -255,6 +255,14 @@ input:focus-visible {
   background-size: 100% 2px;
 }
 
+/* Headings are never underlined, spoken mark or otherwise. The rule
+   is here as well as in the content so a stray mark cannot draw one. */
+h1 .spoken,
+h2 .spoken {
+  background-image: none;
+  padding-bottom: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .beat,
   .enter,

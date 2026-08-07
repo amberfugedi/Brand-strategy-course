@@ -1,7 +1,9 @@
+"use client";
+
 import { FrameworkSlide as FrameworkSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
-import { AdviceCloud } from "@/components/slides/AdviceCloud";
-import { SlideLink } from "@/components/slides/SlideLink";
+import { AdviceCloud, useNarrationPast } from "@/components/slides/AdviceCloud";
+import { SlideAction, SlideLink } from "@/components/slides/SlideLink";
 
 export function FrameworkSlide({
   slide,
@@ -10,7 +12,11 @@ export function FrameworkSlide({
   slide: FrameworkSlideDef;
   revealed?: number;
 }) {
-  const art = Boolean(slide.art);
+  // The art leaves partway through the narration on the slides that
+  // have it; when it goes, the prose takes the width back instead of
+  // sitting in a column beside an empty one.
+  const artGone = useNarrationPast(slide.art?.clear);
+  const shown = slide.paragraphs.slice(0, revealed);
 
   const body = (
     <>
@@ -32,13 +38,27 @@ export function FrameworkSlide({
         </p>
       ) : null}
 
-      <div className={`space-y-4 ${art ? "mt-6 max-w-2xl" : "mt-8 max-w-4xl"}`}>
-        {slide.paragraphs.slice(0, revealed).map((p, i) => (
-          <p key={i} className="beat text-[17px] leading-relaxed lg:text-[18px]">
-            <Rich text={p} />
-          </p>
-        ))}
-      </div>
+      {slide.bullets ? (
+        <ul className={`ring-list max-w-4xl space-y-3 ${slide.art ? "mt-6" : "mt-8"}`}>
+          {shown.map((p, i) => (
+            <li key={i} className="beat text-[16px] leading-relaxed lg:text-[17px]">
+              <Rich text={p} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className={`space-y-4 ${slide.art ? "mt-6 max-w-2xl" : "mt-8 max-w-4xl"}`}>
+          {shown.map((p, i) => (
+            <p key={i} className="beat text-[17px] leading-relaxed lg:text-[18px]">
+              <Rich text={p} />
+            </p>
+          ))}
+        </div>
+      )}
+
+      {slide.headingTo ? (
+        <SlideAction to={slide.headingTo}>Edit your six answers</SlideAction>
+      ) : null}
 
       {slide.callout && revealed > slide.paragraphs.length ? (
         <div className="beat mt-9 max-w-4xl rounded-3xl border-l-[3px] border-teal bg-cream-light px-8 py-6 shadow-lift">
@@ -52,13 +72,21 @@ export function FrameworkSlide({
 
   // Illustrated frameworks run the prose and the art as a pair, so the
   // heading travels with the text column and the slide stays balanced
-  // from the first frame, before any cued paragraph has landed.
+  // from the first frame, before any cued paragraph has landed. The
+  // art column collapses on the beat the art fades, so the prose
+  // recentres rather than leaving a hole beside it.
   if (slide.art) {
     return (
       <div className="mt-4 flex flex-1 flex-col justify-center">
-        <div className="grid items-center gap-8 lg:grid-cols-[1fr,390px] lg:gap-14">
-          <div>{body}</div>
-          <div>
+        <div className="flex flex-col lg:flex-row lg:items-center">
+          <div className="flex-1">{body}</div>
+          <div
+            className={`overflow-hidden transition-all duration-1000 ${
+              artGone
+                ? "mt-0 max-h-0 opacity-0 lg:ml-0 lg:w-0"
+                : "mt-8 max-h-[560px] opacity-100 lg:ml-14 lg:mt-0 lg:w-[390px] lg:shrink-0"
+            }`}
+          >
             <AdviceCloud
               words={slide.art.words}
               settle={slide.art.settle}
@@ -71,7 +99,5 @@ export function FrameworkSlide({
     );
   }
 
-  return (
-    <div className="mt-4 flex flex-1 flex-col justify-center">{body}</div>
-  );
+  return <div className="mt-4 flex flex-1 flex-col justify-center">{body}</div>;
 }

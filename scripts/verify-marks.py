@@ -27,8 +27,16 @@ for path in sorted(glob.glob("/workspace/brand-strategy-course/lib/content/modul
                 callouts = [(float(a), float(u)) for a, u in
                             re.findall(r"at: ([\d.]+), until: ([\d.]+)", cblock.group(1))]
 
+        head = re.search(r'(?:headline|heading): "((?:[^"\\]|\\.)*)"', copy_src)
+        head = fold(head.group(1).replace("*", "")) if head else ""
+
         for text, a, u in marks:
             t = text.replace('\\"', '"')
+            # A heading is never underlined, so a mark must not target one.
+            ft = fold(t).rstrip(".")
+            if head and (ft in head or head.rstrip(".") in ft):
+                print(f"HEADING {path.split('/')[-1]} slide {num}: mark targets the heading: {t!r}")
+                bad += 1
             if fold(t) not in plain:
                 print(f"MISS  {path.split('/')[-1]} slide {num}: {t!r}")
                 bad += 1

@@ -241,7 +241,6 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-9.mp3",
       marks: [
-        { text: "Answer based on what is, not what you wish was true.", at: 1.6, until: 9.0 },
         { text: "If you genuinely don't know, pick the option that says so.", at: 20.9, until: 27.5 },
         { text: "Do not guess.", at: 33.5, until: 38.5 },
       ],
@@ -339,6 +338,7 @@ export const module2Slides: Slide[] = [
     },
     eyebrow: "Read the reasoning",
     heading: "Each foundation includes a short *reasoning* line.",
+    bullets: true,
     paragraphs: [
       "It explains *why* that foundation landed where it did. It pulls from the specific answers you gave.",
       "Reading the reasoning is how you understand whether the diagnostic *got you right*.",
@@ -406,7 +406,6 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-18.mp3",
       marks: [
-        { text: "Not rate yourself. Recognize yourself.", at: 36.3, until: 42.0 },
         { text: "People are generous on abstract ratings.", at: 48.7, until: 54.0 },
       ], cues: [7.8, 17.2, 51.0],
       callouts: [
@@ -416,6 +415,7 @@ export const module2Slides: Slide[] = [
     },
     eyebrow: "How the audit works",
     heading: "Not rate yourself. *Recognize* yourself.",
+    bullets: true,
     paragraphs: [
       "Most audits ask you to rate yourself on a scale. *How would you rate your website on a scale of one to ten.* Almost impossible to answer accurately.",
       "This audit shows you scenarios. Each one describes a specific state. You read them and pick the one that matches your reality.",
@@ -432,6 +432,7 @@ export const module2Slides: Slide[] = [
     number: "19",
     audio: { src: "/audio/m2/m2-19.mp3", cues: [8.5, 21.8, 34.0, 46.1] },
     heading: "The audit varies *by priority*.",
+    bullets: true,
     paragraphs: [
       "*High priority*. Three dimensions: presence, quality, consistency. Does it exist. Does it work well. Are you sustaining it.",
       "*Medium priority*. Two dimensions: presence and quality. No consistency question.",
@@ -483,6 +484,7 @@ export const module2Slides: Slide[] = [
     },
     eyebrow: "If a foundation does not yet exist",
     heading: "Some questions will be *locked*.",
+    bullets: true,
     paragraphs: [
       "For your website, your Google Business Profile, your email list: if you pick the scenario that says *this does not exist*, the audit locks the next two dimensions.",
       "You cannot rate the quality of a website you do not have.",
@@ -514,11 +516,6 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-23.mp3",
       cues: [2.0, 3.8],
-      callouts: [
-        { text: "Critical, maintenance, and solid.", at: 2.6, until: 9.0 },
-        { text: "Sorted by the worst rating you gave it.", at: 9.2, until: 15.0 },
-        { text: "A clear-eyed picture of where your six foundations actually stand.", at: 15.4, until: 22.5 },
-      ],
     },
     lines: ["Read your Gap *List*."],
     post: "Grouped by your worst rating.",
@@ -552,7 +549,6 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-25.mp3",
       marks: [
-        { text: "Critical doesn't mean panic. It means prioritize.", at: 6.3, until: 13.2 },
         { text: "You're not failing.", at: 14.6, until: 18.8 },
         { text: "You'll fix them in order.", at: 25.9, until: 32.0 },
       ],
@@ -571,7 +567,6 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-26.mp3",
       marks: [
-        { text: "Solid doesn't mean ignore.", at: 1.8, until: 7.3 },
         { text: "Solid foundations drift without continued attention.", at: 14.9, until: 20.0 },
       ],
       callouts: [
@@ -630,7 +625,6 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-29.mp3",
       marks: [
-        { text: "You can't build five foundations in parallel.", at: 9.3, until: 15.2 },
         { text: "Five half-built foundations is worse than one fully built one.", at: 21.4, until: 26.4 },
         { text: "Sequence is the strategy.", at: 26.6, until: 32.2 },
       ],
@@ -639,7 +633,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     headline: "You can't build five foundations in *parallel*.",
-    sub: "Your capacity is five to ten hours a week. That doesn't multiply when spread across five workstreams. It divides. *Five half-built foundations is worse than one fully built one.* Sequence is the strategy.",
+    sub: "For most owners doing this, marketing gets five to ten hours a week. Whatever yours is, it doesn't multiply when spread across five workstreams. It divides. *Five half-built foundations is worse than one fully built one.* Sequence is the strategy.",
   },
 
   // 30 · Not a license to abandon
@@ -661,6 +655,7 @@ export const module2Slides: Slide[] = [
     },
     eyebrow: "What this does not mean",
     heading: "A starting point isn't a *license* to abandon.",
+    bullets: true,
     paragraphs: [
       "It does not mean other gaps are unimportant. They are. They're just not the place to start.",
       "It does not mean you stop serving existing clients. Your client work continues.",
@@ -678,8 +673,9 @@ export const module2Slides: Slide[] = [
     audio: { src: "/audio/m2/m2-31.mp3", cues: [4.7, 13.4, 27.1] },
     eyebrow: "How long is “first”",
     heading: "Thirty to ninety *days*.",
+    bullets: true,
     paragraphs: [
-      "Most foundations take 30 to 90 days of focused work to move from critical to solid. Not constant work, focused work in your five to ten weekly marketing hours.",
+      "Most foundations take 30 to 90 days of focused work to move from critical to solid. Not constant work. Focused work, in the hours marketing actually gets.",
       "A website rebuild: six to eight weeks. A claimed and built-out Google Business Profile: two to four weeks. An email list with a real opt-in and first sequence: six to twelve weeks.",
       "Not a sprint. The first chunk of meaningful work.",
     ],
@@ -695,6 +691,7 @@ export const module2Slides: Slide[] = [
     audio: { src: "/audio/m2/m2-32.mp3", cues: [6.4, 17.9, 22.7] },
     eyebrow: "What comes next",
     heading: "Modules 3 through 8 teach the *foundations*.",
+    bullets: true,
     paragraphs: [
       "Each module goes deep on a specific foundation: what it is, what good looks like, how to think strategically about it.",
       "If your starting point is getting found, the work starts immediately in Module 3. If it's authority building, you'll meet it in Module 8.",
@@ -712,11 +709,9 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-33.mp3",
       marks: [
-        { text: "Not a license to skip foundations.", at: 11.4, until: 16.2 },
         { text: "Take all six foundation modules.", at: 57.4, until: 62.6 },
       ],
       callouts: [
-        { text: "Your five to ten weekly marketing hours.", at: 18.8, until: 24.5 },
         { text: "What is low priority today may be next year's focus.", at: 38.4, until: 44.4 },
         { text: "Modules 3 through 8 teach the six foundations as concepts.", at: 44.7, until: 50.8 },
         { text: "Your starting point for the build phase, not your shortcut past the learning phase.", at: 63.3, until: 70.8 },
