@@ -47,14 +47,42 @@ function drift(i: number) {
   } as React.CSSProperties;
 }
 
+/**
+ * The cloud follows the whole narration, not just the list at the top
+ * of it. After the tactics pile on, the voice describes what people do
+ * about the noise, and the cloud does it: everything at once, then the
+ * one familiar thing with the rest ignored, then nothing, because the
+ * module answers the question instead.
+ */
+type Phase = "build" | "quiet" | "scatter" | "focus" | "cleared";
+
+const LOOK: Record<Exclude<Phase, "build" | "focus">, string> = {
+  quiet: "font-semibold text-body-secondary opacity-70",
+  scatter: "font-medium text-gold opacity-75",
+  cleared: "opacity-0",
+};
+
+const HOT = "font-bold text-gold opacity-100";
+const COLD = "text-body-tertiary opacity-40";
+const IGNORED = "text-body-tertiary opacity-[0.14]";
+
 export function AdviceCloud({
   words,
   settle,
+  scatter,
+  focus,
+  clear,
   image,
 }: {
   words: CloudWord[];
   /** When the voice moves on, the noise quiets instead of staying lit. */
   settle?: number;
+  /** "You try a little of everything": all of it, evenly, at once. */
+  scatter?: number;
+  /** "You pick whatever feels most familiar and ignore the rest." */
+  focus?: { text: string; at: number };
+  /** The module answers the question, and the noise is gone. */
+  clear?: number;
   /** An illustrated head, drawn in the persona-portrait style. */
   image?: string;
 }) {
@@ -71,7 +99,16 @@ export function AdviceCloud({
     return () => cancelAnimationFrame(raf);
   }, [getTime]);
 
-  const settled = settle !== undefined && t >= settle;
+  const phase: Phase =
+    clear !== undefined && t >= clear
+      ? "cleared"
+      : focus && t >= focus.at
+        ? "focus"
+        : scatter !== undefined && t >= scatter
+          ? "scatter"
+          : settle !== undefined && t >= settle
+            ? "quiet"
+            : "build";
 
   return (
     <div
@@ -108,8 +145,16 @@ export function AdviceCloud({
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.07] blur-2xl" />
 
       {words.slice(0, SPOTS.length).map((w, i) => {
-        const lit = t >= w.at;
-        const hot = lit && !settled;
+        const look =
+          phase === "build"
+            ? t >= w.at
+              ? HOT
+              : COLD
+            : phase === "focus"
+              ? w.text === focus!.text
+                ? HOT
+                : IGNORED
+              : LOOK[phase];
         return (
           <span
             key={w.text}
@@ -118,13 +163,7 @@ export function AdviceCloud({
               top: `${SPOTS[i].y}%`,
               ...drift(i),
             }}
-            className={`buzz absolute block whitespace-nowrap text-center text-[12px] leading-none transition-[color,opacity,font-weight] duration-500 lg:text-[13px] ${
-              hot
-                ? "font-bold text-gold opacity-100"
-                : lit
-                  ? "font-semibold text-body-secondary opacity-70"
-                  : "text-body-tertiary opacity-40"
-            }`}
+            className={`buzz absolute block whitespace-nowrap text-center text-[12px] leading-none transition-[color,opacity,font-weight] duration-700 lg:text-[13px] ${look}`}
           >
             {w.text}
           </span>
