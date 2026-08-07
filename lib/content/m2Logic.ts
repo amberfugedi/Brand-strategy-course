@@ -42,7 +42,7 @@ export interface DiagnosticQuestion {
 export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
   {
     id: "discovery",
-    num: "Question 01",
+    num: "01",
     prompt: "Where do most current clients first hear about you?",
     options: [
       { value: "search", label: "Google search" },
@@ -55,7 +55,7 @@ export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
   },
   {
     id: "visualProof",
-    num: "Question 02",
+    num: "02",
     prompt: "Does your work depend on visual proof?",
     options: [
       { value: "high", label: "High. The work itself is visual." },
@@ -65,7 +65,7 @@ export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
   },
   {
     id: "ethics",
-    num: "Question 03",
+    num: "03",
     prompt: "Are you in an ethics-restricted profession?",
     options: [
       { value: "full", label: "Yes. Therapy, legal, healthcare, financial." },
@@ -75,7 +75,7 @@ export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
   },
   {
     id: "audienceAge",
-    num: "Question 04",
+    num: "04",
     prompt: "How old is your typical client?",
     options: [
       { value: "55plus", label: "55 and up" },
@@ -86,7 +86,7 @@ export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
   },
   {
     id: "geography",
-    num: "Question 05",
+    num: "05",
     prompt: "Local-only, hybrid, or remote?",
     options: [
       { value: "local", label: "Local only" },
@@ -96,7 +96,7 @@ export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
   },
   {
     id: "preContact",
-    num: "Question 06",
+    num: "06",
     prompt: "How long does a prospect engage with your work before reaching out?",
     options: [
       { value: "days", label: "Days or less" },

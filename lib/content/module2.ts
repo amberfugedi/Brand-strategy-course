@@ -156,12 +156,12 @@ export const module2Slides: Slide[] = [
     },
     heading: "The six *questions*.",
     rows: [
-      { label: "Question 01", text: "Where do clients find you?" },
-      { label: "Question 02", text: "Does your work depend on visual proof?" },
-      { label: "Question 03", text: "Are you in an ethics-restricted profession?" },
-      { label: "Question 04", text: "How old is your audience?" },
-      { label: "Question 05", text: "Local-only, hybrid, or remote?" },
-      { label: "Question 06", text: "How long does a prospect engage with your work before reaching out?" },
+      { label: "01", text: "Where do clients find you?" },
+      { label: "02", text: "Does your work depend on visual proof?" },
+      { label: "03", text: "Are you in an ethics-restricted profession?" },
+      { label: "04", text: "How old is your audience?" },
+      { label: "05", text: "Local-only, hybrid, or remote?" },
+      { label: "06", text: "How long does a prospect engage with your work before reaching out?" },
     ],
   },
 
@@ -182,17 +182,14 @@ export const module2Slides: Slide[] = [
     heading: "What's true about your *business*.",
     cards: [
       {
-        label: "Question 01",
         title: "Discovery channel",
         text: "Where current clients first hear about you. The diagnostic anchors on what's already producing results. Not what you wish was working.",
       },
       {
-        label: "Question 02",
         title: "Visual proof",
         text: "Some businesses sell visible work. Others sell expertise and judgment. The diagnostic uses this to weight visual presence vs. credibility signals.",
       },
       {
-        label: "Question 03",
         title: "Ethics restrictions",
         text: "Therapists, attorneys, healthcare, financial advisors face professional rules that change the audit's weighting.",
       },
@@ -220,17 +217,14 @@ export const module2Slides: Slide[] = [
     heading: "What's true about your *audience* and how they decide.",
     cards: [
       {
-        label: "Question 04",
         title: "Audience age",
         text: "A 55+ audience lives less on social, more in email and search. A 25-year-old audience lives in opposite places.",
       },
       {
-        label: "Question 05",
         title: "Geographic scope",
         text: "Local-only, hybrid, or fully remote shifts which foundations apply at all.",
       },
       {
-        label: "Question 06",
         title: "Pre-contact engagement",
         text: "Days, weeks, or months. Long engagement signals that sustained credibility matters more than quick-trust signals.",
       },
@@ -371,6 +365,7 @@ export const module2Slides: Slide[] = [
     },
     eyebrow: "If a priority feels off",
     heading: "Check your six answers *first*.",
+    headingTo: 10,
     paragraphs: [
       "Most off-feeling priorities trace to one inaccurate answer. You answered question one with referrals because that felt right. If you actually thought about it, most clients have come through Google.",
       "Adjust the answer if needed. The priority order will update. Re-read it.",

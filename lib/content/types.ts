@@ -168,6 +168,9 @@ export interface FrameworkSlide extends SlideBase {
   sub?: string;
   paragraphs: string[];
   callout?: string;
+  /** Links the heading to another slide in this module, for a heading
+   *  that tells the buyer to go and do something. */
+  headingTo?: number;
   /** An illustration beside the prose. The advice cloud lights each
    *  word as the narration says it, so its words carry timings. */
   art?: {
@@ -245,7 +248,7 @@ export interface CardsSlide extends SlideBase {
   eyebrow?: string;
   heading: string;
   intro?: string;
-  cards: { label: string; title: string; text: string }[];
+  cards: { label?: string; title: string; text: string }[];
   footnote?: string;
 }
 

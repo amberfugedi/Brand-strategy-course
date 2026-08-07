@@ -1,6 +1,7 @@
 import { FrameworkSlide as FrameworkSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
 import { AdviceCloud } from "@/components/slides/AdviceCloud";
+import { SlideLink } from "@/components/slides/SlideLink";
 
 export function FrameworkSlide({
   slide,
@@ -17,7 +18,13 @@ export function FrameworkSlide({
         <div className="mb-4 text-[11px] font-bold uppercase tracking-eyebrow text-teal">{slide.eyebrow}</div>
       ) : null}
       <h1 className="text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-        <Rich text={slide.heading} />
+        {slide.headingTo ? (
+          <SlideLink to={slide.headingTo} label="Go back and edit your answers">
+            <Rich text={slide.heading} />
+          </SlideLink>
+        ) : (
+          <Rich text={slide.heading} />
+        )}
       </h1>
       {slide.sub ? (
         <p className="mt-4 text-[17px] text-body-secondary">
