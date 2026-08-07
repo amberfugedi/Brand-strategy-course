@@ -17,16 +17,16 @@ export function RowsSlide({
         <Rich text={slide.heading} />
       </h1>
 
-      <div className="mt-8 space-y-2.5">
+      <div className="mt-5 space-y-2 sm:mt-8 sm:space-y-2.5">
         {slide.rows.slice(0, revealed).map((row) => (
           <div
             key={row.label}
-            className="beat grid grid-cols-1 gap-2 border-l-[3px] border-ink/60 bg-cream-light px-7 py-4 md:grid-cols-[180px_1fr] md:gap-8"
+            className="beat grid grid-cols-1 gap-0.5 border-l-[3px] border-ink/60 bg-cream-light px-5 py-3 sm:gap-2 sm:px-7 sm:py-4 md:grid-cols-[180px_1fr] md:gap-8"
           >
             <div className="pt-0.5 text-[11px] font-bold uppercase tracking-eyebrow text-body-secondary">
               {row.label}
             </div>
-            <div className="text-[16px] leading-relaxed">
+            <div className="text-[15px] leading-snug sm:text-[16px] sm:leading-relaxed">
               <Rich text={row.text} />
             </div>
           </div>

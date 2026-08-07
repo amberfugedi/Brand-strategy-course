@@ -169,7 +169,7 @@ export const module2Slides: Slide[] = [
 
   // 07 · Questions 01 to 03
   {
-    kind: "framework",
+    kind: "cards",
     id: "m2-q1to3",
     crumb: S2,
     tag: "FRAMEWORK",
@@ -182,16 +182,28 @@ export const module2Slides: Slide[] = [
     },
     eyebrow: "Questions 01 to 03",
     heading: "What's true about your *business*.",
-    paragraphs: [
-      "*Q01 · Discovery channel*. Where current clients first hear about you. Anchors the diagnostic in what's already working.",
-      "*Q02 · Visual proof*. Some businesses sell visible work. Others sell expertise and judgment. The diagnostic uses this to weight visual presence vs. credibility signals.",
-      "*Q03 · Ethics restrictions*. Therapists, attorneys, healthcare, financial advisors face professional rules that change the audit's weighting.",
+    cards: [
+      {
+        label: "Q01",
+        title: "Discovery channel",
+        text: "Where current clients first hear about you. The diagnostic anchors on what's already producing results. Not what you wish was working.",
+      },
+      {
+        label: "Q02",
+        title: "Visual proof",
+        text: "Some businesses sell visible work. Others sell expertise and judgment. The diagnostic uses this to weight visual presence vs. credibility signals.",
+      },
+      {
+        label: "Q03",
+        title: "Ethics restrictions",
+        text: "Therapists, attorneys, healthcare, financial advisors face professional rules that change the audit's weighting.",
+      },
     ],
   },
 
   // 08 · Questions 04 to 06
   {
-    kind: "framework",
+    kind: "cards",
     id: "m2-q4to6",
     crumb: S2,
     tag: "FRAMEWORK",
@@ -208,10 +220,22 @@ export const module2Slides: Slide[] = [
     },
     eyebrow: "Questions 04 to 06",
     heading: "What's true about your *audience* and how they decide.",
-    paragraphs: [
-      "*Q04 · Audience age*. A 55+ audience lives less on social, more in email and search. A 25-year-old audience lives in opposite places.",
-      "*Q05 · Geographic scope*. Local-only, hybrid, or fully remote shifts which foundations apply at all.",
-      "*Q06 · Pre-contact engagement*. Days, weeks, or months. Long engagement signals that sustained credibility matters more than quick-trust signals.",
+    cards: [
+      {
+        label: "Q04",
+        title: "Audience age",
+        text: "A 55+ audience lives less on social, more in email and search. A 25-year-old audience lives in opposite places.",
+      },
+      {
+        label: "Q05",
+        title: "Geographic scope",
+        text: "Local-only, hybrid, or fully remote shifts which foundations apply at all.",
+      },
+      {
+        label: "Q06",
+        title: "Pre-contact engagement",
+        text: "Days, weeks, or months. Long engagement signals that sustained credibility matters more than quick-trust signals.",
+      },
     ],
   },
 

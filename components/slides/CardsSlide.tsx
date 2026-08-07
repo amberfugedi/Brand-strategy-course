@@ -7,14 +7,14 @@ function Card({
   card: CardsSlideDef["cards"][number];
 }) {
   return (
-    <div className="beat h-full rounded-3xl border border-subtle bg-cream-light px-6 py-5 shadow-lift">
+    <div className="beat h-full rounded-3xl border border-subtle bg-cream-light px-5 py-4 shadow-lift sm:px-6 sm:py-5">
       <div className="text-[10px] font-bold uppercase tracking-eyebrow text-rust">
         {card.label}
       </div>
-      <div className="mt-1.5 text-[18px] font-bold tracking-tight text-aubergine">
+      <div className="mt-1.5 text-[16px] font-bold tracking-tight text-aubergine sm:text-[18px]">
         {card.title}
       </div>
-      <p className="mt-2 text-[14.5px] leading-relaxed text-body-secondary">
+      <p className="mt-2 text-[14px] leading-snug text-body-secondary sm:text-[14.5px] sm:leading-relaxed">
         <Rich text={card.text} />
       </p>
     </div>
@@ -48,7 +48,7 @@ export function CardsSlide({
       ) : null}
 
       <div
-        className={`mt-auto grid gap-4 pt-7 ${
+        className={`mt-auto grid gap-3 pt-5 sm:gap-4 sm:pt-7 ${
           fiveUp
             ? "md:grid-cols-3"
             : slide.cards.length === 4
@@ -61,7 +61,7 @@ export function CardsSlide({
         ))}
       </div>
       {fiveUp && bottom.length > 0 ? (
-        <div className="mt-4 grid gap-4 md:mx-auto md:w-2/3 md:grid-cols-2">
+        <div className="mt-3 grid gap-3 sm:mt-4 sm:gap-4 md:mx-auto md:w-2/3 md:grid-cols-2">
           {bottom.map((card) => (
             <Card key={card.label} card={card} />
           ))}
