@@ -76,7 +76,7 @@ export function AdviceCloud({
   return (
     <div
       aria-hidden
-      className="relative mx-auto aspect-square w-full max-w-[300px] lg:max-w-[360px]"
+      className="relative mx-auto aspect-square w-full max-w-[320px] lg:max-w-[390px]"
     >
       {/* The head the noise is aimed at. An illustration when one is
           supplied, otherwise a hairline drawing that sits with the
@@ -86,7 +86,7 @@ export function AdviceCloud({
         <img
           src={image}
           alt=""
-          className="absolute left-1/2 top-1/2 h-[52%] w-[52%] -translate-x-1/2 -translate-y-1/2 object-contain"
+          className="absolute left-1/2 top-1/2 h-[68%] w-[68%] -translate-x-1/2 -translate-y-1/2 object-contain"
         />
       ) : (
         <svg
@@ -105,7 +105,7 @@ export function AdviceCloud({
       )}
 
       {/* A faint aura so the head reads as the centre of the cloud. */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[58%] w-[58%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.07] blur-2xl" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.07] blur-2xl" />
 
       {words.slice(0, SPOTS.length).map((w, i) => {
         const lit = t >= w.at;

@@ -49,7 +49,7 @@ export function FrameworkSlide({
   if (slide.art) {
     return (
       <div className="mt-4 flex flex-1 flex-col justify-center">
-        <div className="grid items-center gap-8 lg:grid-cols-[1fr,340px] lg:gap-14">
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr,390px] lg:gap-14">
           <div>{body}</div>
           <div>
             <AdviceCloud

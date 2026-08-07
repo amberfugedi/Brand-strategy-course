@@ -73,6 +73,7 @@ export const module2Slides: Slide[] = [
         { text: "Courses", at: 6.5 },
       ],
       settle: 19.9,
+      image: "/images/advice-head.webp",
     },
   },
 
