@@ -187,6 +187,17 @@ For accessibility, **text stays at full opacity; only the border ramps**
 (full, 60%, 25%, and a near-empty ring for not applicable). No
 traffic-light greens or reds.
 
+**The Gap List groups, it does not rank.** Priority (does this matter
+for your business) and gap state (is it broken) are two different axes,
+and a row that leads with a CRITICAL chip reads as an instruction. On a
+low-priority foundation that is the opposite of what the module
+teaches. So the state is the **group heading** (critical, maintenance,
+solid, as the narration describes it) and priority is the per-row
+detail that orders foundations **within** a group, high first. That
+ordering is the same rule `computeStartingPoint` uses, so the first
+foundation under Critical is the starting point the module arrives at
+later. If the two ever disagree, the display is wrong, not the logic.
+
 **One renderer, four places.** The priority order and the Gap List are
 rendered by `components/course/LivePlan.tsx` wherever they appear: the
 reading slide that asks for them, the framework slide that explains the

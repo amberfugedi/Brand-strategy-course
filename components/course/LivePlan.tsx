@@ -45,16 +45,18 @@ const GAP_LABEL: Record<GapTier, string> = {
   solid: "Solid",
 };
 
-const GAP_INK: Record<GapTier, string> = {
-  critical: "border-gold text-gold",
-  maintenance: "border-gold/55 text-gold",
-  solid: "border-gold/25 text-gold",
+// Group headings carry the tier by weight, not by hue: full gold for
+// critical, easing back through maintenance to solid.
+const GAP_TEXT: Record<GapTier, string> = {
+  critical: "text-gold",
+  maintenance: "text-gold/80",
+  solid: "text-body-tertiary",
 };
 
-const GAP_INK_DARK: Record<GapTier, string> = {
-  critical: "border-gold text-gold",
-  maintenance: "border-gold/55 text-gold",
-  solid: "border-gold/25 text-gold/80",
+const GAP_TEXT_DARK: Record<GapTier, string> = {
+  critical: "text-gold",
+  maintenance: "text-gold/80",
+  solid: "text-on-dark-muted",
 };
 
 function Pill({ label, ink }: { label: string; ink: string }) {
@@ -146,7 +148,29 @@ export function PriorityOrderList({
   );
 }
 
-/** The audited foundations, worst rating first, with their priority. */
+/**
+ * The Gap List as the narration describes it: three groupings, each
+ * foundation sorted into one by the worst rating it was given. The
+ * state is the group heading rather than a chip on every row, because
+ * a row that leads with CRITICAL reads as an instruction, and on a
+ * low-priority foundation that is the opposite of what the module
+ * teaches. Priority stays on the row, where it explains the order
+ * within a group rather than competing with it.
+ *
+ * Within a group the order is high priority first, which is the same
+ * rule computeStartingPoint uses. The first foundation under Critical
+ * is therefore the starting point the module arrives at later.
+ */
+const GAP_ORDER_UI: GapTier[] = ["critical", "maintenance", "solid"];
+
+const GAP_NOTE: Record<GapTier, string> = {
+  critical: "Broken or absent",
+  maintenance: "Slipping, not yet critical",
+  solid: "Working, not blocking",
+};
+
+const PRIORITY_RANK: Record<string, number> = { high: 0, medium: 1, low: 2, na: 3 };
+
 export function GapListView({
   dark = false,
   cols = 2,
@@ -172,29 +196,70 @@ export function GapListView({
 
   return (
     <>
-      <div className={`grid gap-3 ${cols === 2 ? "sm:grid-cols-2" : ""}`}>
-        {answered.map((g) => (
-          <Card key={g.foundation.id} dark={dark}>
-            <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
-              <Pill
-                label={GAP_LABEL[g.gap!]}
-                ink={dark ? GAP_INK_DARK[g.gap!] : GAP_INK[g.gap!]}
-              />
-              <span
-                className={`text-[15px] font-semibold ${dark ? "text-on-dark" : ""}`}
-              >
-                {g.foundation.name}
-              </span>
-              <span
-                className={`text-[11px] uppercase tracking-chrome ${
+      <div className={`grid gap-3 ${cols === 2 ? "sm:grid-cols-3" : ""}`}>
+        {GAP_ORDER_UI.map((tier) => {
+          const rows = answered
+            .filter((g) => g.gap === tier)
+            .sort((a, b) => PRIORITY_RANK[a.tier] - PRIORITY_RANK[b.tier]);
+          return (
+            <Card key={tier} dark={dark}>
+              <div className="flex items-baseline justify-between gap-2">
+                <span
+                  className={`text-[11px] font-bold uppercase tracking-eyebrow ${
+                    dark ? GAP_TEXT_DARK[tier] : GAP_TEXT[tier]
+                  }`}
+                >
+                  {GAP_LABEL[tier]}
+                </span>
+                <span
+                  className={`text-[11px] tabular-nums ${
+                    dark ? "text-on-dark-muted" : "text-body-tertiary"
+                  }`}
+                >
+                  {rows.length}
+                </span>
+              </div>
+              <div
+                className={`mt-0.5 text-[11.5px] leading-snug ${
                   dark ? "text-on-dark-muted" : "text-body-tertiary"
                 }`}
               >
-                {g.tier} priority
-              </span>
-            </div>
-          </Card>
-        ))}
+                {GAP_NOTE[tier]}
+              </div>
+
+              {rows.length ? (
+                <ul className="mt-3 space-y-2">
+                  {rows.map((g) => (
+                    <li key={g.foundation.id}>
+                      <div
+                        className={`text-[14.5px] font-semibold leading-snug ${
+                          dark ? "text-on-dark" : ""
+                        }`}
+                      >
+                        {g.foundation.name}
+                      </div>
+                      <div
+                        className={`text-[10.5px] uppercase tracking-chrome ${
+                          dark ? "text-on-dark-muted" : "text-body-tertiary"
+                        }`}
+                      >
+                        {g.tier} priority
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p
+                  className={`mt-3 text-[13.5px] ${
+                    dark ? "text-on-dark-muted" : "text-body-tertiary"
+                  }`}
+                >
+                  None.
+                </p>
+              )}
+            </Card>
+          );
+        })}
       </div>
       {unanswered > 0 ? (
         <p

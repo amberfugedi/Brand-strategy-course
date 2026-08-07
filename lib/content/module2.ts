@@ -500,7 +500,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     lines: ["Read your Gap *List*."],
-    post: "Three tiers, sorted by priority.",
+    post: "Grouped by your worst rating.",
     live: "gaps",
   },
 
