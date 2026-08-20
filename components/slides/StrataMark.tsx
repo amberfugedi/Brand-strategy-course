@@ -28,14 +28,14 @@ export function StrataMark({ active }: { active: number | "all" }) {
           );
         })}
       </div>
-      {/* The mark says where you are, it does not run a second count.
-          A module number and a foundation number legitimately differ,
-          because Module 2 is the audit and is not a foundation, but
-          printing "Foundation 02 of seven" beside "Module 3 of 8"
-          reads as a contradiction. The raised bar carries the position;
-          the caption only has to name what the bars are. */}
+      {/* The ordinal is canon: the intro says there are seven
+          foundations and positioning is the first, so Module 3 really
+          is foundation two. It differs from the module number because
+          Module 2 is the audit and is not a foundation. */}
       <div className="mt-2 text-[10px] font-bold uppercase tracking-eyebrow text-on-dark-muted">
-        {active === "all" ? "All seven foundations" : "Where this module sits"}
+        {active === "all"
+          ? "All seven foundations"
+          : `Foundation 0${active} of seven`}
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { migrateAudit } from "@/lib/content/m2Logic";
 import { CourseDocument, emptyDocument } from "./types";
 import { localStorageAdapter } from "./local";
 import { supabaseAdapter } from "./remote";
@@ -139,7 +140,7 @@ export function useModule2() {
 
   return {
     diagnostic: m2.diagnostic ?? {},
-    audit: m2.audit ?? {},
+    audit: migrateAudit(m2.audit ?? {}),
     setDiagnostic,
     setAudit,
   };

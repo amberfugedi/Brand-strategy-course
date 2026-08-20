@@ -22,15 +22,40 @@ export interface Foundation {
   layer: string;
 }
 
+/**
+ * The six foundations the audit covers, named as the script names
+ * them. Positioning is foundation one and Module 1 already produced
+ * it, so it is not audited; the Foundation Plan in Module 8 sequences
+ * it alongside these six, which is the seven the intro promises.
+ *
+ * Getting found is one foundation, not two. The local layer sits
+ * inside it, which is how Module 3 teaches it and what Module 2's own
+ * narration says: the reasoning for Get Found explains why the local
+ * layer dropped.
+ */
 export const FOUNDATIONS: Foundation[] = [
-  { id: "localPresence", num: "01", name: "Local Presence", layer: "Get found" },
-  { id: "onlinePresence", num: "02", name: "Online Presence", layer: "Get found" },
-  { id: "reviews", num: "03", name: "Reviews and Social Proof", layer: "Get chosen" },
-  { id: "referrals", num: "04", name: "Referral System", layer: "Get chosen" },
-  { id: "brandAwareness", num: "05", name: "Brand Awareness", layer: "Be remembered" },
-  { id: "ownedAudience", num: "06", name: "Owned Audience", layer: "Be remembered" },
-  { id: "authority", num: "07", name: "Authority Building", layer: "Be remembered" },
+  { id: "getFound", num: "01", name: "Get found", layer: "Get found" },
+  { id: "earnedProof", num: "02", name: "Earned proof", layer: "Get chosen" },
+  { id: "referrals", num: "03", name: "Referral system", layer: "Get chosen" },
+  { id: "brandAwareness", num: "04", name: "Brand awareness", layer: "Be remembered" },
+  { id: "ownedAudience", num: "05", name: "Owned audience", layer: "Be remembered" },
+  { id: "authority", num: "06", name: "Authority building", layer: "Be remembered" },
 ];
+
+/** Audits saved before getting found became one foundation. Online
+ *  presence answers win over local ones, since the merged foundation
+ *  is scored on the wider question. */
+export function migrateAudit(
+  audit: Record<string, Record<string, string>>,
+): Record<string, Record<string, string>> {
+  if (!audit.localPresence && !audit.onlinePresence && !audit.reviews) return audit;
+  const { localPresence, onlinePresence, reviews, ...rest } = audit;
+  const merged = { ...rest };
+  const found = { ...localPresence, ...onlinePresence };
+  if (Object.keys(found).length) merged.getFound = { ...found, ...merged.getFound };
+  if (reviews) merged.earnedProof = { ...reviews, ...merged.earnedProof };
+  return merged;
+}
 
 export interface DiagnosticQuestion {
   id: string;
@@ -124,34 +149,33 @@ interface Rule {
 /** Additive adjustments on a base score of 1 per foundation. */
 const RULES: Rule[] = [
   // Q01: the discovery channel that already works gets protected.
-  { when: (a) => a.discovery === "search", foundation: "onlinePresence", delta: 1, reason: "Clients already find you through search. Protect and build on it." },
-  { when: (a) => a.discovery === "search", foundation: "localPresence", delta: 1, reason: "Search discovery leans on your local listings." },
-  { when: (a) => a.discovery === "directory", foundation: "onlinePresence", delta: 1, reason: "Directory discovery ends at your online presence." },
+  { when: (a) => a.discovery === "search", foundation: "getFound", delta: 1, reason: "Clients already find you through search. Protect and build on it." },
+  { when: (a) => a.discovery === "directory", foundation: "getFound", delta: 1, reason: "Directory discovery ends at your online presence." },
   { when: (a) => a.discovery === "referrals", foundation: "referrals", delta: 1, reason: "Referrals are already your discovery channel. Make them intentional." },
   { when: (a) => a.discovery === "social", foundation: "brandAwareness", delta: 1, reason: "Social discovery makes ongoing visibility strategic." },
-  { when: (a) => a.discovery === "walkby", foundation: "localPresence", delta: 1, reason: "Walk-by discovery makes local presence your front door." },
+  { when: (a) => a.discovery === "walkby", foundation: "getFound", delta: 1, reason: "Walk-by discovery makes your local listings the front door." },
 
   // Q02: visual work weights visual surfaces; judgment work weights credibility.
   { when: (a) => a.visualProof === "high", foundation: "brandAwareness", delta: 1, reason: "Your work sells visually. Prospects need to see it." },
-  { when: (a) => a.visualProof === "high", foundation: "onlinePresence", delta: 1, reason: "Visual work needs a place to be seen." },
+  { when: (a) => a.visualProof === "high", foundation: "getFound", delta: 1, reason: "Visual work needs a place to be seen." },
   { when: (a) => a.visualProof === "low", foundation: "authority", delta: 1, reason: "You sell judgment, so credibility signals carry the weight." },
 
   // Q03: ethics restrictions reshape the trust layer (see also FORCED below).
   { when: (a) => a.ethics === "full", foundation: "authority", delta: 2, reason: "In a restricted profession, authority substitutes for review-based credibility." },
-  { when: (a) => a.ethics === "some", foundation: "reviews", delta: -1, reason: "Some restrictions limit how actively you can pursue reviews." },
+  { when: (a) => a.ethics === "some", foundation: "earnedProof", delta: -1, reason: "Some restrictions limit how actively you can pursue reviews." },
 
   // Q04: where the audience lives shapes the Be Remembered layer.
   { when: (a) => a.audienceAge === "55plus", foundation: "ownedAudience", delta: 1, reason: "An older audience lives in email more than social." },
-  { when: (a) => a.audienceAge === "55plus", foundation: "localPresence", delta: 1, reason: "An older audience finds services through search and local listings." },
+  { when: (a) => a.audienceAge === "55plus", foundation: "getFound", delta: 1, reason: "An older audience finds services through search and local listings." },
   { when: (a) => a.audienceAge === "55plus", foundation: "brandAwareness", delta: -1, reason: "An older audience lives less on social." },
   { when: (a) => a.audienceAge === "18to35", foundation: "brandAwareness", delta: 1, reason: "A younger audience discovers visually and socially." },
 
   // Q05: geography.
-  { when: (a) => a.geography === "local", foundation: "localPresence", delta: 1, reason: "A local business is found locally first." },
-  { when: (a) => a.geography === "remote", foundation: "onlinePresence", delta: 1, reason: "Fully remote means your online presence does the finding." },
+  { when: (a) => a.geography === "local", foundation: "getFound", delta: 1, reason: "A local business is found locally first." },
+  { when: (a) => a.geography === "remote", foundation: "getFound", delta: 1, reason: "Fully remote means your online presence does the finding. The local layer drops out." },
 
   // Q06: the length of the consideration period.
-  { when: (a) => a.preContact === "days", foundation: "reviews", delta: 1, reason: "Quick decisions lean on quick-trust signals." },
+  { when: (a) => a.preContact === "days", foundation: "earnedProof", delta: 1, reason: "Quick decisions lean on quick-trust signals." },
   { when: (a) => a.preContact === "months", foundation: "authority", delta: 1, reason: "Long consideration rewards sustained credibility." },
   { when: (a) => a.preContact === "months", foundation: "ownedAudience", delta: 1, reason: "A long consideration period is where an owned audience earns its keep." },
 ];
@@ -164,14 +188,8 @@ const FORCED: {
   reason: string;
 }[] = [
   {
-    when: (a) => a.geography === "remote",
-    foundation: "localPresence",
-    tier: "na",
-    reason: "Fully remote. Local discovery does not apply to your business.",
-  },
-  {
     when: (a) => a.ethics === "full",
-    foundation: "reviews",
+    foundation: "earnedProof",
     tier: "low",
     reason: "Professional rules restrict soliciting reviews. Keep the mechanism claimed, nothing more.",
   },
