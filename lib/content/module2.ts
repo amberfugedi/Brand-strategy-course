@@ -126,10 +126,10 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-5.mp3",
       marks: [
-        { text: "Not because they want different things. Because their businesses work differently.", at: 27.5, until: 35.0 },
-      ], cues: [20.3, 21.2],
+        { text: "Not because they want different things. Because their businesses work differently.", at: 26.8, until: 34.3 },
+      ], cues: [20.3, 21.25],
       callouts: [
-        { text: "Here is what is true about your business, and here is what that implies.", at: 40.2, until: 46.9 },
+        { text: "Here is what is true about your business, and here is what that implies.", at: 39.5, until: 46.2 },
       ],
     },
     eyebrow: "What this is not",
