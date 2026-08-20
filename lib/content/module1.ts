@@ -85,14 +85,14 @@ export const module1Slides: Slide[] = [
       cues: [5.8, 30.0, 49.1],
       // The example answers, flashing up as the voice quotes them.
       callouts: [
-        { text: "“I serve small businesses.”", at: 8.4, until: 9.7, card: true },
-        { text: "“I help busy professionals.”", at: 9.7, until: 11.8, card: true },
-        { text: "“I work with anyone who needs my service.”", at: 11.8, until: 16.0, card: true },
-        { text: "“I care about quality.”", at: 31.9, until: 33.5, card: true },
-        { text: "“I take a personal approach.”", at: 33.5, until: 35.2, card: true },
-        { text: "“I have years of experience.”", at: 35.2, until: 39.5, card: true },
-        { text: "“I'm a marketing consultant.”", at: 52.3, until: 54.0, card: true },
-        { text: "“I'm a chiropractor.”", at: 54.0, until: 57.5, card: true },
+        { text: "“I serve small businesses.”", at: 8.4, until: 9.7 },
+        { text: "“I help busy professionals.”", at: 9.7, until: 11.8 },
+        { text: "“I work with anyone who needs my service.”", at: 11.8, until: 16.0 },
+        { text: "“I care about quality.”", at: 31.9, until: 33.5 },
+        { text: "“I take a personal approach.”", at: 33.5, until: 35.2 },
+        { text: "“I have years of experience.”", at: 35.2, until: 39.5 },
+        { text: "“I'm a marketing consultant.”", at: 52.3, until: 54.0 },
+        { text: "“I'm a chiropractor.”", at: 54.0, until: 57.5 },
       ],
     },
     heading: "The patterns of *confusion*.",
@@ -212,9 +212,9 @@ export const module1Slides: Slide[] = [
       // Each layer's spoken example surfaces below while the voice
       // gives it, then clears for the next.
       callouts: [
-        { text: "A solo professional, a growing team, a homeowner with a property they've owned five years, a couple planning their wedding.", at: 8.1, until: 16.6, card: true },
-        { text: "High-functioning professionals managing chronic anxiety while running demanding careers.", at: 28.2, until: 35.3, card: true, who: "Maya" },
-        { text: "Their property is showing wear after years they didn't budget time to maintain it, and they don't want to spend a Saturday doing it themselves.", at: 44.9, until: 52.8, card: true, who: "Marcus" },
+        { text: "A solo professional, a growing team, a homeowner with a property they've owned five years, a couple planning their wedding.", at: 8.1, until: 16.6 },
+        { text: "High-functioning professionals managing chronic anxiety while running demanding careers.", at: 28.2, until: 35.3, who: "Maya" },
+        { text: "Their property is showing wear after years they didn't budget time to maintain it, and they don't want to spend a Saturday doing it themselves.", at: 44.9, until: 52.8, who: "Marcus" },
       ],
     },
     heading: "Situation. Context. *Problem*.",
@@ -362,8 +362,8 @@ export const module1Slides: Slide[] = [
       // arrives beneath it with the voice.
       cues: [0.3, 3.2, 3.3, 13.2, 15.2],
       callouts: [
-        { text: "The chiropractor doesn't sell chiropractic. She relieves a specific kind of pain.", at: 21.2, until: 28.9, card: true },
-        { text: "The photographer doesn't sell photos. She captures a wedding day in a particular style.", at: 29.1, until: 35.8, card: true, who: "Lena" },
+        { text: "The chiropractor doesn't sell chiropractic. She relieves a specific kind of pain.", at: 21.2, until: 28.9 },
+        { text: "The photographer doesn't sell photos. She captures a wedding day in a particular style.", at: 29.1, until: 35.8, who: "Lena" },
         { text: "The category is what you offer. The service is what happens when someone hires you.", at: 36.0, until: 41.3 },
       ],
     },
@@ -551,7 +551,7 @@ export const module1Slides: Slide[] = [
       // teaching arrives beneath it with the voice.
       cues: [0.3, 3.4, 3.6, 16.1, 42.7],
       callouts: [
-        { text: "“I care more. I'm more thorough. I have higher standards.”", at: 18.3, until: 25.8, card: true },
+        { text: "“I care more. I'm more thorough. I have higher standards.”", at: 18.3, until: 25.8 },
         { text: "If your competitor could write your differentiator without changing a word, it's not a differentiator.", at: 26.0, until: 33.2 },
         { text: "An approach, constraint, or method a competitor genuinely does not operate with.", at: 33.6, until: 41.5 },
       ],
@@ -704,11 +704,11 @@ export const module1Slides: Slide[] = [
     audio: {
       src: "/audio/m1/m1-22.mp3",
       callouts: [
-        { text: "Maya rejected open-ended therapy.", at: 8.9, until: 11.3, card: true, who: "Maya" },
-        { text: "Marcus rejected upselling.", at: 11.3, until: 13.1, card: true, who: "Marcus" },
-        { text: "Lena rejected staged posing.", at: 13.1, until: 15.0, card: true, who: "Lena" },
-        { text: "James rejected subscription care.", at: 15.0, until: 17.3, card: true, who: "James" },
-        { text: "Sasha rejected anything but vivids.", at: 17.3, until: 21.5, card: true, who: "Sasha" },
+        { text: "Maya rejected open-ended therapy.", at: 8.9, until: 11.3, who: "Maya" },
+        { text: "Marcus rejected upselling.", at: 11.3, until: 13.1, who: "Marcus" },
+        { text: "Lena rejected staged posing.", at: 13.1, until: 15.0, who: "Lena" },
+        { text: "James rejected subscription care.", at: 15.0, until: 17.3, who: "James" },
+        { text: "Sasha rejected anything but vivids.", at: 17.3, until: 21.5, who: "Sasha" },
         { text: "What's the thing competitors in my category do that I refuse to do?", at: 33.2, until: 38.1 },
       ],
     },

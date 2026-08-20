@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ExerciseSlide as ExerciseSlideDef } from "@/lib/content/types";
 import { DifferentiatorSource } from "@/lib/store/types";
 import { Rich } from "@/components/Rich";
+import { Emphasis } from "@/components/course/Emphasis";
 import { GuidedField } from "@/components/primitives/GuidedField";
 import { PersonaAvatar } from "@/components/slides/PersonaAvatar";
 import { ChipSelect } from "@/components/primitives/ChipSelect";
@@ -139,14 +140,7 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
           style={{ "--n": 1 } as React.CSSProperties}
         >
           {slide.remember ? (
-            <div className="rounded-3xl border-l-[3px] border-gold bg-butter/50 px-5 py-4">
-              <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
-                Remember
-              </div>
-              <p className="mt-1.5 font-serif text-[15px] italic leading-relaxed text-body">
-                <Rich text={slide.remember} />
-              </p>
-            </div>
+            <Emphasis label="Remember" text={slide.remember} />
           ) : null}
 
           {slide.compare ? (

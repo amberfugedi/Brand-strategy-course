@@ -37,17 +37,19 @@ export interface SlideAudio {
    *  must appear in that slide's copy, accents included. */
   marks?: { text: string; at: number; until: number }[];
   /** Spoken phrases surfaced while the voice says them: each fades
-   *  in at `at` seconds and out at `until`. For lines worth seeing
-   *  that aren't in the slide copy. `card` renders the phrase in a
-   *  bordered container (spoken examples) instead of the bare
-   *  margin-note serif (editorial asides). */
+   *  in at `at` seconds and out at `until`, in the emphasis slot at
+   *  the foot of the slide body. For lines worth seeing that aren't
+   *  in the slide copy. Short lines set in the brand serif italic and
+   *  longer ones in the body font, which `font` overrides when a
+   *  short line is an instruction rather than a remark. */
   callouts?: {
     text: string;
     at: number;
     until: number;
-    card?: boolean;
     /** Persona the phrase is about; shows their portrait beside it. */
     who?: string;
+    /** Overrides the length rule when a short line instructs. */
+    font?: "serif" | "body";
   }[];
 }
 

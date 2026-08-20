@@ -474,8 +474,8 @@ export const module3Slides: Slide[] = [
       src: "/audio/m3/m3-20.mp3",
       cues: [0.5, 37.1, 51.5, 65.8, 96.7],
       callouts: [
-        { text: "Takes insurance? The carrier's directory. Private pay? Psychology Today.", at: 14.5, until: 22.5, card: true, who: "maya" },
-        { text: "“Anyone know a good chiropractor?” His name comes up before they go to Google.", at: 86.5, until: 95.0, card: true, who: "james" },
+        { text: "Takes insurance? The carrier's directory. Private pay? Psychology Today.", at: 14.5, until: 22.5, who: "maya" },
+        { text: "“Anyone know a good chiropractor?” His name comes up before they go to Google.", at: 86.5, until: 95.0, who: "james" },
       ],
     },
     heading: "Same framework. *Different* answers.",
@@ -544,8 +544,8 @@ export const module3Slides: Slide[] = [
       src: "/audio/m3/m3-22.mp3",
       callouts: [
         { text: "Maya: directory. Marcus and James: search & map. Lena: website. Sasha: Instagram.", at: 6.8, until: 15.5 },
-        { text: "Lena's Instagram carries discovery. Her website carries decision.", at: 30.3, until: 37.5, card: true, who: "lena" },
-        { text: "Don't have most of these yet? That's fine. Build your primary first.", at: 57.2, until: 65.5 },
+        { text: "Lena's Instagram carries discovery. Her website carries decision.", at: 30.3, until: 37.5, who: "lena" },
+        { text: "Don't have most of these yet? That's fine. Build your primary first.", at: 57.2, until: 65.5, font: "body" },
       ],
     },
     sans: true,
@@ -602,7 +602,7 @@ export const module3Slides: Slide[] = [
       src: "/audio/m3/m3-25.mp3",
       callouts: [
         { text: "Every client arrives through Google. Search matters more, no matter what you prefer.", at: 15.9, until: 23.5 },
-        { text: "Keep the channel you love as a secondary. The primary is buyer behavior.", at: 30.0, until: 37.5 },
+        { text: "Keep the channel you love as a secondary. The primary is buyer behavior.", at: 30.0, until: 37.5, font: "body" },
       ],
     },
     sans: true,

@@ -630,11 +630,13 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       >
         <SpokenMarkProvider marks={slide.audio.marks}>
           <SlideBody slide={slide} revealed={step} strata={STRATA_OF[module.id]} />
+          {/* Spoken asides sit in the body's own column, under the
+              slide and clear of the controls. */}
+          {slide.audio.callouts?.length ? (
+            <CalloutNote callouts={slide.audio.callouts} dark={dark} />
+          ) : null}
         </SpokenMarkProvider>
       </SlideChrome>
-      {slide.audio.callouts?.length ? (
-        <CalloutNote callouts={slide.audio.callouts} dark={dark} />
-      ) : null}
       {/* The priority order and Gap List stay one tab away from every
           slide that refers to them, from the moment Module 2 produces
           them through the foundation modules that use them. */}

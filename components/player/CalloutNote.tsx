@@ -2,25 +2,48 @@
 
 import { useEffect, useState } from "react";
 import { useNarration } from "@/components/player/NarrationProvider";
-import { PersonaAvatar } from "@/components/slides/PersonaAvatar";
+import { Emphasis } from "@/components/course/Emphasis";
 
 interface Callout {
   text: string;
   at: number;
   until: number;
-  card?: boolean;
   who?: string;
+  font?: "serif" | "body";
 }
 
 /**
- * A floating note that surfaces a spoken phrase while the voice says
- * it, then fades out. Two looks: the bare serif margin note for
- * editorial asides, and a bordered card for spoken examples. Purely
- * decorative alongside the narration (captions carry the verbatim
- * words), so it's hidden from assistive tech and never takes pointer
- * events. Sits bottom-right, clear of the caption bar's left-aligned
- * column.
+ * The spoken asides, in the slide's own column at the foot of the
+ * body. They used to float bottom-right over whatever was underneath
+ * and sit above the player controls, which read as a notification
+ * rather than as part of the lesson.
+ *
+ * The slot reserves its height up front, worked out from the longest
+ * line the slide will show, so the content above never shifts when one
+ * arrives or leaves. The estimate is deterministic rather than
+ * measured, so the server and the client agree on it.
+ *
+ * Decorative alongside the narration, which is captioned verbatim, so
+ * it stays out of the accessibility tree.
  */
+const CHARS_PER_LINE_PHONE = 44;
+const CHARS_PER_LINE_WIDE = 86;
+const SERIF_LIMIT = 82;
+
+function reserve(callouts: Callout[], phone: boolean) {
+  const perLine = phone ? CHARS_PER_LINE_PHONE : CHARS_PER_LINE_WIDE;
+  const pad = phone ? 24 : 28;
+  let tallest = 0;
+  for (const c of callouts) {
+    const serif = c.font ? c.font === "serif" : c.text.length <= SERIF_LIMIT;
+    const line = phone ? (serif ? 22 : 23) : serif ? 25 : 24;
+    const lines = Math.max(1, Math.ceil(c.text.length / perLine));
+    const body = Math.max(lines * line, c.who ? 32 : 0);
+    tallest = Math.max(tallest, body + pad);
+  }
+  return Math.round(tallest) + 4;
+}
+
 export function CalloutNote({
   callouts,
   dark,
@@ -29,8 +52,8 @@ export function CalloutNote({
   dark: boolean;
 }) {
   const { getTime } = useNarration();
-  // The last active entry sticks around after its window closes so
-  // the note fades out over its own words instead of vanishing empty.
+  // The last aside stays mounted after its window closes so it fades
+  // out over its own words instead of vanishing mid-sentence.
   const [entry, setEntry] = useState<Callout | null>(null);
   const [shown, setShown] = useState(false);
 
@@ -47,67 +70,30 @@ export function CalloutNote({
     return () => cancelAnimationFrame(raf);
   }, [callouts, getTime]);
 
-  const card = Boolean(entry?.card);
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute z-20 transition-all duration-500 ${
-        // Phones: a solid full-width strip above the footer, so the
-        // phrase never tangles with slide content. Larger screens:
-        // the floating margin note or example card, bottom-right.
-        "inset-x-4 bottom-[5.25rem] sm:inset-x-auto sm:bottom-28 sm:right-[4.5vw]"
-      } ${
-        card ? "sm:max-w-[380px]" : "sm:max-w-[280px] sm:text-right"
-      } ${shown ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}
+      className="emphasis-slot mt-6 shrink-0"
+      style={
+        {
+          "--emph-sm": `${reserve(callouts, true)}px`,
+          "--emph-lg": `${reserve(callouts, false)}px`,
+        } as React.CSSProperties
+      }
     >
-      {/* phone rendering: always a solid card */}
       <div
-        className={`flex items-center gap-3 rounded-[14px] border-l-[3px] border-lilac px-4 py-3 sm:hidden ${
-          dark
-            ? "bg-[#312836] shadow-lift"
-            : "border border-l-[3px] border-subtle border-l-lilac bg-cream-light shadow-lift"
+        className={`max-w-3xl transition-opacity duration-500 ${
+          shown ? "opacity-100" : "opacity-0"
         }`}
       >
-        {entry?.who ? <PersonaAvatar name={entry.who} size={30} /> : null}
-        <p
-          className={`font-serif text-[14px] italic leading-snug ${
-            dark ? "text-cream" : "text-body"
-          }`}
-        >
-          {entry?.text}
-        </p>
-      </div>
-      {/* larger screens */}
-      <div className="hidden sm:block">
-        {card ? (
-          <div
-            className={`flex items-center gap-3.5 rounded-[14px] border-l-[3px] border-lilac px-5 py-4 ${
-              dark
-                ? "bg-cream/5"
-                : "border border-l-[3px] border-subtle border-l-lilac bg-cream-light shadow-lift"
-            }`}
-          >
-            {entry?.who ? <PersonaAvatar name={entry.who} size={36} /> : null}
-            <p
-              className={`font-serif text-[17px] italic leading-relaxed ${
-                dark ? "text-cream" : "text-body"
-              }`}
-            >
-              {entry?.text}
-            </p>
-          </div>
-        ) : (
-          <>
-            <div className="ml-auto h-px w-9 bg-gold" />
-            <p
-              className={`mt-3 font-serif text-[22px] italic leading-snug ${
-                dark ? "text-cream" : "text-body"
-              }`}
-            >
-              {entry?.text}
-            </p>
-          </>
-        )}
+        {entry ? (
+          <Emphasis
+            text={entry.text}
+            who={entry.who}
+            font={entry.font}
+            dark={dark}
+          />
+        ) : null}
       </div>
     </div>
   );

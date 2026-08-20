@@ -4,6 +4,7 @@ import { FrameworkSlide as FrameworkSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
 import { AdviceCloud, useNarrationPast } from "@/components/slides/AdviceCloud";
 import { SlideAction, SlideLink } from "@/components/slides/SlideLink";
+import { Emphasis } from "@/components/course/Emphasis";
 
 export function FrameworkSlide({
   slide,
@@ -61,10 +62,8 @@ export function FrameworkSlide({
       ) : null}
 
       {slide.callout && revealed > slide.paragraphs.length ? (
-        <div className="beat mt-9 max-w-4xl rounded-3xl border-l-[3px] border-teal bg-cream-light px-8 py-6 shadow-lift">
-          <p className="text-[16px] leading-relaxed">
-            <Rich text={slide.callout} />
-          </p>
+        <div className="beat mt-8 max-w-3xl">
+          <Emphasis text={slide.callout} />
         </div>
       ) : null}
     </>

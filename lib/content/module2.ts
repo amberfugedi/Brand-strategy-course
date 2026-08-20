@@ -274,7 +274,7 @@ export const module2Slides: Slide[] = [
       src: "/audio/m2/m2-11.mp3",
       cues: [1.8, 11.5],
       callouts: [
-        { text: "Take a few minutes to actually read what the diagnostic produced.", at: 12.7, until: 19.5 },
+        { text: "Take a few minutes to actually read what the diagnostic produced.", at: 12.7, until: 19.5, font: "body" },
         { text: "If you skim past it, the audit will not make sense.", at: 19.7, until: 25.2 },
       ],
     },
@@ -332,7 +332,7 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-14.mp3", cues: [5.2, 29.6, 35.1],
       callouts: [
-        { text: "Read those. They matter.", at: 8.2, until: 13.9 },
+        { text: "Read those. They matter.", at: 8.2, until: 13.9, font: "body" },
         { text: "The reasoning is not generic. It pulls from the specific answers you gave.", at: 14.1, until: 21.0 },
       ],
     },
@@ -457,7 +457,7 @@ export const module2Slides: Slide[] = [
       ],
       callouts: [
         { text: "The natural impulse is to be a little generous.", at: 9.9, until: 16.6 },
-        { text: "“I have a website, but it's on a free subdomain and hasn't been updated in three years.”", at: 60.5, until: 68.5, card: true },
+        { text: "“I have a website, but it's on a free subdomain and hasn't been updated in three years.”", at: 60.5, until: 68.5 },
         { text: "That second one is the truth. Pick it.", at: 68.8, until: 74.3 },
       ],
     },
@@ -479,7 +479,7 @@ export const module2Slides: Slide[] = [
       ], cues: [1.0, 8.3, 9.6],
       callouts: [
         { text: "Those questions do not make sense for something that does not exist yet.", at: 16.2, until: 22.6 },
-        { text: "Just answer the presence question honestly.", at: 24.3, until: 30.2 },
+        { text: "Just answer the presence question honestly.", at: 24.3, until: 30.2, font: "body" },
         { text: "The rest of the questions resolve themselves.", at: 30.4, until: 36.5 },
       ],
     },
@@ -771,7 +771,7 @@ export const module2Slides: Slide[] = [
         { text: "It tells you what to build first when you're done learning.", at: 14.0, until: 18.9 },
       ],
       callouts: [
-        { text: "Save your Plan, and take a break.", at: 19.2, until: 25.2 },
+        { text: "Save your Plan, and take a break.", at: 19.2, until: 25.2, font: "body" },
         { text: "Module 3 starts the foundation teaching with getting found.", at: 29.7, until: 34.4 },
       ],
     },

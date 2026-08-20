@@ -2,6 +2,7 @@ import { QuestionSlide as QuestionSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
 import { StrataEtch } from "@/components/slides/StrataEtch";
 import { GapListView, PriorityOrderList } from "@/components/course/LivePlan";
+import { Emphasis } from "@/components/course/Emphasis";
 
 export function QuestionSlide({
   slide,
@@ -84,8 +85,8 @@ export function QuestionSlide({
             ))}
           {slide.panel.callout &&
           revealed > panelAt + 1 + slide.panel.paragraphs.length ? (
-            <div className="beat mt-4 border-t border-cream/15 pt-3.5 text-[14.5px] leading-relaxed text-on-dark-muted">
-              <Rich text={slide.panel.callout} />
+            <div className="beat mt-4">
+              <Emphasis text={slide.panel.callout} dark />
             </div>
           ) : null}
         </div>

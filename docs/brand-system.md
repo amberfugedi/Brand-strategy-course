@@ -179,6 +179,28 @@ future body-level treatment is a CSS decision, not a content pass.
   module's foundation stands taller.
 - **Survey ground-line** (course device, ruled in): the ticked hairline
   on question dividers, in the surface's muted tone.
+- **Emphasis** (`components/course/Emphasis.tsx`, ruled): the one way
+  the course leans on a line. Butter at 40% on cream, cream at 6% on
+  dark; a single 2px gold left rule; `rounded-[4px]`, so barely a
+  corner; no shadow. It is the same object whether the line is a spoken
+  aside, a framework's closing thought, or a note to hold while working.
+
+  **No standing label.** These statements do different jobs from lesson
+  to lesson, so a blanket heading like "The takeaway" would misdescribe
+  most of them. A label is passed only where the content genuinely reads
+  as one, and only from **Remember**, **Important**, **Try this**.
+
+  **Serif or body by the job.** Short statements take the brand serif
+  italic, the voice on the page. Longer ones, and short ones that
+  instruct rather than remark, take the body font: an italic serif
+  paragraph reads as a flourish, not an instruction. The rule is length
+  (82 characters), with a per-line `font` override for instructions.
+
+  **In the layout, never over it.** Spoken asides live in a slot at the
+  foot of the slide body, inside the same column as the content and
+  clear of the player controls. The slot reserves the height of the
+  longest line that slide will show, computed from the text rather than
+  measured, so nothing shifts when an aside arrives or leaves.
 
 ## 7. Diagnostic output (ruled, was a gap)
 

@@ -255,6 +255,17 @@ input:focus-visible {
   background-size: 100% 2px;
 }
 
+/* The emphasis slot reserves the height of the tallest line a slide
+   will show, so an aside arriving never shifts the content above it. */
+.emphasis-slot {
+  min-height: var(--emph-sm, 0px);
+}
+@media (min-width: 640px) {
+  .emphasis-slot {
+    min-height: var(--emph-lg, 0px);
+  }
+}
+
 /* Headings are never underlined, spoken mark or otherwise. The rule
    is here as well as in the content so a stray mark cannot draw one. */
 h1 .spoken,

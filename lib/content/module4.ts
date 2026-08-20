@@ -272,8 +272,8 @@ export const module4Slides: Slide[] = [
       src: "/audio/m4/m4-12.mp3",
       cues: [0.5, 36.6, 57.7, 73.7, 87.2],
       callouts: [
-        { text: "Ethics closes client reviews. Her proof comes from the other two sources.", at: 13.5, until: 21.5, card: true, who: "maya" },
-        { text: "The source most people build first is the one she mostly can't use.", at: 29.5, until: 36.0, card: true, who: "maya" },
+        { text: "Ethics closes client reviews. Her proof comes from the other two sources.", at: 13.5, until: 21.5, who: "maya" },
+        { text: "The source most people build first is the one she mostly can't use.", at: 29.5, until: 36.0, who: "maya" },
       ],
     },
     heading: "Same framework. *Different* answers.",
