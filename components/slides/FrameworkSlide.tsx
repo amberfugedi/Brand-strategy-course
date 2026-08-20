@@ -81,9 +81,9 @@ export function FrameworkSlide({
         <div className="flex flex-col lg:flex-row lg:items-center">
           <div className="flex-1">{body}</div>
           <div
-            className={`overflow-hidden transition-all duration-1000 ${
+            className={`transition-all duration-1000 ${
               artGone
-                ? "mt-0 max-h-0 opacity-0 lg:ml-0 lg:w-0"
+                ? "mt-0 max-h-0 overflow-hidden opacity-0 lg:ml-0 lg:w-0"
                 : "mt-8 max-h-[560px] opacity-100 lg:ml-14 lg:mt-0 lg:w-[390px] lg:shrink-0"
             }`}
           >
