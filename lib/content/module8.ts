@@ -302,7 +302,6 @@ export const module8Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "15",
     audio: { src: null },
-    eyebrow: "How authority compounds",
     heading: "Authority is the foundation the others *feed*.",
     paragraphs: [
       "The seventh foundation, and the one the previous six quietly build. Positioning makes your judgment legible, proof confirms it, referrals carry it, awareness gives it room.",

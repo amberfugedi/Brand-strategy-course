@@ -107,10 +107,9 @@ export const module5Slides: Slide[] = [
     kind: "detail",
     id: "m5-earn",
     crumb: S2,
-    tag: "STAGE 01",
+    tag: "STAGE 01 · EARN",
     number: "06",
     audio: { src: null },
-    eyebrow: "Earn",
     heading: "Give them something *nameable.*",
     cols: [
       {
@@ -133,10 +132,9 @@ export const module5Slides: Slide[] = [
     kind: "detail",
     id: "m5-ask",
     crumb: S2,
-    tag: "STAGE 02",
+    tag: "STAGE 02 · ASK",
     number: "07",
     audio: { src: null },
-    eyebrow: "Ask",
     heading: "Make the referral *askable.*",
     cols: [
       {
@@ -159,10 +157,9 @@ export const module5Slides: Slide[] = [
     kind: "detail",
     id: "m5-tend",
     crumb: S2,
-    tag: "STAGE 03",
+    tag: "STAGE 03 · KEEP",
     number: "08",
     audio: { src: null },
-    eyebrow: "Keep",
     heading: "Keep the channel *alive.*",
     cols: [
       {

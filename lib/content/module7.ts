@@ -144,7 +144,6 @@ export const module7Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "08",
     audio: { src: null },
-    eyebrow: "Choosing the channel",
     heading: "The channel is a *means*. Choose it for fit.",
     intro:
       "Usually email, the clearest direct line you control. But the principle is the line, not the tool.",
@@ -183,7 +182,6 @@ export const module7Slides: Slide[] = [
     tag: "DETAIL",
     number: "10",
     audio: { src: null },
-    eyebrow: "The reason to join",
     heading: "A reason to join, not a *bribe* to.",
     cols: [
       {

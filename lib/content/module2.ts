@@ -132,7 +132,6 @@ export const module2Slides: Slide[] = [
         { text: "Here is what is true about your business, and here is what that implies.", at: 39.5, until: 46.2 },
       ],
     },
-    eyebrow: "What this is not",
     heading: "Not what kind of marketing you *want* to do.",
     paragraphs: [
       "But what kind of marketing your business *requires*.",
@@ -257,7 +256,7 @@ export const module2Slides: Slide[] = [
     tag: "TOOL",
     number: "10",
     audio: { src: "/audio/m2/m2-10.mp3" },
-    eyebrow: "Now: the diagnostic",
+    eyebrow: "Your turn",
     heading: "Answer the *diagnostic*.",
     intro:
       "Three to four minutes of work. Answer all six questions thoughtfully. Your answers save as you go.",
@@ -291,7 +290,6 @@ export const module2Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "12",
     audio: { src: "/audio/m2/m2-12.mp3", cues: [3.7, 18.4, 29.0, 40.1] },
-    eyebrow: "What the tiers mean",
     heading: "Four tiers. Four operational *meanings*.",
     tiers: [
       { label: "High", text: "Build here first. Strategic work pays off." },
@@ -336,7 +334,6 @@ export const module2Slides: Slide[] = [
         { text: "The reasoning is not generic. It pulls from the specific answers you gave.", at: 14.1, until: 21.0 },
       ],
     },
-    eyebrow: "Read the reasoning",
     heading: "Each foundation includes a short *reasoning* line.",
     bullets: true,
     paragraphs: [
@@ -501,7 +498,7 @@ export const module2Slides: Slide[] = [
     tag: "TOOL",
     number: "22",
     audio: { src: "/audio/m2/m2-22.mp3" },
-    eyebrow: "Now: the audit",
+    eyebrow: "Your turn",
     heading: "Run the *audit*.",
     intro:
       "Ten to fifteen minutes of honest work. Foundations are sorted by priority, your highest first. Pick the state that matches your reality and move to the next.",

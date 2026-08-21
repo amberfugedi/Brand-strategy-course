@@ -87,7 +87,6 @@ export const module3Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "05",
     audio: { src: "/audio/m3/m3-5.mp3", cues: [0.5, 6.5, 15.2, 21.5, 43.8] },
-    eyebrow: "The five touchpoints",
     heading: "Five places, five *questions* answered.",
     cards: [
       {
@@ -296,7 +295,7 @@ export const module3Slides: Slide[] = [
     tag: "LOCAL",
     number: "13",
     audio: { src: "/audio/m3/m3-13.mp3" },
-    eyebrow: "For local businesses · skip if this isn't you",
+    eyebrow: "Skip if this isn't you",
     heading: "If your buyers are *local*.",
     sub: "The next three slides are for businesses whose clients are nearby. If you work remotely, skip ahead.",
     skip: { label: "My buyers aren't local. Skip ahead", to: 17 },
@@ -310,7 +309,6 @@ export const module3Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "14",
     audio: { src: "/audio/m3/m3-14.mp3", cues: [0.5, 28.8, 47.6, 56.8] },
-    eyebrow: "The local layer",
     heading: "Local presence is a *job*, not a touchpoint.",
     intro:
       "Four things done well across the touchpoints you already have.",
@@ -399,7 +397,6 @@ export const module3Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "18",
     audio: { src: "/audio/m3/m3-18.mp3", cues: [0.5, 21.9, 31.3, 37.9] },
-    eyebrow: "Audit signals",
     heading: "Your audit answers *already* told you which touchpoints matter.",
     cards: [
       {
@@ -435,7 +432,6 @@ export const module3Slides: Slide[] = [
     tag: "WORKED EXAMPLE",
     number: "19",
     audio: { src: "/audio/m3/m3-19.mp3", cues: [0.5, 7.7, 10.2, 12.2] },
-    eyebrow: "Reading it together",
     heading: "Reading it together: *Maya*.",
     cards: [
       {

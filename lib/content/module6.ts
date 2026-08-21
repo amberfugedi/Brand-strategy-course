@@ -216,7 +216,6 @@ export const module6Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "11",
     audio: { src: null },
-    eyebrow: "Weigh it honestly",
     heading: "How much should awareness *weigh* for you?",
     sub: "For some it is the main engine. For others a minor note. Place and weight both vary.",
   },
