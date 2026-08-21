@@ -75,6 +75,21 @@ phrase cream `#FDF9F5` italic. Their dark progress fill is cream at 60%.
 This makes the first appearance of `#DA8970` at module three mean
 something. (ruled; closes the former gap)
 
+### The slide eyebrow (ruled)
+
+The small label above a heading is one element and takes one colour:
+the course accent, `text-gold`, which resolves deep on cream and butter
+on plum. It was drifting across six treatments (gold, muted, teal,
+rust, aubergine, gold at 80%) with no rule behind the split. Layer
+tones in particular must never carry it: on cream they collapse to the
+accent and look right, but the name is wrong and the moment such a
+slide renders on a dark surface it would pick up a layer colour the
+layer rule forbids.
+
+Headlines on cream are Ink. Six slide kinds were setting
+`text-aubergine` on the `h1`, a near-identical plum-tinted dark that
+read as a second heading colour in the code.
+
 ### Hairlines, lift, radius
 
 - Hairline: `1px solid rgba(46,42,39,0.12)` on cream,

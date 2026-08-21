@@ -15,7 +15,7 @@ export function FrameSlide({
       <StrataEtch active={strata} />
       {slide.eyebrow ? (
           <div
-            className="enter mb-5 text-[11px] font-bold uppercase tracking-eyebrow text-gold/80"
+            className="enter mb-5 text-[11px] font-bold uppercase tracking-eyebrow text-gold"
             style={{ "--n": 0 } as React.CSSProperties}
           >
             {slide.eyebrow}

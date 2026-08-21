@@ -27,7 +27,7 @@ export function SynthesisSlide({ slide }: { slide: SynthesisSlideDef }) {
   return (
     <div className="flex flex-1 flex-col justify-center">
       {slide.eyebrow ? (
-        <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-teal">{slide.eyebrow}</div>
+        <div className="mb-2 text-[11px] font-bold uppercase tracking-eyebrow text-gold">{slide.eyebrow}</div>
       ) : null}
       <h1
         className="enter text-3xl font-bold tracking-tight md:text-4xl"
@@ -79,7 +79,7 @@ export function SynthesisSlide({ slide }: { slide: SynthesisSlideDef }) {
           onChange={(e) => setPositioning({ statement: e.target.value })}
           placeholder="Write it as one sentence, or three short ones."
           rows={3}
-          className="rounded-3xl w-full resize-y border border-ink/20 bg-cream-light px-4 py-3 text-[16px] leading-relaxed outline-none transition-colors placeholder:text-body-tertiary focus:border-gold"
+          className="rounded-[14px] w-full resize-y border border-ink/20 bg-cream-light px-4 py-3 text-[16px] leading-relaxed outline-none transition-colors placeholder:text-body-tertiary focus:border-gold"
         />
       </label>
     </div>

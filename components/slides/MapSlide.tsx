@@ -19,9 +19,9 @@ export function MapSlide({ slide }: { slide: MapSlideDef }) {
   return (
     <div className="mt-2 flex flex-1 flex-col">
       {slide.eyebrow ? (
-        <div className="mb-3 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">{slide.eyebrow}</div>
+        <div className="mb-3 text-[11px] font-bold uppercase tracking-eyebrow text-gold">{slide.eyebrow}</div>
       ) : null}
-      <h1 className="text-3xl font-bold tracking-tight text-aubergine md:text-4xl">
+      <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
         <Rich text={slide.heading} />
       </h1>
       <p className="mt-3 max-w-4xl text-[15px] leading-relaxed text-body-secondary">

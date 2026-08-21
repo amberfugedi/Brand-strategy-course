@@ -13,7 +13,7 @@ export function StatementsSlide({
   return (
     <div className="mt-4 flex flex-1 flex-col">
       {slide.eyebrow ? (
-        <div className="mb-3 text-[11px] font-bold uppercase tracking-eyebrow text-body-tertiary">{slide.eyebrow}</div>
+        <div className="mb-3 text-[11px] font-bold uppercase tracking-eyebrow text-gold">{slide.eyebrow}</div>
       ) : null}
       <h1 className="text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
         <Rich text={slide.heading} />
