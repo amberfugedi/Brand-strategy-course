@@ -65,8 +65,8 @@ export const module4Slides: Slide[] = [
     audio: { src: "/audio/m4/m4-3.mp3", cues: [0.5, 16.0] },
     heading: "You can't *author* your own credibility.",
     paragraphs: [
-      "A prospect hears your claims about yourself and quietly discounts them. Everyone does. You would too. It isn't distrust of you specifically. It's how people read anyone selling anything.",
-      "What they can't discount as easily is evidence you didn't write. A stranger's review. A client's words. A visible result. Another professional's referral. A credential. That evidence is earned proof, and it does the work your own claims can't.",
+      "A prospect hears your claims and quietly discounts them. Everyone does. You would too. It's how people read anyone selling anything.",
+      "What they can't discount is evidence you didn't write. A review, a result, a referral, a credential. That is earned proof, and it does the work your claims can't.",
     ],
   },
 
@@ -96,21 +96,21 @@ export const module4Slides: Slide[] = [
       {
         label: "Source 01",
         title: "Client proof",
-        text: "Your clients *vouch*. Reviews, testimonials, case studies, before-and-afters. Answers the prospect's question: did people like me get what they wanted?",
+        text: "Your clients *vouch*. Reviews, testimonials, case studies. Answers: did people like me get what they wanted?",
       },
       {
         label: "Source 02",
         title: "Peer proof",
-        text: "Other professionals *vouch*. Referrals and endorsements from experts whose own judgment carries weight. Answers: do people who would know rate this person?",
+        text: "Other professionals *vouch*. Answers: do people who would know rate this person?",
       },
       {
         label: "Source 03",
         title: "Institutional proof",
-        text: "An outside body *vouches*. Credentials, licenses, certifications, awards, press, association membership. Answers: has something with authority verified this person?",
+        text: "An outside body *vouches*. Credentials, licenses, press. Answers: has something with authority verified this person?",
       },
     ],
     footnote:
-      "Most businesses lean on one source as primary. Which one depends on the business. The next three slides take each in turn.",
+      "Most businesses lean on one as primary. Which one depends on the business.",
   },
 
   // 06 · Client proof detail
@@ -133,15 +133,15 @@ export const module4Slides: Slide[] = [
     cols: [
       {
         label: "What it is",
-        text: "Reviews and ratings on platforms. Testimonials in a client's own words. Case studies. Before-and-afters. Any evidence that the people you've served got what they came for.",
+        text: "Reviews, testimonials in a client's own words, case studies, before-and-afters. Evidence that the people you served got what they came for.",
       },
       {
         label: "When it matters most",
-        text: "When the work is *comparable* and a prospect is weighing you against alternatives. When the buying decision is quick and a star rating settles it. When recency signals you're still good now.",
+        text: "*Comparable* work, weighed against alternatives. A quick decision a star rating settles. Recency that says you're still good now.",
       },
       {
         label: "When it matters less",
-        text: "When professional ethics restrict soliciting or displaying client testimony. When the work is so bespoke that no two clients are comparable. When a client's word carries less weight than an expert's.",
+        text: "Ethics that restrict client testimony. Work so bespoke no two clients compare. A field where an expert's word outweighs a client's.",
       },
     ],
   },
@@ -167,15 +167,15 @@ export const module4Slides: Slide[] = [
     cols: [
       {
         label: "What it is",
-        text: "Referrals from adjacent experts. Endorsements from people whose own professional judgment a prospect already trusts. The therapist a doctor sends patients to. The photographer a planner recommends.",
+        text: "Referrals from adjacent experts a prospect already trusts. The therapist a doctor sends patients to. The photographer a planner recommends.",
       },
       {
         label: "When it matters most",
-        text: "When the work is high-stakes and a prospect wants a *vetted* name. When client proof is restricted and peers are the available voice. When the referring expert has a reputation they're staking on you.",
+        text: "High-stakes work where a prospect wants a *vetted* name. Client proof restricted, peers the available voice. A referrer with a reputation staked on you.",
       },
       {
         label: "When it matters less",
-        text: "When the purchase is low-stakes and quick. When your field has no natural network of adjacent professionals. When prospects don't think to ask an expert before choosing.",
+        text: "A low-stakes, quick purchase. No natural network of adjacent professionals. Prospects who don't think to ask an expert.",
       },
     ],
   },
@@ -193,15 +193,15 @@ export const module4Slides: Slide[] = [
     cols: [
       {
         label: "What it is",
-        text: "Credentials, licenses, certifications. Awards that mean something. Press in outlets your prospects respect. Membership in a professional body that vets its members.",
+        text: "Credentials, licenses, certifications. Awards that mean something. Press your prospects respect.",
       },
       {
         label: "When it matters most",
-        text: "When the field requires verification and a prospect expects it. When the work involves trust, risk, or regulation. When a *credential* is the entry ticket to being considered at all.",
+        text: "A field that requires verification. Work involving trust, risk, or regulation. A *credential* that is the entry ticket.",
       },
       {
         label: "When it matters less",
-        text: "When the work has no formal credentialing and none is expected. When prospects judge by results they can see. When chasing a credential would be effort spent where it earns nothing.",
+        text: "No formal credentialing, and none expected. Prospects who judge by results they can see.",
       },
     ],
   },
@@ -245,7 +245,7 @@ export const module4Slides: Slide[] = [
     },
     sans: true,
     headline: "Asking isn't taking. It's *offering* a way to say something.",
-    sub: "A client who is genuinely glad they hired you often wants to say so and has no natural occasion to. Asking gives them the occasion. You're not extracting a favor. You're handing someone *a door they were already standing near.* And with peers, asking is plain professional reciprocity, the ordinary traffic of people who respect each other's work.",
+    sub: "A client who is glad they hired you often has no natural occasion to say so. Asking gives them the occasion. You're handing someone *a door they were already standing near.* With peers it's ordinary reciprocity.",
   },
 
   // 11 · Which proof is yours
@@ -284,19 +284,19 @@ export const module4Slides: Slide[] = [
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Peer + institutional.",
-        text: "Ethics codes largely close client reviews to her. Referrals from doctors and other therapists, plus her license and credentials, carry the trust instead.",
+        text: "Ethics largely close client reviews to her. Doctor and therapist referrals, plus her credentials, carry the trust.",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Client proof.",
-        text: "Google reviews are nearly the whole apparatus. Volume and recency decide it. Realtor and contractor referrals are a real *second*.",
+        text: "Google reviews are nearly the whole apparatus. Realtor and contractor referrals are a real *second*.",
       },
       {
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "All three.",
-        text: "Client testimonials and portfolio, planner and venue referrals, features in wedding press. A considered, high-trust purchase pulls on every source.",
+        text: "Testimonials, planner referrals, wedding press. A considered purchase pulls on every source.",
       },
       {
         name: "James",
@@ -308,7 +308,7 @@ export const module4Slides: Slide[] = [
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Client proof.",
-        text: "Before-and-afters are the proof. Other stylists who don't do vivids send those clients to her, a real peer *second*.",
+        text: "Before-and-afters are the proof. Stylists who don't do vivids send her those clients, a real peer *second*.",
       },
     ],
   },
@@ -329,7 +329,7 @@ export const module4Slides: Slide[] = [
     },
     sans: true,
     headline: "Proof *ages.*",
-    sub: "A testimonial from four years ago raises a question it doesn't answer: what about since? Client proof ages fastest, because recency is itself a signal. Peer proof ages more slowly, though a referral relationship gone quiet is a weakening one. Institutional proof ages slowest. Earned proof is not a thing you build once. *It's a thing you keep current.*",
+    sub: "A testimonial from four years ago raises a question it doesn't answer: what about since? Client proof ages fastest, peer proof more slowly, institutional slowest. *Earned proof is a thing you keep current.*",
   },
 
   // 14 · More proof is not better proof
@@ -348,7 +348,7 @@ export const module4Slides: Slide[] = [
     },
     sans: true,
     headline: "More proof is not *better* proof.",
-    sub: "Forty thin reviews do less than six specific ones. A wall of logos does less than one case study a prospect can see themselves in. The question is never how much proof you can pile up. It's whether the proof you show answers the doubt a prospect actually has. *Match the proof to the question.*",
+    sub: "Forty thin reviews do less than six specific ones. A wall of logos does less than one case study a prospect sees themselves in. *Match the proof to the doubt they actually have.*",
   },
 
   // 15 · Weak vs strong testimonial
@@ -370,11 +370,11 @@ export const module4Slides: Slide[] = [
     heading: "What does *strong* proof look like?",
     weak: {
       quote: "Amazing to work with. Highly recommend!",
-      text: "Could be about anyone. Names no problem, no result, no specifics. A prospect reads it and learns nothing they can use. It fills a space without doing a job.",
+      text: "Could be about anyone. No problem, no result, no specifics. It fills a space without doing a job.",
     },
     strong: {
       quote: "We came in after a failed rebrand. She found the *positioning* we'd been circling for a year, in three sessions.",
-      text: "Names the starting problem, the result, and the shape of the work. A prospect in the same situation sees themselves. That recognition is what proof is for.",
+      text: "Names the problem, the result, and the shape of the work. A prospect in the same situation sees themselves.",
     },
   },
 
@@ -414,8 +414,8 @@ export const module4Slides: Slide[] = [
     eyebrow: "If you're starting with little",
     heading: "Thin proof is a *starting point*, not a failure.",
     paragraphs: [
-      "If your audit shows you have very little earned proof, you're where most service businesses are early on, and where every business is after a pivot. Don't try to build all three sources at once.",
-      "Find the one source most open to you right now. For most businesses that's client proof from recent work: the people you've served in the last year, asked well, while the work is still fresh for them. One source, done properly, beats three left thin.",
+      "Very little earned proof is where most service businesses start, and where every business lands after a pivot. Don't build all three at once.",
+      "Find the one source most open to you now. Usually client proof from recent work, asked while it's still fresh. One source done properly beats three left thin.",
     ],
   },
 

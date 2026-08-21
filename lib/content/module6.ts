@@ -56,8 +56,8 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     heading: "Awareness is being *known* before you are needed.",
     paragraphs: [
-      "Most marketing chases people who are looking right now. Awareness is different work. It is becoming familiar to the right people before they have a need, so that when the need arrives, you are already who comes to mind. It is not lead generation. It produces no enquiry today. It changes who gets the enquiry later.",
-      "This is the first of three foundations in Be Remembered. The other two build on it: Module 7 is the audience you can contact directly, Module 8 is being seen as the expert. This module is the groundwork for both: simply being known.",
+      "Most marketing chases people looking right now. Awareness is becoming familiar to the right people before they have a need, so that when it arrives you are who comes to mind. It changes who gets the enquiry later.",
+      "The first of three foundations in Be Remembered. Module 7 is the audience you can contact, Module 8 is being seen as the expert. This one is simply being known.",
     ],
   },
 
@@ -87,21 +87,21 @@ export const module6Slides: Slide[] = [
       {
         label: "Condition 01",
         title: "Right place",
-        text: "The place is where your future clients already are. Presence somewhere they never look builds awareness in an *empty* room.",
+        text: "Where your future clients already are. Presence somewhere they never look builds awareness in an *empty* room.",
       },
       {
         label: "Condition 02",
         title: "Consistent",
-        text: "You show up on a rhythm, not in bursts. Awareness is an accumulation, and accumulation needs *repetition* over time.",
+        text: "A rhythm, not bursts. Awareness accumulates, and accumulation needs *repetition*.",
       },
       {
         label: "Condition 03",
         title: "Recognizably you",
-        text: "Each appearance reads as the same person, same angle. Without that, repetition adds up to *noise*, not recognition.",
+        text: "Same person, same angle each time. Without it, repetition adds up to *noise*.",
       },
     ],
     footnote:
-      "Miss one condition and presence stops compounding. The next three slides take each in turn.",
+      "Miss one and presence stops compounding.",
   },
 
   // 06 · Right place
@@ -117,15 +117,15 @@ export const module6Slides: Slide[] = [
     cols: [
       {
         label: "What the condition is",
-        text: "A place is anywhere the same people gather repeatedly. The right place is one your future clients already pass through, so your presence reaches them without you chasing.",
+        text: "Anywhere the same people gather repeatedly. The right one is somewhere your future clients already pass through.",
       },
       {
         label: "A place is not only a feed",
-        text: "It can be a local business network, a profession-adjacent community, a niche online forum, a recurring event, a newsletter someone else runs. A *platform* is one kind of place, not the only kind.",
+        text: "A local network, an adjacent community, a niche forum, a recurring event, someone else's newsletter. A *platform* is one kind of place, not the only kind.",
       },
       {
         label: "How it fails",
-        text: "Presence in a place your clients never visit builds awareness in an empty room. Effort is spent, and no one who matters is there to see it.",
+        text: "Presence where your clients never visit builds awareness in an empty room. No one who matters is there to see it.",
       },
     ],
   },
@@ -143,15 +143,15 @@ export const module6Slides: Slide[] = [
     cols: [
       {
         label: "What the condition is",
-        text: "Awareness accumulates. It is the sum of many small appearances, which means it needs repetition: a rhythm a person could almost predict.",
+        text: "Awareness is the sum of many small appearances. It needs a rhythm a person could almost predict.",
       },
       {
         label: "Small and steady beats big and rare",
-        text: "A modest presence every week outbuilds an ambitious one that appears, then vanishes for two months. The *rhythm* is the asset, not the size of any single appearance.",
+        text: "A modest weekly presence outbuilds an ambitious one that vanishes for two months. The *rhythm* is the asset.",
       },
       {
         label: "How it fails",
-        text: "A burst of effort followed by silence resets the accumulation. People forget at the speed you stop. Consistency you cannot sustain is worse than a smaller one you can.",
+        text: "A burst then silence resets the accumulation. People forget at the speed you stop.",
       },
     ],
   },
@@ -169,15 +169,15 @@ export const module6Slides: Slide[] = [
     cols: [
       {
         label: "What the condition is",
-        text: "For repetition to become recognition, each appearance has to connect to the last. Same voice, same angle, same recognizable point of view.",
+        text: "For repetition to become recognition, each appearance has to connect to the last. Same voice, same angle.",
       },
       {
         label: "This is positioning, showing up again",
-        text: "The angle that makes you recognizable is the one you defined in Module 1. Awareness does not need a new identity. It needs the existing one, shown *consistently.*",
+        text: "The angle is the one you defined in Module 1. Awareness needs no new identity, just the existing one shown *consistently.*",
       },
       {
         label: "How it fails",
-        text: "Presence that changes shape every time reads as a different person every time. The appearances never link, and repetition adds up to noise instead of a name.",
+        text: "Presence that changes shape reads as a different person each time. The appearances never link.",
       },
     ],
   },
@@ -192,7 +192,7 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "Awareness is being known by the *right* people, not the most.",
-    sub: "Most advice about brand-building is really about reach: more followers, more views, a bigger audience. But a thousand strangers who will never hire you are not awareness. They are an audience of the wrong people. The aim is to be genuinely familiar to the smaller group who could actually become clients. *A small room of the right people beats a crowded one.*",
+    sub: "Most brand-building advice is really about reach. But a thousand strangers who will never hire you are not awareness. The aim is to be familiar to the smaller group who could become clients. *A small room of the right people beats a crowded one.*",
   },
 
   // 10 · Pays back last
@@ -205,7 +205,7 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "Awareness is the foundation whose progress is hardest to *see*.",
-    sub: "Of every foundation in this course, this one is the hardest to watch working. You will do the work and see nothing for a long while, because recognition forms quietly, below the surface, before it ever produces an enquiry. That is normal, and it is not failure. The work is invisible right up until it is not. *The silence is not the absence of progress.*",
+    sub: "This is the hardest foundation to watch working. You will do the work and see nothing for a long while, because recognition forms below the surface before it produces an enquiry. *The silence is not the absence of progress.*",
   },
 
   // 11 · How much should it weigh
@@ -237,31 +237,31 @@ export const module6Slides: Slide[] = [
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Minor.",
-        text: "Maya runs on peer referral. Awareness is a light, steady note: a modest professional profile in the local clinician community, so referrers remember she exists. *Small* is the right size here.",
+        text: "She runs on peer referral. A modest profile in the local clinician community, so referrers remember she exists. *Small* is the right size.",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Moderate.",
-        text: "Reviews carry him, but awareness helps. His place is the local neighborhood groups where homeowners ask for recommendations. Being the name already familiar there shortens every decision.",
+        text: "Reviews carry him. His place is the neighborhood groups where homeowners ask for recommendations, where a familiar name shortens the decision.",
       },
       {
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "Significant.",
-        text: "Couples research for months. Her place is the venue and planner community, plus a consistent portfolio presence, so her documentary style is recognized before the first call.",
+        text: "Couples research for months. Her place is the venue and planner community, so her documentary style is recognized before the first call.",
       },
       {
         name: "James",
         meta: "chiropractor · local",
         lead: "Minor.",
-        text: "James runs on referral and local search. Awareness is a small note: steady, recognizable presence in a couple of community spaces, so the name is familiar. Not his main engine.",
+        text: "He runs on referral and local search. A steady presence in a couple of community spaces keeps the name familiar. Not his main engine.",
       },
       {
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Primary.",
-        text: "Awareness is Sasha's main engine. Her place is the platform where her vivids work is discovered, and her audience follows for months before they book. Presence is the business.",
+        text: "Awareness is her main engine. Her audience follows for months before they book. Presence is the business.",
       },
     ],
   },
@@ -289,7 +289,7 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "The cadence you can *keep* beats the one you admire.",
-    sub: "An ambitious plan you abandon in a month builds less awareness than a modest one you hold for a year. Recognition is forfeited the moment you stop, and an overreaching cadence is built to be stopped. So plan from your real capacity, the 5 to 10 hours you actually have, not the schedule you wish you had. *Choose the pace you can still keep when the week goes wrong.*",
+    sub: "An ambitious plan you abandon in a month builds less than a modest one you hold for a year. Recognition is forfeited the moment you stop. *Choose the pace you can still keep when the week goes wrong.*",
   },
 
   // 15 · Weak vs strong plan
@@ -325,7 +325,7 @@ export const module6Slides: Slide[] = [
     sans: true,
     eyebrow: "Why this layer exists",
     headline: "Every other foundation works on people *already* near you.",
-    sub: "Getting found, earned proof, referrals: each one acts on people who are searching for you, or were sent by someone who knows you. Awareness is the first foundation that reaches past that edge, to people not yet looking and not yet connected. It is slow because it is doing the hardest reach of all. *That reach is the whole reason this layer exists.*",
+    sub: "Getting found, earned proof and referrals all act on people already searching, or sent by someone who knows you. Awareness is the first that reaches past that edge. *That reach is the whole reason this layer exists.*",
   },
 
   // 17 · Start smaller
@@ -339,8 +339,8 @@ export const module6Slides: Slide[] = [
     eyebrow: "If the plan feels like a lot",
     heading: "Start *smaller* than feels right.",
     paragraphs: [
-      "The instinct is to begin with an ambitious presence, to make up for lost time. Resist it. An awareness practice has to survive your worst week, not your best one, because the silence after you stop un-builds the recognition you had.",
-      "Pick one place. Pick the smallest cadence that still counts as a rhythm: weekly, or even fortnightly. Choose the version you are slightly embarrassed is not more. If it holds for a year, you can always add. Almost no one regrets starting too small. Many quit from starting too big.",
+      "The instinct is to begin ambitiously, to make up for lost time. Resist it. The practice has to survive your worst week, not your best.",
+      "One place, and the smallest cadence that still counts as a rhythm. Choose the version you are slightly embarrassed is not more. Almost no one regrets starting too small.",
     ],
   },
 
@@ -354,7 +354,7 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "You become known the way a place becomes *familiar.*",
-    sub: "No one decides to know a business. Familiarity forms the way it does with a shop you pass each day: through quiet, repeated exposure, until the name is simply part of the landscape. Awareness is not a campaign that announces you. It is a presence that, kept up, becomes ordinary. *Ordinary, in the right place, is exactly the goal.*",
+    sub: "No one decides to know a business. Familiarity forms the way it does with a shop you pass each day, until the name is part of the landscape. *Ordinary, in the right place, is exactly the goal.*",
   },
 
   // 19 · The presence plan (interactive)
@@ -368,8 +368,8 @@ export const module6Slides: Slide[] = [
     eyebrow: "Your turn",
     heading: "Name your *place.*",
     paragraphs: [
-      "First, note how much weight awareness should carry for you, using the calibration as your guide. Then name the one place you will build presence in: the place your future clients already are, and check it against the three conditions.",
-      "Then commit to a cadence, and deliberately under-commit. Pick the rhythm you could keep through a bad week, not a good one.",
+      "Note how much weight awareness should carry for you. Then name the one place you will build presence in, and check it against the three conditions.",
+      "Then commit to a cadence, and deliberately under-commit. The rhythm you could keep through a bad week.",
     ],
   },
 

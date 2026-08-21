@@ -54,8 +54,8 @@ export const module5Slides: Slide[] = [
     audio: { src: null },
     heading: "A referral is an *event* with causes.",
     paragraphs: [
-      "Module 4 showed that other people vouching for you is proof: a referral is credibility you didn't author. This module picks up the same fact and asks a different question. Not is this proof, but can I cause more of it.",
-      "A referral feels like luck because its causes are quiet and spread out over time. They are still causes. Name them and a referral stops being weather. It becomes a system, something with parts you can build and parts you can fix.",
+      "Module 4 showed that a referral is credibility you didn't author. This module asks a different question. Not is this proof, but can I cause more of it.",
+      "A referral feels like luck because its causes are quiet and spread out. They are still causes. Name them and it stops being weather: parts you can build, parts you can fix.",
     ],
   },
 
@@ -85,21 +85,21 @@ export const module5Slides: Slide[] = [
       {
         label: "Stage 01",
         title: "Earn",
-        text: "The work produces something *specific* enough to refer. Not just a happy client, a client who can name what you did and who it was for.",
+        text: "Work *specific* enough to refer. Not a happy client, a client who can name what you did.",
       },
       {
         label: "Stage 02",
         title: "Ask",
-        text: "You make the referral askable, and you do it by handing over the words and the fit. A good ask carries who you are *right* for.",
+        text: "You hand over the words and the fit. A good ask carries who you are *right* for.",
       },
       {
         label: "Stage 03",
         title: "Keep",
-        text: "The referral gets acknowledged, so the relationship stays alive. A kept channel produces again. A silent one *closes*.",
+        text: "The referral gets acknowledged, so the channel stays alive. A silent one *closes*.",
       },
     ],
     footnote:
-      "Keep feeds Earn: a referral handled well makes the next one likelier. That is why it is a loop and not a list. The next three slides take each stage in turn.",
+      "Keep feeds Earn: a referral handled well makes the next one likelier. That is why it is a loop and not a list.",
   },
 
   // 06 · Earn
@@ -115,15 +115,15 @@ export const module5Slides: Slide[] = [
     cols: [
       {
         label: "What the stage is",
-        text: "A referral needs something to carry. Not satisfaction, which is a feeling, but a result a person can put into words: what you did, and who it was for.",
+        text: "A referral needs something to carry. Not satisfaction, which is a feeling, but a result they can put into words.",
       },
       {
         label: "For a client",
-        text: "A specific outcome they lived through. “She fixed the thing I was stuck on” travels. “She's *great*” does not. The work itself has to be legible to them.",
+        text: "An outcome they lived through. “She fixed the thing I was stuck on” travels. “She's *great*” does not.",
       },
       {
         label: "For a peer",
-        text: "A professional judgment they would stake their own name on. A peer refers you when they have seen, clearly, the kind of work you are the right call for.",
+        text: "A judgment they would stake their own name on. Peers refer once they have seen what you are the right call for.",
       },
     ],
   },
@@ -141,15 +141,15 @@ export const module5Slides: Slide[] = [
     cols: [
       {
         label: "What the stage is",
-        text: "The other person knows you welcome referrals and knows who you are right for. If asking feels like begging, it is usually because the ask has no shape. A specific ask is not a favor extracted.",
+        text: "They know you welcome referrals, and who you are right for. Asking feels like begging when the ask has no shape.",
       },
       {
         label: "For a client",
-        text: "A light, well-timed mention that names the person you help. “If you ever meet someone *circling* the same decision” gives them a signal to watch for, not a quota.",
+        text: "A light mention that names who you help. “If you ever meet someone *circling* the same decision” is a signal to watch for, not a quota.",
       },
       {
         label: "For a peer",
-        text: "An ongoing professional relationship where routing work to each other is mutual and plain. With peers, the ask is reciprocity, not imposition.",
+        text: "A relationship where routing work to each other is mutual and plain. Reciprocity, not imposition.",
       },
     ],
   },
@@ -167,15 +167,15 @@ export const module5Slides: Slide[] = [
     cols: [
       {
         label: "What the stage is",
-        text: "The person who referred you learns it landed. A referral that vanishes into silence teaches the referrer that referring you leads nowhere, and they quietly stop.",
+        text: "The referrer learns it landed. One that vanishes into silence teaches them that referring you leads nowhere.",
       },
       {
         label: "For a client",
-        text: "A genuine, specific thank-you. They took a small social risk on your behalf. *Acknowledging* that, plainly, is what makes a second referral feel natural.",
+        text: "A specific thank-you. They took a small social risk for you. *Acknowledging* it plainly is what makes a second referral natural.",
       },
       {
         label: "For a peer",
-        text: "Real reciprocity and staying in honest professional contact. A peer relationship is kept, not transacted: it stays warm because both people keep showing up.",
+        text: "Reciprocity and honest contact. A peer relationship is kept, not transacted.",
       },
     ],
     footnote: "Staying in contact → an owned channel (Module 7).",
@@ -191,7 +191,7 @@ export const module5Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "A referral is a judgment. Pay for it and you have *bought* something else.",
-    sub: "An honest referral is one person telling another the truth as they see it. The moment a fee or a trade rides on it, the judgment bends, and a prospect can feel the bend. Some fields forbid paid referral outright, and for good reason. Acknowledgement is not payment: a genuine thank-you rewards the person without renting their opinion. *Keep the judgment clean and the referral keeps its worth.*",
+    sub: "An honest referral is one person telling another the truth as they see it. The moment a fee rides on it the judgment bends, and a prospect can feel the bend. A thank-you rewards the person without renting their opinion. *Keep the judgment clean and the referral keeps its worth.*",
   },
 
   // 10 · The loop compounds
@@ -236,31 +236,31 @@ export const module5Slides: Slide[] = [
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Peer engine.",
-        text: "Doctors and other therapists route clients to her. Earn is strong. *Keep* is the weak stage: those peer relationships go quiet between referrals, and a quiet one cools.",
+        text: "Doctors and therapists route clients to her. *Keep* is the weak stage: those relationships go quiet between referrals, and a quiet one cools.",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Client engine, plus partners.",
-        text: "Happy homeowners and realtor contacts. Earn and Keep are fine. *Ask* is the weak stage: he never actually mentions referrals, and assumes good work travels alone.",
+        text: "Happy homeowners and realtors. *Ask* is the weak stage: he never mentions referrals, and assumes good work travels alone.",
       },
       {
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "Peer engine.",
-        text: "Planners and venues are her core channel. Ask is handled. *Earn* is the weak stage: planners cannot name what makes her documentary style specific, so they refer her generically.",
+        text: "Planners and venues are her channel. *Earn* is the weak stage: they cannot name what makes her documentary style specific, so they refer her generically.",
       },
       {
         name: "James",
         meta: "chiropractor · local",
         lead: "Both engines.",
-        text: "GP and physio referrals plus patient word of mouth. *Ask* is the weak stage: he has never told the GPs which patients he is the right call for, so the fit is hit and miss.",
+        text: "GP and physio referrals plus patient word of mouth. *Ask* is the weak stage: the GPs were never told which patients he is right for.",
       },
       {
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Client engine, plus stylist overflow.",
-        text: "Other stylists send vivids clients to her. Earn is vivid. *Keep* is the weak stage: she never circles back to the stylists who sent work, so the overflow is sporadic.",
+        text: "Other stylists send her vivids clients. *Keep* is the weak stage: she never circles back, so the overflow is sporadic.",
       },
     ],
   },
@@ -288,7 +288,7 @@ export const module5Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "A referral pointed at the *wrong* person costs more than no referral.",
-    sub: "A willing referrer who cannot describe who you are right for will send people you cannot help. Each one costs a consultation, costs the prospect their time, and quietly teaches the referrer that referring you does not work. This is why the ask has to carry the fit, not just the name. *A good referral is aimed, not just sent.*",
+    sub: "A referrer who cannot describe who you are right for sends people you cannot help. Each one costs a consultation and teaches them that referring you does not work. *A good referral is aimed, not just sent.*",
   },
 
   // 15 · Weak vs strong ask
@@ -322,7 +322,7 @@ export const module5Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "A referral system is built in *relationships*, not campaigns.",
-    sub: "There is no launch week for referrals. The loop runs at the speed of the relationships it is made of, which is slow, and that is correct. The work is small and recurring: one honest ask, one specific thank-you, one peer relationship kept warm. *A referral system is a habit wearing the costume of a strategy.*",
+    sub: "There is no launch week for referrals. The loop runs at the speed of the relationships it is made of. One honest ask, one specific thank-you, one relationship kept warm. *A referral system is a habit wearing the costume of a strategy.*",
   },
 
   // 17 · Fix the weak stage
@@ -336,8 +336,8 @@ export const module5Slides: Slide[] = [
     eyebrow: "If the loop feels like a lot",
     heading: "Fix the *weak* stage, not all three.",
     paragraphs: [
-      "You do not rebuild the whole loop at once. The five businesses each had one weak stage, not three. If referrals already reach you, even occasionally, your loop is running and leaking at one point.",
-      "Pick one referral source you already have, a kind of client or a particular peer. Walk it through Earn, Ask, and Keep, and find the stage where it leaks. One stage, repaired properly, restores the whole loop. The next slide is for the buyer with no loop yet.",
+      "You do not rebuild the whole loop at once. Each of the five had one weak stage, not three. If referrals reach you at all, the loop runs and leaks at one point.",
+      "Pick one source you already have. Walk it through Earn, Ask and Keep and find where it leaks. One stage repaired restores the loop.",
     ],
   },
 
@@ -351,9 +351,10 @@ export const module5Slides: Slide[] = [
     audio: { src: null },
     eyebrow: "If you have no referral system yet",
     heading: "No loop yet? *Start* at Earn.",
+    bullets: true,
     paragraphs: [
-      "If referrals do not really reach you yet, you do not have a weak stage to repair. You have a loop to begin, and it begins in one specific place. Not with asking. With Earn.",
-      "A referral has nothing to travel on until your work is nameable. So the first move is not a better ask, it is making one piece of your work specific enough that a client or peer could describe it in a plain sentence. Ask and Keep are real, and they come next. Earn is where a loop that does not exist yet is built. This is the honest starting point, not a lesser one.",
+      "If referrals do not reach you yet, you have no weak stage to repair. You have a loop to begin, and it begins with Earn.",
+      "A referral has nothing to travel on until your work is nameable. The first move is making one piece of it specific enough to describe in a plain sentence. Ask and Keep come next.",
     ],
   },
 
@@ -367,7 +368,7 @@ export const module5Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "People refer the businesses they can *describe* in one sentence.",
-    sub: "A referral happens in a conversation you are not in. All the referrer has is the sentence they can say about you. If that sentence is clear, the referral is accurate and it travels. If it is vague, it does not get made at all. *The clearer you are to describe, the more often you get described.* Referral and positioning are the same work, met again here.",
+    sub: "A referral happens in a conversation you are not in. All the referrer has is the sentence they can say about you. Clear, and it travels. Vague, and it never gets made. *The clearer you are to describe, the more often you get described.*",
   },
 
   // 20 · The referral map (interactive)
@@ -381,8 +382,8 @@ export const module5Slides: Slide[] = [
     eyebrow: "Your turn",
     heading: "Map your *loop.*",
     paragraphs: [
-      "Pick one referral source you already have: a kind of client, or a particular peer. If referrals do not reach you yet, name the source you are building toward, and start at Earn.",
-      "Walk that one source through all three stages. Mark Earn, Ask, and Keep as solid or leaking, then name the single weak stage and one concrete change you will make to it.",
+      "Pick one source you already have, a kind of client or a particular peer. If none reach you yet, name the one you are building toward.",
+      "Mark Earn, Ask and Keep as solid or leaking. Then name the weak stage and one concrete change to it.",
     ],
   },
 

@@ -57,8 +57,8 @@ export const module8Slides: Slide[] = [
     audio: { src: null },
     heading: "Authority is earned *trust*.",
     paragraphs: [
-      "It is not a title you award yourself, and not a level you reach. Authority is the weight your word carries in your field: whether, when you say something, people move on it or weigh it like anyone else's.",
-      "Which means it was never something to qualify for. It is something other people grant you, based on whether your judgment has been sound. Your clients have been doing exactly that, quietly, for as long as you have had clients. This module is about seeing that clearly, and building on it.",
+      "Not a title you award yourself, and not a level you reach. Authority is the weight your word carries: whether people move on it, or weigh it like anyone else's.",
+      "So it was never something to qualify for. Other people grant it, based on whether your judgment has been sound. Your clients have been doing that quietly for as long as you have had clients.",
     ],
   },
 
@@ -88,21 +88,21 @@ export const module8Slides: Slide[] = [
       {
         label: "Kind 01",
         title: "Craft",
-        text: "Trust earned by the visible quality of the work itself. The work is good enough, and distinct enough, that it *speaks* before you do.",
+        text: "Earned by the visible quality of the work. Good enough, and distinct enough, that it *speaks* before you do.",
       },
       {
         label: "Kind 02",
         title: "Expertise",
-        text: "Trust earned by defined, demonstrable knowledge. People rely on your word because of what you reliably and provably *know*.",
+        text: "Earned by defined, demonstrable knowledge. People rely on your word for what you provably *know*.",
       },
       {
         label: "Kind 03",
         title: "Track record",
-        text: "Trust earned by a history of calls that proved right. People trust not just your skill but your *read* of a situation.",
+        text: "Earned by a history of calls that proved right. Not just your skill but your *read* of a situation.",
       },
     ],
     footnote:
-      "Most businesses lead with one of the three. It is not a ranking, and you do not need all three. The next slides take craft and expertise in turn, then track record.",
+      "Most businesses lead with one of the three. It is not a ranking, and you do not need all three.",
   },
 
   // 06 · Craft
@@ -118,15 +118,15 @@ export const module8Slides: Slide[] = [
     cols: [
       {
         label: "What it is",
-        text: "Authority that comes from the work being visibly, distinctly good. Not vouched for by others: seen directly. The craft itself is the argument.",
+        text: "The work being visibly, distinctly good. Not vouched for by others, seen directly.",
       },
       {
         label: "How it is earned",
-        text: "By making the quality legible. Doing excellent work is the start; letting it be *seen*, clearly and often, is what turns it into authority.",
+        text: "By making the quality legible. Doing the work is the start; letting it be *seen* is what turns it into authority.",
       },
       {
         label: "Where it leads",
-        text: "People arrive already trusting you, because they have seen the work. The judgment is granted before the first conversation.",
+        text: "People arrive already trusting you, because they have seen the work.",
       },
     ],
   },
@@ -144,15 +144,15 @@ export const module8Slides: Slide[] = [
     cols: [
       {
         label: "What it is",
-        text: "Authority that comes from defined, demonstrable knowledge. A depth in a specific area that others can rely on and, importantly, can verify.",
+        text: "Defined, demonstrable knowledge. Depth in a specific area others can rely on and verify.",
       },
       {
         label: "How it is earned",
-        text: "By making the knowledge *visible* in how you work and explain: the question you think to ask, the distinction you draw that no one else did.",
+        text: "By making the knowledge *visible* in how you work: the question you think to ask, the distinction no one else drew.",
       },
       {
         label: "Where it leads",
-        text: "People bring you the hard cases, the ones that need someone who genuinely knows. Your word settles questions others leave open.",
+        text: "People bring you the hard cases. Your word settles questions others leave open.",
       },
     ],
   },
@@ -167,7 +167,7 @@ export const module8Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "Authority is granted, never *announced*.",
-    sub: "The loud version of authority is a performance: the thought-leader pose, the expert label applied to oneself, the confidence turned up until it reads as credibility. It can draw a crowd. It cannot draw trust, because trust is a verdict other people reach, and they reach it by watching whether your judgment holds. You do not get to award yourself the verdict. *Announced authority is the costume. Granted authority is the thing.*",
+    sub: "The loud version is a performance: the thought-leader pose, the expert label applied to oneself. It can draw a crowd. It cannot draw trust, because trust is a verdict other people reach by watching whether your judgment holds. *Announced authority is the costume. Granted authority is the thing.*",
   },
 
   // 09 · Which is yours
@@ -196,15 +196,15 @@ export const module8Slides: Slide[] = [
     cols: [
       {
         label: "What it is",
-        text: "Authority that comes from a track record of calls that proved right. Not only skill, not only knowledge: a trusted read of which way a situation will go.",
+        text: "A track record of calls that proved right. Not only skill, but a trusted read of which way a situation will go.",
       },
       {
         label: "How it is earned",
-        text: "Slowly, and only by being right in view of others, over time. It is the hardest kind to build and the hardest to fake, because it needs *history.*",
+        text: "Slowly, and only by being right in view of others. The hardest to build and the hardest to fake, because it needs *history.*",
       },
       {
         label: "Where it leads",
-        text: "People consult you before deciding, not after. They want your call on the situation itself, ahead of the work.",
+        text: "People consult you before deciding, not after. They want your call on the situation itself.",
       },
     ],
   },
@@ -233,7 +233,7 @@ export const module8Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "Whichever kind is yours, it is shown by *doing*.",
-    sub: "Craft is shown by letting the work be seen. Expertise is shown in the question you ask that no one else did. A track record is shown by making a call where others can watch it land. None of the three is shown by describing yourself. Authority is demonstrated, in the ordinary course of the work, or it is not built at all. *The work is the argument. Your job is to make it visible.*",
+    sub: "Craft is shown by letting the work be seen. Expertise, in the question no one else asked. A track record, by making a call where others watch it land. None of the three is shown by describing yourself. *The work is the argument. Your job is to make it visible.*",
   },
 
   // 13 · Calibration opener
@@ -265,31 +265,31 @@ export const module8Slides: Slide[] = [
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Expertise.",
-        text: "Trust rests on clinical depth and the regard of peers. Shown not by self-promotion but in the precision of how she works. Weighs *heavily.*",
+        text: "Clinical depth and the regard of peers, shown in the precision of how she works. Weighs *heavily.*",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Minor. Say so.",
-        text: "A pressure washer is not building thought leadership. His honest ceiling is thin craft authority: reliably trusted to do the job well. That is enough.",
+        text: "Not building thought leadership. His honest ceiling is thin craft authority: trusted to do the job well. Enough.",
       },
       {
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "Craft.",
-        text: "Her documentary style is distinct and visible. The work itself is the argument; her authority grows every time it is *seen.*",
+        text: "Her documentary style is distinct and visible. Her authority grows every time the work is *seen.*",
       },
       {
         name: "James",
         meta: "chiropractor · local",
         lead: "Expertise.",
-        text: "Clinical trust in a defined area. Patients and referring GPs rely on what he demonstrably knows about a specific kind of case.",
+        text: "Clinical trust in a defined area. Patients and GPs rely on what he demonstrably knows.",
       },
       {
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Craft, into specialism.",
-        text: "Her vivid work is unmistakable and recognized. Seen often enough, craft authority becomes a named specialism. Weighs *heavily.*",
+        text: "Her vivids work is unmistakable. Seen often enough, craft authority becomes a named specialism. Weighs *heavily.*",
       },
     ],
   },
@@ -305,8 +305,8 @@ export const module8Slides: Slide[] = [
     eyebrow: "How authority compounds",
     heading: "Authority is the foundation the others *feed*.",
     paragraphs: [
-      "Authority is its own foundation, the seventh. It is also the one the previous six quietly build. A clear position makes your judgment legible. Earned proof is others confirming it. Referrals carry it. Awareness gives it room to be seen. An owned audience lets it be shown again and again.",
-      "You do not build authority by adding a separate activity on top. You build it by doing the other six well, in view, over time. That is why it is last: it is what the foundation *becomes.*",
+      "Authority is the seventh foundation, and the one the previous six quietly build. Positioning makes your judgment legible. Earned proof confirms it. Referrals carry it. Awareness gives it room. An owned audience shows it again and again.",
+      "You do not build it by adding an activity on top. You build it by doing the other six well, in view. That is why it is last: it is what the foundation *becomes.*",
     ],
   },
 
@@ -320,7 +320,7 @@ export const module8Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "Authority is the slowest foundation, and the most *durable*.",
-    sub: "It cannot be rushed, because it is a verdict reached by other people watching your judgment hold up, and watching takes time. That same slowness is its strength. Authority built slowly, on real work, does not collapse when a platform changes or a trend passes. It is the part of your marketing that compounds quietly for years. *Slow to build is also slow to lose.*",
+    sub: "It cannot be rushed, because it is a verdict other people reach by watching your judgment hold up. That slowness is its strength: authority built on real work does not collapse when a platform changes. *Slow to build is also slow to lose.*",
   },
 
   // 17 · The Foundation Plan opener
@@ -347,8 +347,8 @@ export const module8Slides: Slide[] = [
     eyebrow: "Your turn",
     heading: "Assemble your plan. *Sequence* the seven foundations.",
     paragraphs: [
-      "The plan below has already gathered what you marked across the course: positioning, the audit, get found, earned proof, referrals, awareness, owned audience, and the authority you just named.",
-      "You will not act on all seven at once. With five to ten hours a week, that would stall. Instead, sequence them: first, next, later. First is the one or two that most need work and most repay it now.",
+      "The plan below has gathered what you marked across the course, from positioning through to the authority you just named.",
+      "You will not act on all seven at once. Sequence them: first, next, later. First is the one or two that most need work and most repay it now.",
     ],
   },
 
@@ -363,8 +363,8 @@ export const module8Slides: Slide[] = [
     eyebrow: "Reading your plan",
     heading: "One thing at a time, in the right *order*.",
     paragraphs: [
-      "A good plan is not the longest one. It is the one you will actually follow. Put first the foundation that is both weakest and most load-bearing, the one whose absence is quietly costing you the most. Let the rest wait without guilt.",
-      "The seven foundations do not expire. A plan sequenced to five hours a week, and kept, will outbuild an ambitious plan that stalls in a month. You are not behind. You have a foundation and an *order* to build it in.",
+      "A good plan is the one you will actually follow. Put first the foundation that is both weakest and most load-bearing. Let the rest wait without guilt.",
+      "The seven foundations do not expire. A modest plan you keep will outbuild an ambitious one that stalls in a month. You have a foundation and an *order* to build it in.",
     ],
   },
 

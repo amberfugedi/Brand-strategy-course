@@ -62,8 +62,8 @@ export const module3Slides: Slide[] = [
     audio: { src: "/audio/m3/m3-3.mp3", cues: [0.5, 27.3] },
     heading: "Getting found is the sum of where you *show up* when someone looks.",
     paragraphs: [
-      "A prospect has a need and goes looking. Your website is one place they might land. So is your Google listing. So is the Instagram post a friend sent them, the directory entry on a marketplace, the map result when they search nearby.",
-      "The strategic question isn't “do I have a website.” It's: which of these places does your business actually need to do well, and which can stay minimal? That's what this module works out.",
+      "A prospect goes looking. Your website is one place they might land. So is your Google listing, a friend's Instagram post, a directory entry, the map result.",
+      "The question isn't “do I have a website.” It's which of these places your business needs to do well, and which can stay minimal.",
     ],
   },
 
@@ -93,27 +93,27 @@ export const module3Slides: Slide[] = [
       {
         label: "Touchpoint 01",
         title: "Your website",
-        text: "The place that holds *everything* about you. Positioning, proof, and the case for choosing you.",
+        text: "Holds *everything*: positioning, proof, the case for choosing you.",
       },
       {
         label: "Touchpoint 02",
         title: "Search & map listings",
-        text: "The place a prospect *finds* you when they don't yet know your name. Google Business Profile, Apple Maps.",
+        text: "Where a prospect *finds* you before they know your name. Google Business Profile, Apple Maps.",
       },
       {
         label: "Touchpoint 03",
         title: "Social platforms",
-        text: "The place a prospect *sees* you before they're looking. Instagram, LinkedIn, TikTok, wherever your audience already is.",
+        text: "Where a prospect *sees* you before they're looking. Instagram, LinkedIn, TikTok.",
       },
       {
         label: "Touchpoint 04",
         title: "Third-party listings",
-        text: "The places someone else *vouches* for you. Yelp, OpenTable, Psychology Today, industry directories.",
+        text: "Where someone else *vouches* for you. Yelp, Psychology Today, industry directories.",
       },
       {
         label: "Touchpoint 05",
         title: "Online communities",
-        text: "The places your prospect *participates*. Facebook groups, Reddit, Discord, niche forums. You show up as a peer.",
+        text: "Where your prospect *participates*. You show up as a peer, not a pitch.",
       },
     ],
   },
@@ -151,15 +151,15 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Carries positioning, proof, pricing, process, and a way to take the next step. The place that holds everything a prospect might want to know once they've found you elsewhere. The depth touchpoint, when depth is needed. Email list lives downstream of this touchpoint, when the work calls for it.",
+        text: "Positioning, proof, pricing, process, and the next step. The depth touchpoint, when depth is needed.",
       },
       {
         label: "When it matters most",
-        text: "When the buyer engages with your work over weeks or months before contact. When the work depends on visual or written proof. When the price tag warrants research.",
+        text: "Long engagement before contact. Work that depends on visual or written proof. A price tag that warrants research.",
       },
       {
         label: "When it matters less",
-        text: "When prospects find you through search and call within hours. When trust is established by social proof, not site content. When the work is quick, local, and price-comparable. For some businesses, a website is optional, or is just a booking page.",
+        text: "Prospects who search and call within hours. Trust established by social proof, not site content. Sometimes a booking page is enough.",
       },
     ],
   },
@@ -177,15 +177,15 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Answers the question a prospect has before they know your name: who in my area does *this*. Carries hours, location, photos, reviews, and the basic facts.",
+        text: "Answers the question asked before they know your name: who near me does *this*. Hours, location, photos, reviews.",
       },
       {
         label: "When it matters most",
-        text: "When you're local-only or hybrid. When prospects search for the service before they search for the person. When category competition is dense and reviews are the differentiator.",
+        text: "Local-only or hybrid. Prospects search the service before the person. A dense category where reviews decide it.",
       },
       {
         label: "When it matters less",
-        text: "When you're remote and clients find you through referral, content, or a specific marketplace. When category demand is satisfied by referral networks, not search.",
+        text: "Remote, with clients arriving by referral, content, or a marketplace rather than search.",
       },
     ],
   },
@@ -203,15 +203,15 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Answers the question a prospect didn't know they had: do I want to *follow* this person. Carries voice, taste, work-in-progress, and the texture of how you think.",
+        text: "Answers a question they didn't know they had: do I want to *follow* this person. Voice, taste, work in progress.",
       },
       {
         label: "When it matters most",
-        text: "When the work depends on visual proof. When discovery happens through shared interest, not search intent. When the buyer's audience overlaps with yours.",
+        text: "Visual work. Discovery through shared interest, not search intent. An audience that overlaps with yours.",
       },
       {
         label: "When it matters less",
-        text: "When prospects come from search, referral, or ethics-regulated channels. When the work isn't visual. When the platform's audience doesn't match your buyer's.",
+        text: "Prospects from search, referral, or ethics-regulated channels. Work that isn't visual. A platform your buyer isn't on.",
       },
     ],
   },
@@ -229,15 +229,15 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Answers the question a prospect asks in a marketplace context: is this person *legitimate*. Carries third-party validation, comparable to peers, framed by the platform.",
+        text: "Answers the marketplace question: is this person *legitimate*. Third-party validation, framed by the platform.",
       },
       {
         label: "When it matters most",
-        text: "When your industry has a dominant directory or marketplace (therapy, photography, home services). When prospects start their search inside a specific platform.",
+        text: "A dominant directory in your industry: therapy, photography, home services. Prospects who start inside a platform.",
       },
       {
         label: "When it matters less",
-        text: "When your industry has no dominant marketplace. When prospects find you through Google or referral. When the platform's framing dilutes your positioning rather than amplifies it.",
+        text: "No dominant marketplace. Prospects from Google or referral. A platform whose framing dilutes your positioning.",
       },
     ],
   },
@@ -255,15 +255,15 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Answers the question a prospect asks once they're already participating in a space: who in this group is worth knowing. Trust accrues over time through peer-level *presence*, not pitch.",
+        text: "Answers the question inside a space they are already in: who here is worth knowing. Trust accrues through *presence*, not pitch.",
       },
       {
         label: "When it matters most",
-        text: "When your prospects participate in well-defined online communities (Facebook groups, Reddit, Discord, niche forums). When the buying decision involves long peer research. When word-of-mouth in those spaces drives inquiries.",
+        text: "Prospects who gather in defined communities. Long peer research before buying. Word of mouth there drives inquiries.",
       },
       {
         label: "When it matters less",
-        text: "When your prospects don't gather in online communities. When discovery happens through search, referral, or marketplace. When the time required to maintain genuine community presence exceeds your capacity.",
+        text: "Prospects who don't gather online. Discovery by search, referral, or marketplace. Genuine presence costs more time than you have.",
       },
     ],
   },
@@ -313,27 +313,27 @@ export const module3Slides: Slide[] = [
     eyebrow: "The local layer",
     heading: "Local presence is a *job*, not a touchpoint.",
     intro:
-      "For a local business, several of your touchpoints take on a local job. The work isn't a separate place to build. It's four things done well across the touchpoints you already have.",
+      "Not a separate place to build. Four things done well across the touchpoints you already have.",
     cards: [
       {
         label: "Local job 01",
         title: "A claimed, complete profile",
-        text: "Your Google Business Profile, claimed and filled out properly. For most local businesses this is the *single* highest-leverage piece of online presence. It feeds the map and the local results.",
+        text: "Claimed and filled out properly. For most local businesses the *single* highest-leverage piece of online presence.",
       },
       {
         label: "Local job 02",
         title: "Consistent details everywhere",
-        text: "Name, address, phone, the same on every touchpoint. Search engines read inconsistency as *uncertainty*, and uncertainty costs you local ranking.",
+        text: "Name, address, phone, the same everywhere. Search engines read inconsistency as *uncertainty*.",
       },
       {
         label: "Local job 03",
         title: "Location named, not implied",
-        text: "The places you serve, stated in plain words on your website and listings. A prospect and a search engine should both know where you work without having to *guess*.",
+        text: "The places you serve, in plain words. A prospect and a search engine should both know without *guessing*.",
       },
       {
         label: "Local job 04",
         title: "Reviews on the profile that ranks",
-        text: "Reviews on your Google Business Profile do double duty: they persuade the prospect, and they lift the profile in the local results. Earned proof and local *visibility*, the same act.",
+        text: "They persuade the prospect and lift the profile in local results. Earned proof and local *visibility*, the same act.",
       },
     ],
   },
@@ -405,26 +405,26 @@ export const module3Slides: Slide[] = [
       {
         label: "Discovery channel",
         title: "Names the primary touchpoint",
-        text: "Where current clients first hear about you is the touchpoint your business actually *uses*. Build there first.",
+        text: "Where clients first hear about you is the one your business actually *uses*. Build there first.",
       },
       {
         label: "Visual proof",
         title: "Weights website + social",
-        text: "If the work is visible, the website and social touchpoints carry more weight. If it isn't, they carry less.",
+        text: "Visible work weights website and social. Invisible work doesn't.",
       },
       {
         label: "Geographic scope",
         title: "Weights search & map",
-        text: "Local-only sharpens search & map's role. Remote diminishes it. Hybrid sits in between.",
+        text: "Local-only sharpens search & map. Remote diminishes it. Hybrid sits between.",
       },
       {
         label: "Engagement length",
         title: "Weights website depth",
-        text: "Long pre-contact engagement means the website has time to do real work. Short engagement means the website needs to be quick.",
+        text: "Long engagement gives the website time to work. Short engagement means it has to be quick.",
       },
     ],
     footnote:
-      "Ethics and audience age work differently: they *constrain* which touchpoints are available, they don't prioritize among them.",
+      "Ethics and audience age *constrain* which touchpoints are available. They don't prioritize among them.",
   },
 
   // 19 · Reading it together: Maya
@@ -441,7 +441,7 @@ export const module3Slides: Slide[] = [
       {
         label: "Discovery channel",
         title: "Insurance referral + Psychology Today",
-        text: "Her clients arrive through a directory, either the insurer's or a private-pay listing. That names her primary.",
+        text: "Her clients arrive through a directory, insurer's or private-pay. That names her primary.",
       },
       {
         label: "Visual proof",
@@ -486,31 +486,31 @@ export const module3Slides: Slide[] = [
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Third-party directory.",
-        text: "Whether that's an insurance provider directory or a private-pay directory like Psychology Today. The directory does discovery and first-round trust. The website confirms what she's already established there. Ethics rules limit social.",
+        text: "An insurance directory, or a private-pay one like Psychology Today. It does discovery and first-round trust; the website confirms. Ethics rules limit social.",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Search & map.",
-        text: "Prospects find him by Googling “pressure washing near me.” He needs a strong Google Business Profile with reviews. The website is the second touchpoint, not the first.",
+        text: "He is found by Googling “pressure washing near me.” A strong Google Business Profile with reviews does the work. The website is second.",
       },
       {
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "Website.",
-        text: "Visual proof drives the decision. Long engagement, considered purchase. And Instagram as a strong *second*. Discovery happens there. Decision happens on the site.",
+        text: "Visual proof drives the decision. Instagram is a strong *second*: discovery there, decision on the site.",
       },
       {
         name: "James",
         meta: "chiropractor · local",
         lead: "Search & map.",
-        text: "Prospects search before they know his name. But local Facebook groups and NextDoor matter too. “Anyone know a good chiropractor in [city]” gets asked and answered there constantly. Community presence as a strong *second*.",
+        text: "Prospects search before they know his name. But “anyone know a good chiropractor” gets asked in local groups constantly. Community is a strong *second*.",
       },
       {
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Instagram.",
-        text: "Discovery, decision, and proof all happen on social. The website exists as a booking interface. The persuasion has already happened.",
+        text: "Discovery, decision, and proof all happen on social. The website is a booking interface.",
       },
     ],
   },
