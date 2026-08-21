@@ -31,7 +31,7 @@ export const module3Slides: Slide[] = [
     surface: "plum",
     strata: 2,
     heading: "Get *found*.",
-    sub: "How prospects find you, and what they meet when they do. The places you exist online, and the local layer that matters when the search is geographic.",
+    sub: "Where you exist online, and the local layer that matters when the search is geographic.",
     meta: [
       { label: "Length", value: "25 minutes" },
       { label: "Output", value: "Your touchpoint priority" },
@@ -49,7 +49,7 @@ export const module3Slides: Slide[] = [
     audio: { src: "/audio/m3/m3-2.mp3" },
     eyebrow: "What it is, what it isn't",
     heading: "Not a website. *A system.*",
-    sub: "Getting found isn't one thing you build. It's the set of places a prospect meets you when they go looking, online and, for many businesses, locally.",
+    sub: "Not one thing you build. The set of places a prospect meets you when they go looking.",
   },
 
   // 03 · The concept
@@ -62,8 +62,8 @@ export const module3Slides: Slide[] = [
     audio: { src: "/audio/m3/m3-3.mp3", cues: [0.5, 27.3] },
     heading: "Getting found is the sum of where you *show up* when someone looks.",
     paragraphs: [
-      "A prospect goes looking. Your website is one place they might land. So is your Google listing, a friend's Instagram post, a directory entry, the map result.",
-      "The question isn't “do I have a website.” It's which of these places your business needs to do well, and which can stay minimal.",
+      "A prospect goes looking. Your website is one place they might land. So is your Google listing, a friend's post, the map result.",
+      "Not “do I have a website.” Which of these places your business needs to do well, and which can stay minimal.",
     ],
   },
 
@@ -76,7 +76,7 @@ export const module3Slides: Slide[] = [
     number: "04",
     audio: { src: "/audio/m3/m3-4.mp3" },
     heading: "Five touchpoints. *Five jobs.*",
-    sub: "Each touchpoint answers a different question for the prospect. Knowing the questions is how you decide what each one needs to do.",
+    sub: "Each answers a different question. Knowing the questions is how you decide what each one needs to do.",
   },
 
   // 05 · Five places, five questions answered
@@ -98,7 +98,7 @@ export const module3Slides: Slide[] = [
       {
         label: "Touchpoint 02",
         title: "Search & map listings",
-        text: "Where a prospect *finds* you before they know your name. Google Business Profile, Apple Maps.",
+        text: "Where a prospect *finds* you before they know your name.",
       },
       {
         label: "Touchpoint 03",
@@ -135,7 +135,7 @@ export const module3Slides: Slide[] = [
     eyebrow: "Where the words you've heard live",
     heading: "A map of *where you can get found*.",
     intro:
-      "SEO, AEO, Google Business Profile, Yelp, Instagram, ads. None of them is a separate touchpoint. They all live inside the five you just saw.",
+      "SEO, Google Business Profile, Yelp, Instagram, ads. None is a separate touchpoint. They live inside the five.",
   },
 
   // 07 · Website detail
@@ -151,15 +151,15 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Positioning, proof, pricing, process, and the next step. The depth touchpoint, when depth is needed.",
+        text: "Positioning, proof, pricing, process, next step. The depth touchpoint.",
       },
       {
         label: "When it matters most",
-        text: "Long engagement before contact. Work that depends on visual or written proof. A price tag that warrants research.",
+        text: "Long engagement. Visual or written proof. A price that warrants research.",
       },
       {
         label: "When it matters less",
-        text: "Prospects who search and call within hours. Trust established by social proof, not site content. Sometimes a booking page is enough.",
+        text: "Prospects who search and call within hours. Sometimes a booking page is enough.",
       },
     ],
   },
@@ -177,15 +177,15 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Answers the question asked before they know your name: who near me does *this*. Hours, location, photos, reviews.",
+        text: "Answers the question asked before they know your name: who near me does *this*.",
       },
       {
         label: "When it matters most",
-        text: "Local-only or hybrid. Prospects search the service before the person. A dense category where reviews decide it.",
+        text: "Local or hybrid. They search the service before the person. Reviews decide it.",
       },
       {
         label: "When it matters less",
-        text: "Remote, with clients arriving by referral, content, or a marketplace rather than search.",
+        text: "Remote, with clients arriving by referral rather than search.",
       },
     ],
   },
@@ -203,15 +203,15 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Answers a question they didn't know they had: do I want to *follow* this person. Voice, taste, work in progress.",
+        text: "Answers a question they didn't know they had: do I want to *follow* this person.",
       },
       {
         label: "When it matters most",
-        text: "Visual work. Discovery through shared interest, not search intent. An audience that overlaps with yours.",
+        text: "Visual work. Discovery through shared interest, not search intent.",
       },
       {
         label: "When it matters less",
-        text: "Prospects from search, referral, or ethics-regulated channels. Work that isn't visual. A platform your buyer isn't on.",
+        text: "Prospects from search or referral. Work that isn't visual.",
       },
     ],
   },
@@ -229,15 +229,15 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Answers the marketplace question: is this person *legitimate*. Third-party validation, framed by the platform.",
+        text: "Answers the marketplace question: is this person *legitimate*.",
       },
       {
         label: "When it matters most",
-        text: "A dominant directory in your industry: therapy, photography, home services. Prospects who start inside a platform.",
+        text: "A dominant directory in your industry. Prospects who start inside a platform.",
       },
       {
         label: "When it matters less",
-        text: "No dominant marketplace. Prospects from Google or referral. A platform whose framing dilutes your positioning.",
+        text: "No dominant marketplace. A platform whose framing dilutes your positioning.",
       },
     ],
   },
@@ -255,15 +255,15 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Answers the question inside a space they are already in: who here is worth knowing. Trust accrues through *presence*, not pitch.",
+        text: "Answers the question inside a space they're already in: who here is worth knowing.",
       },
       {
         label: "When it matters most",
-        text: "Prospects who gather in defined communities. Long peer research before buying. Word of mouth there drives inquiries.",
+        text: "Prospects who gather in defined communities. Long peer research before buying.",
       },
       {
         label: "When it matters less",
-        text: "Prospects who don't gather online. Discovery by search, referral, or marketplace. Genuine presence costs more time than you have.",
+        text: "Prospects who don't gather online. Genuine presence costs more time than you have.",
       },
     ],
   },
@@ -285,7 +285,7 @@ export const module3Slides: Slide[] = [
     sans: true,
     eyebrow: "Who else is reading",
     headline: "Your touchpoints aren't just being read by *people*.",
-    sub: "Increasingly, LLMs synthesize answers about service businesses from the same five touchpoints. The way to be visible to LLMs is the same way to be visible to humans: be clear, be specific, be named consistently across *every* touchpoint where you appear.",
+    sub: "LLMs synthesize answers from the same five touchpoints. Being visible to them is the same work as being visible to people: clear, specific, named consistently *everywhere*.",
   },
 
   // 13 · Local section opener (skippable)
@@ -298,7 +298,7 @@ export const module3Slides: Slide[] = [
     audio: { src: "/audio/m3/m3-13.mp3" },
     eyebrow: "For local businesses · skip if this isn't you",
     heading: "If your buyers are *local*.",
-    sub: "The next three slides are for businesses whose clients are nearby: a service area, a city, a neighborhood. If you work remotely or sell nationally, skip ahead to the calibration section.",
+    sub: "The next three slides are for businesses whose clients are nearby. If you work remotely, skip ahead.",
     skip: { label: "My buyers aren't local. Skip ahead", to: 17 },
   },
 
@@ -313,27 +313,27 @@ export const module3Slides: Slide[] = [
     eyebrow: "The local layer",
     heading: "Local presence is a *job*, not a touchpoint.",
     intro:
-      "Not a separate place to build. Four things done well across the touchpoints you already have.",
+      "Four things done well across the touchpoints you already have.",
     cards: [
       {
         label: "Local job 01",
         title: "A claimed, complete profile",
-        text: "Claimed and filled out properly. For most local businesses the *single* highest-leverage piece of online presence.",
+        text: "Claimed and filled out. The *single* highest-leverage piece for most local businesses.",
       },
       {
         label: "Local job 02",
         title: "Consistent details everywhere",
-        text: "Name, address, phone, the same everywhere. Search engines read inconsistency as *uncertainty*.",
+        text: "Name, address, phone, the same everywhere. Inconsistency reads as *uncertainty*.",
       },
       {
         label: "Local job 03",
         title: "Location named, not implied",
-        text: "The places you serve, in plain words. A prospect and a search engine should both know without *guessing*.",
+        text: "The places you serve, in plain words. Neither a prospect nor a search engine should *guess*.",
       },
       {
         label: "Local job 04",
         title: "Reviews on the profile that ranks",
-        text: "They persuade the prospect and lift the profile in local results. Earned proof and local *visibility*, the same act.",
+        text: "They persuade the prospect and lift the profile. Proof and *visibility*, the same act.",
       },
     ],
   },
@@ -354,7 +354,7 @@ export const module3Slides: Slide[] = [
     },
     strong: {
       quote: "It answers the question before they ask.",
-      text: "Claimed, exact category, current hours, real photos, service area named. Recent reviews the owner has responded to. A prospect finds it and books, because every doubt was already *settled*.",
+      text: "Claimed, current, real photos, reviews answered. A prospect finds it and books, because every doubt was already *settled*.",
     },
   },
 
@@ -375,7 +375,7 @@ export const module3Slides: Slide[] = [
     sans: true,
     eyebrow: "The local pattern",
     headline: "Being nearby gets you *listed*. Being verifiable gets you chosen.",
-    sub: "Proximity puts you in the local results. It doesn't win the click. Between two businesses the same distance away, a prospect picks the one they can verify at a glance: real photos, current information, reviews that were answered. *Local presence is proximity plus proof, never proximity alone.*",
+    sub: "Proximity puts you in the results. It doesn't win the click. Between two the same distance away, a prospect picks the one they can verify at a glance. *Proximity plus proof, never proximity alone.*",
   },
 
   // 17 · Calibration opener
@@ -405,7 +405,7 @@ export const module3Slides: Slide[] = [
       {
         label: "Discovery channel",
         title: "Names the primary touchpoint",
-        text: "Where clients first hear about you is the one your business actually *uses*. Build there first.",
+        text: "The one your business actually *uses*. Build there first.",
       },
       {
         label: "Visual proof",
@@ -420,11 +420,11 @@ export const module3Slides: Slide[] = [
       {
         label: "Engagement length",
         title: "Weights website depth",
-        text: "Long engagement gives the website time to work. Short engagement means it has to be quick.",
+        text: "Long engagement gives the website time to work. Short means it has to be quick.",
       },
     ],
     footnote:
-      "Ethics and audience age *constrain* which touchpoints are available. They don't prioritize among them.",
+      "Ethics and audience age *constrain* what's available. They don't prioritize.",
   },
 
   // 19 · Reading it together: Maya
@@ -486,31 +486,31 @@ export const module3Slides: Slide[] = [
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Third-party directory.",
-        text: "An insurance directory, or a private-pay one like Psychology Today. It does discovery and first-round trust; the website confirms. Ethics rules limit social.",
+        text: "An insurance or private-pay directory does discovery and first trust. The website confirms. Ethics limit social.",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Search & map.",
-        text: "He is found by Googling “pressure washing near me.” A strong Google Business Profile with reviews does the work. The website is second.",
+        text: "Found by Googling “pressure washing near me.” The profile and its reviews do the work; the website is second.",
       },
       {
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "Website.",
-        text: "Visual proof drives the decision. Instagram is a strong *second*: discovery there, decision on the site.",
+        text: "Visual proof decides it. Instagram a strong *second*: discovery there, decision on the site.",
       },
       {
         name: "James",
         meta: "chiropractor · local",
         lead: "Search & map.",
-        text: "Prospects search before they know his name. But “anyone know a good chiropractor” gets asked in local groups constantly. Community is a strong *second*.",
+        text: "They search before they know his name. But local groups ask constantly, so community is a strong *second*.",
       },
       {
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Instagram.",
-        text: "Discovery, decision, and proof all happen on social. The website is a booking interface.",
+        text: "Discovery, decision and proof all happen on social. The website just books.",
       },
     ],
   },
@@ -526,8 +526,8 @@ export const module3Slides: Slide[] = [
     eyebrow: "One more case",
     heading: "The referral *exception*.",
     paragraphs: [
-      "For some businesses, discovery doesn't happen at a touchpoint at all. The name arrives by word of mouth, and the prospect goes looking to verify it.",
-      "The touchpoints still matter, but their job changes: *verification, not discovery*. The website and the reviews confirm a decision that's already forming.",
+      "For some, discovery happens at no touchpoint at all. The name arrives by word of mouth.",
+      "The touchpoints still matter, but the job changes: *verification, not discovery*.",
     ],
     callout:
       "Same framework. Five different answers. *Yours will be a sixth.*",
@@ -550,7 +550,7 @@ export const module3Slides: Slide[] = [
     },
     sans: true,
     headline: "Your primary touchpoint is *load-bearing*.",
-    sub: "Whichever one it is, that's the touchpoint that carries the heaviest weight across the prospect's journey, even when secondaries assist. The other four can each do narrower jobs. Build the primary so it holds *everything* it has to. Let the others do less.",
+    sub: "It carries the heaviest weight across the journey, even when the others assist. Build it so it holds *everything* it has to. Let the rest do less.",
   },
 
   // 23 · On restraint
@@ -568,7 +568,7 @@ export const module3Slides: Slide[] = [
     },
     sans: true,
     headline: "More presence is not *better* presence.",
-    sub: "Two touchpoints maintained well do more for your business than five touchpoints maintained badly. A neglected touchpoint signals worse than no touchpoint at all. *Match presence to capacity.*",
+    sub: "Two maintained well beat five maintained badly. A neglected touchpoint signals worse than none. *Match presence to capacity.*",
   },
 
   // 24 · Weak vs strong primary
@@ -587,7 +587,7 @@ export const module3Slides: Slide[] = [
     },
     strong: {
       quote: "It does the *job*.",
-      text: "The positioning is specific enough that two competitors couldn't write the same about page. The proof is current. Pricing or process is named. The next step is one click. The visitor either books or self-selects out.",
+      text: "Positioning two competitors couldn't copy. Current proof. Pricing named. The next step one click. The visitor books or self-selects out.",
     },
   },
 
@@ -607,7 +607,7 @@ export const module3Slides: Slide[] = [
     },
     sans: true,
     headline: "The buyer decides which touchpoint matters by *behavior*.",
-    sub: "Not by your wish. Not by what you're best at producing. The audit's discovery channel question caught this. If clients find you through search, search matters more than the social channel you'd prefer to invest in. *Build where they are.*",
+    sub: "Not by your wish, or what you're best at producing. If clients find you through search, search matters more than the channel you'd prefer. *Build where they are.*",
   },
 
   // 26 · The touchpoint priority builder
@@ -639,7 +639,7 @@ export const module3Slides: Slide[] = [
     eyebrow: "End of Module 3",
     heading: "You know where you get *found*.",
     paragraphs: [
-      "Next: what a prospect meets once they've found you, and whether it earns their trust. Earned Proof. Module 4 begins when you're ready.",
+      "Next: what a prospect meets once they've found you, and whether it earns trust. Module 4 when you're ready.",
     ],
   },
 ];

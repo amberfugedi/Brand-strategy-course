@@ -24,7 +24,7 @@ export const module7Slides: Slide[] = [
     surface: "plum",
     strata: 6,
     heading: "Owned *audience*.",
-    sub: "The work of building a direct line to the people who came to know you, so reaching them never depends on a platform you do not control.",
+    sub: "A direct line to the people who came to know you, so reaching them never depends on a platform.",
     meta: [
       { label: "Length", value: "20 minutes" },
       { label: "Output", value: "Your owned-audience plan" },
@@ -41,7 +41,7 @@ export const module7Slides: Slide[] = [
     number: "02",
     audio: { src: null },
     heading: "You have already *decided* against this.",
-    sub: "Maybe you tried it and it went nowhere. Maybe referrals cover you. Maybe it just feels like the influencer move. Each of those is a reasonable read of the wrong thing.",
+    sub: "Maybe you tried and it went nowhere. Maybe referrals cover you. Each is a reasonable read of the wrong thing.",
   },
 
   // 03 · The concept
@@ -54,8 +54,8 @@ export const module7Slides: Slide[] = [
     audio: { src: null },
     heading: "There is reach, and there is a channel you *own*.",
     paragraphs: [
-      "Module 6 made you known in a place that belongs to someone else. The reach is real and it is borrowed: the platform decides who sees you, and can change that without telling you.",
-      "A channel you own is a direct line to people who chose to keep hearing from you. This module is about the gap between the two, and why the second is the foundation.",
+      "Module 6 made you known in a place someone else owns. The platform decides who sees you, and can change that without telling you.",
+      "A channel you own is a direct line to people who chose to keep hearing from you. This module is the gap between the two.",
     ],
   },
 
@@ -69,7 +69,7 @@ export const module7Slides: Slide[] = [
     audio: { src: null },
     eyebrow: "The move this module makes",
     heading: "From being found to being *reachable*.",
-    sub: "Awareness is people finding you. An owned audience is you being able to reach them. The first is where Module 6 left you. The second is built on purpose.",
+    sub: "Awareness is people finding you. An owned audience is you reaching them. The second is built on purpose.",
   },
 
   // 05 · Two jobs
@@ -85,16 +85,16 @@ export const module7Slides: Slide[] = [
       {
         label: "Reach",
         title: "How people find you",
-        text: "A platform shows your work to people who don't know you yet. That is the whole job of *awareness*. But the platform owns the connection.",
+        text: "It shows your work to people who don't know you yet, which is the whole job of *awareness*. But it owns the connection.",
       },
       {
         label: "A channel you own",
         title: "How you reach them back",
-        text: "A direct line to people who chose to stay in contact. Nothing stands between you and them, and it does not disappear when an algorithm *shifts*.",
+        text: "A direct line to people who chose to stay. It does not disappear when an algorithm *shifts*.",
       },
     ],
     footnote:
-      "Reach finds people. A channel you own keeps them. The error is treating a large borrowed audience as if it were a relationship.",
+      "Reach finds people. A channel you own keeps them. The error is mistaking the first for the second.",
   },
 
   // 06 · Borrowed reach, up close
@@ -110,15 +110,15 @@ export const module7Slides: Slide[] = [
     cols: [
       {
         label: "What it does well",
-        text: "It introduces you, to people who were never going to find you on their own. For first contact, nothing an owned channel does competes.",
+        text: "It introduces you to people who were never going to find you. For first contact, nothing competes.",
       },
       {
         label: "What it cannot do",
-        text: "It cannot promise a second contact. You can reach someone today and have no way to reach them next month.",
+        text: "It cannot promise a second contact. Today, yes. Next month, maybe not.",
       },
       {
         label: "Why that matters",
-        text: "A business with only reach has to be re-found, constantly, by the same people. Workable, *tiring*, and not a foundation.",
+        text: "A business with only reach has to be re-found by the same people. *Tiring*, and not a foundation.",
       },
     ],
   },
@@ -133,7 +133,7 @@ export const module7Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "The place you were found was never *yours*.",
-    sub: "The place you built presence in runs on rules you did not set and cannot see. The reach is genuine, and it is held at someone else's discretion. *A foundation is the part that stays when the platform changes.*",
+    sub: "The place you built presence in runs on rules you cannot see, and the reach is held at someone else's discretion. *A foundation is the part that stays when the platform changes.*",
   },
 
   // 08 · Choosing the channel
@@ -147,17 +147,17 @@ export const module7Slides: Slide[] = [
     eyebrow: "Choosing the channel",
     heading: "The channel is a *means*. Choose it for fit.",
     intro:
-      "Usually an email list, because email is the clearest direct line you control. But the principle is the direct line, not the tool.",
+      "Usually email, the clearest direct line you control. But the principle is the line, not the tool.",
     cards: [
       {
         label: "Fit to your audience",
         title: "Where they will accept contact",
-        text: "It only works if your people will genuinely open it. The audience that ignores email may read a text. Choose where they already *are*.",
+        text: "It only works if your people open it. Choose where they already *are*.",
       },
       {
         label: "Fit to your capacity",
         title: "What you can sustain",
-        text: "One you can feed once a quarter beats one you abandon after a month. Size it to the hours you actually have.",
+        text: "One you feed quarterly beats one you abandon in a month. Size it to the hours you have.",
       },
     ],
   },
@@ -172,7 +172,7 @@ export const module7Slides: Slide[] = [
     audio: { src: null },
     eyebrow: "The first half of the work",
     heading: "Nobody owes you their *attention*.",
-    sub: "A direct line is granted, not taken. Before anyone gives you one, they need a reason. This section is about what makes that reason real.",
+    sub: "A direct line is granted, not taken. Before anyone gives you one, they need a reason.",
   },
 
   // 10 · A reason, not a bribe
@@ -188,7 +188,7 @@ export const module7Slides: Slide[] = [
     cols: [
       {
         label: "The bribe",
-        text: "A discount or a download, handed over to capture an address. It collects people who wanted the thing, not people who wanted you.",
+        text: "A discount or download, traded for an address. It collects people who wanted the thing, not you.",
       },
       {
         label: "The real reason",
@@ -196,7 +196,7 @@ export const module7Slides: Slide[] = [
       },
       {
         label: "The test",
-        text: "Would they stay subscribed after getting the thing that made them join? If not, you built a funnel, not an audience.",
+        text: "Would they stay after getting the thing that made them join? If not, it's a funnel.",
       },
     ],
   },
@@ -213,8 +213,8 @@ export const module7Slides: Slide[] = [
     heading: "The reason to join is the reason to *stay*.",
     bullets: true,
     paragraphs: [
-      "A bribe and what follows it are two different promises, so people leave the moment the gap shows. Make them the same promise and there is no gap.",
-      "Earning and keeping are not separate problems. The promise that earns an address is the one you spend the relationship keeping. Get it honest at the start and sustaining it becomes a question of *can* you.",
+      "A bribe and what follows are two promises, so people leave when the gap shows. Make them one promise.",
+      "Earning and keeping are not separate problems. The promise that earns an address is the one you spend the relationship keeping.",
     ],
   },
 
@@ -228,7 +228,7 @@ export const module7Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "An audience is not a resource you *harvest*.",
-    sub: "The loudest advice treats an owned audience as a yield: most addresses, most sales, optimised funnel. It works for a while, and it teaches people that hearing from you means being sold to. *Treat it as a harvest and you get one season.*",
+    sub: "The loudest advice treats an audience as a yield to extract. It works for a while, and teaches people that hearing from you means being sold to. *Treat it as a harvest and you get one season.*",
   },
 
   // 13 · A list is collected
@@ -241,7 +241,7 @@ export const module7Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "A list is collected. An audience is *kept*.",
-    sub: "A list is a count. An audience is a relationship, and it exists only while the contact stays worth receiving. The same five hundred addresses can be either. *Collecting is a moment. Keeping is the work.*",
+    sub: "A list is a count. An audience exists only while the contact stays worth receiving. *Collecting is a moment. Keeping is the work.*",
   },
 
   // 14 · What would I send
@@ -255,7 +255,7 @@ export const module7Slides: Slide[] = [
     eyebrow: "Keeping the channel",
     heading: "The fear is “what would I *send*?”",
     intro:
-      "The next thought is always: I do not know what I would send them. It is the realest objection here, and it has a plain answer.",
+      "The next thought is always: I don't know what I'd send them. It has a plain answer.",
     cards: [
       {
         label: "The answer to what",
@@ -265,7 +265,7 @@ export const module7Slides: Slide[] = [
       {
         label: "The answer to how often",
         title: "A cadence you can hold",
-        text: "Pick the rhythm you could sustain in your busiest month. A quarter you keep beats a week you abandon. Under-commit on *purpose*.",
+        text: "The rhythm you could sustain in your busiest month. Under-commit on *purpose*.",
       },
     ],
   },
@@ -299,31 +299,31 @@ export const module7Slides: Slide[] = [
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Moderate, and quiet.",
-        text: "Ethics rules out promotion. A low-key update to past clients and referrers. *Restrained*, never a sales tool.",
+        text: "Ethics rules out promotion. A low-key update to past clients. *Restrained*, never a sales tool.",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Minor. Say so.",
-        text: "Repeat local work needs no standing audience. A customer list for a seasonal reminder is the honest ceiling.",
+        text: "Repeat local work needs no standing audience. A list for a seasonal reminder is the ceiling.",
       },
       {
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "Moderate, redefined.",
-        text: "A couple is a client once. Her audience is not future buyers but past couples as referrers, and the planner network.",
+        text: "A couple is a client once. Her audience is past couples as referrers, and planners.",
       },
       {
         name: "James",
         meta: "chiropractor · local",
         lead: "Moderate-low.",
-        text: "Patients finish and leave. A soft presence, a reason to return if something recurs, not a retention engine.",
+        text: "Patients finish and leave. A reason to return if something recurs, not a retention engine.",
       },
       {
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Primary.",
-        text: "A discovery audience follows her for months before booking. The most natural owned audience of the five.",
+        text: "They follow for months before booking. The most natural owned audience of the five.",
       },
     ],
   },
@@ -344,25 +344,25 @@ export const module7Slides: Slide[] = [
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Professional profile + peers.",
-        text: "The directory profile and the peers who refer her. A credible place to be re-encountered, *not* a social feed.",
+        text: "The directory profile and the peers who refer her. *Not* a social feed.",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Local groups + the listing.",
-        text: "Local Facebook groups and his Google listing. His name resurfaces the moment a neighbor asks, without him posting a thing.",
+        text: "Local groups and his Google listing. His name resurfaces when a neighbor asks.",
       },
       {
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "Instagram.",
-        text: "A past couple's friend scrolls, sees the work, remembers her. The portfolio circulates while she isn't reaching out.",
+        text: "A past couple's friend scrolls, sees the work, remembers her. The portfolio keeps circulating.",
       },
       {
         name: "James",
         meta: "chiropractor · local",
         lead: "Local community pages.",
-        text: "A former patient sees his name in a neighborhood thread and rebooks when something flares. Ambient presence does the reminding.",
+        text: "A former patient sees his name in a thread and rebooks when something flares.",
       },
       {
         name: "Sasha",
@@ -372,7 +372,7 @@ export const module7Slides: Slide[] = [
       },
     ],
     footnote:
-      "Owned is *intentional reach*: you choose when to show up. Borrowed is *ambient re-encounter*: it catches people when they aren't looking.",
+      "Owned is *intentional reach*. Borrowed is *ambient re-encounter*, catching people who weren't looking.",
   },
 
   // 18 · On size
@@ -385,7 +385,7 @@ export const module7Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "Build the audience you can *answer*, not the one you can capture.",
-    sub: "It is easy to collect more people than you can stay in honest contact with. That is a debt: a room of people you promised something and went quiet on. *A smaller audience you actually keep is the larger asset.*",
+    sub: "It is easy to collect more people than you can stay in contact with. That is a debt, not a head start. *A smaller audience you actually keep is the larger asset.*",
   },
 
   // 19 · The smallest real version
@@ -400,8 +400,8 @@ export const module7Slides: Slide[] = [
     heading: "Start with the people you *already* have.",
     bullets: true,
     paragraphs: [
-      "You are not starting from zero. An owned audience usually begins as organising the people you already have, not gathering strangers you don't.",
-      "One channel, the people already within reach of it, and a cadence you can hold. It can grow later. It cannot grow if it is never *built.*",
+      "You are not starting from zero. It begins by organising the people you already have.",
+      "One channel, the people within reach of it, a cadence you can hold. It cannot grow if it is never *built.*",
     ],
   },
 

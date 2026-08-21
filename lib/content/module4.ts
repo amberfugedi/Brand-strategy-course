@@ -29,7 +29,7 @@ export const module4Slides: Slide[] = [
     surface: "plum",
     strata: 3,
     heading: "Earned *proof*.",
-    sub: "The evidence of your work that comes from outside you. What it is, where it comes from, and which kind your business actually needs.",
+    sub: "The evidence of your work that comes from outside you, and which kind your business needs.",
     meta: [
       { label: "Length", value: "20 minutes" },
       { label: "Output", value: "Your proof inventory" },
@@ -52,7 +52,7 @@ export const module4Slides: Slide[] = [
       ],
     },
     heading: "Asking for proof feels like *begging*.",
-    sub: "It doesn't have to. But the discomfort is real, and it's worth naming before we go anywhere else.",
+    sub: "It doesn't have to. But the discomfort is real, and worth naming first.",
   },
 
   // 03 · The concept
@@ -65,8 +65,8 @@ export const module4Slides: Slide[] = [
     audio: { src: "/audio/m4/m4-3.mp3", cues: [0.5, 16.0] },
     heading: "You can't *author* your own credibility.",
     paragraphs: [
-      "A prospect hears your claims and quietly discounts them. Everyone does. You would too. It's how people read anyone selling anything.",
-      "What they can't discount is evidence you didn't write. A review, a result, a referral, a credential. That is earned proof, and it does the work your claims can't.",
+      "A prospect hears your claims and quietly discounts them. It's how people read anyone selling anything.",
+      "What they can't discount is evidence you didn't write. That is earned proof, and it does the work your claims can't.",
     ],
   },
 
@@ -79,7 +79,7 @@ export const module4Slides: Slide[] = [
     number: "04",
     audio: { src: "/audio/m4/m4-4.mp3" },
     heading: "Proof comes from *three places*.",
-    sub: "Each one is a different voice vouching for you. Each one answers a different question in the prospect's head.",
+    sub: "Three different voices, each answering a different question in the prospect's head.",
   },
 
   // 05 · Three voices
@@ -96,17 +96,17 @@ export const module4Slides: Slide[] = [
       {
         label: "Source 01",
         title: "Client proof",
-        text: "Your clients *vouch*. Reviews, testimonials, case studies. Answers: did people like me get what they wanted?",
+        text: "Your clients *vouch*. Answers: did people like me get what they wanted?",
       },
       {
         label: "Source 02",
         title: "Peer proof",
-        text: "Other professionals *vouch*. Answers: do people who would know rate this person?",
+        text: "Other professionals *vouch*. Answers: do people who would know rate them?",
       },
       {
         label: "Source 03",
         title: "Institutional proof",
-        text: "An outside body *vouches*. Credentials, licenses, press. Answers: has something with authority verified this person?",
+        text: "An outside body *vouches*. Answers: has anything with authority verified this?",
       },
     ],
     footnote:
@@ -133,15 +133,15 @@ export const module4Slides: Slide[] = [
     cols: [
       {
         label: "What it is",
-        text: "Reviews, testimonials in a client's own words, case studies, before-and-afters. Evidence that the people you served got what they came for.",
+        text: "Reviews, testimonials, case studies, before-and-afters. Evidence the people you served got what they came for.",
       },
       {
         label: "When it matters most",
-        text: "*Comparable* work, weighed against alternatives. A quick decision a star rating settles. Recency that says you're still good now.",
+        text: "*Comparable* work, weighed against alternatives. A quick decision a star rating settles.",
       },
       {
         label: "When it matters less",
-        text: "Ethics that restrict client testimony. Work so bespoke no two clients compare. A field where an expert's word outweighs a client's.",
+        text: "Ethics that restrict client testimony. Work so bespoke no two clients compare.",
       },
     ],
   },
@@ -167,15 +167,15 @@ export const module4Slides: Slide[] = [
     cols: [
       {
         label: "What it is",
-        text: "Referrals from adjacent experts a prospect already trusts. The therapist a doctor sends patients to. The photographer a planner recommends.",
+        text: "Referrals from experts a prospect already trusts. The therapist a doctor sends patients to.",
       },
       {
         label: "When it matters most",
-        text: "High-stakes work where a prospect wants a *vetted* name. Client proof restricted, peers the available voice. A referrer with a reputation staked on you.",
+        text: "High-stakes work where a prospect wants a *vetted* name. Client proof restricted, peers the available voice.",
       },
       {
         label: "When it matters less",
-        text: "A low-stakes, quick purchase. No natural network of adjacent professionals. Prospects who don't think to ask an expert.",
+        text: "A low-stakes, quick purchase. No natural network of adjacent professionals.",
       },
     ],
   },
@@ -197,11 +197,11 @@ export const module4Slides: Slide[] = [
       },
       {
         label: "When it matters most",
-        text: "A field that requires verification. Work involving trust, risk, or regulation. A *credential* that is the entry ticket.",
+        text: "Work involving trust, risk or regulation, where a *credential* is the entry ticket.",
       },
       {
         label: "When it matters less",
-        text: "No formal credentialing, and none expected. Prospects who judge by results they can see.",
+        text: "No formal credentialing. Prospects judge by results they can see.",
       },
     ],
   },
@@ -225,7 +225,7 @@ export const module4Slides: Slide[] = [
     },
     sans: true,
     headline: "Earned proof reflects something real. Manufactured proof *simulates* it.",
-    sub: "Fake reviews. Testimonials traded for discounts. Referral rings with no real judgment behind them. Awards you paid to receive. They all borrow the look of proof without the thing it is supposed to evidence. A prospect can usually tell, eventually. And the cost of being caught is *the credibility you were trying to build.*",
+    sub: "Fake reviews, traded testimonials, referral rings, paid awards. All borrow the look of proof without the thing it evidences. A prospect can usually tell, eventually. The cost is *the credibility you were trying to build.*",
   },
 
   // 10 · On asking
@@ -245,7 +245,7 @@ export const module4Slides: Slide[] = [
     },
     sans: true,
     headline: "Asking isn't taking. It's *offering* a way to say something.",
-    sub: "A client who is glad they hired you often has no natural occasion to say so. Asking gives them the occasion. You're handing someone *a door they were already standing near.* With peers it's ordinary reciprocity.",
+    sub: "A client who is glad they hired you has no natural occasion to say so. Asking gives them one. You're handing someone *a door they were already standing near.*",
   },
 
   // 11 · Which proof is yours
@@ -284,31 +284,31 @@ export const module4Slides: Slide[] = [
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Peer + institutional.",
-        text: "Ethics largely close client reviews to her. Doctor and therapist referrals, plus her credentials, carry the trust.",
+        text: "Ethics close client reviews to her. Doctor referrals and her credentials carry the trust.",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Client proof.",
-        text: "Google reviews are nearly the whole apparatus. Realtor and contractor referrals are a real *second*.",
+        text: "Google reviews are nearly the whole apparatus. Realtor referrals a real *second*.",
       },
       {
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "All three.",
-        text: "Testimonials, planner referrals, wedding press. A considered purchase pulls on every source.",
+        text: "Testimonials, planner referrals, wedding press. A considered purchase pulls every source.",
       },
       {
         name: "James",
         meta: "chiropractor · local",
         lead: "Client + peer + institutional.",
-        text: "Reviews bring volume. GP and physiotherapist referrals bring vetted trust. Board certification clears the entry bar.",
+        text: "Reviews bring volume. GP referrals bring vetted trust. Certification clears the bar.",
       },
       {
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Client proof.",
-        text: "Before-and-afters are the proof. Stylists who don't do vivids send her those clients, a real peer *second*.",
+        text: "Before-and-afters are the proof. Other stylists send her those clients, a peer *second*.",
       },
     ],
   },
@@ -329,7 +329,7 @@ export const module4Slides: Slide[] = [
     },
     sans: true,
     headline: "Proof *ages.*",
-    sub: "A testimonial from four years ago raises a question it doesn't answer: what about since? Client proof ages fastest, peer proof more slowly, institutional slowest. *Earned proof is a thing you keep current.*",
+    sub: "A testimonial from four years ago raises a question it doesn't answer: what about since? Client proof ages fastest, institutional slowest. *Earned proof is a thing you keep current.*",
   },
 
   // 14 · More proof is not better proof
@@ -348,7 +348,7 @@ export const module4Slides: Slide[] = [
     },
     sans: true,
     headline: "More proof is not *better* proof.",
-    sub: "Forty thin reviews do less than six specific ones. A wall of logos does less than one case study a prospect sees themselves in. *Match the proof to the doubt they actually have.*",
+    sub: "Forty thin reviews do less than six specific ones. *Match the proof to the doubt they actually have.*",
   },
 
   // 15 · Weak vs strong testimonial
@@ -370,11 +370,11 @@ export const module4Slides: Slide[] = [
     heading: "What does *strong* proof look like?",
     weak: {
       quote: "Amazing to work with. Highly recommend!",
-      text: "Could be about anyone. No problem, no result, no specifics. It fills a space without doing a job.",
+      text: "Could be about anyone. No problem, no result, no specifics.",
     },
     strong: {
       quote: "We came in after a failed rebrand. She found the *positioning* we'd been circling for a year, in three sessions.",
-      text: "Names the problem, the result, and the shape of the work. A prospect in the same situation sees themselves.",
+      text: "Names the problem, the result, the shape of the work. A prospect in the same situation sees themselves.",
     },
   },
 
@@ -394,7 +394,7 @@ export const module4Slides: Slide[] = [
     },
     sans: true,
     headline: "Proof in a folder does *nothing.*",
-    sub: "Earned proof only works where a prospect meets it. It belongs on your primary touchpoint, the one you named in Module 3, at the moment a prospect is deciding. A testimonial saved but never shown is not proof. It's a note to yourself. *Build the proof, then put it where the doubt is.*",
+    sub: "Proof only works where a prospect meets it: your primary touchpoint, at the moment they're deciding. A testimonial saved but never shown is a note to yourself. *Put it where the doubt is.*",
   },
 
   // 17 · Thin proof
@@ -414,8 +414,8 @@ export const module4Slides: Slide[] = [
     eyebrow: "If you're starting with little",
     heading: "Thin proof is a *starting point*, not a failure.",
     paragraphs: [
-      "Very little earned proof is where most service businesses start, and where every business lands after a pivot. Don't build all three at once.",
-      "Find the one source most open to you now. Usually client proof from recent work, asked while it's still fresh. One source done properly beats three left thin.",
+      "Very little proof is where most businesses start, and where every business lands after a pivot.",
+      "Find the one source most open to you now. One done properly beats three left thin.",
     ],
   },
 
@@ -435,7 +435,7 @@ export const module4Slides: Slide[] = [
     },
     sans: true,
     headline: "A prospect believes what they can *verify* without you in the room.",
-    sub: "Everything you say about yourself is heard with you present, and discounted accordingly. Earned proof is checked when you're not there: a review read at midnight, a referral given over coffee, a credential confirmed in a search. *That's exactly why it works. It survives your absence.*",
+    sub: "Everything you say about yourself is heard with you present, and discounted for it. Proof gets checked when you're not there. *That's why it works. It survives your absence.*",
   },
 
   // 19 · The proof inventory
@@ -467,7 +467,7 @@ export const module4Slides: Slide[] = [
     eyebrow: "End of Module 4",
     heading: "You know what *vouches* for you.",
     paragraphs: [
-      "Next: how to turn the referrals that prove your credibility into a system that produces them on purpose. Referral System, Module 5.",
+      "Next: turning the referrals that prove your credibility into a system. Module 5.",
     ],
   },
 ];

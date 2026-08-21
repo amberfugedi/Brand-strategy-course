@@ -26,7 +26,7 @@ export const module6Slides: Slide[] = [
     surface: "plum",
     strata: 5,
     heading: "Brand *awareness*.",
-    sub: "The first foundation in Be Remembered: becoming known by the people you want as clients, before they are looking for you.",
+    sub: "Becoming known by the people you want as clients, before they are looking for you.",
     meta: [
       { label: "Length", value: "20 minutes" },
       { label: "Output", value: "Your presence plan" },
@@ -43,7 +43,7 @@ export const module6Slides: Slide[] = [
     number: "02",
     audio: { src: null },
     heading: "Building a brand feels *infinite.*",
-    sub: "A task with no edges and no end, and never enough hours to do it. That feeling is the first thing to fix.",
+    sub: "A task with no edges and no end. That feeling is the first thing to fix.",
   },
 
   // 03 · The concept
@@ -56,8 +56,8 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     heading: "Awareness is being *known* before you are needed.",
     paragraphs: [
-      "Most marketing chases people looking right now. Awareness is becoming familiar to the right people before they have a need, so that when it arrives you are who comes to mind. It changes who gets the enquiry later.",
-      "The first of three foundations in Be Remembered. Module 7 is the audience you can contact, Module 8 is being seen as the expert. This one is simply being known.",
+      "Most marketing chases people looking right now. Awareness is being familiar before the need arrives, so you are who comes to mind. It changes who gets the enquiry later.",
+      "The first of three in Be Remembered. Module 7 is the audience you can contact, Module 8 is being seen as the expert.",
     ],
   },
 
@@ -70,7 +70,7 @@ export const module6Slides: Slide[] = [
     number: "04",
     audio: { src: null },
     heading: "Presence in *one place*, over time.",
-    sub: "Awareness is not built everywhere at once. It is built by showing up in a single defined place, long enough to be recognized.",
+    sub: "Not built everywhere at once. Built by showing up in one place, long enough to be recognized.",
   },
 
   // 05 · The three conditions
@@ -87,7 +87,7 @@ export const module6Slides: Slide[] = [
       {
         label: "Condition 01",
         title: "Right place",
-        text: "Where your future clients already are. Presence somewhere they never look builds awareness in an *empty* room.",
+        text: "Where your future clients already are. Anywhere else is an *empty* room.",
       },
       {
         label: "Condition 02",
@@ -117,15 +117,15 @@ export const module6Slides: Slide[] = [
     cols: [
       {
         label: "What the condition is",
-        text: "Anywhere the same people gather repeatedly. The right one is somewhere your future clients already pass through.",
+        text: "Anywhere the same people gather repeatedly, and your future clients already pass through.",
       },
       {
         label: "A place is not only a feed",
-        text: "A local network, an adjacent community, a niche forum, a recurring event, someone else's newsletter. A *platform* is one kind of place, not the only kind.",
+        text: "A local network, a niche forum, a recurring event, someone else's newsletter. A *platform* is one kind of place, not the only kind.",
       },
       {
         label: "How it fails",
-        text: "Presence where your clients never visit builds awareness in an empty room. No one who matters is there to see it.",
+        text: "Presence where your clients never visit. No one who matters is there to see it.",
       },
     ],
   },
@@ -143,11 +143,11 @@ export const module6Slides: Slide[] = [
     cols: [
       {
         label: "What the condition is",
-        text: "Awareness is the sum of many small appearances. It needs a rhythm a person could almost predict.",
+        text: "The sum of many small appearances. It needs a rhythm they could almost predict.",
       },
       {
         label: "Small and steady beats big and rare",
-        text: "A modest weekly presence outbuilds an ambitious one that vanishes for two months. The *rhythm* is the asset.",
+        text: "A modest weekly presence outbuilds an ambitious one that vanishes. The *rhythm* is the asset.",
       },
       {
         label: "How it fails",
@@ -169,15 +169,15 @@ export const module6Slides: Slide[] = [
     cols: [
       {
         label: "What the condition is",
-        text: "For repetition to become recognition, each appearance has to connect to the last. Same voice, same angle.",
+        text: "Each appearance has to connect to the last. Same voice, same angle.",
       },
       {
         label: "This is positioning, showing up again",
-        text: "The angle is the one you defined in Module 1. Awareness needs no new identity, just the existing one shown *consistently.*",
+        text: "The angle is the one from Module 1. No new identity, just the existing one shown *consistently.*",
       },
       {
         label: "How it fails",
-        text: "Presence that changes shape reads as a different person each time. The appearances never link.",
+        text: "Presence that changes shape reads as a different person each time.",
       },
     ],
   },
@@ -192,7 +192,7 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "Awareness is being known by the *right* people, not the most.",
-    sub: "Most brand-building advice is really about reach. But a thousand strangers who will never hire you are not awareness. The aim is to be familiar to the smaller group who could become clients. *A small room of the right people beats a crowded one.*",
+    sub: "Most brand-building advice is really about reach. A thousand strangers who will never hire you are not awareness. *A small room of the right people beats a crowded one.*",
   },
 
   // 10 · Pays back last
@@ -205,7 +205,7 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "Awareness is the foundation whose progress is hardest to *see*.",
-    sub: "This is the hardest foundation to watch working. You will do the work and see nothing for a long while, because recognition forms below the surface before it produces an enquiry. *The silence is not the absence of progress.*",
+    sub: "The hardest foundation to watch working. Recognition forms below the surface long before it produces an enquiry. *The silence is not the absence of progress.*",
   },
 
   // 11 · How much should it weigh
@@ -218,7 +218,7 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     eyebrow: "Weigh it honestly",
     heading: "How much should awareness *weigh* for you?",
-    sub: "For some businesses awareness is the main engine. For others it is a minor note. Both the place and the weight vary.",
+    sub: "For some it is the main engine. For others a minor note. Place and weight both vary.",
   },
 
   // 12 · Five examples
@@ -237,31 +237,31 @@ export const module6Slides: Slide[] = [
         name: "Maya",
         meta: "therapist · ethics-regulated",
         lead: "Minor.",
-        text: "She runs on peer referral. A modest profile in the local clinician community, so referrers remember she exists. *Small* is the right size.",
+        text: "She runs on peer referral. A modest profile among local clinicians, so referrers remember she exists. *Small* is right.",
       },
       {
         name: "Marcus",
         meta: "pressure washer · local",
         lead: "Moderate.",
-        text: "Reviews carry him. His place is the neighborhood groups where homeowners ask for recommendations, where a familiar name shortens the decision.",
+        text: "Reviews carry him. The neighborhood groups where homeowners ask, and a familiar name shortens the decision.",
       },
       {
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "Significant.",
-        text: "Couples research for months. Her place is the venue and planner community, so her documentary style is recognized before the first call.",
+        text: "Couples research for months. The venue and planner community, so her style is known before the first call.",
       },
       {
         name: "James",
         meta: "chiropractor · local",
         lead: "Minor.",
-        text: "He runs on referral and local search. A steady presence in a couple of community spaces keeps the name familiar. Not his main engine.",
+        text: "Referral and local search carry him. A steady presence in a couple of spaces keeps the name familiar.",
       },
       {
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Primary.",
-        text: "Awareness is her main engine. Her audience follows for months before they book. Presence is the business.",
+        text: "Her main engine. The audience follows for months before booking. Presence is the business.",
       },
     ],
   },
@@ -276,7 +276,7 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "Build awareness to the size of its *job.*",
-    sub: "If referral is your main engine, awareness is a supporting note, and a supporting note should be small. Not every business needs a large presence, and effort spent past what the job requires is effort taken from the engine that actually carries you. *Match the presence to the weight, then stop.*",
+    sub: "If referral is your engine, awareness is a supporting note, and it should be small. Effort spent past what the job requires is taken from the engine that carries you. *Match the presence to the weight, then stop.*",
   },
 
   // 14 · The cadence you can keep
@@ -289,7 +289,7 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "The cadence you can *keep* beats the one you admire.",
-    sub: "An ambitious plan you abandon in a month builds less than a modest one you hold for a year. Recognition is forfeited the moment you stop. *Choose the pace you can still keep when the week goes wrong.*",
+    sub: "A plan you abandon in a month builds less than a modest one held for a year. *Choose the pace you can keep when the week goes wrong.*",
   },
 
   // 15 · Weak vs strong plan
@@ -310,7 +310,7 @@ export const module6Slides: Slide[] = [
     strong: {
       quote:
         "One thoughtful post a week, in the *one* community where my clients already are.",
-      text: "One place, one rhythm, survivable. It looks too small to matter. Held for a year, it is what recognition is actually made of.",
+      text: "One place, one rhythm, survivable. Too small to matter, until it is held for a year.",
     },
   },
 
@@ -325,7 +325,7 @@ export const module6Slides: Slide[] = [
     sans: true,
     eyebrow: "Why this layer exists",
     headline: "Every other foundation works on people *already* near you.",
-    sub: "Getting found, earned proof and referrals all act on people already searching, or sent by someone who knows you. Awareness is the first that reaches past that edge. *That reach is the whole reason this layer exists.*",
+    sub: "The first three foundations act on people already searching, or sent by someone. Awareness is the first that reaches past that edge. *That reach is why this layer exists.*",
   },
 
   // 17 · Start smaller
@@ -339,8 +339,8 @@ export const module6Slides: Slide[] = [
     eyebrow: "If the plan feels like a lot",
     heading: "Start *smaller* than feels right.",
     paragraphs: [
-      "The instinct is to begin ambitiously, to make up for lost time. Resist it. The practice has to survive your worst week, not your best.",
-      "One place, and the smallest cadence that still counts as a rhythm. Choose the version you are slightly embarrassed is not more. Almost no one regrets starting too small.",
+      "The instinct is to begin ambitiously. Resist it. The practice has to survive your worst week.",
+      "One place, and the smallest cadence that still counts as a rhythm. Almost no one regrets starting too small.",
     ],
   },
 
@@ -354,7 +354,7 @@ export const module6Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "You become known the way a place becomes *familiar.*",
-    sub: "No one decides to know a business. Familiarity forms the way it does with a shop you pass each day, until the name is part of the landscape. *Ordinary, in the right place, is exactly the goal.*",
+    sub: "No one decides to know a business. Familiarity forms like a shop you pass each day. *Ordinary, in the right place, is exactly the goal.*",
   },
 
   // 19 · The presence plan (interactive)
@@ -386,7 +386,7 @@ export const module6Slides: Slide[] = [
     eyebrow: "End of Module 6",
     heading: "You have a place to be *known.*",
     paragraphs: [
-      "Awareness makes you familiar, but it reaches people on someone else's platform, on borrowed ground. Next: turning that presence into an audience you can reach directly, whenever you choose. Owned Audience, Module 7.",
+      "Awareness reaches people on borrowed ground. Next: turning that into an audience you can reach directly. Module 7.",
     ],
   },
 ];
