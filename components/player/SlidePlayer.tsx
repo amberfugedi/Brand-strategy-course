@@ -448,10 +448,18 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
     slide.kind === "startingPoint" ||
     slide.kind === "plan" ||
     (slide.kind === "question" && Boolean(slide.live));
+  // The drawer belongs where the outputs get used, and Module 2 is
+  // explicit that the teaching modules are not that place: "you take
+  // all six whether or not they are your build priority", and "come
+  // back to your priority order" once the learning is done. A standing
+  // tab through Modules 3 to 7 invites the is-this-one-mine skim the
+  // course tells them not to do, and none of those modules asks the
+  // buyer to consult either output. So: Module 2 from the slide that
+  // first asks them to read the order, and Module 8, the build phase
+  // the order was for.
   const carriesPlan =
     !showsPlanItself &&
-    ((module.id === "m2" && slideIndex >= 11) ||
-      ["m3", "m4", "m5", "m6", "m7", "m8"].includes(module.id));
+    ((module.id === "m2" && slideIndex >= 11) || module.id === "m8");
 
   // Phone navigation lives at the top of the slide (the footer is
   // crowded by the player controls and the browser's own bottom bar)

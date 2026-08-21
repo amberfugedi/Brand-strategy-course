@@ -243,6 +243,15 @@ tier pill, two columns on a slide and one in the drawer. Reasoning lines
 show on the reading slide, where they are the teaching point, and are
 suppressed everywhere else so the list does not repeat itself.
 
+**Where the drawer belongs.** Module 2 from the slide that first asks
+the buyer to read their order, and Module 8, the build phase the order
+was for. Not the teaching modules: Module 2 tells them to "take all six
+whether or not they are your build priority" and to "come back to your
+priority order" once the learning is done, so a standing tab through
+Modules 3 to 7 would invite exactly the is-this-one-mine skim the
+course argues against. None of those modules asks the buyer to consult
+either output.
+
 **A slide that names an output must show it.** If narration tells the
 buyer to read something they produced, that thing belongs on the same
 screen. The reference drawer (a paper tab on the right edge, opening a
