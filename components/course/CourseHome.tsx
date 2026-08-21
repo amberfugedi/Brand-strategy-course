@@ -1,14 +1,20 @@
 "use client";
 
+import { useState } from "react";
+
 import Link from "next/link";
 import { getCourse } from "@/lib/content/courses";
 import { Rich } from "@/components/Rich";
 import { AuthCorner } from "@/components/auth/AuthCorner";
 import { MapArt } from "@/components/slides/MapArt";
+import { PlanPanel } from "@/components/course/PlanPanel";
+import { useHasPlan } from "@/components/course/LivePlan";
 import { useAuth } from "@/lib/auth/provider";
 import { useCourseStore } from "@/lib/store/provider";
 
 export function CourseHome({ courseId }: { courseId: string }) {
+  const hasPlan = useHasPlan();
+  const [planOpen, setPlanOpen] = useState(false);
   const course = getCourse(courseId)!;
   const auth = useAuth();
   const { doc, ready } = useCourseStore();
@@ -76,6 +82,18 @@ export function CourseHome({ courseId }: { courseId: string }) {
           >
             {hasProgress ? "Continue where you left off" : "Begin the course"}
           </Link>
+          {/* The plan lives on a slide deep inside Module 2, which is no
+              use once the buyer has moved past it. Reachable here from
+              the moment there is one. */}
+          {hasPlan ? (
+            <button
+              type="button"
+              onClick={() => setPlanOpen(true)}
+              className="ml-3 inline-block rounded-[14px] border border-aubergine px-6 py-3 text-[13px] font-bold uppercase tracking-chrome text-aubergine transition-colors hover:bg-aubergine hover:text-cream"
+            >
+              View your plan
+            </button>
+          ) : null}
         </div>
 
         </div>
@@ -83,6 +101,10 @@ export function CourseHome({ courseId }: { courseId: string }) {
           <MapArt filled={mapFilled} aura={false} />
         </div>
         </div>
+
+        {planOpen ? (
+          <PlanPanel courseId={courseId} onClose={() => setPlanOpen(false)} />
+        ) : null}
 
         <div className="mt-14 max-w-3xl space-y-2">
           {course.modules.map((mod) => {

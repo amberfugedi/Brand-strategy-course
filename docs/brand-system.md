@@ -243,6 +243,13 @@ tier pill, two columns on a slide and one in the drawer. Reasoning lines
 show on the reading slide, where they are the teaching point, and are
 suppressed everywhere else so the list does not repeat itself.
 
+**The plan panel.** Positioning, priority order, Gap List and starting
+point, the four things Module 2 names as the plan, in one panel
+(`components/course/PlanPanel.tsx`). Each section links back to the
+slide that produced it, because the reason to open the plan is usually
+to change something in it. One panel, three ways in: the button on the
+course home, and the edge tab in the two modules below.
+
 **Where the drawer belongs.** Module 2 from the slide that first asks
 the buyer to read their order, and Module 8, the build phase the order
 was for. Not the teaching modules: Module 2 tells them to "take all six
