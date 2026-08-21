@@ -59,6 +59,27 @@ export function CourseHome({ courseId }: { courseId: string }) {
           <Rich text={course.summary} />
         </p>
 
+        {/* Actions sit above the setup notice: that notice is a
+            temporary admin flag and should not push the buyer's two
+            real actions below the fold on a small screen. */}
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Link
+            href={continueHref}
+            className="inline-block rounded-[14px] border border-aubergine bg-aubergine px-6 py-3 text-center text-[13px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
+          >
+            {hasProgress ? "Continue where you left off" : "Begin the course"}
+          </Link>
+          {hasPlan ? (
+            <button
+              type="button"
+              onClick={() => setPlanOpen(true)}
+              className="inline-block rounded-[14px] border border-aubergine px-6 py-3 text-center text-[13px] font-bold uppercase tracking-chrome text-aubergine transition-colors hover:bg-aubergine hover:text-cream"
+            >
+              View your plan
+            </button>
+          ) : null}
+        </div>
+
         {!auth.enabled ? (
           // Setup flag: renders only while Supabase isn't connected and
           // removes itself once the keys are configured and deployed.
@@ -75,26 +96,6 @@ export function CourseHome({ courseId }: { courseId: string }) {
           </div>
         ) : null}
 
-        <div className="mt-8">
-          <Link
-            href={continueHref}
-            className="inline-block rounded-[14px] border border-aubergine bg-aubergine px-6 py-3 text-[13px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
-          >
-            {hasProgress ? "Continue where you left off" : "Begin the course"}
-          </Link>
-          {/* The plan lives on a slide deep inside Module 2, which is no
-              use once the buyer has moved past it. Reachable here from
-              the moment there is one. */}
-          {hasPlan ? (
-            <button
-              type="button"
-              onClick={() => setPlanOpen(true)}
-              className="ml-3 inline-block rounded-[14px] border border-aubergine px-6 py-3 text-[13px] font-bold uppercase tracking-chrome text-aubergine transition-colors hover:bg-aubergine hover:text-cream"
-            >
-              View your plan
-            </button>
-          ) : null}
-        </div>
 
         </div>
         <div aria-hidden className="hidden lg:block">
