@@ -2,45 +2,38 @@
 
 Parked work, with enough context to pick up cold.
 
-## Captions for Modules 3 and 4 (and 5 to 8 when recorded)
+## Captions
 
-**What's missing.** Every track in `public/audio/m1` and `m2` has a
-`.words.json` beside it. Modules 3 and 4 have none, so the CC button in
-the player has nothing to display on the new audio. Everything else
-about the narration works: the tracks play, the cues drive the reveals,
-and the callouts fire.
+Done for Modules 3 and 4, from the recording script plus a forced
+alignment of a different kind. Worth writing down, because the method
+is now the one to use for Modules 5 to 8.
 
-**The format.** `CaptionBar` fetches the mp3 path with `.mp3` swapped
-for `.words.json` and expects `{"words": [[word, start, end], ...]}`
-with times in seconds:
+**How.** The model hosts the usual tools pull from are blocked by the
+proxy (Hugging Face, Whisper's own CDN, Vosk's) but GitHub release
+assets are reachable, so the recogniser is `sherpa-onnx` with the
+zipformer English model from `k2-fsa/sherpa-onnx`. It hears the audio
+well enough to place words in time, and mis-hears a few; the script has
+the words exactly and no times. So: recognise the track, line the two
+word sequences up with difflib, and give each script word the clock
+reading of the recognised word it matched. Anything the recogniser
+dropped is interpolated across the gap it sits in. On these tracks 99%
+of words anchor on a real timestamp. `/tmp/asr/align.py` in the session
+that built it; the whole thing is about sixty lines.
 
-```json
-{"words": [["Module", 0.35, 0.75], ["1.", 0.75, 1.16], ["Positioning.", 1.33, 2.01]]}
-```
+**Modules 5 to 8 need only the audio.** The script document already
+carries their narration, one paragraph per slide, and the paragraph
+counts match the slide counts exactly (21, 20, 21, and 22 against 20
+for Module 8, which needs a look).
 
-A missing file fails quietly, which is why nothing looks broken today.
-
-**How m1 and m2 were built.** Forced alignment with aeneas: the verbatim
-script text (one word per line) plus a 16k mono wav, `PYTHONIOENCODING=UTF-8`,
-against the patched `wavfile.py`. Alignment needs the *known text*; it
-matches audio to words you supply rather than guessing them.
-
-**Why it's parked.** The real blocker is the script text, not tooling.
-There is no Module 3 or 4 script in the repo, and aeneas needs it
-verbatim to align. Two paths:
-
-1. **Preferred.** Amber supplies the recording scripts for 3 and 4, then
-   run the same aeneas pipeline as m1/m2. Accurate captions.
-2. **Fallback.** Transcribe with an ASR model and use its output as both
-   text and timing. `faster-whisper` is installed but its model download
-   hits a 403 at the proxy (`huggingface.co` is not on the allowlist), so
-   this needs either an allowlist change or a model cached another way.
-   `pocketsphinx` runs offline but mis-hears enough words that its
-   transcript is unusable as on-screen caption text. It was accurate
-   enough for *timing* work (placing cues and callouts), not for words.
-
-Do this before recording 5 through 8 if the captions should ship
-together; the same pipeline covers all of them.
+**The older captions drift.** Modules 1 and 2 and the intro were
+aligned with aeneas, and where those timings disagree with the new
+method they disagree by up to two seconds. Cutting the audio at both
+predicted times and asking the recogniser which one actually contains
+the word: the new timings hit 8 of 10, the existing ones 0 of 10. So
+the shipped captions on those modules lag or lead the voice in places.
+Module 2 would be a straight regeneration, its paragraphs matching its
+slides 1:1. Module 1 (36 paragraphs, 32 slides) and the intro (9 and 4)
+need a mapping decision first.
 
 ## Other parked items
 
