@@ -687,18 +687,17 @@ export const module2Slides: Slide[] = [
     crumb: S6,
     tag: "FRAMEWORK",
     number: "32",
-    audio: { src: "/audio/m2/m2-32.mp3", cues: [6.4, 17.9, 22.7] },
+    audio: { src: "/audio/m2/m2-32.mp3", cues: [6.4, 17.9] },
     eyebrow: "What comes next",
     heading: "Modules 3 through 8 teach the *foundations*.",
     bullets: true,
     paragraphs: [
       "Each module: what the foundation is, and what good looks like.",
-      "Getting found starts in Module 3. Authority building waits until Module 8.",
-      "They run in order. The Gap List tells you where building starts.",
+      "They run in order. Getting found starts in Module 3, authority building in Module 8.",
     ],
   },
 
-  // 33 · Not a license to skip
+  // 33 · Priorities shift
   {
     kind: "principle",
     id: "m2-not-skip",
@@ -708,17 +707,14 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-33.mp3",
       marks: [
-        { text: "Take all six foundation modules.", at: 57.4, until: 62.6 },
+        { text: "Priorities shift as the business changes.", at: 37.6, until: 41.6 },
       ],
       callouts: [
-        { text: "What is low priority today may be next year's focus.", at: 38.4, until: 44.4 },
-        { text: "Modules 3 through 8 teach the six foundations as concepts.", at: 44.7, until: 50.8 },
         { text: "Your starting point for the build phase, not your shortcut past the learning phase.", at: 63.3, until: 70.8 },
       ],
     },
-    eyebrow: "What this audit is for",
-    headline: "A starting point for your *build*. Not a license to skip foundations.",
-    sub: "Priority order tells you where to build first, not what's worth understanding. *Every foundation here is a concept you need, even the ones you won't build yet.* Take all six foundation modules.",
+    headline: "Low priority today, next year's *focus*.",
+    sub: "Priorities shift as the business changes. *You're learning the strategic frame here, not deciding what to build right now.*",
   },
 
   // 34 · The plan, compiled
@@ -764,7 +760,7 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-36.mp3",
       marks: [
-        { text: "Modules 3 through 8 are concept modules, not tactics modules.", at: 6.8, until: 13.5 },
+        { text: "Concept modules, not tactics modules.", at: 6.8, until: 13.5 },
         { text: "It tells you what to build first when you're done learning.", at: 14.0, until: 18.9 },
       ],
       callouts: [
@@ -773,7 +769,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     headline: "You take *all six*. The teaching is the point.",
-    sub: "Modules 3 through 8 are concept modules, not tactics modules. *Your audit doesn't tell you what to learn. It tells you what to build first when you're done learning.*",
+    sub: "Concept modules, not tactics modules. *Your audit doesn't tell you what to learn. It tells you what to build first when you're done learning.*",
   },
 
 ];
