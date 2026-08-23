@@ -12,7 +12,7 @@ import {
 import { migrateAudit } from "@/lib/content/m2Logic";
 import { CourseDocument, emptyDocument } from "./types";
 import { localStorageAdapter } from "./local";
-import { supabaseAdapter } from "./remote";
+import { saveOnExit, supabaseAdapter } from "./remote";
 import { useAuth } from "@/lib/auth/provider";
 
 interface CourseStoreValue {
@@ -22,6 +22,8 @@ interface CourseStoreValue {
    *  to localStorage always and to the account when signed in. */
   update: (fn: (doc: CourseDocument) => CourseDocument) => void;
 }
+
+const SAVE_DEBOUNCE_MS = 400;
 
 const CourseStoreContext = createContext<CourseStoreValue | null>(null);
 
@@ -36,6 +38,8 @@ export function CourseStoreProvider({
   const [doc, setDoc] = useState<CourseDocument>(emptyDocument);
   const [ready, setReady] = useState(false);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  /** The edit waiting on the debounce, so an exit can still save it. */
+  const pending = useRef<CourseDocument | null>(null);
   const signedIn = enabled && user !== null;
   const signedInRef = useRef(signedIn);
   signedInRef.current = signedIn;
@@ -67,19 +71,55 @@ export function CourseStoreProvider({
     };
   }, [courseId, signedIn]);
 
+  // Write the pending edit now rather than when the timer says so.
+  // `leaving` is true when the page is going away, which rules out
+  // awaiting anything, so the save takes the keepalive path instead.
+  const flush = useCallback(
+    (leaving: boolean) => {
+      const next = pending.current;
+      if (!next) return;
+      pending.current = null;
+      if (saveTimer.current) {
+        clearTimeout(saveTimer.current);
+        saveTimer.current = null;
+      }
+      void localStorageAdapter.save(courseId, next);
+      if (!signedInRef.current) return;
+      if (leaving) saveOnExit(courseId, next);
+      else void supabaseAdapter.save(courseId, next);
+    },
+    [courseId],
+  );
+
+  // A learner who answers and immediately closes the tab would other-
+  // wise lose the edit sitting in the debounce. Both events matter:
+  // pagehide is the one iOS Safari reliably fires.
+  useEffect(() => {
+    const onHidden = () => {
+      if (document.visibilityState === "hidden") flush(true);
+    };
+    const onPageHide = () => flush(true);
+    document.addEventListener("visibilitychange", onHidden);
+    window.addEventListener("pagehide", onPageHide);
+    return () => {
+      document.removeEventListener("visibilitychange", onHidden);
+      window.removeEventListener("pagehide", onPageHide);
+      // Unmounting is a navigation away, so do not strand the edit.
+      flush(false);
+    };
+  }, [flush]);
+
   const update = useCallback(
     (fn: (d: CourseDocument) => CourseDocument) => {
       setDoc((prev) => {
         const next = { ...fn(prev), updatedAt: new Date().toISOString() };
+        pending.current = next;
         if (saveTimer.current) clearTimeout(saveTimer.current);
-        saveTimer.current = setTimeout(() => {
-          void localStorageAdapter.save(courseId, next);
-          if (signedInRef.current) void supabaseAdapter.save(courseId, next);
-        }, 400);
+        saveTimer.current = setTimeout(() => flush(false), SAVE_DEBOUNCE_MS);
         return next;
       });
     },
-    [courseId],
+    [flush],
   );
 
   return (

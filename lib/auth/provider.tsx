@@ -9,6 +9,7 @@ import {
 } from "react";
 import type { User } from "@supabase/supabase-js";
 import { getSupabase, supabaseConfigured } from "@/lib/supabaseClient";
+import { rememberAccessToken } from "@/lib/store/remote";
 
 interface AuthValue {
   /** False when the app runs without Supabase env keys (local mode). */
@@ -37,10 +38,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!supabase) return;
     supabase.auth.getSession().then(({ data }) => {
       setUser(data.session?.user ?? null);
+      rememberAccessToken(data.session?.access_token ?? null);
       setLoading(false);
     });
     const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
+      // The exit save cannot await a lookup, so it reads the token from
+      // here. Refreshes fire this too, so it never goes stale.
+      rememberAccessToken(session?.access_token ?? null);
     });
     return () => sub.subscription.unsubscribe();
   }, [supabase]);
