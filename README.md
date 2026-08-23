@@ -15,8 +15,12 @@ gated, all progress in the browser's localStorage.
 
 ## Enable accounts (Supabase)
 
-1. Create a project at supabase.com (free tier is fine).
-2. In the SQL editor, run `supabase/schema.sql` once.
+1. Create a project at supabase.com (free tier is fine). Give the
+   course its own project. Sharing a database with another app means
+   sharing its `auth.users`, so a signup anywhere is a login here.
+2. In the SQL editor, run `supabase/schema.sql`. It creates the tables,
+   the row-level security policies, and the save function, and it is
+   safe to run again later.
 3. Authentication > Sign In / Up: make sure Email is enabled. Magic
    links work out of the box; no password settings needed.
 4. Authentication > URL Configuration: set the site URL to your
@@ -41,4 +45,4 @@ sign-in.
 - `components/slides/` — one component per slide kind
 - `lib/store/` — the course document, localStorage + Supabase adapters
 - `lib/auth/` — magic link auth context
-- `supabase/schema.sql` — database tables and row-level security
+- `supabase/schema.sql` — tables, row-level security, save function
