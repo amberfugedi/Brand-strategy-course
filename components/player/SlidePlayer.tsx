@@ -48,6 +48,7 @@ import { CalloutNote } from "@/components/player/CalloutNote";
 import { ReferenceTray } from "@/components/player/ReferenceTray";
 import { SpokenMarkProvider } from "@/components/player/SpokenMark";
 import { NarrationClock } from "@/components/player/NarrationClock";
+import { useEntitlement } from "@/lib/auth/entitlement";
 import { SignInGate } from "@/components/auth/SignInGate";
 import { stepsOf } from "@/lib/content/steps";
 import { slideComplete } from "@/lib/content/completion";
@@ -198,6 +199,11 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // The intro is open to everyone; modules need an account when
   // sign-in is configured. In local mode nothing is gated.
   const gated = module.id !== "intro" && auth.enabled && !auth.loading && !auth.user;
+  // An account is not enough once the course is being sold. Undefined
+  // means the lookup is still out, which must not read as "has not paid"
+  // or a buyer sees a paywall flash on every load.
+  const entitled = useEntitlement(courseId);
+  const unpaid = module.id !== "intro" && !gated && entitled === false;
   const slide = module.slides[slideIndex - 1];
   const isFirst = slideIndex <= 1;
   const isLast = slideIndex >= module.slides.length;
@@ -394,6 +400,31 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
 
   if (gated) {
     return <SignInGate nextPath={`/${courseId}/${module.id}/${slideIndex}`} />;
+  }
+
+  if (unpaid) {
+    return (
+      <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6 text-body surface-cream">
+        <div className="rounded-3xl w-full max-w-md border border-subtle bg-cream-light shadow-lift px-9 py-10 text-center">
+          <div className="mb-4 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+            The intro is open to everyone
+          </div>
+          <h1 className="text-2xl font-bold tracking-tight">
+            The modules come with the course.
+          </h1>
+          <p className="mt-3 text-[14px] leading-relaxed text-body-secondary">
+            If you have already bought it, sign in with the email you paid
+            with and this opens straight away.
+          </p>
+          <Link
+            href={`/${courseId}`}
+            className="mt-6 inline-block rounded-[14px] border border-aubergine bg-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
+          >
+            Back to the course
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   if (lockedByPrereq) {

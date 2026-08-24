@@ -39,6 +39,38 @@ modules require sign-in (magic link), and each buyer's course document
 syncs to their account. Work done before signing in uploads on first
 sign-in.
 
+## Selling it (Stripe)
+
+Buying grants access to the **email that paid**, so someone can buy
+before they have an account and sign in later, or the other way round.
+Nothing in the browser can grant access to itself: entitlements have no
+insert or update policy, so only the webhook's service role key can
+write them.
+
+1. Stripe > Developers > Webhooks: add an endpoint at
+   `https://<your-domain>/api/stripe/webhook`, subscribed to
+   `checkout.session.completed`, `checkout.session.async_payment_succeeded`,
+   `charge.refunded` and `charge.dispute.created`.
+2. Copy the signing secret and set it, with the Supabase service role
+   key (Project Settings > API), in the Netlify site's environment:
+
+```
+STRIPE_WEBHOOK_SECRET=whsec_...
+SUPABASE_SERVICE_ROLE_KEY=...
+```
+
+Both are server-only. Never give either a `NEXT_PUBLIC_` prefix, and
+never put the service role key in the browser: it bypasses row-level
+security entirely.
+
+To grant access by hand (a comp, a refund reversal, someone who paid
+with a different address than they sign in with), insert a row:
+
+```sql
+insert into public.entitlements (email, course_id)
+values ('lower@case.email', 'foundation');
+```
+
 ## Structure
 
 - `lib/content/` — courses, modules, slides as data

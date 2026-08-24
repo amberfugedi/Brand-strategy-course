@@ -67,20 +67,40 @@ $$;
 revoke execute on function public.save_course_state_if_newer(text, jsonb, timestamptz) from public;
 grant execute on function public.save_course_state_if_newer(text, jsonb, timestamptz) to authenticated;
 
--- Entitlements: which accounts own which courses. Not enforced yet
--- (any signed-in account can take course one). When purchases arrive,
--- a Stripe webhook inserts rows here and the app checks them.
+-- Entitlements: who has bought what. Keyed on the email that paid, not
+-- on a user id, because the buyer usually has no account at the moment
+-- Stripe fires the webhook and a foreign key to auth.users would have
+-- nothing to point at. Matching on email lets someone buy first and
+-- sign in whenever they like. Written by netlify/functions/stripe-webhook.mjs.
 
 create table if not exists public.entitlements (
-  user_id uuid not null references auth.users (id) on delete cascade,
+  email text not null,
   course_id text not null,
+  status text not null default 'active',
+  stripe_customer_id text,
+  stripe_checkout_session_id text,
   granted_at timestamptz not null default now(),
-  primary key (user_id, course_id)
+  revoked_at timestamptz,
+  primary key (email, course_id),
+  -- stored lowercase so the primary key cannot hold two spellings of
+  -- one address. A webhook that forgets to normalise fails loudly here.
+  constraint entitlements_email_lowercase check (email = lower(email)),
+  constraint entitlements_status_known check (status in ('active','refunded'))
 );
+
+-- Stripe retries webhooks, sometimes days later. This is what makes a
+-- replayed delivery a no-op instead of a second grant.
+create unique index if not exists entitlements_session_idx
+  on public.entitlements (stripe_checkout_session_id)
+  where stripe_checkout_session_id is not null;
 
 alter table public.entitlements enable row level security;
 
+-- Learners can read their own row and nothing else. There is no insert
+-- or update policy on purpose: only the service role, which bypasses
+-- RLS, may grant access, so a signed-in user cannot grant it to
+-- themselves and a leaked anon key cannot either.
 drop policy if exists "read own entitlements" on public.entitlements;
 create policy "read own entitlements"
   on public.entitlements for select
-  using (auth.uid() = user_id);
+  using (lower(email) = lower(auth.jwt() ->> 'email'));

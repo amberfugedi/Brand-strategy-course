@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"
+
+# Next.js on Netlify: the adapter handles routing and the build output,
+# so there is no publish directory or SPA fallback to set here.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Stripe posts to a tidy path rather than the raw function URL.
+[[redirects]]
+  from = "/api/stripe/webhook"
+  to = "/.netlify/functions/stripe-webhook"
+  status = 200
+  force = true
