@@ -15,35 +15,47 @@ import { useAuth } from "@/lib/auth/provider";
  * `undefined` means the answer is not in yet. Callers must not treat
  * that as "no" or a buyer sees a paywall for a moment on every load.
  */
-export function useEntitlement(courseId: string): boolean | undefined {
+export function useOwnedCourses(): Set<string> | undefined {
   const { user, enabled, loading } = useAuth();
-  const [entitled, setEntitled] = useState<boolean | undefined>(undefined);
+  const [owned, setOwned] = useState<Set<string> | undefined>(undefined);
 
   useEffect(() => {
     // Local mode has no accounts and no payments, so nothing is gated.
-    if (!supabaseConfigured) return setEntitled(true);
-    if (loading) return setEntitled(undefined);
-    if (!enabled || !user) return setEntitled(false);
+    // ALL_COURSES stands for "everything", which useEntitlement reads.
+    if (!supabaseConfigured) return setOwned(ALL_COURSES);
+    if (loading) return setOwned(undefined);
+    if (!enabled || !user) return setOwned(new Set());
 
     let cancelled = false;
     (async () => {
       const supabase = getSupabase();
       if (!supabase) return;
+      // No filter on the row's email: row-level security already limits
+      // this to the caller's own entitlements, and there is no way to
+      // widen it from here.
       const { data, error } = await supabase
         .from("entitlements")
-        .select("status")
-        .eq("course_id", courseId)
-        .eq("status", "active")
-        .maybeSingle();
+        .select("course_id")
+        .eq("status", "active");
       if (cancelled) return;
-      // On a network error, leave it unknown rather than locking a
+      // On a network error leave it unknown rather than locking a
       // paying buyer out of something they own.
-      setEntitled(error ? undefined : Boolean(data));
+      if (error || !data) return setOwned(undefined);
+      setOwned(new Set(data.map((r) => r.course_id as string)));
     })();
     return () => {
       cancelled = true;
     };
-  }, [courseId, user, enabled, loading]);
+  }, [user, enabled, loading]);
 
-  return entitled;
+  return owned;
+}
+
+/** Sentinel for local mode, where there is nothing to buy. */
+const ALL_COURSES = new Set<string>(["*"]);
+
+export function useEntitlement(courseId: string): boolean | undefined {
+  const owned = useOwnedCourses();
+  if (owned === undefined) return undefined;
+  return owned.has("*") || owned.has(courseId);
 }

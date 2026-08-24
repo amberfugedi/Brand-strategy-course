@@ -1,7 +1,6 @@
-import Link from "next/link";
-import { courses, librarySections } from "@/lib/content/courses";
+import { courses, getCourseMeta, librarySections } from "@/lib/content/courses";
 import { AuthCorner } from "@/components/auth/AuthCorner";
-import { CourseCover } from "@/components/course/CourseCover";
+import { CourseGrid } from "@/components/course/CourseGrid";
 
 const WHY = [
   {
@@ -42,91 +41,10 @@ export default function LibraryPage() {
           matches where you are.
         </p>
 
-        {librarySections.map((section) => {
-          const sectionCourses = courses.filter(
-            (c) => c.audience === section.audience,
-          );
-          return (
-            <section key={section.audience} className="mt-12">
-              <div className="border-b border-subtle pb-3">
-                <h2 className="text-xl font-bold tracking-tight">
-                  {section.audience}
-                </h2>
-                <p className="mt-1 text-[13px] text-body-secondary">
-                  {section.note}
-                </p>
-              </div>
-
-              <div className="mt-5 grid gap-6 md:grid-cols-2">
-                {sectionCourses.map((course) =>
-                  course.released ? (
-                    <Link
-                      key={course.id}
-                      href={`/${course.id}`}
-                      className="group block border border-subtle bg-cream-light transition-opacity hover:opacity-90"
-                    >
-                      <CourseCover
-                        ordinal={course.ordinal}
-                        word={course.coverWord}
-                      />
-                      <div className="px-5 py-4">
-                        <div className="text-[17px] font-bold leading-snug tracking-tight">
-                          {course.title}
-                        </div>
-                        <div className="mt-1 text-[12.5px] text-body-tertiary">
-                          Amber Fugedi
-                        </div>
-                        <div className="mt-2.5 flex flex-wrap gap-1.5">
-                          {course.chips.map((chip) => (
-                            <span
-                              key={chip}
-                              className="border border-ink/15 bg-cream px-2 py-0.5 text-[10.5px] font-semibold text-body-secondary"
-                            >
-                              {chip}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="mt-3 text-[11px] font-bold uppercase tracking-chrome text-aubergine">
-                          Open the course
-                        </div>
-                      </div>
-                    </Link>
-                  ) : (
-                    <div
-                      key={course.id}
-                      className="border border-subtle bg-cream-light/70"
-                    >
-                      <CourseCover
-                        ordinal={course.ordinal}
-                        word={course.coverWord}
-                        muted
-                      />
-                      <div className="px-5 py-4">
-                        <div className="text-[17px] font-bold leading-snug tracking-tight text-body-tertiary">
-                          {course.title}
-                        </div>
-                        <p className="mt-1 font-serif text-[13px] italic text-body-tertiary">
-                          Not yet available.
-                        </p>
-                      </div>
-                    </div>
-                  ),
-                )}
-
-                {sectionCourses.length === 0 ? (
-                  <div className="border border-dashed border-ink/20 bg-cream-light/60 px-6 py-8">
-                    <div className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
-                      In development
-                    </div>
-                    <p className="mt-2 font-serif text-[15px] italic leading-relaxed text-body-secondary">
-                      This track is being built. One course at a time.
-                    </p>
-                  </div>
-                ) : null}
-              </div>
-            </section>
-          );
-        })}
+        <CourseGrid
+          courses={courses.map((c) => getCourseMeta(c.id)!)}
+          sections={librarySections}
+        />
 
         <section className="mt-14 border-t border-subtle pt-10">
           <h2 className="text-xl font-bold tracking-tight">
