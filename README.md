@@ -47,12 +47,24 @@ Nothing in the browser can grant access to itself: entitlements have no
 insert or update policy, so only the webhook's service role key can
 write them.
 
-1. Stripe > Developers > Webhooks: add an endpoint at
-   `https://<your-domain>/api/stripe/webhook`, subscribed to
-   `checkout.session.completed`, `checkout.session.async_payment_succeeded`,
-   `charge.refunded` and `charge.dispute.created`.
-2. Copy the signing secret and set it, with the Supabase service role
-   key (Project Settings > API), in the Netlify site's environment:
+The academy runs at `learn.amberfugedi.com`; the course is sold from
+`amberfugedi.com`, which links out to the Stripe payment link. Both the
+product and the webhook endpoint are live already:
+
+- Payment link: `https://buy.stripe.com/dRm28k15N68o3FD0GLeEo00`
+  ($297 one time, `metadata.course_id = foundation`). It returns buyers
+  to `/login?purchased=1&next=/foundation`, so they land on a page that
+  acknowledges the purchase and asks them to sign in with the email
+  they paid with.
+- Webhook endpoint: `https://learn.amberfugedi.com/api/stripe/webhook`,
+  subscribed to `checkout.session.completed`,
+  `checkout.session.async_payment_succeeded`, `charge.refunded` and
+  `charge.dispute.created`.
+
+Which course a payment grants comes from the payment link's
+`course_id` metadata, so a second course needs a new link, not a
+deploy. Set the signing secret, with the Supabase service role key
+(Project Settings > API), in the Netlify site's environment:
 
 ```
 STRIPE_WEBHOOK_SECRET=whsec_...

@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth/provider";
 
@@ -10,6 +10,16 @@ export default function LoginPage() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
+  // Stripe sends buyers here with ?purchased=1. Landing on a bare
+  // sign-in form straight after paying reads as though the payment did
+  // not register, so say plainly that it did. Read in an effect rather
+  // than useSearchParams to keep the page statically rendered.
+  const [justPurchased, setJustPurchased] = useState(false);
+  useEffect(() => {
+    setJustPurchased(
+      new URLSearchParams(window.location.search).get("purchased") === "1",
+    );
+  }, []);
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -55,13 +65,27 @@ export default function LoginPage() {
           </>
         ) : (
           <>
-            <h1 className="text-center text-2xl font-bold tracking-tight">
-              Sign in with your email.
-            </h1>
-            <p className="mt-3 text-center text-[14px] leading-relaxed text-body-secondary">
-              No password. We send a link to your inbox, and your work saves
-              to your account from then on.
-            </p>
+            {justPurchased ? (
+              <>
+                <h1 className="text-center text-2xl font-bold tracking-tight">
+                  You're <em className="accent-serif">in</em>.
+                </h1>
+                <p className="mt-3 text-center text-[14px] leading-relaxed text-body-secondary">
+                  Thank you. Sign in with the same email you paid with and
+                  the course opens straight away.
+                </p>
+              </>
+            ) : (
+              <>
+                <h1 className="text-center text-2xl font-bold tracking-tight">
+                  Sign in with your email.
+                </h1>
+                <p className="mt-3 text-center text-[14px] leading-relaxed text-body-secondary">
+                  No password. We send a link to your inbox, and your work
+                  saves to your account from then on.
+                </p>
+              </>
+            )}
             <form onSubmit={onSubmit} className="mt-6">
               <label className="block">
                 <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-eyebrow text-body-secondary">
