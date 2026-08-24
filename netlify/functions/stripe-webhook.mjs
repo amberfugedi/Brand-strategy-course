@@ -7,7 +7,11 @@
 
 import { createHmac, timingSafeEqual } from "node:crypto";
 
-const COURSE_ID = "foundation";
+// Which course a payment buys comes from Stripe, not from here: set
+// course_id in the payment link's or checkout session's metadata and it
+// arrives on the event. Course two then needs a payment link, not a
+// deploy. DEFAULT_COURSE_ID covers links created before this existed.
+const DEFAULT_COURSE_ID = "foundation";
 // Stripe's own tolerance for replayed deliveries.
 const TOLERANCE_SECONDS = 300;
 
@@ -103,9 +107,17 @@ async function grant(session, url, key) {
   ).trim().toLowerCase();
   if (!email) throw new Error("no email on the checkout session");
 
+  const courseId = (session.metadata?.course_id || "").trim() || DEFAULT_COURSE_ID;
+  if (!session.metadata?.course_id) {
+    console.warn(
+      `stripe-webhook: ${session.id} carried no course_id metadata, ` +
+      `falling back to ${DEFAULT_COURSE_ID}`,
+    );
+  }
+
   const row = {
     email,
-    course_id: COURSE_ID,
+    course_id: courseId,
     status: "active",
     stripe_customer_id: typeof session.customer === "string" ? session.customer : null,
     stripe_checkout_session_id: session.id,
@@ -136,7 +148,7 @@ async function grant(session, url, key) {
     return;
   }
   if (!res.ok) throw new Error(`supabase ${res.status}: ${await res.text()}`);
-  console.log(`stripe-webhook: granted ${COURSE_ID} to ${email}`);
+  console.log(`stripe-webhook: granted ${courseId} to ${email}`);
 }
 
 async function revoke(charge, url, key) {
@@ -145,8 +157,13 @@ async function revoke(charge, url, key) {
     .toLowerCase();
   if (!email) return;
 
+  // A charge does not carry the session's metadata, so fall back to the
+  // default. With more than one course this wants the checkout session
+  // looked up by payment_intent to find which one was refunded.
+  const courseId = (charge.metadata?.course_id || "").trim() || DEFAULT_COURSE_ID;
+
   const res = await fetch(
-    `${url}/rest/v1/entitlements?email=eq.${encodeURIComponent(email)}&course_id=eq.${COURSE_ID}`,
+    `${url}/rest/v1/entitlements?email=eq.${encodeURIComponent(email)}&course_id=eq.${courseId}`,
     {
       method: "PATCH",
       headers: {
@@ -159,7 +176,7 @@ async function revoke(charge, url, key) {
     },
   );
   if (!res.ok) throw new Error(`supabase ${res.status}: ${await res.text()}`);
-  console.log(`stripe-webhook: revoked ${COURSE_ID} for ${email}`);
+  console.log(`stripe-webhook: revoked ${courseId} for ${email}`);
 }
 
 function json(body, status) {
