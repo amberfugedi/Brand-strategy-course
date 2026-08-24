@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ModuleDef, Slide, Surface } from "@/lib/content/types";
+import { Slide, Surface } from "@/lib/content/types";
+import type { ModuleMeta } from "@/lib/content/meta";
 import { SlideChrome } from "@/components/chrome/SlideChrome";
 import { HeroSlide } from "@/components/slides/HeroSlide";
 import { SystemSlide } from "@/components/slides/SystemSlide";
@@ -49,6 +50,7 @@ import { ReferenceTray } from "@/components/player/ReferenceTray";
 import { SpokenMarkProvider } from "@/components/player/SpokenMark";
 import { NarrationClock } from "@/components/player/NarrationClock";
 import { useEntitlement } from "@/lib/auth/entitlement";
+import { useSlides } from "@/components/player/SlidesProvider";
 import { SignInGate } from "@/components/auth/SignInGate";
 import { stepsOf } from "@/lib/content/steps";
 import { slideComplete } from "@/lib/content/completion";
@@ -159,7 +161,7 @@ function SlideBody({
 
 interface SlidePlayerProps {
   courseId: string;
-  module: ModuleDef;
+  module: ModuleMeta;
   slideIndex: number; // 1-based, matches the URL
 }
 
@@ -203,22 +205,26 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // means the lookup is still out, which must not read as "has not paid"
   // or a buyer sees a paywall flash on every load.
   const entitled = useEntitlement(courseId);
+  const { slides, status: slidesStatus } = useSlides();
+  const slideList = slides ?? [];
   const unpaid = module.id !== "intro" && !gated && entitled === false;
-  const slide = module.slides[slideIndex - 1];
+  const slide = slideList[slideIndex - 1];
   const isFirst = slideIndex <= 1;
-  const isLast = slideIndex >= module.slides.length;
-  const surface = surfaceOf(slide);
+  const isLast = slideIndex >= module.slideCount;
+  // These run above the loading guard, where the slide may not have
+  // arrived yet, so each needs a sane answer for "nothing here yet".
+  const surface = slide ? surfaceOf(slide) : "cream";
   const dark = surface !== "cream";
 
   // Slides build beat by beat on a timer, matching the pacing the
   // voiceover will carry. A slide the buyer has already seen renders
   // fully revealed, and reduced-motion preferences skip the build.
-  const totalSteps = stepsOf(slide);
+  const totalSteps = slide ? stepsOf(slide) : 0;
   const [step, setStep] = useState(0);
   // Interactive slides hold Next until their inputs are filled in, so
   // a buyer cannot finish a module with an empty plan. The note only
   // appears once they try to move on.
-  const inputComplete = slideComplete(slide, doc);
+  const inputComplete = slide ? slideComplete(slide, doc) : true;
   const [nudged, setNudged] = useState(false);
   // First Next during narration holds with a note; the second one
   // skips ahead. Resets on a new slide or when the track ends.
@@ -226,7 +232,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   const seenRef = useRef(doc.progress.seenSlides);
   seenRef.current = doc.progress.seenSlides;
   useEffect(() => {
-    const current = module.slides[slideIndex - 1];
+    const current = slideList[slideIndex - 1];
     const wasSeen = Boolean(seenRef.current[`${module.id}/${slideIndex}`]);
     const reducedMotion =
       typeof window !== "undefined" &&
@@ -248,7 +254,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   useEffect(() => {
     if (narration.restartCount === restartSeenRef.current) return;
     restartSeenRef.current = narration.restartCount;
-    if (slide.audio.cues?.length) setStep(0);
+    if (slide?.audio.cues?.length) setStep(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [narration.restartCount]);
 
@@ -256,7 +262,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // settle before the first beat, a reading pace between the rest.
   // On slides with narration cues the playing voice drives the beats
   // instead; the timer only covers a blocked or paused track.
-  const cueDriven = Boolean(slide.audio.cues?.length) && narration.playing;
+  const cueDriven = Boolean(slide?.audio.cues?.length) && narration.playing;
   useEffect(() => {
     if (step >= totalSteps || cueDriven) return;
     const t = setTimeout(
@@ -272,9 +278,9 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // ahead by URL earns no credit.
   useEffect(() => {
     if (!ready || lockedByPrereq) return;
-    const reachedEnd = slideIndex >= module.slides.length;
+    const reachedEnd = slideIndex >= module.slideCount;
     update((d) => {
-      const toolsDone = module.slides.every((s) => slideComplete(s, d));
+      const toolsDone = slideList.every((s) => slideComplete(s, d));
       return {
         ...d,
         progress: {
@@ -298,10 +304,10 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
 
   const goTo = useCallback(
     (index: number) => {
-      if (index < 1 || index > module.slides.length) return;
+      if (index < 1 || index > module.slideCount) return;
       router.push(`/${courseId}/${module.id}/${index}`);
     },
-    [courseId, module.id, module.slides.length, router],
+    [courseId, module.id, module.slideCount, router],
   );
 
   const stepRef = useRef(step);
@@ -311,7 +317,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // its cue. Monotonic, so a Next-press skip is never undone and a
   // restarted track doesn't hide what's on screen.
   useEffect(() => {
-    const cues = slide.audio.cues;
+    const cues = slide?.audio.cues;
     if (!cues?.length || !narration.playing) return;
     let raf = 0;
     const tick = () => {
@@ -396,32 +402,45 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
     return () => window.removeEventListener("keydown", onKey);
   }, [advance, goBack, router, courseId]);
 
-  if (!slide) return null;
-
-  if (gated) {
+  // Sign-in and paywall answers come before the loading state: a
+  // visitor should be told what they need, not watch a spinner first.
+  if (gated || slidesStatus === "unauthenticated") {
     return <SignInGate nextPath={`/${courseId}/${module.id}/${slideIndex}`} />;
   }
 
-  if (unpaid) {
+  if (unpaid || slidesStatus === "denied") {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6 text-body surface-cream">
-        <div className="rounded-3xl w-full max-w-md border border-subtle bg-cream-light shadow-lift px-9 py-10 text-center">
-          <div className="mb-4 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
-            The intro is open to everyone
-          </div>
-          <h1 className="text-2xl font-bold tracking-tight">
-            The modules come with the course.
-          </h1>
-          <p className="mt-3 text-[14px] leading-relaxed text-body-secondary">
-            If you have already bought it, sign in with the email you paid
-            with and this opens straight away.
-          </p>
-          <Link
-            href={`/${courseId}`}
-            className="mt-6 inline-block rounded-[14px] border border-aubergine bg-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
-          >
-            Back to the course
-          </Link>
+      <PlayerNotice
+        courseId={courseId}
+        eyebrow="The intro is open to everyone"
+        heading="The modules come with the course."
+        body="If you have already bought it, sign in with the email you paid with and this opens straight away."
+      />
+    );
+  }
+
+  if (slidesStatus === "error") {
+    return (
+      <PlayerNotice
+        courseId={courseId}
+        eyebrow="That did not load"
+        heading="This module didn't come through."
+        body="The connection dropped on the way. Refreshing usually sorts it, and none of your work is lost."
+      />
+    );
+  }
+
+  // The copy is no longer in the bundle, so there is a beat before it
+  // lands. Metadata is already here, so the chrome does not move.
+  if (!slide) {
+    return (
+      <div
+        className="flex min-h-screen items-center justify-center bg-cream surface-cream"
+        role="status"
+        aria-label="Loading this module"
+      >
+        <div className="h-1 w-24 overflow-hidden rounded-full bg-subtle">
+          <div className="h-full w-1/3 animate-pulse rounded-full bg-gold" />
         </div>
       </div>
     );
@@ -463,7 +482,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
 
   const progress =
     ((slideIndex - 1 + (totalSteps > 0 ? step / totalSteps : 1)) /
-      module.slides.length) *
+      module.slideCount) *
     100;
 
   // Module 2 hands over a priority order and a Gap List, then keeps
@@ -680,6 +699,39 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
           slide that refers to them, from the moment Module 2 produces
           them through the foundation modules that use them. */}
       {carriesPlan ? <ReferenceTray courseId={courseId} dark={dark} /> : null}
+    </div>
+  );
+}
+
+/** The full-screen card the player shows instead of a slide: not signed
+ *  in, not bought, or the fetch failed. Same shape as the prerequisite
+ *  lock so the three read as one family. */
+function PlayerNotice({
+  courseId,
+  eyebrow,
+  heading,
+  body,
+}: {
+  courseId: string;
+  eyebrow: string;
+  heading: string;
+  body: string;
+}) {
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6 text-body surface-cream">
+      <div className="rounded-3xl w-full max-w-md border border-subtle bg-cream-light shadow-lift px-9 py-10 text-center">
+        <div className="mb-4 text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+          {eyebrow}
+        </div>
+        <h1 className="text-2xl font-bold tracking-tight">{heading}</h1>
+        <p className="mt-3 text-[14px] leading-relaxed text-body-secondary">{body}</p>
+        <Link
+          href={`/${courseId}`}
+          className="mt-6 inline-block rounded-[14px] border border-aubergine bg-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
+        >
+          Back to the course
+        </Link>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { courses, getCourse } from "@/lib/content/courses";
+import { moduleMeta } from "@/lib/content/registry";
 import { SlidePlayer } from "@/components/player/SlidePlayer";
 
 export function generateStaticParams() {
@@ -40,5 +41,13 @@ export default async function SlidePage({
     notFound();
   }
 
-  return <SlidePlayer courseId={courseId} module={mod} slideIndex={slideIndex} />;
+  // Metadata only. The copy comes from /api/slides, which checks the
+  // caller owns the course, so it never reaches this static page.
+  return (
+    <SlidePlayer
+      courseId={courseId}
+      module={moduleMeta(mod)}
+      slideIndex={slideIndex}
+    />
+  );
 }

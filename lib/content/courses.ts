@@ -1,5 +1,11 @@
+// Server only, because it reaches the slide copy through the registry.
+// Client components take a CourseMeta prop from a server component
+// instead; see ./meta.
+import "server-only";
+
 import { ModuleDef } from "./types";
-import { courseModules } from "./registry";
+import { CourseMeta } from "./meta";
+import { courseModules, moduleMeta } from "./registry";
 
 /**
  * The library. Courses are registered here; the first is Build Your
@@ -59,4 +65,13 @@ export const librarySections: { audience: string; note: string }[] = [
 
 export function getCourse(id: string): CourseDef | undefined {
   return courses.find((c) => c.id === id);
+}
+
+/** The course stripped to what the browser may see before it has paid.
+ *  Server components hand this to client components as a prop. */
+export function getCourseMeta(id: string): CourseMeta | undefined {
+  const c = getCourse(id);
+  if (!c) return undefined;
+  const { modules, ...rest } = c;
+  return { ...rest, modules: modules.map(moduleMeta) };
 }

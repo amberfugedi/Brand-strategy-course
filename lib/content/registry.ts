@@ -1,4 +1,11 @@
+// The slide copy is the product. Importing this from a client component
+// would bundle the whole course into the browser, so the build fails
+// instead. Metadata safe for the browser lives in ./meta; the slides
+// are served by /api/slides once entitlement checks out.
+import "server-only";
+
 import { ModuleDef } from "./types";
+import { ModuleMeta } from "./meta";
 import { introSlides } from "./intro";
 import { module1Slides } from "./module1";
 import { module2Slides } from "./module2";
@@ -98,4 +105,17 @@ export const courseModules: ModuleDef[] = [
 
 export function getModule(id: string): ModuleDef | undefined {
   return courseModules.find((m) => m.id === id);
+}
+
+/** A module stripped to what the browser may see before it has paid. */
+export function moduleMeta(m: ModuleDef): ModuleMeta {
+  return {
+    id: m.id,
+    label: m.label,
+    title: m.title,
+    minutes: m.minutes,
+    released: m.released,
+    requires: m.requires,
+    slideCount: m.slides.length,
+  };
 }

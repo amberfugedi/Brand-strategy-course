@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getCourse, courses } from "@/lib/content/courses";
+import { getCourse, getCourseMeta, courses } from "@/lib/content/courses";
 import { CourseHome } from "@/components/course/CourseHome";
 
 export function generateStaticParams() {
@@ -14,5 +14,5 @@ export default async function CoursePage({
   const { course } = await params;
   const def = getCourse(course);
   if (!def || !def.released) notFound();
-  return <CourseHome courseId={def.id} />;
+  return <CourseHome course={getCourseMeta(def.id)!} />;
 }

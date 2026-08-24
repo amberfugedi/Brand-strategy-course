@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import Link from "next/link";
-import { getCourse } from "@/lib/content/courses";
+import type { CourseMeta } from "@/lib/content/meta";
 import { Rich } from "@/components/Rich";
 import { AuthCorner } from "@/components/auth/AuthCorner";
 import { MapArt } from "@/components/slides/MapArt";
@@ -12,10 +12,10 @@ import { useHasPlan } from "@/components/course/LivePlan";
 import { useAuth } from "@/lib/auth/provider";
 import { useCourseStore } from "@/lib/store/provider";
 
-export function CourseHome({ courseId }: { courseId: string }) {
+export function CourseHome({ course }: { course: CourseMeta }) {
+  const courseId = course.id;
   const hasPlan = useHasPlan();
   const [planOpen, setPlanOpen] = useState(false);
-  const course = getCourse(courseId)!;
   const auth = useAuth();
   const { doc, ready } = useCourseStore();
   const last = doc.progress.lastLocation;
@@ -130,14 +130,14 @@ export function CourseHome({ courseId }: { courseId: string }) {
                 : completed
                   ? "Completed."
                   : started
-                    ? `In progress, slide ${Math.min(seenCount, mod.slides.length)} of ${mod.slides.length}.`
+                    ? `In progress, slide ${Math.min(seenCount, mod.slideCount)} of ${mod.slideCount}.`
                     : "Not started.";
 
             const pct = completed
               ? 100
               : Math.round(
-                  (100 * Math.min(seenCount, mod.slides.length)) /
-                    mod.slides.length,
+                  (100 * Math.min(seenCount, mod.slideCount)) /
+                    mod.slideCount,
                 );
             const layerBorder =
               { m3: "border-coral", m4: "border-lilac", m5: "border-lilac", m6: "border-stone", m7: "border-stone", m8: "border-stone" }[

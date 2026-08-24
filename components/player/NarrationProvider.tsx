@@ -11,7 +11,7 @@ import {
 } from "react";
 import { useParams, usePathname } from "next/navigation";
 import { moduleNarration } from "@/lib/content/narration";
-import { getModule } from "@/lib/content/registry";
+import { useSlides } from "@/components/player/SlidesProvider";
 
 const RATES = [1, 1.25, 1.5, 0.75];
 const RATE_KEY = "bymf.narrationRate";
@@ -78,11 +78,9 @@ export function NarrationProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const moduleId = params?.module;
   const slideIndex = Number(params?.slide);
+  const { slides } = useSlides();
   const slideSrc =
-    (moduleId &&
-      Number.isFinite(slideIndex) &&
-      getModule(moduleId)?.slides[slideIndex - 1]?.audio.src) ||
-    null;
+    (Number.isFinite(slideIndex) && slides?.[slideIndex - 1]?.audio.src) || null;
   const src = slideSrc ?? (moduleId && moduleNarration[moduleId]) ?? null;
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
