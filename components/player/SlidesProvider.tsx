@@ -32,13 +32,14 @@ interface SlidesValue {
 const SlidesContext = createContext<SlidesValue>({ slides: null, status: "loading" });
 
 export function SlidesProvider({ children }: { children: ReactNode }) {
-  const params = useParams<{ module?: string }>();
+  const params = useParams<{ course?: string; module?: string }>();
+  const courseId = params?.course;
   const moduleId = params?.module;
   const { user, loading } = useAuth();
   const [value, setValue] = useState<SlidesValue>({ slides: null, status: "loading" });
 
   useEffect(() => {
-    if (!moduleId) return;
+    if (!courseId || !moduleId) return;
     // Wait for auth to settle, or the first request goes out without a
     // token and a buyer gets told they have not bought it.
     if (supabaseConfigured && loading) return;
@@ -56,7 +57,7 @@ export function SlidesProvider({ children }: { children: ReactNode }) {
       }
 
       try {
-        const res = await fetch(`/api/slides/${moduleId}`, {
+        const res = await fetch(`/api/slides/${courseId}/${moduleId}`, {
           headers,
           cache: "no-store",
         });
@@ -74,7 +75,7 @@ export function SlidesProvider({ children }: { children: ReactNode }) {
     return () => {
       cancelled = true;
     };
-  }, [moduleId, user, loading]);
+  }, [courseId, moduleId, user, loading]);
 
   return <SlidesContext.Provider value={value}>{children}</SlidesContext.Provider>;
 }
