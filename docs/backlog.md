@@ -35,6 +35,37 @@ Module 2 would be a straight regeneration, its paragraphs matching its
 slides 1:1. Module 1 (36 paragraphs, 32 slides) and the intro (9 and 4)
 need a mapping decision first.
 
+## Signing the audio
+
+Parked deliberately, with the slide copy already dealt with. The copy
+now comes from `/api/slides/<module>`, which checks entitlement, and
+`registry.ts` is `server-only` so it cannot drift back into the bundle.
+The mp3s did not get the same treatment: they sit in `public/audio/`
+at paths anyone can guess from a slide number, so a free account, or
+no account, can still download every track.
+
+**The size.** 119 files, 70 MB, for the intro and Modules 1 to 4. The
+four unrecorded modules take it to roughly 130 MB. The `.words.json`
+caption files sit beside them and carry the full narration text, so
+they need whatever treatment the audio gets.
+
+**Why it stopped here.** The obvious move is a private Supabase Storage
+bucket with signed URLs, and the egress is the thing to decide first.
+The free tier allows 5 GB a month, which is about 38 complete
+listen-throughs of a 130 MB course. Pro is $25 a month for 250 GB,
+about 1,900. Serving from Netlify instead is 100 GB free but is exactly
+what leaves the files public, so it is not an option, it is the status
+quo. The call is Pro, or accept that the tracks are copyable while the
+copy is not, which is defensible: the audio is the least useful half to
+take without the slides.
+
+**A session agent cannot finish this alone.** The sandbox gateway
+refuses `*.supabase.co` outright, and the Supabase MCP hands out
+publishable keys only, never the service role key. So the upload and
+the end-to-end check need a human at a terminal. The code around it,
+the signing endpoint and the player change, can be written and reviewed
+first.
+
 ## Other parked items
 
 - **James's face on the m1-11 callout.** The chiropractor callout says
