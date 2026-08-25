@@ -1,11 +1,11 @@
 import { Slide } from "./types";
 
 /**
- * Module 2: The foundation audit. 37 slides, copy verbatim from the
- * produced deck. The deck's three "open the tool" moments become
- * in-app interactions: the diagnostic (slide 10), the audit (slide
- * 22), and the compiled plan (slide 34), with the priority order,
- * Gap List, and starting point rendered live on their reading slides.
+ * Module 2: The foundation audit. 35 slides. The deck's three "open
+ * the tool" moments become in-app interactions: the diagnostic
+ * (slide 10), the audit (slide 22), and the compiled plan (slide 33),
+ * with the priority order, Gap List, and starting point rendered live
+ * on their reading slides.
  */
 
 const S1 = "MODULE 2 · SECTION 1";
@@ -697,34 +697,14 @@ export const module2Slides: Slide[] = [
     ],
   },
 
-  // 33 · Priorities shift
-  {
-    kind: "principle",
-    id: "m2-not-skip",
-    crumb: S6,
-    tag: "THE TAKEAWAY",
-    number: "33",
-    audio: {
-      src: "/audio/m2/m2-33.mp3",
-      marks: [
-        { text: "Priorities shift as the business changes.", at: 37.6, until: 41.6 },
-      ],
-      callouts: [
-        { text: "Your starting point for the build phase, not your shortcut past the learning phase.", at: 63.3, until: 70.8 },
-      ],
-    },
-    headline: "Low priority today, next year's *focus*.",
-    sub: "Priorities shift as the business changes. *You're learning the strategic frame here, not deciding what to build right now.*",
-  },
-
-  // 34 · The plan, compiled
+  // 33 · The plan, compiled
   {
     kind: "plan",
     id: "m2-plan",
     crumb: S6,
     tag: "TOOL",
-    number: "34",
-    audio: { src: "/audio/m2/m2-34.mp3" },
+    number: "33",
+    audio: { src: "/audio/m2/m2-33.mp3" },
     eyebrow: "Your work, compiled",
     heading: "The *plan*.",
     paragraphs: [
@@ -733,14 +713,14 @@ export const module2Slides: Slide[] = [
     ],
   },
 
-  // 35 · A different position
+  // 34 · A different position
   {
     kind: "framework",
     id: "m2-different-position",
     crumb: S7,
     tag: "SYNTHESIS",
-    number: "35",
-    audio: { src: "/audio/m2/m2-35.mp3", cues: [0.2, 6.4, 19.7] },
+    number: "34",
+    audio: { src: "/audio/m2/m2-34.mp3", cues: [0.2, 6.4, 19.7] },
     eyebrow: "What you have now",
     heading: "A different *position*.",
     paragraphs: [
@@ -750,15 +730,15 @@ export const module2Slides: Slide[] = [
     ],
   },
 
-  // 36 · You take all six
+  // 35 · You take all six
   {
     kind: "principle",
     id: "m2-all-five",
     crumb: S7,
     tag: "THE TAKEAWAY",
-    number: "36",
+    number: "35",
     audio: {
-      src: "/audio/m2/m2-36.mp3",
+      src: "/audio/m2/m2-35.mp3",
       marks: [
         { text: "Concept modules, not tactics modules.", at: 6.8, until: 13.5 },
         { text: "It tells you what to build first when you're done learning.", at: 14.0, until: 18.9 },
