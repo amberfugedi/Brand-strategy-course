@@ -84,7 +84,12 @@
 .accent-serif {
   font-family: inherit;
   font-style: inherit;
-  font-weight: inherit;
+  /* Body emphasis takes the one quiet step the ladder allows, Manrope
+     500. The serif italic and the paper tab are headline devices and
+     stay in the h1/h2 rule below. Before this the annotation inherited
+     everything, so emphasis in body copy rendered identically to
+     unmarked text and an author who marked a phrase got silence. */
+  font-weight: 500;
   letter-spacing: inherit;
   color: inherit;
 }

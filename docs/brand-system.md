@@ -181,10 +181,15 @@ was never written down, which is why. Code comments do not matter.
 **The mark is headline-only, one per slide.** On cream headlines the
 emphasis phrase takes the paper tab (butter variant) in Newsreader
 italic. On dark headlines it is Newsreader italic in the module's layer
-tone, cream on pre-layer modules. **Body-copy emphasis carries unmarked**:
-no tab, no serif italic inside Manrope body copy. Content keeps its
-emphasis annotations; they simply render plain in body positions, so a
-future body-level treatment is a CSS decision, not a content pass.
+tone, cream on pre-layer modules.
+
+**Body-copy emphasis is Manrope 500** (amended 2026-10). No tab and no
+serif italic: those are headline devices. It was rendering plain,
+which the earlier wording called a deferred CSS decision, but 147
+annotations in body fields meant an author who marked a phrase got
+silence and no way to tell the system from a typo. 500 is the one step
+the ladder in section 4 already allows, and it reads as weight rather
+than as a second voice.
 
 ## 6. Devices
 
@@ -307,13 +312,53 @@ sentence instead. Paired sentences: claim, then qualification. Fragments
 allowed in sequences of three. No exclamation marks. Lead with the
 diagnosis. One emphasis phrase per headline.
 
-## 10. Open questions
+## 10. Known silences
 
-- **Dark-slide frequency.** The reference deck rule is ~4% dark with one
-  takeaway per module. The app runs far above that (heroes, dividers,
-  tools, and multiple takeaways are dark). Undecided whether the rule is
-  deck-only or app surfaces should be demoted (dividers to cream is the
-  spec-consistent first step).
+Where this document says nothing, the code drifts, and nobody notices
+until an audit. The 2026-10 pass found 287 straight apostrophes and 154
+elements under a type floor, both of them rules that were real but
+unwritten. So the gaps get listed:
+
+- Radii below the 24/14 pair. The strata etch uses 6px, progress uses
+  2 and 3px, pills use a full round. All decorative, none ruled.
+- Which uppercase labels are eyebrows. Section 2 rules the eyebrow is
+  `text-gold`, but never says what counts as one, so `text-body-tertiary`
+  (20 labels) and `text-aubergine` (12) sit alongside `text-gold` (65)
+  and no one can say which are violations.
+- Slide tags. 61 distinct labels across 194 slides; see the backlog.
+- Hover and focus states, loading and empty states, print.
+
+## 11. What is checked
+
+Prose rules are only as good as the thing that runs them.
+
+- `scripts/verify-marks.py`: every spoken mark matches copy on its
+  slide, targets no heading, and clashes with no callout window.
+- `scripts/verify-design.py`: no em dashes, no exclamation marks
+  outside quoted speech, curly apostrophes, one emphasis per headline,
+  a final period on headline sentences, and no callout that repeats
+  the copy it floats over. Warns on a headline used twice.
+- `scripts/audit-render.js`: the rules that need a rendered page. Type
+  floors, tap targets, forbidden colours, radii, shadows and overflow,
+  measured on every slide at 390px and 1456px. Needs a running server
+  and Playwright, so it is an audit rather than a test.
+
+Rules not on this list are aspirational: "lead with the diagnosis" and
+"fragments allowed in sequences of three" are judgment, and should be
+read as guidance rather than as something anything enforces.
+
+## 12. Open questions
+
+- **Dark-slide frequency.** Measured 2026-10: **98 of 196 slides, 50%**,
+  against the deck rule of ~4% with one takeaway per module. The single
+  cause is `principle`, which is both the takeaway device and a dark
+  surface, used **44 times** where the deck rule implies eight or nine.
+  Those 44 are also the 44 slides tagged THE TAKEAWAY, so the dark
+  frequency and the tag monotony are one decision, not two. Section 6
+  already argues that a standing label misdescribes most of what it
+  labels; the same argument applies here. Resolving it means capping
+  takeaways per module, or letting `principle` be cream when it is
+  simply a strong statement. A teaching decision, so it waits.
 - **Module header surface.** Still uncovered; heroes are plum today.
 - **Sampled values.** The layer tones and plum family are in production
   as sampled; confirm against the deployed stylesheet (one-line edits in

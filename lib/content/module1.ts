@@ -870,7 +870,6 @@ export const module1Slides: Slide[] = [
         { text: "enough to keep moving", at: 25.0, until: 27.9 },
       ],
       callouts: [
-        { text: "Two competitors couldn’t write the same sentence.", at: 4.4, until: 7.3 },
         { text: "A friend could read it and know what you do.", at: 7.5, until: 12.7 },
         { text: "Something to write your tagline against.", at: 13.1, until: 18.5 },
       ],
