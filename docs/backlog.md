@@ -66,6 +66,34 @@ the end-to-end check need a human at a terminal. The code around it,
 the signing endpoint and the player change, can be written and reviewed
 first.
 
+## Modules 4, 5 and 6 are the same deck
+
+Writing each module's slide kinds as a letter, in order (H hero,
+R frame, F framework, C cards, D detail, P principle, T table,
+M compare, p prose):
+
+    m3  H R F R C · D D D D D P R C M P R C C T F P P M P · p
+    m4  H R F R C D D D P P R T P P M P F P · p
+    m5  H R F R C D D D P P R T P P M P F F P · p
+    m6  H R F R C D D D P P R T P P M P F P · p
+
+Modules 4 and 6 are identical in shape for their whole length, and 5
+differs by one slide. A learner going 4 to 5 to 6 meets the same
+twelve openings in the same order, three times, with only the words
+changed. Module 3 is the same template stretched, and carries five
+consecutive detail slides, which is five identical three-card layouts
+in a row.
+
+Nothing here is a bug and no individual slide is badly made. It is
+that the deck was templated per module and the template never varied,
+so the second and third pass through it feel like rereading.
+
+Fixing it is editorial rather than visual: change which layout carries
+which beat in some of the modules, break the detail runs with a
+different kind in the middle, or let a module open somewhere other
+than hero into frame. Worth doing before more courses are built on
+the same template.
+
 ## Slide tags
 
 The top-right tag is 61 distinct labels across 194 slides, and the
