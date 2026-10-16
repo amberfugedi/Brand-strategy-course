@@ -28,7 +28,7 @@ export function StructureSlide({
               {row.label}
             </div>
             <div className="text-[16px]">{row.title}</div>
-            <div className="text-[13px] text-on-dark-muted">{row.minutes}</div>
+            <div className="text-[13.5px] text-on-dark-muted">{row.minutes}</div>
           </div>
         ))}
       </div>

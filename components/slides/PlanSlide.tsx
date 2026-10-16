@@ -62,7 +62,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
               {statement}
             </p>
           ) : (
-            <p className="mt-2 text-[13px] text-body-tertiary">
+            <p className="mt-2 text-[13.5px] text-body-tertiary">
               No statement saved. It lives at the end of Module 1.
             </p>
           )}
@@ -75,7 +75,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
           {complete ? (
             <ul className="mt-2 space-y-1">
               {priorities.map((p) => (
-                <li key={p.foundation.id} className="flex items-baseline gap-2 text-[13px]">
+                <li key={p.foundation.id} className="flex items-baseline gap-2 text-[13.5px]">
                   <span className="w-16 shrink-0 text-[10px] font-bold uppercase tracking-chrome text-body-tertiary">
                     {TIER_LABEL[p.tier]}
                   </span>
@@ -84,7 +84,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
               ))}
             </ul>
           ) : (
-            <p className="mt-2 text-[13px] text-body-tertiary">
+            <p className="mt-2 text-[13.5px] text-body-tertiary">
               Compiles from the diagnostic.
             </p>
           )}
@@ -99,7 +99,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
               {gaps
                 .filter((g) => g.gap !== null)
                 .map((g) => (
-                  <li key={g.foundation.id} className="flex items-baseline gap-2 text-[13px]">
+                  <li key={g.foundation.id} className="flex items-baseline gap-2 text-[13.5px]">
                     <span className="w-24 shrink-0 text-[10px] font-bold uppercase tracking-chrome text-body-tertiary">
                       {GAP_LABEL[g.gap!]}
                     </span>
@@ -108,7 +108,7 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
                 ))}
             </ul>
           ) : (
-            <p className="mt-2 text-[13px] text-body-tertiary">
+            <p className="mt-2 text-[13.5px] text-body-tertiary">
               Compiles from the audit.
             </p>
           )}
@@ -123,12 +123,12 @@ export function PlanSlide({ slide }: { slide: PlanSlideDef }) {
               <div className="mt-2 text-[16px] font-bold">
                 {startingPoint.foundation.name}
               </div>
-              <p className="mt-1 text-[13px] leading-relaxed text-body-secondary">
+              <p className="mt-1 text-[13.5px] leading-relaxed text-body-secondary">
                 {startingPoint.reasoning}
               </p>
             </>
           ) : (
-            <p className="mt-2 text-[13px] text-body-tertiary">
+            <p className="mt-2 text-[13.5px] text-body-tertiary">
               Appears when the audit is complete.
             </p>
           )}

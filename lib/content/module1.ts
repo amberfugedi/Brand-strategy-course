@@ -28,7 +28,7 @@ export const module1Slides: Slide[] = [
       src: "/audio/m1/m1-1.mp3",
       // The divider, then the module intro plays over the title.
       callouts: [
-        { text: "If you don't have working answers, every decision downstream gets harder.", at: 26.3, until: 33.3 },
+        { text: "If you don’t have working answers, every decision downstream gets harder.", at: 26.3, until: 33.3 },
         { text: "First in order, not first in importance.", at: 37.3, until: 41.7 },
       ],
     },
@@ -62,13 +62,13 @@ export const module1Slides: Slide[] = [
     },
     pre: "The three questions.",
     lines: ["Who do you serve.", "What do you do.", "What makes you *different*."],
-    post: "That's the module.",
+    post: "That’s the module.",
     panel: {
       eyebrow: "Foundation-level positioning",
       sub: "Not deep brand strategy.",
       paragraphs: [
         "A *working* answer: specific enough to write a tagline, fill out a profile, ask for the right kind of reviews.",
-        "Not a polished brand. Not a final positioning statement you'd put on a billboard. *Enough to keep moving.*",
+        "Not a polished brand. Not a final positioning statement you’d put on a billboard. *Enough to keep moving.*",
       ],
     },
   },
@@ -82,17 +82,19 @@ export const module1Slides: Slide[] = [
     number: "03",
     audio: {
       src: "/audio/m1/m1-3.mp3",
+      marks: [
+        { text: "“I care about quality.”", at: 31.9, until: 33.5 },
+        { text: "“I’m a chiropractor.”", at: 54.0, until: 57.5 },
+      ],
       cues: [5.8, 30.0, 49.1],
       // The example answers, flashing up as the voice quotes them.
       callouts: [
         { text: "“I serve small businesses.”", at: 8.4, until: 9.7 },
         { text: "“I help busy professionals.”", at: 9.7, until: 11.8 },
         { text: "“I work with anyone who needs my service.”", at: 11.8, until: 16.0 },
-        { text: "“I care about quality.”", at: 31.9, until: 33.5 },
         { text: "“I take a personal approach.”", at: 33.5, until: 35.2 },
         { text: "“I have years of experience.”", at: 35.2, until: 39.5 },
-        { text: "“I'm a marketing consultant.”", at: 52.3, until: 54.0 },
-        { text: "“I'm a chiropractor.”", at: 54.0, until: 57.5 },
+        { text: "“I’m a marketing consultant.”", at: 52.3, until: 54.0 },
       ],
     },
     heading: "The patterns of *confusion*.",
@@ -107,13 +109,13 @@ export const module1Slides: Slide[] = [
         label: "Pattern 2",
         quote: "Generic differentiation.",
         diagnosis:
-          "“I care about quality.” If your competitor could put it on their website word-for-word, it's not a differentiator.",
+          "“I care about quality.” If your competitor could put it on their website word-for-word, it’s not a differentiator.",
       },
       {
         label: "Pattern 3",
         quote: "Describing yourself instead of your service.",
         diagnosis:
-          "“I'm a chiropractor.” That's a category. The service is what you actually do for a person.",
+          "“I’m a chiropractor.” That’s a category. The service is what you actually do for a person.",
       },
     ],
   },
@@ -162,14 +164,14 @@ export const module1Slides: Slide[] = [
       eyebrow: "Not demographic. Operational.",
       paragraphs: [
         "“What age range and gender” rarely changes a *marketing* decision.",
-        "The real question: *when I imagine the person I most want walking through my door, what's specifically true about them?*",
+        "The real question: *when I imagine the person I most want walking through my door, what’s specifically true about them?*",
       ],
       callout:
-        "The test: *would two competitors answer this question identically?* If your answer applies to every business in your category, it's not specific enough.",
+        "The test: *would two competitors answer this question identically?* If your answer applies to every business in your category, it’s not specific enough.",
     },
   },
 
-  // 06 · Three answers that don't work
+  // 06 · Three answers that don’t work
   {
     kind: "patterns",
     id: "m1-serve-weak",
@@ -177,7 +179,7 @@ export const module1Slides: Slide[] = [
     tag: "CALIBRATION",
     number: "06",
     audio: { src: "/audio/m1/m1-6.mp3", cues: [3.4, 18.0, 35.0] },
-    heading: "Three answers that *don't work*.",
+    heading: "Three answers that *don’t work*.",
     patterns: [
       {
         label: "Demographic-only",
@@ -189,11 +191,11 @@ export const module1Slides: Slide[] = [
         label: "Needs-based without specificity",
         quote: ["“People who want quality work.”", "“People who care about results.”"],
         diagnosis:
-          "Universal. No customer says they want bad work. Naming the obvious isn't naming your audience.",
+          "Universal. No customer says they want bad work. Naming the obvious isn’t naming your audience.",
       },
       {
-        label: "Every customer you've ever had",
-        quote: "The instinct to include everyone you've worked with.",
+        label: "Every customer you’ve ever had",
+        quote: "The instinct to include everyone you’ve worked with.",
         diagnosis: "Inclusive, but a description of your past, not your strategy.",
       },
     ],
@@ -209,12 +211,12 @@ export const module1Slides: Slide[] = [
     audio: {
       src: "/audio/m1/m1-7.mp3",
       cues: [4.6, 17.0, 37.3],
-      // Each layer's spoken example surfaces below while the voice
+      // Each layer’s spoken example surfaces below while the voice
       // gives it, then clears for the next.
       callouts: [
-        { text: "A solo professional, a growing team, a homeowner with a property they've owned five years, a couple planning their wedding.", at: 8.1, until: 16.6 },
+        { text: "A solo professional, a growing team, a homeowner with a property they’ve owned five years, a couple planning their wedding.", at: 8.1, until: 16.6 },
         { text: "High-functioning professionals managing chronic anxiety while running demanding careers.", at: 28.2, until: 35.3, who: "Maya" },
-        { text: "Their property is showing wear after years they didn't budget time to maintain it, and they don't want to spend a Saturday doing it themselves.", at: 44.9, until: 52.8, who: "Marcus" },
+        { text: "Their property is showing wear after years they didn’t budget time to maintain it, and they don’t want to spend a Saturday doing it themselves.", at: 44.9, until: 52.8, who: "Marcus" },
       ],
     },
     heading: "Situation. Context. *Problem*.",
@@ -232,7 +234,7 @@ export const module1Slides: Slide[] = [
         title: "The context",
         bullets: [
           "Not the demographic, the active context",
-          "What they're doing day-to-day that brings them to need your service",
+          "What they’re doing day-to-day that brings them to need your service",
         ],
       },
       {
@@ -255,11 +257,11 @@ export const module1Slides: Slide[] = [
     number: "08",
     audio: {
       src: "/audio/m1/m1-8.mp3",
-      cues: [3.8, 23.1, 41.0, 59.4, 72.4],
-      callouts: [
-        { text: "Time, not money.", at: 39.2, until: 45.0 },
-        { text: "They don't want to be sold ongoing care.", at: 69.8, until: 76.0 },
+      marks: [
+        { text: "time, not money", at: 39.2, until: 45.0 },
+        { text: "they don’t want to be sold ongoing care", at: 69.8, until: 76.0 },
       ],
+      cues: [3.8, 23.1, 41.0, 59.4, 72.4],
     },
     heading: "Who do you *serve*.",
     personas: [
@@ -276,7 +278,7 @@ export const module1Slides: Slide[] = [
         role: "pressure washer",
         meta: "Side hustle, 1 year in",
         quote:
-          "“Homeowners who've owned their property at least three years and are starting to notice the buildup, but don't want to spend a Saturday on a ladder.”",
+          "“Homeowners who’ve owned their property at least three years and are starting to notice the buildup, but don’t want to spend a Saturday on a ladder.”",
         note: "The problem is *time, not money*. That framing differentiates from price-based competitors.",
       },
       {
@@ -284,7 +286,7 @@ export const module1Slides: Slide[] = [
         role: "photographer",
         meta: "18-25 weddings/year",
         quote:
-          "“Couples planning weddings in the four-to-eight-thousand-dollar photography range, who want a documentary style and have already decided their wedding doesn't need to be picture-perfect to be worth photographing.”",
+          "“Couples planning weddings in the four-to-eight-thousand-dollar photography range, who want a documentary style and have already decided their wedding doesn’t need to be picture-perfect to be worth photographing.”",
         note: "Specific budget tier. Style preference. *A values position*: they self-select.",
       },
       {
@@ -292,15 +294,15 @@ export const module1Slides: Slide[] = [
         role: "chiropractor",
         meta: "18 months independent",
         quote:
-          "“Adults who've had a recent injury or pain event and want to address it without a long-term care plan they didn't ask for.”",
-        note: "The problem under the problem: *they don't want to be sold ongoing care*.",
+          "“Adults who’ve had a recent injury or pain event and want to address it without a long-term care plan they didn’t ask for.”",
+        note: "The problem under the problem: *they don’t want to be sold ongoing care*.",
       },
       {
         name: "Sasha,",
         role: "vivids stylist",
         meta: "Solo studio, 4 years independent",
         quote:
-          "“Women in their 20s and 30s who've been growing out their hair for a vivid transformation, who care about color theory and hair health, and who'll travel an hour or more to find a stylist they trust with fashion color.”",
+          "“Women in their 20s and 30s who’ve been growing out their hair for a vivid transformation, who care about color theory and hair health, and who’ll travel an hour or more to find a stylist they trust with fashion color.”",
         note: "Visual proof matters. Audience is specific. *They self-select on willingness to travel.*",
       },
     ],
@@ -315,8 +317,8 @@ export const module1Slides: Slide[] = [
     number: "09",
     audio: { src: "/audio/m1/m1-9.mp3" },
     headline:
-      "Naming a strategic audience doesn't mean turning away customers who walk through your door.",
-    sub: "Specificity in marketing doesn't restrict your business. It only restricts your *marketing*.",
+      "Naming a strategic audience doesn’t mean turning away customers who walk through your door.",
+    sub: "Specificity in marketing doesn’t restrict your business. It only restricts your *marketing*.",
   },
 
   // 10 · Exercise: who do you serve
@@ -333,19 +335,19 @@ export const module1Slides: Slide[] = [
     ],
     exercise: "serve",
     remember:
-      "Situation, context, problem. Specific enough that *two competitors couldn't answer it identically*.",
+      "Situation, context, problem. Specific enough that *two competitors couldn’t answer it identically*.",
     compare: {
-      do: "Homeowners who've owned their property at least three years and are starting to notice the buildup.",
+      do: "Homeowners who’ve owned their property at least three years and are starting to notice the buildup.",
       not: "Anyone who needs my service.",
     },
-    // Reference copies of the module's persona answers (the
+    // Reference copies of the module’s persona answers (the
     // calibration slide is the source of truth for the wording).
     examples: [
       { name: "Maya", role: "therapist", text: "High-functioning professionals, typically 30s to 50s in demanding careers, who are managing chronic anxiety and want a therapist who treats them as competent adults rather than fragile." },
-      { name: "Marcus", role: "pressure washer", text: "Homeowners who've owned their property at least three years and are starting to notice the buildup, but don't want to spend a Saturday on a ladder." },
-      { name: "Lena", role: "photographer", text: "Couples planning weddings in the four-to-eight-thousand-dollar photography range, who want a documentary style and have already decided their wedding doesn't need to be picture-perfect to be worth photographing." },
-      { name: "James", role: "chiropractor", text: "Adults who've had a recent injury or pain event and want to address it without a long-term care plan they didn't ask for." },
-      { name: "Sasha", role: "vivids stylist", text: "Women in their 20s and 30s who've been growing out their hair for a vivid transformation, who care about color theory and hair health, and who'll travel an hour or more to find a stylist they trust with fashion color." },
+      { name: "Marcus", role: "pressure washer", text: "Homeowners who’ve owned their property at least three years and are starting to notice the buildup, but don’t want to spend a Saturday on a ladder." },
+      { name: "Lena", role: "photographer", text: "Couples planning weddings in the four-to-eight-thousand-dollar photography range, who want a documentary style and have already decided their wedding doesn’t need to be picture-perfect to be worth photographing." },
+      { name: "James", role: "chiropractor", text: "Adults who’ve had a recent injury or pain event and want to address it without a long-term care plan they didn’t ask for." },
+      { name: "Sasha", role: "vivids stylist", text: "Women in their 20s and 30s who’ve been growing out their hair for a vivid transformation, who care about color theory and hair health, and who’ll travel an hour or more to find a stylist they trust with fashion color." },
     ],
   },
 
@@ -362,8 +364,8 @@ export const module1Slides: Slide[] = [
       // arrives beneath it with the voice.
       cues: [0.3, 3.2, 3.3, 13.2, 15.2],
       callouts: [
-        { text: "The chiropractor doesn't sell chiropractic. She relieves a specific kind of pain.", at: 21.2, until: 28.9 },
-        { text: "The photographer doesn't sell photos. She captures a wedding day in a particular style.", at: 29.1, until: 35.8, who: "Lena" },
+        { text: "The chiropractor doesn’t sell chiropractic. She relieves a specific kind of pain.", at: 21.2, until: 28.9 },
+        { text: "The photographer doesn’t sell photos. She captures a wedding day in a particular style.", at: 29.1, until: 35.8, who: "Lena" },
         { text: "The category is what you offer. The service is what happens when someone hires you.", at: 36.0, until: 41.3 },
       ],
     },
@@ -372,11 +374,11 @@ export const module1Slides: Slide[] = [
     panel: {
       eyebrow: "The work, not the category",
       paragraphs: [
-        "Most service business owners answer with their category. *I'm a chiropractor. I'm a wedding photographer. I'm a marketing consultant.*",
-        "That's what you *are*. Not what you *do*.",
+        "Most service business owners answer with their category. *I’m a chiropractor. I’m a wedding photographer. I’m a marketing consultant.*",
+        "That’s what you *are*. Not what you *do*.",
       ],
       callout:
-        "The category locates you in a market. *The service is the work you perform on a person's behalf.*",
+        "The category locates you in a market. *The service is the work you perform on a person’s behalf.*",
     },
   },
 
@@ -392,9 +394,9 @@ export const module1Slides: Slide[] = [
     patterns: [
       {
         label: "Category-only",
-        quote: ["“I'm a chiropractor.”", "“I do branding.”", "“I clean houses.”"],
+        quote: ["“I’m a chiropractor.”", "“I do branding.”", "“I clean houses.”"],
         diagnosis:
-          "Accurate but inert. Tells the buyer what aisle of the marketplace you're in. Doesn't tell them what they're getting.",
+          "Accurate but inert. Tells the buyer what aisle of the marketplace you’re in. Doesn’t tell them what they’re getting.",
       },
       {
         label: "Generic help statements",
@@ -405,7 +407,7 @@ export const module1Slides: Slide[] = [
       {
         label: "Full-service language",
         quote: "“I do everything from X to Y to Z.”",
-        diagnosis: "A price-sheet move, not a positioning move. The buyer doesn't need a menu.",
+        diagnosis: "A price-sheet move, not a positioning move. The buyer doesn’t need a menu.",
       },
     ],
   },
@@ -440,7 +442,7 @@ export const module1Slides: Slide[] = [
         num: "03",
         title: "The change",
         bullets: [
-          "What's true about the client's life that wasn't true before",
+          "What’s true about the client’s life that wasn’t true before",
           "The client carries their child without flinching",
         ],
       },
@@ -461,7 +463,7 @@ export const module1Slides: Slide[] = [
         name: "Maya",
         role: "therapist",
         quote:
-          "“Weekly fifty-minute sessions over three to twelve months, using cognitive behavioral methods adapted for high-performing professionals. Clients leave with tools and self-knowledge that doesn't require staying in therapy forever.”",
+          "“Weekly fifty-minute sessions over three to twelve months, using cognitive behavioral methods adapted for high-performing professionals. Clients leave with tools and self-knowledge that doesn’t require staying in therapy forever.”",
         note: "The change is positioned *against open-ended therapy*.",
       },
       {
@@ -476,7 +478,7 @@ export const module1Slides: Slide[] = [
         role: "photographer",
         quote:
           "“Documenting wedding days from morning preparation through reception, in candid documentary style with minimal posing. Clients receive a complete edited gallery within six weeks, typically four to six hundred images.”",
-        note: "The change: *the wedding's actual story, preserved*.",
+        note: "The change: *the wedding’s actual story, preserved*.",
       },
       {
         name: "James",
@@ -504,8 +506,8 @@ export const module1Slides: Slide[] = [
     number: "15",
     audio: { src: "/audio/m1/m1-15.mp3" },
     headline:
-      "Describing your service specifically doesn't mean refusing services you also offer.",
-    sub: "A vague description doesn't expand your business. It only makes your marketing *harder to remember*.",
+      "Describing your service specifically doesn’t mean refusing services you also offer.",
+    sub: "A vague description doesn’t expand your business. It only makes your marketing *harder to remember*.",
   },
 
   // 16 · Exercise: what do you do
@@ -525,12 +527,12 @@ export const module1Slides: Slide[] = [
       "The action, the output, the change. What you *do*, not what you *are*.",
     compare: {
       do: "I clean exterior surfaces in a single visit. The client walks out to a property that looks five years younger.",
-      not: "I'm a pressure washer.",
+      not: "I’m a pressure washer.",
     },
-    // Reference copies of the module's persona answers (the
+    // Reference copies of the module’s persona answers (the
     // calibration slide is the source of truth for the wording).
     examples: [
-      { name: "Maya", role: "therapist", text: "Weekly fifty-minute sessions over three to twelve months, using cognitive behavioral methods adapted for high-performing professionals. Clients leave with tools and self-knowledge that doesn't require staying in therapy forever." },
+      { name: "Maya", role: "therapist", text: "Weekly fifty-minute sessions over three to twelve months, using cognitive behavioral methods adapted for high-performing professionals. Clients leave with tools and self-knowledge that doesn’t require staying in therapy forever." },
       { name: "Marcus", role: "pressure washer", text: "Cleaning exterior surfaces (siding, driveways, decks, fences) using commercial-grade equipment in a single visit, four to six hours on-site. The client walks out the next morning to a property that looks five years younger." },
       { name: "Lena", role: "photographer", text: "Documenting wedding days from morning preparation through reception, in candid documentary style with minimal posing. Clients receive a complete edited gallery within six weeks, typically four to six hundred images." },
       { name: "James", role: "chiropractor", text: "Assessing the source of the injury or pain in the first visit, then designing a treatment plan with a defined endpoint, usually six to twelve sessions. Patients leave with reduced pain and the strength to keep it from coming back." },
@@ -551,8 +553,8 @@ export const module1Slides: Slide[] = [
       // teaching arrives beneath it with the voice.
       cues: [0.3, 3.4, 3.6, 16.1, 42.7],
       callouts: [
-        { text: "“I care more. I'm more thorough. I have higher standards.”", at: 18.3, until: 25.8 },
-        { text: "If your competitor could write your differentiator without changing a word, it's not a differentiator.", at: 26.0, until: 33.2 },
+        { text: "“I care more. I’m more thorough. I have higher standards.”", at: 18.3, until: 25.8 },
+        { text: "If your competitor could write your differentiator without changing a word, it’s not a differentiator.", at: 26.0, until: 33.2 },
         { text: "An approach, constraint, or method a competitor genuinely does not operate with.", at: 33.6, until: 41.5 },
       ],
     },
@@ -565,7 +567,7 @@ export const module1Slides: Slide[] = [
         "Better is comparative and unverifiable. Different is descriptive and *falsifiable*.",
       ],
       callout:
-        "The buyer's job isn't to decide which business is best. *It's to decide which business is for them.*",
+        "The buyer’s job isn’t to decide which business is best. *It’s to decide which business is for them.*",
     },
   },
 
@@ -592,9 +594,9 @@ export const module1Slides: Slide[] = [
       },
       {
         label: "False uniqueness",
-        quote: ["“I'm the only one who really understands my clients.”", "“Nobody does it like I do.”"],
+        quote: ["“I’m the only one who really understands my clients.”", "“Nobody does it like I do.”"],
         diagnosis:
-          "Confidence with no evidence. The buyer can't verify it and shouldn't be expected to take it on faith.",
+          "Confidence with no evidence. The buyer can’t verify it and shouldn’t be expected to take it on faith.",
       },
     ],
   },
@@ -613,12 +615,12 @@ export const module1Slides: Slide[] = [
       {
         num: "01",
         title: "Approach",
-        text: "A specific, named method or philosophy. *Not “I'm thorough” but a named way of working.*",
+        text: "A specific, named method or philosophy. *Not “I’m thorough” but a named way of working.*",
       },
       {
         num: "02",
         title: "Constraint",
-        text: "What you deliberately don't do. *Most competitors are afraid to constrain.*",
+        text: "What you deliberately don’t do. *Most competitors are afraid to constrain.*",
       },
       {
         num: "03",
@@ -628,7 +630,7 @@ export const module1Slides: Slide[] = [
       {
         num: "04",
         title: "Position",
-        text: "A clear stance against something common. *The thing you've explicitly rejected that competitors quietly do.*",
+        text: "A clear stance against something common. *The thing you’ve explicitly rejected that competitors quietly do.*",
       },
     ],
   },
@@ -654,29 +656,29 @@ export const module1Slides: Slide[] = [
         name: "Marcus",
         role: "pressure washer",
         quote:
-          "“Shows up when he says he will. Completes the job in the window quoted. Doesn't upsell. The price you got is the price you pay.”",
+          "“Shows up when he says he will. Completes the job in the window quoted. Doesn’t upsell. The price you got is the price you pay.”",
         note: "A *position* against the most common complaints customers have about contractors.",
       },
       {
         name: "Lena",
         role: "photographer",
         quote:
-          "“Documentary style only. Doesn't do extensive posing. 'If you want thirty staged photographs of the bridal party, I'm not the right photographer for you.'”",
-        note: "*Constraint* + *position*. The “I'm not the right one” line is the strongest move.",
+          "“Documentary style only. Doesn’t do extensive posing. 'If you want thirty staged photographs of the bridal party, I’m not the right photographer for you.'”",
+        note: "*Constraint* + *position*. The “I’m not the right one” line is the strongest move.",
       },
       {
         name: "James",
         role: "chiropractor",
         quote:
-          "“Defined treatment plan with a stated endpoint. Doesn't sell ongoing care plans, monthly memberships, or maintenance subscriptions. When the work is done, you stop coming.”",
+          "“Defined treatment plan with a stated endpoint. Doesn’t sell ongoing care plans, monthly memberships, or maintenance subscriptions. When the work is done, you stop coming.”",
         note: "*Constraint* against the dominant business model in chiropractic care.",
       },
       {
         name: "Sasha",
         role: "vivids stylist",
         quote:
-          "“Vivids only. No balayage, no foils, no special-occasion blowouts. Hair-health-first protocol, including the willingness to refuse a transformation if I think the hair can't sustain it without damage.”",
-        note: "*Constraint* + *position*. The “I'll refuse if it'll damage your hair” is the strongest move.",
+          "“Vivids only. No balayage, no foils, no special-occasion blowouts. Hair-health-first protocol, including the willingness to refuse a transformation if I think the hair can’t sustain it without damage.”",
+        note: "*Constraint* + *position*. The “I’ll refuse if it’ll damage your hair” is the strongest move.",
       },
     ],
   },
@@ -690,7 +692,7 @@ export const module1Slides: Slide[] = [
     number: "21",
     audio: { src: "/audio/m1/m1-21.mp3" },
     eyebrow: "A common objection",
-    headline: "If you're better, the work is to find what you're *specifically* better at.",
+    headline: "If you’re better, the work is to find what you’re *specifically* better at.",
     sub: "“Better” on its own is invisible. “Better at producing X for Y kind of client” is visible. *Most of the time, what you find is closer to different than to more of the same.*",
   },
 
@@ -703,18 +705,20 @@ export const module1Slides: Slide[] = [
     number: "22",
     audio: {
       src: "/audio/m1/m1-22.mp3",
+      marks: [
+        { text: "Maya rejected open-ended therapy", at: 8.9, until: 11.3 },
+        { text: "Marcus rejected upselling", at: 11.3, until: 13.1 },
+        { text: "Lena rejected staged posing", at: 13.1, until: 15.0 },
+        { text: "James rejected subscription care", at: 15.0, until: 17.3 },
+        { text: "Sasha rejected anything but vivids", at: 17.3, until: 21.5 },
+      ],
       callouts: [
-        { text: "Maya rejected open-ended therapy.", at: 8.9, until: 11.3, who: "Maya" },
-        { text: "Marcus rejected upselling.", at: 11.3, until: 13.1, who: "Marcus" },
-        { text: "Lena rejected staged posing.", at: 13.1, until: 15.0, who: "Lena" },
-        { text: "James rejected subscription care.", at: 15.0, until: 17.3, who: "James" },
-        { text: "Sasha rejected anything but vivids.", at: 17.3, until: 21.5, who: "Sasha" },
-        { text: "What's the thing competitors in my category do that I refuse to do?", at: 33.2, until: 38.1 },
+        { text: "What’s the thing competitors in my category do that I refuse to do?", at: 33.2, until: 38.1 },
       ],
     },
     eyebrow: "The contrarian move",
-    headline: "What's the thing competitors in your category do *that you refuse to do?*",
-    sub: "The strongest differentiators come from rejecting what's common. Maya rejected open-ended therapy. Marcus rejected upselling. Lena rejected staged posing. James rejected subscription care. Sasha rejected anything but vivids.",
+    headline: "What’s the thing competitors in your category do *that you refuse to do?*",
+    sub: "The strongest differentiators come from rejecting what’s common. Maya rejected open-ended therapy. Marcus rejected upselling. Lena rejected staged posing. James rejected subscription care. Sasha rejected anything but vivids.",
   },
 
   // 23 · On being too direct
@@ -725,8 +729,8 @@ export const module1Slides: Slide[] = [
     tag: "THE TAKEAWAY",
     number: "23",
     audio: { src: "/audio/m1/m1-23.mp3" },
-    headline: "A sharp differentiator will turn off some prospects. *That's the point.*",
-    sub: "If your differentiator doesn't repel anyone, it's probably not specific enough to attract anyone. A vague positioning attracts vague interest. *A sharp positioning attracts qualified interest.*",
+    headline: "A sharp differentiator will turn off some prospects. *That’s the point.*",
+    sub: "If your differentiator doesn’t repel anyone, it’s probably not specific enough to attract anyone. A vague positioning attracts vague interest. *A sharp positioning attracts qualified interest.*",
   },
 
   // 24 · Exercise: your differentiator
@@ -744,19 +748,19 @@ export const module1Slides: Slide[] = [
     ],
     exercise: "different",
     remember:
-      "Different is descriptive and *falsifiable*. The buyer isn't choosing the best business, they're choosing the one that's *for them*.",
+      "Different is descriptive and *falsifiable*. The buyer isn’t choosing the best business, they’re choosing the one that’s *for them*.",
     compare: {
-      do: "Documentary style only. If you want thirty staged photographs of the bridal party, I'm the wrong photographer.",
+      do: "Documentary style only. If you want thirty staged photographs of the bridal party, I’m the wrong photographer.",
       not: "We care about quality.",
     },
-    // Reference copies of the module's persona answers (the
+    // Reference copies of the module’s persona answers (the
     // calibration slide is the source of truth for the wording).
     examples: [
       { name: "Maya", role: "therapist", text: "Defined timeline with the explicit goal of ending therapy. Treats clients as competent adults who can handle directness, not fragile patients." },
-      { name: "Marcus", role: "pressure washer", text: "Shows up when he says he will. Completes the job in the window quoted. Doesn't upsell. The price you got is the price you pay." },
-      { name: "Lena", role: "photographer", text: "Documentary style only. Doesn't do extensive posing. 'If you want thirty staged photographs of the bridal party, I'm not the right photographer for you.'" },
-      { name: "James", role: "chiropractor", text: "Defined treatment plan with a stated endpoint. Doesn't sell ongoing care plans, monthly memberships, or maintenance subscriptions. When the work is done, you stop coming." },
-      { name: "Sasha", role: "vivids stylist", text: "Vivids only. No balayage, no foils, no special-occasion blowouts. Hair-health-first protocol, including the willingness to refuse a transformation if I think the hair can't sustain it without damage." },
+      { name: "Marcus", role: "pressure washer", text: "Shows up when he says he will. Completes the job in the window quoted. Doesn’t upsell. The price you got is the price you pay." },
+      { name: "Lena", role: "photographer", text: "Documentary style only. Doesn’t do extensive posing. 'If you want thirty staged photographs of the bridal party, I’m not the right photographer for you.'" },
+      { name: "James", role: "chiropractor", text: "Defined treatment plan with a stated endpoint. Doesn’t sell ongoing care plans, monthly memberships, or maintenance subscriptions. When the work is done, you stop coming." },
+      { name: "Sasha", role: "vivids stylist", text: "Vivids only. No balayage, no foils, no special-occasion blowouts. Hair-health-first protocol, including the willingness to refuse a transformation if I think the hair can’t sustain it without damage." },
     ],
   },
 
@@ -785,7 +789,7 @@ export const module1Slides: Slide[] = [
     heading: "Three answers. *One sentence*.",
     template:
       "“I serve *[who you serve]* who *[situation, context, problem]*. I *[the action, output, change]*. What makes me different is *[approach, constraint, combination, position]*.”",
-    note: "The shape isn't sacred. You can rearrange the order, change the verbs, make it sound like you. *The substance is what matters.*",
+    note: "The shape isn’t sacred. You can rearrange the order, change the verbs, make it sound like you. *The substance is what matters.*",
   },
 
   // 27 · Maya + Marcus assembled
@@ -806,7 +810,7 @@ export const module1Slides: Slide[] = [
       {
         name: "Marcus",
         role: "Pressure washer",
-        text: "“I serve homeowners who've owned their property at least three years and are starting to notice the buildup but don't want to spend a Saturday on a ladder. I clean exterior surfaces with commercial-grade equipment in a single visit, and the price you got is the price you pay. What makes me different is that I show up when I say I will, complete the job in the window I quoted, and don't upsell during the visit.”",
+        text: "“I serve homeowners who’ve owned their property at least three years and are starting to notice the buildup but don’t want to spend a Saturday on a ladder. I clean exterior surfaces with commercial-grade equipment in a single visit, and the price you got is the price you pay. What makes me different is that I show up when I say I will, complete the job in the window I quoted, and don’t upsell during the visit.”",
       },
     ],
   },
@@ -824,12 +828,12 @@ export const module1Slides: Slide[] = [
       {
         name: "Lena",
         role: "Photographer",
-        text: "“I serve couples planning weddings in the four-to-eight-thousand-dollar photography range who want a documentary style. I document wedding days in a candid style with minimal posing and deliver a complete edited gallery within six weeks. What makes me different is that I shoot documentary, not staged. If you want thirty posed photographs of the bridal party, I'm not the right photographer for you.”",
+        text: "“I serve couples planning weddings in the four-to-eight-thousand-dollar photography range who want a documentary style. I document wedding days in a candid style with minimal posing and deliver a complete edited gallery within six weeks. What makes me different is that I shoot documentary, not staged. If you want thirty posed photographs of the bridal party, I’m not the right photographer for you.”",
       },
       {
         name: "James",
         role: "Chiropractor",
-        text: "“I work with adults who've had a recent injury or pain event and want to address it without being sold a long-term care plan they didn't ask for. I assess the source in the first visit and design a treatment plan with a defined endpoint, usually six to twelve sessions. What makes me different is that I don't sell ongoing care plans or maintenance subscriptions. When the work is done, you stop coming.”",
+        text: "“I work with adults who’ve had a recent injury or pain event and want to address it without being sold a long-term care plan they didn’t ask for. I assess the source in the first visit and design a treatment plan with a defined endpoint, usually six to twelve sessions. What makes me different is that I don’t sell ongoing care plans or maintenance subscriptions. When the work is done, you stop coming.”",
       },
     ],
   },
@@ -848,7 +852,7 @@ export const module1Slides: Slide[] = [
       {
         name: "Sasha",
         role: "Vivids stylist",
-        text: "“I serve women in their 20s and 30s who've been growing out their hair for a vivid transformation, who care about color theory and hair health. I do vivid color only: fashion colors across single 6-to-10-hour sessions, with hair-health protocols built in. What makes me different is that I'll refuse a transformation if I don't think the hair can sustain it. The color you see on my Instagram is the color you get, and the hair will still be hair when I'm done.”",
+        text: "“I serve women in their 20s and 30s who’ve been growing out their hair for a vivid transformation, who care about color theory and hair health. I do vivid color only: fashion colors across single 6-to-10-hour sessions, with hair-health protocols built in. What makes me different is that I’ll refuse a transformation if I don’t think the hair can sustain it. The color you see on my Instagram is the color you get, and the hair will still be hair when I’m done.”",
       },
     ],
   },
@@ -862,19 +866,21 @@ export const module1Slides: Slide[] = [
     number: "30",
     audio: {
       src: "/audio/m1/m1-30.mp3",
+      marks: [
+        { text: "enough to keep moving", at: 25.0, until: 27.9 },
+      ],
       callouts: [
-        { text: "Two competitors couldn't write the same sentence.", at: 4.4, until: 7.3 },
+        { text: "Two competitors couldn’t write the same sentence.", at: 4.4, until: 7.3 },
         { text: "A friend could read it and know what you do.", at: 7.5, until: 12.7 },
         { text: "Something to write your tagline against.", at: 13.1, until: 18.5 },
-        { text: "Enough to keep moving.", at: 25.0, until: 27.9 },
       ],
     },
     eyebrow: "The threshold for good enough",
-    headline: "Specific enough that two competitors couldn't write the same sentence.",
+    headline: "Specific enough that two competitors couldn’t write the same sentence.",
     sub: "Foundation-level positioning. Not brand strategy. *The work this module does is enough to keep moving.*",
   },
 
-  // 31 · Your framework, saved (stands in for the Map's Positioning tab)
+  // 31 · Your framework, saved (stands in for the Map’s Positioning tab)
   {
     kind: "summary",
     id: "m1-summary",

@@ -39,7 +39,7 @@ export function DiagnosticSlide({ slide }: { slide: DiagnosticSlideDef }) {
                     type="button"
                     onClick={() => setDiagnostic(q.id, opt.value)}
                     aria-pressed={active}
-                    className={`border px-3 py-1.5 text-[12.5px] transition-colors ${
+                    className={`border px-3 py-2.5 text-[13.5px] transition-colors ${
                       active
                         ? "border-aubergine bg-aubergine text-cream"
                         : "border-ink/20 bg-cream-light text-body-secondary hover:border-gold"
@@ -57,7 +57,7 @@ export function DiagnosticSlide({ slide }: { slide: DiagnosticSlideDef }) {
       <p className="mt-6 text-[15px] text-body-tertiary">
         {complete
           ? "All six answered. Your priority order is ready on the next slides."
-          : "Answer all six. If you genuinely don't know, pick the option that says so."}
+          : "Answer all six. If you genuinely don’t know, pick the option that says so."}
       </p>
     </div>
   );

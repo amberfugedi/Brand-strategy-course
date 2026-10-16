@@ -2,7 +2,7 @@ import { Slide } from "./types";
 
 /**
  * Module 4: Earned proof. 20 slides, copy verbatim from the produced
- * deck; the script confirms every on-slide line. The deck's tool
+ * deck; the script confirms every on-slide line. The deck’s tool
  * moment (slide 19) is the in-app proof inventory.
  */
 
@@ -47,12 +47,12 @@ export const module4Slides: Slide[] = [
     audio: {
       src: "/audio/m4/m4-2.mp3",
       callouts: [
-        { text: "So you don't ask. The work was good, the client was happy, and the proof never gets created.", at: 18.5, until: 26.5 },
-        { text: "That feeling is normal. It's based on a misunderstanding we're about to clear up.", at: 32.0, until: 36.9 },
+        { text: "So you don’t ask. The work was good, the client was happy, and the proof never gets created.", at: 18.5, until: 26.5 },
+        { text: "That feeling is normal. It’s based on a misunderstanding we’re about to clear up.", at: 32.0, until: 36.9 },
       ],
     },
     heading: "Asking for proof feels like *begging*.",
-    sub: "It doesn't have to. But the discomfort is real, and worth naming first.",
+    sub: "It doesn’t have to. But the discomfort is real, and worth naming first.",
   },
 
   // 03 · The concept
@@ -63,10 +63,10 @@ export const module4Slides: Slide[] = [
     tag: "FRAMEWORK",
     number: "03",
     audio: { src: "/audio/m4/m4-3.mp3", cues: [0.5, 16.0] },
-    heading: "You can't *author* your own credibility.",
+    heading: "You can’t *author* your own credibility.",
     paragraphs: [
-      "A prospect hears your claims and quietly discounts them. It's how people read anyone selling anything.",
-      "What they can't discount is evidence you didn't write. That is earned proof, and it does the work your claims can't.",
+      "A prospect hears your claims and quietly discounts them. It’s how people read anyone selling anything.",
+      "What they can’t discount is evidence you didn’t write. That is earned proof, and it does the work your claims can’t.",
     ],
   },
 
@@ -79,7 +79,7 @@ export const module4Slides: Slide[] = [
     number: "04",
     audio: { src: "/audio/m4/m4-4.mp3" },
     heading: "Proof comes from *three places*.",
-    sub: "Three different voices, each answering a different question in the prospect's head.",
+    sub: "Three different voices, each answering a different question in the prospect’s head.",
   },
 
   // 05 · Three voices
@@ -124,7 +124,7 @@ export const module4Slides: Slide[] = [
       src: "/audio/m4/m4-6.mp3",
       cues: [0.5, 16.9, 52.3],
       callouts: [
-        { text: "Recency matters here more than anywhere. A recent review says you're still good now.", at: 28.0, until: 35.3 },
+        { text: "Recency matters here more than anywhere. A recent review says you’re still good now.", at: 28.0, until: 35.3 },
         { text: "Handling a hard review well, publicly, builds more trust than the praise does.", at: 43.4, until: 51.0 },
       ],
     },
@@ -158,7 +158,7 @@ export const module4Slides: Slide[] = [
       cues: [0.5, 43.0, 59.8],
       callouts: [
         { text: "A doctor referring patients. A wedding planner recommending the photographer.", at: 18.8, until: 25.8 },
-        { text: "They're staking their own credibility on you being good.", at: 28.8, until: 36.5 },
+        { text: "They’re staking their own credibility on you being good.", at: 28.8, until: 36.5 },
         { text: "Referrals as proof here. The system that produces them is Module 5.", at: 70.0, until: 78.0 },
       ],
     },
@@ -238,14 +238,14 @@ export const module4Slides: Slide[] = [
     audio: {
       src: "/audio/m4/m4-10.mp3",
       callouts: [
-        { text: "They're glad, and life moved on. Nobody writes an unprompted review three weeks later.", at: 13.0, until: 21.0 },
+        { text: "They’re glad, and life moved on. Nobody writes an unprompted review three weeks later.", at: 13.0, until: 21.0 },
         { text: "If the work was good, asking is a small, ordinary thing.", at: 28.5, until: 35.0 },
-        { text: "With peers it's ordinary reciprocity. A connection that helps their clients.", at: 43.0, until: 51.5 },
+        { text: "With peers it’s ordinary reciprocity. A connection that helps their clients.", at: 43.0, until: 51.5 },
       ],
     },
     sans: true,
-    headline: "Asking isn't taking. It's *offering* a way to say something.",
-    sub: "A client who is glad they hired you has no natural occasion to say so. Asking gives them one. You're handing someone *a door they were already standing near.*",
+    headline: "Asking isn’t taking. It’s *offering* a way to say something.",
+    sub: "A client who is glad they hired you has no natural occasion to say so. Asking gives them one. You’re handing someone *a door they were already standing near.*",
   },
 
   // 11 · Which proof is yours
@@ -273,7 +273,7 @@ export const module4Slides: Slide[] = [
       cues: [0.5, 36.6, 57.7, 73.7, 87.2],
       callouts: [
         { text: "Ethics closes client reviews. Her proof comes from the other two sources.", at: 13.5, until: 21.5, who: "maya" },
-        { text: "The source most people build first is the one she mostly can't use.", at: 29.5, until: 36.0, who: "maya" },
+        { text: "The source most people build first is the one she mostly can’t use.", at: 29.5, until: 36.0, who: "maya" },
       ],
     },
     heading: "Same framework. *Different* answers.",
@@ -329,7 +329,7 @@ export const module4Slides: Slide[] = [
     },
     sans: true,
     headline: "Proof *ages.*",
-    sub: "A testimonial from four years ago raises a question it doesn't answer: what about since? Client proof ages fastest, institutional slowest. *Earned proof is a thing you keep current.*",
+    sub: "A testimonial from four years ago raises a question it doesn’t answer: what about since? Client proof ages fastest, institutional slowest. *Earned proof is a thing you keep current.*",
   },
 
   // 14 · More proof is not better proof
@@ -362,8 +362,8 @@ export const module4Slides: Slide[] = [
       src: "/audio/m4/m4-15.mp3",
       cues: [0.5, 24.6],
       callouts: [
-        { text: "The prospect in the same situation sees themselves. That's what proof is for.", at: 41.0, until: 47.5 },
-        { text: "The strong one didn't cost more. It came from asking better.", at: 49.0, until: 56.5 },
+        { text: "The prospect in the same situation sees themselves. That’s what proof is for.", at: 41.0, until: 47.5 },
+        { text: "The strong one didn’t cost more. It came from asking better.", at: 49.0, until: 56.5 },
       ],
     },
     eyebrow: "Weak vs. strong, on a single testimonial",
@@ -373,7 +373,7 @@ export const module4Slides: Slide[] = [
       text: "Could be about anyone. No problem, no result, no specifics.",
     },
     strong: {
-      quote: "We came in after a failed rebrand. She found the *positioning* we'd been circling for a year, in three sessions.",
+      quote: "We came in after a failed rebrand. She found the *positioning* we’d been circling for a year, in three sessions.",
       text: "Names the problem, the result, the shape of the work. A prospect in the same situation sees themselves.",
     },
   },
@@ -394,7 +394,7 @@ export const module4Slides: Slide[] = [
     },
     sans: true,
     headline: "Proof in a folder does *nothing.*",
-    sub: "Proof only works where a prospect meets it: your primary touchpoint, at the moment they're deciding. A testimonial saved but never shown is a note to yourself. *Put it where the doubt is.*",
+    sub: "Proof only works where a prospect meets it: your primary touchpoint, at the moment they’re deciding. A testimonial saved but never shown is a note to yourself. *Put it where the doubt is.*",
   },
 
   // 17 · Thin proof
@@ -411,7 +411,7 @@ export const module4Slides: Slide[] = [
         { text: "No full apparatus by Friday. One good piece, then the next.", at: 38.8, until: 43.2 },
       ],
     },
-    eyebrow: "If you're starting with little",
+    eyebrow: "If you’re starting with little",
     heading: "Thin proof is a *starting point*, not a failure.",
     paragraphs: [
       "Very little proof is where most businesses start, and where every business lands after a pivot.",
@@ -430,12 +430,12 @@ export const module4Slides: Slide[] = [
       src: "/audio/m4/m4-18.mp3",
       callouts: [
         { text: "A review read at midnight. A referral over coffee. A credential checked in a ten-second search.", at: 15.5, until: 23.5 },
-        { text: "It survives your absence. It works in rooms you'll never be in.", at: 26.5, until: 33.5 },
+        { text: "It survives your absence. It works in rooms you’ll never be in.", at: 26.5, until: 33.5 },
       ],
     },
     sans: true,
     headline: "A prospect believes what they can *verify* without you in the room.",
-    sub: "Everything you say about yourself is heard with you present, and discounted for it. Proof gets checked when you're not there. *That's why it works. It survives your absence.*",
+    sub: "Everything you say about yourself is heard with you present, and discounted for it. Proof gets checked when you’re not there. *That’s why it works. It survives your absence.*",
   },
 
   // 19 · The proof inventory
@@ -449,8 +449,8 @@ export const module4Slides: Slide[] = [
     eyebrow: "Your turn",
     heading: "Map your *proof*.",
     paragraphs: [
-      "Across the three sources, mark what you already have, what's gone stale, and what's missing. Then name the one source to build first.",
-      "Flag the proof that's gone stale, not just the proof that's missing. Old proof and no proof both need attention.",
+      "Across the three sources, mark what you already have, what’s gone stale, and what’s missing. Then name the one source to build first.",
+      "Flag the proof that’s gone stale, not just the proof that’s missing. Old proof and no proof both need attention.",
     ],
   },
 

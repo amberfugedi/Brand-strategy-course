@@ -125,7 +125,7 @@ export function AdviceCloud({
     >
       {/* The head the noise is aimed at. An illustration when one is
           supplied, otherwise a hairline drawing that sits with the
-          course's other line art. */}
+          course’s other line art. */}
       {image ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -163,7 +163,7 @@ export function AdviceCloud({
               top: `${SPOTS[i].y}%`,
               ...drift(i),
             }}
-            className={`buzz absolute block whitespace-nowrap text-center text-[12px] leading-none transition-[color,opacity,font-weight] duration-700 lg:text-[13px] ${look}`}
+            className={`buzz absolute block whitespace-nowrap text-center text-[13.5px] leading-none transition-[color,opacity,font-weight] duration-700 lg:text-[13.5px] ${look}`}
           >
             {w.text}
           </span>

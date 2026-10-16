@@ -71,12 +71,12 @@ export function AuditSlide({ slide }: { slide: AuditSlideDef }) {
                           <span className="text-[10px] font-bold uppercase tracking-eyebrow text-body-secondary">
                             {dim.title}
                           </span>
-                          <span className="text-[12.5px] text-body-tertiary">
+                          <span className="text-[13.5px] text-body-tertiary">
                             {dim.question}
                           </span>
                         </div>
                         {isLocked ? (
-                          <p className="mt-1.5 text-[13px] text-body-tertiary">
+                          <p className="mt-1.5 text-[13.5px] text-body-tertiary">
                             Not applicable yet. Absence is the gap.
                           </p>
                         ) : (
@@ -91,7 +91,7 @@ export function AuditSlide({ slide }: { slide: AuditSlideDef }) {
                                     setAudit(p.foundation.id, dim.id, opt.value)
                                   }
                                   aria-pressed={active}
-                                  className={`border px-3 py-1.5 text-[12.5px] transition-colors ${
+                                  className={`border px-3 py-2.5 text-[13.5px] transition-colors ${
                                     active
                                       ? "border-aubergine bg-aubergine text-cream"
                                       : "border-ink/20 bg-cream text-body-secondary hover:border-gold"

@@ -133,7 +133,7 @@ export function FoundationPlanSlide({
             <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
               <div className="min-w-0">
                 <div className="text-[16px] font-bold text-cream">{f.name}</div>
-                <p className="mt-0.5 text-[12.5px] leading-snug text-on-dark-muted">
+                <p className="mt-0.5 text-[13.5px] leading-snug text-on-dark-muted">
                   {gathered[f.id]}
                 </p>
               </div>
@@ -146,7 +146,7 @@ export function FoundationPlanSlide({
                       type="button"
                       onClick={() => setBucket(f.id, b.value)}
                       aria-pressed={active}
-                      className={`border px-3 py-1.5 text-[12px] font-semibold transition-colors ${
+                      className={`border px-3 py-2.5 text-[13.5px] font-semibold transition-colors ${
                         active
                           ? "border-gold bg-gold text-ink"
                           : "border-gold/40 text-on-dark/85 hover:border-gold"
@@ -160,7 +160,7 @@ export function FoundationPlanSlide({
             </div>
           </div>
         ))}
-        <p className="pt-1 text-[13px] text-on-dark-muted">
+        <p className="pt-1 text-[13.5px] text-on-dark-muted">
           {sorted === PLAN_FOUNDATIONS.length
             ? "All seven sorted. This is your Foundation Plan."
             : `${sorted} of ${PLAN_FOUNDATIONS.length} sorted. Later is allowed to be a long list.`}

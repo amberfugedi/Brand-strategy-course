@@ -36,7 +36,7 @@ export function CourseGrid({
         <section className="mt-12">
           <div className="border-b border-subtle pb-3">
             <h2 className="text-xl font-bold tracking-tight">Your courses</h2>
-            <p className="mt-1 text-[13px] text-body-secondary">
+            <p className="mt-1 text-[13.5px] text-body-secondary">
               {mine.length === 1
                 ? "Yours to work through whenever you like."
                 : `${mine.length} courses, yours to work through whenever you like.`}
@@ -66,7 +66,7 @@ export function CourseGrid({
               <h2 className="text-xl font-bold tracking-tight">
                 {section.audience}
               </h2>
-              <p className="mt-1 text-[13px] text-body-secondary">
+              <p className="mt-1 text-[13.5px] text-body-secondary">
                 {section.note}
               </p>
             </div>
@@ -93,7 +93,7 @@ export function CourseGrid({
                       <div className="text-[17px] font-bold leading-snug tracking-tight text-body-tertiary">
                         {course.title}
                       </div>
-                      <p className="mt-1 font-serif text-[13px] italic text-body-tertiary">
+                      <p className="mt-1 font-serif text-[13.5px] italic text-body-tertiary">
                         Not yet available.
                       </p>
                     </div>
@@ -137,7 +137,7 @@ function Card({ course, owned }: { course: CourseMeta; owned: boolean }) {
             </span>
           ) : null}
         </div>
-        <div className="mt-1 text-[12.5px] text-body-tertiary">Amber Fugedi</div>
+        <div className="mt-1 text-[13.5px] text-body-tertiary">Amber Fugedi</div>
         <div className="mt-2.5 flex flex-wrap gap-1.5">
           {course.chips.map((chip) => (
             <span

@@ -3,7 +3,7 @@ import { Slide } from "./types";
 /**
  * Module 5: Referral system. 21 slides, copy verbatim from the
  * produced deck (module5slides.html); the script confirms every
- * on-slide line. The deck's tool moment (slide 20) is the in-app
+ * on-slide line. The deck’s tool moment (slide 20) is the in-app
  * referral map, so the "open the Map" instruction is adapted.
  */
 
@@ -41,7 +41,7 @@ export const module5Slides: Slide[] = [
     number: "02",
     audio: { src: null },
     heading: "Referrals feel like *luck.*",
-    sub: "Something you hope for and can't influence. That belief is what this module takes apart.",
+    sub: "Something you hope for and can’t influence. That belief is what this module takes apart.",
   },
 
   // 03 · The concept
@@ -54,7 +54,7 @@ export const module5Slides: Slide[] = [
     audio: { src: null },
     heading: "A referral is an *event* with causes.",
     paragraphs: [
-      "Module 4 showed a referral is credibility you didn't author. This one asks whether you can cause more of it.",
+      "Module 4 showed a referral is credibility you didn’t author. This one asks whether you can cause more of it.",
       "It feels like luck because its causes are quiet. Name them and it stops being weather: parts you can build, parts you can fix.",
     ],
   },
@@ -118,11 +118,11 @@ export const module5Slides: Slide[] = [
       },
       {
         label: "For a client",
-        text: "“She fixed the thing I was stuck on” travels. “She's *great*” does not.",
+        text: "“She fixed the thing I was stuck on” travels. “She’s *great*” does not.",
       },
       {
         label: "For a peer",
-        text: "A judgment they would stake their name on. Peers refer once they've seen what you're right for.",
+        text: "A judgment they would stake their name on. Peers refer once they’ve seen what you’re right for.",
       },
     ],
   },
@@ -139,7 +139,7 @@ export const module5Slides: Slide[] = [
     cols: [
       {
         label: "What the stage is",
-        text: "They know you welcome referrals, and who you're right for. Asking feels like begging when it has no shape.",
+        text: "They know you welcome referrals, and who you’re right for. Asking feels like begging when it has no shape.",
       },
       {
         label: "For a client",
@@ -201,7 +201,7 @@ export const module5Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "A referral system pays you back *slowly*, then steadily.",
-    sub: "One referral kept well doesn't just bring one client. It tells the referrer that referring you works. That is the loop closing, and it runs too slowly to watch. Built on purpose, the slowness becomes *reliability.*",
+    sub: "One referral kept well doesn’t just bring one client. It tells the referrer that referring you works. That is the loop closing, and it runs too slowly to watch. Built on purpose, the slowness becomes *reliability.*",
   },
 
   // 11 · Which stage is yours
@@ -245,19 +245,19 @@ export const module5Slides: Slide[] = [
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "Peer engine.",
-        text: "Planners are her channel. *Earn* is weak: they can't name what makes her style specific, so they refer her generically.",
+        text: "Planners are her channel. *Earn* is weak: they can’t name what makes her style specific, so they refer her generically.",
       },
       {
         name: "James",
         meta: "chiropractor · local",
         lead: "Both engines.",
-        text: "GP referrals and patient word of mouth. *Ask* is weak: the GPs were never told which patients he's right for.",
+        text: "GP referrals and patient word of mouth. *Ask* is weak: the GPs were never told which patients he’s right for.",
       },
       {
         name: "Sasha",
         meta: "vivids stylist · audience-driven",
         lead: "Client engine, plus stylist overflow.",
-        text: "Other stylists send her vivids clients. *Keep* is weak: she never circles back, so it's sporadic.",
+        text: "Other stylists send her vivids clients. *Keep* is weak: she never circles back, so it’s sporadic.",
       },
     ],
   },
@@ -285,7 +285,7 @@ export const module5Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "A referral pointed at the *wrong* person costs more than no referral.",
-    sub: "A referrer who can't describe who you're right for sends people you can't help, and learns that referring you doesn't work. *A good referral is aimed, not just sent.*",
+    sub: "A referrer who can’t describe who you’re right for sends people you can’t help, and learns that referring you doesn’t work. *A good referral is aimed, not just sent.*",
   },
 
   // 15 · Weak vs strong ask
@@ -333,7 +333,7 @@ export const module5Slides: Slide[] = [
     eyebrow: "If the loop feels like a lot",
     heading: "Fix the *weak* stage, not all three.",
     paragraphs: [
-      "You don't rebuild the whole loop. Each of the five had one weak stage, not three.",
+      "You don’t rebuild the whole loop. Each of the five had one weak stage, not three.",
       "Walk one source through Earn, Ask and Keep, and find where it leaks. One stage repaired restores the loop.",
     ],
   },
@@ -350,7 +350,7 @@ export const module5Slides: Slide[] = [
     heading: "No loop yet? *Start* at Earn.",
     bullets: true,
     paragraphs: [
-      "With no referrals yet, there's no weak stage to repair. There's a loop to begin, and it begins with Earn.",
+      "With no referrals yet, there’s no weak stage to repair. There’s a loop to begin, and it begins with Earn.",
       "A referral has nothing to travel on until your work is nameable. Make one piece of it describable in a plain sentence.",
     ],
   },

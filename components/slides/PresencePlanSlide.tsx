@@ -52,7 +52,7 @@ export function PresencePlanSlide({ slide }: { slide: PresencePlanSlideDef }) {
                   type="button"
                   onClick={() => setPresence({ weight: w.value })}
                   aria-pressed={active}
-                  className={`border px-3 py-1.5 text-[12.5px] transition-colors ${
+                  className={`border px-3 py-2.5 text-[13.5px] transition-colors ${
                     active
                       ? "border-gold bg-gold text-ink"
                       : "border-gold/40 text-on-dark/85 hover:border-gold"
@@ -88,7 +88,7 @@ export function PresencePlanSlide({ slide }: { slide: PresencePlanSlideDef }) {
                   onClick={() => toggleCondition(c.id)}
                   aria-pressed={active}
                   title={c.hint}
-                  className={`border px-3 py-1.5 text-[12.5px] transition-colors ${
+                  className={`border px-3 py-2.5 text-[13.5px] transition-colors ${
                     active
                       ? "border-gold bg-gold text-ink"
                       : "border-gold/40 text-on-dark/85 hover:border-gold"
@@ -99,7 +99,7 @@ export function PresencePlanSlide({ slide }: { slide: PresencePlanSlideDef }) {
               );
             })}
           </div>
-          <p className="mt-2 text-[12.5px] leading-snug text-on-dark-muted">
+          <p className="mt-2 text-[13.5px] leading-snug text-on-dark-muted">
             If a condition does not hold, the place is wrong. Better to find
             that out here than after six months of effort.
           </p>

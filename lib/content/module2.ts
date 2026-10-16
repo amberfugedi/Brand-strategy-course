@@ -1,7 +1,7 @@
 import { Slide } from "./types";
 
 /**
- * Module 2: The foundation audit. 35 slides. The deck's three "open
+ * Module 2: The foundation audit. 35 slides. The deck’s three "open
  * the tool" moments become in-app interactions: the diagnostic
  * (slide 10), the audit (slide 22), and the compiled plan (slide 33),
  * with the priority order, Gap List, and starting point rendered live
@@ -48,7 +48,7 @@ export const module2Slides: Slide[] = [
       src: "/audio/m2/m2-2.mp3", cues: [19.9, 34.4],
       callouts: [
         { text: "What kind of business are you running?", at: 38.0, until: 44.4 },
-        { text: "A therapist's strong marketing does not look like a pressure washer's.", at: 44.6, until: 51.5 },
+        { text: "A therapist’s strong marketing does not look like a pressure washer’s.", at: 44.6, until: 51.5 },
         { text: "Module 2 figures that out first.", at: 52.8, until: 58.5 },
       ],
     },
@@ -86,7 +86,7 @@ export const module2Slides: Slide[] = [
     tag: "STRUCTURE",
     number: "03",
     audio: { src: "/audio/m2/m2-3.mp3", cues: [2.6, 22.3, 37.2, 44.3] },
-    eyebrow: "What you'll do in this module",
+    eyebrow: "What you’ll do in this module",
     heading: "The *shape* of the work.",
     rows: [
       { label: "01", text: "Six diagnostic questions about your business" },
@@ -113,7 +113,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     lines: ["Six questions about your *business*."],
-    post: "What's structurally true.",
+    post: "What’s structurally true.",
   },
 
   // 05 · Not what you want to do
@@ -178,11 +178,11 @@ export const module2Slides: Slide[] = [
       ], cues: [2.4, 12.9, 38.0],
     },
     eyebrow: "Questions 01 to 03",
-    heading: "What's true about your *business*.",
+    heading: "What’s true about your *business*.",
     cards: [
       {
         title: "Discovery channel",
-        text: "Where current clients first hear about you. The diagnostic anchors on what's already producing results. Not what you wish was working.",
+        text: "Where current clients first hear about you. The diagnostic anchors on what’s already producing results. Not what you wish was working.",
       },
       {
         title: "Visual proof",
@@ -190,7 +190,7 @@ export const module2Slides: Slide[] = [
       },
       {
         title: "Ethics restrictions",
-        text: "Therapists, attorneys, healthcare, financial advisors face professional rules that change the audit's weighting.",
+        text: "Therapists, attorneys, healthcare, financial advisors face professional rules that change the audit’s weighting.",
       },
     ],
   },
@@ -213,7 +213,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     eyebrow: "Questions 04 to 06",
-    heading: "What's true about your *audience* and how they decide.",
+    heading: "What’s true about your *audience* and how they decide.",
     cards: [
       {
         title: "Audience age",
@@ -240,12 +240,12 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-9.mp3",
       marks: [
-        { text: "If you genuinely don't know, pick the option that says so.", at: 20.9, until: 27.5 },
+        { text: "If you genuinely don’t know, pick the option that says so.", at: 20.9, until: 27.5 },
         { text: "Do not guess.", at: 33.5, until: 38.5 },
       ],
     },
     headline: "Answer based on what is, not what you wish was *true*.",
-    sub: "If you genuinely don't know, pick the option that says so. *Do not guess.* A wrong answer produces wrong recommendations.",
+    sub: "If you genuinely don’t know, pick the option that says so. *Do not guess.* A wrong answer produces wrong recommendations.",
   },
 
   // 10 · The diagnostic, in place
@@ -282,7 +282,7 @@ export const module2Slides: Slide[] = [
     live: "priorities",
   },
 
-  // 12 · Four tiers + the buyer's order
+  // 12 · Four tiers + the buyer’s order
   {
     kind: "priorities",
     id: "m2-priorities",
@@ -317,7 +317,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     headline: "Two businesses can have the same critical gap and *different* starting points.",
-    sub: "A photographer's website is where prospects judge the work. A pressure washer's is not: his clients came from search. *The same gap means different things in different contexts.*",
+    sub: "A photographer’s website is where prospects judge the work. A pressure washer’s is not: his clients came from search. *The same gap means different things in different contexts.*",
   },
 
   // 14 · The reasoning line
@@ -454,12 +454,12 @@ export const module2Slides: Slide[] = [
       ],
       callouts: [
         { text: "The natural impulse is to be a little generous.", at: 9.9, until: 16.6 },
-        { text: "“I have a website, but it's on a free subdomain and hasn't been updated in three years.”", at: 60.5, until: 68.5 },
+        { text: "“I have a website, but it’s on a free subdomain and hasn’t been updated in three years.”", at: 60.5, until: 68.5 },
         { text: "That second one is the truth. Pick it.", at: 68.8, until: 74.3 },
       ],
     },
     headline: "Pick the scenario that matches what is *true today*.",
-    sub: "Not what you intended. Not what you'll have by next quarter. *What exists right now.* Generous ratings produce the wrong starting point. The audit is only as useful as it is honest.",
+    sub: "Not what you intended. Not what you’ll have by next quarter. *What exists right now.* Generous ratings produce the wrong starting point. The audit is only as useful as it is honest.",
   },
 
   // 21 · Some questions will be locked
@@ -520,7 +520,7 @@ export const module2Slides: Slide[] = [
     live: "gaps",
   },
 
-  // 24 · Critical. Maintenance. Solid. + the buyer's list
+  // 24 · Critical. Maintenance. Solid. + the buyer’s list
   {
     kind: "gaplist",
     id: "m2-gaplist",
@@ -531,13 +531,13 @@ export const module2Slides: Slide[] = [
     eyebrow: "The three tiers",
     heading: "Critical. Maintenance. *Solid*.",
     tiers: [
-      { label: "Critical", text: "Broken or absent. Either does not exist, or exists in a state that's actively undermining you. Usually the bottleneck." },
+      { label: "Critical", text: "Broken or absent. Either does not exist, or exists in a state that’s actively undermining you. Usually the bottleneck." },
       { label: "Maintenance", text: "Slipping, but not yet critical. Working today, drifting toward critical without active attention." },
       { label: "Solid", text: "Working, not blocking. The foundation is doing its job and is not your problem." },
     ],
   },
 
-  // 25 · Critical doesn't mean panic
+  // 25 · Critical doesn’t mean panic
   {
     kind: "principle",
     id: "m2-critical",
@@ -547,15 +547,15 @@ export const module2Slides: Slide[] = [
     audio: {
       src: "/audio/m2/m2-25.mp3",
       marks: [
-        { text: "You're not failing.", at: 14.6, until: 18.8 },
-        { text: "You'll fix them in order.", at: 25.9, until: 32.0 },
+        { text: "You’re not failing.", at: 14.6, until: 18.8 },
+        { text: "You’ll fix them in order.", at: 25.9, until: 32.0 },
       ],
     },
-    headline: "Critical doesn't mean panic. It means *prioritize*.",
-    sub: "Most service businesses have several critical gaps the first time. That's normal. You're not failing. You're seeing what was always there. *You'll fix them in order.*",
+    headline: "Critical doesn’t mean panic. It means *prioritize*.",
+    sub: "Most service businesses have several critical gaps the first time. That’s normal. You’re not failing. You’re seeing what was always there. *You’ll fix them in order.*",
   },
 
-  // 26 · Solid doesn't mean ignore
+  // 26 · Solid doesn’t mean ignore
   {
     kind: "principle",
     id: "m2-solid",
@@ -572,11 +572,11 @@ export const module2Slides: Slide[] = [
         { text: "Maintenance, not rebuilding.", at: 29.3, until: 32.8 },
       ],
     },
-    headline: "Solid doesn't mean ignore. It means *protect*.",
-    sub: "Solid took work you already did, and that work is not permanent. Solid foundations drift without continued attention. *Keep doing what's already working.*",
+    headline: "Solid doesn’t mean ignore. It means *protect*.",
+    sub: "Solid took work you already did, and that work is not permanent. Solid foundations drift without continued attention. *Keep doing what’s already working.*",
   },
 
-  // 27 · You'll use the Gap List throughout
+  // 27 · You’ll use the Gap List throughout
   {
     kind: "framework",
     id: "m2-gaplist-reference",
@@ -594,7 +594,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     eyebrow: "This is your reference",
-    heading: "You'll use the Gap List *throughout* the course.",
+    heading: "You’ll use the Gap List *throughout* the course.",
     bullets: true,
     paragraphs: [
       "Modules 3 to 8 go deep on one foundation each.",
@@ -631,8 +631,8 @@ export const module2Slides: Slide[] = [
         { text: "Spreading thin produces nothing.", at: 34.5, until: 39.3 },
       ],
     },
-    headline: "You can't build five foundations in *parallel*.",
-    sub: "Whatever your weekly marketing hours are, they don't multiply across five workstreams. They divide. *Five half-built foundations is worse than one fully built one.* Sequence is the strategy.",
+    headline: "You can’t build five foundations in *parallel*.",
+    sub: "Whatever your weekly marketing hours are, they don’t multiply across five workstreams. They divide. *Five half-built foundations is worse than one fully built one.* Sequence is the strategy.",
   },
 
   // 30 · Not a license to abandon
@@ -653,12 +653,12 @@ export const module2Slides: Slide[] = [
       ],
     },
     eyebrow: "What this does not mean",
-    heading: "A starting point isn't a *license* to abandon.",
+    heading: "A starting point isn’t a *license* to abandon.",
     bullets: true,
     paragraphs: [
-      "Other gaps still matter. They're just not where you start.",
+      "Other gaps still matter. They’re just not where you start.",
       "Your client work continues as it is.",
-      "Solid foundations stay solid. *You're directing build energy where it's needed.*",
+      "Solid foundations stay solid. *You’re directing build energy where it’s needed.*",
     ],
   },
 
@@ -725,7 +725,7 @@ export const module2Slides: Slide[] = [
     heading: "A different *position*.",
     paragraphs: [
       "You started Module 2 with a positioning statement and an open question: *what do I focus on first.*",
-      "You're ending it with an answer: a priority order, a clear picture of where you stand, and a starting point with reasoning.",
+      "You’re ending it with an answer: a priority order, a clear picture of where you stand, and a starting point with reasoning.",
       "Worth pausing to acknowledge.",
     ],
   },
@@ -741,7 +741,7 @@ export const module2Slides: Slide[] = [
       src: "/audio/m2/m2-35.mp3",
       marks: [
         { text: "Concept modules, not tactics modules.", at: 6.8, until: 13.5 },
-        { text: "It tells you what to build first when you're done learning.", at: 14.0, until: 18.9 },
+        { text: "It tells you what to build first when you’re done learning.", at: 14.0, until: 18.9 },
       ],
       callouts: [
         { text: "Save your Plan, and take a break.", at: 19.2, until: 25.2, font: "body" },
@@ -749,7 +749,7 @@ export const module2Slides: Slide[] = [
       ],
     },
     headline: "You take *all six*. The teaching is the point.",
-    sub: "Concept modules, not tactics modules. *Your audit doesn't tell you what to learn. It tells you what to build first when you're done learning.*",
+    sub: "Concept modules, not tactics modules. *Your audit doesn’t tell you what to learn. It tells you what to build first when you’re done learning.*",
   },
 
 ];

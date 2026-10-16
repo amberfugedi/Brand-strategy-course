@@ -36,14 +36,14 @@ export function MapSlide({ slide }: { slide: MapSlideDef }) {
               className={`enter border-t-[3px] bg-cream-dark/60 px-4 py-4 ${zone.accent}`}
               style={{ "--n": zi } as React.CSSProperties}
             >
-              <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-aubergine">
+              <div className="text-[11px] font-bold uppercase tracking-eyebrow text-aubergine">
                 {zone.title}
               </div>
               <div className="mt-2.5 flex flex-wrap gap-1.5">
                 {zone.terms.map((term) => (
                   <span
                     key={term}
-                    className="border border-ink/15 bg-cream px-2 py-0.5 text-[11px] text-body-secondary"
+                    className="border border-ink/15 bg-cream px-2 py-1 text-[13.5px] text-body-secondary"
                   >
                     {term}
                   </span>
@@ -60,9 +60,9 @@ export function MapSlide({ slide }: { slide: MapSlideDef }) {
           <span className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
             Ads
           </span>
-          <span className="text-[12.5px] text-body-secondary">
+          <span className="text-[13.5px] text-body-secondary">
             An overlay across every zone. Ads amplify a touchpoint you
-            already have; they don't create a new one.
+            already have; they don’t create a new one.
           </span>
         </div>
 
@@ -71,11 +71,11 @@ export function MapSlide({ slide }: { slide: MapSlideDef }) {
           style={{ "--n": 6 } as React.CSSProperties}
         >
           <span className="flex h-8 w-8 items-center justify-center rounded-full border border-aubergine bg-aubergine">
-            <span className="font-serif text-[13px] italic leading-none text-cream">
+            <span className="font-serif text-[13.5px] italic leading-none text-cream">
               B
             </span>
           </span>
-          <span className="text-[12.5px] text-body-secondary">
+          <span className="text-[13.5px] text-body-secondary">
             The buyer at the center. Every zone is a place they might meet
             you, or fail to.
           </span>

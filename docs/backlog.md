@@ -66,11 +66,30 @@ the end-to-end check need a human at a terminal. The code around it,
 the signing endpoint and the player change, can be written and reviewed
 first.
 
+## Slide tags
+
+The top-right tag is 61 distinct labels across 194 slides, and the
+distribution is lopsided: THE TAKEAWAY 44, FRAMEWORK 41, CALIBRATION
+31, then a tail of one-offs including QUESTION 01 and QUESTION 02 used
+once each. Three labels cover 60% of the course and the rest carry
+almost no signal, so a reader learns nothing from the tag after the
+first module.
+
+Worth either collapsing to a small fixed set that means something, or
+dropping the tag from slides where it only fills the corner. Not done
+because the tags are copy, and which distinctions are worth keeping is
+a teaching judgment rather than a design one.
+
 ## Other parked items
 
 - **James's face on the m1-11 callout.** The chiropractor callout says
   "she" in the recording, so the persona card stays unattributed. If that
   line is ever re-recorded as "he", attach `who: "james"`.
+- **A callout on m1/30 repeats its own heading.** "Two competitors
+  couldn't write the same sentence." is both the slide's heading and a
+  floating callout, which section 7 forbids. It cannot become a spoken
+  mark either, since marks never underline a heading. It needs the
+  callout deleted or reworded into something the voice adds.
 - **The Module 2 audit tool is the densest slide in the course**
   (286 rendered words on m2/22). The words are the questions and answer
   options, so it is not decoration, but walking one foundation at a time

@@ -47,7 +47,7 @@ export function ProofInventorySlide({
               <span className="text-[16px] font-bold text-cream">
                 {source.label}
               </span>
-              <span className="text-[12.5px] text-on-dark-muted">
+              <span className="text-[13.5px] text-on-dark-muted">
                 {source.hint}
               </span>
             </div>
@@ -60,7 +60,7 @@ export function ProofInventorySlide({
                     type="button"
                     onClick={() => setStatus(source.id, s.value)}
                     aria-pressed={active}
-                    className={`border px-3 py-1.5 text-[12.5px] transition-colors ${
+                    className={`border px-3 py-2.5 text-[13.5px] transition-colors ${
                       active
                         ? "border-gold bg-gold text-ink"
                         : "border-gold/40 text-on-dark/85 hover:border-gold"
@@ -87,7 +87,7 @@ export function ProofInventorySlide({
                   type="button"
                   onClick={() => setBuildFirst(source.id)}
                   aria-pressed={active}
-                  className={`border px-3 py-1.5 text-[12.5px] transition-colors ${
+                  className={`border px-3 py-2.5 text-[13.5px] transition-colors ${
                     active
                       ? "border-gold bg-gold text-ink"
                       : "border-gold/40 text-on-dark/85 hover:border-gold"

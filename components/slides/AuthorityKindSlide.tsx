@@ -61,7 +61,7 @@ export function AuthorityKindSlide({ slide }: { slide: AuthorityKindSlideDef }) 
               <div className="mt-2 text-[17px] font-bold tracking-tight text-aubergine">
                 {kind.name}
               </div>
-              <p className="mt-1.5 text-[13px] leading-relaxed text-body-secondary">
+              <p className="mt-1.5 text-[13.5px] leading-relaxed text-body-secondary">
                 <Rich text={kind.note} />
               </p>
               <div

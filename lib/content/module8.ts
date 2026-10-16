@@ -57,7 +57,7 @@ export const module8Slides: Slide[] = [
     audio: { src: null },
     heading: "Authority is earned *trust*.",
     paragraphs: [
-      "Not a title you award yourself. Authority is the weight your word carries: whether people move on it, or weigh it like anyone's.",
+      "Not a title you award yourself. Authority is the weight your word carries: whether people move on it, or weigh it like anyone’s.",
       "So it was never something to qualify for. Other people grant it, and your clients have been doing that quietly for years.",
     ],
   },
@@ -126,7 +126,7 @@ export const module8Slides: Slide[] = [
       },
       {
         label: "Where it leads",
-        text: "People arrive already trusting you, because they've seen the work.",
+        text: "People arrive already trusting you, because they’ve seen the work.",
       },
     ],
   },

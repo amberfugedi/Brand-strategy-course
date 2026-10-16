@@ -424,7 +424,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       <PlayerNotice
         courseId={courseId}
         eyebrow="That did not load"
-        heading="This module didn't come through."
+        heading="This module didn’t come through."
         body="The connection dropped on the way. Refreshing usually sorts it, and none of your work is lost."
       />
     );
@@ -457,7 +457,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
             This module opens after the one before it.
           </h1>
           <p className="mt-3 text-[14px] leading-relaxed text-body-secondary">
-            Everything here builds on work you haven't finished yet. Complete
+            Everything here builds on work you haven’t finished yet. Complete
             the previous module and this one unlocks.
           </p>
           <Link
@@ -589,7 +589,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
             type="button"
             onClick={narration.restart}
             aria-label="Restart slide narration"
-            className={`shrink-0 px-1.5 py-2 sm:-my-3 sm:py-3 text-[13px] leading-none transition-colors ${
+            className={`shrink-0 px-1.5 py-2 sm:-my-3 sm:py-3 text-[13.5px] leading-none transition-colors ${
               dark
                 ? "text-on-dark-muted hover:text-gold"
                 : "text-body-tertiary hover:text-aubergine"
@@ -631,7 +631,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
               type="button"
               onClick={narration.cycleCaptionSize}
               aria-label="Caption text size"
-              className={`shrink-0 whitespace-nowrap px-2 py-2 sm:-my-3 sm:py-3 text-[12px] font-bold tracking-chrome transition-colors ${
+              className={`shrink-0 whitespace-nowrap px-2 py-2 sm:-my-3 sm:py-3 text-[13.5px] font-bold tracking-chrome transition-colors ${
                 dark
                   ? "text-on-dark-muted hover:text-gold"
                   : "text-body-tertiary hover:text-aubergine"
@@ -644,7 +644,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
       ) : null}
       {nudged && !inputComplete ? (
         <span
-          className={`min-w-0 truncate text-[12.5px] ${
+          className={`min-w-0 truncate text-[13.5px] ${
             dark ? "text-on-dark-muted" : "text-body-secondary"
           }`}
         >
@@ -652,7 +652,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
         </span>
       ) : skipArmed && narration.playing ? (
         <span
-          className={`min-w-0 truncate text-[12.5px] ${
+          className={`min-w-0 truncate text-[13.5px] ${
             dark ? "text-on-dark-muted" : "text-body-secondary"
           }`}
         >

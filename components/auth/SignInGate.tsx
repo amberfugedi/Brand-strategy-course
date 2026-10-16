@@ -23,7 +23,7 @@ export function SignInGate({ nextPath }: { nextPath: string }) {
         >
           Sign in with your email
         </Link>
-        <p className="mt-4 text-[12px] text-body-tertiary">
+        <p className="mt-4 text-[13.5px] text-body-tertiary">
           No password. We send a sign-in link to your inbox.
         </p>
       </div>

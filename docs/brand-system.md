@@ -160,11 +160,21 @@ components follow them; violations are bugs.
 | Labels, eyebrows, chrome (Manrope 500, uppercase, 0.08em) | 10–11px | 10–11px | **10px** |
 | Anything typed into (inputs, textareas) | **16px** | 16px | 16px — under 16px triggers iOS focus zoom |
 | Navigation pills | 11px uppercase | 11px uppercase | tap target ≥ 40px tall |
+| Answer chips (diagnostic, audit, every tool a buyer taps) | 13.5px | 13.5px | **13.5px, and ≥ 40px tall** |
 | Captions | listener-controlled: 12.5 / 14.5 / 17 / 20px | same | user choice, default 14.5px |
 
 One documented exception: the Map document illustration carries its
-smallest caption at 9.5px — it is artwork, not interface, and its
-labels repeat information available elsewhere.
+smallest caption at 9.5px. It is artwork, not interface, and its
+labels repeat information available elsewhere. As of the 2026-10
+audit it is the only text in the course below a floor, measured on
+every slide at phone and desktop width.
+
+### Apostrophes (ruled by the 2026-10 audit)
+
+Curly, `’`, everywhere the reader sees them. The double quotes were
+already curly and the apostrophes were not, so 287 of them had drifted
+straight across the content files and the component strings. The rule
+was never written down, which is why. Code comments do not matter.
 
 ## 5. Emphasis (ruled)
 
@@ -289,7 +299,10 @@ courses-deep accents on cream and butter on dark.
 
 ## 9. Voice on slides
 
-Median sentence length 11 words. No em dashes; a period and a new
+Median sentence length 7 words, measured across 881 sentences in the
+2026-10 audit. This document said 11 before that; the copy passes cut
+it shorter and shorter, and 7 is the shipped voice, not a drift to
+correct back up. No em dashes; a period and a new
 sentence instead. Paired sentences: claim, then qualification. Fragments
 allowed in sequences of three. No exclamation marks. Lead with the
 diagnosis. One emphasis phrase per headline.

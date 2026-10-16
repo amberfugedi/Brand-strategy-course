@@ -3,7 +3,7 @@ import { Slide } from "./types";
 /**
  * Module 6: Brand awareness. 20 slides, copy verbatim from the
  * produced deck (module6slides.html); the script confirms every
- * on-slide line. The deck's tool moment (slide 19) is the in-app
+ * on-slide line. The deck’s tool moment (slide 19) is the in-app
  * presence plan, so the "open the Map" instruction is adapted. The
  * script adds a weight step (minor to primary) ahead of the place,
  * which the tool carries.
@@ -121,7 +121,7 @@ export const module6Slides: Slide[] = [
       },
       {
         label: "A place is not only a feed",
-        text: "A local network, a niche forum, a recurring event, someone else's newsletter. A *platform* is one kind of place, not the only kind.",
+        text: "A local network, a niche forum, a recurring event, someone else’s newsletter. A *platform* is one kind of place, not the only kind.",
       },
       {
         label: "How it fails",

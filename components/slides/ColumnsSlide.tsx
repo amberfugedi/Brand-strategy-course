@@ -37,7 +37,7 @@ export function ColumnsSlide({
                 <span className="text-[11px] font-bold tracking-chrome text-gold">
                   {col.num}
                 </span>
-                <span className="text-[13.5px] font-bold uppercase tracking-[0.12em] md:text-[15px]">
+                <span className="text-[13.5px] font-bold uppercase tracking-eyebrow md:text-[15px]">
                   {col.title}
                 </span>
               </div>
@@ -57,7 +57,7 @@ export function ColumnsSlide({
               <div className="text-[11px] font-bold tracking-chrome text-body-tertiary">
                 {col.num}
               </div>
-              <div className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em]">
+              <div className="mt-1 text-[15px] font-bold uppercase tracking-eyebrow">
                 {col.title}
               </div>
               <p className="mt-2.5 text-[16px] leading-relaxed text-body">

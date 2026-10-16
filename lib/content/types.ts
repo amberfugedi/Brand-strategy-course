@@ -6,7 +6,7 @@
 
 export type Surface = "cream" | "plum" | "ink";
 
-/** The deck's own slide taxonomy (top-right tag in the produced deck). */
+/** The deck’s own slide taxonomy (top-right tag in the produced deck). */
 export type SlideTag =
   | "diagnostic"
   | "framework"
@@ -28,17 +28,17 @@ export interface SlideAudio {
   src: string | null;
   /** Narration-synced reveals: cues[k] is the playback second at which
    *  beat k + 1 appears, so cards land as the voice reaches them. The
-   *  reveal timer takes over whenever the narration isn't playing. */
+   *  reveal timer takes over whenever the narration isn’t playing. */
   cues?: number[];
   /** Phrases the slide already carries, underlined while the voice
    *  says them. Use a mark when the sentence is on the slide and a
    *  callout only when the voice adds something the slide does not
    *  say; a callout that repeats slide copy prints it twice. `text`
-   *  must appear in that slide's copy, accents included. */
+   *  must appear in that slide’s copy, accents included. */
   marks?: { text: string; at: number; until: number }[];
   /** Spoken phrases surfaced while the voice says them: each fades
    *  in at `at` seconds and out at `until`, in the emphasis slot at
-   *  the foot of the slide body. For lines worth seeing that aren't
+   *  the foot of the slide body. For lines worth seeing that aren’t
    *  in the slide copy. Short lines set in the brand serif italic and
    *  longer ones in the body font, which `font` overrides when a
    *  short line is an instruction rather than a remark. */
@@ -150,7 +150,7 @@ export interface QuestionSlide extends SlideBase {
   pre?: string;
   lines: string[];
   post?: string;
-  /** Renders the buyer's own Module 2 output on a slide that asks them
+  /** Renders the buyer’s own Module 2 output on a slide that asks them
    *  to read it, so the instruction and the thing are on one screen. */
   live?: "priorities" | "gaps";
   panel?: {
@@ -209,7 +209,7 @@ export interface ColumnsSlide extends SlideBase {
   columns: { num: string; title: string; text?: string; bullets?: string[] }[];
 }
 
-/** Five persona cards in the deck's 3-2 grid; the annotation line
+/** Five persona cards in the deck’s 3-2 grid; the annotation line
  *  reveals on interaction. */
 export interface ExamplesSlide extends SlideBase {
   kind: "examples";
@@ -241,7 +241,7 @@ export interface FrameSlide extends SlideBase {
   eyebrow?: string;
   heading: string;
   sub?: string;
-  /** An optional branch for buyers the coming section doesn't apply
+  /** An optional branch for buyers the coming section doesn’t apply
    *  to: a quiet button that jumps to the given slide number. */
   skip?: { label: string; to: number };
 }
@@ -364,7 +364,7 @@ export interface StructureSlide extends SlideBase {
 
 /** The framework builder moments. Fields save to the course document.
  *  The optional aids render beside the fields: a takeaway to hold
- *  onto while writing, a do-this-not-that pair, and the module's
+ *  onto while writing, a do-this-not-that pair, and the module’s
  *  persona examples behind a disclosure for reference. */
 export interface ExerciseSlide extends SlideBase {
   kind: "exercise";
@@ -376,7 +376,7 @@ export interface ExerciseSlide extends SlideBase {
   examples?: { name: string; role: string; text: string }[];
 }
 
-/** Section 5: template card plus the buyer's editable statement. */
+/** Section 5: template card plus the buyer’s editable statement. */
 export interface SynthesisSlide extends SlideBase {
   kind: "synthesis";
   eyebrow?: string;
@@ -393,7 +393,7 @@ export interface StatementsSlide extends SlideBase {
   statements: { name: string; role: string; text: string }[];
 }
 
-/** End of module: the buyer's completed framework, rendered and saved. */
+/** End of module: the buyer’s completed framework, rendered and saved. */
 export interface SummarySlide extends SlideBase {
   kind: "summary";
   eyebrow?: string;
@@ -409,7 +409,7 @@ export interface DiagnosticSlide extends SlideBase {
   intro: string;
 }
 
-/** Module 2: tier meanings plus the buyer's computed priority order. */
+/** Module 2: tier meanings plus the buyer’s computed priority order. */
 export interface PrioritiesSlide extends SlideBase {
   kind: "priorities";
   eyebrow?: string;
@@ -425,7 +425,7 @@ export interface AuditSlide extends SlideBase {
   intro: string;
 }
 
-/** Module 2: gap tier meanings plus the buyer's computed Gap List. */
+/** Module 2: gap tier meanings plus the buyer’s computed Gap List. */
 export interface GapListSlide extends SlideBase {
   kind: "gaplist";
   eyebrow?: string;

@@ -3,8 +3,8 @@ import { Slide } from "./types";
 /**
  * Course intro, five slides. Copy matches the final course structure
  * and the recorded intro narration, split per slide under
- * public/audio/intro/. Each slide's segment plays on arrival through
- * the narration player, so the voice tracks what's on screen.
+ * public/audio/intro/. Each slide’s segment plays on arrival through
+ * the narration player, so the voice tracks what’s on screen.
  */
 export const introSlides: Slide[] = [
   {
@@ -15,16 +15,16 @@ export const introSlides: Slide[] = [
     number: "01",
     audio: {
       src: "/audio/intro/intro-1.mp3",
-      // "If you're here" · "Three layers" · "Let's get into it"
+      // "If you’re here" · "Three layers" · "Let’s get into it"
       cues: [2.0, 18.0, 22.8],
     },
     surface: "cream",
     eyebrow: "Build your marketing foundation",
     heading: "A working marketing foundation, in one *place*.",
     whoFor:
-      "For service businesses with paying clients, tired of marketing advice that doesn't *fit*.",
+      "For service businesses with paying clients, tired of marketing advice that doesn’t *fit*.",
     host: true,
-    sub: "Three layers. Seven foundations. Eight modules. One plan that's *actually yours*.",
+    sub: "Three layers. Seven foundations. Eight modules. One plan that’s *actually yours*.",
     meta: [
       { label: "Length", value: "About 3 hours, self-paced" },
       { label: "Output", value: "Your Marketing Foundation *Map*" },
@@ -63,7 +63,7 @@ export const introSlides: Slide[] = [
       {
         label: "Layer three · Be remembered",
         accent: "olive",
-        sub: "So you stay *present* until they're ready.",
+        sub: "So you stay *present* until they’re ready.",
         items: [
           { num: "05", text: "Brand *Awareness*" },
           { num: "06", text: "Owned *Audience*" },
@@ -116,7 +116,7 @@ export const introSlides: Slide[] = [
       // Module 1 · Module 2 · Modules 3-8 · Module 8's double work
       cues: [4.6, 11.0, 20.6, 38.0, 54.2],
     },
-    eyebrow: "What you'll do across the eight modules",
+    eyebrow: "What you’ll do across the eight modules",
     heading: "How the course *runs*.",
     rows: [
       {

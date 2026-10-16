@@ -49,7 +49,7 @@ export function OwnedAudienceSlide({ slide }: { slide: OwnedAudienceSlideDef }) 
                 key={s}
                 type="button"
                 onClick={() => setOwnedAudience({ channel: s })}
-                className={`border px-2.5 py-1 text-[11.5px] transition-colors ${
+                className={`border px-2.5 py-2.5 text-[13.5px] transition-colors ${
                   ownedAudience.channel === s
                     ? "border-gold bg-gold text-ink"
                     : "border-gold/40 text-on-dark/80 hover:border-gold"

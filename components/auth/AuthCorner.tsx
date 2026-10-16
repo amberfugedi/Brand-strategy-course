@@ -15,7 +15,7 @@ export function AuthCorner({ dark = false }: { dark?: boolean }) {
     : "text-body-secondary hover:text-aubergine";
 
   return (
-    <div className={`flex items-center gap-3 text-[12px] ${muted}`}>
+    <div className={`flex items-center gap-3 text-[13.5px] ${muted}`}>
       {user ? (
         <>
           <span>{user.email}</span>

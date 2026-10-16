@@ -75,7 +75,7 @@ export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
       { value: "referrals", label: "Referrals" },
       { value: "social", label: "Social media" },
       { value: "walkby", label: "Walk-by or signage" },
-      { value: "unknown", label: "I genuinely don't know" },
+      { value: "unknown", label: "I genuinely don’t know" },
     ],
   },
   {
@@ -84,7 +84,7 @@ export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
     prompt: "Does your work depend on visual proof?",
     options: [
       { value: "high", label: "High. The work itself is visual." },
-      { value: "medium", label: "Medium. Visuals help but don't decide it." },
+      { value: "medium", label: "Medium. Visuals help but don’t decide it." },
       { value: "low", label: "Low. I sell expertise and judgment." },
     ],
   },
@@ -275,7 +275,7 @@ export interface Dimension {
 
 /**
  * v1 audit states. The deck teaches scenario-based picking; these
- * generic states use the deck's own tier language until the full
+ * generic states use the deck’s own tier language until the full
  * per-foundation scenario anchors are supplied, at which point they
  * swap in here per foundation without touching the components.
  */
@@ -286,7 +286,7 @@ export const DIMENSIONS: Record<string, Dimension> = {
     question: "Does it exist?",
     options: [
       { value: "critical", label: "It does not exist yet." },
-      { value: "maintenance", label: "It exists, but it's incomplete or out of date." },
+      { value: "maintenance", label: "It exists, but it’s incomplete or out of date." },
       { value: "solid", label: "It exists and represents the business well." },
     ],
   },
@@ -295,7 +295,7 @@ export const DIMENSIONS: Record<string, Dimension> = {
     title: "Quality",
     question: "Does it work well?",
     options: [
-      { value: "critical", label: "It wouldn't help someone choose us." },
+      { value: "critical", label: "It wouldn’t help someone choose us." },
       { value: "maintenance", label: "Acceptable. Not strong, not broken." },
       { value: "solid", label: "Strong. It does its job." },
     ],
@@ -315,9 +315,9 @@ export const DIMENSIONS: Record<string, Dimension> = {
     title: "Acceptability",
     question: "Is it acceptable for right now?",
     options: [
-      { value: "critical", label: "No. It's actively hurting us." },
-      { value: "maintenance", label: "It's fine for now." },
-      { value: "solid", label: "Yes. It's solid." },
+      { value: "critical", label: "No. It’s actively hurting us." },
+      { value: "maintenance", label: "It’s fine for now." },
+      { value: "solid", label: "Yes. It’s solid." },
     ],
   },
 };
@@ -331,7 +331,7 @@ export function dimensionsFor(tier: PriorityTier): Dimension[] {
   return [];
 }
 
-/** Presence marked absent locks the deeper dimensions (the deck's
+/** Presence marked absent locks the deeper dimensions (the deck’s
  *  "some questions will be locked" behavior). */
 export function presenceLocked(picks: Record<string, string> | undefined): boolean {
   return picks?.presence === "critical";

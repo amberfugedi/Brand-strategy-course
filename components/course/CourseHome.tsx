@@ -60,7 +60,7 @@ export function CourseHome({ course }: { course: CourseMeta }) {
         </p>
 
         {/* Actions sit above the setup notice: that notice is a
-            temporary admin flag and should not push the buyer's two
+            temporary admin flag and should not push the buyer’s two
             real actions below the fold on a small screen. */}
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <Link
@@ -88,10 +88,10 @@ export function CourseHome({ course }: { course: CourseMeta }) {
               Setup pending
             </div>
             <p className="mt-1.5 max-w-xl text-[14.5px] leading-relaxed text-body-secondary">
-              Accounts aren't connected yet, so sign-in is off and progress
+              Accounts aren’t connected yet, so sign-in is off and progress
               saves to this browser only. Create the Supabase project, then
               add the two keys in Netlify and redeploy (steps in the README).
-              This notice disappears once that's done.
+              This notice disappears once that’s done.
             </p>
           </div>
         ) : null}
@@ -163,7 +163,7 @@ export function CourseHome({ course }: { course: CourseMeta }) {
                       {mod.label}
                     </div>
                     <div
-                      className={`mt-0.5 text-[13px] ${
+                      className={`mt-0.5 text-[13.5px] ${
                         completed ? "text-gold" : "text-body-tertiary"
                       }`}
                     >

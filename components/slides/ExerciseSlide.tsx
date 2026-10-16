@@ -66,7 +66,7 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
               />
               <GuidedField
                 label="Context"
-                hint="What they're doing day to day that brings them to need you"
+                hint="What they’re doing day to day that brings them to need you"
                 value={serve.context}
                 onChange={(v) => setPositioning({ serve: { ...serve, context: v } })}
               />
@@ -95,7 +95,7 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
               />
               <GuidedField
                 label="Change"
-                hint="What's true about their life after the work"
+                hint="What’s true about their life after the work"
                 value={work.change}
                 onChange={(v) => setPositioning({ work: { ...work, change: v } })}
               />
@@ -125,7 +125,7 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
               </div>
               <GuidedField
                 label="Your differentiator"
-                hint="Something a competitor genuinely doesn't operate with"
+                hint="Something a competitor genuinely doesn’t operate with"
                 value={different.text}
                 onChange={(v) => setPositioning({ different: { ...different, text: v } })}
               />
@@ -178,7 +178,7 @@ export function ExerciseSlide({ slide }: { slide: ExerciseSlideDef }) {
                 <div className="mt-3 max-h-[42vh] space-y-3.5 overflow-y-auto pr-1">
                   {slide.examples.map((ex) => (
                     <div key={ex.name}>
-                      <div className="flex items-center gap-2 text-[12.5px] font-bold">
+                      <div className="flex items-center gap-2 text-[13.5px] font-bold">
                         <PersonaAvatar name={ex.name} size={24} />
                         <span>
                           {ex.name}{" "}

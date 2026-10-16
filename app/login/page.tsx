@@ -45,7 +45,7 @@ export default function LoginPage() {
         {!enabled ? (
           <>
             <h1 className="text-center text-2xl font-bold tracking-tight">
-              Sign-in isn't set up yet.
+              Sign-in isn’t set up yet.
             </h1>
             <p className="mt-3 text-center text-[14px] leading-relaxed text-body-secondary">
               This build is running in local mode. Your work still saves in
@@ -60,7 +60,7 @@ export default function LoginPage() {
             <p className="mt-3 text-center text-[14px] leading-relaxed text-body-secondary">
               The sign-in link is on its way to{" "}
               <em className="accent-serif">{email}</em>. Open it on this
-              device and you'll land back where you left off.
+              device and you’ll land back where you left off.
             </p>
           </>
         ) : (
@@ -68,7 +68,7 @@ export default function LoginPage() {
             {justPurchased ? (
               <>
                 <h1 className="text-center text-2xl font-bold tracking-tight">
-                  You're <em className="accent-serif">in</em>.
+                  You’re <em className="accent-serif">in</em>.
                 </h1>
                 <p className="mt-3 text-center text-[14px] leading-relaxed text-body-secondary">
                   Thank you. Sign in with the same email you paid with and

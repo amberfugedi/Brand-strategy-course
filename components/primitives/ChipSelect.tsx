@@ -26,7 +26,7 @@ export function ChipSelect<T extends string>({
             type="button"
             onClick={() => onToggle(opt.value)}
             aria-pressed={active}
-            className={`border px-4 py-1.5 text-[13px] transition-colors ${
+            className={`border px-4 py-2.5 text-[13.5px] transition-colors ${
               active
                 ? "border-gold bg-gold text-ink"
                 : "border-ink/25 bg-transparent text-body-secondary hover:border-gold"

@@ -85,7 +85,7 @@ export const module7Slides: Slide[] = [
       {
         label: "Reach",
         title: "How people find you",
-        text: "It shows your work to people who don't know you yet, which is the whole job of *awareness*. But it owns the connection.",
+        text: "It shows your work to people who don’t know you yet, which is the whole job of *awareness*. But it owns the connection.",
       },
       {
         label: "A channel you own",
@@ -133,7 +133,7 @@ export const module7Slides: Slide[] = [
     audio: { src: null },
     sans: true,
     headline: "The place you were found was never *yours*.",
-    sub: "The place you built presence in runs on rules you cannot see, and the reach is held at someone else's discretion. *A foundation is the part that stays when the platform changes.*",
+    sub: "The place you built presence in runs on rules you cannot see, and the reach is held at someone else’s discretion. *A foundation is the part that stays when the platform changes.*",
   },
 
   // 08 · Choosing the channel
@@ -194,7 +194,7 @@ export const module7Slides: Slide[] = [
       },
       {
         label: "The test",
-        text: "Would they stay after getting the thing that made them join? If not, it's a funnel.",
+        text: "Would they stay after getting the thing that made them join? If not, it’s a funnel.",
       },
     ],
   },
@@ -253,7 +253,7 @@ export const module7Slides: Slide[] = [
     eyebrow: "Keeping the channel",
     heading: "The fear is “what would I *send*?”",
     intro:
-      "The next thought is always: I don't know what I'd send them. It has a plain answer.",
+      "The next thought is always: I don’t know what I’d send them. It has a plain answer.",
     cards: [
       {
         label: "The answer to what",
@@ -354,7 +354,7 @@ export const module7Slides: Slide[] = [
         name: "Lena",
         meta: "wedding photographer · visual",
         lead: "Instagram.",
-        text: "A past couple's friend scrolls, sees the work, remembers her. The portfolio keeps circulating.",
+        text: "A past couple’s friend scrolls, sees the work, remembers her. The portfolio keeps circulating.",
       },
       {
         name: "James",
@@ -370,7 +370,7 @@ export const module7Slides: Slide[] = [
       },
     ],
     footnote:
-      "Owned is *intentional reach*. Borrowed is *ambient re-encounter*, catching people who weren't looking.",
+      "Owned is *intentional reach*. Borrowed is *ambient re-encounter*, catching people who weren’t looking.",
   },
 
   // 18 · On size

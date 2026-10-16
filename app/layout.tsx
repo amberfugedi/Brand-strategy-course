@@ -10,7 +10,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Build Your Marketing Foundation",
   description:
-    "Three layers. Seven foundations. One strategic plan that's actually yours.",
+    "Three layers. Seven foundations. One strategic plan that’s actually yours.",
 };
 
 export default function RootLayout({

@@ -38,7 +38,7 @@ export function TableSlide({
                 <div className="text-[16px] font-bold text-aubergine">
                   {row.name}
                 </div>
-                <div className="text-[11.5px] text-body-tertiary">{row.meta}</div>
+                <div className="text-[13.5px] text-body-tertiary">{row.meta}</div>
               </div>
             </div>
             <p className="text-[14.5px] leading-relaxed text-body">

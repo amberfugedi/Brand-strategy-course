@@ -20,7 +20,7 @@ export function CourseCover({
     >
       <div className="absolute left-6 top-5 flex items-center gap-2">
         <span className="flex h-6 w-6 items-center justify-center rounded-full border border-gold/70">
-          <span className="font-serif italic text-[12px] leading-none text-gold">
+          <span className="font-serif italic text-[13.5px] leading-none text-gold">
             A
           </span>
         </span>

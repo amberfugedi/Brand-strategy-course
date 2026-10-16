@@ -68,7 +68,7 @@ export function ReferralMapSlide({ slide }: { slide: ReferralMapSlideDef }) {
                 <div className="text-[16px] font-bold text-cream">
                   {stage.label}
                 </div>
-                <p className="mt-0.5 text-[12.5px] leading-snug text-on-dark-muted">
+                <p className="mt-0.5 text-[13.5px] leading-snug text-on-dark-muted">
                   {stage.hint}
                 </p>
               </div>
@@ -81,7 +81,7 @@ export function ReferralMapSlide({ slide }: { slide: ReferralMapSlideDef }) {
                       type="button"
                       onClick={() => setStage(stage.id, s.value)}
                       aria-pressed={active}
-                      className={`border px-3 py-1.5 text-[12px] font-semibold transition-colors ${
+                      className={`border px-3 py-2.5 text-[13.5px] font-semibold transition-colors ${
                         active
                           ? "border-gold bg-gold text-ink"
                           : "border-gold/40 text-on-dark/85 hover:border-gold"
@@ -109,7 +109,7 @@ export function ReferralMapSlide({ slide }: { slide: ReferralMapSlideDef }) {
                   type="button"
                   onClick={() => setReferral({ weakStage: stage.id })}
                   aria-pressed={active}
-                  className={`border px-3 py-1.5 text-[12.5px] transition-colors ${
+                  className={`border px-3 py-2.5 text-[13.5px] transition-colors ${
                     active
                       ? "border-gold bg-gold text-ink"
                       : "border-gold/40 text-on-dark/85 hover:border-gold"

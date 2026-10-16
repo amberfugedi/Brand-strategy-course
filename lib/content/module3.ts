@@ -2,9 +2,9 @@ import { Slide } from "./types";
 
 /**
  * Module 3: Get found. 25 slides, copy verbatim from the produced
- * deck; the script confirms every on-slide line. The deck's tool
+ * deck; the script confirms every on-slide line. The deck’s tool
  * moment (slide 24) is the in-app touchpoint priority builder, and
- * the deck's placeholder landscape graphic (slide 6) is realized as
+ * the deck’s placeholder landscape graphic (slide 6) is realized as
  * the branded zone map its spec describes.
  */
 
@@ -47,7 +47,7 @@ export const module3Slides: Slide[] = [
     tag: "FRAME",
     number: "02",
     audio: { src: "/audio/m3/m3-2.mp3" },
-    eyebrow: "What it is, what it isn't",
+    eyebrow: "What it is, what it isn’t",
     heading: "Not a website. *A system.*",
     sub: "Not one thing you build. The set of places a prospect meets you when they go looking.",
   },
@@ -62,7 +62,7 @@ export const module3Slides: Slide[] = [
     audio: { src: "/audio/m3/m3-3.mp3", cues: [0.5, 27.3] },
     heading: "Getting found is the sum of where you *show up* when someone looks.",
     paragraphs: [
-      "A prospect goes looking. Your website is one place they might land. So is your Google listing, a friend's post, the map result.",
+      "A prospect goes looking. Your website is one place they might land. So is your Google listing, a friend’s post, the map result.",
       "Not “do I have a website.” Which of these places your business needs to do well, and which can stay minimal.",
     ],
   },
@@ -102,7 +102,7 @@ export const module3Slides: Slide[] = [
       {
         label: "Touchpoint 03",
         title: "Social platforms",
-        text: "Where a prospect *sees* you before they're looking. Instagram, LinkedIn, TikTok.",
+        text: "Where a prospect *sees* you before they’re looking. Instagram, LinkedIn, TikTok.",
       },
       {
         label: "Touchpoint 04",
@@ -117,7 +117,7 @@ export const module3Slides: Slide[] = [
     ],
   },
 
-  // 06 · The landscape map (realized from the deck's placeholder spec)
+  // 06 · The landscape map (realized from the deck’s placeholder spec)
   {
     kind: "map",
     id: "m3-map",
@@ -128,10 +128,10 @@ export const module3Slides: Slide[] = [
       src: "/audio/m3/m3-6.mp3",
       callouts: [
         { text: "SEO lives inside your website. Your Google Business Profile is search & map.", at: 17.8, until: 26.5 },
-        { text: "Ads amplify a touchpoint. They don't create a new one.", at: 33.0, until: 41.0 },
+        { text: "Ads amplify a touchpoint. They don’t create a new one.", at: 33.0, until: 41.0 },
       ],
     },
-    eyebrow: "Where the words you've heard live",
+    eyebrow: "Where the words you’ve heard live",
     heading: "A map of *where you can get found*.",
     intro:
       "SEO, Google Business Profile, Yelp, Instagram, ads. None is a separate touchpoint. They live inside the five.",
@@ -202,7 +202,7 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Answers a question they didn't know they had: do I want to *follow* this person.",
+        text: "Answers a question they didn’t know they had: do I want to *follow* this person.",
       },
       {
         label: "When it matters most",
@@ -210,7 +210,7 @@ export const module3Slides: Slide[] = [
       },
       {
         label: "When it matters less",
-        text: "Prospects from search or referral. Work that isn't visual.",
+        text: "Prospects from search or referral. Work that isn’t visual.",
       },
     ],
   },
@@ -254,7 +254,7 @@ export const module3Slides: Slide[] = [
     cols: [
       {
         label: "What it does",
-        text: "Answers the question inside a space they're already in: who here is worth knowing.",
+        text: "Answers the question inside a space they’re already in: who here is worth knowing.",
       },
       {
         label: "When it matters most",
@@ -262,7 +262,7 @@ export const module3Slides: Slide[] = [
       },
       {
         label: "When it matters less",
-        text: "Prospects who don't gather online. Genuine presence costs more time than you have.",
+        text: "Prospects who don’t gather online. Genuine presence costs more time than you have.",
       },
     ],
   },
@@ -283,7 +283,7 @@ export const module3Slides: Slide[] = [
     },
     sans: true,
     eyebrow: "Who else is reading",
-    headline: "Your touchpoints aren't just being read by *people*.",
+    headline: "Your touchpoints aren’t just being read by *people*.",
     sub: "LLMs synthesize answers from the same five touchpoints. Being visible to them is the same work as being visible to people: clear, specific, named consistently *everywhere*.",
   },
 
@@ -295,10 +295,10 @@ export const module3Slides: Slide[] = [
     tag: "LOCAL",
     number: "13",
     audio: { src: "/audio/m3/m3-13.mp3" },
-    eyebrow: "Skip if this isn't you",
+    eyebrow: "Skip if this isn’t you",
     heading: "If your buyers are *local*.",
     sub: "The next three slides are for businesses whose clients are nearby. If you work remotely, skip ahead.",
-    skip: { label: "My buyers aren't local. Skip ahead", to: 17 },
+    skip: { label: "My buyers aren’t local. Skip ahead", to: 17 },
   },
 
   // 14 · The four local jobs
@@ -348,7 +348,7 @@ export const module3Slides: Slide[] = [
     heading: "What does *strong* local presence look like?",
     weak: {
       quote: "The listing exists.",
-      text: "Auto-generated, never claimed. Category vague or wrong. Hours blank or out of date. No photos. Three reviews from years ago. A prospect finds it and isn't sure the business is still open.",
+      text: "Auto-generated, never claimed. Category vague or wrong. Hours blank or out of date. No photos. Three reviews from years ago. A prospect finds it and isn’t sure the business is still open.",
     },
     strong: {
       quote: "It answers the question before they ask.",
@@ -373,7 +373,7 @@ export const module3Slides: Slide[] = [
     sans: true,
     eyebrow: "The local pattern",
     headline: "Being nearby gets you *listed*. Being verifiable gets you chosen.",
-    sub: "Proximity puts you in the results. It doesn't win the click. Between two the same distance away, a prospect picks the one they can verify at a glance. *Proximity plus proof, never proximity alone.*",
+    sub: "Proximity puts you in the results. It doesn’t win the click. Between two the same distance away, a prospect picks the one they can verify at a glance. *Proximity plus proof, never proximity alone.*",
   },
 
   // 17 · Calibration opener
@@ -407,7 +407,7 @@ export const module3Slides: Slide[] = [
       {
         label: "Visual proof",
         title: "Weights website + social",
-        text: "Visible work weights website and social. Invisible work doesn't.",
+        text: "Visible work weights website and social. Invisible work doesn’t.",
       },
       {
         label: "Geographic scope",
@@ -421,7 +421,7 @@ export const module3Slides: Slide[] = [
       },
     ],
     footnote:
-      "Ethics and audience age *constrain* what's available. They don't prioritize.",
+      "Ethics and audience age *constrain* what’s available. They don’t prioritize.",
   },
 
   // 19 · Reading it together: Maya
@@ -437,17 +437,17 @@ export const module3Slides: Slide[] = [
       {
         label: "Discovery channel",
         title: "Insurance referral + Psychology Today",
-        text: "Her clients arrive through a directory, insurer's or private-pay. That names her primary.",
+        text: "Her clients arrive through a directory, insurer’s or private-pay. That names her primary.",
       },
       {
         label: "Visual proof",
         title: "No",
-        text: "Therapy isn't visible work. Website and social carry less weight for discovery.",
+        text: "Therapy isn’t visible work. Website and social carry less weight for discovery.",
       },
       {
         label: "Geographic scope",
         title: "Local hybrid",
-        text: "In-person and telehealth. Search & map matters, but it isn't the lead.",
+        text: "In-person and telehealth. Search & map matters, but it isn’t the lead.",
       },
       {
         label: "Engagement length",
@@ -470,7 +470,7 @@ export const module3Slides: Slide[] = [
       src: "/audio/m3/m3-20.mp3",
       cues: [0.5, 37.1, 51.5, 65.8, 96.7],
       callouts: [
-        { text: "Takes insurance? The carrier's directory. Private pay? Psychology Today.", at: 14.5, until: 22.5, who: "maya" },
+        { text: "Takes insurance? The carrier’s directory. Private pay? Psychology Today.", at: 14.5, until: 22.5, who: "maya" },
         { text: "“Anyone know a good chiropractor?” His name comes up before they go to Google.", at: 86.5, until: 95.0, who: "james" },
       ],
     },
@@ -540,8 +540,8 @@ export const module3Slides: Slide[] = [
       src: "/audio/m3/m3-22.mp3",
       callouts: [
         { text: "Maya: directory. Marcus and James: search & map. Lena: website. Sasha: Instagram.", at: 6.8, until: 15.5 },
-        { text: "Lena's Instagram carries discovery. Her website carries decision.", at: 30.3, until: 37.5, who: "lena" },
-        { text: "Don't have most of these yet? That's fine. Build your primary first.", at: 57.2, until: 65.5, font: "body" },
+        { text: "Lena’s Instagram carries discovery. Her website carries decision.", at: 30.3, until: 37.5, who: "lena" },
+        { text: "Don’t have most of these yet? That’s fine. Build your primary first.", at: 57.2, until: 65.5, font: "body" },
       ],
     },
     sans: true,
@@ -559,7 +559,7 @@ export const module3Slides: Slide[] = [
     audio: {
       src: "/audio/m3/m3-23.mp3",
       callouts: [
-        { text: "An Instagram with three posts from 2022 says something you didn't intend.", at: 11.7, until: 20.0 },
+        { text: "An Instagram with three posts from 2022 says something you didn’t intend.", at: 11.7, until: 20.0 },
       ],
     },
     sans: true,
@@ -579,11 +579,11 @@ export const module3Slides: Slide[] = [
     heading: "What does *strong* look like?",
     weak: {
       quote: "It exists.",
-      text: "A site is up. The positioning is generic. The proof is missing or thin. Pricing isn't stated. Next step isn't obvious. The visitor leaves to look elsewhere.",
+      text: "A site is up. The positioning is generic. The proof is missing or thin. Pricing isn’t stated. Next step isn’t obvious. The visitor leaves to look elsewhere.",
     },
     strong: {
       quote: "It does the *job*.",
-      text: "Positioning two competitors couldn't copy. Current proof. Pricing named. The next step one click. The visitor books or self-selects out.",
+      text: "Positioning two competitors couldn’t copy. Current proof. Pricing named. The next step one click. The visitor books or self-selects out.",
     },
   },
 
@@ -603,7 +603,7 @@ export const module3Slides: Slide[] = [
     },
     sans: true,
     headline: "The buyer decides which touchpoint matters by *behavior*.",
-    sub: "Not by your wish, or what you're best at producing. If clients find you through search, search matters more than the channel you'd prefer. *Build where they are.*",
+    sub: "Not by your wish, or what you’re best at producing. If clients find you through search, search matters more than the channel you’d prefer. *Build where they are.*",
   },
 
   // 26 · The touchpoint priority builder
@@ -618,7 +618,7 @@ export const module3Slides: Slide[] = [
     heading: "Name your *primary*.",
     paragraphs: [
       "Mark which of the five touchpoints applies to your business, then set the priority order. The first one is your primary.",
-      "Use your audit answers as the guide. Don't pick your favorite. Pick what's already working.",
+      "Use your audit answers as the guide. Don’t pick your favorite. Pick what’s already working.",
     ],
   },
 
@@ -635,7 +635,7 @@ export const module3Slides: Slide[] = [
     eyebrow: "End of Module 3",
     heading: "You know where you get *found*.",
     paragraphs: [
-      "Next: what a prospect meets once they've found you, and whether it earns trust. Module 4 when you're ready.",
+      "Next: what a prospect meets once they’ve found you, and whether it earns trust. Module 4 when you’re ready.",
     ],
   },
 ];

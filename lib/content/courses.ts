@@ -36,7 +36,7 @@ export const courses: CourseDef[] = [
     title: "Build Your Marketing Foundation",
     tagline: "A working marketing foundation, in one *place*.",
     summary:
-      "Three layers. Seven foundations. One strategic plan that's *actually yours*.",
+      "Three layers. Seven foundations. One strategic plan that’s *actually yours*.",
     released: true,
     audience: "For service business owners",
     coverWord: "Foundation.",

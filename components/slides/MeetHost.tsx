@@ -63,7 +63,7 @@ export function MeetHost({ dark }: { dark: boolean }) {
       </button>
 
       {open
-        ? // A portal: the slide's beat animations leave transforms on
+        ? // A portal: the slide’s beat animations leave transforms on
           // ancestors, which would trap position:fixed inside them.
           createPortal(
             <div

@@ -183,7 +183,7 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
         ))}
         {chipInsert === order.length ? insertLine : null}
         {order.length > 0 ? (
-          <p className="pt-0.5 text-[12.5px] text-on-dark-muted">
+          <p className="pt-0.5 text-[13.5px] text-on-dark-muted">
             Drag to reorder. The top spot is your primary.
           </p>
         ) : null}
@@ -194,7 +194,7 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
           <div className="mb-1.5 text-[10px] font-bold uppercase tracking-eyebrow text-on-dark-muted">
             {order.length === 0
               ? "Add the touchpoints that apply, most important first"
-              : "Doesn't apply yet"}
+              : "Doesn’t apply yet"}
           </div>
           <div className="flex flex-wrap gap-2">
             {excluded.map((t) => (
@@ -210,13 +210,13 @@ export function TouchpointsSlide({ slide }: { slide: TouchpointsSlideDef }) {
                   setOrder([...order, t.id]);
                 }}
                 style={{ touchAction: "none" }}
-                className="cursor-grab select-none rounded-[14px] border border-gold/40 px-3 py-1.5 text-[13px] text-on-dark/85 transition-colors hover:border-gold hover:text-gold"
+                className="cursor-grab select-none rounded-[14px] border border-gold/40 px-3 py-2.5 text-[13.5px] text-on-dark/85 transition-colors hover:border-gold hover:text-gold"
               >
                 + {t.label}
               </button>
             ))}
           </div>
-          <p className="mt-1.5 text-[12.5px] text-on-dark-muted">
+          <p className="mt-1.5 text-[13.5px] text-on-dark-muted">
             Tap to add, or drag one into the list where it belongs.
           </p>
         </div>

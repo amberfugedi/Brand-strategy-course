@@ -36,7 +36,7 @@ export function GuidedField({
         </span>
         {hint ? (
           <span
-            className={`mt-0.5 block text-[12.5px] leading-snug ${
+            className={`mt-0.5 block text-[13.5px] leading-snug ${
               dark ? "text-on-dark-muted" : "text-body-tertiary"
             }`}
           >

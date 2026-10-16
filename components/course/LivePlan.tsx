@@ -135,7 +135,7 @@ export function PriorityOrderList({
           </div>
           {reasons ? (
             <p
-              className={`mt-1.5 text-[12.5px] leading-snug ${
+              className={`mt-1.5 text-[13.5px] leading-snug ${
                 dark ? "text-on-dark-muted" : "text-body-tertiary"
               }`}
             >
@@ -220,7 +220,7 @@ export function GapListView({
                 </span>
               </div>
               <div
-                className={`mt-0.5 text-[11.5px] leading-snug ${
+                className={`mt-0.5 text-[13.5px] leading-snug ${
                   dark ? "text-on-dark-muted" : "text-body-tertiary"
                 }`}
               >
@@ -263,7 +263,7 @@ export function GapListView({
       </div>
       {unanswered > 0 ? (
         <p
-          className={`mt-3 text-[13px] ${
+          className={`mt-3 text-[13.5px] ${
             dark ? "text-on-dark-muted" : "text-body-tertiary"
           }`}
         >

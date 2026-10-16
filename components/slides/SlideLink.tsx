@@ -41,7 +41,7 @@ export function SlideAction({ to, children }: { to: number; children: React.Reac
   return (
     <Link
       href={`/${params.course}/${params.module}/${to}`}
-      className="mt-7 inline-block self-start rounded-full border border-aubergine px-5 py-2.5 text-[11px] font-bold uppercase tracking-chrome text-aubergine transition-colors hover:bg-aubergine hover:text-cream"
+      className="mt-7 inline-block self-start rounded-full border border-aubergine px-5 py-3 text-[11px] font-bold uppercase tracking-chrome text-aubergine transition-colors hover:bg-aubergine hover:text-cream"
     >
       {children}
     </Link>
