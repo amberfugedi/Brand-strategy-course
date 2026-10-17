@@ -44,6 +44,11 @@ export interface CourseDocument {
   version: 1;
   updatedAt: string;
   progress: CourseProgress;
+  /** Answers that belong to the buyer rather than to one module. The
+   *  five calibration businesses recur across seven tables in Modules
+   *  3 to 8, so the closest one is picked once and read everywhere
+   *  after. */
+  profile?: { closestPersona?: string };
   modules: {
     m1?: { positioning?: Partial<PositioningInput> };
     m2?: {

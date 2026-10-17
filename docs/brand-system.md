@@ -209,6 +209,14 @@ than as a second voice.
   module's foundation stands taller.
 - **Survey ground-line** (course device, ruled in): the ticked hairline
   on question dividers, in the surface's muted tone.
+- **Your row** (ruled 2026-10): the five calibration businesses recur
+  in seven tables across Modules 3 to 8. The buyer taps the one
+  closest to theirs and it carries to every table after, marked with
+  the butter wash, a 2px gold left rule, and a YOURS label in the
+  accent. Stored on the document as `profile.closestPersona`, outside
+  any module, because it is about them rather than about a lesson.
+  The mark is additive and never dims the other four: the narration
+  walks all five rows, and fading them would contradict the voice.
 - **Emphasis** (`components/course/Emphasis.tsx`, ruled): the one way
   the course leans on a line. Butter at 40% on cream, cream at 6% on
   dark; a single 2px gold left rule; `rounded-[4px]`, so barely a

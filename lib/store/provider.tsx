@@ -433,3 +433,26 @@ export function usePositioning() {
 
   return { positioning, setPositioning };
 }
+
+/** Which of the five calibration businesses the buyer is closest to.
+ *  Picked on any calibration table, read by all seven of them. */
+export function useProfile() {
+  const { doc, update } = useCourseStore();
+
+  const setClosestPersona = useCallback(
+    (name: string) => {
+      update((d) => ({
+        ...d,
+        profile: {
+          ...d.profile,
+          // Tapping the row you already chose clears it, so a buyer is
+          // never stuck with a first guess they cannot undo.
+          closestPersona: d.profile?.closestPersona === name ? undefined : name,
+        },
+      }));
+    },
+    [update],
+  );
+
+  return { closestPersona: doc.profile?.closestPersona, setClosestPersona };
+}
