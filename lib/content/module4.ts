@@ -328,6 +328,9 @@ export const module4Slides: Slide[] = [
       ],
     },
     sans: true,
+    // The bars drain as the voice reaches the line about last month
+    // against 2020, at 21.0s.
+    art: { kind: "proofDecay", start: 20.5, over: 9 },
     headline: "Proof *ages.*",
     sub: "A testimonial from four years ago raises a question it doesn’t answer: what about since? Client proof ages fastest, institutional slowest. *Earned proof is a thing you keep current.*",
   },

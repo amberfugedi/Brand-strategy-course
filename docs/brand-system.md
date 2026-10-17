@@ -209,6 +209,19 @@ than as a second voice.
   module's foundation stands taller.
 - **Survey ground-line** (course device, ruled in): the ticked hairline
   on question dividers, in the surface's muted tone.
+- **Narration-timed illustration** (ruled 2026-10): a drawing that
+  moves with the voice, for a takeaway whose point is a shape or a
+  change over time rather than a sentence. The advice cloud was the
+  first; `ProofDecay` on m4/13 is the second, and `principle` slides
+  can now carry one. Three rules, taken from the cloud. It is
+  decorative beside narration that says the same thing aloud, so it
+  is `aria-hidden`. It is driven by the narration clock rather than
+  by a CSS loop, so it cannot drift out of step with the voice. And
+  it must read standing still: a slide with no track, or a listener
+  who asked for reduced motion, gets the finished state immediately
+  rather than an animation that never plays. Build one only where
+  motion carries the meaning. Most takeaways are a sentence and
+  should stay one.
 - **Your row** (ruled 2026-10): the five calibration businesses recur
   in seven tables across Modules 3 to 8. The buyer taps the one
   closest to theirs and it carries to every table after, marked with

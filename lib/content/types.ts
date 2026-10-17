@@ -233,6 +233,10 @@ export interface PrincipleSlide extends SlideBase {
   headline: string;
   sub: string;
   sans?: boolean;
+  /** An illustration under the statement, for the takeaways whose
+   *  point is a shape or a change over time rather than a sentence.
+   *  Timed to the narration; see components/slides/ProofDecay.tsx. */
+  art?: { kind: "proofDecay"; start?: number; over?: number };
 }
 
 /** Plum section divider with a serif display heading (Module 3+). */

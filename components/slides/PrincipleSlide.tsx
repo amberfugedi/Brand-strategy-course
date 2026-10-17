@@ -1,5 +1,6 @@
 import { PrincipleSlide as PrincipleSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
+import { ProofDecay } from "@/components/slides/ProofDecay";
 
 export function PrincipleSlide({ slide }: { slide: PrincipleSlideDef }) {
   return (
@@ -31,6 +32,9 @@ export function PrincipleSlide({ slide }: { slide: PrincipleSlideDef }) {
           >
             <Rich text={slide.sub} />
           </p>
+          {slide.art?.kind === "proofDecay" ? (
+            <ProofDecay start={slide.art.start} over={slide.art.over} />
+          ) : null}
         </div>
         <div className="rule-draw h-px w-full bg-gold/25" />
       </div>
