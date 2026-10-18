@@ -26,6 +26,10 @@ export interface CourseDef {
   /** Short chips shown on the library card. */
   chips: string[];
   meta: { label: string; value: string }[];
+  /** Where a buyer who has finished every module is invited to give
+   *  feedback. Leave it unset and the finish panel simply omits the
+   *  button; nothing renders a dead link. */
+  surveyUrl?: string;
   modules: ModuleDef[];
 }
 
@@ -41,6 +45,9 @@ export const courses: CourseDef[] = [
     audience: "For service business owners",
     coverWord: "Foundation.",
     chips: ["Interactive", "8 modules", "About 3 hours"],
+    // Paste the feedback form link here and the finish panel offers
+    // it. Until then the panel congratulates and says nothing more.
+    surveyUrl: undefined,
     meta: [
       { label: "Length", value: "About 3 hours, self-paced" },
       { label: "Output", value: "Your Marketing Foundation Map" },

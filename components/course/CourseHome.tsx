@@ -29,6 +29,14 @@ export function CourseHome({ course }: { course: CourseMeta }) {
   const mapFilled = ["m1", "m3", "m4", "m5", "m6", "m7", "m8"].filter((id) =>
     doc.progress.completedModules.includes(id),
   ).length;
+  // Finished means every released module, earned the hard way: a
+  // module only counts once its last slide is reached with every
+  // interactive slide in it filled in.
+  const finished =
+    ready &&
+    course.modules
+      .filter((m) => m.released && m.id !== "intro")
+      .every((m) => doc.progress.completedModules.includes(m.id));
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-cream text-body surface-cream">
@@ -79,6 +87,28 @@ export function CourseHome({ course }: { course: CourseMeta }) {
             </button>
           ) : null}
         </div>
+
+        {finished ? (
+          <div className="rounded-3xl mt-8 border border-subtle bg-cream-light px-6 py-5 shadow-lift">
+            <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+              You finished the course
+            </div>
+            <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-body-secondary">
+              Every module is complete and your plan is saved. Come back to
+              it whenever the build needs a decision.
+            </p>
+            {course.surveyUrl ? (
+              <a
+                href={course.surveyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block rounded-[14px] border border-aubergine px-6 py-3 text-center text-[13px] font-bold uppercase tracking-chrome text-aubergine transition-colors hover:bg-aubergine hover:text-cream"
+              >
+                Tell me how it went
+              </a>
+            ) : null}
+          </div>
+        ) : null}
 
         {!auth.enabled ? (
           // Setup flag: renders only while Supabase isn't connected and

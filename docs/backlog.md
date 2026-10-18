@@ -66,6 +66,21 @@ the end-to-end check need a human at a terminal. The code around it,
 the signing endpoint and the player change, can be written and reviewed
 first.
 
+## Animations waiting on audio
+
+Five narration-timed illustrations exist (see brand-system section 6).
+Two more are worth building, and both want the recording first so the
+motion lands on the right word rather than on a guess:
+
+- **The referral loop, Module 5.** Earn, ask, tend as a cycle with a
+  visible leak at the weak stage. It would pay straight into the
+  referral tool at m5/20, which asks the buyer to name that stage.
+- **m5/10's curve needs real timings.** It is built and drawing
+  itself complete, because Module 5 has no track. Set `start` and
+  `over` on its `art` against the cues once recorded.
+
+The same applies to anything built for Modules 6 to 8.
+
 ## Modules 4, 5 and 6 are the same deck
 
 Writing each module's slide kinds as a letter, in order (H hero,

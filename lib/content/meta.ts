@@ -29,6 +29,7 @@ export interface CourseMeta {
   coverWord: string;
   chips: string[];
   meta: { label: string; value: string }[];
+  surveyUrl?: string;
   modules: ModuleMeta[];
 }
 
