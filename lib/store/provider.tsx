@@ -456,3 +456,35 @@ export function useProfile() {
 
   return { closestPersona: doc.profile?.closestPersona, setClosestPersona };
 }
+
+/** The name on the certificate, and the day the course was finished. */
+export function useFinish() {
+  const { doc, update } = useCourseStore();
+
+  const setName = useCallback(
+    (name: string) => {
+      update((d) => ({ ...d, profile: { ...d.profile, name } }));
+    },
+    [update],
+  );
+
+  // Stamped the first time every module is complete, and never again,
+  // so revisiting a finished course does not move the date.
+  const stampCompletion = useCallback(() => {
+    update((d) =>
+      d.profile?.completedAt
+        ? d
+        : {
+            ...d,
+            profile: { ...d.profile, completedAt: new Date().toISOString() },
+          },
+    );
+  }, [update]);
+
+  return {
+    name: doc.profile?.name ?? "",
+    completedAt: doc.profile?.completedAt,
+    setName,
+    stampCompletion,
+  };
+}

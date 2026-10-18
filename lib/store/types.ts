@@ -48,7 +48,14 @@ export interface CourseDocument {
    *  five calibration businesses recur across seven tables in Modules
    *  3 to 8, so the closest one is picked once and read everywhere
    *  after. */
-  profile?: { closestPersona?: string };
+  profile?: {
+    closestPersona?: string;
+    /** Asked for on the certificate and nowhere else, because it is
+     *  the only place the course needs it. */
+    name?: string;
+    /** ISO date the last module was completed. Stamped once. */
+    completedAt?: string;
+  };
   modules: {
     m1?: { positioning?: Partial<PositioningInput> };
     m2?: {

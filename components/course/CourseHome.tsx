@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Link from "next/link";
 import type { CourseMeta } from "@/lib/content/meta";
@@ -10,7 +10,7 @@ import { MapArt } from "@/components/slides/MapArt";
 import { PlanPanel } from "@/components/course/PlanPanel";
 import { useHasPlan } from "@/components/course/LivePlan";
 import { useAuth } from "@/lib/auth/provider";
-import { useCourseStore } from "@/lib/store/provider";
+import { useCourseStore, useFinish } from "@/lib/store/provider";
 
 export function CourseHome({ course }: { course: CourseMeta }) {
   const courseId = course.id;
@@ -37,6 +37,11 @@ export function CourseHome({ course }: { course: CourseMeta }) {
     course.modules
       .filter((m) => m.released && m.id !== "intro")
       .every((m) => doc.progress.completedModules.includes(m.id));
+
+  const { stampCompletion } = useFinish();
+  useEffect(() => {
+    if (finished) stampCompletion();
+  }, [finished, stampCompletion]);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-cream text-body surface-cream">
@@ -95,18 +100,27 @@ export function CourseHome({ course }: { course: CourseMeta }) {
             </div>
             <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-body-secondary">
               Every module is complete and your plan is saved. Come back to
-              it whenever the build needs a decision.
+              it whenever the build needs a decision. If you have two
+              minutes, what worked and what did not shapes the next course.
             </p>
-            {course.surveyUrl ? (
-              <a
-                href={course.surveyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block rounded-[14px] border border-aubergine px-6 py-3 text-center text-[13px] font-bold uppercase tracking-chrome text-aubergine transition-colors hover:bg-aubergine hover:text-cream"
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link
+                href={`/${courseId}/certificate`}
+                className="inline-block rounded-[14px] border border-aubergine bg-aubergine px-6 py-3 text-center text-[13px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
               >
-                Tell me how it went
-              </a>
-            ) : null}
+                Your record of it
+              </Link>
+              {course.surveyUrl ? (
+                <a
+                  href={course.surveyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-[14px] border border-aubergine px-6 py-3 text-center text-[13px] font-bold uppercase tracking-chrome text-aubergine transition-colors hover:bg-aubergine hover:text-cream"
+                >
+                  Tell me how it went
+                </a>
+              ) : null}
+            </div>
           </div>
         ) : null}
 
