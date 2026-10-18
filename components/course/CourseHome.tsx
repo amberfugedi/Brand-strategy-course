@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import Link from "next/link";
 import type { CourseMeta } from "@/lib/content/meta";
 import { Rich } from "@/components/Rich";
 import { AuthCorner } from "@/components/auth/AuthCorner";
 import { MapArt } from "@/components/slides/MapArt";
-import { PlanPanel } from "@/components/course/PlanPanel";
 import { useHasPlan } from "@/components/course/LivePlan";
 import { useAuth } from "@/lib/auth/provider";
 import { useCourseStore, useFinish } from "@/lib/store/provider";
@@ -15,7 +14,6 @@ import { useCourseStore, useFinish } from "@/lib/store/provider";
 export function CourseHome({ course }: { course: CourseMeta }) {
   const courseId = course.id;
   const hasPlan = useHasPlan();
-  const [planOpen, setPlanOpen] = useState(false);
   const auth = useAuth();
   const { doc, ready } = useCourseStore();
   const last = doc.progress.lastLocation;
@@ -83,13 +81,12 @@ export function CourseHome({ course }: { course: CourseMeta }) {
             {hasProgress ? "Continue where you left off" : "Begin the course"}
           </Link>
           {hasPlan ? (
-            <button
-              type="button"
-              onClick={() => setPlanOpen(true)}
+            <Link
+              href={`/${courseId}/map`}
               className="inline-block rounded-[14px] border border-aubergine px-6 py-3 text-center text-[13px] font-bold uppercase tracking-chrome text-aubergine transition-colors hover:bg-aubergine hover:text-cream"
             >
-              View your plan
-            </button>
+              Open your Map
+            </Link>
           ) : null}
         </div>
 
@@ -147,9 +144,6 @@ export function CourseHome({ course }: { course: CourseMeta }) {
         </div>
         </div>
 
-        {planOpen ? (
-          <PlanPanel courseId={courseId} onClose={() => setPlanOpen(false)} />
-        ) : null}
 
         <div className="mt-14 max-w-3xl space-y-2">
           {course.modules.map((mod) => {
