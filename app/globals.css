@@ -350,4 +350,11 @@ h2 {
     break-inside: avoid;
     page-break-inside: avoid;
   }
+  /* A group heading alone at the foot of a page, with its first
+     foundation overleaf, reads as the end of the document. It travels
+     with whatever follows it. */
+  .doc-head {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
 }

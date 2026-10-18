@@ -7,11 +7,13 @@ import { Rich } from "@/components/Rich";
 import { useCourseStore, useFinish, useModule8 } from "@/lib/store/provider";
 import {
   DIAGNOSTIC_QUESTIONS,
+  FOUNDATIONS,
   computeGaps,
   computePriorities,
   computeStartingPoint,
   diagnosticComplete,
 } from "@/lib/content/m2Logic";
+import { FOUNDATION_NOTES, LAYER_FRAME } from "@/lib/content/foundationNotes";
 import { TOUCHPOINTS } from "@/components/slides/TouchpointsSlide";
 import { SOURCES } from "@/components/slides/ProofInventorySlide";
 import { REFERRAL_STAGES, STATES } from "@/components/slides/ReferralMapSlide";
@@ -50,6 +52,12 @@ const GAP_LABEL: Record<string, string> = {
   maintenance: "Maintenance",
   solid: "Solid",
 };
+
+/** Which of the three layers each foundation serves. Carried on every
+ *  foundation in Module 2 and used nowhere in the export until now. */
+const LAYER_OF: Record<string, string> = Object.fromEntries(
+  FOUNDATIONS.map((f) => [f.id, f.layer]),
+);
 
 export function FoundationMap({ course }: { course: CourseMeta }) {
   const { doc, ready } = useCourseStore();
@@ -288,13 +296,25 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
                     </div>
                   ))}
               </dl>
+              <p className="mt-3 text-[13.5px] leading-relaxed text-body-secondary">
+                <span className="font-semibold text-body">
+                  What good looks like.{" "}
+                </span>
+                {FOUNDATION_NOTES.positioning.standard}
+              </p>
             </div>
           ) : null}
 
+          {/* The three layers are how the course explains why any of
+              this is in a sequence, and the export used to state the
+              sequence without them. */}
+          <p className="mt-7 text-[13.5px] leading-relaxed text-body-tertiary print:mt-5">
+            {LAYER_FRAME}
+          </p>
 
           {grouped.map((group) => (
             <div key={group.title} className="mt-8 print:mt-5">
-              <div className="flex flex-wrap items-baseline gap-x-3 border-b border-subtle pb-2">
+              <div className="doc-head flex flex-wrap items-baseline gap-x-3 border-b border-subtle pb-2">
                 <h2 className="text-[13px] font-bold uppercase tracking-eyebrow text-body">
                   {group.title}
                 </h2>
@@ -305,6 +325,16 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
                 {group.rows.map((row) => {
                   const gap = gapOf(row.id);
                   const bucket = buckets[row.id];
+                  const note = FOUNDATION_NOTES[row.id];
+                  // Module 2 gives real durations for a few of these and
+                  // the plan never repeated them, so a buyer sorting
+                  // Build first had no idea what they were signing up to.
+                  const details = (
+                    [...row.details, ["Effort", note?.effort]] as [
+                      string,
+                      string | undefined,
+                    ][]
+                  ).filter(([, v]) => v && v.trim());
                   return (
                     <div key={row.id} className="doc-row">
                       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -315,16 +345,24 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
                           }`}
                         />
                         <span className="text-[16px] font-bold">{row.name}</span>
-                        {gap?.tier ? (
-                          <span className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
-                            {TIER_LABEL[gap.tier]}
-                            {gap.gap ? ` · ${GAP_LABEL[gap.gap]}` : ""}
-                          </span>
-                        ) : null}
+                        <span className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+                          {LAYER_OF[row.id]}
+                          {gap?.tier ? ` · ${TIER_LABEL[gap.tier]}` : ""}
+                          {gap?.gap ? ` · ${GAP_LABEL[gap.gap]}` : ""}
+                        </span>
                       </div>
 
+                      {/* What the foundation is, before what they chose
+                          to do about it, so the decision below reads as
+                          an answer to something. */}
+                      {note ? (
+                        <p className="ml-[26px] mt-1 text-[13.5px] leading-relaxed text-body-tertiary">
+                          {note.what}
+                        </p>
+                      ) : null}
+
                       <p
-                        className={`ml-[26px] mt-1.5 text-[15px] leading-relaxed ${
+                        className={`ml-[26px] mt-2 text-[15px] leading-relaxed ${
                           row.decision ? "text-body" : "text-body-tertiary"
                         }`}
                       >
@@ -338,17 +376,31 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
                         </p>
                       ) : null}
 
-                      {row.details.filter(([, v]) => v && v.trim()).length ? (
+                      {details.length ? (
                         <dl className="ml-[26px] mt-2 space-y-0.5">
-                          {row.details
-                            .filter(([, v]) => v && v.trim())
-                            .map(([k, v]) => (
-                              <div key={k} className="flex gap-2.5 text-[13.5px] leading-relaxed">
-                                <dt className="w-[78px] shrink-0 text-body-tertiary">{k}</dt>
-                                <dd className="flex-1 text-body-secondary">{v}</dd>
-                              </div>
-                            ))}
+                          {details.map(([k, v]) => (
+                            <div key={k} className="flex gap-2.5 text-[13.5px] leading-relaxed">
+                              {/* Wide enough for "Institutional proof",
+                                  which wrapped onto two lines against
+                                  a one-word value. */}
+                              <dt className="w-[128px] shrink-0 text-body-tertiary">{k}</dt>
+                              <dd className="flex-1 text-body-secondary">{v}</dd>
+                            </div>
+                          ))}
                         </dl>
+                      ) : null}
+
+                      {/* The bar, not the task. Without it the row says
+                          what they picked and nothing about when it is
+                          done, which is the difference between a plan
+                          and a list. */}
+                      {note ? (
+                        <p className="ml-[26px] mt-2 text-[13.5px] leading-relaxed text-body-secondary">
+                          <span className="font-semibold text-body">
+                            What good looks like.{" "}
+                          </span>
+                          {note.standard}
+                        </p>
                       ) : null}
 
                       {editing ? (
