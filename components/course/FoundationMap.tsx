@@ -145,7 +145,7 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
   if (!ready) return null;
 
   return (
-    <div className="min-h-screen bg-cream px-6 py-10 text-body surface-cream">
+    <div className="min-h-screen bg-cream px-6 py-10 text-body surface-cream print:bg-white print:px-0 print:py-0">
       <div className="mx-auto max-w-3xl">
         <div className="flex flex-wrap items-center justify-between gap-4 print:hidden">
           <Link
@@ -173,7 +173,7 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
           </div>
         </div>
 
-        <div className="rounded-3xl mt-7 border border-subtle bg-cream-light px-7 py-8 shadow-lift print:border-0 print:shadow-none sm:px-10 sm:py-10">
+        <div className="doc-sheet rounded-3xl mt-7 border border-subtle bg-cream-light px-7 py-8 shadow-lift sm:px-10 sm:py-10 print:mt-0 print:bg-white print:px-0 print:py-0">
           <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
             Marketing Foundation Map
           </div>
@@ -185,14 +185,14 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
             {day ? ` · completed ${day}` : null}
           </p>
 
-          <div className="mt-8 space-y-6">
+          <div className="mt-8 space-y-6 print:mt-5 print:space-y-3">
             {rows.map((row) => {
               const gap = gapOf(row.id);
               const bucket = buckets[row.id];
               return (
                 <div
                   key={row.id}
-                  className="border-t border-subtle pt-5 first:border-0 first:pt-0"
+                  className="doc-row border-t border-subtle pt-5 first:border-0 first:pt-0 print:pt-3"
                 >
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                     <span
@@ -222,7 +222,7 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
                     )}
                   </p>
 
-                  <div className="ml-[26px] mt-3 flex flex-wrap items-center gap-2">
+                  <div className="ml-[26px] mt-3 flex flex-wrap items-center gap-2 print:mt-1">
                     {editing ? (
                       BUCKETS.map((b) => {
                         const active = bucket === b.value;
@@ -266,7 +266,7 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
             })}
           </div>
 
-          <div className="mt-9 flex items-center gap-2.5 border-t border-subtle pt-6">
+          <div className="mt-9 flex items-center gap-2.5 border-t border-subtle pt-6 print:mt-5 print:pt-4">
             <img src="/images/af-mark.png" alt="" className="h-7 w-7" />
             <span className="text-[13.5px] text-body-tertiary">Amber Fugedi</span>
           </div>

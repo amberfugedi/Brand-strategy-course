@@ -92,7 +92,7 @@ export function Certificate({ course }: { course: CourseMeta }) {
   }
 
   return (
-    <div className="min-h-screen bg-cream px-6 py-12 text-body surface-cream">
+    <div className="min-h-screen bg-cream px-6 py-12 text-body surface-cream print:bg-white print:px-0 print:py-0">
       <div className="mx-auto max-w-2xl">
         {/* Everything outside the sheet is for the screen only. */}
         <div className="print:hidden">
@@ -117,7 +117,7 @@ export function Certificate({ course }: { course: CourseMeta }) {
           </label>
         </div>
 
-        <div className="rounded-3xl mt-8 border border-subtle bg-cream-light px-8 py-10 shadow-lift print:border-0 print:shadow-none sm:px-12 sm:py-14">
+        <div className="doc-sheet rounded-3xl mt-8 border border-subtle bg-cream-light px-8 py-10 shadow-lift sm:px-12 sm:py-14 print:mt-0 print:bg-white print:px-0 print:py-0">
           <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
             {course.ordinal} · Completed
           </div>

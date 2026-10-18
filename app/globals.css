@@ -331,3 +331,23 @@ h2 {
 .aura-lilac {
   background: radial-gradient(circle, rgba(166, 155, 219, 0.2), transparent 60%);
 }
+
+
+/* Printed documents: the Map and the certificate. The screen is a
+   cream app; a printed sheet should be a sheet, so the ground goes
+   white and the card stops pretending to be a card. Rows never split
+   across a page break, which is what pushed one foundation onto a
+   second page on its own. */
+@media print {
+  body {
+    background: #fff;
+  }
+  .doc-sheet {
+    border: 0;
+    box-shadow: none;
+  }
+  .doc-row {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
