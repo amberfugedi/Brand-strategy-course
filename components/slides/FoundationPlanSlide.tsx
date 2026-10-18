@@ -17,7 +17,7 @@ import { TOUCHPOINTS } from "@/components/slides/TouchpointsSlide";
 import { REFERRAL_STAGES } from "@/components/slides/ReferralMapSlide";
 
 /** The revised seven foundations, one per module. */
-const PLAN_FOUNDATIONS = [
+export const PLAN_FOUNDATIONS = [
   { id: "positioning", name: "Positioning" },
   { id: "getFound", name: "Get found" },
   { id: "earnedProof", name: "Earned proof" },
@@ -27,7 +27,7 @@ const PLAN_FOUNDATIONS = [
   { id: "authority", name: "Authority building" },
 ];
 
-const BUCKETS = [
+export const BUCKETS = [
   { value: "first", label: "First" },
   { value: "next", label: "Next" },
   { value: "later", label: "Later" },
@@ -39,7 +39,7 @@ const PROOF_LABELS: Record<string, string> = {
   institutional: "Institutional proof first",
 };
 
-const KIND_LABELS: Record<string, string> = {
+export const KIND_LABELS: Record<string, string> = {
   craft: "Craft",
   expertise: "Expertise",
   judgment: "Track record",

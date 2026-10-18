@@ -9,14 +9,48 @@ import {
   computeStartingPoint,
   diagnosticComplete,
 } from "@/lib/content/m2Logic";
-import { useModule2, usePositioning } from "@/lib/store/provider";
+import { useCourseStore, useModule2, usePositioning } from "@/lib/store/provider";
+import { TOUCHPOINTS } from "@/components/slides/TouchpointsSlide";
+import { SOURCES, STATUSES } from "@/components/slides/ProofInventorySlide";
+import { REFERRAL_STAGES, STATES } from "@/components/slides/ReferralMapSlide";
+import { PRESENCE_WEIGHTS } from "@/components/slides/PresencePlanSlide";
+import { BUCKETS, KIND_LABELS, PLAN_FOUNDATIONS } from "@/components/slides/FoundationPlanSlide";
+
+const label = (list: { id?: string; value?: string; label?: string; name?: string }[], key?: string) =>
+  list.find((x) => (x.id ?? x.value) === key)?.label ??
+  list.find((x) => (x.id ?? x.value) === key)?.name ??
+  key;
+
+/** A row of plain facts: the shape most of the later outputs take. */
+function Facts({ rows }: { rows: [string, string | undefined][] }) {
+  const shown = rows.filter(([, v]) => v && v.trim());
+  if (!shown.length) return null;
+  return (
+    <dl className="space-y-1.5">
+      {shown.map(([k, v]) => (
+        <div key={k} className="flex gap-3 text-[14.5px] leading-relaxed">
+          <dt className="w-[92px] shrink-0 text-body-tertiary">{k}</dt>
+          <dd className="flex-1 text-body">{v}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
 
 /**
- * The plan, as Module 2 defines it: positioning, priority order, Gap
- * List, starting point, in one place. It lives on a slide deep inside
- * Module 2, which is no use once the buyer has moved on, so the same
- * four things open in a panel from the course home and from the two
- * places in the course that work with them.
+ * Everything the buyer made, in one place.
+ *
+ * It began as the four things Module 2 calls the plan, because when it
+ * was written those were the only outputs that existed. Modules 3 to 8
+ * then each added a tool, and none of them reached this panel: a buyer
+ * could finish the course, having filled in seven more tools, and open
+ * a plan that stopped at Module 2. The course promises a marketing
+ * foundation they walk away with, so the panel now carries all of it.
+ *
+ * Sections for Modules 1 and 2 show an empty state, because they are
+ * the foundation and their absence is worth naming. The later ones
+ * simply do not appear until there is something in them, so a buyer
+ * halfway through sees their work rather than a column of blanks.
  *
  * Each section links back to the slide that produced it, because the
  * point of reading the plan is usually to change something in it.
@@ -62,6 +96,13 @@ export function PlanPanel({
 }) {
   const { positioning } = usePositioning();
   const { diagnostic, audit } = useModule2();
+  const { doc } = useCourseStore();
+  const m3 = doc.modules.m3?.touchpoints;
+  const m4 = doc.modules.m4?.proof;
+  const m5 = doc.modules.m5?.referral;
+  const m6 = doc.modules.m6?.presence;
+  const m7 = doc.modules.m7?.ownedAudience;
+  const m8 = doc.modules.m8;
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -161,6 +202,132 @@ export function PlanPanel({
               </p>
             )}
           </Section>
+
+          {m3?.order?.length ? (
+            <Section
+              label="Touchpoints"
+              href={`/${courseId}/m3/26`}
+              action="Reorder them"
+              onNavigate={onClose}
+            >
+              <Facts rows={[["Primary", label(TOUCHPOINTS, m3.order[0])]]} />
+              {m3.order.length > 1 ? (
+                <p className="mt-2 text-[13.5px] leading-relaxed text-body-tertiary">
+                  Then {m3.order.slice(1).map((id) => label(TOUCHPOINTS, id)).join(", ")}.
+                </p>
+              ) : null}
+            </Section>
+          ) : null}
+
+          {m4?.buildFirst || Object.keys(m4?.statuses ?? {}).length ? (
+            <Section
+              label="Earned proof"
+              href={`/${courseId}/m4/19`}
+              action="Revisit the inventory"
+              onNavigate={onClose}
+            >
+              <Facts
+                rows={[
+                  ...SOURCES.map(
+                    (src) =>
+                      [src.label, label(STATUSES, m4?.statuses?.[src.id])] as [
+                        string,
+                        string | undefined,
+                      ],
+                  ),
+                  ["Build first", label(SOURCES, m4?.buildFirst)],
+                ]}
+              />
+            </Section>
+          ) : null}
+
+          {m5?.source || m5?.weakStage ? (
+            <Section
+              label="Referral system"
+              href={`/${courseId}/m5/20`}
+              action="Revisit the map"
+              onNavigate={onClose}
+            >
+              <Facts
+                rows={[
+                  ["Source", m5?.source],
+                  ["Weakest", label(REFERRAL_STAGES, m5?.weakStage)],
+                  ["The change", m5?.change],
+                ]}
+              />
+            </Section>
+          ) : null}
+
+          {m6?.place || m6?.weight ? (
+            <Section
+              label="Brand awareness"
+              href={`/${courseId}/m6/19`}
+              action="Revisit the plan"
+              onNavigate={onClose}
+            >
+              <Facts
+                rows={[
+                  ["Weight", label(PRESENCE_WEIGHTS, m6?.weight)],
+                  ["Place", m6?.place],
+                  ["Cadence", m6?.cadence],
+                ]}
+              />
+            </Section>
+          ) : null}
+
+          {m7?.channel ? (
+            <Section
+              label="Owned audience"
+              href={`/${courseId}/m7/20`}
+              action="Revisit the channel"
+              onNavigate={onClose}
+            >
+              <Facts
+                rows={[
+                  ["Channel", m7?.channel],
+                  ["Starts with", m7?.people],
+                  ["Cadence", m7?.cadence],
+                ]}
+              />
+            </Section>
+          ) : null}
+
+          {m8?.authority?.kind ? (
+            <Section
+              label="Authority"
+              href={`/${courseId}/m8/11`}
+              action="Change the kind"
+              onNavigate={onClose}
+            >
+              <Facts rows={[["Kind", KIND_LABELS[m8.authority.kind]]]} />
+            </Section>
+          ) : null}
+
+          {Object.keys(m8?.plan?.buckets ?? {}).length ? (
+            <Section
+              label="Build order"
+              href={`/${courseId}/m8/18`}
+              action="Re-sort it"
+              onNavigate={onClose}
+            >
+              {BUCKETS.map((b) => {
+                const inBucket = PLAN_FOUNDATIONS.filter(
+                  (f) => m8?.plan?.buckets?.[f.id] === b.value,
+                );
+                if (!inBucket.length) return null;
+                return (
+                  <div key={b.value} className="mt-2 first:mt-0">
+                    <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+                      {b.label}
+                    </div>
+                    <p className="mt-1 text-[14.5px] leading-relaxed">
+                      {inBucket.map((f) => f.name).join(", ")}
+                    </p>
+                  </div>
+                );
+              })}
+            </Section>
+          ) : null}
         </div>
       </aside>
     </>

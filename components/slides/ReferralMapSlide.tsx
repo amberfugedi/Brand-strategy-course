@@ -23,7 +23,7 @@ export const REFERRAL_STAGES = [
   },
 ];
 
-const STATES = [
+export const STATES = [
   { value: "solid", label: "Solid" },
   { value: "leaking", label: "Leaking" },
 ];

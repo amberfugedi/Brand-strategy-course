@@ -4,13 +4,13 @@ import { ProofInventorySlide as ProofInventorySlideDef } from "@/lib/content/typ
 import { Rich } from "@/components/Rich";
 import { useModule4 } from "@/lib/store/provider";
 
-const SOURCES = [
+export const SOURCES = [
   { id: "client", label: "Client proof", hint: "Reviews, testimonials, case studies, before-and-afters" },
   { id: "peer", label: "Peer proof", hint: "Referrals and endorsements from other professionals" },
   { id: "institutional", label: "Institutional proof", hint: "Credentials, licenses, press, association membership" },
 ];
 
-const STATUSES = [
+export const STATUSES = [
   { value: "current", label: "Have it, current" },
   { value: "stale", label: "Have it, gone stale" },
   { value: "missing", label: "Missing" },
