@@ -6,6 +6,7 @@ import type { CourseMeta } from "@/lib/content/meta";
 import { Rich } from "@/components/Rich";
 import { useCourseStore, useFinish, useModule8 } from "@/lib/store/provider";
 import {
+  DIAGNOSTIC_QUESTIONS,
   computeGaps,
   computePriorities,
   computeStartingPoint,
@@ -72,6 +73,17 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
   const gapOf = (id: string) => gaps.find((g) => g.foundation.id === id);
   // Module 2's single most important output, and it was not on the Map
   // at all: the one foundation the audit says to build first, and why.
+  // The audit's own working. It drives every tier on the page and
+  // until now lived on one Module 2 slide and in no export, so the
+  // plan asserted an order without ever showing why.
+  const priorities = diagnosticComplete(diagnostic)
+    ? computePriorities(diagnostic)
+    : [];
+  const answered = DIAGNOSTIC_QUESTIONS.map((q) => ({
+    prompt: q.prompt,
+    answer: q.options.find((o) => o.value === diagnostic[q.id])?.label,
+  })).filter((a) => a.answer);
+
   const start = gaps.length
     ? computeStartingPoint(computePriorities(diagnostic), gaps)
     : null;
@@ -375,7 +387,72 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
             </div>
           ))}
 
-          <div className="mt-9 flex items-center gap-2.5 border-t border-subtle pt-6 print:mt-5 print:pt-4">
+          {answered.length || priorities.length ? (
+            <div className="mt-10 border-t-2 border-gold/30 pt-7 print:mt-5 print:pt-4">
+              <h2 className="text-[13px] font-bold uppercase tracking-eyebrow text-body">
+                What this is based on
+              </h2>
+              <p className="mt-1 text-[13.5px] text-body-tertiary">
+                The answers the order was built from, so it still makes sense
+                in six months.
+              </p>
+
+              {answered.length ? (
+                <div className="doc-row mt-5 print:mt-4">
+                  <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+                    Your business
+                  </div>
+                  <dl className="mt-2 space-y-1">
+                    {answered.map((a) => (
+                      <div
+                        key={a.prompt}
+                        className="flex flex-wrap gap-x-3 text-[13.5px] leading-relaxed"
+                      >
+                        <dt className="flex-1 basis-[280px] text-body-tertiary">
+                          {a.prompt}
+                        </dt>
+                        <dd className="flex-1 basis-[200px] text-body">{a.answer}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              ) : null}
+
+              {priorities.length ? (
+                <div className="mt-6 print:mt-4">
+                  <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+                    Why this order
+                  </div>
+                  <div className="mt-2 space-y-3 print:space-y-1.5">
+                    {priorities.map((pr) => (
+                      <div key={pr.foundation.id} className="doc-row">
+                        <div className="flex flex-wrap items-baseline gap-x-2.5">
+                          <span className="text-[14.5px] font-semibold">
+                            {pr.foundation.name}
+                          </span>
+                          <span className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+                            {TIER_LABEL[pr.tier]}
+                          </span>
+                        </div>
+                        <ul className="mt-0.5 space-y-0.5">
+                          {pr.reasons.map((r) => (
+                            <li
+                              key={r}
+                              className="text-[13.5px] leading-relaxed text-body-secondary"
+                            >
+                              {r}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
+
+          <div className="mt-9 flex items-center gap-2.5 border-t border-subtle pt-6 print:mt-4 print:pt-3">
             <img src="/images/af-mark.png" alt="" className="h-7 w-7" />
             <span className="text-[13.5px] text-body-tertiary">Amber Fugedi</span>
           </div>
