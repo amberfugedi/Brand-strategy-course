@@ -8,6 +8,7 @@ import { useCourseStore, useFinish, useModule8 } from "@/lib/store/provider";
 import {
   computeGaps,
   computePriorities,
+  computeStartingPoint,
   diagnosticComplete,
 } from "@/lib/content/m2Logic";
 import { TOUCHPOINTS } from "@/components/slides/TouchpointsSlide";
@@ -69,6 +70,11 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
     ? computeGaps(computePriorities(diagnostic), m2.audit ?? {})
     : [];
   const gapOf = (id: string) => gaps.find((g) => g.foundation.id === id);
+  // Module 2's single most important output, and it was not on the Map
+  // at all: the one foundation the audit says to build first, and why.
+  const start = gaps.length
+    ? computeStartingPoint(computePriorities(diagnostic), gaps)
+    : null;
 
   const pick = (list: { id?: string; label?: string; name?: string }[], key?: string) =>
     list.find((x) => x.id === key)?.label ?? list.find((x) => x.id === key)?.name;
@@ -87,17 +93,6 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
     decision?: string;
     details: [string, string | undefined][];
   }[] = [
-    {
-      id: "positioning",
-      name: "Positioning",
-      href: `/${course.id}/m1/31`,
-      decision: m1?.statement?.trim(),
-      details: [
-        ["Who", m1?.serve?.situation],
-        ["The work", m1?.work?.change],
-        ["Different", m1?.different?.text],
-      ],
-    },
     {
       id: "getFound",
       name: "Get found",
@@ -191,6 +186,20 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
     },
   ];
 
+  // Sequence is the strategy, as Module 2 puts it, so the document is
+  // ordered by when each foundation gets built rather than by its
+  // number. A plan sorted by foundation is an inventory.
+  const GROUPS = [
+    { value: "first", title: "Build first", note: "Thirty to ninety days of focused work." },
+    { value: "next", title: "Build next", note: "Once the first one is solid." },
+    { value: "later", title: "Later", note: "Named, so it is not forgotten. Not now." },
+    { value: undefined, title: "Not sorted yet", note: "Module 8 sorts these." },
+  ];
+  const grouped = GROUPS.map((g) => ({
+    ...g,
+    rows: rows.filter((r) => (buckets[r.id] ?? undefined) === g.value),
+  })).filter((g) => g.rows.length);
+
   const day = completedAt
     ? new Date(completedAt).toLocaleDateString(undefined, {
         year: "numeric",
@@ -242,99 +251,129 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
             {day ? ` · completed ${day}` : null}
           </p>
 
-          <div className="mt-8 space-y-6 print:mt-5 print:space-y-3">
-            {rows.map((row) => {
-              const gap = gapOf(row.id);
-              const bucket = buckets[row.id];
-              return (
-                <div
-                  key={row.id}
-                  className="doc-row border-t border-subtle pt-5 first:border-0 first:pt-0 print:pt-3"
-                >
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <span
-                      aria-hidden
-                      className={`mt-1 h-[14px] w-[14px] shrink-0 self-start rounded-full border-2 border-gold ${
-                        row.decision ? "bg-peach" : "bg-transparent"
-                      }`}
-                    />
-                    <span className="text-[16px] font-bold">{row.name}</span>
-                    {gap?.tier ? (
-                      <span className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
-                        {TIER_LABEL[gap.tier]}
-                        {gap.gap ? ` · ${GAP_LABEL[gap.gap]}` : ""}
-                      </span>
-                    ) : null}
-                  </div>
+          {/* Positioning frames the plan rather than queueing inside it:
+              it is foundation one and everything below is measured
+              against it. */}
+          {m1?.statement?.trim() ? (
+            <div className="doc-row mt-7 border-t border-subtle pt-6 print:mt-5 print:pt-4">
+              <div className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
+                Positioning
+              </div>
+              <p className="mt-2 font-serif text-[19px] leading-relaxed sm:text-[21px]">
+                {m1.statement.trim()}
+              </p>
+              <dl className="mt-3 space-y-0.5">
+                {([
+                  ["Who", m1?.serve?.situation],
+                  ["The work", m1?.work?.change],
+                  ["Different", m1?.different?.text],
+                ] as [string, string | undefined][])
+                  .filter(([, v]) => v && v.trim())
+                  .map(([k, v]) => (
+                    <div key={k} className="flex gap-2.5 text-[13.5px] leading-relaxed">
+                      <dt className="w-[78px] shrink-0 text-body-tertiary">{k}</dt>
+                      <dd className="flex-1 text-body-secondary">{v}</dd>
+                    </div>
+                  ))}
+              </dl>
+            </div>
+          ) : null}
 
-                  <p
-                    className={`ml-[26px] mt-1.5 text-[15px] leading-relaxed ${
-                      row.decision ? "text-body" : "text-body-tertiary"
-                    }`}
-                  >
-                    {row.decision ? (
-                      <Rich text={row.decision} />
-                    ) : (
-                      "Not decided yet."
-                    )}
-                  </p>
 
-                  {row.details.filter(([, v]) => v && v.trim()).length ? (
-                    <dl className="ml-[26px] mt-2 space-y-0.5">
-                      {row.details
-                        .filter(([, v]) => v && v.trim())
-                        .map(([k, v]) => (
-                          <div key={k} className="flex gap-2.5 text-[13.5px] leading-relaxed">
-                            <dt className="w-[78px] shrink-0 text-body-tertiary">{k}</dt>
-                            <dd className="flex-1 text-body-secondary">{v}</dd>
-                          </div>
-                        ))}
-                    </dl>
-                  ) : null}
+          {grouped.map((group) => (
+            <div key={group.title} className="mt-8 print:mt-5">
+              <div className="flex flex-wrap items-baseline gap-x-3 border-b border-subtle pb-2">
+                <h2 className="text-[13px] font-bold uppercase tracking-eyebrow text-body">
+                  {group.title}
+                </h2>
+                <span className="text-[13px] text-body-tertiary">{group.note}</span>
+              </div>
 
-                  <div className="ml-[26px] mt-3 flex flex-wrap items-center gap-2 print:mt-1">
-                    {editing ? (
-                      BUCKETS.map((b) => {
-                        const active = bucket === b.value;
-                        return (
-                          <button
-                            key={b.value}
-                            type="button"
-                            onClick={() => setBucket(row.id, b.value)}
-                            aria-pressed={active}
-                            aria-label={`${row.name}: build ${b.label.toLowerCase()}`}
-                            className={`rounded-[14px] border px-3 py-2.5 text-[13.5px] transition-colors print:hidden ${
-                              active
-                                ? "border-gold bg-butter/40 font-semibold text-body"
-                                : "border-ink/15 text-body-secondary hover:border-gold"
-                            }`}
+              <div className="mt-4 space-y-5 print:mt-3 print:space-y-3">
+                {group.rows.map((row) => {
+                  const gap = gapOf(row.id);
+                  const bucket = buckets[row.id];
+                  return (
+                    <div key={row.id} className="doc-row">
+                      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                        <span
+                          aria-hidden
+                          className={`mt-1 h-[14px] w-[14px] shrink-0 self-start rounded-full border-2 border-gold ${
+                            row.decision ? "bg-peach" : "bg-transparent"
+                          }`}
+                        />
+                        <span className="text-[16px] font-bold">{row.name}</span>
+                        {gap?.tier ? (
+                          <span className="text-[10px] font-bold uppercase tracking-eyebrow text-body-tertiary">
+                            {TIER_LABEL[gap.tier]}
+                            {gap.gap ? ` · ${GAP_LABEL[gap.gap]}` : ""}
+                          </span>
+                        ) : null}
+                      </div>
+
+                      <p
+                        className={`ml-[26px] mt-1.5 text-[15px] leading-relaxed ${
+                          row.decision ? "text-body" : "text-body-tertiary"
+                        }`}
+                      >
+                        {row.decision ? <Rich text={row.decision} /> : "Not decided yet."}
+                      </p>
+
+                      {start?.foundation.id === row.id ? (
+                        <p className="ml-[26px] mt-2 border-l-[3px] border-gold pl-3 text-[13.5px] leading-relaxed text-body-secondary">
+                          <span className="font-semibold text-body">Why here. </span>
+                          <Rich text={start.reasoning} />
+                        </p>
+                      ) : null}
+
+                      {row.details.filter(([, v]) => v && v.trim()).length ? (
+                        <dl className="ml-[26px] mt-2 space-y-0.5">
+                          {row.details
+                            .filter(([, v]) => v && v.trim())
+                            .map(([k, v]) => (
+                              <div key={k} className="flex gap-2.5 text-[13.5px] leading-relaxed">
+                                <dt className="w-[78px] shrink-0 text-body-tertiary">{k}</dt>
+                                <dd className="flex-1 text-body-secondary">{v}</dd>
+                              </div>
+                            ))}
+                        </dl>
+                      ) : null}
+
+                      {editing ? (
+                        <div className="ml-[26px] mt-3 flex flex-wrap items-center gap-2 print:hidden">
+                          {BUCKETS.map((b) => {
+                            const active = bucket === b.value;
+                            return (
+                              <button
+                                key={b.value}
+                                type="button"
+                                onClick={() => setBucket(row.id, b.value)}
+                                aria-pressed={active}
+                                aria-label={`${row.name}: build ${b.label.toLowerCase()}`}
+                                className={`rounded-[14px] border px-3 py-2.5 text-[13.5px] transition-colors ${
+                                  active
+                                    ? "border-gold bg-butter/40 font-semibold text-body"
+                                    : "border-ink/15 text-body-secondary hover:border-gold"
+                                }`}
+                              >
+                                {b.label}
+                              </button>
+                            );
+                          })}
+                          <Link
+                            href={row.href}
+                            className="ml-1 text-[11px] font-bold uppercase tracking-chrome text-gold transition-colors hover:text-aubergine"
                           >
-                            {b.label}
-                          </button>
-                        );
-                      })
-                    ) : bucket ? (
-                      <span className="text-[10px] font-bold uppercase tracking-eyebrow text-gold">
-                        Build {bucket}
-                      </span>
-                    ) : null}
-                    {/* The printed sheet needs the answer, not the control. */}
-                    {editing && bucket ? (
-                      <span className="hidden text-[10px] font-bold uppercase tracking-eyebrow text-gold print:inline">
-                        Build {bucket}
-                      </span>
-                    ) : null}
-                    <Link
-                      href={row.href}
-                      className="ml-1 text-[11px] font-bold uppercase tracking-chrome text-gold transition-colors hover:text-aubergine print:hidden"
-                    >
-                      Change it →
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                            Change it →
+                          </Link>
+                        </div>
+                      ) : null}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
 
           <div className="mt-9 flex items-center gap-2.5 border-t border-subtle pt-6 print:mt-5 print:pt-4">
             <img src="/images/af-mark.png" alt="" className="h-7 w-7" />
