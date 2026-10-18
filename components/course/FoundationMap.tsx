@@ -12,8 +12,10 @@ import {
 } from "@/lib/content/m2Logic";
 import { TOUCHPOINTS } from "@/components/slides/TouchpointsSlide";
 import { SOURCES } from "@/components/slides/ProofInventorySlide";
-import { REFERRAL_STAGES } from "@/components/slides/ReferralMapSlide";
+import { REFERRAL_STAGES, STATES } from "@/components/slides/ReferralMapSlide";
 import { BUCKETS, KIND_LABELS } from "@/components/slides/FoundationPlanSlide";
+import { STATUSES } from "@/components/slides/ProofInventorySlide";
+import { PRESENCE_CONDITIONS, PRESENCE_WEIGHTS } from "@/components/slides/PresencePlanSlide";
 
 /**
  * The Marketing Foundation Map: the thing the course says you leave
@@ -71,12 +73,30 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
   const pick = (list: { id?: string; label?: string; name?: string }[], key?: string) =>
     list.find((x) => x.id === key)?.label ?? list.find((x) => x.id === key)?.name;
 
-  const rows = [
+  const val = (list: { value: string; label: string }[], key?: string) =>
+    list.find((x) => x.value === key)?.label;
+
+  // Each foundation carries the lead decision and the detail behind
+  // it. The lead alone read as thin: brand awareness said "a monthly
+  // local talk" and dropped the weight, the conditions and whether
+  // they held, all of which the module asked for.
+  const rows: {
+    id: string;
+    name: string;
+    href: string;
+    decision?: string;
+    details: [string, string | undefined][];
+  }[] = [
     {
       id: "positioning",
       name: "Positioning",
       href: `/${course.id}/m1/31`,
       decision: m1?.statement?.trim(),
+      details: [
+        ["Who", m1?.serve?.situation],
+        ["The work", m1?.work?.change],
+        ["Different", m1?.different?.text],
+      ],
     },
     {
       id: "getFound",
@@ -85,6 +105,14 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
       decision: m3?.order?.length
         ? `Primary touchpoint: ${pick(TOUCHPOINTS, m3.order[0])}.`
         : undefined,
+      details: [
+        [
+          "Then",
+          m3?.order?.length && m3.order.length > 1
+            ? m3.order.slice(1).map((id) => pick(TOUCHPOINTS, id)).join(", ")
+            : undefined,
+        ],
+      ],
     },
     {
       id: "earnedProof",
@@ -93,20 +121,30 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
       decision: m4?.buildFirst
         ? `Build ${pick(SOURCES, m4.buildFirst)?.toLowerCase()} first.`
         : undefined,
+      details: SOURCES.map(
+        (src) =>
+          [src.label, val(STATUSES, m4?.statuses?.[src.id])] as [
+            string,
+            string | undefined,
+          ],
+      ),
     },
     {
       id: "referrals",
       name: "Referral system",
       href: `/${course.id}/m5/20`,
-      decision:
-        m5?.weakStage || m5?.change
-          ? [
-              m5?.weakStage ? `Weakest stage: ${pick(REFERRAL_STAGES, m5.weakStage)}.` : null,
-              m5?.change,
-            ]
-              .filter(Boolean)
-              .join(" ")
-          : undefined,
+      decision: m5?.change,
+      details: [
+        ["Source", m5?.source],
+        ["Weakest", pick(REFERRAL_STAGES, m5?.weakStage)],
+        ...REFERRAL_STAGES.map(
+          (st) =>
+            [st.label, val(STATES, m5?.stages?.[st.id])] as [
+              string,
+              string | undefined,
+            ],
+        ),
+      ],
     },
     {
       id: "brandAwareness",
@@ -115,6 +153,23 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
       decision: m6?.place
         ? `${m6.place}${m6.cadence ? `, ${m6.cadence.toLowerCase()}` : ""}.`
         : undefined,
+      details: [
+        ["Weight", val(PRESENCE_WEIGHTS, m6?.weight)],
+        [
+          "Holds",
+          PRESENCE_CONDITIONS.filter((c) => m6?.conditions?.[c.id])
+            .map((c) => c.label)
+            .join(", ") || undefined,
+        ],
+        [
+          "Gap",
+          m6?.conditions
+            ? PRESENCE_CONDITIONS.filter((c) => !m6.conditions?.[c.id])
+                .map((c) => c.label)
+                .join(", ") || undefined
+            : undefined,
+        ],
+      ],
     },
     {
       id: "ownedAudience",
@@ -123,6 +178,7 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
       decision: m7?.channel
         ? `${m7.channel}${m7.cadence ? `, ${m7.cadence.toLowerCase()}` : ""}.`
         : undefined,
+      details: [["Starts with", m7?.people]],
     },
     {
       id: "authority",
@@ -131,6 +187,7 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
       decision: m8?.authority?.kind
         ? `${KIND_LABELS[m8.authority.kind]} authority.`
         : undefined,
+      details: [],
     },
   ];
 
@@ -221,6 +278,19 @@ export function FoundationMap({ course }: { course: CourseMeta }) {
                       "Not decided yet."
                     )}
                   </p>
+
+                  {row.details.filter(([, v]) => v && v.trim()).length ? (
+                    <dl className="ml-[26px] mt-2 space-y-0.5">
+                      {row.details
+                        .filter(([, v]) => v && v.trim())
+                        .map(([k, v]) => (
+                          <div key={k} className="flex gap-2.5 text-[13.5px] leading-relaxed">
+                            <dt className="w-[78px] shrink-0 text-body-tertiary">{k}</dt>
+                            <dd className="flex-1 text-body-secondary">{v}</dd>
+                          </div>
+                        ))}
+                    </dl>
+                  ) : null}
 
                   <div className="ml-[26px] mt-3 flex flex-wrap items-center gap-2 print:mt-1">
                     {editing ? (
