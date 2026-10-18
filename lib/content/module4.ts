@@ -350,6 +350,14 @@ export const module4Slides: Slide[] = [
       ],
     },
     sans: true,
+    // The weight shifts as the voice says forty generic reviews do
+    // less than six specific ones, at 9.5s.
+    art: {
+      kind: "weightVsCount",
+      many: 40, few: 6,
+      manyLabel: "Forty thin", fewLabel: "Six specific",
+      start: 9, over: 7,
+    },
     headline: "More proof is not *better* proof.",
     sub: "Forty thin reviews do less than six specific ones. *Match the proof to the doubt they actually have.*",
   },
@@ -396,6 +404,8 @@ export const module4Slides: Slide[] = [
       ],
     },
     sans: true,
+    // It moves as the voice reaches the note to yourself, at 11.0s.
+    art: { kind: "proofPlacement", start: 11, over: 7 },
     headline: "Proof in a folder does *nothing.*",
     sub: "Proof only works where a prospect meets it: your primary touchpoint, at the moment they’re deciding. A testimonial saved but never shown is a note to yourself. *Put it where the doubt is.*",
   },

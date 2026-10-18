@@ -1,6 +1,9 @@
 import { PrincipleSlide as PrincipleSlideDef } from "@/lib/content/types";
 import { Rich } from "@/components/Rich";
 import { ProofDecay } from "@/components/slides/ProofDecay";
+import { WeightVsCount } from "@/components/slides/WeightVsCount";
+import { ProofPlacement } from "@/components/slides/ProofPlacement";
+import { CompoundingCurve } from "@/components/slides/CompoundingCurve";
 
 export function PrincipleSlide({ slide }: { slide: PrincipleSlideDef }) {
   return (
@@ -34,6 +37,22 @@ export function PrincipleSlide({ slide }: { slide: PrincipleSlideDef }) {
           </p>
           {slide.art?.kind === "proofDecay" ? (
             <ProofDecay start={slide.art.start} over={slide.art.over} />
+          ) : null}
+          {slide.art?.kind === "weightVsCount" ? (
+            <WeightVsCount
+              many={slide.art.many}
+              few={slide.art.few}
+              manyLabel={slide.art.manyLabel}
+              fewLabel={slide.art.fewLabel}
+              start={slide.art.start}
+              over={slide.art.over}
+            />
+          ) : null}
+          {slide.art?.kind === "proofPlacement" ? (
+            <ProofPlacement start={slide.art.start} over={slide.art.over} />
+          ) : null}
+          {slide.art?.kind === "compoundingCurve" ? (
+            <CompoundingCurve start={slide.art.start} over={slide.art.over} />
           ) : null}
         </div>
         <div className="rule-draw h-px w-full bg-gold/25" />

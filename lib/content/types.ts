@@ -235,8 +235,21 @@ export interface PrincipleSlide extends SlideBase {
   sans?: boolean;
   /** An illustration under the statement, for the takeaways whose
    *  point is a shape or a change over time rather than a sentence.
-   *  Timed to the narration; see components/slides/ProofDecay.tsx. */
-  art?: { kind: "proofDecay"; start?: number; over?: number };
+   *  Each is timed to the narration and each reads standing still;
+   *  see docs/brand-system.md section 6. */
+  art?:
+    | { kind: "proofDecay"; start?: number; over?: number }
+    | {
+        kind: "weightVsCount";
+        many: number;
+        few: number;
+        manyLabel: string;
+        fewLabel: string;
+        start?: number;
+        over?: number;
+      }
+    | { kind: "proofPlacement"; start?: number; over?: number }
+    | { kind: "compoundingCurve"; start?: number; over?: number };
 }
 
 /** Plum section divider with a serif display heading (Module 3+). */

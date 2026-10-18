@@ -563,6 +563,13 @@ export const module3Slides: Slide[] = [
       ],
     },
     sans: true,
+    // Shifts on the neglected-Instagram line, at 11.7s.
+    art: {
+      kind: "weightVsCount",
+      many: 5, few: 2,
+      manyLabel: "Five, maintained badly", fewLabel: "Two, maintained well",
+      start: 11, over: 7,
+    },
     headline: "More presence is not *better* presence.",
     sub: "Two maintained well beat five maintained badly. A neglected touchpoint signals worse than none. *Match presence to capacity.*",
   },

@@ -200,6 +200,9 @@ export const module5Slides: Slide[] = [
     number: "10",
     audio: { src: null },
     sans: true,
+    // No narration yet, so this draws itself complete. Set start and
+    // over against the real cues once Module 5 is recorded.
+    art: { kind: "compoundingCurve" },
     headline: "A referral system pays you back *slowly*, then steadily.",
     sub: "One referral kept well doesn’t just bring one client. It tells the referrer that referring you works. That is the loop closing, and it runs too slowly to watch. Built on purpose, the slowness becomes *reliability.*",
   },
