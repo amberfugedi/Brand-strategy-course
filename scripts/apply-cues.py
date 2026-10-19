@@ -31,15 +31,23 @@ def main():
     text = src.read_text()
     written = 0
 
+    # An audio block may be one line or several, and may already carry
+    # cues from an earlier pass, so each track is located first and
+    # edited within its own span.
     for slide, values in sorted(cues.items()):
-        old = f'audio: {{ src: "/audio/m{n}/m{n}-{slide}.mp3" }}'
-        new = (
-            f'audio: {{ src: "/audio/m{n}/m{n}-{slide}.mp3", '
-            f'cues: [{", ".join(str(v) for v in values)}] }}'
-        )
-        if old not in text:
-            sys.exit(f"slide {slide}: no plain audio line to replace")
-        text = text.replace(old, new, 1)
+        literal = f'src: "/audio/m{n}/m{n}-{slide}.mp3"'
+        at = text.find(literal)
+        if at < 0:
+            sys.exit(f"slide {slide}: no track to attach cues to")
+        nxt = text.find('src: "/audio/', at + len(literal))
+        end = len(text) if nxt < 0 else nxt
+        block = text[at : end]
+        listed = f'[{", ".join(str(v) for v in values)}]'
+        if re.search(r"cues: \[[^\]]*\]", block):
+            block = re.sub(r"cues: \[[^\]]*\]", f"cues: {listed}", block, count=1)
+        else:
+            block = block.replace(literal, f"{literal}, cues: {listed}", 1)
+        text = text[:at] + block + text[end:]
         written += 1
 
     src.write_text(text)

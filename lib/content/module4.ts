@@ -62,7 +62,7 @@ export const module4Slides: Slide[] = [
     crumb: S1,
     tag: "FRAMEWORK",
     number: "03",
-    audio: { src: "/audio/m4/m4-3.mp3", cues: [0.5, 16.0] },
+    audio: { src: "/audio/m4/m4-3.mp3", cues: [0.5, 15.8] },
     heading: "You can’t *author* your own credibility.",
     paragraphs: [
       "A prospect hears your claims and quietly discounts them. It’s how people read anyone selling anything.",
@@ -89,7 +89,7 @@ export const module4Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "05",
-    audio: { src: "/audio/m4/m4-5.mp3", cues: [0.5, 17.4, 29.9] },
+    audio: { src: "/audio/m4/m4-5.mp3", cues: [0.5, 17.3, 29.7, 39.8] },
     eyebrow: "The three sources of earned proof",
     heading: "Three voices, three *questions* answered.",
     cards: [
@@ -122,7 +122,7 @@ export const module4Slides: Slide[] = [
     number: "06",
     audio: {
       src: "/audio/m4/m4-6.mp3",
-      cues: [0.5, 16.9, 52.3],
+      cues: [0.5, 16.7, 52.2],
       callouts: [
         { text: "Recency matters here more than anywhere. A recent review says you’re still good now.", at: 28.0, until: 35.3 },
         { text: "Handling a hard review well, publicly, builds more trust than the praise does.", at: 43.4, until: 51.0 },
@@ -155,7 +155,7 @@ export const module4Slides: Slide[] = [
     number: "07",
     audio: {
       src: "/audio/m4/m4-7.mp3",
-      cues: [0.5, 43.0, 59.8],
+      cues: [0.5, 42.7, 59.5],
       callouts: [
         { text: "A doctor referring patients. A wedding planner recommending the photographer.", at: 18.8, until: 25.8 },
         { text: "They’re staking their own credibility on you being good.", at: 28.8, until: 36.5 },
@@ -187,7 +187,7 @@ export const module4Slides: Slide[] = [
     crumb: S2,
     tag: "SOURCE 03",
     number: "08",
-    audio: { src: "/audio/m4/m4-8.mp3", cues: [0.5, 17.5, 34.1] },
+    audio: { src: "/audio/m4/m4-8.mp3", cues: [0.5, 17.4, 33.8] },
     eyebrow: "Institutional proof",
     heading: "An outside body *vouches.*",
     cols: [
@@ -270,7 +270,7 @@ export const module4Slides: Slide[] = [
     number: "12",
     audio: {
       src: "/audio/m4/m4-12.mp3",
-      cues: [0.5, 36.6, 57.7, 73.7, 87.2],
+      cues: [0.5, 36.5, 57.6, 73.8, 87.2],
       callouts: [
         { text: "Ethics closes client reviews. Her proof comes from the other two sources.", at: 13.5, until: 21.5, who: "maya" },
         { text: "The source most people build first is the one she mostly can’t use.", at: 29.5, until: 36.0, who: "maya" },
@@ -371,7 +371,7 @@ export const module4Slides: Slide[] = [
     number: "15",
     audio: {
       src: "/audio/m4/m4-15.mp3",
-      cues: [0.5, 24.6],
+      cues: [0.5, 24.4],
       callouts: [
         { text: "The prospect in the same situation sees themselves. That’s what proof is for.", at: 41.0, until: 47.5 },
         { text: "The strong one didn’t cost more. It came from asking better.", at: 49.0, until: 56.5 },
@@ -419,7 +419,7 @@ export const module4Slides: Slide[] = [
     number: "17",
     audio: {
       src: "/audio/m4/m4-17.mp3",
-      cues: [0.5, 23.5],
+      cues: [0.5, 23.2],
       callouts: [
         { text: "No full apparatus by Friday. One good piece, then the next.", at: 38.8, until: 43.2 },
       ],

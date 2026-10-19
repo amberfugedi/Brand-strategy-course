@@ -23,13 +23,22 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def cues_in(n):
-    """{slide: [cue, ...]} as the module file currently has them."""
+    """{slide: [cue, ...]} as the module file currently has them.
+
+    An audio block may be written on one line or spread over several,
+    so each track is found first and its cues looked for in the span
+    before the next track rather than on the same line. Assuming one
+    line silently found 4 of Module 4's 9 cued slides.
+    """
     src = (ROOT / f"lib/content/module{n}.ts").read_text()
+    hits = list(re.finditer(rf'src: "/audio/m{n}/m{n}-(\d+)\.mp3"', src))
     found = {}
-    for m in re.finditer(
-        rf'src: "/audio/m{n}/m{n}-(\d+)\.mp3", cues: \[([^\]]+)\]', src
-    ):
-        found[int(m.group(1))] = [float(x) for x in m.group(2).split(",")]
+    for k, m in enumerate(hits):
+        end = hits[k + 1].start() if k + 1 < len(hits) else len(src)
+        block = src[m.end() : end]
+        c = re.search(r"cues: \[([^\]]+)\]", block)
+        if c:
+            found[int(m.group(1))] = [float(x) for x in c.group(1).split(",")]
     return found
 
 

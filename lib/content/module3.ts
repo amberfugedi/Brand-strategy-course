@@ -59,7 +59,7 @@ export const module3Slides: Slide[] = [
     crumb: S1,
     tag: "FRAMEWORK",
     number: "03",
-    audio: { src: "/audio/m3/m3-3.mp3", cues: [0.5, 27.3] },
+    audio: { src: "/audio/m3/m3-3.mp3", cues: [0.5, 27.1] },
     heading: "Getting found is the sum of where you *show up* when someone looks.",
     paragraphs: [
       "A prospect goes looking. Your website is one place they might land. So is your Google listing, a friend’s post, the map result.",
@@ -86,7 +86,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "05",
-    audio: { src: "/audio/m3/m3-5.mp3", cues: [0.5, 6.5, 15.2, 21.5, 43.8] },
+    audio: { src: "/audio/m3/m3-5.mp3", cues: [0.5, 6.3, 15.2, 21.4, 43.5] },
     heading: "Five places, five *questions* answered.",
     cards: [
       {
@@ -144,7 +144,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "TOUCHPOINT 01",
     number: "07",
-    audio: { src: "/audio/m3/m3-7.mp3", cues: [0.5, 30.4, 40.4] },
+    audio: { src: "/audio/m3/m3-7.mp3", cues: [0.5, 30.4, 40.2] },
     eyebrow: "Your website",
     heading: "The *full* picture.",
     cols: [
@@ -170,7 +170,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "TOUCHPOINT 02",
     number: "08",
-    audio: { src: "/audio/m3/m3-8.mp3", cues: [0.5, 19.5, 30.2] },
+    audio: { src: "/audio/m3/m3-8.mp3", cues: [0.5, 19.4, 29.9] },
     eyebrow: "Search & map listings",
     heading: "The *findable* you.",
     cols: [
@@ -196,7 +196,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "TOUCHPOINT 03",
     number: "09",
-    audio: { src: "/audio/m3/m3-9.mp3", cues: [0.5, 25.9, 35.2] },
+    audio: { src: "/audio/m3/m3-9.mp3", cues: [0.5, 25.8, 35.1] },
     eyebrow: "Social platforms",
     heading: "The *ambient* you.",
     cols: [
@@ -222,7 +222,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "TOUCHPOINT 04",
     number: "10",
-    audio: { src: "/audio/m3/m3-10.mp3", cues: [0.5, 19.3, 33.8] },
+    audio: { src: "/audio/m3/m3-10.mp3", cues: [0.5, 19.1, 33.5] },
     eyebrow: "Third-party listings",
     heading: "The *vouched-for* you.",
     cols: [
@@ -248,7 +248,7 @@ export const module3Slides: Slide[] = [
     crumb: S2,
     tag: "TOUCHPOINT 05",
     number: "11",
-    audio: { src: "/audio/m3/m3-11.mp3", cues: [0.5, 39.4, 49.2] },
+    audio: { src: "/audio/m3/m3-11.mp3", cues: [0.5, 39.1, 49.0] },
     eyebrow: "Online communities",
     heading: "The *in-the-room* you.",
     cols: [
@@ -308,7 +308,7 @@ export const module3Slides: Slide[] = [
     crumb: S3,
     tag: "FRAMEWORK",
     number: "14",
-    audio: { src: "/audio/m3/m3-14.mp3", cues: [0.5, 28.8, 47.6, 56.8] },
+    audio: { src: "/audio/m3/m3-14.mp3", cues: [0.5, 28.7, 47.4, 56.5] },
     heading: "Local presence is a *job*, not a touchpoint.",
     intro:
       "Four things done well across the touchpoints you already have.",
@@ -343,7 +343,7 @@ export const module3Slides: Slide[] = [
     crumb: S3,
     tag: "CALIBRATION",
     number: "15",
-    audio: { src: "/audio/m3/m3-15.mp3", cues: [0.5, 26.4] },
+    audio: { src: "/audio/m3/m3-15.mp3", cues: [0.5, 26.1] },
     eyebrow: "Weak vs. strong, on a Google Business Profile",
     heading: "What does *strong* local presence look like?",
     weak: {
@@ -396,7 +396,7 @@ export const module3Slides: Slide[] = [
     crumb: S3,
     tag: "FRAMEWORK",
     number: "18",
-    audio: { src: "/audio/m3/m3-18.mp3", cues: [0.5, 21.9, 31.3, 37.9] },
+    audio: { src: "/audio/m3/m3-18.mp3", cues: [0.5, 21.8, 31.1, 37.7, 65.3] },
     heading: "Your audit answers *already* told you which touchpoints matter.",
     cards: [
       {
@@ -431,7 +431,7 @@ export const module3Slides: Slide[] = [
     crumb: S3,
     tag: "WORKED EXAMPLE",
     number: "19",
-    audio: { src: "/audio/m3/m3-19.mp3", cues: [0.5, 7.7, 10.2, 12.2] },
+    audio: { src: "/audio/m3/m3-19.mp3", cues: [0.5, 7.8, 10.3, 12.1, 33.9] },
     heading: "Reading it together: *Maya*.",
     cards: [
       {
@@ -468,7 +468,7 @@ export const module3Slides: Slide[] = [
     number: "20",
     audio: {
       src: "/audio/m3/m3-20.mp3",
-      cues: [0.5, 37.1, 51.5, 65.8, 96.7],
+      cues: [0.5, 36.8, 51.4, 65.6, 96.6],
       callouts: [
         { text: "Takes insurance? The carrier’s directory. Private pay? Psychology Today.", at: 14.5, until: 22.5, who: "maya" },
         { text: "“Anyone know a good chiropractor?” His name comes up before they go to Google.", at: 86.5, until: 95.0, who: "james" },
@@ -518,7 +518,7 @@ export const module3Slides: Slide[] = [
     crumb: S4,
     tag: "CALIBRATION",
     number: "21",
-    audio: { src: "/audio/m3/m3-21.mp3", cues: [0.5, 14.5, 30.5] },
+    audio: { src: "/audio/m3/m3-21.mp3", cues: [0.5, 14.4, 30.3] },
     eyebrow: "One more case",
     heading: "The referral *exception*.",
     paragraphs: [
@@ -581,7 +581,7 @@ export const module3Slides: Slide[] = [
     crumb: S4,
     tag: "CALIBRATION",
     number: "24",
-    audio: { src: "/audio/m3/m3-24.mp3", cues: [0.5, 21.0] },
+    audio: { src: "/audio/m3/m3-24.mp3", cues: [0.5, 20.9] },
     eyebrow: "Weak vs. strong, on your primary touchpoint",
     heading: "What does *strong* look like?",
     weak: {
