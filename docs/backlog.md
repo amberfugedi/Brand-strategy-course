@@ -20,10 +20,19 @@ dropped is interpolated across the gap it sits in. On these tracks 99%
 of words anchor on a real timestamp. `/tmp/asr/align.py` in the session
 that built it; the whole thing is about sixty lines.
 
-**Modules 5 to 8 need only the audio.** The script document already
-carries their narration, one paragraph per slide, and the paragraph
-counts match the slide counts exactly (21, 20, 21, and 22 against 20
-for Module 8, which needs a look).
+**Modules 5 to 8 need only the audio.** The script document carries
+their narration, one paragraph per slide. Counted off the document
+itself rather than from memory, Modules 5, 6 and 7 match their slides
+exactly (21, 20, 21). Module 8 has 21 paragraphs against 20 slides,
+not the 22 recorded here before.
+
+**Module 8's extra paragraph is a duplicate, not a missing slide.**
+Paragraphs 17 and 18 both close the teaching and hand over to the
+plan, and slide 17 (`frame`, "Seven foundations, one plan") is the one
+surface they share. Paragraph 17 is the short version; paragraph 18
+says the same thing and then does the setup the slide needs, so
+dropping 17 resolves the count and loses nothing. The same repetition
+is what closed Module 2 before it was cut.
 
 **The older captions drift.** Modules 1 and 2 and the intro were
 aligned with aeneas, and where those timings disagree with the new
@@ -31,9 +40,18 @@ method they disagree by up to two seconds. Cutting the audio at both
 predicted times and asking the recogniser which one actually contains
 the word: the new timings hit 8 of 10, the existing ones 0 of 10. So
 the shipped captions on those modules lag or lead the voice in places.
-Module 2 would be a straight regeneration, its paragraphs matching its
-slides 1:1. Module 1 (36 paragraphs, 32 slides) and the intro (9 and 4)
-need a mapping decision first.
+Module 2 is 36 paragraphs against 35 slides, so it is one short of the
+straight regeneration claimed here before. Module 1 (36 paragraphs, 32
+slides) and the intro (9 and 4) need a mapping decision first.
+
+**The audio is generated, not recorded**, with the ElevenLabs voice
+"Amber v2" (`yrZkbGvXWUQthvPeZshz`), for every module shipped so far.
+That makes the alignment step above optional for anything generated
+from here: the generator can return word timings directly, which is
+where `.words.json` would otherwise have to be inferred from. The
+script's own note says to render per slide rather than per module,
+since v2 drifts when one generation holds many breaks, and per slide
+is what the player wants anyway.
 
 ## Signing the audio
 
