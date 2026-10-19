@@ -28,7 +28,7 @@ FIRST_CUE = 0.5
 MIN_GAP = 1.0        # seconds between beats, so two never land together
 LEAD = 0.25          # appear a beat before the voice says the words
 WEAK = 1.5           # below this, say so rather than pretend
-HEAD_BONUS = 3.0     # a sentence that names the beat is where it turns
+HEAD_BONUS = 50.0    # a named beat lands where it is named, outright
 
 STOP = set(
     """a an and are as at be been but by can could did do does for from had has
@@ -84,14 +84,29 @@ def derive(beats, words):
     if not m:
         return [FIRST_CUE] * n, [("none", FIRST_CUE, "no sentences")] * n
 
-    # A beat is usually said across its sentence and the next one.
+    # Where each beat's own name is spoken. A beat is introduced by a
+    # short sentence naming it ("Marcus, the pressure washer.", "For a
+    # peer, keeping is...") and then discussed in longer ones; on
+    # overlap alone the long sentence wins and the cue lands eight to
+    # fifteen seconds late.
     #
-    # The head bonus is what makes this work. A beat is introduced by
-    # a short sentence that names it ("Marcus, the pressure washer.",
-    # "For a peer, keeping is...") and then discussed in longer ones.
-    # On overlap alone the long sentence always wins and the cue lands
-    # eight to fifteen seconds after the voice has moved on, so the
-    # sentence carrying the beat's own name is scored as the turn.
+    # Only the FIRST naming counts. Scoring every mention equally sent
+    # the table beats to the closing recap, which names all five
+    # businesses again and matches more words: James landed 42 seconds
+    # late and Sasha 29. A beat belongs where the voice turns to it,
+    # not where it is mentioned last.
+    named = {}
+    for bi, beat in enumerate(beats):
+        head = tokens(beat.get("head", ""))
+        if not head:
+            continue
+        hits = [
+            si for si, (a, b) in enumerate(sents)
+            if all(t in set(heard[a : b + 1]) for t in head)
+        ]
+        if hits:
+            named[bi] = (hits[0], set(hits[1:]))
+
     def score(bi, si):
         want = set(tokens(beats[bi]["head"] + " " + beats[bi]["body"]))
         if not want:
@@ -99,10 +114,11 @@ def derive(beats, words):
         a = sents[si][0]
         b = sents[min(si + 1, m - 1)][1]
         base = sum(weight(t) for t in set(heard[a : b + 1]) & want)
-        head = tokens(beats[bi].get("head", ""))
-        here = set(heard[a : sents[si][1] + 1])
-        if head and all(t in here for t in head):
+        first, rest = named.get(bi, (None, set()))
+        if si == first:
             base += HEAD_BONUS
+        elif si in rest:
+            base += HEAD_BONUS * 0.1
         return base
 
     NEG = float("-inf")
@@ -136,8 +152,13 @@ def derive(beats, words):
         t = max(words[a][1] - LEAD, cues[-1] + MIN_GAP)
         t = min(t, max(duration - 0.5, cues[-1] + MIN_GAP))
         cues.append(round(t, 1))
+        # A beat the narration names somewhere is placed reliably; one
+        # it never names is a guess from word overlap, and those ran
+        # five to twenty-five seconds late on the modules measured so
+        # far. The distinction is worth more than a score, so it is
+        # what gets reported.
         notes.append(
-            (f"{score(bi, si):.2f}", cues[-1],
+            ("named" if bi in named else "GUESS", cues[-1],
              " ".join(w for w, _, _ in words[a : a + 6])),
         )
     return cues, notes
@@ -161,15 +182,12 @@ def main():
 
         print(f"\nslide {s['slide']} ({s['kind']}, {len(cues)} beats) -> {cues}")
         texts = [(b["head"] + " " + b["body"]).strip() for b in s["beats"]]
-        for (score, t, phrase), beat in zip(notes, texts):
+        for (kind, t, phrase), beat in zip(notes, texts):
             flag = ""
-            if score not in ("pinned", "none") and float(score) < WEAK:
-                flag = "  <-- WEAK"
+            if kind == "GUESS":
+                flag = "  <-- CHECK: never named in the narration"
                 weak.append((s["slide"], beat[:40]))
-            elif score == "none":
-                flag = "  <-- NO MATCH"
-                weak.append((s["slide"], beat[:40]))
-            print(f"  {t:7.1f}  [{score:>6}] {beat[:46]:<46} | {phrase[:44]}{flag}")
+            print(f"  {t:7.1f}  [{kind:>6}] {beat[:46]:<46} | {phrase[:44]}{flag}")
 
     print(f"\n{len(out)} slides cued, {len(weak)} beats to check by ear")
     for s, b in weak:
