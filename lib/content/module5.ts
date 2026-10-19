@@ -51,7 +51,7 @@ export const module5Slides: Slide[] = [
     crumb: S1,
     tag: "FRAMEWORK",
     number: "03",
-    audio: { src: "/audio/m5/m5-3.mp3" },
+    audio: { src: "/audio/m5/m5-3.mp3", cues: [0.5, 21.9] },
     heading: "A referral is an *event* with causes.",
     paragraphs: [
       "Module 4 showed a referral is credibility you didn’t author. This one asks whether you can cause more of it.",
@@ -78,7 +78,7 @@ export const module5Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "05",
-    audio: { src: "/audio/m5/m5-5.mp3" },
+    audio: { src: "/audio/m5/m5-5.mp3", cues: [0.5, 16.1, 36.8, 51.9] },
     eyebrow: "The referral loop",
     heading: "Three stages, and the last one *feeds* the first.",
     cards: [
@@ -109,7 +109,7 @@ export const module5Slides: Slide[] = [
     crumb: S2,
     tag: "STAGE 01 · EARN",
     number: "06",
-    audio: { src: "/audio/m5/m5-6.mp3" },
+    audio: { src: "/audio/m5/m5-6.mp3", cues: [0.5, 18.6, 53.5] },
     heading: "Give them something *nameable.*",
     cols: [
       {
@@ -134,7 +134,7 @@ export const module5Slides: Slide[] = [
     crumb: S2,
     tag: "STAGE 02 · ASK",
     number: "07",
-    audio: { src: "/audio/m5/m5-7.mp3" },
+    audio: { src: "/audio/m5/m5-7.mp3", cues: [0.5, 35.2, 59.8] },
     heading: "Make the referral *askable.*",
     cols: [
       {
@@ -159,7 +159,7 @@ export const module5Slides: Slide[] = [
     crumb: S2,
     tag: "STAGE 03 · KEEP",
     number: "08",
-    audio: { src: "/audio/m5/m5-8.mp3" },
+    audio: { src: "/audio/m5/m5-8.mp3", cues: [0.5, 41.1, 55.7] },
     heading: "Keep the channel *alive.*",
     cols: [
       {
@@ -200,9 +200,12 @@ export const module5Slides: Slide[] = [
     number: "10",
     audio: { src: "/audio/m5/m5-10.mp3" },
     sans: true,
-    // No narration yet, so this draws itself complete. Set start and
-    // over against the real cues once Module 5 is recorded.
-    art: { kind: "compoundingCurve" },
+    // Drawn on the sentence it illustrates: "it pays slowly, and
+    // then, if you keep the loop running, steadily" starts at 10.4s.
+    // Nine seconds carries the curve through "here is why", which is
+    // the mechanism it is a picture of, and matches the pace of the
+    // other narration-timed art.
+    art: { kind: "compoundingCurve", start: 10.4, over: 9 },
     headline: "A referral system pays you back *slowly*, then steadily.",
     sub: "One referral kept well doesn’t just bring one client. It tells the referrer that referring you works. That is the loop closing, and it runs too slowly to watch. Built on purpose, the slowness becomes *reliability.*",
   },
@@ -227,7 +230,7 @@ export const module5Slides: Slide[] = [
     crumb: S3,
     tag: "CALIBRATION",
     number: "12",
-    audio: { src: "/audio/m5/m5-12.mp3" },
+    audio: { src: "/audio/m5/m5-12.mp3", cues: [0.5, 35.4, 58.8, 87.3, 107.7] },
     heading: "Same loop. *Different* engine.",
     leftLabel: "The business",
     rightLabel: "Where the referral engine runs, and its weak stage",
@@ -298,7 +301,7 @@ export const module5Slides: Slide[] = [
     crumb: S4,
     tag: "CALIBRATION",
     number: "15",
-    audio: { src: "/audio/m5/m5-15.mp3" },
+    audio: { src: "/audio/m5/m5-15.mp3", cues: [0.5, 34.8] },
     eyebrow: "Weak vs. strong, on a single referral ask",
     heading: "What does a *strong* ask sound like?",
     weak: {
@@ -332,7 +335,7 @@ export const module5Slides: Slide[] = [
     crumb: S4,
     tag: "FRAMEWORK",
     number: "17",
-    audio: { src: "/audio/m5/m5-17.mp3" },
+    audio: { src: "/audio/m5/m5-17.mp3", cues: [0.5, 28.0] },
     eyebrow: "If the loop feels like a lot",
     heading: "Fix the *weak* stage, not all three.",
     paragraphs: [
@@ -348,7 +351,7 @@ export const module5Slides: Slide[] = [
     crumb: S4,
     tag: "FRAMEWORK",
     number: "18",
-    audio: { src: "/audio/m5/m5-18.mp3" },
+    audio: { src: "/audio/m5/m5-18.mp3", cues: [0.5, 45.5] },
     eyebrow: "If you have no referral system yet",
     heading: "No loop yet? *Start* at Earn.",
     bullets: true,
@@ -394,7 +397,7 @@ export const module5Slides: Slide[] = [
     crumb: "MODULE 5 · END",
     tag: "NEXT: BRAND AWARENESS",
     number: "21",
-    audio: { src: "/audio/m5/m5-21.mp3" },
+    audio: { src: "/audio/m5/m5-21.mp3", cues: [0.5] },
     surface: "plum",
     mapFilled: 4,
     eyebrow: "End of Module 5",

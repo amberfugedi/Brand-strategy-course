@@ -93,11 +93,33 @@ motion lands on the right word rather than on a guess:
 - **The referral loop, Module 5.** Earn, ask, tend as a cycle with a
   visible leak at the weak stage. It would pay straight into the
   referral tool at m5/20, which asks the buyer to name that stage.
-- **m5/10's curve needs real timings.** It is built and drawing
-  itself complete, because Module 5 has no track. Set `start` and
-  `over` on its `art` against the cues once recorded.
+- ~~**m5/10's curve needs real timings.**~~ Done. It draws from
+  10.4s over 9, which is the sentence it illustrates, checked in the
+  browser: 0% at 5s, 34% at 13s, complete by 20s.
 
 The same applies to anything built for Modules 6 to 8.
+
+## Cues
+
+`scripts/derive-cues.py` finds them from the word timings rather than
+by hand. Beats are assigned to narration sentences by dynamic
+programming over the whole slide, because greedy matching drifts: one
+beat takes a sentence a later one needed and everything after slides.
+
+Two things were learned the hard way and are worth keeping. Scoring a
+beat by how many of its words a passage contains puts every cue eight
+to fifteen seconds late, because a beat's words are densest in the
+middle of the passage discussing it, not where the voice turns to it.
+And the fix is the head bonus: a beat is introduced by a short
+sentence naming it ("Marcus, the pressure washer.", "For a peer,
+keeping is") and scoring that name separately is what moves the cue to
+the turn. With it, 14 of 16 Module 5 cues landed within 2.2s of the
+measured truth; without it, 5 were 8 to 15 seconds out.
+
+The two it still misses are beats with no name to anchor on, and they
+were hand-measured. Expect the same on any module: run it, check the
+output against the narration, and pass corrections to
+`scripts/apply-cues.py` as `slide:index=seconds`.
 
 ## Modules 4, 5 and 6 are the same deck
 
