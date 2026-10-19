@@ -22,6 +22,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import narration  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 
 FIRST_CUE = 0.5
@@ -164,10 +167,24 @@ def derive(beats, words):
     return cues, notes
 
 
+def from_markers(text, words):
+    """Cues straight off the recorded boundaries. No matching at all."""
+    starts = narration.beat_starts(text)
+    cues, notes = [], []
+    for k, i in enumerate(starts):
+        t = FIRST_CUE if k == 0 else round(max(words[i][1] - LEAD, cues[-1] + MIN_GAP), 1)
+        cues.append(t)
+        notes.append(
+            ("marked", t, " ".join(w for w, _, _ in words[i : i + 6])),
+        )
+    return cues, notes
+
+
 def main():
     n, beatfile = sys.argv[1], sys.argv[2]
     spec = json.load(open(beatfile))
     audio = ROOT / f"public/audio/m{n}"
+    paras = narration.read()[f"m{n}"]
     out, weak = {}, []
 
     for s in spec:
@@ -177,7 +194,19 @@ def main():
         if not wf.exists():
             sys.exit(f"no timings for slide {s['slide']}")
         words = json.load(open(wf))["words"]
-        cues, notes = derive(s["beats"], words)
+        text = paras[s["slide"] - 1]
+
+        # A marked slide is arithmetic; an unmarked one is inference,
+        # and the output says which it was.
+        if narration.marked(text):
+            cues, notes = from_markers(text, words)
+            if len(cues) != len(s["beats"]):
+                sys.exit(
+                    f"slide {s['slide']}: {len(cues)} markers "
+                    f"for {len(s['beats'])} beats"
+                )
+        else:
+            cues, notes = derive(s["beats"], words)
         out[s["slide"]] = cues
 
         print(f"\nslide {s['slide']} ({s['kind']}, {len(cues)} beats) -> {cues}")
