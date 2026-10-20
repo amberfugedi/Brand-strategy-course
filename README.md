@@ -1,7 +1,8 @@
 # Build Your Marketing Foundation
 
 The course library. Next.js App Router, Tailwind, TypeScript. Course
-one is Build Your Marketing Foundation (intro + Module 1 built so far).
+one is Build Your Marketing Foundation: the intro and all eight
+modules, narrated throughout, about 2h 54m of audio.
 
 ## Run locally
 
@@ -61,6 +62,20 @@ product and the webhook endpoint are live already:
   `checkout.session.async_payment_succeeded`, `charge.refunded` and
   `charge.dispute.created`.
 
+The app links to that payment link from three places: the course
+page, the sign-in gate and the paywall, with the price shown as a chip
+in the library. All of it comes from `price` and `checkoutUrl` on the
+course in `lib/content/courses.ts`. Both unset means the course is
+simply not for sale, and nothing renders a price or a dead button, so
+taking it off sale is clearing those two fields. The price there is
+only what the page says; the amount charged lives on the Stripe link,
+so the two are changed together.
+
+When a buyer is signed in, the link is opened with their address in
+`prefilled_email`. Entitlements key on the email that paid, so paying
+with one address and signing in with another is the commonest way to
+end up locked out of something you bought, and prefilling closes it.
+
 Which course a payment grants comes from the payment link's
 `course_id` metadata, so a second course needs a new link, not a
 deploy. Set the signing secret, with the Supabase service role key
@@ -74,6 +89,18 @@ SUPABASE_SERVICE_ROLE_KEY=...
 Both are server-only. Never give either a `NEXT_PUBLIC_` prefix, and
 never put the service role key in the browser: it bypasses row-level
 security entirely.
+
+Every way this path fails is quiet: a broken signature check grants
+nobody access while Stripe retries, and a missing lowercase writes an
+entitlement the buyer's account can never match. Neither shows up on
+a page you can look at, so there is a check with no dependencies and
+no network that signs a payload and runs the function against it:
+
+```
+npm run check:webhook
+```
+
+Run it before any deploy that touches `netlify/functions`.
 
 To grant access by hand (a comp, a refund reversal, someone who paid
 with a different address than they sign in with), insert a row:
@@ -101,6 +128,12 @@ your address in the Netlify environment and redeploy once. From then
 on, signing in with that address opens every module, with no further
 deploys and nothing to switch back. Everyone else sees the course
 exactly as it ships.
+
+This one needs Supabase configured first. It matches the owner's
+address against the signed-in user, and without the Supabase keys
+there is no sign-in to do: the link does not render, `/login` says so
+plainly, and the setting has no effect at all. Use the build flag
+below until accounts are live.
 
 **Without signing in**, for a local run or a preview deploy:
 

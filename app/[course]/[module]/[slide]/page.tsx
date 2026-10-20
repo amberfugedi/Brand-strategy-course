@@ -48,6 +48,8 @@ export default async function SlidePage({
       courseId={courseId}
       module={moduleMeta(mod)}
       slideIndex={slideIndex}
+      price={course.price}
+      checkoutUrl={course.checkoutUrl}
     />
   );
 }

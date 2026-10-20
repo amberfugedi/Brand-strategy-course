@@ -139,6 +139,15 @@ function Card({ course, owned }: { course: CourseMeta; owned: boolean }) {
         </div>
         <div className="mt-1 text-[13.5px] text-body-tertiary">Amber Fugedi</div>
         <div className="mt-2.5 flex flex-wrap gap-1.5">
+          {/* The price leads the chips when the course is on sale and
+              the reader does not already own it. A card is one big
+              link, so this stays a chip rather than a second button:
+              an anchor cannot hold another anchor. */}
+          {!owned && course.price && course.checkoutUrl ? (
+            <span className="border border-gold/40 bg-butter/40 px-2 py-0.5 text-[10.5px] font-bold text-gold">
+              {course.price}
+            </span>
+          ) : null}
           {course.chips.map((chip) => (
             <span
               key={chip}

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:webhook": "node scripts/check-webhook.mjs"
   },
   "dependencies": {
     "@fontsource/manrope": "^5.3.0",

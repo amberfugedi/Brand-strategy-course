@@ -8,9 +8,14 @@ import { useAuth } from "@/lib/auth/provider";
  * Two ways in, because they answer different needs.
  *
  * The owner's email, set once in `NEXT_PUBLIC_OWNER_EMAIL`, unlocks
- * the course for whoever is signed in as that address. That is the
- * one that matters: it works on the live site, needs no redeploy to
- * turn on and off, and follows the person rather than the build.
+ * the course for whoever is signed in as that address. It follows the
+ * person rather than the build, and needs no redeploy to turn on and
+ * off, which makes it the one to use on the live site.
+ *
+ * It needs Supabase configured, though, and the failure is silent:
+ * without those keys there is no sign-in, `user` is permanently null,
+ * and this returns false no matter what the variable is set to. Until
+ * accounts are live, the build flag below is the only one that works.
  *
  * `NEXT_PUBLIC_AUDIT=1` unlocks it for everyone in that build. It is
  * for a local run or a preview deploy where no one is signed in. It

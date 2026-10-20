@@ -30,6 +30,18 @@ export interface CourseDef {
    *  feedback. Leave it unset and the finish panel simply omits the
    *  button; nothing renders a dead link. */
   surveyUrl?: string;
+  /** What the course costs, exactly as it should read on screen
+   *  ("$149"). Shown beside the buy button and as a chip in the
+   *  library, so it is a display string rather than a number: the
+   *  amount Stripe actually charges is set on the payment link, and
+   *  this must be written to match it. */
+  price?: string;
+  /** The Stripe payment link. Everything that offers the course for
+   *  sale is hidden until this is set, so a half-configured deploy
+   *  shows no price and no dead buy button. The link must carry
+   *  `course_id` in its metadata and return to /login?purchased=1;
+   *  see README. */
+  checkoutUrl?: string;
   modules: ModuleDef[];
 }
 
@@ -48,6 +60,14 @@ export const courses: CourseDef[] = [
     // Paste the feedback form link here and the finish panel offers
     // it. Until then the panel congratulates and says nothing more.
     surveyUrl: undefined,
+    // The live payment link: $297 one time, carrying
+    // metadata.course_id = foundation and returning buyers to
+    // /login?purchased=1. Setting these two is what puts the course
+    // on sale, so clearing them both takes it off again. The price
+    // here is only what the page says; the amount actually charged
+    // lives on the link, so the two are changed together.
+    price: "$297",
+    checkoutUrl: "https://buy.stripe.com/dRm28k15N68o3FD0GLeEo00",
     meta: [
       { label: "Length", value: "About 3 hours, self-paced" },
       { label: "Output", value: "Your Marketing Foundation Map" },

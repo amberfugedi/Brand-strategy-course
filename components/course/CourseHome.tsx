@@ -10,6 +10,8 @@ import { MapArt } from "@/components/slides/MapArt";
 import { useHasPlan } from "@/components/course/LivePlan";
 import { useAuth } from "@/lib/auth/provider";
 import { useAudit } from "@/lib/audit";
+import { useEntitlement } from "@/lib/auth/entitlement";
+import { BuyButton } from "@/components/course/BuyButton";
 import { useCourseStore, useFinish } from "@/lib/store/provider";
 
 export function CourseHome({ course }: { course: CourseMeta }) {
@@ -18,6 +20,10 @@ export function CourseHome({ course }: { course: CourseMeta }) {
   const auth = useAuth();
   const { doc, ready } = useCourseStore();
   const audit = useAudit();
+  // Only `false` offers the course: `undefined` means the entitlement
+  // lookup is still out, and a buy button flashing in front of someone
+  // who already owns it reads as though their purchase did not take.
+  const forSale = useEntitlement(courseId) === false;
   const last = doc.progress.lastLocation;
   const continueHref = last
     ? `/${courseId}/${last.moduleId}/${last.slideIndex}`
@@ -82,6 +88,13 @@ export function CourseHome({ course }: { course: CourseMeta }) {
           >
             {hasProgress ? "Continue where you left off" : "Begin the course"}
           </Link>
+          {forSale ? (
+            <BuyButton
+              checkoutUrl={course.checkoutUrl}
+              price={course.price}
+              variant="outline"
+            />
+          ) : null}
           {hasPlan ? (
             <Link
               href={`/${courseId}/map`}

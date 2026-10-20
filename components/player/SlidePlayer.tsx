@@ -53,6 +53,7 @@ import { useEntitlement } from "@/lib/auth/entitlement";
 import { useSlides } from "@/components/player/SlidesProvider";
 import { SignInGate } from "@/components/auth/SignInGate";
 import { useAudit } from "@/lib/audit";
+import { BuyButton } from "@/components/course/BuyButton";
 import { stepsOf } from "@/lib/content/steps";
 import { slideComplete } from "@/lib/content/completion";
 
@@ -164,6 +165,10 @@ interface SlidePlayerProps {
   courseId: string;
   module: ModuleMeta;
   slideIndex: number; // 1-based, matches the URL
+  // Carried down so the paywall can offer the course rather than just
+  // naming the price of not having it.
+  price?: string;
+  checkoutUrl?: string;
 }
 
 // Which foundation (1-7) each module builds; "all" for the audit.
@@ -187,7 +192,13 @@ const LAYER_OF: Record<string, string> = {
   m8: "layer-remembered",
 };
 
-export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) {
+export function SlidePlayer({
+  courseId,
+  module,
+  slideIndex,
+  price,
+  checkoutUrl,
+}: SlidePlayerProps) {
   const router = useRouter();
   const { doc, update, ready } = useCourseStore();
   const auth = useAuth();
@@ -409,7 +420,12 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   // Sign-in and paywall answers come before the loading state: a
   // visitor should be told what they need, not watch a spinner first.
   if (gated || slidesStatus === "unauthenticated") {
-    return <SignInGate nextPath={`/${courseId}/${module.id}/${slideIndex}`} />;
+    return (
+      <SignInGate
+        nextPath={`/${courseId}/${module.id}/${slideIndex}`}
+        buy={{ price, checkoutUrl }}
+      />
+    );
   }
 
   if (unpaid || slidesStatus === "denied") {
@@ -419,6 +435,7 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
         eyebrow="The intro is open to everyone"
         heading="The modules come with the course."
         body="If you have already bought it, sign in with the email you paid with and this opens straight away."
+        buy={{ price, checkoutUrl }}
       />
     );
   }
@@ -715,11 +732,16 @@ function PlayerNotice({
   eyebrow,
   heading,
   body,
+  buy,
 }: {
   courseId: string;
   eyebrow: string;
   heading: string;
   body: string;
+  /** Shown above "Back to the course" on the paywall, so someone who
+   *  has not bought it has the buy button in front of them rather
+   *  than having to go and find it. */
+  buy?: { price?: string; checkoutUrl?: string };
 }) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6 text-body surface-cream">
@@ -729,9 +751,18 @@ function PlayerNotice({
         </div>
         <h1 className="text-2xl font-bold tracking-tight">{heading}</h1>
         <p className="mt-3 text-[14px] leading-relaxed text-body-secondary">{body}</p>
+        {buy?.checkoutUrl ? (
+          <div className="mt-6">
+            <BuyButton checkoutUrl={buy.checkoutUrl} price={buy.price} />
+          </div>
+        ) : null}
         <Link
           href={`/${courseId}`}
-          className="mt-6 inline-block rounded-[14px] border border-aubergine bg-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome text-cream transition-colors hover:bg-transparent hover:text-aubergine"
+          className={`${buy?.checkoutUrl ? "mt-3" : "mt-6"} inline-block rounded-[14px] border border-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome transition-colors ${
+            buy?.checkoutUrl
+              ? "text-aubergine hover:bg-aubergine hover:text-cream"
+              : "bg-aubergine text-cream hover:bg-transparent hover:text-aubergine"
+          }`}
         >
           Back to the course
         </Link>

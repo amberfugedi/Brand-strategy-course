@@ -30,6 +30,8 @@ export interface CourseMeta {
   chips: string[];
   meta: { label: string; value: string }[];
   surveyUrl?: string;
+  price?: string;
+  checkoutUrl?: string;
   modules: ModuleMeta[];
 }
 
