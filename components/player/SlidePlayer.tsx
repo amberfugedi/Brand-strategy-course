@@ -52,6 +52,7 @@ import { NarrationClock } from "@/components/player/NarrationClock";
 import { useEntitlement } from "@/lib/auth/entitlement";
 import { useSlides } from "@/components/player/SlidesProvider";
 import { SignInGate } from "@/components/auth/SignInGate";
+import { AUDIT } from "@/lib/audit";
 import { stepsOf } from "@/lib/content/steps";
 import { slideComplete } from "@/lib/content/completion";
 
@@ -193,11 +194,13 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   const narration = useNarration();
   // Modules unlock in sequence: a module with a prerequisite stays
   // locked until that module is completed.
-  const lockedByPrereq = Boolean(
-    module.requires &&
-      ready &&
-      !doc.progress.completedModules.includes(module.requires),
-  );
+  const lockedByPrereq =
+    !AUDIT &&
+    Boolean(
+      module.requires &&
+        ready &&
+        !doc.progress.completedModules.includes(module.requires),
+    );
   // The intro is open to everyone; modules need an account when
   // sign-in is configured. In local mode nothing is gated.
   const gated = module.id !== "intro" && auth.enabled && !auth.loading && !auth.user;

@@ -9,6 +9,7 @@ import { AuthCorner } from "@/components/auth/AuthCorner";
 import { MapArt } from "@/components/slides/MapArt";
 import { useHasPlan } from "@/components/course/LivePlan";
 import { useAuth } from "@/lib/auth/provider";
+import { AUDIT } from "@/lib/audit";
 import { useCourseStore, useFinish } from "@/lib/store/provider";
 
 export function CourseHome({ course }: { course: CourseMeta }) {
@@ -148,10 +149,12 @@ export function CourseHome({ course }: { course: CourseMeta }) {
         <div className="mt-14 max-w-3xl space-y-2">
           {course.modules.map((mod) => {
             const completed = doc.progress.completedModules.includes(mod.id);
-            const locked = Boolean(
-              mod.requires &&
-                !doc.progress.completedModules.includes(mod.requires),
-            );
+            const locked =
+              !AUDIT &&
+              Boolean(
+                mod.requires &&
+                  !doc.progress.completedModules.includes(mod.requires),
+              );
             const requiredLabel = mod.requires
               ? course.modules.find((m) => m.id === mod.requires)?.label ??
                 "the previous module"
