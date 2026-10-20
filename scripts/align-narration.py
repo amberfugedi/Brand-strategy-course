@@ -62,8 +62,12 @@ def decode(path):
     return np.frombuffer(raw, dtype="<i2").astype("float32") / 32768.0
 
 
-def recognise(samples, model=MODEL):
+GAINS = (1.0, 0.5, 0.25)
+
+
+def recognise(samples, model=MODEL, gain=1.0):
     """Recognised words with start times, merged up from BPE pieces."""
+    import numpy as np
     import sherpa_onnx
 
     rec = sherpa_onnx.OfflineRecognizer.from_transducer(
@@ -74,6 +78,8 @@ def recognise(samples, model=MODEL):
         num_threads=4,
     )
     stream = rec.create_stream()
+    if gain != 1.0:
+        samples = np.ascontiguousarray(samples * gain, dtype="float32")
     stream.accept_waveform(16000, samples)
     rec.decode_stream(stream)
     res = stream.result
@@ -143,14 +149,28 @@ def main():
 
     samples = decode(audio)
     duration = len(samples) / 16000.0
-    heard = recognise(samples)
+
+    # The int8 encoder sometimes returns nothing at all on a loud
+    # track, and the threshold is per-track: m7-9 came back empty at
+    # full gain and transcribed perfectly at 0.55, while m7-15, which
+    # is louder still, was fine at 1.0. Normalising every track to a
+    # common level does not fix it, so the retry is a ladder rather
+    # than a target. An empty result is the only trigger: a track that
+    # recognises at all is left at the gain it recognised on.
+    for gain in GAINS:
+        heard = recognise(samples, gain=gain)
+        if heard:
+            break
+    else:
+        gain = GAINS[-1]
     words, anchored = align(script_words, heard, duration)
 
     Path(out).write_text(json.dumps({"words": words}))
     pct = 100.0 * anchored / len(script_words)
+    quieter = "" if gain == 1.0 else f", at gain {gain}"
     print(f"{Path(audio).name}: {len(script_words)} words, "
           f"{anchored} anchored ({pct:.0f}%), {len(heard)} heard, "
-          f"{duration:.2f}s")
+          f"{duration:.2f}s{quieter}")
     if pct < 85:
         print("  LOW ANCHOR RATE, check this one", file=sys.stderr)
 

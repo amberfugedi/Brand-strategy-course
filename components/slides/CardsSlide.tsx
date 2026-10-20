@@ -70,7 +70,12 @@ export function CardsSlide({
         </div>
       ) : null}
 
-      {slide.footnote && revealed >= slide.cards.length ? (
+      {/* `stepsOf` counts the footnote as a beat of its own, so it
+          arrives after the last card rather than alongside it. Read
+          as `>=`, the slide ran out of things to reveal one beat
+          early: the footnote appeared with the final card and the
+          cue timed to it passed with nothing happening. */}
+      {slide.footnote && revealed > slide.cards.length ? (
         <p className="beat mt-6 max-w-4xl text-[16px] leading-relaxed">
           <Rich text={slide.footnote} />
         </p>
