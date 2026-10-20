@@ -16,7 +16,7 @@ export const introSlides: Slide[] = [
     audio: {
       src: "/audio/intro/intro-1.mp3",
       // "If you’re here" · "Three layers" · "Let’s get into it"
-      cues: [2.0, 18.0, 22.8],
+      cues: [2.8, 15.7, 20.5],
     },
     surface: "cream",
     eyebrow: "Build your marketing foundation",
@@ -26,7 +26,6 @@ export const introSlides: Slide[] = [
     host: true,
     sub: "Three layers. Seven foundations. Eight modules. One plan that’s *actually yours*.",
     meta: [
-      { label: "Length", value: "3 hours of teaching, 4 with the exercises" },
       { label: "Output", value: "Your Marketing Foundation *Map*" },
       { label: "Modules", value: "8 modules + course intro" },
     ],
@@ -121,7 +120,7 @@ export const introSlides: Slide[] = [
     rows: [
       {
         label: "Module 01",
-        text: "*Positioning*. Three questions, one working statement. Twenty-five minutes.",
+        text: "*Positioning*. Three questions, one working statement.",
       },
       {
         label: "Module 02",

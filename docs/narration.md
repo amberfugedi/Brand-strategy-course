@@ -69,7 +69,7 @@ written.
 
 **1.** Welcome. This is Build Your Marketing Foundation. If you’re here, you have a service business with paying clients. You’ve been at it long enough to know that marketing advice comes at you constantly, and most of it doesn’t fit. That’s what this course is for.
 
-**2.** In about three hours, you’ll build a working marketing foundation. Three layers. Seven foundations. Eight modules. One plan that’s actually yours. Let’s get into it.
+**2.** You’ll build a working marketing foundation. Three layers. Seven foundations. Eight modules. One plan that’s actually yours. Let’s get into it.
 
 **3.** Here’s the shape of what you’ll be building. Three layers. Each one does a different job.
 
@@ -95,7 +95,7 @@ written.
 
 **4.** A few things I see, consistently, when service business owners answer these questions. The first is vagueness in the name of inclusivity. “I serve small businesses.” “I help busy professionals.” “I work with anyone who needs my service.” These feel safe because they don’t exclude anyone. They also don’t do any work. A vague answer to who you serve produces a vague website, vague reviews, vague referrals. The cost of being too narrow is a smaller addressable market. The cost of being too vague is being chosen by no one. The second is generic differentiation. “I care about quality.” “I take a personal approach.” “I have years of experience.” These claims are real, but they’re also things every competent business says. They don’t differentiate you. If your competitor could put your differentiator on their own website word-for-word, it’s not a differentiator. The third is describing yourself instead of your service. “I’m a marketing consultant.” “I’m a chiropractor.” That’s a category, not a service. The service is what you actually do for a person. The problem you solve. The outcome you produce. Three patterns to watch for. We’ll come back to each one when we get to its question.
 
-**5.** Here’s how the next 25 minutes of teaching go, and there’s writing time on top of that. Five minutes on each of the three questions. Then three minutes at the end to assemble the answers into one sentence. By the end of the module, you’ll have a working positioning statement. For each question, I’ll give you the framework, then show you what a weak answer looks like, then show you what a strong answer looks like across five different service businesses, a therapist, a pressure washer, a photographer, a chiropractor, and a vivids stylist. The framework is the same. The answers are different. Then we synthesize.
+**5.** Here’s how the module goes, and there’s writing time on top of the teaching. A section on each of the three questions. Then a short one at the end to assemble the answers into one sentence. By the end of the module, you’ll have a working positioning statement. For each question, I’ll give you the framework, then show you what a weak answer looks like, then show you what a strong answer looks like across five different service businesses, a therapist, a pressure washer, a photographer, a chiropractor, and a vivids stylist. The framework is the same. The answers are different. Then we synthesize.
 
 **6.** Let’s start with the question that everything else depends on. Who do you serve?
 
@@ -235,7 +235,7 @@ written.
 
 ## Module 3: Get Found
 
-**1.** Welcome to Module 3. Get found. This is the first of the foundation modules. Each one is a concept module, not a tactics module. The goal isn’t to send you off to build a website by Friday. The goal is to give you a working answer to a strategic question: when a prospect goes looking for what you do, which of the places they might find you actually matter for your business? Twenty-five minutes. By the end you’ll know which touchpoints are primary for your business, and you’ll have marked them in your Marketing Foundation Map. Then we move to Module 4.
+**1.** Welcome to Module 3. Get found. This is the first of the foundation modules. Each one is a concept module, not a tactics module. The goal isn’t to send you off to build a website by Friday. The goal is to give you a working answer to a strategic question: when a prospect goes looking for what you do, which of the places they might find you actually matter for your business? By the end you’ll know which touchpoints are primary for your business, and you’ll have marked them in your Marketing Foundation Map. Then we move to Module 4.
 
 **2.** The first thing to fix. Most people, when you think about getting found online, think website. So that’s the first thing to set aside. Getting found is not a website. A website is one piece of it. The whole thing is bigger, and the parts do different work.
 

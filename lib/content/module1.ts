@@ -35,9 +35,8 @@ export const module1Slides: Slide[] = [
     surface: "plum",
     strata: 1,
     heading: "Your *positioning*.",
-    sub: "Three questions every other foundation depends on. Twenty-five minutes. One working answer.",
+    sub: "Three questions every other foundation depends on. One working answer.",
     meta: [
-      { label: "Length", value: "25 minutes of teaching, 40 with the writing" },
       { label: "Output", value: "Working positioning statement" },
       { label: "Module", value: "1 of 8" },
     ],
@@ -128,20 +127,22 @@ export const module1Slides: Slide[] = [
     tag: "STRUCTURE",
     number: "04",
     audio: {
-      src: "/audio/m1/m1-4.mp3", cues: [0.3, 7.6, 8.1, 8.6, 9.1],
+      // Row 1 opens; rows 2 to 4 land on "a section on each of the
+      // three questions"; row 5 on "then a short one at the end".
+      src: "/audio/m1/m1-4.mp3", cues: [0.3, 3.2, 3.8, 4.4, 5.6],
       callouts: [
-        { text: "The framework, then a weak answer, then a strong answer.", at: 17.0, until: 26.0 },
-        { text: "The framework is the same. The answers are different.", at: 31.6, until: 37.9 },
+        { text: "The framework, then a weak answer, then a strong answer.", at: 13.1, until: 20.4 },
+        { text: "The framework is the same. The answers are different.", at: 28.0, until: 32.5 },
       ],
     },
-    eyebrow: "About 25 minutes",
+    eyebrow: "Five sections",
     heading: "How this module *works*.",
     rows: [
-      { label: "Section 1", title: "The three questions", minutes: "5 min" },
-      { label: "Section 2", title: "Who do you serve", minutes: "5 min" },
-      { label: "Section 3", title: "What do you do", minutes: "5 min" },
-      { label: "Section 4", title: "What makes you different", minutes: "7 min" },
-      { label: "Section 5", title: "Pulling it together", minutes: "3 min" },
+      { label: "Section 1", title: "The three questions" },
+      { label: "Section 2", title: "Who do you serve" },
+      { label: "Section 3", title: "What do you do" },
+      { label: "Section 4", title: "What makes you different" },
+      { label: "Section 5", title: "Pulling it together" },
     ],
   },
 

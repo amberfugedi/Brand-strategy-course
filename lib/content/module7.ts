@@ -30,7 +30,6 @@ export const module7Slides: Slide[] = [
     heading: "Owned *audience*.",
     sub: "A direct line to the people who came to know you, so reaching them never depends on a platform.",
     meta: [
-      { label: "Length", value: "30 minutes" },
       { label: "Output", value: "Your owned-audience plan" },
       { label: "Module", value: "7 of 8" },
     ],

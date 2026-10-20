@@ -24,8 +24,8 @@ export const module3Slides: Slide[] = [
     audio: {
       src: "/audio/m3/m3-1.mp3",
       callouts: [
-        { text: "A concept module, not a tactics module.", at: 4.4, until: 10.9 },
-        { text: "By the end: your primary touchpoints, marked on your foundation map.", at: 20.2, until: 28.5 },
+        { text: "A concept module, not a tactics module.", at: 5.0, until: 9.6 },
+        { text: "By the end: your primary touchpoints, marked on your foundation map.", at: 21.6, until: 29.0 },
       ],
     },
     surface: "plum",
@@ -33,7 +33,6 @@ export const module3Slides: Slide[] = [
     heading: "Get *found*.",
     sub: "Where you exist online, and the local layer that matters when the search is geographic.",
     meta: [
-      { label: "Length", value: "25 minutes" },
       { label: "Output", value: "Your touchpoint priority" },
       { label: "Module", value: "3 of 8" },
     ],

@@ -56,7 +56,7 @@ export const courses: CourseDef[] = [
     released: true,
     audience: "For service business owners",
     coverWord: "Foundation.",
-    chips: ["Interactive", "8 modules", "About 4 hours"],
+    chips: ["Interactive", "8 modules", "Self-paced"],
     // Paste the feedback form link here and the finish panel offers
     // it. Until then the panel congratulates and says nothing more.
     surveyUrl: undefined,
@@ -74,7 +74,6 @@ export const courses: CourseDef[] = [
     buyUrl:
       "https://www.amberfugedi.com/courses/build-your-marketing-foundation",
     meta: [
-      { label: "Length", value: "About 3 hours of teaching, 4 with the exercises" },
       { label: "Output", value: "Your Marketing Foundation Map" },
       { label: "Format", value: "Guided, interactive, saved as you go" },
     ],

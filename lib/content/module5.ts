@@ -30,7 +30,6 @@ export const module5Slides: Slide[] = [
     heading: "Referral *system*.",
     sub: "Turning referrals from something that happens to you into something you produce on purpose.",
     meta: [
-      { label: "Length", value: "30 minutes" },
       { label: "Output", value: "Your referral map" },
       { label: "Module", value: "5 of 8" },
     ],

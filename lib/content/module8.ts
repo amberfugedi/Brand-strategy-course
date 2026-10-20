@@ -33,7 +33,6 @@ export const module8Slides: Slide[] = [
     heading: "Authority *building*.",
     sub: "The work of being trusted as the genuine expert in your field. And the close of the course: assembling everything into one plan.",
     meta: [
-      { label: "Length", value: "30 minutes" },
       { label: "Output", value: "Your Foundation Plan" },
       { label: "Module", value: "8 of 8" },
     ],

@@ -225,9 +225,11 @@ export function CourseHome({ course }: { course: CourseMeta }) {
                       {status}
                     </div>
                   </div>
-                  <div className="shrink-0 text-[11px] font-bold uppercase tracking-chrome text-body-tertiary">
-                    {mod.minutes}
-                  </div>
+                  {mod.minutes ? (
+                    <div className="shrink-0 text-[11px] font-bold uppercase tracking-chrome text-body-tertiary">
+                      {mod.minutes}
+                    </div>
+                  ) : null}
                 </div>
                 {mod.released && !locked ? (
                   <div className="mt-3 h-1 w-full rounded-[2px] bg-gold/20">

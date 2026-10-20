@@ -376,7 +376,9 @@ export interface StructureSlide extends SlideBase {
   kind: "structure";
   eyebrow?: string;
   heading?: string;
-  rows: { label: string; title: string; minutes: string }[];
+  /** `minutes` is optional: the course states no durations, and a
+   *  row without one simply omits the column. */
+  rows: { label: string; title: string; minutes?: string }[];
 }
 
 /** The framework builder moments. Fields save to the course document.
@@ -509,7 +511,8 @@ export interface ModuleDef {
   label: string;
   /** Footer wordmark stays constant; this titles the module itself. */
   title: string;
-  minutes: string;
+  /** Unset: the course deliberately quotes no durations. */
+  minutes?: string;
   released: boolean;
   /** Module id that must be completed before this one opens. */
   requires?: string;

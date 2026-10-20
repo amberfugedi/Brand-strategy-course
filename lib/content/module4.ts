@@ -31,7 +31,6 @@ export const module4Slides: Slide[] = [
     heading: "Earned *proof*.",
     sub: "The evidence of your work that comes from outside you, and which kind your business needs.",
     meta: [
-      { label: "Length", value: "20 minutes" },
       { label: "Output", value: "Your proof inventory" },
       { label: "Module", value: "4 of 8" },
     ],

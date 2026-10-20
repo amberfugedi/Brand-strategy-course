@@ -12,7 +12,7 @@ export interface ModuleMeta {
   id: string;
   label: string;
   title: string;
-  minutes: string;
+  minutes?: string;
   released: boolean;
   requires?: string;
   slideCount: number;
