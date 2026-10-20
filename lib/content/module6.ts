@@ -32,7 +32,7 @@ export const module6Slides: Slide[] = [
     heading: "Brand *awareness*.",
     sub: "Becoming known by the people you want as clients, before they are looking for you.",
     meta: [
-      { label: "Length", value: "20 minutes" },
+      { label: "Length", value: "30 minutes" },
       { label: "Output", value: "Your presence plan" },
       { label: "Module", value: "6 of 8" },
     ],

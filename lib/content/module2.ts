@@ -31,7 +31,7 @@ export const module2Slides: Slide[] = [
     heading: "The foundation *audit*.",
     sub: "A diagnostic, then a tailored audit. Twenty-eight minutes. One starting point with reasoning.",
     meta: [
-      { label: "Length", value: "28 minutes" },
+      { label: "Length", value: "35 minutes" },
       { label: "Output", value: "Priority order, Gap List, starting point" },
       { label: "Module", value: "2 of 8" },
     ],

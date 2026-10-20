@@ -26,7 +26,7 @@ export const introSlides: Slide[] = [
     host: true,
     sub: "Three layers. Seven foundations. Eight modules. One plan that’s *actually yours*.",
     meta: [
-      { label: "Length", value: "About 3 hours, self-paced" },
+      { label: "Length", value: "3 hours of teaching, 4 with the exercises" },
       { label: "Output", value: "Your Marketing Foundation *Map*" },
       { label: "Modules", value: "8 modules + course intro" },
     ],
