@@ -12,7 +12,10 @@ narration word for word or the script refuses, and `at` and `until`
 come from the first and last word of the match.
 
 The spec is {slide number: [phrase, ...]}, phrases verbatim from
-docs/narration.md.
+docs/narration.md. A phrase may instead be {"text": ..., "font": ...}
+to override the length rule: a short line is set in the serif by
+default, which reads as a remark, and an instruction wants the body
+font however short it is.
 
 Usage: place-callouts.py <module-number> <spec.json> [--write]
 """
@@ -61,12 +64,16 @@ def main():
             continue
         words = json.load(open(wf))["words"]
         made = []
-        for phrase in phrases:
+        for entry in phrases:
+            phrase = entry if isinstance(entry, str) else entry["text"]
             w = window(phrase, words)
             if not w:
                 problems.append(f"slide {slide}: not said verbatim: {phrase[:60]}")
                 continue
-            made.append({"text": phrase, "at": w[0], "until": w[1]})
+            c = {"text": phrase, "at": w[0], "until": w[1]}
+            if not isinstance(entry, str) and entry.get("font"):
+                c["font"] = entry["font"]
+            made.append(c)
         # Two notes in the same seconds would stack in one slot, and
         # the second would be the only one seen.
         for a, b in zip(made, made[1:]):
@@ -103,7 +110,9 @@ def main():
             sys.exit(f"slide {slide}: already has callouts, not overwriting")
         lines = ",\n".join(
             f'        {{ text: {json.dumps(c["text"], ensure_ascii=False)}, '
-            f'at: {c["at"]}, until: {c["until"]} }}'
+            f'at: {c["at"]}, until: {c["until"]}'
+            + (f', font: "{c["font"]}"' if c.get("font") else "")
+            + " }"
             for c in made
         )
         block = block.replace(

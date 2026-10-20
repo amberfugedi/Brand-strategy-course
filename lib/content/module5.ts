@@ -20,7 +20,11 @@ export const module5Slides: Slide[] = [
     crumb: "BUILD YOUR MARKETING FOUNDATION",
     tag: "MODULE 5 · REFERRAL SYSTEM",
     number: "01",
-    audio: { src: "/audio/m5/m5-1.mp3" },
+    audio: { src: "/audio/m5/m5-1.mp3",
+      callouts: [
+        { text: "Not is a referral proof, but can you cause more of them.", at: 26.2, until: 30.4 },
+        { text: "Module 4 looked at the referral as a signal. Module 5 looks at it as a system.", at: 31.0, until: 36.6 },
+      ] },
     surface: "plum",
     strata: 4,
     heading: "Referral *system*.",
@@ -39,7 +43,11 @@ export const module5Slides: Slide[] = [
     crumb: S1,
     tag: "FRAME",
     number: "02",
-    audio: { src: "/audio/m5/m5-2.mp3" },
+    audio: { src: "/audio/m5/m5-2.mp3",
+      callouts: [
+        { text: "A good one arrives, and it feels like weather: welcome, and entirely outside your control.", at: 3.5, until: 9.7 },
+        { text: "It is a closed circle.", at: 21.8, until: 24.5 },
+      ] },
     heading: "Referrals feel like *luck.*",
     sub: "Something you hope for and can’t influence. That belief is what this module takes apart.",
   },
@@ -51,7 +59,11 @@ export const module5Slides: Slide[] = [
     crumb: S1,
     tag: "FRAMEWORK",
     number: "03",
-    audio: { src: "/audio/m5/m5-3.mp3", cues: [0.5, 21.9] },
+    audio: { src: "/audio/m5/m5-3.mp3",
+      callouts: [
+        { text: "Something you did, possibly months earlier, gave that person a reason to refer you.", at: 9.2, until: 14.9 },
+        { text: "You cannot see the chain, so you assume there is no chain.", at: 30.0, until: 34.3 },
+      ], cues: [0.5, 21.9] },
     heading: "A referral is an *event* with causes.",
     paragraphs: [
       "Module 4 showed a referral is credibility you didn’t author. This one asks whether you can cause more of it.",
@@ -109,7 +121,11 @@ export const module5Slides: Slide[] = [
     crumb: S2,
     tag: "STAGE 01 · EARN",
     number: "06",
-    audio: { src: "/audio/m5/m5-6.mp3", cues: [0.5, 18.6, 53.5] },
+    audio: { src: "/audio/m5/m5-6.mp3",
+      callouts: [
+        { text: "Satisfaction is a feeling. A referral needs a sentence.", at: 14.3, until: 19.4 },
+        { text: "If the best they can manage is she was great, that sentence carries nothing, and it does not travel.", at: 26.1, until: 33.3 },
+      ], cues: [0.5, 18.6, 53.5] },
     heading: "Give them something *nameable.*",
     cols: [
       {
@@ -159,7 +175,15 @@ export const module5Slides: Slide[] = [
     crumb: S2,
     tag: "STAGE 03 · KEEP",
     number: "08",
-    audio: { src: "/audio/m5/m5-8.mp3", cues: [0.5, 41.1, 55.7] },
+    audio: { src: "/audio/m5/m5-8.mp3",
+      callouts: [
+        { text: "Silence is not neutral. Silence teaches.", at: 27.9, until: 31.4 },
+      ],
+      // The peer column already carries this sentence, so it takes
+      // the underline rather than printing itself twice.
+      marks: [
+        { text: "A peer relationship is kept, not transacted.", at: 62.4, until: 66.3 },
+      ], cues: [0.5, 41.1, 55.7] },
     heading: "Keep the channel *alive.*",
     cols: [
       {
@@ -217,7 +241,11 @@ export const module5Slides: Slide[] = [
     crumb: S3,
     tag: "CALIBRATION",
     number: "11",
-    audio: { src: "/audio/m5/m5-11.mp3" },
+    audio: { src: "/audio/m5/m5-11.mp3",
+      callouts: [
+        { text: "Almost no business is weak at all three.", at: 6.8, until: 9.8 },
+        { text: "What is far more common is that the loop is running, but leaking.", at: 14.0, until: 18.7 },
+      ] },
     eyebrow: "Every loop leaks somewhere",
     heading: "Which stage is *yours* to fix?",
     sub: "Most businesses are strong at one stage and leak at another. The weak one is the one to work.",
@@ -275,7 +303,11 @@ export const module5Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "13",
-    audio: { src: "/audio/m5/m5-13.mp3" },
+    audio: { src: "/audio/m5/m5-13.mp3",
+      callouts: [
+        { text: "You cannot ask your way out of an Earn problem.", at: 36.6, until: 40.3 },
+        { text: "If the cupboard is empty, a better basket does not help.", at: 45.0, until: 49.2 },
+      ] },
     sans: true,
     headline: "No ask repairs work that gave them *nothing* to say.",
     sub: "It is tempting to treat referrals as an asking problem, because asking is the visible part. But if a client cannot name what you did, a better request only produces a vaguer compliment. *The ask can only carry what the work made nameable.*",
@@ -368,7 +400,11 @@ export const module5Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "19",
-    audio: { src: "/audio/m5/m5-19.mp3" },
+    audio: { src: "/audio/m5/m5-19.mp3",
+      callouts: [
+        { text: "That sentence is the entire referral.", at: 13.7, until: 16.5 },
+        { text: "Referral and positioning are not two projects. They are the same work, met again.", at: 54.4, until: 60.1 },
+      ] },
     sans: true,
     headline: "People refer the businesses they can *describe* in one sentence.",
     sub: "A referral happens in a conversation you are not in. All the referrer has is the sentence they can say about you. Clear, and it travels. Vague, and it never gets made. *The clearer you are to describe, the more often you get described.*",
