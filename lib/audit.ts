@@ -1,21 +1,33 @@
+"use client";
+
+import { useAuth } from "@/lib/auth/provider";
+
 /**
- * Audit mode: open every module, for reviewing the course.
+ * Audit mode: every module open, for reviewing the course.
  *
- * Off unless `NEXT_PUBLIC_AUDIT=1`, so the buyer's course is never
- * accidentally shipped unlocked. An audit build is meant to be a
- * preview, not a state the live site is left in and someone has to
- * remember to undo.
+ * Two ways in, because they answer different needs.
  *
- * What it does: lifts the sequence lock, so any module opens without
- * finishing the one before it, and lets the certificate and the Map
- * render before the course is complete. It also puts a bar across
- * the top of every page, because an unlocked build that looks exactly
- * like the real one is the thing most likely to mislead a review.
+ * The owner's email, set once in `NEXT_PUBLIC_OWNER_EMAIL`, unlocks
+ * the course for whoever is signed in as that address. That is the
+ * one that matters: it works on the live site, needs no redeploy to
+ * turn on and off, and follows the person rather than the build.
  *
- * What it does NOT do: it does not grant access to the slides. Their
- * copy comes from a route that checks entitlement on the server, so
- * audit mode cannot be used to read a course nobody paid for. The
- * flag is visible in the bundle and that is fine, because unlocking
- * navigation is all it can unlock.
+ * `NEXT_PUBLIC_AUDIT=1` unlocks it for everyone in that build. It is
+ * for a local run or a preview deploy where no one is signed in. It
+ * should never be set on production.
+ *
+ * Neither grants access to slide copy. That comes from a route that
+ * checks entitlement on the server, so both flags being visible in
+ * the bundle costs nothing: unlocking navigation is all they unlock,
+ * and the email is useless to anyone who cannot receive its mail.
  */
-export const AUDIT = process.env.NEXT_PUBLIC_AUDIT === "1";
+export const AUDIT_BUILD = process.env.NEXT_PUBLIC_AUDIT === "1";
+
+const OWNER = (process.env.NEXT_PUBLIC_OWNER_EMAIL ?? "").trim().toLowerCase();
+
+export function useAudit(): boolean {
+  const { user } = useAuth();
+  if (AUDIT_BUILD) return true;
+  const email = user?.email?.trim().toLowerCase();
+  return Boolean(OWNER && email && email === OWNER);
+}

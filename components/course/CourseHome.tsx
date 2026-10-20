@@ -9,7 +9,7 @@ import { AuthCorner } from "@/components/auth/AuthCorner";
 import { MapArt } from "@/components/slides/MapArt";
 import { useHasPlan } from "@/components/course/LivePlan";
 import { useAuth } from "@/lib/auth/provider";
-import { AUDIT } from "@/lib/audit";
+import { useAudit } from "@/lib/audit";
 import { useCourseStore, useFinish } from "@/lib/store/provider";
 
 export function CourseHome({ course }: { course: CourseMeta }) {
@@ -17,6 +17,7 @@ export function CourseHome({ course }: { course: CourseMeta }) {
   const hasPlan = useHasPlan();
   const auth = useAuth();
   const { doc, ready } = useCourseStore();
+  const audit = useAudit();
   const last = doc.progress.lastLocation;
   const continueHref = last
     ? `/${courseId}/${last.moduleId}/${last.slideIndex}`
@@ -150,7 +151,7 @@ export function CourseHome({ course }: { course: CourseMeta }) {
           {course.modules.map((mod) => {
             const completed = doc.progress.completedModules.includes(mod.id);
             const locked =
-              !AUDIT &&
+              !audit &&
               Boolean(
                 mod.requires &&
                   !doc.progress.completedModules.includes(mod.requires),

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { CourseMeta } from "@/lib/content/meta";
-import { AUDIT } from "@/lib/audit";
+import { useAudit } from "@/lib/audit";
 import { Rich } from "@/components/Rich";
 import { useCourseStore, useFinish } from "@/lib/store/provider";
 import {
@@ -28,6 +28,7 @@ import {
  */
 export function Certificate({ course }: { course: CourseMeta }) {
   const { doc, ready } = useCourseStore();
+  const audit = useAudit();
   const { name, completedAt, setName, stampCompletion } = useFinish();
   const [draft, setDraft] = useState("");
 
@@ -37,7 +38,7 @@ export function Certificate({ course }: { course: CourseMeta }) {
 
   const finished =
     ready &&
-    (AUDIT ||
+    (audit ||
       course.modules
         .filter((m) => m.released && m.id !== "intro")
         .every((m) => doc.progress.completedModules.includes(m.id)));

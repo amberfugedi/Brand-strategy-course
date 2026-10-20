@@ -90,3 +90,26 @@ values ('lower@case.email', 'foundation');
 - `lib/store/` — the course document, localStorage + Supabase adapters
 - `lib/auth/` — magic link auth context
 - `supabase/schema.sql` — tables, row-level security, save function
+
+## Auditing the course
+
+Every module is released; the only gate is sequence, each one waiting
+on the module before it. Two ways to open all of them.
+
+**As yourself, on the live site.** Set `NEXT_PUBLIC_OWNER_EMAIL` to
+your address in the Netlify environment and redeploy once. From then
+on, signing in with that address opens every module, with no further
+deploys and nothing to switch back. Everyone else sees the course
+exactly as it ships.
+
+**Without signing in**, for a local run or a preview deploy:
+
+    NEXT_PUBLIC_AUDIT=1 npm run dev
+
+Never set that one on production: it opens the sequence for everyone
+who visits that build.
+
+Either way a bar reads "Audit mode" on every page, so an unlocked
+build is never mistaken for the buyer's view, and neither one grants
+access to slide copy. That comes from a route that checks entitlement
+on the server.

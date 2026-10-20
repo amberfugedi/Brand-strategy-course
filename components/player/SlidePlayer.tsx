@@ -52,7 +52,7 @@ import { NarrationClock } from "@/components/player/NarrationClock";
 import { useEntitlement } from "@/lib/auth/entitlement";
 import { useSlides } from "@/components/player/SlidesProvider";
 import { SignInGate } from "@/components/auth/SignInGate";
-import { AUDIT } from "@/lib/audit";
+import { useAudit } from "@/lib/audit";
 import { stepsOf } from "@/lib/content/steps";
 import { slideComplete } from "@/lib/content/completion";
 
@@ -192,10 +192,11 @@ export function SlidePlayer({ courseId, module, slideIndex }: SlidePlayerProps) 
   const { doc, update, ready } = useCourseStore();
   const auth = useAuth();
   const narration = useNarration();
+  const audit = useAudit();
   // Modules unlock in sequence: a module with a prerequisite stays
   // locked until that module is completed.
   const lockedByPrereq =
-    !AUDIT &&
+    !audit &&
     Boolean(
       module.requires &&
         ready &&
