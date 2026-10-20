@@ -44,7 +44,7 @@ as overrides.
 |---|---|---|---|
 | Course Intro | 9 | 4 | +5 |
 | Module 1: Positioning | 36 | 32 | +4 |
-| Module 2: The Foundation Audit | 36 | 35 | +1 |
+| Module 2: The Foundation Audit | 35 recorded (36 written) | 35 | matches |
 | Module 3: Get Found | 27 | 27 | matches |
 | Module 4: Earned Proof | 20 | 20 | matches |
 | Module 5: Referral System | 21 | 21 | matches |
@@ -52,9 +52,18 @@ as overrides.
 | Module 7: Owned Audience | 21 | 21 | matches |
 | Module 8: Authority Building | 20 | 20 | matches |
 
-The intro and Modules 1 and 2 are over their slide counts and were
-recorded that way. They need a mapping decision before any
-re-render; nothing downstream depends on it today.
+The intro and Module 1 are over their slide counts and were recorded
+that way: some tracks carry two paragraphs. Nothing is missing from
+either, and `scripts/realign-module.py` handles the merge by aligning
+a module in one pass rather than track by track.
+
+Module 2 is the one real cut. Its paragraph 33, marked `[cut]`, was
+written and never recorded; the point it makes is made again, in one
+sentence, by the closing slide. `narration.read()` leaves cut
+paragraphs out, because every consumer matches the script against
+audio that exists and a paragraph with no audio shifts every index
+after it. Read it with `include_cut=True` to see the script as
+written.
 
 ## Course Intro
 
@@ -216,7 +225,7 @@ re-render; nothing downstream depends on it today.
 
 **32.** The course is built to support what comes next. Modules 3 through 8 go deeper on individual foundations. Each one walks you through the specific strategy, what to actually do, in what order, with what tools, for that foundation. The modules run in order, and each one builds on the last. Your starting point tells you where the building begins once you’ve been through them: if it is getting found, your build starts with what Module 3 taught; if it is authority, Module 8.
 
-**33.** One thing before we close Module 2. You now have a starting point, one foundation to focus your build energy on first. That is what this audit was for. I want to be direct about what it was not for. It was not a license to skip the rest of the course. The priority order tells you where to direct your building energy, your five to ten weekly marketing hours. It does not tell you what foundations are worth understanding. Here is the distinction. A therapist whose audit ranks Brand Awareness as low priority for her business still benefits from understanding what Brand Awareness is, because that understanding shapes how she thinks about her marketing as a whole. Her priorities will also shift over time. What is low priority today may be next year’s focus when her business changes. Modules 3 through 8 teach the six foundations as concepts. Every one of them. You will go through all of them. When you reach a foundation that ranked low priority for you, the teaching still applies, you are learning the strategic frame, not just should I build this right now. Take all six foundation modules. Then come back to your priority order to decide what to actually build first. The audit is your starting point for the build phase, not your shortcut past the learning phase.
+**33.** [cut] One thing before we close Module 2. You now have a starting point, one foundation to focus your build energy on first. That is what this audit was for. I want to be direct about what it was not for. It was not a license to skip the rest of the course. The priority order tells you where to direct your building energy, your five to ten weekly marketing hours. It does not tell you what foundations are worth understanding. Here is the distinction. A therapist whose audit ranks Brand Awareness as low priority for her business still benefits from understanding what Brand Awareness is, because that understanding shapes how she thinks about her marketing as a whole. Her priorities will also shift over time. What is low priority today may be next year’s focus when her business changes. Modules 3 through 8 teach the six foundations as concepts. Every one of them. You will go through all of them. When you reach a foundation that ranked low priority for you, the teaching still applies, you are learning the strategic frame, not just should I build this right now. Take all six foundation modules. Then come back to your priority order to decide what to actually build first. The audit is your starting point for the build phase, not your shortcut past the learning phase.
 
 **34.** One last note before we close Module 2. Your Plan is on this slide. It compiles everything you have built so far, your positioning, your priority order, your Gap List, your starting point, into one place. Read through it. This is your reference document, and it saves automatically, so it is always here to come back to. You will return to it as you progress through the rest of the course, and when you finish a foundation and want to know what comes next. The Plan is what Module 2 actually produced. The diagnostic, the audit, the gap list, those are the work. The Plan is the artifact you walk away with.
 

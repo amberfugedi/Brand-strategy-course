@@ -25,10 +25,21 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 NARRATION = ROOT / "docs/narration.md"
 MARKER = "||"
+CUT = "[cut]"
 
 
-def read(path=NARRATION):
-    """{module key: [slide text with markers, ...]}, in slide order."""
+def read(path=NARRATION, include_cut=False):
+    """{module key: [slide text with markers, ...]}, in slide order.
+
+    A paragraph starting `[cut]` was written and deliberately not
+    recorded, so it is left out by default. Every consumer here
+    matches the script against audio that exists, and a paragraph
+    with no audio shifts every index after it. Module 2's paragraph
+    33 is the only one, and counting it made the module read as
+    though it had lost 222 words of narration.
+
+    Pass include_cut to read the script as written, cuts and all.
+    """
     out, key = {}, None
     for line in Path(path).read_text().splitlines():
         head = re.match(r"^## (Course Intro|Module (\d+))", line)
@@ -38,7 +49,10 @@ def read(path=NARRATION):
             continue
         para = re.match(r"^\*\*\d+\.\*\* (.+)$", line)
         if para and key:
-            out[key].append(para.group(1).strip())
+            text = para.group(1).strip()
+            if text.startswith(CUT) and not include_cut:
+                continue
+            out[key].append(text)
     return out
 
 
