@@ -49,7 +49,7 @@ export default async function SlidePage({
       module={moduleMeta(mod)}
       slideIndex={slideIndex}
       price={course.price}
-      checkoutUrl={course.checkoutUrl}
+      buyUrl={course.buyUrl}
     />
   );
 }

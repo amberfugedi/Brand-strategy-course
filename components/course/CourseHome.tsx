@@ -90,7 +90,7 @@ export function CourseHome({ course }: { course: CourseMeta }) {
           </Link>
           {forSale ? (
             <BuyButton
-              checkoutUrl={course.checkoutUrl}
+              buyUrl={course.buyUrl}
               price={course.price}
               variant="outline"
             />

@@ -62,19 +62,42 @@ product and the webhook endpoint are live already:
   `checkout.session.async_payment_succeeded`, `charge.refunded` and
   `charge.dispute.created`.
 
-The app links to that payment link from three places: the course
-page, the sign-in gate and the paywall, with the price shown as a chip
-in the library. All of it comes from `price` and `checkoutUrl` on the
-course in `lib/content/courses.ts`. Both unset means the course is
-simply not for sale, and nothing renders a price or a dead button, so
-taking it off sale is clearing those two fields. The price there is
-only what the page says; the amount charged lives on the Stripe link,
-so the two are changed together.
+### Where the academy sends a buyer
 
-When a buyer is signed in, the link is opened with their address in
-`prefilled_email`. Entitlements key on the email that paid, so paying
-with one address and signing in with another is the commonest way to
-end up locked out of something you bought, and prefilling closes it.
+The academy sells nothing itself. Someone who hits a locked module,
+usually straight off the free intro, is sent to the sales page, which
+holds the pitch, the price and the payment link. That is `buyUrl` on
+the course in `lib/content/courses.ts`, pointing at
+`amberfugedi.com/courses/build-your-marketing-foundation`, and it is
+offered in three places: the course page, the sign-in gate and the
+paywall. Clearing it takes the course off sale here.
+
+`price` sits beside it and is deliberately **unset**. Two systems
+naming an amount are two systems that can disagree, and the one the
+buyer is actually charged is Stripe, not this one. Set it only for a
+course with no sales page of its own, where `buyUrl` is the payment
+link direct and the price would otherwise appear nowhere.
+
+`buyUrl` takes either kind of destination. When it points at Stripe
+and the buyer is signed in, their address is added as
+`prefilled_email`, because entitlements key on the email that paid and
+paying with one address while signing in with another is the
+commonest way to be locked out of something you bought. That is a
+Stripe parameter, so it is not appended to a sales page; there the
+"sign in with the email you paid with" line does the work instead, on
+the paywall and again on `/login` after the purchase.
+
+### What the sales page still needs
+
+The page exists; the buy button on it does not. It needs:
+
+- A button to the payment link above.
+- That link's success URL set to
+  `https://learn.amberfugedi.com/login?purchased=1&next=/foundation`,
+  so a buyer lands on a page that acknowledges the purchase and asks
+  them to sign in with the email they paid with, then goes straight to
+  the course.
+- The price on the page matching what the link charges.
 
 Which course a payment grants comes from the payment link's
 `course_id` metadata, so a second course needs a new link, not a

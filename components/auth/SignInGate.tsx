@@ -16,9 +16,9 @@ export function SignInGate({
   buy,
 }: {
   nextPath: string;
-  buy?: { price?: string; checkoutUrl?: string };
+  buy?: { price?: string; buyUrl?: string };
 }) {
-  const onSale = Boolean(buy?.checkoutUrl);
+  const onSale = Boolean(buy?.buyUrl);
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6 text-body surface-cream">
       <div className="w-full max-w-md rounded-3xl border border-subtle bg-cream-light shadow-lift px-9 py-10 text-center">
@@ -30,12 +30,12 @@ export function SignInGate({
         </h1>
         <p className="mt-3 text-[14px] leading-relaxed text-body-secondary">
           {onSale
-            ? "From Module 1 on, the course comes with the course. If you have already bought it, sign in with the email you paid with."
+            ? "From Module 1 on, the modules come with the course. If you have already bought it, sign in with the email you paid with."
             : "The course intro is open to everyone. From Module 1 on, your answers save to your account, so this part needs a sign-in first."}
         </p>
         {onSale ? (
           <div className="mt-6">
-            <BuyButton checkoutUrl={buy?.checkoutUrl} price={buy?.price} />
+            <BuyButton buyUrl={buy?.buyUrl} price={buy?.price} />
           </div>
         ) : null}
         <Link

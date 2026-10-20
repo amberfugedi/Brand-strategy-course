@@ -3,38 +3,45 @@
 import { useAuth } from "@/lib/auth/provider";
 
 /**
- * The one way to buy the course.
+ * The way out of the academy to wherever the course is sold.
  *
- * Checkout is a Stripe payment link rather than a session this app
- * creates, which is why there is no secret key anywhere in the
- * codebase: the link is configured in Stripe, carries `course_id` in
- * its metadata, and the webhook reads that back to decide what was
- * bought. A second course needs a second link, not a deploy.
+ * `buyUrl` is normally the sales page on the marketing site, which is
+ * the one place that holds the pitch and the price. It can equally be
+ * a Stripe payment link, for a course sold without a page of its own.
+ * Either way this app never creates a checkout session, which is why
+ * there is no Stripe secret key anywhere in the codebase.
  *
- * Renders nothing without `checkoutUrl`. Access is granted against the
- * email that paid, so a buy button that goes nowhere, or a price that
- * no longer matches the link, is worse than no button at all.
+ * Renders nothing without `buyUrl`. A button that goes nowhere, or a
+ * price that no longer matches what is charged, is worse than no
+ * button at all.
  */
 export function BuyButton({
-  checkoutUrl,
+  buyUrl,
   price,
   label = "Get the course",
   variant = "solid",
 }: {
-  checkoutUrl?: string;
+  buyUrl?: string;
   price?: string;
   label?: string;
   variant?: "solid" | "outline";
 }) {
   const { user } = useAuth();
-  if (!checkoutUrl) return null;
+  if (!buyUrl) return null;
 
-  // Entitlements key on the email that paid, so someone who pays with
-  // a different address than they sign in with gets nothing until it
-  // is fixed by hand. Prefilling closes the commonest way into that.
-  const href = user?.email
-    ? `${checkoutUrl}${checkoutUrl.includes("?") ? "&" : "?"}prefilled_email=${encodeURIComponent(user.email)}`
-    : checkoutUrl;
+  // Entitlements key on the email that paid, so paying with one
+  // address and signing in with another locks a buyer out of what
+  // they bought. Prefilling closes the commonest way into that, but
+  // `prefilled_email` is a Stripe parameter: on a sales page it would
+  // be a stray query string, and on some hosts a 404. So it is only
+  // added when the destination is Stripe, and when it is not, the
+  // "sign in with the email you paid with" line does that work
+  // instead, on the paywall and again on /login after the purchase.
+  const toStripe = /(^|\.)stripe\.com\//.test(buyUrl);
+  const href =
+    toStripe && user?.email
+      ? `${buyUrl}${buyUrl.includes("?") ? "&" : "?"}prefilled_email=${encodeURIComponent(user.email)}`
+      : buyUrl;
 
   const base =
     "inline-block rounded-[14px] px-6 py-3 text-center text-[13px] font-bold uppercase tracking-chrome transition-colors";

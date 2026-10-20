@@ -143,7 +143,7 @@ function Card({ course, owned }: { course: CourseMeta; owned: boolean }) {
               the reader does not already own it. A card is one big
               link, so this stays a chip rather than a second button:
               an anchor cannot hold another anchor. */}
-          {!owned && course.price && course.checkoutUrl ? (
+          {!owned && course.price && course.buyUrl ? (
             <span className="border border-gold/40 bg-butter/40 px-2 py-0.5 text-[10.5px] font-bold text-gold">
               {course.price}
             </span>

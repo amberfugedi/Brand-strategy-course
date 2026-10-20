@@ -31,7 +31,7 @@ export interface CourseMeta {
   meta: { label: string; value: string }[];
   surveyUrl?: string;
   price?: string;
-  checkoutUrl?: string;
+  buyUrl?: string;
   modules: ModuleMeta[];
 }
 

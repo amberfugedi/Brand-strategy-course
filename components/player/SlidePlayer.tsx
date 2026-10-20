@@ -168,7 +168,7 @@ interface SlidePlayerProps {
   // Carried down so the paywall can offer the course rather than just
   // naming the price of not having it.
   price?: string;
-  checkoutUrl?: string;
+  buyUrl?: string;
 }
 
 // Which foundation (1-7) each module builds; "all" for the audit.
@@ -197,7 +197,7 @@ export function SlidePlayer({
   module,
   slideIndex,
   price,
-  checkoutUrl,
+  buyUrl,
 }: SlidePlayerProps) {
   const router = useRouter();
   const { doc, update, ready } = useCourseStore();
@@ -423,7 +423,7 @@ export function SlidePlayer({
     return (
       <SignInGate
         nextPath={`/${courseId}/${module.id}/${slideIndex}`}
-        buy={{ price, checkoutUrl }}
+        buy={{ price, buyUrl }}
       />
     );
   }
@@ -435,7 +435,7 @@ export function SlidePlayer({
         eyebrow="The intro is open to everyone"
         heading="The modules come with the course."
         body="If you have already bought it, sign in with the email you paid with and this opens straight away."
-        buy={{ price, checkoutUrl }}
+        buy={{ price, buyUrl }}
       />
     );
   }
@@ -741,7 +741,7 @@ function PlayerNotice({
   /** Shown above "Back to the course" on the paywall, so someone who
    *  has not bought it has the buy button in front of them rather
    *  than having to go and find it. */
-  buy?: { price?: string; checkoutUrl?: string };
+  buy?: { price?: string; buyUrl?: string };
 }) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6 text-body surface-cream">
@@ -751,15 +751,15 @@ function PlayerNotice({
         </div>
         <h1 className="text-2xl font-bold tracking-tight">{heading}</h1>
         <p className="mt-3 text-[14px] leading-relaxed text-body-secondary">{body}</p>
-        {buy?.checkoutUrl ? (
+        {buy?.buyUrl ? (
           <div className="mt-6">
-            <BuyButton checkoutUrl={buy.checkoutUrl} price={buy.price} />
+            <BuyButton buyUrl={buy.buyUrl} price={buy.price} />
           </div>
         ) : null}
         <Link
           href={`/${courseId}`}
-          className={`${buy?.checkoutUrl ? "mt-3" : "mt-6"} inline-block rounded-[14px] border border-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome transition-colors ${
-            buy?.checkoutUrl
+          className={`${buy?.buyUrl ? "mt-3" : "mt-6"} inline-block rounded-[14px] border border-aubergine px-6 py-3 text-[12px] font-bold uppercase tracking-chrome transition-colors ${
+            buy?.buyUrl
               ? "text-aubergine hover:bg-aubergine hover:text-cream"
               : "bg-aubergine text-cream hover:bg-transparent hover:text-aubergine"
           }`}
