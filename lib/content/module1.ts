@@ -771,7 +771,11 @@ export const module1Slides: Slide[] = [
     crumb: S5,
     tag: "THE SYNTHESIS",
     number: "25",
-    audio: { src: "/audio/m1/m1-25.mp3", cues: [2.4] },
+    // Two beats here, the line and the post, so two cues. With only
+    // one the post never arrived while the voice played. 5.5s is
+    // where she reaches "real work", the closing phrase, so the
+    // summary lands on it rather than after the audio has stopped.
+    audio: { src: "/audio/m1/m1-25.mp3", cues: [2.4, 5.5] },
     pre: "What you take with you.",
     lines: ["A positioning statement *that does real work.*"],
     post: "Three answers, one sentence, four minutes.",
