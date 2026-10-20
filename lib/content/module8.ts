@@ -23,7 +23,11 @@ export const module8Slides: Slide[] = [
     crumb: "BUILD YOUR MARKETING FOUNDATION",
     tag: "MODULE 8 · AUTHORITY BUILDING",
     number: "01",
-    audio: { src: "/audio/m8/m8-1.mp3" },
+    audio: { src: "/audio/m8/m8-1.mp3",
+      callouts: [
+        { text: "Module 8 pulls all of that together into one thing: your Foundation Plan.", at: 27.5, until: 33.3 },
+        { text: "So this module teaches, and then it assembles.", at: 35.3, until: 39.1 },
+      ] },
     surface: "plum",
     strata: 7,
     heading: "Authority *building*.",
@@ -42,7 +46,11 @@ export const module8Slides: Slide[] = [
     crumb: S1,
     tag: "FRAME",
     number: "02",
-    audio: { src: "/audio/m8/m8-2.mp3" },
+    audio: { src: "/audio/m8/m8-2.mp3",
+      callouts: [
+        { text: "Both of those are real.", at: 19.8, until: 21.9 },
+        { text: "You have paying clients and years of work behind you, and still the word authority feels like it belongs to someone else.", at: 39.8, until: 47.4 },
+      ] },
     heading: "You do not feel like an *authority*.",
     sub: "Calling yourself one feels like bragging. Thought leadership looks fake. And underneath: a sense that you have not earned the title yet. That last belief is the one to take apart.",
   },
@@ -54,7 +62,11 @@ export const module8Slides: Slide[] = [
     crumb: S1,
     tag: "FRAMEWORK",
     number: "03",
-    audio: { src: "/audio/m8/m8-3.mp3", cues: [0.5, 30.6] },
+    audio: { src: "/audio/m8/m8-3.mp3",
+      callouts: [
+        { text: "Other people grant it to you, and they grant it based on one thing: whether your judgment, over time, has been sound.", at: 44.3, until: 52.1 },
+        { text: "You have been accumulating authority, quietly, for as long as you have had clients.", at: 61.4, until: 66.7 },
+      ], cues: [0.5, 30.6] },
     heading: "Authority is earned *trust*.",
     paragraphs: [
       "Not a title you award yourself. Authority is the weight your word carries: whether people move on it, or weigh it like anyone’s.",
@@ -112,7 +124,11 @@ export const module8Slides: Slide[] = [
     crumb: S2,
     tag: "KIND 01",
     number: "06",
-    audio: { src: "/audio/m8/m8-6.mp3", cues: [0.5, 28.6, 48.8] },
+    audio: { src: "/audio/m8/m8-6.mp3",
+      callouts: [
+        { text: "Excellent work that no one sees builds no authority at all.", at: 34.9, until: 39.0 },
+        { text: "The judgment has been granted before the first conversation even starts.", at: 57.2, until: 61.9 },
+      ], cues: [0.5, 28.6, 48.8] },
     eyebrow: "Craft",
     heading: "When the work *speaks* first.",
     cols: [
@@ -138,7 +154,11 @@ export const module8Slides: Slide[] = [
     crumb: S2,
     tag: "KIND 02",
     number: "07",
-    audio: { src: "/audio/m8/m8-7.mp3", cues: [0.5, 22.7, 50.9] },
+    audio: { src: "/audio/m8/m8-7.mp3",
+      callouts: [
+        { text: "It is depth in something specific enough to be named, and it is knowledge others can actually verify, not just take on faith.", at: 13.9, until: 21.9 },
+        { text: "And your word starts to settle questions that other people leave open.", at: 59.3, until: 64.6 },
+      ], cues: [0.5, 22.7, 50.9] },
     eyebrow: "Expertise",
     heading: "When what you *know* is the proof.",
     cols: [
@@ -164,7 +184,11 @@ export const module8Slides: Slide[] = [
     crumb: S2,
     tag: "THE TAKEAWAY",
     number: "08",
-    audio: { src: "/audio/m8/m8-8.mp3" },
+    audio: { src: "/audio/m8/m8-8.mp3",
+      callouts: [
+        { text: "The word expert applied to oneself, by oneself.", at: 13.9, until: 19.3 },
+        { text: "One is a costume and one is the body underneath it.", at: 60.5, until: 64.4 },
+      ] },
     sans: true,
     headline: "Authority is granted, never *announced*.",
     sub: "The loud version is a performance. It can draw a crowd. It cannot draw trust, because trust is a verdict other people reach by watching your judgment hold. *Announced authority is the costume.*",
@@ -190,7 +214,10 @@ export const module8Slides: Slide[] = [
     crumb: S3,
     tag: "KIND 03",
     number: "10",
-    audio: { src: "/audio/m8/m8-10.mp3", cues: [0.5, 27.6, 51.4] },
+    audio: { src: "/audio/m8/m8-10.mp3",
+      callouts: [
+        { text: "The years are the proof.", at: 49.6, until: 52.1 },
+      ], cues: [0.5, 27.6, 51.4] },
     eyebrow: "Track record",
     heading: "When your *read* is what they trust.",
     cols: [
@@ -216,7 +243,11 @@ export const module8Slides: Slide[] = [
     crumb: S3,
     tag: "FRAMEWORK",
     number: "11",
-    audio: { src: "/audio/m8/m8-11.mp3" },
+    audio: { src: "/audio/m8/m8-11.mp3",
+      callouts: [
+        { text: "It is in what your best clients say when they explain, to you or to someone else, why they chose you.", at: 16.1, until: 22.7 },
+        { text: "That recognition is the instruction.", at: 66.4, until: 69.2 },
+      ] },
     eyebrow: "Finding your kind",
     heading: "You already have one. *Name* it.",
     intro:
@@ -301,7 +332,11 @@ export const module8Slides: Slide[] = [
     crumb: S4,
     tag: "FRAMEWORK",
     number: "15",
-    audio: { src: "/audio/m8/m8-15.mp3", cues: [0.5, 51.6] },
+    audio: { src: "/audio/m8/m8-15.mp3",
+      callouts: [
+        { text: "You would not have the hours for that, and it would not work anyway.", at: 59.4, until: 63.7 },
+        { text: "That is the real reason it is the last module.", at: 72.0, until: 76.0 },
+      ], cues: [0.5, 51.6] },
     heading: "Authority is the foundation the others *feed*.",
     paragraphs: [
       "The seventh foundation, and the one the previous six quietly build. Positioning makes your judgment legible, proof confirms it, referrals carry it, awareness gives it room.",
@@ -316,7 +351,11 @@ export const module8Slides: Slide[] = [
     crumb: S4,
     tag: "THE TAKEAWAY",
     number: "16",
-    audio: { src: "/audio/m8/m8-16.mp3" },
+    audio: { src: "/audio/m8/m8-16.mp3",
+      callouts: [
+        { text: "Watching takes as long as it takes.", at: 15.7, until: 18.7 },
+        { text: "Slow to build is also slow to lose, and that is a very good trade.", at: 61.6, until: 66.2 },
+      ] },
     sans: true,
     headline: "Authority is the slowest foundation, and the most *durable*.",
     sub: "It cannot be rushed, because it is a verdict others reach by watching. That slowness is its strength: it does not collapse when a platform changes. *Slow to build is also slow to lose.*",
@@ -358,7 +397,11 @@ export const module8Slides: Slide[] = [
     crumb: S5,
     tag: "FRAMEWORK",
     number: "19",
-    audio: { src: "/audio/m8/m8-19.mp3", cues: [0.5, 34.6] },
+    audio: { src: "/audio/m8/m8-19.mp3",
+      callouts: [
+        { text: "Then let everything else wait, genuinely wait, without guilt.", at: 30.5, until: 35.3 },
+        { text: "You are not behind.", at: 60.9, until: 63.1 },
+      ], cues: [0.5, 34.6] },
     eyebrow: "Reading your plan",
     heading: "One thing at a time, in the right *order*.",
     paragraphs: [
@@ -374,7 +417,11 @@ export const module8Slides: Slide[] = [
     crumb: "MODULE 8 · END",
     tag: "END OF THE COURSE",
     number: "20",
-    audio: { src: "/audio/m8/m8-20.mp3", cues: [0.5] },
+    audio: { src: "/audio/m8/m8-20.mp3",
+      callouts: [
+        { text: "There is no rush and there is no countdown.", at: 58.2, until: 61.6 },
+        { text: "That is where a plan stops being a document and starts being the thing you are building.", at: 73.9, until: 79.5 },
+      ], cues: [0.5] },
     surface: "plum",
     mapFilled: 7,
     eyebrow: "End of Build Your Marketing Foundation",

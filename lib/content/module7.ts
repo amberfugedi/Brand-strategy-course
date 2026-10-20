@@ -20,7 +20,11 @@ export const module7Slides: Slide[] = [
     crumb: "BUILD YOUR MARKETING FOUNDATION",
     tag: "MODULE 7 · OWNED AUDIENCE",
     number: "01",
-    audio: { src: "/audio/m7/m7-1.mp3" },
+    audio: { src: "/audio/m7/m7-1.mp3",
+      callouts: [
+        { text: "Module 6 closed on a specific point: the place you became known is borrowed.", at: 21.3, until: 27.4 },
+        { text: "By the end you will have one output, your owned-audience plan: the people, the channel, and the cadence you can actually sustain.", at: 43.4, until: 52.3 },
+      ] },
     surface: "plum",
     strata: 6,
     heading: "Owned *audience*.",
@@ -39,7 +43,11 @@ export const module7Slides: Slide[] = [
     crumb: S1,
     tag: "FRAME",
     number: "02",
-    audio: { src: "/audio/m7/m7-2.mp3" },
+    audio: { src: "/audio/m7/m7-2.mp3",
+      callouts: [
+        { text: "Every one of those is a reasonable response.", at: 35.2, until: 38.5 },
+        { text: "You judged owned audience by what reach-chasing looks like, and they are not the same thing.", at: 53.2, until: 58.9 },
+      ] },
     heading: "You have already *decided* against this.",
     sub: "Maybe you tried and it went nowhere. Maybe referrals cover you. Each is a reasonable read of the wrong thing.",
   },
@@ -51,7 +59,11 @@ export const module7Slides: Slide[] = [
     crumb: S1,
     tag: "FRAMEWORK",
     number: "03",
-    audio: { src: "/audio/m7/m7-3.mp3", cues: [0.5, 34.2] },
+    audio: { src: "/audio/m7/m7-3.mp3",
+      callouts: [
+        { text: "When you have someone’s address and their permission, no platform is in the middle.", at: 43.0, until: 48.3 },
+        { text: "And only one of them can be a foundation.", at: 58.1, until: 61.1 },
+      ], cues: [0.5, 34.2] },
     heading: "There is reach, and there is a channel you *own*.",
     paragraphs: [
       "Module 6 made you known in a place someone else owns. The platform decides who sees you, and can change that without telling you.",
@@ -66,7 +78,10 @@ export const module7Slides: Slide[] = [
     crumb: S2,
     tag: "THE SHIFT",
     number: "04",
-    audio: { src: "/audio/m7/m7-4.mp3" },
+    audio: { src: "/audio/m7/m7-4.mp3",
+      callouts: [
+        { text: "Being reachable is something you can do, whenever you choose, because you hold the line yourself.", at: 14.7, until: 21.2 },
+      ] },
     eyebrow: "The move this module makes",
     heading: "From being found to being *reachable*.",
     sub: "Awareness is people finding you. An owned audience is you reaching them. The second is built on purpose.",
@@ -79,7 +94,11 @@ export const module7Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "05",
-    audio: { src: "/audio/m7/m7-5.mp3", cues: [0.5, 24.6, 34.7] },
+    audio: { src: "/audio/m7/m7-5.mp3",
+      callouts: [
+        { text: "You are, in a real sense, renting access to your own audience.", at: 20.7, until: 25.4 },
+        { text: "It is an audience the platform has, and lets you borrow.", at: 41.6, until: 45.7 },
+      ], cues: [0.5, 24.6, 34.7] },
     heading: "Two jobs. The mistake is owning the *wrong* one.",
     cards: [
       {
@@ -104,7 +123,11 @@ export const module7Slides: Slide[] = [
     crumb: S2,
     tag: "DETAIL",
     number: "06",
-    audio: { src: "/audio/m7/m7-6.mp3", cues: [0.5, 24.6, 42.5] },
+    audio: { src: "/audio/m7/m7-6.mp3",
+      callouts: [
+        { text: "Every conversation starts from zero, because nothing carries forward.", at: 49.5, until: 54.1 },
+        { text: "It is workable, and it is quietly exhausting, and it is not a foundation.", at: 55.9, until: 61.5 },
+      ], cues: [0.5, 24.6, 42.5] },
     eyebrow: "Reach, up close",
     heading: "What borrowed reach *can* and cannot do.",
     cols: [
@@ -130,7 +153,10 @@ export const module7Slides: Slide[] = [
     crumb: S2,
     tag: "THE TAKEAWAY",
     number: "07",
-    audio: { src: "/audio/m7/m7-7.mp3" },
+    audio: { src: "/audio/m7/m7-7.mp3",
+      callouts: [
+        { text: "It is not an argument against reach, or against the platform, or against the work you did in Module 6.", at: 27.4, until: 34.0 },
+      ] },
     sans: true,
     headline: "The place you were found was never *yours*.",
     sub: "The place you built presence in runs on rules you cannot see, and the reach is held at someone else’s discretion. *A foundation is the part that stays when the platform changes.*",
@@ -143,7 +169,11 @@ export const module7Slides: Slide[] = [
     crumb: S2,
     tag: "FRAMEWORK",
     number: "08",
-    audio: { src: "/audio/m7/m7-8.mp3", cues: [0.5, 53.4] },
+    audio: { src: "/audio/m7/m7-8.mp3",
+      callouts: [
+        { text: "This is the one businesses skip.", at: 55.6, until: 58.2 },
+        { text: "Choose the channel sized to the hours you actually have, not the hours you imagine having.", at: 64.0, until: 69.5 },
+      ], cues: [0.5, 53.4] },
     heading: "The channel is a *means*. Choose it for fit.",
     intro:
       "Usually email, the clearest direct line you control. But the principle is the line, not the tool.",
@@ -181,7 +211,11 @@ export const module7Slides: Slide[] = [
     crumb: S3,
     tag: "DETAIL",
     number: "10",
-    audio: { src: "/audio/m7/m7-10.mp3", cues: [0.5, 28.9, 48.8] },
+    audio: { src: "/audio/m7/m7-10.mp3",
+      callouts: [
+        { text: "They wanted the thing. They did not necessarily want you.", at: 20.4, until: 24.4 },
+        { text: "It collects the right people, the ones who wanted what you actually offer.", at: 44.5, until: 49.5 },
+      ], cues: [0.5, 28.9, 48.8] },
     heading: "A reason to join, not a *bribe* to.",
     cols: [
       {
@@ -249,7 +283,11 @@ export const module7Slides: Slide[] = [
     crumb: S4,
     tag: "FRAMEWORK",
     number: "14",
-    audio: { src: "/audio/m7/m7-14.mp3", cues: [0.5, 45.9] },
+    audio: { src: "/audio/m7/m7-14.mp3",
+      callouts: [
+        { text: "The fear assumes a blank page. You do not have a blank page. You have a promise.", at: 41.1, until: 46.7 },
+        { text: "A quarterly email you actually send for years beats a weekly one you abandon in five weeks.", at: 60.7, until: 67.5 },
+      ], cues: [0.5, 45.9] },
     eyebrow: "Keeping the channel",
     heading: "The fear is “what would I *send*?”",
     intro:
@@ -393,7 +431,11 @@ export const module7Slides: Slide[] = [
     crumb: S5,
     tag: "FRAMEWORK",
     number: "19",
-    audio: { src: "/audio/m7/m7-19.mp3", cues: [0.5, 37.2] },
+    audio: { src: "/audio/m7/m7-19.mp3",
+      callouts: [
+        { text: "The raw material of an owned audience is already in your hands.", at: 16.5, until: 20.9 },
+        { text: "It is allowed to be small. It can grow later. What it cannot do is grow if it never gets built.", at: 50.8, until: 57.0 },
+      ], cues: [0.5, 37.2] },
     eyebrow: "If this feels like a lot",
     heading: "Start with the people you *already* have.",
     bullets: true,
